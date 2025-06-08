@@ -6,7 +6,7 @@
 # But keep allegro for convenience
 *.dll
 !allegro_monolith-5.2.dll
-build
+build/
 
 # MacOS
 .DS_Store
