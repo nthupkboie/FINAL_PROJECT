@@ -1,0 +1,212 @@
+[
+{
+  "directory": "C:/final-project/build",
+  "command": "c:\\Users\\pkboi\\Downloads\\llvm-mingw-20240417-msvcrt-x86_64\\llvm-mingw-20240417-msvcrt-x86_64\\bin\\clang++.exe  @CMakeFiles/2025_I2P2_TowerDefense.dir/includes_CXX.rsp -g -o CMakeFiles\\2025_I2P2_TowerDefense.dir\\Bullet\\Bullet.cpp.obj -c C:\\final-project\\MAIN_GAME\\Bullet\\Bullet.cpp",
+  "file": "C:/final-project/MAIN_GAME/Bullet/Bullet.cpp",
+  "output": "CMakeFiles/2025_I2P2_TowerDefense.dir/Bullet/Bullet.cpp.obj"
+},
+{
+  "directory": "C:/final-project/build",
+  "command": "c:\\Users\\pkboi\\Downloads\\llvm-mingw-20240417-msvcrt-x86_64\\llvm-mingw-20240417-msvcrt-x86_64\\bin\\clang++.exe  @CMakeFiles/2025_I2P2_TowerDefense.dir/includes_CXX.rsp -g -o CMakeFiles\\2025_I2P2_TowerDefense.dir\\Bullet\\FireBullet.cpp.obj -c C:\\final-project\\MAIN_GAME\\Bullet\\FireBullet.cpp",
+  "file": "C:/final-project/MAIN_GAME/Bullet/FireBullet.cpp",
+  "output": "CMakeFiles/2025_I2P2_TowerDefense.dir/Bullet/FireBullet.cpp.obj"
+},
+{
+  "directory": "C:/final-project/build",
+  "command": "c:\\Users\\pkboi\\Downloads\\llvm-mingw-20240417-msvcrt-x86_64\\llvm-mingw-20240417-msvcrt-x86_64\\bin\\clang++.exe  @CMakeFiles/2025_I2P2_TowerDefense.dir/includes_CXX.rsp -g -o CMakeFiles\\2025_I2P2_TowerDefense.dir\\Bullet\\LaserBullet.cpp.obj -c C:\\final-project\\MAIN_GAME\\Bullet\\LaserBullet.cpp",
+  "file": "C:/final-project/MAIN_GAME/Bullet/LaserBullet.cpp",
+  "output": "CMakeFiles/2025_I2P2_TowerDefense.dir/Bullet/LaserBullet.cpp.obj"
+},
+{
+  "directory": "C:/final-project/build",
+  "command": "c:\\Users\\pkboi\\Downloads\\llvm-mingw-20240417-msvcrt-x86_64\\llvm-mingw-20240417-msvcrt-x86_64\\bin\\clang++.exe  @CMakeFiles/2025_I2P2_TowerDefense.dir/includes_CXX.rsp -g -o CMakeFiles\\2025_I2P2_TowerDefense.dir\\Enemy\\Enemy.cpp.obj -c C:\\final-project\\MAIN_GAME\\Enemy\\Enemy.cpp",
+  "file": "C:/final-project/MAIN_GAME/Enemy/Enemy.cpp",
+  "output": "CMakeFiles/2025_I2P2_TowerDefense.dir/Enemy/Enemy.cpp.obj"
+},
+{
+  "directory": "C:/final-project/build",
+  "command": "c:\\Users\\pkboi\\Downloads\\llvm-mingw-20240417-msvcrt-x86_64\\llvm-mingw-20240417-msvcrt-x86_64\\bin\\clang++.exe  @CMakeFiles/2025_I2P2_TowerDefense.dir/includes_CXX.rsp -g -o CMakeFiles\\2025_I2P2_TowerDefense.dir\\Enemy\\SoldierEnemy.cpp.obj -c C:\\final-project\\MAIN_GAME\\Enemy\\SoldierEnemy.cpp",
+  "file": "C:/final-project/MAIN_GAME/Enemy/SoldierEnemy.cpp",
+  "output": "CMakeFiles/2025_I2P2_TowerDefense.dir/Enemy/SoldierEnemy.cpp.obj"
+},
+{
+  "directory": "C:/final-project/build",
+  "command": "c:\\Users\\pkboi\\Downloads\\llvm-mingw-20240417-msvcrt-x86_64\\llvm-mingw-20240417-msvcrt-x86_64\\bin\\clang++.exe  @CMakeFiles/2025_I2P2_TowerDefense.dir/includes_CXX.rsp -g -o CMakeFiles\\2025_I2P2_TowerDefense.dir\\Enemy\\TankEnemy.cpp.obj -c C:\\final-project\\MAIN_GAME\\Enemy\\TankEnemy.cpp",
+  "file": "C:/final-project/MAIN_GAME/Enemy/TankEnemy.cpp",
+  "output": "CMakeFiles/2025_I2P2_TowerDefense.dir/Enemy/TankEnemy.cpp.obj"
+},
+{
+  "directory": "C:/final-project/build",
+  "command": "c:\\Users\\pkboi\\Downloads\\llvm-mingw-20240417-msvcrt-x86_64\\llvm-mingw-20240417-msvcrt-x86_64\\bin\\clang++.exe  @CMakeFiles/2025_I2P2_TowerDefense.dir/includes_CXX.rsp -g -o CMakeFiles\\2025_I2P2_TowerDefense.dir\\Engine\\Allegro5Exception.cpp.obj -c C:\\final-project\\MAIN_GAME\\Engine\\Allegro5Exception.cpp",
+  "file": "C:/final-project/MAIN_GAME/Engine/Allegro5Exception.cpp",
+  "output": "CMakeFiles/2025_I2P2_TowerDefense.dir/Engine/Allegro5Exception.cpp.obj"
+},
+{
+  "directory": "C:/final-project/build",
+  "command": "c:\\Users\\pkboi\\Downloads\\llvm-mingw-20240417-msvcrt-x86_64\\llvm-mingw-20240417-msvcrt-x86_64\\bin\\clang++.exe  @CMakeFiles/2025_I2P2_TowerDefense.dir/includes_CXX.rsp -g -o CMakeFiles\\2025_I2P2_TowerDefense.dir\\Engine\\AudioHelper.cpp.obj -c C:\\final-project\\MAIN_GAME\\Engine\\AudioHelper.cpp",
+  "file": "C:/final-project/MAIN_GAME/Engine/AudioHelper.cpp",
+  "output": "CMakeFiles/2025_I2P2_TowerDefense.dir/Engine/AudioHelper.cpp.obj"
+},
+{
+  "directory": "C:/final-project/build",
+  "command": "c:\\Users\\pkboi\\Downloads\\llvm-mingw-20240417-msvcrt-x86_64\\llvm-mingw-20240417-msvcrt-x86_64\\bin\\clang++.exe  @CMakeFiles/2025_I2P2_TowerDefense.dir/includes_CXX.rsp -g -o CMakeFiles\\2025_I2P2_TowerDefense.dir\\Engine\\Collider.cpp.obj -c C:\\final-project\\MAIN_GAME\\Engine\\Collider.cpp",
+  "file": "C:/final-project/MAIN_GAME/Engine/Collider.cpp",
+  "output": "CMakeFiles/2025_I2P2_TowerDefense.dir/Engine/Collider.cpp.obj"
+},
+{
+  "directory": "C:/final-project/build",
+  "command": "c:\\Users\\pkboi\\Downloads\\llvm-mingw-20240417-msvcrt-x86_64\\llvm-mingw-20240417-msvcrt-x86_64\\bin\\clang++.exe  @CMakeFiles/2025_I2P2_TowerDefense.dir/includes_CXX.rsp -g -o CMakeFiles\\2025_I2P2_TowerDefense.dir\\Engine\\GameEngine.cpp.obj -c C:\\final-project\\MAIN_GAME\\Engine\\GameEngine.cpp",
+  "file": "C:/final-project/MAIN_GAME/Engine/GameEngine.cpp",
+  "output": "CMakeFiles/2025_I2P2_TowerDefense.dir/Engine/GameEngine.cpp.obj"
+},
+{
+  "directory": "C:/final-project/build",
+  "command": "c:\\Users\\pkboi\\Downloads\\llvm-mingw-20240417-msvcrt-x86_64\\llvm-mingw-20240417-msvcrt-x86_64\\bin\\clang++.exe  @CMakeFiles/2025_I2P2_TowerDefense.dir/includes_CXX.rsp -g -o CMakeFiles\\2025_I2P2_TowerDefense.dir\\Engine\\Group.cpp.obj -c C:\\final-project\\MAIN_GAME\\Engine\\Group.cpp",
+  "file": "C:/final-project/MAIN_GAME/Engine/Group.cpp",
+  "output": "CMakeFiles/2025_I2P2_TowerDefense.dir/Engine/Group.cpp.obj"
+},
+{
+  "directory": "C:/final-project/build",
+  "command": "c:\\Users\\pkboi\\Downloads\\llvm-mingw-20240417-msvcrt-x86_64\\llvm-mingw-20240417-msvcrt-x86_64\\bin\\clang++.exe  @CMakeFiles/2025_I2P2_TowerDefense.dir/includes_CXX.rsp -g -o CMakeFiles\\2025_I2P2_TowerDefense.dir\\Engine\\IControl.cpp.obj -c C:\\final-project\\MAIN_GAME\\Engine\\IControl.cpp",
+  "file": "C:/final-project/MAIN_GAME/Engine/IControl.cpp",
+  "output": "CMakeFiles/2025_I2P2_TowerDefense.dir/Engine/IControl.cpp.obj"
+},
+{
+  "directory": "C:/final-project/build",
+  "command": "c:\\Users\\pkboi\\Downloads\\llvm-mingw-20240417-msvcrt-x86_64\\llvm-mingw-20240417-msvcrt-x86_64\\bin\\clang++.exe  @CMakeFiles/2025_I2P2_TowerDefense.dir/includes_CXX.rsp -g -o CMakeFiles\\2025_I2P2_TowerDefense.dir\\Engine\\IObject.cpp.obj -c C:\\final-project\\MAIN_GAME\\Engine\\IObject.cpp",
+  "file": "C:/final-project/MAIN_GAME/Engine/IObject.cpp",
+  "output": "CMakeFiles/2025_I2P2_TowerDefense.dir/Engine/IObject.cpp.obj"
+},
+{
+  "directory": "C:/final-project/build",
+  "command": "c:\\Users\\pkboi\\Downloads\\llvm-mingw-20240417-msvcrt-x86_64\\llvm-mingw-20240417-msvcrt-x86_64\\bin\\clang++.exe  @CMakeFiles/2025_I2P2_TowerDefense.dir/includes_CXX.rsp -g -o CMakeFiles\\2025_I2P2_TowerDefense.dir\\Engine\\IScene.cpp.obj -c C:\\final-project\\MAIN_GAME\\Engine\\IScene.cpp",
+  "file": "C:/final-project/MAIN_GAME/Engine/IScene.cpp",
+  "output": "CMakeFiles/2025_I2P2_TowerDefense.dir/Engine/IScene.cpp.obj"
+},
+{
+  "directory": "C:/final-project/build",
+  "command": "c:\\Users\\pkboi\\Downloads\\llvm-mingw-20240417-msvcrt-x86_64\\llvm-mingw-20240417-msvcrt-x86_64\\bin\\clang++.exe  @CMakeFiles/2025_I2P2_TowerDefense.dir/includes_CXX.rsp -g -o CMakeFiles\\2025_I2P2_TowerDefense.dir\\Engine\\LOG.cpp.obj -c C:\\final-project\\MAIN_GAME\\Engine\\LOG.cpp",
+  "file": "C:/final-project/MAIN_GAME/Engine/LOG.cpp",
+  "output": "CMakeFiles/2025_I2P2_TowerDefense.dir/Engine/LOG.cpp.obj"
+},
+{
+  "directory": "C:/final-project/build",
+  "command": "c:\\Users\\pkboi\\Downloads\\llvm-mingw-20240417-msvcrt-x86_64\\llvm-mingw-20240417-msvcrt-x86_64\\bin\\clang++.exe  @CMakeFiles/2025_I2P2_TowerDefense.dir/includes_CXX.rsp -g -o CMakeFiles\\2025_I2P2_TowerDefense.dir\\Engine\\Point.cpp.obj -c C:\\final-project\\MAIN_GAME\\Engine\\Point.cpp",
+  "file": "C:/final-project/MAIN_GAME/Engine/Point.cpp",
+  "output": "CMakeFiles/2025_I2P2_TowerDefense.dir/Engine/Point.cpp.obj"
+},
+{
+  "directory": "C:/final-project/build",
+  "command": "c:\\Users\\pkboi\\Downloads\\llvm-mingw-20240417-msvcrt-x86_64\\llvm-mingw-20240417-msvcrt-x86_64\\bin\\clang++.exe  @CMakeFiles/2025_I2P2_TowerDefense.dir/includes_CXX.rsp -g -o CMakeFiles\\2025_I2P2_TowerDefense.dir\\Engine\\Resources.cpp.obj -c C:\\final-project\\MAIN_GAME\\Engine\\Resources.cpp",
+  "file": "C:/final-project/MAIN_GAME/Engine/Resources.cpp",
+  "output": "CMakeFiles/2025_I2P2_TowerDefense.dir/Engine/Resources.cpp.obj"
+},
+{
+  "directory": "C:/final-project/build",
+  "command": "c:\\Users\\pkboi\\Downloads\\llvm-mingw-20240417-msvcrt-x86_64\\llvm-mingw-20240417-msvcrt-x86_64\\bin\\clang++.exe  @CMakeFiles/2025_I2P2_TowerDefense.dir/includes_CXX.rsp -g -o CMakeFiles\\2025_I2P2_TowerDefense.dir\\Engine\\Sprite.cpp.obj -c C:\\final-project\\MAIN_GAME\\Engine\\Sprite.cpp",
+  "file": "C:/final-project/MAIN_GAME/Engine/Sprite.cpp",
+  "output": "CMakeFiles/2025_I2P2_TowerDefense.dir/Engine/Sprite.cpp.obj"
+},
+{
+  "directory": "C:/final-project/build",
+  "command": "c:\\Users\\pkboi\\Downloads\\llvm-mingw-20240417-msvcrt-x86_64\\llvm-mingw-20240417-msvcrt-x86_64\\bin\\clang++.exe  @CMakeFiles/2025_I2P2_TowerDefense.dir/includes_CXX.rsp -g -o CMakeFiles\\2025_I2P2_TowerDefense.dir\\Scene\\LoseScene.cpp.obj -c C:\\final-project\\MAIN_GAME\\Scene\\LoseScene.cpp",
+  "file": "C:/final-project/MAIN_GAME/Scene/LoseScene.cpp",
+  "output": "CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/LoseScene.cpp.obj"
+},
+{
+  "directory": "C:/final-project/build",
+  "command": "c:\\Users\\pkboi\\Downloads\\llvm-mingw-20240417-msvcrt-x86_64\\llvm-mingw-20240417-msvcrt-x86_64\\bin\\clang++.exe  @CMakeFiles/2025_I2P2_TowerDefense.dir/includes_CXX.rsp -g -o CMakeFiles\\2025_I2P2_TowerDefense.dir\\Scene\\PlayScene.cpp.obj -c C:\\final-project\\MAIN_GAME\\Scene\\PlayScene.cpp",
+  "file": "C:/final-project/MAIN_GAME/Scene/PlayScene.cpp",
+  "output": "CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/PlayScene.cpp.obj"
+},
+{
+  "directory": "C:/final-project/build",
+  "command": "c:\\Users\\pkboi\\Downloads\\llvm-mingw-20240417-msvcrt-x86_64\\llvm-mingw-20240417-msvcrt-x86_64\\bin\\clang++.exe  @CMakeFiles/2025_I2P2_TowerDefense.dir/includes_CXX.rsp -g -o CMakeFiles\\2025_I2P2_TowerDefense.dir\\Scene\\StageSelectScene.cpp.obj -c C:\\final-project\\MAIN_GAME\\Scene\\StageSelectScene.cpp",
+  "file": "C:/final-project/MAIN_GAME/Scene/StageSelectScene.cpp",
+  "output": "CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/StageSelectScene.cpp.obj"
+},
+{
+  "directory": "C:/final-project/build",
+  "command": "c:\\Users\\pkboi\\Downloads\\llvm-mingw-20240417-msvcrt-x86_64\\llvm-mingw-20240417-msvcrt-x86_64\\bin\\clang++.exe  @CMakeFiles/2025_I2P2_TowerDefense.dir/includes_CXX.rsp -g -o CMakeFiles\\2025_I2P2_TowerDefense.dir\\Scene\\StartScene.cpp.obj -c C:\\final-project\\MAIN_GAME\\Scene\\StartScene.cpp",
+  "file": "C:/final-project/MAIN_GAME/Scene/StartScene.cpp",
+  "output": "CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/StartScene.cpp.obj"
+},
+{
+  "directory": "C:/final-project/build",
+  "command": "c:\\Users\\pkboi\\Downloads\\llvm-mingw-20240417-msvcrt-x86_64\\llvm-mingw-20240417-msvcrt-x86_64\\bin\\clang++.exe  @CMakeFiles/2025_I2P2_TowerDefense.dir/includes_CXX.rsp -g -o CMakeFiles\\2025_I2P2_TowerDefense.dir\\Scene\\WinScene.cpp.obj -c C:\\final-project\\MAIN_GAME\\Scene\\WinScene.cpp",
+  "file": "C:/final-project/MAIN_GAME/Scene/WinScene.cpp",
+  "output": "CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/WinScene.cpp.obj"
+},
+{
+  "directory": "C:/final-project/build",
+  "command": "c:\\Users\\pkboi\\Downloads\\llvm-mingw-20240417-msvcrt-x86_64\\llvm-mingw-20240417-msvcrt-x86_64\\bin\\clang++.exe  @CMakeFiles/2025_I2P2_TowerDefense.dir/includes_CXX.rsp -g -o CMakeFiles\\2025_I2P2_TowerDefense.dir\\Turret\\LaserTurret.cpp.obj -c C:\\final-project\\MAIN_GAME\\Turret\\LaserTurret.cpp",
+  "file": "C:/final-project/MAIN_GAME/Turret/LaserTurret.cpp",
+  "output": "CMakeFiles/2025_I2P2_TowerDefense.dir/Turret/LaserTurret.cpp.obj"
+},
+{
+  "directory": "C:/final-project/build",
+  "command": "c:\\Users\\pkboi\\Downloads\\llvm-mingw-20240417-msvcrt-x86_64\\llvm-mingw-20240417-msvcrt-x86_64\\bin\\clang++.exe  @CMakeFiles/2025_I2P2_TowerDefense.dir/includes_CXX.rsp -g -o CMakeFiles\\2025_I2P2_TowerDefense.dir\\Turret\\MachineGunTurret.cpp.obj -c C:\\final-project\\MAIN_GAME\\Turret\\MachineGunTurret.cpp",
+  "file": "C:/final-project/MAIN_GAME/Turret/MachineGunTurret.cpp",
+  "output": "CMakeFiles/2025_I2P2_TowerDefense.dir/Turret/MachineGunTurret.cpp.obj"
+},
+{
+  "directory": "C:/final-project/build",
+  "command": "c:\\Users\\pkboi\\Downloads\\llvm-mingw-20240417-msvcrt-x86_64\\llvm-mingw-20240417-msvcrt-x86_64\\bin\\clang++.exe  @CMakeFiles/2025_I2P2_TowerDefense.dir/includes_CXX.rsp -g -o CMakeFiles\\2025_I2P2_TowerDefense.dir\\Turret\\Turret.cpp.obj -c C:\\final-project\\MAIN_GAME\\Turret\\Turret.cpp",
+  "file": "C:/final-project/MAIN_GAME/Turret/Turret.cpp",
+  "output": "CMakeFiles/2025_I2P2_TowerDefense.dir/Turret/Turret.cpp.obj"
+},
+{
+  "directory": "C:/final-project/build",
+  "command": "c:\\Users\\pkboi\\Downloads\\llvm-mingw-20240417-msvcrt-x86_64\\llvm-mingw-20240417-msvcrt-x86_64\\bin\\clang++.exe  @CMakeFiles/2025_I2P2_TowerDefense.dir/includes_CXX.rsp -g -o CMakeFiles\\2025_I2P2_TowerDefense.dir\\Turret\\TurretButton.cpp.obj -c C:\\final-project\\MAIN_GAME\\Turret\\TurretButton.cpp",
+  "file": "C:/final-project/MAIN_GAME/Turret/TurretButton.cpp",
+  "output": "CMakeFiles/2025_I2P2_TowerDefense.dir/Turret/TurretButton.cpp.obj"
+},
+{
+  "directory": "C:/final-project/build",
+  "command": "c:\\Users\\pkboi\\Downloads\\llvm-mingw-20240417-msvcrt-x86_64\\llvm-mingw-20240417-msvcrt-x86_64\\bin\\clang++.exe  @CMakeFiles/2025_I2P2_TowerDefense.dir/includes_CXX.rsp -g -o CMakeFiles\\2025_I2P2_TowerDefense.dir\\UI\\Animation\\DirtyEffect.cpp.obj -c C:\\final-project\\MAIN_GAME\\UI\\Animation\\DirtyEffect.cpp",
+  "file": "C:/final-project/MAIN_GAME/UI/Animation/DirtyEffect.cpp",
+  "output": "CMakeFiles/2025_I2P2_TowerDefense.dir/UI/Animation/DirtyEffect.cpp.obj"
+},
+{
+  "directory": "C:/final-project/build",
+  "command": "c:\\Users\\pkboi\\Downloads\\llvm-mingw-20240417-msvcrt-x86_64\\llvm-mingw-20240417-msvcrt-x86_64\\bin\\clang++.exe  @CMakeFiles/2025_I2P2_TowerDefense.dir/includes_CXX.rsp -g -o CMakeFiles\\2025_I2P2_TowerDefense.dir\\UI\\Animation\\ExplosionEffect.cpp.obj -c C:\\final-project\\MAIN_GAME\\UI\\Animation\\ExplosionEffect.cpp",
+  "file": "C:/final-project/MAIN_GAME/UI/Animation/ExplosionEffect.cpp",
+  "output": "CMakeFiles/2025_I2P2_TowerDefense.dir/UI/Animation/ExplosionEffect.cpp.obj"
+},
+{
+  "directory": "C:/final-project/build",
+  "command": "c:\\Users\\pkboi\\Downloads\\llvm-mingw-20240417-msvcrt-x86_64\\llvm-mingw-20240417-msvcrt-x86_64\\bin\\clang++.exe  @CMakeFiles/2025_I2P2_TowerDefense.dir/includes_CXX.rsp -g -o CMakeFiles\\2025_I2P2_TowerDefense.dir\\UI\\Animation\\Plane.cpp.obj -c C:\\final-project\\MAIN_GAME\\UI\\Animation\\Plane.cpp",
+  "file": "C:/final-project/MAIN_GAME/UI/Animation/Plane.cpp",
+  "output": "CMakeFiles/2025_I2P2_TowerDefense.dir/UI/Animation/Plane.cpp.obj"
+},
+{
+  "directory": "C:/final-project/build",
+  "command": "c:\\Users\\pkboi\\Downloads\\llvm-mingw-20240417-msvcrt-x86_64\\llvm-mingw-20240417-msvcrt-x86_64\\bin\\clang++.exe  @CMakeFiles/2025_I2P2_TowerDefense.dir/includes_CXX.rsp -g -o CMakeFiles\\2025_I2P2_TowerDefense.dir\\UI\\Component\\Image.cpp.obj -c C:\\final-project\\MAIN_GAME\\UI\\Component\\Image.cpp",
+  "file": "C:/final-project/MAIN_GAME/UI/Component/Image.cpp",
+  "output": "CMakeFiles/2025_I2P2_TowerDefense.dir/UI/Component/Image.cpp.obj"
+},
+{
+  "directory": "C:/final-project/build",
+  "command": "c:\\Users\\pkboi\\Downloads\\llvm-mingw-20240417-msvcrt-x86_64\\llvm-mingw-20240417-msvcrt-x86_64\\bin\\clang++.exe  @CMakeFiles/2025_I2P2_TowerDefense.dir/includes_CXX.rsp -g -o CMakeFiles\\2025_I2P2_TowerDefense.dir\\UI\\Component\\ImageButton.cpp.obj -c C:\\final-project\\MAIN_GAME\\UI\\Component\\ImageButton.cpp",
+  "file": "C:/final-project/MAIN_GAME/UI/Component/ImageButton.cpp",
+  "output": "CMakeFiles/2025_I2P2_TowerDefense.dir/UI/Component/ImageButton.cpp.obj"
+},
+{
+  "directory": "C:/final-project/build",
+  "command": "c:\\Users\\pkboi\\Downloads\\llvm-mingw-20240417-msvcrt-x86_64\\llvm-mingw-20240417-msvcrt-x86_64\\bin\\clang++.exe  @CMakeFiles/2025_I2P2_TowerDefense.dir/includes_CXX.rsp -g -o CMakeFiles\\2025_I2P2_TowerDefense.dir\\UI\\Component\\Label.cpp.obj -c C:\\final-project\\MAIN_GAME\\UI\\Component\\Label.cpp",
+  "file": "C:/final-project/MAIN_GAME/UI/Component/Label.cpp",
+  "output": "CMakeFiles/2025_I2P2_TowerDefense.dir/UI/Component/Label.cpp.obj"
+},
+{
+  "directory": "C:/final-project/build",
+  "command": "c:\\Users\\pkboi\\Downloads\\llvm-mingw-20240417-msvcrt-x86_64\\llvm-mingw-20240417-msvcrt-x86_64\\bin\\clang++.exe  @CMakeFiles/2025_I2P2_TowerDefense.dir/includes_CXX.rsp -g -o CMakeFiles\\2025_I2P2_TowerDefense.dir\\UI\\Component\\Slider.cpp.obj -c C:\\final-project\\MAIN_GAME\\UI\\Component\\Slider.cpp",
+  "file": "C:/final-project/MAIN_GAME/UI/Component/Slider.cpp",
+  "output": "CMakeFiles/2025_I2P2_TowerDefense.dir/UI/Component/Slider.cpp.obj"
+},
+{
+  "directory": "C:/final-project/build",
+  "command": "c:\\Users\\pkboi\\Downloads\\llvm-mingw-20240417-msvcrt-x86_64\\llvm-mingw-20240417-msvcrt-x86_64\\bin\\clang++.exe  @CMakeFiles/2025_I2P2_TowerDefense.dir/includes_CXX.rsp -g -o CMakeFiles\\2025_I2P2_TowerDefense.dir\\main.cpp.obj -c C:\\final-project\\MAIN_GAME\\main.cpp",
+  "file": "C:/final-project/MAIN_GAME/main.cpp",
+  "output": "CMakeFiles/2025_I2P2_TowerDefense.dir/main.cpp.obj"
+}
+]

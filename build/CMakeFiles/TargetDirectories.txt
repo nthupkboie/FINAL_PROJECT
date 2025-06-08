@@ -1,0 +1,3 @@
+C:/final-project/build/CMakeFiles/2025_I2P2_TowerDefense.dir
+C:/final-project/build/CMakeFiles/edit_cache.dir
+C:/final-project/build/CMakeFiles/rebuild_cache.dir
