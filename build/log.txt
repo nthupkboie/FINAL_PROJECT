@@ -18,19 +18,56 @@
 [INFO] Created<sample_instance>: Resource/audios/select.ogg
 [INFO] Game initialized
 [INFO] Game start event loop
-[INFO] Game Terminating...
 [INFO] stopped audio (sample)
+[INFO] Loaded Resource<image>: Resource/images/play/dirt.png scaled to 64x64
+[INFO] Loaded Resource<image>: Resource/images/play/floor.png scaled to 64x64
+[INFO] Loaded Resource<image>: Resource/images/play/sand.png scaled to 320x832
+[INFO] Loaded Resource<font>: Resource/fonts/pirulen.ttf with size 32
+[INFO] Loaded Resource<font>: Resource/fonts/pirulen.ttf with size 24
+[INFO] Loaded Resource<image>: Resource/images/play/tower-base.png
+[INFO] Loaded Resource<image>: Resource/images/play/turret-1.png
+[INFO] Loaded Resource<image>: Resource/images/play/floor.png
+[INFO] Loaded Resource<image>: Resource/images/play/dirt.png
+[INFO] Loaded Resource<image>: Resource/images/play/turret-2.png
+[INFO] Loaded Resource<image>: Resource/images/play/benjamin.png
+[INFO] Loaded Resource<image>: Resource/images/play/target.png
+[INFO] Loaded Resource<audio>: Resource/audios/astronomia.ogg
+[INFO] Created<sample_instance>: Resource/audios/astronomia.ogg
+[INFO] Loaded Resource<image>: Resource/images/lose/benjamin-happy.png
+[INFO] Loaded Resource<audio>: Resource/audios/play.ogg
+[INFO] Changed to play scene
+[INFO] Loaded Resource<image>: Resource/images/play/enemy-1.png
+[ERROR] Enemy path finding error
+[INFO] Game Terminating...
+[INFO] stopped audio (bgm)
 [INFO] Game terminated
 [INFO] Game end
+[INFO] Destroyed Resource<image>: lose/benjamin-happy.png
+[INFO] Destroyed Resource<image>: play/benjamin.png
+[INFO] Destroyed Resource<image>: play/enemy-1.png
+[INFO] Destroyed Resource<image>: play/dirt.png
+[INFO] Destroyed Resource<image>: play/floor.png
+[INFO] Destroyed Resource<image>: play/turret-2.png
+[INFO] Destroyed Resource<image>: stage-select/dirt.png
+[INFO] Destroyed Resource<image>: stage-select/dirt.png?400x100
+[INFO] Destroyed Resource<image>: play/sand.png?320x832
+[INFO] Destroyed Resource<image>: play/turret-1.png
+[INFO] Destroyed Resource<image>: icon.png
+[INFO] Destroyed Resource<image>: play/dirt.png?64x64
 [INFO] Destroyed Resource<image>: stage-select/end.png
+[INFO] Destroyed Resource<image>: play/floor.png?64x64
 [INFO] Destroyed Resource<image>: stage-select/bar.png?190x4
 [INFO] Destroyed Resource<image>: stage-select/slider-blue.png
-[INFO] Destroyed Resource<image>: stage-select/dirt.png?400x100
+[INFO] Destroyed Resource<image>: play/tower-base.png
 [INFO] Destroyed Resource<image>: stage-select/slider.png
+[INFO] Destroyed Resource<image>: play/target.png
 [INFO] Destroyed Resource<image>: stage-select/floor.png
-[INFO] Destroyed Resource<image>: stage-select/dirt.png
-[INFO] Destroyed Resource<image>: icon.png
+[INFO] Destroyed Resource<font>: pirulen.ttf?24
+[INFO] Destroyed Resource<font>: pirulen.ttf?32
 [INFO] Destroyed Resource<font>: pirulen.ttf?28
 [INFO] Destroyed Resource<font>: pirulen.ttf?48
+[INFO] Destroyed<sample_instance>: astronomia.ogg
 [INFO] Destroyed<sample_instance>: select.ogg
+[INFO] Destroyed Resource<audio>: play.ogg
+[INFO] Destroyed Resource<audio>: astronomia.ogg
 [INFO] Destroyed Resource<audio>: select.ogg
