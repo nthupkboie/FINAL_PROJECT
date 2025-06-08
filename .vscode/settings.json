@@ -3,5 +3,6 @@
     "files.associations": {
         "chrono": "cpp",
         "utility": "cpp"
-    }
+    },
+    "cmake.configureOnOpen": false
 }
