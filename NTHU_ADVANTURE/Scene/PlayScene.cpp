@@ -24,6 +24,8 @@
 #include "UI/Animation/Plane.hpp"
 #include "UI/Component/Label.hpp"
 
+#include "Player/Player.hpp"
+
 // TODO HACKATHON-4 (1/3): Trace how the game handles keyboard input.
 // TODO HACKATHON-4 (2/3): Find the cheat code sequence in this file.
 // TODO HACKATHON-4 (3/3): When the cheat code is entered, a plane should be spawned and added to the scene.
@@ -61,6 +63,8 @@ void PlayScene::Initialize() {
     AddNewObject(EnemyGroup = new Group());
     AddNewObject(BulletGroup = new Group());
     AddNewObject(EffectGroup = new Group());
+
+    AddNewObject(PlayerGroup = new Group()); //記得!!!! new add
     // Should support buttons.
     AddNewControlObject(UIGroup = new Group());
     ReadMap();
@@ -76,6 +80,9 @@ void PlayScene::Initialize() {
     Engine::Resources::GetInstance().GetBitmap("lose/benjamin-happy.png");
     // Start BGM.
     bgmId = AudioHelper::PlayBGM("play.ogg");
+
+    Player* player; //new add
+    PlayerGroup->AddNewObject(player = new Player("play/turret-fire.png", 100, 100, 10, 10, 10, 10)); //new add
 }
 void PlayScene::Terminate() {
     AudioHelper::StopBGM(bgmId);
@@ -86,6 +93,8 @@ void PlayScene::Terminate() {
 void PlayScene::Update(float deltaTime) {
     // If we use deltaTime directly, then we might have Bullet-through-paper problem.
     // Reference: Bullet-Through-Paper
+    al_get_keyboard_state(&keyboardState); // new add
+
     if (SpeedMult == 0)
         deathCountDown = -1;
     else if (deathCountDown != -1)
@@ -274,6 +283,9 @@ void PlayScene::OnKeyDown(int keyCode) {
         // Hotkey for Speed up.
         SpeedMult = keyCode - ALLEGRO_KEY_0;
     }
+    //else if (keyCode == ALLEGRO_KEY_L){
+        //;
+    //}
 }
 void PlayScene::Hit() {
     lives--;
