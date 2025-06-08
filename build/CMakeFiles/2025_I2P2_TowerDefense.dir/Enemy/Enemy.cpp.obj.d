@@ -1,5 +1,5 @@
 CMakeFiles/2025_I2P2_TowerDefense.dir/Enemy/Enemy.cpp.obj: \
-  C:/final-project/MAIN_GAME/Enemy/Enemy.cpp \
+  C:/FINAL_PROJECT/NTHU_ADVANTURE/Enemy/Enemy.cpp \
   C:/allegro/include/allegro5/allegro_primitives.h \
   C:/allegro/include/allegro5/allegro.h \
   C:/allegro/include/allegro5/base.h \
@@ -895,20 +895,20 @@ CMakeFiles/2025_I2P2_TowerDefense.dir/Enemy/Enemy.cpp.obj: \
   c:/Users/pkboi/Downloads/llvm-mingw-20240417-msvcrt-x86_64/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__random/seed_seq.h \
   c:/Users/pkboi/Downloads/llvm-mingw-20240417-msvcrt-x86_64/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__random/student_t_distribution.h \
   c:/Users/pkboi/Downloads/llvm-mingw-20240417-msvcrt-x86_64/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__random/weibull_distribution.h \
-  C:/final-project/MAIN_GAME/./Bullet/Bullet.hpp \
-  C:/final-project/MAIN_GAME/./Engine/Sprite.hpp \
-  C:/final-project/MAIN_GAME/./Engine/Point.hpp \
-  C:/final-project/MAIN_GAME/./UI/Component/Image.hpp \
-  C:/final-project/MAIN_GAME/./Engine/IObject.hpp \
+  C:/FINAL_PROJECT/NTHU_ADVANTURE/./Bullet/Bullet.hpp \
+  C:/FINAL_PROJECT/NTHU_ADVANTURE/./Engine/Sprite.hpp \
+  C:/FINAL_PROJECT/NTHU_ADVANTURE/./Engine/Point.hpp \
+  C:/FINAL_PROJECT/NTHU_ADVANTURE/./UI/Component/Image.hpp \
+  C:/FINAL_PROJECT/NTHU_ADVANTURE/./Engine/IObject.hpp \
   c:/Users/pkboi/Downloads/llvm-mingw-20240417-msvcrt-x86_64/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/list \
-  C:/final-project/MAIN_GAME/Enemy/Enemy.hpp \
-  C:/final-project/MAIN_GAME/./Engine/AudioHelper.hpp \
+  C:/FINAL_PROJECT/NTHU_ADVANTURE/Enemy/Enemy.hpp \
+  C:/FINAL_PROJECT/NTHU_ADVANTURE/./Engine/AudioHelper.hpp \
   C:/allegro/include/allegro5/allegro_audio.h \
-  C:/final-project/MAIN_GAME/./Engine/GameEngine.hpp \
-  C:/final-project/MAIN_GAME/./Engine/Group.hpp \
-  C:/final-project/MAIN_GAME/./Engine/IControl.hpp \
-  C:/final-project/MAIN_GAME/./Engine/IScene.hpp \
-  C:/final-project/MAIN_GAME/./Engine/LOG.hpp \
+  C:/FINAL_PROJECT/NTHU_ADVANTURE/./Engine/GameEngine.hpp \
+  C:/FINAL_PROJECT/NTHU_ADVANTURE/./Engine/Group.hpp \
+  C:/FINAL_PROJECT/NTHU_ADVANTURE/./Engine/IControl.hpp \
+  C:/FINAL_PROJECT/NTHU_ADVANTURE/./Engine/IScene.hpp \
+  C:/FINAL_PROJECT/NTHU_ADVANTURE/./Engine/LOG.hpp \
   c:/Users/pkboi/Downloads/llvm-mingw-20240417-msvcrt-x86_64/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/fstream \
   c:/Users/pkboi/Downloads/llvm-mingw-20240417-msvcrt-x86_64/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/filesystem \
   c:/Users/pkboi/Downloads/llvm-mingw-20240417-msvcrt-x86_64/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__filesystem/copy_options.h \
@@ -957,7 +957,7 @@ CMakeFiles/2025_I2P2_TowerDefense.dir/Enemy/Enemy.cpp.obj: \
   c:/Users/pkboi/Downloads/llvm-mingw-20240417-msvcrt-x86_64/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__filesystem/recursive_directory_iterator.h \
   c:/Users/pkboi/Downloads/llvm-mingw-20240417-msvcrt-x86_64/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__filesystem/u8path.h \
   c:/Users/pkboi/Downloads/llvm-mingw-20240417-msvcrt-x86_64/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/iostream \
-  C:/final-project/MAIN_GAME/./Scene/PlayScene.hpp \
-  C:/final-project/MAIN_GAME/./Turret/Turret.hpp \
-  C:/final-project/MAIN_GAME/./UI/Animation/DirtyEffect.hpp \
-  C:/final-project/MAIN_GAME/./UI/Animation/ExplosionEffect.hpp
+  C:/FINAL_PROJECT/NTHU_ADVANTURE/./Scene/PlayScene.hpp \
+  C:/FINAL_PROJECT/NTHU_ADVANTURE/./Turret/Turret.hpp \
+  C:/FINAL_PROJECT/NTHU_ADVANTURE/./UI/Animation/DirtyEffect.hpp \
+  C:/FINAL_PROJECT/NTHU_ADVANTURE/./UI/Animation/ExplosionEffect.hpp

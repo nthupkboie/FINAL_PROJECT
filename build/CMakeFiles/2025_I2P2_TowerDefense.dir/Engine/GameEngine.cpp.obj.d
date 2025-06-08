@@ -1,5 +1,5 @@
 CMakeFiles/2025_I2P2_TowerDefense.dir/Engine/GameEngine.cpp.obj: \
-  C:/final-project/MAIN_GAME/Engine/GameEngine.cpp \
+  C:/FINAL_PROJECT/NTHU_ADVANTURE/Engine/GameEngine.cpp \
   C:/allegro/include/allegro5/allegro.h \
   C:/allegro/include/allegro5/base.h \
   c:/Users/pkboi/Downloads/llvm-mingw-20240417-msvcrt-x86_64/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/errno.h \
@@ -869,16 +869,16 @@ CMakeFiles/2025_I2P2_TowerDefense.dir/Engine/GameEngine.cpp.obj: \
   c:/Users/pkboi/Downloads/llvm-mingw-20240417-msvcrt-x86_64/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__functional/pointer_to_binary_function.h \
   c:/Users/pkboi/Downloads/llvm-mingw-20240417-msvcrt-x86_64/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__functional/pointer_to_unary_function.h \
   c:/Users/pkboi/Downloads/llvm-mingw-20240417-msvcrt-x86_64/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__functional/unary_negate.h \
-  C:/final-project/MAIN_GAME/Engine/Allegro5Exception.hpp \
-  C:/final-project/MAIN_GAME/Engine/GameEngine.hpp \
-  C:/final-project/MAIN_GAME/Engine/Point.hpp \
-  C:/final-project/MAIN_GAME/Engine/IScene.hpp \
-  C:/final-project/MAIN_GAME/Engine/Group.hpp \
+  C:/FINAL_PROJECT/NTHU_ADVANTURE/Engine/Allegro5Exception.hpp \
+  C:/FINAL_PROJECT/NTHU_ADVANTURE/Engine/GameEngine.hpp \
+  C:/FINAL_PROJECT/NTHU_ADVANTURE/Engine/Point.hpp \
+  C:/FINAL_PROJECT/NTHU_ADVANTURE/Engine/IScene.hpp \
+  C:/FINAL_PROJECT/NTHU_ADVANTURE/Engine/Group.hpp \
   c:/Users/pkboi/Downloads/llvm-mingw-20240417-msvcrt-x86_64/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/list \
-  C:/final-project/MAIN_GAME/Engine/IControl.hpp \
-  C:/final-project/MAIN_GAME/Engine/IObject.hpp \
-  C:/final-project/MAIN_GAME/./Engine/Point.hpp \
-  C:/final-project/MAIN_GAME/Engine/LOG.hpp \
+  C:/FINAL_PROJECT/NTHU_ADVANTURE/Engine/IControl.hpp \
+  C:/FINAL_PROJECT/NTHU_ADVANTURE/Engine/IObject.hpp \
+  C:/FINAL_PROJECT/NTHU_ADVANTURE/./Engine/Point.hpp \
+  C:/FINAL_PROJECT/NTHU_ADVANTURE/Engine/LOG.hpp \
   c:/Users/pkboi/Downloads/llvm-mingw-20240417-msvcrt-x86_64/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/fstream \
   c:/Users/pkboi/Downloads/llvm-mingw-20240417-msvcrt-x86_64/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/filesystem \
   c:/Users/pkboi/Downloads/llvm-mingw-20240417-msvcrt-x86_64/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__filesystem/copy_options.h \
@@ -925,4 +925,4 @@ CMakeFiles/2025_I2P2_TowerDefense.dir/Engine/GameEngine.cpp.obj: \
   c:/Users/pkboi/Downloads/llvm-mingw-20240417-msvcrt-x86_64/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__filesystem/recursive_directory_iterator.h \
   c:/Users/pkboi/Downloads/llvm-mingw-20240417-msvcrt-x86_64/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__filesystem/u8path.h \
   c:/Users/pkboi/Downloads/llvm-mingw-20240417-msvcrt-x86_64/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/iostream \
-  C:/final-project/MAIN_GAME/Engine/Resources.hpp
+  C:/FINAL_PROJECT/NTHU_ADVANTURE/Engine/Resources.hpp

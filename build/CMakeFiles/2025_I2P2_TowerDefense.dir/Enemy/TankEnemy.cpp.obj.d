@@ -1,5 +1,5 @@
 CMakeFiles/2025_I2P2_TowerDefense.dir/Enemy/TankEnemy.cpp.obj: \
-  C:/final-project/MAIN_GAME/Enemy/TankEnemy.cpp \
+  C:/FINAL_PROJECT/NTHU_ADVANTURE/Enemy/TankEnemy.cpp \
   C:/allegro/include/allegro5/base.h \
   c:/Users/pkboi/Downloads/llvm-mingw-20240417-msvcrt-x86_64/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/errno.h \
   c:/Users/pkboi/Downloads/llvm-mingw-20240417-msvcrt-x86_64/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__config \
@@ -854,12 +854,12 @@ CMakeFiles/2025_I2P2_TowerDefense.dir/Enemy/TankEnemy.cpp.obj: \
   c:/Users/pkboi/Downloads/llvm-mingw-20240417-msvcrt-x86_64/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__random/seed_seq.h \
   c:/Users/pkboi/Downloads/llvm-mingw-20240417-msvcrt-x86_64/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__random/student_t_distribution.h \
   c:/Users/pkboi/Downloads/llvm-mingw-20240417-msvcrt-x86_64/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__random/weibull_distribution.h \
-  C:/final-project/MAIN_GAME/./Engine/Point.hpp \
-  C:/final-project/MAIN_GAME/Enemy/TankEnemy.hpp \
-  C:/final-project/MAIN_GAME/Enemy/Enemy.hpp \
+  C:/FINAL_PROJECT/NTHU_ADVANTURE/./Engine/Point.hpp \
+  C:/FINAL_PROJECT/NTHU_ADVANTURE/Enemy/TankEnemy.hpp \
+  C:/FINAL_PROJECT/NTHU_ADVANTURE/Enemy/Enemy.hpp \
   c:/Users/pkboi/Downloads/llvm-mingw-20240417-msvcrt-x86_64/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/list \
-  C:/final-project/MAIN_GAME/./Engine/Sprite.hpp \
+  C:/FINAL_PROJECT/NTHU_ADVANTURE/./Engine/Sprite.hpp \
   C:/allegro/include/allegro5/color.h \
-  C:/final-project/MAIN_GAME/./UI/Component/Image.hpp \
+  C:/FINAL_PROJECT/NTHU_ADVANTURE/./UI/Component/Image.hpp \
   C:/allegro/include/allegro5/bitmap.h \
-  C:/final-project/MAIN_GAME/./Engine/IObject.hpp
+  C:/FINAL_PROJECT/NTHU_ADVANTURE/./Engine/IObject.hpp

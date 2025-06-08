@@ -1,5 +1,5 @@
 CMakeFiles/2025_I2P2_TowerDefense.dir/UI/Component/ImageButton.cpp.obj: \
-  C:/final-project/MAIN_GAME/UI/Component/ImageButton.cpp \
+  C:/FINAL_PROJECT/NTHU_ADVANTURE/UI/Component/ImageButton.cpp \
   c:/Users/pkboi/Downloads/llvm-mingw-20240417-msvcrt-x86_64/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/functional \
   c:/Users/pkboi/Downloads/llvm-mingw-20240417-msvcrt-x86_64/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__algorithm/search.h \
   c:/Users/pkboi/Downloads/llvm-mingw-20240417-msvcrt-x86_64/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__algorithm/comp.h \
@@ -792,7 +792,7 @@ CMakeFiles/2025_I2P2_TowerDefense.dir/UI/Component/ImageButton.cpp.obj: \
   c:/Users/pkboi/Downloads/llvm-mingw-20240417-msvcrt-x86_64/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__functional/pointer_to_binary_function.h \
   c:/Users/pkboi/Downloads/llvm-mingw-20240417-msvcrt-x86_64/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__functional/pointer_to_unary_function.h \
   c:/Users/pkboi/Downloads/llvm-mingw-20240417-msvcrt-x86_64/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__functional/unary_negate.h \
-  C:/final-project/MAIN_GAME/./Engine/Collider.hpp \
+  C:/FINAL_PROJECT/NTHU_ADVANTURE/./Engine/Collider.hpp \
   C:/allegro/include/allegro5/bitmap.h \
   C:/allegro/include/allegro5/color.h C:/allegro/include/allegro5/base.h \
   c:/Users/pkboi/Downloads/llvm-mingw-20240417-msvcrt-x86_64/llvm-mingw-20240417-msvcrt-x86_64/include/sys/types.h \
@@ -807,7 +807,7 @@ CMakeFiles/2025_I2P2_TowerDefense.dir/UI/Component/ImageButton.cpp.obj: \
   C:/Users/pkboi/Downloads/llvm-mingw-20240417-msvcrt-x86_64/llvm-mingw-20240417-msvcrt-x86_64/lib/clang/18/include/inttypes.h \
   c:/Users/pkboi/Downloads/llvm-mingw-20240417-msvcrt-x86_64/llvm-mingw-20240417-msvcrt-x86_64/include/inttypes.h \
   C:/allegro/include/allegro5/platform/astdbool.h \
-  C:/final-project/MAIN_GAME/./Engine/GameEngine.hpp \
+  C:/FINAL_PROJECT/NTHU_ADVANTURE/./Engine/GameEngine.hpp \
   C:/allegro/include/allegro5/allegro.h \
   C:/allegro/include/allegro5/altime.h \
   C:/allegro/include/allegro5/bitmap_draw.h \
@@ -846,12 +846,12 @@ CMakeFiles/2025_I2P2_TowerDefense.dir/UI/Component/ImageButton.cpp.obj: \
   C:/allegro/include/allegro5/timer.h C:/allegro/include/allegro5/tls.h \
   C:/allegro/include/allegro5/alcompat.h \
   C:/allegro/include/allegro5/platform/alwin.h \
-  C:/final-project/MAIN_GAME/./Engine/Point.hpp \
-  C:/final-project/MAIN_GAME/./Engine/Resources.hpp \
+  C:/FINAL_PROJECT/NTHU_ADVANTURE/./Engine/Point.hpp \
+  C:/FINAL_PROJECT/NTHU_ADVANTURE/./Engine/Resources.hpp \
   C:/allegro/include/allegro5/allegro_audio.h \
   C:/allegro/include/allegro5/allegro_font.h \
-  C:/final-project/MAIN_GAME/UI/Component/Image.hpp \
-  C:/final-project/MAIN_GAME/./Engine/IObject.hpp \
+  C:/FINAL_PROJECT/NTHU_ADVANTURE/UI/Component/Image.hpp \
+  C:/FINAL_PROJECT/NTHU_ADVANTURE/./Engine/IObject.hpp \
   c:/Users/pkboi/Downloads/llvm-mingw-20240417-msvcrt-x86_64/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/list \
-  C:/final-project/MAIN_GAME/UI/Component/ImageButton.hpp \
-  C:/final-project/MAIN_GAME/./Engine/IControl.hpp
+  C:/FINAL_PROJECT/NTHU_ADVANTURE/UI/Component/ImageButton.hpp \
+  C:/FINAL_PROJECT/NTHU_ADVANTURE/./Engine/IControl.hpp

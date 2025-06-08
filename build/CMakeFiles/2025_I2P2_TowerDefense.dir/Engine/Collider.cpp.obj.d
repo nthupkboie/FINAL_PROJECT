@@ -1,5 +1,5 @@
 CMakeFiles/2025_I2P2_TowerDefense.dir/Engine/Collider.cpp.obj: \
-  C:/final-project/MAIN_GAME/Engine/Collider.cpp \
+  C:/FINAL_PROJECT/NTHU_ADVANTURE/Engine/Collider.cpp \
   C:/allegro/include/allegro5/color.h C:/allegro/include/allegro5/base.h \
   c:/Users/pkboi/Downloads/llvm-mingw-20240417-msvcrt-x86_64/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/errno.h \
   c:/Users/pkboi/Downloads/llvm-mingw-20240417-msvcrt-x86_64/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__config \
@@ -457,6 +457,6 @@ CMakeFiles/2025_I2P2_TowerDefense.dir/Engine/Collider.cpp.obj: \
   c:/Users/pkboi/Downloads/llvm-mingw-20240417-msvcrt-x86_64/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__iterator/unreachable_sentinel.h \
   c:/Users/pkboi/Downloads/llvm-mingw-20240417-msvcrt-x86_64/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__iterator/wrap_iter.h \
   c:/Users/pkboi/Downloads/llvm-mingw-20240417-msvcrt-x86_64/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/stdexcept \
-  C:/final-project/MAIN_GAME/Engine/Collider.hpp \
+  C:/FINAL_PROJECT/NTHU_ADVANTURE/Engine/Collider.hpp \
   C:/allegro/include/allegro5/bitmap.h \
-  C:/final-project/MAIN_GAME/./Engine/Point.hpp
+  C:/FINAL_PROJECT/NTHU_ADVANTURE/./Engine/Point.hpp

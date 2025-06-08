@@ -1,5 +1,5 @@
 CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/StageSelectScene.cpp.obj: \
-  C:/final-project/MAIN_GAME/Scene/StageSelectScene.cpp \
+  C:/FINAL_PROJECT/NTHU_ADVANTURE/Scene/StageSelectScene.cpp \
   C:/allegro/include/allegro5/allegro_audio.h \
   C:/allegro/include/allegro5/allegro.h \
   C:/allegro/include/allegro5/base.h \
@@ -846,19 +846,19 @@ CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/StageSelectScene.cpp.obj: \
   c:/Users/pkboi/Downloads/llvm-mingw-20240417-msvcrt-x86_64/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__functional/pointer_to_binary_function.h \
   c:/Users/pkboi/Downloads/llvm-mingw-20240417-msvcrt-x86_64/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__functional/pointer_to_unary_function.h \
   c:/Users/pkboi/Downloads/llvm-mingw-20240417-msvcrt-x86_64/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__functional/unary_negate.h \
-  C:/final-project/MAIN_GAME/./Engine/AudioHelper.hpp \
-  C:/final-project/MAIN_GAME/./Engine/GameEngine.hpp \
-  C:/final-project/MAIN_GAME/./Engine/Point.hpp \
-  C:/final-project/MAIN_GAME/./Engine/Resources.hpp \
+  C:/FINAL_PROJECT/NTHU_ADVANTURE/./Engine/AudioHelper.hpp \
+  C:/FINAL_PROJECT/NTHU_ADVANTURE/./Engine/GameEngine.hpp \
+  C:/FINAL_PROJECT/NTHU_ADVANTURE/./Engine/Point.hpp \
+  C:/FINAL_PROJECT/NTHU_ADVANTURE/./Engine/Resources.hpp \
   C:/allegro/include/allegro5/allegro_font.h \
-  C:/final-project/MAIN_GAME/Scene/PlayScene.hpp \
+  C:/FINAL_PROJECT/NTHU_ADVANTURE/Scene/PlayScene.hpp \
   c:/Users/pkboi/Downloads/llvm-mingw-20240417-msvcrt-x86_64/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/list \
-  C:/final-project/MAIN_GAME/./Engine/IScene.hpp \
-  C:/final-project/MAIN_GAME/./Engine/Group.hpp \
-  C:/final-project/MAIN_GAME/./Engine/IControl.hpp \
-  C:/final-project/MAIN_GAME/./Engine/IObject.hpp \
-  C:/final-project/MAIN_GAME/Scene/StageSelectScene.hpp \
-  C:/final-project/MAIN_GAME/./UI/Component/ImageButton.hpp \
-  C:/final-project/MAIN_GAME/./UI/Component/Image.hpp \
-  C:/final-project/MAIN_GAME/./UI/Component/Label.hpp \
-  C:/final-project/MAIN_GAME/./UI/Component/Slider.hpp
+  C:/FINAL_PROJECT/NTHU_ADVANTURE/./Engine/IScene.hpp \
+  C:/FINAL_PROJECT/NTHU_ADVANTURE/./Engine/Group.hpp \
+  C:/FINAL_PROJECT/NTHU_ADVANTURE/./Engine/IControl.hpp \
+  C:/FINAL_PROJECT/NTHU_ADVANTURE/./Engine/IObject.hpp \
+  C:/FINAL_PROJECT/NTHU_ADVANTURE/Scene/StageSelectScene.hpp \
+  C:/FINAL_PROJECT/NTHU_ADVANTURE/./UI/Component/ImageButton.hpp \
+  C:/FINAL_PROJECT/NTHU_ADVANTURE/./UI/Component/Image.hpp \
+  C:/FINAL_PROJECT/NTHU_ADVANTURE/./UI/Component/Label.hpp \
+  C:/FINAL_PROJECT/NTHU_ADVANTURE/./UI/Component/Slider.hpp

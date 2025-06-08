@@ -1,6 +1,6 @@
 CMakeFiles/2025_I2P2_TowerDefense.dir/Engine/IObject.cpp.obj: \
-  C:/final-project/MAIN_GAME/Engine/IObject.cpp \
-  C:/final-project/MAIN_GAME/Engine/IObject.hpp \
+  C:/FINAL_PROJECT/NTHU_ADVANTURE/Engine/IObject.cpp \
+  C:/FINAL_PROJECT/NTHU_ADVANTURE/Engine/IObject.hpp \
   c:/Users/pkboi/Downloads/llvm-mingw-20240417-msvcrt-x86_64/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/list \
   c:/Users/pkboi/Downloads/llvm-mingw-20240417-msvcrt-x86_64/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__algorithm/comp.h \
   c:/Users/pkboi/Downloads/llvm-mingw-20240417-msvcrt-x86_64/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__config \
@@ -794,4 +794,4 @@ CMakeFiles/2025_I2P2_TowerDefense.dir/Engine/IObject.cpp.obj: \
   c:/Users/pkboi/Downloads/llvm-mingw-20240417-msvcrt-x86_64/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__functional/pointer_to_binary_function.h \
   c:/Users/pkboi/Downloads/llvm-mingw-20240417-msvcrt-x86_64/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__functional/pointer_to_unary_function.h \
   c:/Users/pkboi/Downloads/llvm-mingw-20240417-msvcrt-x86_64/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__functional/unary_negate.h \
-  C:/final-project/MAIN_GAME/./Engine/Point.hpp
+  C:/FINAL_PROJECT/NTHU_ADVANTURE/./Engine/Point.hpp

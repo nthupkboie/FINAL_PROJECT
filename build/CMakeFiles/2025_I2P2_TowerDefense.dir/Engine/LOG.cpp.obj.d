@@ -1,6 +1,6 @@
 CMakeFiles/2025_I2P2_TowerDefense.dir/Engine/LOG.cpp.obj: \
-  C:/final-project/MAIN_GAME/Engine/LOG.cpp \
-  C:/final-project/MAIN_GAME/Engine/LOG.hpp \
+  C:/FINAL_PROJECT/NTHU_ADVANTURE/Engine/LOG.cpp \
+  C:/FINAL_PROJECT/NTHU_ADVANTURE/Engine/LOG.hpp \
   c:/Users/pkboi/Downloads/llvm-mingw-20240417-msvcrt-x86_64/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/fstream \
   c:/Users/pkboi/Downloads/llvm-mingw-20240417-msvcrt-x86_64/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__algorithm/max.h \
   c:/Users/pkboi/Downloads/llvm-mingw-20240417-msvcrt-x86_64/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__algorithm/comp.h \

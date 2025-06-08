@@ -1,6 +1,6 @@
 CMakeFiles/2025_I2P2_TowerDefense.dir/Bullet/Bullet.cpp.obj: \
-  C:/final-project/MAIN_GAME/Bullet/Bullet.cpp \
-  C:/final-project/MAIN_GAME/Bullet/Bullet.hpp \
+  C:/FINAL_PROJECT/NTHU_ADVANTURE/Bullet/Bullet.cpp \
+  C:/FINAL_PROJECT/NTHU_ADVANTURE/Bullet/Bullet.hpp \
   c:/Users/pkboi/Downloads/llvm-mingw-20240417-msvcrt-x86_64/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/string \
   c:/Users/pkboi/Downloads/llvm-mingw-20240417-msvcrt-x86_64/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__algorithm/max.h \
   c:/Users/pkboi/Downloads/llvm-mingw-20240417-msvcrt-x86_64/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__algorithm/comp.h \
@@ -709,7 +709,7 @@ CMakeFiles/2025_I2P2_TowerDefense.dir/Bullet/Bullet.cpp.obj: \
   c:/Users/pkboi/Downloads/llvm-mingw-20240417-msvcrt-x86_64/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__bit/byteswap.h \
   c:/Users/pkboi/Downloads/llvm-mingw-20240417-msvcrt-x86_64/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__bit/endian.h \
   c:/Users/pkboi/Downloads/llvm-mingw-20240417-msvcrt-x86_64/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__bit/has_single_bit.h \
-  C:/final-project/MAIN_GAME/./Engine/Sprite.hpp \
+  C:/FINAL_PROJECT/NTHU_ADVANTURE/./Engine/Sprite.hpp \
   C:/allegro/include/allegro5/color.h C:/allegro/include/allegro5/base.h \
   C:/Users/pkboi/Downloads/llvm-mingw-20240417-msvcrt-x86_64/llvm-mingw-20240417-msvcrt-x86_64/lib/clang/18/include/stdarg.h \
   C:/Users/pkboi/Downloads/llvm-mingw-20240417-msvcrt-x86_64/llvm-mingw-20240417-msvcrt-x86_64/lib/clang/18/include/__stdarg___gnuc_va_list.h \
@@ -729,10 +729,10 @@ CMakeFiles/2025_I2P2_TowerDefense.dir/Bullet/Bullet.cpp.obj: \
   C:/Users/pkboi/Downloads/llvm-mingw-20240417-msvcrt-x86_64/llvm-mingw-20240417-msvcrt-x86_64/lib/clang/18/include/inttypes.h \
   c:/Users/pkboi/Downloads/llvm-mingw-20240417-msvcrt-x86_64/llvm-mingw-20240417-msvcrt-x86_64/include/inttypes.h \
   C:/allegro/include/allegro5/platform/astdbool.h \
-  C:/final-project/MAIN_GAME/./Engine/Point.hpp \
-  C:/final-project/MAIN_GAME/./UI/Component/Image.hpp \
+  C:/FINAL_PROJECT/NTHU_ADVANTURE/./Engine/Point.hpp \
+  C:/FINAL_PROJECT/NTHU_ADVANTURE/./UI/Component/Image.hpp \
   C:/allegro/include/allegro5/bitmap.h \
-  C:/final-project/MAIN_GAME/./Engine/IObject.hpp \
+  C:/FINAL_PROJECT/NTHU_ADVANTURE/./Engine/IObject.hpp \
   c:/Users/pkboi/Downloads/llvm-mingw-20240417-msvcrt-x86_64/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/list \
   c:/Users/pkboi/Downloads/llvm-mingw-20240417-msvcrt-x86_64/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/functional \
   c:/Users/pkboi/Downloads/llvm-mingw-20240417-msvcrt-x86_64/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__functional/binary_negate.h \
@@ -812,9 +812,9 @@ CMakeFiles/2025_I2P2_TowerDefense.dir/Bullet/Bullet.cpp.obj: \
   c:/Users/pkboi/Downloads/llvm-mingw-20240417-msvcrt-x86_64/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__functional/pointer_to_binary_function.h \
   c:/Users/pkboi/Downloads/llvm-mingw-20240417-msvcrt-x86_64/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__functional/pointer_to_unary_function.h \
   c:/Users/pkboi/Downloads/llvm-mingw-20240417-msvcrt-x86_64/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__functional/unary_negate.h \
-  C:/final-project/MAIN_GAME/./Enemy/Enemy.hpp \
-  C:/final-project/MAIN_GAME/./Engine/Collider.hpp \
-  C:/final-project/MAIN_GAME/./Engine/GameEngine.hpp \
+  C:/FINAL_PROJECT/NTHU_ADVANTURE/./Enemy/Enemy.hpp \
+  C:/FINAL_PROJECT/NTHU_ADVANTURE/./Engine/Collider.hpp \
+  C:/FINAL_PROJECT/NTHU_ADVANTURE/./Engine/GameEngine.hpp \
   C:/allegro/include/allegro5/allegro.h \
   C:/allegro/include/allegro5/altime.h \
   C:/allegro/include/allegro5/bitmap_draw.h \
@@ -853,8 +853,8 @@ CMakeFiles/2025_I2P2_TowerDefense.dir/Bullet/Bullet.cpp.obj: \
   C:/allegro/include/allegro5/timer.h C:/allegro/include/allegro5/tls.h \
   C:/allegro/include/allegro5/alcompat.h \
   C:/allegro/include/allegro5/platform/alwin.h \
-  C:/final-project/MAIN_GAME/./Engine/Group.hpp \
-  C:/final-project/MAIN_GAME/./Engine/IControl.hpp \
-  C:/final-project/MAIN_GAME/./Engine/IScene.hpp \
-  C:/final-project/MAIN_GAME/./Scene/PlayScene.hpp \
+  C:/FINAL_PROJECT/NTHU_ADVANTURE/./Engine/Group.hpp \
+  C:/FINAL_PROJECT/NTHU_ADVANTURE/./Engine/IControl.hpp \
+  C:/FINAL_PROJECT/NTHU_ADVANTURE/./Engine/IScene.hpp \
+  C:/FINAL_PROJECT/NTHU_ADVANTURE/./Scene/PlayScene.hpp \
   C:/allegro/include/allegro5/allegro_audio.h

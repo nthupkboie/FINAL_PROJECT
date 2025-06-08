@@ -1,5 +1,5 @@
 CMakeFiles/2025_I2P2_TowerDefense.dir/Turret/TurretButton.cpp.obj: \
-  C:/final-project/MAIN_GAME/Turret/TurretButton.cpp \
+  C:/FINAL_PROJECT/NTHU_ADVANTURE/Turret/TurretButton.cpp \
   C:/allegro/include/allegro5/color.h C:/allegro/include/allegro5/base.h \
   c:/Users/pkboi/Downloads/llvm-mingw-20240417-msvcrt-x86_64/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/errno.h \
   c:/Users/pkboi/Downloads/llvm-mingw-20240417-msvcrt-x86_64/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__config \
@@ -61,7 +61,7 @@ CMakeFiles/2025_I2P2_TowerDefense.dir/Turret/TurretButton.cpp.obj: \
   c:/Users/pkboi/Downloads/llvm-mingw-20240417-msvcrt-x86_64/llvm-mingw-20240417-msvcrt-x86_64/include/stdint.h \
   C:/Users/pkboi/Downloads/llvm-mingw-20240417-msvcrt-x86_64/llvm-mingw-20240417-msvcrt-x86_64/lib/clang/18/include/__stddef_wint_t.h \
   C:/allegro/include/allegro5/platform/astdbool.h \
-  C:/final-project/MAIN_GAME/./Engine/GameEngine.hpp \
+  C:/FINAL_PROJECT/NTHU_ADVANTURE/./Engine/GameEngine.hpp \
   C:/allegro/include/allegro5/allegro.h \
   C:/allegro/include/allegro5/altime.h \
   C:/allegro/include/allegro5/bitmap.h \
@@ -772,9 +772,9 @@ CMakeFiles/2025_I2P2_TowerDefense.dir/Turret/TurretButton.cpp.obj: \
   c:/Users/pkboi/Downloads/llvm-mingw-20240417-msvcrt-x86_64/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__hash_table \
   c:/Users/pkboi/Downloads/llvm-mingw-20240417-msvcrt-x86_64/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__iterator/ranges_iterator_traits.h \
   c:/Users/pkboi/Downloads/llvm-mingw-20240417-msvcrt-x86_64/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__node_handle \
-  C:/final-project/MAIN_GAME/./Engine/Point.hpp \
-  C:/final-project/MAIN_GAME/./Engine/IScene.hpp \
-  C:/final-project/MAIN_GAME/./Engine/Group.hpp \
+  C:/FINAL_PROJECT/NTHU_ADVANTURE/./Engine/Point.hpp \
+  C:/FINAL_PROJECT/NTHU_ADVANTURE/./Engine/IScene.hpp \
+  C:/FINAL_PROJECT/NTHU_ADVANTURE/./Engine/Group.hpp \
   c:/Users/pkboi/Downloads/llvm-mingw-20240417-msvcrt-x86_64/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/list \
   c:/Users/pkboi/Downloads/llvm-mingw-20240417-msvcrt-x86_64/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/functional \
   c:/Users/pkboi/Downloads/llvm-mingw-20240417-msvcrt-x86_64/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__functional/binary_negate.h \
@@ -849,11 +849,11 @@ CMakeFiles/2025_I2P2_TowerDefense.dir/Turret/TurretButton.cpp.obj: \
   c:/Users/pkboi/Downloads/llvm-mingw-20240417-msvcrt-x86_64/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__functional/pointer_to_binary_function.h \
   c:/Users/pkboi/Downloads/llvm-mingw-20240417-msvcrt-x86_64/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__functional/pointer_to_unary_function.h \
   c:/Users/pkboi/Downloads/llvm-mingw-20240417-msvcrt-x86_64/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__functional/unary_negate.h \
-  C:/final-project/MAIN_GAME/./Engine/IControl.hpp \
-  C:/final-project/MAIN_GAME/./Engine/IObject.hpp \
-  C:/final-project/MAIN_GAME/./Scene/PlayScene.hpp \
+  C:/FINAL_PROJECT/NTHU_ADVANTURE/./Engine/IControl.hpp \
+  C:/FINAL_PROJECT/NTHU_ADVANTURE/./Engine/IObject.hpp \
+  C:/FINAL_PROJECT/NTHU_ADVANTURE/./Scene/PlayScene.hpp \
   C:/allegro/include/allegro5/allegro_audio.h \
-  C:/final-project/MAIN_GAME/Turret/TurretButton.hpp \
-  C:/final-project/MAIN_GAME/./Engine/Sprite.hpp \
-  C:/final-project/MAIN_GAME/./UI/Component/Image.hpp \
-  C:/final-project/MAIN_GAME/./UI/Component/ImageButton.hpp
+  C:/FINAL_PROJECT/NTHU_ADVANTURE/Turret/TurretButton.hpp \
+  C:/FINAL_PROJECT/NTHU_ADVANTURE/./Engine/Sprite.hpp \
+  C:/FINAL_PROJECT/NTHU_ADVANTURE/./UI/Component/Image.hpp \
+  C:/FINAL_PROJECT/NTHU_ADVANTURE/./UI/Component/ImageButton.hpp

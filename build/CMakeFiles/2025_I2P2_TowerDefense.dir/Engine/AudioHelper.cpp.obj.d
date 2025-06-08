@@ -1,5 +1,5 @@
 CMakeFiles/2025_I2P2_TowerDefense.dir/Engine/AudioHelper.cpp.obj: \
-  C:/final-project/MAIN_GAME/Engine/AudioHelper.cpp \
+  C:/FINAL_PROJECT/NTHU_ADVANTURE/Engine/AudioHelper.cpp \
   C:/allegro/include/allegro5/allegro_audio.h \
   C:/allegro/include/allegro5/allegro.h \
   C:/allegro/include/allegro5/base.h \
@@ -102,7 +102,7 @@ CMakeFiles/2025_I2P2_TowerDefense.dir/Engine/AudioHelper.cpp.obj: \
   C:/allegro/include/allegro5/timer.h C:/allegro/include/allegro5/tls.h \
   C:/allegro/include/allegro5/alcompat.h \
   C:/allegro/include/allegro5/platform/alwin.h \
-  C:/final-project/MAIN_GAME/Engine/Allegro5Exception.hpp \
+  C:/FINAL_PROJECT/NTHU_ADVANTURE/Engine/Allegro5Exception.hpp \
   c:/Users/pkboi/Downloads/llvm-mingw-20240417-msvcrt-x86_64/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/stdexcept \
   c:/Users/pkboi/Downloads/llvm-mingw-20240417-msvcrt-x86_64/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__assert \
   c:/Users/pkboi/Downloads/llvm-mingw-20240417-msvcrt-x86_64/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__assertion_handler \
@@ -769,8 +769,8 @@ CMakeFiles/2025_I2P2_TowerDefense.dir/Engine/AudioHelper.cpp.obj: \
   c:/Users/pkboi/Downloads/llvm-mingw-20240417-msvcrt-x86_64/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__bit/byteswap.h \
   c:/Users/pkboi/Downloads/llvm-mingw-20240417-msvcrt-x86_64/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__bit/endian.h \
   c:/Users/pkboi/Downloads/llvm-mingw-20240417-msvcrt-x86_64/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__bit/has_single_bit.h \
-  C:/final-project/MAIN_GAME/Engine/AudioHelper.hpp \
-  C:/final-project/MAIN_GAME/Engine/LOG.hpp \
+  C:/FINAL_PROJECT/NTHU_ADVANTURE/Engine/AudioHelper.hpp \
+  C:/FINAL_PROJECT/NTHU_ADVANTURE/Engine/LOG.hpp \
   c:/Users/pkboi/Downloads/llvm-mingw-20240417-msvcrt-x86_64/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/fstream \
   c:/Users/pkboi/Downloads/llvm-mingw-20240417-msvcrt-x86_64/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__locale \
   c:/Users/pkboi/Downloads/llvm-mingw-20240417-msvcrt-x86_64/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__mutex/once_flag.h \
@@ -897,5 +897,5 @@ CMakeFiles/2025_I2P2_TowerDefense.dir/Engine/AudioHelper.cpp.obj: \
   c:/Users/pkboi/Downloads/llvm-mingw-20240417-msvcrt-x86_64/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__filesystem/recursive_directory_iterator.h \
   c:/Users/pkboi/Downloads/llvm-mingw-20240417-msvcrt-x86_64/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__filesystem/u8path.h \
   c:/Users/pkboi/Downloads/llvm-mingw-20240417-msvcrt-x86_64/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/iostream \
-  C:/final-project/MAIN_GAME/Engine/Resources.hpp \
+  C:/FINAL_PROJECT/NTHU_ADVANTURE/Engine/Resources.hpp \
   C:/allegro/include/allegro5/allegro_font.h

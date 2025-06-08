@@ -1,6 +1,6 @@
 CMakeFiles/2025_I2P2_TowerDefense.dir/Engine/Point.cpp.obj: \
-  C:/final-project/MAIN_GAME/Engine/Point.cpp \
-  C:/final-project/MAIN_GAME/Engine/Point.hpp \
+  C:/FINAL_PROJECT/NTHU_ADVANTURE/Engine/Point.cpp \
+  C:/FINAL_PROJECT/NTHU_ADVANTURE/Engine/Point.hpp \
   c:/Users/pkboi/Downloads/llvm-mingw-20240417-msvcrt-x86_64/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/cmath \
   c:/Users/pkboi/Downloads/llvm-mingw-20240417-msvcrt-x86_64/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__assert \
   c:/Users/pkboi/Downloads/llvm-mingw-20240417-msvcrt-x86_64/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__assertion_handler \

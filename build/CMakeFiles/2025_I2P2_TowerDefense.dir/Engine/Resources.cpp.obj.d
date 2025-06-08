@@ -1,5 +1,5 @@
 CMakeFiles/2025_I2P2_TowerDefense.dir/Engine/Resources.cpp.obj: \
-  C:/final-project/MAIN_GAME/Engine/Resources.cpp \
+  C:/FINAL_PROJECT/NTHU_ADVANTURE/Engine/Resources.cpp \
   C:/allegro/include/allegro5/allegro.h \
   C:/allegro/include/allegro5/base.h \
   c:/Users/pkboi/Downloads/llvm-mingw-20240417-msvcrt-x86_64/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/errno.h \
@@ -848,8 +848,8 @@ CMakeFiles/2025_I2P2_TowerDefense.dir/Engine/Resources.cpp.obj: \
   c:/Users/pkboi/Downloads/llvm-mingw-20240417-msvcrt-x86_64/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__functional/pointer_to_binary_function.h \
   c:/Users/pkboi/Downloads/llvm-mingw-20240417-msvcrt-x86_64/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__functional/pointer_to_unary_function.h \
   c:/Users/pkboi/Downloads/llvm-mingw-20240417-msvcrt-x86_64/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__functional/unary_negate.h \
-  C:/final-project/MAIN_GAME/./Engine/Allegro5Exception.hpp \
-  C:/final-project/MAIN_GAME/Engine/LOG.hpp \
+  C:/FINAL_PROJECT/NTHU_ADVANTURE/./Engine/Allegro5Exception.hpp \
+  C:/FINAL_PROJECT/NTHU_ADVANTURE/Engine/LOG.hpp \
   c:/Users/pkboi/Downloads/llvm-mingw-20240417-msvcrt-x86_64/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/fstream \
   c:/Users/pkboi/Downloads/llvm-mingw-20240417-msvcrt-x86_64/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/filesystem \
   c:/Users/pkboi/Downloads/llvm-mingw-20240417-msvcrt-x86_64/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__filesystem/copy_options.h \
@@ -898,4 +898,4 @@ CMakeFiles/2025_I2P2_TowerDefense.dir/Engine/Resources.cpp.obj: \
   c:/Users/pkboi/Downloads/llvm-mingw-20240417-msvcrt-x86_64/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__filesystem/recursive_directory_iterator.h \
   c:/Users/pkboi/Downloads/llvm-mingw-20240417-msvcrt-x86_64/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__filesystem/u8path.h \
   c:/Users/pkboi/Downloads/llvm-mingw-20240417-msvcrt-x86_64/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/iostream \
-  C:/final-project/MAIN_GAME/Engine/Resources.hpp
+  C:/FINAL_PROJECT/NTHU_ADVANTURE/Engine/Resources.hpp

@@ -1,6 +1,6 @@
 CMakeFiles/2025_I2P2_TowerDefense.dir/main.cpp.obj: \
-  C:/final-project/MAIN_GAME/main.cpp \
-  C:/final-project/MAIN_GAME/Engine/GameEngine.hpp \
+  C:/FINAL_PROJECT/NTHU_ADVANTURE/main.cpp \
+  C:/FINAL_PROJECT/NTHU_ADVANTURE/Engine/GameEngine.hpp \
   C:/allegro/include/allegro5/allegro.h \
   C:/allegro/include/allegro5/base.h \
   c:/Users/pkboi/Downloads/llvm-mingw-20240417-msvcrt-x86_64/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/errno.h \
@@ -773,8 +773,8 @@ CMakeFiles/2025_I2P2_TowerDefense.dir/main.cpp.obj: \
   c:/Users/pkboi/Downloads/llvm-mingw-20240417-msvcrt-x86_64/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__hash_table \
   c:/Users/pkboi/Downloads/llvm-mingw-20240417-msvcrt-x86_64/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__iterator/ranges_iterator_traits.h \
   c:/Users/pkboi/Downloads/llvm-mingw-20240417-msvcrt-x86_64/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__node_handle \
-  C:/final-project/MAIN_GAME/Engine/Point.hpp \
-  C:/final-project/MAIN_GAME/Engine/LOG.hpp \
+  C:/FINAL_PROJECT/NTHU_ADVANTURE/Engine/Point.hpp \
+  C:/FINAL_PROJECT/NTHU_ADVANTURE/Engine/LOG.hpp \
   c:/Users/pkboi/Downloads/llvm-mingw-20240417-msvcrt-x86_64/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/fstream \
   c:/Users/pkboi/Downloads/llvm-mingw-20240417-msvcrt-x86_64/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__locale \
   c:/Users/pkboi/Downloads/llvm-mingw-20240417-msvcrt-x86_64/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__mutex/once_flag.h \
@@ -896,16 +896,16 @@ CMakeFiles/2025_I2P2_TowerDefense.dir/main.cpp.obj: \
   c:/Users/pkboi/Downloads/llvm-mingw-20240417-msvcrt-x86_64/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__filesystem/recursive_directory_iterator.h \
   c:/Users/pkboi/Downloads/llvm-mingw-20240417-msvcrt-x86_64/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__filesystem/u8path.h \
   c:/Users/pkboi/Downloads/llvm-mingw-20240417-msvcrt-x86_64/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/iostream \
-  C:/final-project/MAIN_GAME/Scene/LoseScene.hpp \
-  C:/final-project/MAIN_GAME/./Engine/IScene.hpp \
-  C:/final-project/MAIN_GAME/./Engine/Group.hpp \
+  C:/FINAL_PROJECT/NTHU_ADVANTURE/Scene/LoseScene.hpp \
+  C:/FINAL_PROJECT/NTHU_ADVANTURE/./Engine/IScene.hpp \
+  C:/FINAL_PROJECT/NTHU_ADVANTURE/./Engine/Group.hpp \
   c:/Users/pkboi/Downloads/llvm-mingw-20240417-msvcrt-x86_64/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/list \
-  C:/final-project/MAIN_GAME/./Engine/IControl.hpp \
-  C:/final-project/MAIN_GAME/./Engine/IObject.hpp \
-  C:/final-project/MAIN_GAME/./Engine/Point.hpp \
+  C:/FINAL_PROJECT/NTHU_ADVANTURE/./Engine/IControl.hpp \
+  C:/FINAL_PROJECT/NTHU_ADVANTURE/./Engine/IObject.hpp \
+  C:/FINAL_PROJECT/NTHU_ADVANTURE/./Engine/Point.hpp \
   C:/allegro/include/allegro5/allegro_audio.h \
-  C:/final-project/MAIN_GAME/Scene/PlayScene.hpp \
-  C:/final-project/MAIN_GAME/Scene/StageSelectScene.hpp \
-  C:/final-project/MAIN_GAME/Scene/WinScene.hpp \
-  C:/final-project/MAIN_GAME/Scene/StartScene.h \
-  C:/final-project/MAIN_GAME/Scene/SettingsScene.hpp
+  C:/FINAL_PROJECT/NTHU_ADVANTURE/Scene/PlayScene.hpp \
+  C:/FINAL_PROJECT/NTHU_ADVANTURE/Scene/StageSelectScene.hpp \
+  C:/FINAL_PROJECT/NTHU_ADVANTURE/Scene/WinScene.hpp \
+  C:/FINAL_PROJECT/NTHU_ADVANTURE/Scene/StartScene.h \
+  C:/FINAL_PROJECT/NTHU_ADVANTURE/Scene/SettingsScene.hpp

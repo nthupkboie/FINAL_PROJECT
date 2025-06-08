@@ -1,6 +1,6 @@
 CMakeFiles/2025_I2P2_TowerDefense.dir/Engine/IControl.cpp.obj: \
-  C:/final-project/MAIN_GAME/Engine/IControl.cpp \
-  C:/final-project/MAIN_GAME/Engine/IControl.hpp \
+  C:/FINAL_PROJECT/NTHU_ADVANTURE/Engine/IControl.cpp \
+  C:/FINAL_PROJECT/NTHU_ADVANTURE/Engine/IControl.hpp \
   c:/Users/pkboi/Downloads/llvm-mingw-20240417-msvcrt-x86_64/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/list \
   c:/Users/pkboi/Downloads/llvm-mingw-20240417-msvcrt-x86_64/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__algorithm/comp.h \
   c:/Users/pkboi/Downloads/llvm-mingw-20240417-msvcrt-x86_64/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__config \
