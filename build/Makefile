@@ -560,6 +560,30 @@ Engine/Sprite.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_TowerDefense.dir\build.make CMakeFiles/2025_I2P2_TowerDefense.dir/Engine/Sprite.cpp.s
 .PHONY : Engine/Sprite.cpp.s
 
+Player/Player.obj: Player/Player.cpp.obj
+.PHONY : Player/Player.obj
+
+# target to build an object file
+Player/Player.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_TowerDefense.dir\build.make CMakeFiles/2025_I2P2_TowerDefense.dir/Player/Player.cpp.obj
+.PHONY : Player/Player.cpp.obj
+
+Player/Player.i: Player/Player.cpp.i
+.PHONY : Player/Player.i
+
+# target to preprocess a source file
+Player/Player.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_TowerDefense.dir\build.make CMakeFiles/2025_I2P2_TowerDefense.dir/Player/Player.cpp.i
+.PHONY : Player/Player.cpp.i
+
+Player/Player.s: Player/Player.cpp.s
+.PHONY : Player/Player.s
+
+# target to generate assembly for a file
+Player/Player.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_TowerDefense.dir\build.make CMakeFiles/2025_I2P2_TowerDefense.dir/Player/Player.cpp.s
+.PHONY : Player/Player.cpp.s
+
 Scene/LoseScene.obj: Scene/LoseScene.cpp.obj
 .PHONY : Scene/LoseScene.obj
 
@@ -607,6 +631,54 @@ Scene/PlayScene.s: Scene/PlayScene.cpp.s
 Scene/PlayScene.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_TowerDefense.dir\build.make CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/PlayScene.cpp.s
 .PHONY : Scene/PlayScene.cpp.s
+
+Scene/ScoreboardScene.obj: Scene/ScoreboardScene.cpp.obj
+.PHONY : Scene/ScoreboardScene.obj
+
+# target to build an object file
+Scene/ScoreboardScene.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_TowerDefense.dir\build.make CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/ScoreboardScene.cpp.obj
+.PHONY : Scene/ScoreboardScene.cpp.obj
+
+Scene/ScoreboardScene.i: Scene/ScoreboardScene.cpp.i
+.PHONY : Scene/ScoreboardScene.i
+
+# target to preprocess a source file
+Scene/ScoreboardScene.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_TowerDefense.dir\build.make CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/ScoreboardScene.cpp.i
+.PHONY : Scene/ScoreboardScene.cpp.i
+
+Scene/ScoreboardScene.s: Scene/ScoreboardScene.cpp.s
+.PHONY : Scene/ScoreboardScene.s
+
+# target to generate assembly for a file
+Scene/ScoreboardScene.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_TowerDefense.dir\build.make CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/ScoreboardScene.cpp.s
+.PHONY : Scene/ScoreboardScene.cpp.s
+
+Scene/SettingsScene.obj: Scene/SettingsScene.cpp.obj
+.PHONY : Scene/SettingsScene.obj
+
+# target to build an object file
+Scene/SettingsScene.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_TowerDefense.dir\build.make CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/SettingsScene.cpp.obj
+.PHONY : Scene/SettingsScene.cpp.obj
+
+Scene/SettingsScene.i: Scene/SettingsScene.cpp.i
+.PHONY : Scene/SettingsScene.i
+
+# target to preprocess a source file
+Scene/SettingsScene.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_TowerDefense.dir\build.make CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/SettingsScene.cpp.i
+.PHONY : Scene/SettingsScene.cpp.i
+
+Scene/SettingsScene.s: Scene/SettingsScene.cpp.s
+.PHONY : Scene/SettingsScene.s
+
+# target to generate assembly for a file
+Scene/SettingsScene.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_TowerDefense.dir\build.make CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/SettingsScene.cpp.s
+.PHONY : Scene/SettingsScene.cpp.s
 
 Scene/StageSelectScene.obj: Scene/StageSelectScene.cpp.obj
 .PHONY : Scene/StageSelectScene.obj
@@ -1031,12 +1103,21 @@ help:
 	@echo ... Engine/Sprite.obj
 	@echo ... Engine/Sprite.i
 	@echo ... Engine/Sprite.s
+	@echo ... Player/Player.obj
+	@echo ... Player/Player.i
+	@echo ... Player/Player.s
 	@echo ... Scene/LoseScene.obj
 	@echo ... Scene/LoseScene.i
 	@echo ... Scene/LoseScene.s
 	@echo ... Scene/PlayScene.obj
 	@echo ... Scene/PlayScene.i
 	@echo ... Scene/PlayScene.s
+	@echo ... Scene/ScoreboardScene.obj
+	@echo ... Scene/ScoreboardScene.i
+	@echo ... Scene/ScoreboardScene.s
+	@echo ... Scene/SettingsScene.obj
+	@echo ... Scene/SettingsScene.i
+	@echo ... Scene/SettingsScene.s
 	@echo ... Scene/StageSelectScene.obj
 	@echo ... Scene/StageSelectScene.i
 	@echo ... Scene/StageSelectScene.s
