@@ -39,6 +39,7 @@ void SettingsScene::Initialize() {
     sliderBGM->SetValue(AudioHelper::BGMVolume);
     sliderSFX->SetValue(AudioHelper::SFXVolume);
 }
+
 void SettingsScene::Terminate() {
     AudioHelper::StopSample(bgmInstance);
     bgmInstance = std::shared_ptr<ALLEGRO_SAMPLE_INSTANCE>();
@@ -47,6 +48,8 @@ void SettingsScene::Terminate() {
 void SettingsScene::BackOnClick(int stage) {
     Engine::GameEngine::GetInstance().ChangeScene("start");
 }
+
+//OnValueChangedCallBack實際上會變這個
 void SettingsScene::BGMSlideOnValueChanged(float value) {
     AudioHelper::ChangeSampleVolume(bgmInstance, value);
     AudioHelper::BGMVolume = value;
