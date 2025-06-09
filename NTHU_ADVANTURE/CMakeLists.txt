@@ -61,6 +61,8 @@ add_executable(2025_I2P2_TowerDefense
     UI/Component/Image.hpp
     UI/Component/ImageButton.cpp
     UI/Component/ImageButton.hpp
+    UI/Component/CustomImageButton.cpp
+    UI/Component/CustomImageButton.hpp
     UI/Component/Label.cpp
     UI/Component/Label.hpp
     UI/Component/Slider.cpp
