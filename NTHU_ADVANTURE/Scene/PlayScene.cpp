@@ -115,7 +115,6 @@ void PlayScene::ReadMap() {
     if (static_cast<int>(mapData.size()) != MapWidth * MapHeight)
         throw std::ios_base::failure("Map data is corrupted.");
     
-
     // 繪製地圖
     for (int i = 0; i < MapHeight; i++) {
         for (int j = 0; j < MapWidth; j++) {
