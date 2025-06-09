@@ -13,9 +13,9 @@
 [INFO] Game start event loop
 [INFO] Loaded Resource<image>: Resource/images/play/dirt.png scaled to 64x64
 [INFO] Loaded Resource<image>: Resource/images/play/floor.png scaled to 64x64
-[INFO] Loaded Resource<image>: Resource/images/play/idle_player.png
-[INFO] Loaded Resource<image>: Resource/images/play/run1_player.png
-[INFO] Loaded Resource<image>: Resource/images/play/run2_player.png
+[INFO] Loaded Resource<image>: Resource/images/player/idle_player.png
+[INFO] Loaded Resource<image>: Resource/images/player/run1_player.png
+[INFO] Loaded Resource<image>: Resource/images/player/run2_player.png
 [INFO] Loaded Resource<image>: Resource/images/lose/benjamin-happy.png
 [INFO] Loaded Resource<audio>: Resource/audios/play.ogg
 [INFO] Changed to play scene
@@ -24,14 +24,14 @@
 [INFO] Game terminated
 [INFO] Game end
 [INFO] Destroyed Resource<image>: lose/benjamin-happy.png
+[INFO] Destroyed Resource<image>: player/run2_player.png
+[INFO] Destroyed Resource<image>: player/run1_player.png
 [INFO] Destroyed Resource<image>: play/floor.png?64x64
-[INFO] Destroyed Resource<image>: play/run1_player.png
 [INFO] Destroyed Resource<image>: stage-select/floor.png
 [INFO] Destroyed Resource<image>: stage-select/dirt.png?400x100
-[INFO] Destroyed Resource<image>: play/run2_player.png
 [INFO] Destroyed Resource<image>: play/dirt.png?64x64
 [INFO] Destroyed Resource<image>: stage-select/dirt.png
-[INFO] Destroyed Resource<image>: play/idle_player.png
+[INFO] Destroyed Resource<image>: player/idle_player.png
 [INFO] Destroyed Resource<image>: icon.png
 [INFO] Destroyed Resource<font>: pirulen.ttf?48
 [INFO] Destroyed Resource<font>: pirulen.ttf?120
