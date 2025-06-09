@@ -42,7 +42,7 @@ void PlayScene::Initialize() {
     
     // 初始化玩家
     Player* player;
-    PlayerGroup->AddNewObject(player = new Player("player/idle_player.png", 100, 100));
+    PlayerGroup->AddNewObject(player = new Player("player/idle.png", 100, 100));
     
     // 預載資源
     Engine::Resources::GetInstance().GetBitmap("lose/benjamin-happy.png");
