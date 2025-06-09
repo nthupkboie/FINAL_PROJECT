@@ -1,18 +1,6 @@
 [
 {
   "directory": "C:/FINAL_PROJECT/build",
-  "command": "c:\\Users\\pkboi\\Downloads\\llvm-mingw-20240417-msvcrt-x86_64\\llvm-mingw-20240417-msvcrt-x86_64\\bin\\clang++.exe  @CMakeFiles/2025_I2P2_TowerDefense.dir/includes_CXX.rsp -g -o CMakeFiles\\2025_I2P2_TowerDefense.dir\\Player\\Player.cpp.obj -c C:\\FINAL_PROJECT\\NTHU_ADVANTURE\\Player\\Player.cpp",
-  "file": "C:/FINAL_PROJECT/NTHU_ADVANTURE/Player/Player.cpp",
-  "output": "CMakeFiles/2025_I2P2_TowerDefense.dir/Player/Player.cpp.obj"
-},
-{
-  "directory": "C:/FINAL_PROJECT/build",
-  "command": "c:\\Users\\pkboi\\Downloads\\llvm-mingw-20240417-msvcrt-x86_64\\llvm-mingw-20240417-msvcrt-x86_64\\bin\\clang++.exe  @CMakeFiles/2025_I2P2_TowerDefense.dir/includes_CXX.rsp -g -o CMakeFiles\\2025_I2P2_TowerDefense.dir\\Scene\\RealScene.cpp.obj -c C:\\FINAL_PROJECT\\NTHU_ADVANTURE\\Scene\\RealScene.cpp",
-  "file": "C:/FINAL_PROJECT/NTHU_ADVANTURE/Scene/RealScene.cpp",
-  "output": "CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/RealScene.cpp.obj"
-},
-{
-  "directory": "C:/FINAL_PROJECT/build",
   "command": "c:\\Users\\pkboi\\Downloads\\llvm-mingw-20240417-msvcrt-x86_64\\llvm-mingw-20240417-msvcrt-x86_64\\bin\\clang++.exe  @CMakeFiles/2025_I2P2_TowerDefense.dir/includes_CXX.rsp -g -o CMakeFiles\\2025_I2P2_TowerDefense.dir\\Engine\\Allegro5Exception.cpp.obj -c C:\\FINAL_PROJECT\\NTHU_ADVANTURE\\Engine\\Allegro5Exception.cpp",
   "file": "C:/FINAL_PROJECT/NTHU_ADVANTURE/Engine/Allegro5Exception.cpp",
   "output": "CMakeFiles/2025_I2P2_TowerDefense.dir/Engine/Allegro5Exception.cpp.obj"
@@ -85,15 +73,15 @@
 },
 {
   "directory": "C:/FINAL_PROJECT/build",
-  "command": "c:\\Users\\pkboi\\Downloads\\llvm-mingw-20240417-msvcrt-x86_64\\llvm-mingw-20240417-msvcrt-x86_64\\bin\\clang++.exe  @CMakeFiles/2025_I2P2_TowerDefense.dir/includes_CXX.rsp -g -o CMakeFiles\\2025_I2P2_TowerDefense.dir\\Scene\\PlayScene.cpp.obj -c C:\\FINAL_PROJECT\\NTHU_ADVANTURE\\Scene\\PlayScene.cpp",
-  "file": "C:/FINAL_PROJECT/NTHU_ADVANTURE/Scene/PlayScene.cpp",
-  "output": "CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/PlayScene.cpp.obj"
+  "command": "c:\\Users\\pkboi\\Downloads\\llvm-mingw-20240417-msvcrt-x86_64\\llvm-mingw-20240417-msvcrt-x86_64\\bin\\clang++.exe  @CMakeFiles/2025_I2P2_TowerDefense.dir/includes_CXX.rsp -g -o CMakeFiles\\2025_I2P2_TowerDefense.dir\\Player\\Player.cpp.obj -c C:\\FINAL_PROJECT\\NTHU_ADVANTURE\\Player\\Player.cpp",
+  "file": "C:/FINAL_PROJECT/NTHU_ADVANTURE/Player/Player.cpp",
+  "output": "CMakeFiles/2025_I2P2_TowerDefense.dir/Player/Player.cpp.obj"
 },
 {
   "directory": "C:/FINAL_PROJECT/build",
-  "command": "c:\\Users\\pkboi\\Downloads\\llvm-mingw-20240417-msvcrt-x86_64\\llvm-mingw-20240417-msvcrt-x86_64\\bin\\clang++.exe  @CMakeFiles/2025_I2P2_TowerDefense.dir/includes_CXX.rsp -g -o CMakeFiles\\2025_I2P2_TowerDefense.dir\\Scene\\StageSelectScene.cpp.obj -c C:\\FINAL_PROJECT\\NTHU_ADVANTURE\\Scene\\StageSelectScene.cpp",
-  "file": "C:/FINAL_PROJECT/NTHU_ADVANTURE/Scene/StageSelectScene.cpp",
-  "output": "CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/StageSelectScene.cpp.obj"
+  "command": "c:\\Users\\pkboi\\Downloads\\llvm-mingw-20240417-msvcrt-x86_64\\llvm-mingw-20240417-msvcrt-x86_64\\bin\\clang++.exe  @CMakeFiles/2025_I2P2_TowerDefense.dir/includes_CXX.rsp -g -o CMakeFiles\\2025_I2P2_TowerDefense.dir\\Scene\\PlayScene.cpp.obj -c C:\\FINAL_PROJECT\\NTHU_ADVANTURE\\Scene\\PlayScene.cpp",
+  "file": "C:/FINAL_PROJECT/NTHU_ADVANTURE/Scene/PlayScene.cpp",
+  "output": "CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/PlayScene.cpp.obj"
 },
 {
   "directory": "C:/FINAL_PROJECT/build",
@@ -103,21 +91,9 @@
 },
 {
   "directory": "C:/FINAL_PROJECT/build",
-  "command": "c:\\Users\\pkboi\\Downloads\\llvm-mingw-20240417-msvcrt-x86_64\\llvm-mingw-20240417-msvcrt-x86_64\\bin\\clang++.exe  @CMakeFiles/2025_I2P2_TowerDefense.dir/includes_CXX.rsp -g -o CMakeFiles\\2025_I2P2_TowerDefense.dir\\Scene\\WinScene.cpp.obj -c C:\\FINAL_PROJECT\\NTHU_ADVANTURE\\Scene\\WinScene.cpp",
-  "file": "C:/FINAL_PROJECT/NTHU_ADVANTURE/Scene/WinScene.cpp",
-  "output": "CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/WinScene.cpp.obj"
-},
-{
-  "directory": "C:/FINAL_PROJECT/build",
   "command": "c:\\Users\\pkboi\\Downloads\\llvm-mingw-20240417-msvcrt-x86_64\\llvm-mingw-20240417-msvcrt-x86_64\\bin\\clang++.exe  @CMakeFiles/2025_I2P2_TowerDefense.dir/includes_CXX.rsp -g -o CMakeFiles\\2025_I2P2_TowerDefense.dir\\Scene\\SettingsScene.cpp.obj -c C:\\FINAL_PROJECT\\NTHU_ADVANTURE\\Scene\\SettingsScene.cpp",
   "file": "C:/FINAL_PROJECT/NTHU_ADVANTURE/Scene/SettingsScene.cpp",
   "output": "CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/SettingsScene.cpp.obj"
-},
-{
-  "directory": "C:/FINAL_PROJECT/build",
-  "command": "c:\\Users\\pkboi\\Downloads\\llvm-mingw-20240417-msvcrt-x86_64\\llvm-mingw-20240417-msvcrt-x86_64\\bin\\clang++.exe  @CMakeFiles/2025_I2P2_TowerDefense.dir/includes_CXX.rsp -g -o CMakeFiles\\2025_I2P2_TowerDefense.dir\\Scene\\ScoreboardScene.cpp.obj -c C:\\FINAL_PROJECT\\NTHU_ADVANTURE\\Scene\\ScoreboardScene.cpp",
-  "file": "C:/FINAL_PROJECT/NTHU_ADVANTURE/Scene/ScoreboardScene.cpp",
-  "output": "CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/ScoreboardScene.cpp.obj"
 },
 {
   "directory": "C:/FINAL_PROJECT/build",

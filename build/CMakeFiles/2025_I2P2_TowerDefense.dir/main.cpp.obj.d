@@ -896,17 +896,13 @@ CMakeFiles/2025_I2P2_TowerDefense.dir/main.cpp.obj: \
   c:/Users/pkboi/Downloads/llvm-mingw-20240417-msvcrt-x86_64/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__filesystem/recursive_directory_iterator.h \
   c:/Users/pkboi/Downloads/llvm-mingw-20240417-msvcrt-x86_64/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__filesystem/u8path.h \
   c:/Users/pkboi/Downloads/llvm-mingw-20240417-msvcrt-x86_64/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/iostream \
-  C:/FINAL_PROJECT/NTHU_ADVANTURE/Scene/LoseScene.hpp \
+  C:/FINAL_PROJECT/NTHU_ADVANTURE/Scene/PlayScene.hpp \
+  C:/allegro/include/allegro5/allegro_audio.h \
+  c:/Users/pkboi/Downloads/llvm-mingw-20240417-msvcrt-x86_64/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/list \
   C:/FINAL_PROJECT/NTHU_ADVANTURE/./Engine/IScene.hpp \
   C:/FINAL_PROJECT/NTHU_ADVANTURE/./Engine/Group.hpp \
-  c:/Users/pkboi/Downloads/llvm-mingw-20240417-msvcrt-x86_64/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/list \
   C:/FINAL_PROJECT/NTHU_ADVANTURE/./Engine/IControl.hpp \
   C:/FINAL_PROJECT/NTHU_ADVANTURE/./Engine/IObject.hpp \
   C:/FINAL_PROJECT/NTHU_ADVANTURE/./Engine/Point.hpp \
-  C:/allegro/include/allegro5/allegro_audio.h \
-  C:/FINAL_PROJECT/NTHU_ADVANTURE/Scene/PlayScene.hpp \
-  C:/FINAL_PROJECT/NTHU_ADVANTURE/Scene/StageSelectScene.hpp \
-  C:/FINAL_PROJECT/NTHU_ADVANTURE/Scene/WinScene.hpp \
   C:/FINAL_PROJECT/NTHU_ADVANTURE/Scene/StartScene.h \
-  C:/FINAL_PROJECT/NTHU_ADVANTURE/Scene/SettingsScene.hpp \
-  C:/FINAL_PROJECT/NTHU_ADVANTURE/Scene/ScoreboardScene.hpp
+  C:/FINAL_PROJECT/NTHU_ADVANTURE/Scene/SettingsScene.hpp

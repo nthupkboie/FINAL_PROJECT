@@ -464,54 +464,6 @@ Scene/PlayScene.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_TowerDefense.dir\build.make CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/PlayScene.cpp.s
 .PHONY : Scene/PlayScene.cpp.s
 
-Scene/RealScene.obj: Scene/RealScene.cpp.obj
-.PHONY : Scene/RealScene.obj
-
-# target to build an object file
-Scene/RealScene.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_TowerDefense.dir\build.make CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/RealScene.cpp.obj
-.PHONY : Scene/RealScene.cpp.obj
-
-Scene/RealScene.i: Scene/RealScene.cpp.i
-.PHONY : Scene/RealScene.i
-
-# target to preprocess a source file
-Scene/RealScene.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_TowerDefense.dir\build.make CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/RealScene.cpp.i
-.PHONY : Scene/RealScene.cpp.i
-
-Scene/RealScene.s: Scene/RealScene.cpp.s
-.PHONY : Scene/RealScene.s
-
-# target to generate assembly for a file
-Scene/RealScene.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_TowerDefense.dir\build.make CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/RealScene.cpp.s
-.PHONY : Scene/RealScene.cpp.s
-
-Scene/ScoreboardScene.obj: Scene/ScoreboardScene.cpp.obj
-.PHONY : Scene/ScoreboardScene.obj
-
-# target to build an object file
-Scene/ScoreboardScene.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_TowerDefense.dir\build.make CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/ScoreboardScene.cpp.obj
-.PHONY : Scene/ScoreboardScene.cpp.obj
-
-Scene/ScoreboardScene.i: Scene/ScoreboardScene.cpp.i
-.PHONY : Scene/ScoreboardScene.i
-
-# target to preprocess a source file
-Scene/ScoreboardScene.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_TowerDefense.dir\build.make CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/ScoreboardScene.cpp.i
-.PHONY : Scene/ScoreboardScene.cpp.i
-
-Scene/ScoreboardScene.s: Scene/ScoreboardScene.cpp.s
-.PHONY : Scene/ScoreboardScene.s
-
-# target to generate assembly for a file
-Scene/ScoreboardScene.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_TowerDefense.dir\build.make CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/ScoreboardScene.cpp.s
-.PHONY : Scene/ScoreboardScene.cpp.s
-
 Scene/SettingsScene.obj: Scene/SettingsScene.cpp.obj
 .PHONY : Scene/SettingsScene.obj
 
@@ -536,30 +488,6 @@ Scene/SettingsScene.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_TowerDefense.dir\build.make CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/SettingsScene.cpp.s
 .PHONY : Scene/SettingsScene.cpp.s
 
-Scene/StageSelectScene.obj: Scene/StageSelectScene.cpp.obj
-.PHONY : Scene/StageSelectScene.obj
-
-# target to build an object file
-Scene/StageSelectScene.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_TowerDefense.dir\build.make CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/StageSelectScene.cpp.obj
-.PHONY : Scene/StageSelectScene.cpp.obj
-
-Scene/StageSelectScene.i: Scene/StageSelectScene.cpp.i
-.PHONY : Scene/StageSelectScene.i
-
-# target to preprocess a source file
-Scene/StageSelectScene.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_TowerDefense.dir\build.make CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/StageSelectScene.cpp.i
-.PHONY : Scene/StageSelectScene.cpp.i
-
-Scene/StageSelectScene.s: Scene/StageSelectScene.cpp.s
-.PHONY : Scene/StageSelectScene.s
-
-# target to generate assembly for a file
-Scene/StageSelectScene.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_TowerDefense.dir\build.make CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/StageSelectScene.cpp.s
-.PHONY : Scene/StageSelectScene.cpp.s
-
 Scene/StartScene.obj: Scene/StartScene.cpp.obj
 .PHONY : Scene/StartScene.obj
 
@@ -583,30 +511,6 @@ Scene/StartScene.s: Scene/StartScene.cpp.s
 Scene/StartScene.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_TowerDefense.dir\build.make CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/StartScene.cpp.s
 .PHONY : Scene/StartScene.cpp.s
-
-Scene/WinScene.obj: Scene/WinScene.cpp.obj
-.PHONY : Scene/WinScene.obj
-
-# target to build an object file
-Scene/WinScene.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_TowerDefense.dir\build.make CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/WinScene.cpp.obj
-.PHONY : Scene/WinScene.cpp.obj
-
-Scene/WinScene.i: Scene/WinScene.cpp.i
-.PHONY : Scene/WinScene.i
-
-# target to preprocess a source file
-Scene/WinScene.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_TowerDefense.dir\build.make CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/WinScene.cpp.i
-.PHONY : Scene/WinScene.cpp.i
-
-Scene/WinScene.s: Scene/WinScene.cpp.s
-.PHONY : Scene/WinScene.s
-
-# target to generate assembly for a file
-Scene/WinScene.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_TowerDefense.dir\build.make CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/WinScene.cpp.s
-.PHONY : Scene/WinScene.cpp.s
 
 UI/Component/Image.obj: UI/Component/Image.cpp.obj
 .PHONY : UI/Component/Image.obj
@@ -779,24 +683,12 @@ help:
 	@echo ... Scene/PlayScene.obj
 	@echo ... Scene/PlayScene.i
 	@echo ... Scene/PlayScene.s
-	@echo ... Scene/RealScene.obj
-	@echo ... Scene/RealScene.i
-	@echo ... Scene/RealScene.s
-	@echo ... Scene/ScoreboardScene.obj
-	@echo ... Scene/ScoreboardScene.i
-	@echo ... Scene/ScoreboardScene.s
 	@echo ... Scene/SettingsScene.obj
 	@echo ... Scene/SettingsScene.i
 	@echo ... Scene/SettingsScene.s
-	@echo ... Scene/StageSelectScene.obj
-	@echo ... Scene/StageSelectScene.i
-	@echo ... Scene/StageSelectScene.s
 	@echo ... Scene/StartScene.obj
 	@echo ... Scene/StartScene.i
 	@echo ... Scene/StartScene.s
-	@echo ... Scene/WinScene.obj
-	@echo ... Scene/WinScene.i
-	@echo ... Scene/WinScene.s
 	@echo ... UI/Component/Image.obj
 	@echo ... UI/Component/Image.i
 	@echo ... UI/Component/Image.s

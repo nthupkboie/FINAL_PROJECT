@@ -5,17 +5,14 @@
 #include <string>
 #include <vector>
 
-#include "Bullet/Bullet.hpp"
 #include "Player.hpp"
 #include "Engine/AudioHelper.hpp"
 #include "Engine/GameEngine.hpp"
 #include "Engine/Group.hpp"
 #include "Engine/IScene.hpp"
 #include "Engine/LOG.hpp"
+
 #include "Scene/PlayScene.hpp"
-#include "Turret/Turret.hpp"
-#include "UI/Animation/DirtyEffect.hpp"
-#include "UI/Animation/ExplosionEffect.hpp"
 
 PlayScene *Player::getPlayScene() {
     return dynamic_cast<PlayScene *>(Engine::GameEngine::GetInstance().GetActiveScene());

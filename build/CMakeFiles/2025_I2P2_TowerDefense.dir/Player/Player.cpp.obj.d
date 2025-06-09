@@ -895,13 +895,12 @@ CMakeFiles/2025_I2P2_TowerDefense.dir/Player/Player.cpp.obj: \
   c:/Users/pkboi/Downloads/llvm-mingw-20240417-msvcrt-x86_64/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__random/seed_seq.h \
   c:/Users/pkboi/Downloads/llvm-mingw-20240417-msvcrt-x86_64/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__random/student_t_distribution.h \
   c:/Users/pkboi/Downloads/llvm-mingw-20240417-msvcrt-x86_64/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__random/weibull_distribution.h \
-  C:/FINAL_PROJECT/NTHU_ADVANTURE/./Bullet/Bullet.hpp \
-  C:/FINAL_PROJECT/NTHU_ADVANTURE/./Engine/Sprite.hpp \
+  C:/FINAL_PROJECT/NTHU_ADVANTURE/Player/Player.hpp \
+  c:/Users/pkboi/Downloads/llvm-mingw-20240417-msvcrt-x86_64/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/list \
   C:/FINAL_PROJECT/NTHU_ADVANTURE/./Engine/Point.hpp \
+  C:/FINAL_PROJECT/NTHU_ADVANTURE/./Engine/Sprite.hpp \
   C:/FINAL_PROJECT/NTHU_ADVANTURE/./UI/Component/Image.hpp \
   C:/FINAL_PROJECT/NTHU_ADVANTURE/./Engine/IObject.hpp \
-  c:/Users/pkboi/Downloads/llvm-mingw-20240417-msvcrt-x86_64/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/list \
-  C:/FINAL_PROJECT/NTHU_ADVANTURE/Player/Player.hpp \
   C:/FINAL_PROJECT/NTHU_ADVANTURE/./Engine/AudioHelper.hpp \
   C:/allegro/include/allegro5/allegro_audio.h \
   C:/FINAL_PROJECT/NTHU_ADVANTURE/./Engine/GameEngine.hpp \
@@ -957,7 +956,4 @@ CMakeFiles/2025_I2P2_TowerDefense.dir/Player/Player.cpp.obj: \
   c:/Users/pkboi/Downloads/llvm-mingw-20240417-msvcrt-x86_64/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__filesystem/recursive_directory_iterator.h \
   c:/Users/pkboi/Downloads/llvm-mingw-20240417-msvcrt-x86_64/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__filesystem/u8path.h \
   c:/Users/pkboi/Downloads/llvm-mingw-20240417-msvcrt-x86_64/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/iostream \
-  C:/FINAL_PROJECT/NTHU_ADVANTURE/./Scene/PlayScene.hpp \
-  C:/FINAL_PROJECT/NTHU_ADVANTURE/./Turret/Turret.hpp \
-  C:/FINAL_PROJECT/NTHU_ADVANTURE/./UI/Animation/DirtyEffect.hpp \
-  C:/FINAL_PROJECT/NTHU_ADVANTURE/./UI/Animation/ExplosionEffect.hpp
+  C:/FINAL_PROJECT/NTHU_ADVANTURE/./Scene/PlayScene.hpp
