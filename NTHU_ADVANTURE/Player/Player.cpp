@@ -20,20 +20,8 @@
 PlayScene *Player::getPlayScene() {
     return dynamic_cast<PlayScene *>(Engine::GameEngine::GetInstance().GetActiveScene());
 }
-void Player::OnExplode() {;
-//     getPlayScene()->EffectGroup->AddNewObject(new ExplosionEffect(Position.x, Position.y));
-//     std::random_device dev;
-//     std::mt19937 rng(dev());
-//     std::uniform_int_distribution<std::mt19937::result_type> distId(1, 3);
-//     std::uniform_int_distribution<std::mt19937::result_type> dist(1, 20);
-//     for (int i = 0; i < 10; i++) {
-//         // Random add 10 dirty effects.
-//         getPlayScene()->GroundEffectGroup->AddNewObject(new DirtyEffect("play/dirty-" + std::to_string(distId(rng)) + ".png", dist(rng), Position.x, Position.y));
-//     }
-}
-Player::Player(std::string img, float x, float y, float radius, float speed, float hp, int money) : Engine::Sprite(img, x, y), speed(speed), hp(hp), money(money) {
-    CollisionRadius = radius;
-    reachEndTime = 0;
+
+Player::Player(std::string img, float x, float y) : Engine::Sprite(img, x, y) {
 
     // 儲存圖像
     bmpIdle = bmp;
@@ -57,100 +45,26 @@ Player::Player(std::string img, float x, float y, float radius, float speed, flo
     al_get_keyboard_state(&lastKeyState);
     startPos = targetPos = Position;
 }
-void Player::Hit(float damage) {
-//     hp -= damage;
-//     if (hp <= 0) {
-//         OnExplode();
-//         // Remove all turret's reference to target.
-//         for (auto &it : lockedTurrets)
-//             it->Target = nullptr;
-//         for (auto &it : lockedBullets)
-//             it->Target = nullptr;
-//         getPlayScene()->EarnMoney(money);
-//         getPlayScene()->EnemyGroup->RemoveObject(objectIterator);
-//         AudioHelper::PlayAudio("explosion.wav");
-//     }
-}
-void Player::UpdatePath(const std::vector<std::vector<int>> &mapDistance) {;
-//     int x = static_cast<int>(floor(Position.x / PlayScene::BlockSize));
-//     int y = static_cast<int>(floor(Position.y / PlayScene::BlockSize));
-//     if (x < 0) x = 0;
-//     if (x >= PlayScene::MapWidth) x = PlayScene::MapWidth - 1;
-//     if (y < 0) y = 0;
-//     if (y >= PlayScene::MapHeight) y = PlayScene::MapHeight - 1;
-//     Engine::Point pos(x, y);
-//     int num = mapDistance[y][x];
-//     if (num == -1) {
-//         num = 0;
-//         Engine::LOG(Engine::ERROR) << "Enemy path finding error";
-//     }
-//     path = std::vector<Engine::Point>(num + 1);
-//     while (num != 0) {
-//         std::vector<Engine::Point> nextHops;
-//         for (auto &dir : PlayScene::directions) {
-//             int x = pos.x + dir.x;
-//             int y = pos.y + dir.y;
-//             if (x < 0 || x >= PlayScene::MapWidth || y < 0 || y >= PlayScene::MapHeight || mapDistance[y][x] != num - 1)
-//                 continue;
-//             nextHops.emplace_back(x, y);
-//         }
-//         // Choose arbitrary one.
-//         std::random_device dev;
-//         std::mt19937 rng(dev());
-//         std::uniform_int_distribution<std::mt19937::result_type> dist(0, nextHops.size() - 1);
-//         pos = nextHops[dist(rng)];
-//         path[num] = pos;
-//         num--;
-//     }
-//     path[0] = PlayScene::EndGridPoint;
-}
-void Player::Update(float deltaTime) { //deltaTime 是每幀的時間增量（通常為 ~0.016 秒，假設 60 FPS）
 
-    animationTimer += deltaTime; //動畫切換需要追蹤累積時間（例如從遊戲開始或移動開始的總時間），而不是單幀的 deltaTime
-    if (animationTimer >= 0.6f) animationTimer -= 0.6f; // 重置，每 0.6 秒一個循環
+void Player::Update(float deltaTime) {
+    // 更新動畫計時器
+    animationTimer += deltaTime;
+    if (animationTimer >= 0.6f) animationTimer -= 0.6f; // 每 0.6 秒循環
+
     // 獲取鍵盤狀態
     ALLEGRO_KEYBOARD_STATE kbState;
     al_get_keyboard_state(&kbState);
 
-    // Engine::Point tmp = Position;
-    // // 檢查鍵盤輸入
-    // if (al_key_down(&kbState, ALLEGRO_KEY_I)) {
-    //     tmp.y -= 5;
-    //     //tmp.x = Position.x;
-    //     bmp = (fmod(animationTimer, 0.6f) < 0.3f) ? bmpUp1 : bmpUp2;
-    //     if (al_key_down(&kbState, ALLEGRO_KEY_L) && fmod(Position.y, 64.0) == 32.0){
-    //         tmp.x += 5;
-    //         tmp.y += 5;
-    //     }
-    //     isMoving = true;
-    // }
-    // else if (al_key_down(&kbState, ALLEGRO_KEY_K)) {
-    //     tmp.y += 5;
-    //     //tmp.x = Position.x;
-    //     bmp = (fmod(animationTimer, 0.6f) < 0.3f) ? bmpDown1 : bmpDown2;
-    //     isMoving = true;
-    // }
-    // else if (al_key_down(&kbState, ALLEGRO_KEY_J)) {
-    //     tmp.x -= 5;
-    //     //tmp.y = Position.y;
-    //     bmp = (fmod(animationTimer, 0.6f) < 0.3f) ? bmpLeft1 : bmpLeft2;
-    //     isMoving = true;
-    // }
-    // else if (al_key_down(&kbState, ALLEGRO_KEY_L)) {
-    //     tmp.x += 5;
-    //     //tmp.y = Position.y;
-    //     bmp = (fmod(animationTimer, 0.6f) < 0.3f) ? bmpRight1 : bmpRight2;
-    //     isMoving = true;
-    // }
+    // 更新按鍵時間
+    static const int keys[] = {ALLEGRO_KEY_W, ALLEGRO_KEY_S, ALLEGRO_KEY_A, ALLEGRO_KEY_D};
+    for (int key : keys) {
+        if (al_key_down(&kbState, key) && !al_key_down(&lastKeyState, key)) {
+            keyPressTimes[key] = animationTimer + deltaTime; // 記錄按下時間
+        } else if (!al_key_down(&kbState, key) && al_key_down(&lastKeyState, key)) {
+            keyPressTimes.erase(key); // 釋放時移除
+        }
+    }
 
-    // //else if (isMoving && !al_key_down(&kbState, ALLEGRO_KEY_L) && !al_key_down(&kbState, ALLEGRO_KEY_J) && !al_key_down(&kbState, ALLEGRO_KEY_K) && !al_key_down(&kbState, ALLEGRO_KEY_I)){
-    // else if (!al_key_down(&kbState, ALLEGRO_KEY_L) && !al_key_down(&kbState, ALLEGRO_KEY_J) && !al_key_down(&kbState, ALLEGRO_KEY_I) && !al_key_down(&kbState, ALLEGRO_KEY_K)) {
-    //     bmp = bmpIdle;
-    //     isMoving = false;
-    // }
-
-    // Position = tmp;
-    //PlayScene::collision(Position.x, Position.y);
     // 處理移動
     if (isMoving) {
         // 更新移動進度（0.3 秒完成）
@@ -159,39 +73,52 @@ void Player::Update(float deltaTime) { //deltaTime 是每幀的時間增量（�
             Position = targetPos;
             moveProgress = 0.0f;
             isMoving = false;
-            // 檢查當前按鍵狀態以繼續移動
-            Engine::Point tmp = Position;
-            bool keyPressed = false;
+            // 根據最新按鍵繼續移動
+            if (!keyPressTimes.empty()) {
+                // 找到最新按鍵
+                int latestKey = 0;
+                float latestTime = -1.0f;
+                for (const auto& pair : keyPressTimes) {
+                    if (pair.second > latestTime) {
+                        latestKey = pair.first;
+                        latestTime = pair.second;
+                    }
+                }
+                Engine::Point tmp = Position;
+                bool keyPressed = false;
 
-            if (al_key_down(&kbState, ALLEGRO_KEY_I)) {
-                tmp.y -= 64.0f; // 向上
-                bmp = (std::fmod(animationTimer, 0.6f) < 0.3f) ? bmpUp1 : bmpUp2;
-                keyPressed = true;
-            }
-            else if (al_key_down(&kbState, ALLEGRO_KEY_K)) {
-                tmp.y += 64.0f; // 向下
-                bmp = (std::fmod(animationTimer, 0.6f) < 0.3f) ? bmpDown1 : bmpDown2;
-                keyPressed = true;
-            }
-            else if (al_key_down(&kbState, ALLEGRO_KEY_J)) {
-                tmp.x -= 64.0f; // 向左
-                bmp = (std::fmod(animationTimer, 0.6f) < 0.3f) ? bmpLeft1 : bmpLeft2;
-                keyPressed = true;
-            }
-            else if (al_key_down(&kbState, ALLEGRO_KEY_L)) {
-                tmp.x += 64.0f; // 向右
-                bmp = (std::fmod(animationTimer, 0.6f) < 0.3f) ? bmpRight1 : bmpRight2;
-                keyPressed = true;
-            }
+                if (latestKey == ALLEGRO_KEY_W) {
+                    tmp.y -= 64.0f; // 向上
+                    bmp = (std::fmod(animationTimer, 0.6f) < 0.3f) ? bmpUp1 : bmpUp2;
+                    keyPressed = true;
+                    lastDirection = ALLEGRO_KEY_W;
+                } else if (latestKey == ALLEGRO_KEY_S) {
+                    tmp.y += 64.0f; // 向下
+                    bmp = (std::fmod(animationTimer, 0.6f) < 0.3f) ? bmpDown1 : bmpDown2;
+                    keyPressed = true;
+                    lastDirection = ALLEGRO_KEY_S;
+                } else if (latestKey == ALLEGRO_KEY_A) {
+                    tmp.x -= 64.0f; // 向左
+                    bmp = (std::fmod(animationTimer, 0.6f)) ? bmpLeft1 : bmpLeft2;
+                    keyPressed = true;
+                    lastDirection = ALLEGRO_KEY_A;
+                } else if (latestKey == ALLEGRO_KEY_D) {
+                    tmp.x += 64.0f; // 向右
+                    bmp = (std::fmod(animationTimer, 0.6f) < 0.3f) ? bmpRight1 : bmpRight2;
+                    keyPressed = true;
+                    lastDirection = ALLEGRO_KEY_D;
+                }
 
-            if (keyPressed) {
-                startPos = Position;
-                targetPos = tmp;
-                moveProgress = 0.0f;
-                isMoving = true;
+                if (keyPressed) {
+                    startPos = Position;
+                    targetPos = tmp;
+                    moveProgress = 0.0f;
+                    isMoving = true;
+                }
             } else {
                 bmp = bmpIdle;
                 animationTimer = 0;
+                lastDirection = 0;
             }
         } else {
             // 插值計算當前位置
@@ -201,37 +128,55 @@ void Player::Update(float deltaTime) { //deltaTime 是每幀的時間增量（�
 
     // 檢查新輸入（僅在非移動時）
     if (!isMoving) {
-        bool keyPressed = false;
-        Engine::Point tmp = Position;
+        if (!keyPressTimes.empty()) {
+            // 找到最新按鍵
+            int latestKey = 0;
+            float latestTime = -1.0f;
+            for (const auto& pair : keyPressTimes) {
+                if (pair.second > latestTime) {
+                    latestKey = pair.first;
+                    latestTime = pair.second;
+                }
+            }
+            // 僅在初次按下時啟動移動
+            if (al_key_down(&kbState, latestKey) && !al_key_down(&lastKeyState, latestKey)) {
+                Engine::Point tmp = Position;
+                bool keyPressed = false;
 
-        // 檢測按鍵初次按下
-        if (al_key_down(&kbState, ALLEGRO_KEY_I) && !al_key_down(&lastKeyState, ALLEGRO_KEY_I)) {
-            tmp.y -= 64.0f; // 向上
-            bmp = (std::fmod(animationTimer, 0.6f) < 0.3f) ? bmpUp1 : bmpUp2;
-            keyPressed = true;
-        }
-        else if (al_key_down(&kbState, ALLEGRO_KEY_K) && !al_key_down(&lastKeyState, ALLEGRO_KEY_K)) {
-            tmp.y += 64.0f; // 向下
-            bmp = (std::fmod(animationTimer, 0.6f) < 0.3f) ? bmpDown1 : bmpDown2;
-            keyPressed = true;
-        }
-        else if (al_key_down(&kbState, ALLEGRO_KEY_J) && !al_key_down(&lastKeyState, ALLEGRO_KEY_J)) {
-            tmp.x -= 64.0f; // 向左
-            bmp = (std::fmod(animationTimer, 0.6f) < 0.3f) ? bmpLeft1 : bmpLeft2;
-            keyPressed = true;
-        }
-        else if (al_key_down(&kbState, ALLEGRO_KEY_L) && !al_key_down(&lastKeyState, ALLEGRO_KEY_L)) {
-            tmp.x += 64.0f; // 向右
-            bmp = (std::fmod(animationTimer, 0.6f) < 0.3f) ? bmpRight1 : bmpRight2;
-            keyPressed = true;
-        }
+                if (latestKey == ALLEGRO_KEY_W) {
+                    tmp.y -= 64.0f; // 向上
+                    bmp = (std::fmod(animationTimer, 0.6f) < 0.3f) ? bmpUp1 : bmpUp2;
+                    keyPressed = true;
+                    lastDirection = ALLEGRO_KEY_W;
+                } else if (latestKey == ALLEGRO_KEY_S) {
+                    tmp.y += 64.0f; // 向下
+                    bmp = (std::fmod(animationTimer, 0.6f) < 0.3f) ? bmpDown1 : bmpDown2;
+                    keyPressed = true;
+                    lastDirection = ALLEGRO_KEY_S;
+                } else if (latestKey == ALLEGRO_KEY_A) {
+                    tmp.x -= 64.0f; // 向左
+                    bmp = (std::fmod(animationTimer, 0.6f) < 0.3f) ? bmpLeft1 : bmpLeft2;
+                    keyPressed = true;
+                    lastDirection = ALLEGRO_KEY_A;
+                } else if (latestKey == ALLEGRO_KEY_D) {
+                    tmp.x += 64.0f; // 向右
+                    bmp = (std::fmod(animationTimer, 0.6f) < 0.3f) ? bmpRight1 : bmpRight2;
+                    keyPressed = true;
+                    lastDirection = ALLEGRO_KEY_D;
+                }
 
-        // 開始新移動
-        if (keyPressed) {
-            startPos = Position;
-            targetPos = tmp;
-            moveProgress = 0.0f;
-            isMoving = true;
+                if (keyPressed) {
+                    startPos = Position;
+                    targetPos = tmp;
+                    moveProgress = 0.0f;
+                    isMoving = true;
+                }
+            }
+        } else if (!al_key_down(&kbState, ALLEGRO_KEY_W) && !al_key_down(&kbState, ALLEGRO_KEY_S) &&
+                   !al_key_down(&kbState, ALLEGRO_KEY_A) && !al_key_down(&kbState, ALLEGRO_KEY_D)) {
+            bmp = bmpIdle;
+            animationTimer = 0;
+            lastDirection = 0;
         }
     }
 
@@ -240,11 +185,8 @@ void Player::Update(float deltaTime) { //deltaTime 是每幀的時間增量（�
 
     Sprite::Update(deltaTime);
 }
+
 void Player::Draw() const {
     Sprite::Draw();
-    if (PlayScene::DebugMode) {
-        // Draw collision radius.
-        al_draw_circle(Position.x, Position.y, CollisionRadius, al_map_rgb(255, 0, 0), 2);
-    }
 }
 

@@ -21,8 +21,6 @@
 #include "PlayScene.hpp"
 #include "Player/Player.hpp"
 
-bool PlayScene::DebugMode = false;
-
 const int PlayScene::MapWidth = 20, PlayScene::MapHeight = 13;
 const int PlayScene::BlockSize = 64;
 
@@ -44,7 +42,7 @@ void PlayScene::Initialize() {
     
     // 初始化玩家
     Player* player;
-    PlayerGroup->AddNewObject(player = new Player("player/idle_player.png", 100, 100, 10, 10, 10, 10));
+    PlayerGroup->AddNewObject(player = new Player("player/idle_player.png", 100, 100));
     
     // 預載資源
     Engine::Resources::GetInstance().GetBitmap("lose/benjamin-happy.png");
