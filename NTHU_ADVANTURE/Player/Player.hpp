@@ -17,7 +17,10 @@ class Player : public Engine::Sprite {
 protected:
     PlayScene *getPlayScene();
 
-    std::shared_ptr<ALLEGRO_BITMAP> bmpIdle;
+    std::shared_ptr<ALLEGRO_BITMAP> bmpIdle_down;
+    std::shared_ptr<ALLEGRO_BITMAP> bmpIdle_left;
+    std::shared_ptr<ALLEGRO_BITMAP> bmpIdle_right;
+    std::shared_ptr<ALLEGRO_BITMAP> bmpIdle_up;
     std::shared_ptr<ALLEGRO_BITMAP> bmpUp1;
     std::shared_ptr<ALLEGRO_BITMAP> bmpUp2;
     std::shared_ptr<ALLEGRO_BITMAP> bmpDown1;
@@ -26,6 +29,8 @@ protected:
     std::shared_ptr<ALLEGRO_BITMAP> bmpLeft2;
     std::shared_ptr<ALLEGRO_BITMAP> bmpRight1;
     std::shared_ptr<ALLEGRO_BITMAP> bmpRight2;
+
+    bool last_left, last_up, last_down, last_right;
 
     float animationTimer;
 

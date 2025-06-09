@@ -24,19 +24,22 @@ PlayScene *Player::getPlayScene() {
 Player::Player(std::string img, float x, float y) : Engine::Sprite(img, x, y) {
 
     // 儲存圖像
-    bmpIdle = bmp;
+    bmpIdle_down = bmp;
+    bmpIdle_left = Engine::Resources::GetInstance().GetBitmap("player/left_idle.png");
+    bmpIdle_right = Engine::Resources::GetInstance().GetBitmap("player/right_idle.png");
+    bmpIdle_up = Engine::Resources::GetInstance().GetBitmap("player/up_idle.png");
 
-    bmpUp1 = Engine::Resources::GetInstance().GetBitmap("player/run1_player.png");
-    bmpUp2 = Engine::Resources::GetInstance().GetBitmap("player/run2_player.png");
+    bmpUp1 = Engine::Resources::GetInstance().GetBitmap("player/up1.png");
+    bmpUp2 = Engine::Resources::GetInstance().GetBitmap("player/up2.png");
 
-    bmpDown1 = Engine::Resources::GetInstance().GetBitmap("player/run1_player.png");
-    bmpDown2 = Engine::Resources::GetInstance().GetBitmap("player/run2_player.png");
+    bmpDown1 = Engine::Resources::GetInstance().GetBitmap("player/down1.png");
+    bmpDown2 = Engine::Resources::GetInstance().GetBitmap("player/down2.png");
 
-    bmpLeft1 = Engine::Resources::GetInstance().GetBitmap("player/run1_player.png");
-    bmpLeft2 = Engine::Resources::GetInstance().GetBitmap("player/run2_player.png");
+    bmpLeft1 = Engine::Resources::GetInstance().GetBitmap("player/left1.png");
+    bmpLeft2 = Engine::Resources::GetInstance().GetBitmap("player/left2.png");
 
-    bmpRight1 = Engine::Resources::GetInstance().GetBitmap("player/run1_player.png");
-    bmpRight2 = Engine::Resources::GetInstance().GetBitmap("player/run2_player.png");
+    bmpRight1 = Engine::Resources::GetInstance().GetBitmap("player/right1.png");
+    bmpRight2 = Engine::Resources::GetInstance().GetBitmap("player/right2.png");
 
     //對齊
     Position.x = std::round(Position.x / 64.0f) * 64.0f + 32.0f;
@@ -44,12 +47,14 @@ Player::Player(std::string img, float x, float y) : Engine::Sprite(img, x, y) {
 
     al_get_keyboard_state(&lastKeyState);
     startPos = targetPos = Position;
+
+    last_down = last_left = last_right = last_up = false;
 }
 
 void Player::Update(float deltaTime) {
     // 更新動畫計時器
     animationTimer += deltaTime;
-    if (animationTimer >= 0.6f) animationTimer -= 0.6f; // 每 0.6 秒循環
+    if (animationTimer >= 0.4f) animationTimer -= 0.4f; // 每 0.4 秒循環
 
     // 獲取鍵盤狀態
     ALLEGRO_KEYBOARD_STATE kbState;
@@ -68,7 +73,7 @@ void Player::Update(float deltaTime) {
     // 處理移動
     if (isMoving) {
         // 更新移動進度（0.3 秒完成）
-        moveProgress += deltaTime / 0.3f;
+        moveProgress += deltaTime / 0.2f;
         if (moveProgress >= 1.0f) {
             Position = targetPos;
             moveProgress = 0.0f;
@@ -89,24 +94,36 @@ void Player::Update(float deltaTime) {
 
                 if (latestKey == ALLEGRO_KEY_W) {
                     tmp.y -= 64.0f; // 向上
-                    bmp = (std::fmod(animationTimer, 0.6f) < 0.3f) ? bmpUp1 : bmpUp2;
+                    bmp = (std::fmod(animationTimer, 0.4f) < 0.2f) ? bmpUp1 : bmpUp2;
                     keyPressed = true;
                     lastDirection = ALLEGRO_KEY_W;
+                    last_up = true;
+                    last_down = last_left = last_right = false;
                 } else if (latestKey == ALLEGRO_KEY_S) {
                     tmp.y += 64.0f; // 向下
-                    bmp = (std::fmod(animationTimer, 0.6f) < 0.3f) ? bmpDown1 : bmpDown2;
+                    bmp = (std::fmod(animationTimer, 0.4f) < 0.2f) ? bmpDown1 : bmpDown2;
                     keyPressed = true;
                     lastDirection = ALLEGRO_KEY_S;
+                    last_down = true;
+                    last_up = last_left = last_right = false;
                 } else if (latestKey == ALLEGRO_KEY_A) {
                     tmp.x -= 64.0f; // 向左
-                    bmp = (std::fmod(animationTimer, 0.6f)) ? bmpLeft1 : bmpLeft2;
+                    bmp = (std::fmod(animationTimer, 0.4f) < 0.2f) ? bmpLeft1 : bmpLeft2;
                     keyPressed = true;
                     lastDirection = ALLEGRO_KEY_A;
+                    last_left = true;
+                    last_down = last_up = last_right = false;
                 } else if (latestKey == ALLEGRO_KEY_D) {
                     tmp.x += 64.0f; // 向右
-                    bmp = (std::fmod(animationTimer, 0.6f) < 0.3f) ? bmpRight1 : bmpRight2;
+                    bmp = (std::fmod(animationTimer, 0.4f) < 0.2f) ? bmpRight1 : bmpRight2;
+                    //if (std::fmod(animationTimer, 0.4f) < 0.1f) bmp = bmpRight1;
+                    //else if (std::fmod(animationTimer, 0.4f) < 0.2f) bmp = bmpRight2;
+                    //else if (std::fmod(animationTimer, 0.4f) < 0.3f) bmp = bmpRight3;
+                    //else bmp = bmpRight4;
                     keyPressed = true;
                     lastDirection = ALLEGRO_KEY_D;
+                    last_right = true;
+                    last_down = last_left = last_up = false;
                 }
 
                 if (keyPressed) {
@@ -116,7 +133,10 @@ void Player::Update(float deltaTime) {
                     isMoving = true;
                 }
             } else {
-                bmp = bmpIdle;
+                if (last_down) bmp = bmpIdle_down;
+                else if (last_left) bmp = bmpIdle_left;
+                else if (last_right) bmp = bmpIdle_right;
+                else bmp = bmpIdle_up;
                 animationTimer = 0;
                 lastDirection = 0;
             }
@@ -145,24 +165,36 @@ void Player::Update(float deltaTime) {
 
                 if (latestKey == ALLEGRO_KEY_W) {
                     tmp.y -= 64.0f; // 向上
-                    bmp = (std::fmod(animationTimer, 0.6f) < 0.3f) ? bmpUp1 : bmpUp2;
+                    bmp = (std::fmod(animationTimer, 0.4f) < 0.2f) ? bmpUp1 : bmpUp2;
                     keyPressed = true;
                     lastDirection = ALLEGRO_KEY_W;
+                    last_up = true;
+                    last_down = last_left = last_right = false;
                 } else if (latestKey == ALLEGRO_KEY_S) {
                     tmp.y += 64.0f; // 向下
-                    bmp = (std::fmod(animationTimer, 0.6f) < 0.3f) ? bmpDown1 : bmpDown2;
+                    bmp = (std::fmod(animationTimer, 0.4f) < 0.2f) ? bmpDown1 : bmpDown2;
                     keyPressed = true;
                     lastDirection = ALLEGRO_KEY_S;
+                    last_down = true;
+                    last_up = last_left = last_right = false;
                 } else if (latestKey == ALLEGRO_KEY_A) {
                     tmp.x -= 64.0f; // 向左
-                    bmp = (std::fmod(animationTimer, 0.6f) < 0.3f) ? bmpLeft1 : bmpLeft2;
+                    bmp = (std::fmod(animationTimer, 0.4f) < 0.2f) ? bmpLeft1 : bmpLeft2;
                     keyPressed = true;
+                    last_left = true;
+                    last_down = last_up = last_right = false;
                     lastDirection = ALLEGRO_KEY_A;
                 } else if (latestKey == ALLEGRO_KEY_D) {
                     tmp.x += 64.0f; // 向右
-                    bmp = (std::fmod(animationTimer, 0.6f) < 0.3f) ? bmpRight1 : bmpRight2;
+                    bmp = (std::fmod(animationTimer, 0.4f) < 0.2f) ? bmpRight1 : bmpRight2;
+                    //if (std::fmod(animationTimer, 0.4f) < 0.1f) bmp = bmpRight1;
+                    //else if (std::fmod(animationTimer, 0.4f) < 0.2f) bmp = bmpRight2;
+                    //else if (std::fmod(animationTimer, 0.4f) < 0.3f) bmp = bmpRight3;
+                    //else bmp = bmpRight4;
                     keyPressed = true;
                     lastDirection = ALLEGRO_KEY_D;
+                    last_right = true;
+                    last_down = last_left = last_up = false;
                 }
 
                 if (keyPressed) {
@@ -174,7 +206,11 @@ void Player::Update(float deltaTime) {
             }
         } else if (!al_key_down(&kbState, ALLEGRO_KEY_W) && !al_key_down(&kbState, ALLEGRO_KEY_S) &&
                    !al_key_down(&kbState, ALLEGRO_KEY_A) && !al_key_down(&kbState, ALLEGRO_KEY_D)) {
-            bmp = bmpIdle;
+            //bmp = bmpIdle_down;
+            if (last_down) bmp = bmpIdle_down;
+            else if (last_left) bmp = bmpIdle_left;
+            else if (last_right) bmp = bmpIdle_right;
+            else bmp = bmpIdle_up;
             animationTimer = 0;
             lastDirection = 0;
         }
