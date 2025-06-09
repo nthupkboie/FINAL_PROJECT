@@ -70,7 +70,7 @@ void PlayScene::Initialize() {
     };
 
     // 獲取NPC頭像 (使用NPC的站立圖像)
-    auto npcAvatar = Engine::Resources::GetInstance().GetBitmap("NPC/test/role/test_sheet.png");
+    auto npcAvatar = Engine::Resources::GetInstance().GetBitmap("NPC/test/icon/test_icon.png");
     dialog.StartDialog("測試NPC", npcAvatar, testMessages);
     
     // 預載資源
@@ -151,7 +151,7 @@ void PlayScene::OnKeyDown(int keyCode) {
             "第二條測試訊息。",
             "最後一條測試訊息。"
         };
-        auto npcAvatar = Engine::Resources::GetInstance().GetBitmap("NPC/test/role/test_sheet.png");
+        auto npcAvatar = Engine::Resources::GetInstance().GetBitmap("NPC/test/icon/test_icon.png");
         dialog.StartDialog("測試NPC", npcAvatar, testMessages);
     }
 }
