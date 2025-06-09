@@ -20,6 +20,7 @@
 // new add
 #include "PlayScene.hpp"
 #include "Player/Player.hpp"
+#include "NPC/NPC.hpp"
 
 const int PlayScene::MapWidth = 20, PlayScene::MapHeight = 13;
 const int PlayScene::BlockSize = 64;
@@ -36,6 +37,7 @@ void PlayScene::Initialize() {
     // 添加渲染群組
     AddNewObject(TileMapGroup = new Group());      // 地圖圖層
     AddNewObject(PlayerGroup = new Group());       // 玩家角色
+    AddNewObject(NPCGroup = new Group());
     
     // 讀取地圖
     ReadMap();
@@ -43,6 +45,19 @@ void PlayScene::Initialize() {
     // 初始化玩家
     Player* player;
     PlayerGroup->AddNewObject(player = new Player("player/idle.png", 100, 100));
+
+    // NPC
+    NPC* test;
+    // sheet路徑, x, y, 
+    // 上, 下, 左, 右, (先行在列)
+    // 圖塊寬, 圖塊高
+    NPCGroup->AddNewObject(test = new NPC("NPC/test/role/test_sheet.png",
+                                            64, 64,
+                                            2, 3,  // 上 (第0列第2行)
+                                            2, 0,  // 下
+                                            2, 1,  // 左
+                                            2, 2,  // 右
+                                            64, 64)); // 圖塊大小
     
     // 預載資源
     Engine::Resources::GetInstance().GetBitmap("lose/benjamin-happy.png");
@@ -59,9 +74,22 @@ void PlayScene::Terminate() {
 void PlayScene::Update(float deltaTime) {
     IScene::Update(deltaTime);
     
-    // 更新遊戲邏輯
-    // 例如: 玩家移動、碰撞檢測等
+    // 獲取玩家對象
+    Player* player = nullptr;
+    for (auto& obj : PlayerGroup->GetObjects()) {
+        player = dynamic_cast<Player*>(obj);
+        if (player) break;
+    }
     
+    if (!player) return; // 確保玩家存在
+    
+    // 更新所有NPC並傳遞玩家對象
+    for (auto& obj : NPCGroup->GetObjects()) {
+        if (auto npc = dynamic_cast<NPC*>(obj)) {
+            npc->Update(deltaTime, player);
+        }
+    }
+
     // 檢查遊戲結束條件
     if (lives <= 0) {
         Engine::GameEngine::GetInstance().ChangeScene("lose");
@@ -96,14 +124,14 @@ void PlayScene::OnKeyDown(int keyCode) {
 void PlayScene::ReadMap() {
     std::string filename = std::string("Resource/map1") + ".txt";
     
-    // 讀取地圖文件
-    std::vector<bool> mapData;
+    // read map1.txt
+    std::vector<int> mapData;
     char c;
     std::ifstream fin(filename);
     while (fin >> c) {
         switch (c) {
-            case '0': mapData.push_back(false); break;  // 可通行區域
-            case '1': mapData.push_back(true); break;   // 障礙物
+            case '0': mapData.push_back(0); break; // grass walkable
+            case '1': mapData.push_back(1); break; // rock  not walkable
             case '\n':
             case '\r':
             default: break;
@@ -111,19 +139,22 @@ void PlayScene::ReadMap() {
     }
     fin.close();
     
-    // 驗證地圖數據
+    // confirm map data
     if (static_cast<int>(mapData.size()) != MapWidth * MapHeight)
         throw std::ios_base::failure("Map data is corrupted.");
     
-    // 繪製地圖
+    // draw
     for (int i = 0; i < MapHeight; i++) {
         for (int j = 0; j < MapWidth; j++) {
-            if (mapData[i * MapWidth + j]) {
-                // 繪製障礙物
-                TileMapGroup->AddNewObject(new Engine::Image("play/floor.png", j * BlockSize, i * BlockSize, BlockSize, BlockSize));
-            } else {
-                // 繪製地面
-                TileMapGroup->AddNewObject(new Engine::Image("play/dirt.png", j * BlockSize, i * BlockSize, BlockSize, BlockSize));
+            switch(mapData[i * MapWidth + j]){
+                case 0:
+                    TileMapGroup->AddNewObject(new Engine::Image("play/floor.png", j * BlockSize, i * BlockSize, BlockSize, BlockSize));
+                    break;
+                case 1:
+                    TileMapGroup->AddNewObject(new Engine::Image("play/dirt.png", j * BlockSize, i * BlockSize, BlockSize, BlockSize));
+                    break;
+                default:
+                    break;
             }
         }
     }

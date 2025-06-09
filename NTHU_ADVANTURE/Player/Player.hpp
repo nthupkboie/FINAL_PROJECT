@@ -49,6 +49,6 @@ public:
     void Update(float deltaTime) override;
     void Draw() const override;
 
-    
+    int GetLastDirection() const { return lastDirection; }
 };
 #endif   // PLAYER_HPP

@@ -51,7 +51,9 @@ public:
     Group *TowerGroup;
     Group *EnemyGroup;
 
-    Group *PlayerGroup; //new add
+    // new add
+    Group *PlayerGroup;
+    Group *NPCGroup;
 
     Group *EffectGroup;
     Group *UIGroup;

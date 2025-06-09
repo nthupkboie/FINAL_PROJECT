@@ -1,0 +1,103 @@
+#include "NPC.hpp"
+#include "Player/Player.hpp"
+#include "Engine/Resources.hpp"
+#include "Engine/LOG.hpp"
+#include <cmath>
+#include <allegro5/allegro_primitives.h>
+
+// 從 sprite sheet 載入子圖的輔助函數
+static std::shared_ptr<ALLEGRO_BITMAP> LoadSpriteFromSheet(
+    const std::string& sheetKey, int col, int row, 
+    int tileW = 64, int tileH = 64) 
+{
+    auto sheetPtr = Engine::Resources::GetInstance().GetBitmap(sheetKey);
+    if (!sheetPtr) return nullptr;
+
+    ALLEGRO_BITMAP* sheet = sheetPtr.get();
+    ALLEGRO_BITMAP* sub = al_create_sub_bitmap(sheet, col * tileW, row * tileH, tileW, tileH);
+    return std::shared_ptr<ALLEGRO_BITMAP>(sub, [](ALLEGRO_BITMAP* bmp) {
+        // 注意: 不實際刪除 sub-bitmap，由父圖管理生命週期
+    });
+}
+
+// 從 sprite sheet 建構
+NPC::NPC(const std::string& sheetPath, float x, float y, 
+         int upCol, int upRow, int downCol, int downRow,
+         int leftCol, int leftRow, int rightCol, int rightRow,
+         int tileW, int tileH)
+    : Engine::Sprite(sheetPath, x, y) 
+{
+    bmpIdle_up = LoadSpriteFromSheet(sheetPath, upCol, upRow, tileW, tileH);
+    bmpIdle_down = LoadSpriteFromSheet(sheetPath, downCol, downRow, tileW, tileH);
+    bmpIdle_left = LoadSpriteFromSheet(sheetPath, leftCol, leftRow, tileW, tileH);
+    bmpIdle_right = LoadSpriteFromSheet(sheetPath, rightCol, rightRow, tileW, tileH);
+    
+    bmp = bmpIdle_down; // 預設朝下
+    
+    // 對齊到網格中心
+    Position.x = std::round(Position.x / tileW) * tileW + tileW/2;
+    Position.y = std::round(Position.y / tileH) * tileH + tileH/2;
+}
+
+// 從分開的圖片建構
+NPC::NPC(const std::string& upPath, const std::string& downPath,
+         const std::string& leftPath, const std::string& rightPath,
+         float x, float y)
+    : Engine::Sprite(downPath, x, y) // 使用向下圖作為基礎
+{
+    bmpIdle_up = Engine::Resources::GetInstance().GetBitmap(upPath);
+    bmpIdle_down = Engine::Resources::GetInstance().GetBitmap(downPath);
+    bmpIdle_left = Engine::Resources::GetInstance().GetBitmap(leftPath);
+    bmpIdle_right = Engine::Resources::GetInstance().GetBitmap(rightPath);
+    
+    bmp = bmpIdle_down; // 預設朝下
+    
+    // 自動計算圖塊大小 (假設所有方向圖片大小相同)
+    if (bmpIdle_down) {
+        int tileW = al_get_bitmap_width(bmpIdle_down.get());
+        int tileH = al_get_bitmap_height(bmpIdle_down.get());
+        Position.x = std::round(Position.x / tileW) * tileW + tileW/2;
+        Position.y = std::round(Position.y / tileH) * tileH + tileH/2;
+    }
+}
+
+void NPC::Update(float deltaTime, const Player* player) {
+    ALLEGRO_KEYBOARD_STATE kbState;
+    al_get_keyboard_state(&kbState);
+
+    if (al_key_down(&kbState, ALLEGRO_KEY_T)) {
+        Engine::Point playerPos = player->Position;
+        
+        // 更精確的四方向判斷
+        bool isAdjacent = false;
+        float distX = playerPos.x - Position.x;
+        float distY = playerPos.y - Position.y;
+        
+        // 檢查是否在正四方向相鄰
+        if ((std::abs(distX) <= 64.0f && std::abs(distY) <= 16.0f) ||  // 水平方向
+            (std::abs(distY) <= 64.0f && std::abs(distX) <= 16.0f)) {  // 垂直方向
+            FacePlayer(player);
+        }
+    }
+
+    Engine::Sprite::Update(deltaTime);
+}
+
+void NPC::FacePlayer(const Player* player) {
+    Engine::Point playerPos = player->Position;
+    float dx = playerPos.x - Position.x;
+    float dy = playerPos.y - Position.y;
+
+    // 更精確的四方向判斷
+    if (std::abs(dx) > std::abs(dy)) {
+        // 水平方向
+        bmp = (dx > 0) ? bmpIdle_right : bmpIdle_left;
+    } else {
+        // 垂直方向
+        bmp = (dy > 0) ? bmpIdle_down : bmpIdle_up;
+    }
+}
+
+void NPC::Draw() const {
+    Engine::Sprite::Draw();
+}

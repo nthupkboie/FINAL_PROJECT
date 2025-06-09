@@ -1,35 +1,51 @@
-#ifndef NPCDIALOG_HPP
-#define NPCDIALOG_HPP
+#pragma once
 
-#include <string>
-#include <vector>
+#include <allegro5/allegro.h>
 #include <allegro5/allegro_font.h>
 #include <allegro5/allegro_ttf.h>
-#include <allegro5/allegro_primitives.h>
-#include <allegro5/allegro_image.h>
+#include <string>
+#include <vector>
+#include <memory>
 
 class NPCDialog {
 public:
-    NPCDialog(std::vector<std::string> dialogLines, const std::string& portraitPath);
+    NPCDialog();
+    ~NPCDialog();
 
-    void Start();
-    void Update(double deltaTime);
+    void StartDialog(const std::string& npcName, 
+                   std::shared_ptr<ALLEGRO_BITMAP> npcAvatar,
+                   const std::vector<std::string>& messages);
+    void Update(float deltaTime);
     void Draw() const;
-    void Proceed(); // 切換下一句對話
-    bool IsFinished() const;
+    void OnKeyPress(int keycode);
+    void Advance();
     bool IsActive() const;
 
 private:
-    std::vector<std::string> lines;
-    int currentLine;
-    std::string currentText;
+    struct DialogMessage {
+        std::string fullText;
+        std::string displayedText;
+        float displayProgress;
+    };
+
+    bool isActive;
+    std::string npcName;
+    std::shared_ptr<ALLEGRO_BITMAP> npcAvatar;
+    std::vector<DialogMessage> messages;
+    size_t currentMessageIndex;
+    
+    // 直接管理字體資源
+    std::shared_ptr<ALLEGRO_FONT> font;
+    std::shared_ptr<ALLEGRO_BITMAP> dialogBox;
+    
     float charDisplayTimer;
-    size_t charIndex;
-    bool finished;
-    bool active;
-
-    ALLEGRO_BITMAP* portrait;
-    ALLEGRO_FONT* font;
+    float timePerChar;
+    
+    // 對話框尺寸和位置
+    float boxX, boxY, boxWidth, boxHeight;
+    float avatarX, avatarY, avatarSize;
+    float textX, textY, textWidth, textHeight;
+    
+    void InitializeResources();
+    void CreateDefaultDialogBox();
 };
-
-#endif

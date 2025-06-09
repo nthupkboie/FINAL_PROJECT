@@ -46,7 +46,10 @@ add_executable(2025_I2P2_TowerDefense
     Player/Player.hpp
 
     # NPC
-    
+    NPC/NPC.cpp
+    NPC/NPC.hpp
+    # NPC/NPCDialog.cpp
+    # NPC/NPCDialog.hpp
 
     # Scene
     Scene/PlayScene.cpp

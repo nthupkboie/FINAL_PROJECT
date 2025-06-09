@@ -126,4 +126,12 @@ namespace Engine {
         static Resources instance;
         return instance;
     }
+
+    ALLEGRO_BITMAP* LoadSpriteFromSheet(const std::string& sheetKey, int col, int row, int tileWidth = 64, int tileHeight = 64) {
+        std::shared_ptr<ALLEGRO_BITMAP> sheetPtr = Engine::Resources::GetInstance().GetBitmap(sheetKey);
+        if (!sheetPtr) return nullptr;
+
+        ALLEGRO_BITMAP* sheet = sheetPtr.get(); // 從 shared_ptr 拿 raw pointer
+        return al_create_sub_bitmap(sheet, col * tileWidth, row * tileHeight, tileWidth, tileHeight);
+    }
 }

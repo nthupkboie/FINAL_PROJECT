@@ -97,6 +97,9 @@ namespace Engine {
         /// </summary>
         /// <returns>The Singleton instance of Resources.</returns>
         static Resources &GetInstance();
+
+        // new add for sheet (for 64 x 64)
+        static ALLEGRO_BITMAP* LoadSpriteFromSheet(std::string sheetKey, int col, int row, int tileWidth = 64, int tileHeight = 64);
     };
 }
 #endif   // RESOURCES_HPP
