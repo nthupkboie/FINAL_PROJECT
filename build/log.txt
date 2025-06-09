@@ -1,0 +1,34 @@
+[INFO] Game Initializing...
+[INFO] Loaded Resource<image>: Resource/images/icon.png
+[INFO] Loaded window icon from: icon.png
+[INFO] There are total 2 supported mouse buttons
+[INFO] Allegro5 initialized
+[INFO] Game begin
+[INFO] Loaded Resource<font>: Resource/fonts/pirulen.ttf with size 120
+[INFO] Loaded Resource<image>: Resource/images/stage-select/dirt.png scaled to 400x100
+[INFO] Loaded Resource<image>: Resource/images/stage-select/dirt.png
+[INFO] Loaded Resource<image>: Resource/images/stage-select/floor.png
+[INFO] Loaded Resource<font>: Resource/fonts/pirulen.ttf with size 48
+[INFO] Game initialized
+[INFO] Game start event loop
+[INFO] Loaded Resource<image>: Resource/images/play/dirt.png scaled to 64x64
+[INFO] Loaded Resource<image>: Resource/images/play/floor.png scaled to 64x64
+[INFO] Loaded Resource<image>: Resource/images/play/turret-1.png
+[INFO] Loaded Resource<image>: Resource/images/lose/benjamin-happy.png
+[INFO] Loaded Resource<audio>: Resource/audios/play.ogg
+[INFO] Changed to play scene
+[INFO] Game Terminating...
+[INFO] stopped audio (bgm)
+[INFO] Game terminated
+[INFO] Game end
+[INFO] Destroyed Resource<image>: lose/benjamin-happy.png
+[INFO] Destroyed Resource<image>: play/turret-1.png
+[INFO] Destroyed Resource<image>: play/floor.png?64x64
+[INFO] Destroyed Resource<image>: stage-select/floor.png
+[INFO] Destroyed Resource<image>: stage-select/dirt.png?400x100
+[INFO] Destroyed Resource<image>: play/dirt.png?64x64
+[INFO] Destroyed Resource<image>: stage-select/dirt.png
+[INFO] Destroyed Resource<image>: icon.png
+[INFO] Destroyed Resource<font>: pirulen.ttf?48
+[INFO] Destroyed Resource<font>: pirulen.ttf?120
+[INFO] Destroyed Resource<audio>: play.ogg
