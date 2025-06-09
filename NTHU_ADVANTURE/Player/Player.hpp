@@ -4,23 +4,18 @@
 #include <string>
 #include <vector>
 
+#include <map>
+
 #include <allegro5/allegro.h> // new add
 
 #include "Engine/Point.hpp"
 #include "Engine/Sprite.hpp"
 
-class Bullet;
 class PlayScene;
-class Turret;
 
 class Player : public Engine::Sprite {
 protected:
-    std::vector<Engine::Point> path;
-    float speed;
-    float hp;
-    int money;
     PlayScene *getPlayScene();
-    virtual void OnExplode();
 
     std::shared_ptr<ALLEGRO_BITMAP> bmpIdle;
     std::shared_ptr<ALLEGRO_BITMAP> bmpUp1;
@@ -33,29 +28,19 @@ protected:
     std::shared_ptr<ALLEGRO_BITMAP> bmpRight2;
 
     float animationTimer;
-    //bool isMoving = false;
-
-
-    bool movingRight = false;
-    bool movingLeft = false;
-    bool movingUp = false;
-    bool movingDown = false;
-
-    float movingTicks = 1.0f;
 
     // 移動控制
     bool isMoving = false;
     ALLEGRO_KEYBOARD_STATE lastKeyState;
-    Engine::Point startPos, targetPos;
-    float moveProgress;
+    Engine::Point startPos, targetPos; //startPos記錄角色開始移動時的起始格子中心位置，targetPos記錄角色移動的目標格子中心位置
+    float moveProgress; //追蹤移動的進度，範圍從 0.0（開始）到 1.0（完成）
+    // 按鍵時間追蹤
+    std::map<int, float> keyPressTimes;
+    int lastDirection; // 記錄最後方向（ALLEGRO_KEY_*）
+    float gameTime; // 累計遊戲時間
     
 public:
-    float reachEndTime;
-    std::list<Turret *> lockedTurrets;
-    std::list<Bullet *> lockedBullets;
-    Player(std::string img, float x, float y, float radius, float speed, float hp, int money);
-    void Hit(float damage);
-    void UpdatePath(const std::vector<std::vector<int>> &mapDistance);
+    Player(std::string img, float x, float y);
     void Update(float deltaTime) override;
     void Draw() const override;
 
