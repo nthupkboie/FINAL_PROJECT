@@ -39,13 +39,6 @@ NPC::NPC(const std::string& sheetPath, float x, float y,
     Position.y = std::round(Position.y / tileH) * tileH + tileH/2;
 
     dialog.Initialize();
-    
-    // 設置 NPC 的對話內容
-    npcMessages = {
-        "你好，旅行者！",
-        "這個世界充滿了危險，你要小心。",
-        "如果需要幫助，可以隨時來找我。"
-    };
 }
 
 // 從分開的圖片建構
@@ -70,45 +63,48 @@ NPC::NPC(const std::string& upPath, const std::string& downPath,
     }
 
     dialog.Initialize();
-    
-    // 設置 NPC 的對話內容
-    npcMessages = {
-        "你好，旅行者！",
-        "這個世界充滿了危險，你要小心。",
-        "如果需要幫助，可以隨時來找我。"
-    };
 }
 
 void NPC::Update(float deltaTime, const Player* player) {
     ALLEGRO_KEYBOARD_STATE kbState;
     al_get_keyboard_state(&kbState);
 
-    if (al_key_down(&kbState, ALLEGRO_KEY_T)) {
-        Engine::Point playerPos = player->Position;
-        
-        // 更精確的四方向判斷
-        bool isAdjacent = false;
-        float distX = playerPos.x - Position.x;
-        float distY = playerPos.y - Position.y;
-        
-        // 檢查是否在正四方向相鄰
-        if ((std::abs(distX) <= 64.0f && std::abs(distY) <= 16.0f) ||  // 水平方向
-            (std::abs(distY) <= 64.0f && std::abs(distX) <= 16.0f)) {  // 垂直方向
-            FacePlayer(player);
-        }
+    // 檢查是否相鄰且按T鍵
+    Engine::Point playerPos = player->Position;
+    float distX = playerPos.x - Position.x;
+    float distY = playerPos.y - Position.y;
+    bool isAdjacent = (std::abs(distX) <= 64.0f && std::abs(distY) <= 64.0f);
 
-        if (isAdjacent && !dialog.IsDialogActive()) {
+    // 檢查Enter鍵是否剛被按下
+    static bool enterWasDown = false;
+    bool enterIsDown = al_key_down(&kbState, ALLEGRO_KEY_ENTER);
+    bool enterPressed = enterIsDown && !enterWasDown;
+    enterWasDown = enterIsDown;
+
+    if (isAdjacent && al_key_down(&kbState, ALLEGRO_KEY_T)) {
+        if (!isTalking && !messages.empty()) {
             FacePlayer(player);
-            dialog.StartDialog("村民", bmpIdle_down, npcMessages);
+            isTalking = true;
+            dialog.StartDialog("NPC", bmpIdle_down, messages);
+            // 重置Enter鍵狀態，避免立即觸發
+            enterWasDown = true;
         }
     }
+
     // 更新對話框
-    if (dialog.IsDialogActive()) {
-        dialog.Update(deltaTime);
-        
-        // 檢查是否按下確認鍵來推進對話
-        if (al_key_down(&kbState, ALLEGRO_KEY_ENTER)) {
+    if (isTalking) {
+        // 如果當前句子還沒顯示完，繼續更新動畫
+        if (!dialog.IsCurrentMessageComplete()) {
+            dialog.Update(deltaTime);
+        }
+        // 如果當前句子已顯示完且按下Enter，推進到下一句
+        else if (enterPressed) {
             dialog.AdvanceDialog();
+            
+            // 如果對話結束
+            if (!dialog.IsDialogActive()) {
+                isTalking = false;
+            }
         }
     }
 
@@ -134,7 +130,7 @@ void NPC::Draw() const {
     Engine::Sprite::Draw();
 
     // 繪製對話框
-    if (dialog.IsDialogActive()) {
+    if (isTalking) {
         dialog.Draw();
     }
 }

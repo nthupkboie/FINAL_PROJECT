@@ -34,6 +34,22 @@ public:
     // 結束當前對話
     void EndDialog();
 
+    // 新增方法
+    bool IsCurrentMessageComplete() const {
+        return isDisplayingFullMessage;
+    }
+    
+    // 可選：獲取當前對話進度
+    size_t GetCurrentMessageIndex() const {
+        return currentMessageIndex;
+    }
+    
+    // 可選：獲取總訊息數
+    size_t GetMessageCount() const {
+        return messages.size();
+    }
+
+
     void SlideInFromBottom(float duration = 0.3f);
 
 private:

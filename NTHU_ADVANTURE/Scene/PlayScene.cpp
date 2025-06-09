@@ -62,16 +62,16 @@ void PlayScene::Initialize() {
     // 初始化對話框
     dialog.Initialize();
     
-    // 測試用 - 預設對話內容
-    std::vector<std::string> testMessages = {
-        "你好，旅行者！",
-        "這是一個測試對話。",
-        "按Enter鍵繼續..."
-    };
+    // 設置NPC的對話內容
+    test->SetMessages({
+        "你好，我是村民A！",
+        "這個村莊最近不太平靜...",
+        "晚上請小心行事。",
+        "祝你好運，冒險者！"
+    });
 
     // 獲取NPC頭像 (使用NPC的站立圖像)
     auto npcAvatar = Engine::Resources::GetInstance().GetBitmap("NPC/test/icon/test_icon.png");
-    dialog.StartDialog("測試NPC", npcAvatar, testMessages);
     
     // 預載資源
     Engine::Resources::GetInstance().GetBitmap("lose/benjamin-happy.png");
@@ -97,7 +97,7 @@ void PlayScene::Update(float deltaTime) {
     
     if (!player) return; // 確保玩家存在
     
-    // 更新所有NPC並傳遞玩家對象
+    // 更新所有NPC
     for (auto& obj : NPCGroup->GetObjects()) {
         if (auto npc = dynamic_cast<NPC*>(obj)) {
             npc->Update(deltaTime, player);
@@ -144,16 +144,16 @@ void PlayScene::OnKeyDown(int keyCode) {
         dialog.AdvanceDialog();
     }
     
-    // 按T鍵測試開啟對話 (可選)
-    if (keyCode == ALLEGRO_KEY_T) {
-        std::vector<std::string> testMessages = {
-            "這是按T鍵觸發的對話!",
-            "第二條測試訊息。",
-            "最後一條測試訊息。"
-        };
-        auto npcAvatar = Engine::Resources::GetInstance().GetBitmap("NPC/test/icon/test_icon.png");
-        dialog.StartDialog("測試NPC", npcAvatar, testMessages);
-    }
+    // // 按T鍵測試開啟對話 (可選)
+    // if (keyCode == ALLEGRO_KEY_T) {
+    //     std::vector<std::string> testMessages = {
+    //         "這是按T鍵觸發的對話!",
+    //         "第二條測試訊息。",
+    //         "最後一條測試訊息。"
+    //     };
+    //     auto npcAvatar = Engine::Resources::GetInstance().GetBitmap("NPC/test/icon/test_icon.png");
+    //     dialog.StartDialog("測試NPC", npcAvatar, testMessages);
+    // }
 }
 
 void PlayScene::ReadMap() {

@@ -181,9 +181,3 @@ void NPCDialog::AdvanceDialog() {
 void NPCDialog::EndDialog() {
     isActive = false;
 }
-
-// void NPCDialog::SlideInFromBottom(float duration) {
-//     float targetY = boxY;
-//     boxY = al_get_display_height(); // 從屏幕底部開始
-//     // 需要實現動畫邏輯 (可以用 Update() 處理)
-// }

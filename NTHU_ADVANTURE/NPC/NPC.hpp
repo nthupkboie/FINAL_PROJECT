@@ -29,9 +29,18 @@ public:
     void FacePlayer(const Player* player);
     void Draw() const override;
 
+    // 設置對話內容
+    void SetMessages(const std::vector<std::string>& msgs) {
+        messages = msgs;
+    }
+    
+    // 檢查是否正在對話
+    bool IsTalking() const { return isTalking; }
+    
     private:
-        NPCDialog dialog;
-        std::vector<std::string> npcMessages;
+    std::vector<std::string> messages; // NPC的對話內容
+    NPCDialog dialog;                  // 每個NPC有自己的對話框
+    bool isTalking = false;            // 是否正在對話
 };
 
 #endif
