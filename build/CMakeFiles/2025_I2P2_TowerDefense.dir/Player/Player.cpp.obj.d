@@ -960,4 +960,6 @@ CMakeFiles/2025_I2P2_TowerDefense.dir/Player/Player.cpp.obj: \
   C:/FINAL_PROJECT/NTHU_ADVANTURE/./Scene/PlayScene.hpp \
   C:/FINAL_PROJECT/NTHU_ADVANTURE/./Turret/Turret.hpp \
   C:/FINAL_PROJECT/NTHU_ADVANTURE/./UI/Animation/DirtyEffect.hpp \
-  C:/FINAL_PROJECT/NTHU_ADVANTURE/./UI/Animation/ExplosionEffect.hpp
+  C:/FINAL_PROJECT/NTHU_ADVANTURE/./UI/Animation/ExplosionEffect.hpp \
+  C:/FINAL_PROJECT/NTHU_ADVANTURE/./Engine/Resources.hpp \
+  C:/allegro/include/allegro5/allegro_font.h

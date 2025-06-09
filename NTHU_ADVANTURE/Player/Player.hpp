@@ -22,6 +22,22 @@ protected:
     PlayScene *getPlayScene();
     virtual void OnExplode();
 
+    std::shared_ptr<ALLEGRO_BITMAP> bmpIdle;
+    std::shared_ptr<ALLEGRO_BITMAP> bmpUp1;
+    std::shared_ptr<ALLEGRO_BITMAP> bmpUp2;
+    std::shared_ptr<ALLEGRO_BITMAP> bmpDown1;
+    std::shared_ptr<ALLEGRO_BITMAP> bmpDown2;
+    std::shared_ptr<ALLEGRO_BITMAP> bmpLeft1;
+    std::shared_ptr<ALLEGRO_BITMAP> bmpLeft2;
+    std::shared_ptr<ALLEGRO_BITMAP> bmpRight1;
+    std::shared_ptr<ALLEGRO_BITMAP> bmpRight2;
+
+    float animationTimer;
+    bool isMoving = false;
+
+    ALLEGRO_KEYBOARD_STATE lastKeyState;
+
+
 public:
     float reachEndTime;
     std::list<Turret *> lockedTurrets;
@@ -31,5 +47,7 @@ public:
     void UpdatePath(const std::vector<std::vector<int>> &mapDistance);
     void Update(float deltaTime) override;
     void Draw() const override;
+
+    
 };
 #endif   // PLAYER_HPP

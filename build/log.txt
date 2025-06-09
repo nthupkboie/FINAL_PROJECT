@@ -32,22 +32,12 @@
 [INFO] Created<sample_instance>: Resource/audios/astronomia.ogg
 [INFO] Loaded Resource<image>: Resource/images/lose/benjamin-happy.png
 [INFO] Loaded Resource<audio>: Resource/audios/play.ogg
-[INFO] Loaded Resource<image>: Resource/images/play/turret-fire.png
+[INFO] Loaded Resource<image>: Resource/images/play/idle_player.png
+[INFO] Loaded Resource<image>: Resource/images/play/run1_player.png
+[INFO] Loaded Resource<image>: Resource/images/play/run2_player.png
+[INFO] Loaded Resource<image>: Resource/images/play/eagle.png
 [INFO] Changed to play scene
 [INFO] Loaded Resource<image>: Resource/images/play/enemy-1.png
-[ERROR] Enemy path finding error
-[ERROR] Enemy path finding error
-[ERROR] Enemy path finding error
-[ERROR] Enemy path finding error
-[ERROR] Enemy path finding error
-[ERROR] Enemy path finding error
-[ERROR] Enemy path finding error
-[ERROR] Enemy path finding error
-[ERROR] Enemy path finding error
-[ERROR] Enemy path finding error
-[ERROR] Enemy path finding error
-[ERROR] Enemy path finding error
-[ERROR] Enemy path finding error
 [ERROR] Enemy path finding error
 [ERROR] Enemy path finding error
 [ERROR] Enemy path finding error
@@ -57,8 +47,11 @@
 [INFO] stopped audio (bgm)
 [INFO] Game terminated
 [INFO] Game end
-[INFO] Destroyed Resource<image>: play/turret-fire.png
+[INFO] Destroyed Resource<image>: play/run1_player.png
+[INFO] Destroyed Resource<image>: play/eagle.png
+[INFO] Destroyed Resource<image>: play/idle_player.png
 [INFO] Destroyed Resource<image>: lose/benjamin-happy.png
+[INFO] Destroyed Resource<image>: play/run2_player.png
 [INFO] Destroyed Resource<image>: play/benjamin.png
 [INFO] Destroyed Resource<image>: play/floor.png
 [INFO] Destroyed Resource<image>: icon.png

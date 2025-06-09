@@ -14401,6 +14401,7 @@ CMakeFiles/2025_I2P2_TowerDefense.dir/Player/Player.cpp.obj: C:/FINAL_PROJECT/NT
   C:/FINAL_PROJECT/NTHU_ADVANTURE/Engine/IScene.hpp \
   C:/FINAL_PROJECT/NTHU_ADVANTURE/Engine/LOG.hpp \
   C:/FINAL_PROJECT/NTHU_ADVANTURE/Engine/Point.hpp \
+  C:/FINAL_PROJECT/NTHU_ADVANTURE/Engine/Resources.hpp \
   C:/FINAL_PROJECT/NTHU_ADVANTURE/Engine/Sprite.hpp \
   C:/FINAL_PROJECT/NTHU_ADVANTURE/Scene/PlayScene.hpp \
   C:/FINAL_PROJECT/NTHU_ADVANTURE/Turret/Turret.hpp \
@@ -14411,6 +14412,7 @@ CMakeFiles/2025_I2P2_TowerDefense.dir/Player/Player.cpp.obj: C:/FINAL_PROJECT/NT
   C:/allegro/include/allegro5/alcompat.h \
   C:/allegro/include/allegro5/allegro.h \
   C:/allegro/include/allegro5/allegro_audio.h \
+  C:/allegro/include/allegro5/allegro_font.h \
   C:/allegro/include/allegro5/allegro_primitives.h \
   C:/allegro/include/allegro5/altime.h \
   C:/allegro/include/allegro5/base.h \

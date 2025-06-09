@@ -82,7 +82,7 @@ void PlayScene::Initialize() {
     bgmId = AudioHelper::PlayBGM("play.ogg");
 
     Player* player; //new add
-    PlayerGroup->AddNewObject(player = new Player("play/turret-fire.png", 100, 100, 10, 10, 10, 10)); //new add
+    PlayerGroup->AddNewObject(player = new Player("play/idle_player.png", 100, 100, 10, 10, 10, 10)); //new add
 }
 void PlayScene::Terminate() {
     AudioHelper::StopBGM(bgmId);
@@ -438,5 +438,15 @@ std::vector<std::vector<int>> PlayScene::CalculateBFSDistance() {
         //               For each step you should assign the corresponding distance to the most right-bottom block.
         //               mapState[y][x] is TILE_DIRT if it is empty.
     }
+
     return map;
+}
+
+bool PlayScene::collision(int x, int y)
+{
+    if (x < 0 || x >= MapWidth || y < 0 || y >= MapHeight) return false;
+    if (mapState[y][x] == TILE_OCCUPIED || mapState[y][x] == TILE_DIRT) {
+        return false;
+    }
+    return true;
 }
