@@ -33,11 +33,22 @@ protected:
     std::shared_ptr<ALLEGRO_BITMAP> bmpRight2;
 
     float animationTimer;
+    //bool isMoving = false;
+
+
+    bool movingRight = false;
+    bool movingLeft = false;
+    bool movingUp = false;
+    bool movingDown = false;
+
+    float movingTicks = 1.0f;
+
+    // 移動控制
     bool isMoving = false;
-
     ALLEGRO_KEYBOARD_STATE lastKeyState;
-
-
+    Engine::Point startPos, targetPos;
+    float moveProgress;
+    
 public:
     float reachEndTime;
     std::list<Turret *> lockedTurrets;

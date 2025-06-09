@@ -38,21 +38,24 @@ Player::Player(std::string img, float x, float y, float radius, float speed, flo
     // 儲存圖像
     bmpIdle = bmp;
 
-    bmpUp1 = Engine::Resources::GetInstance().GetBitmap("play/run1_player.png");
-    bmpUp2 = Engine::Resources::GetInstance().GetBitmap("play/run2_player.png");
+    bmpUp1 = Engine::Resources::GetInstance().GetBitmap("player/run1_player.png");
+    bmpUp2 = Engine::Resources::GetInstance().GetBitmap("player/run2_player.png");
 
-    bmpDown1 = Engine::Resources::GetInstance().GetBitmap("play/run1_player.png");
-    bmpDown2 = Engine::Resources::GetInstance().GetBitmap("play/run2_player.png");
+    bmpDown1 = Engine::Resources::GetInstance().GetBitmap("player/run1_player.png");
+    bmpDown2 = Engine::Resources::GetInstance().GetBitmap("player/run2_player.png");
 
-    bmpLeft1 = Engine::Resources::GetInstance().GetBitmap("play/run1_player.png");
-    bmpLeft2 = Engine::Resources::GetInstance().GetBitmap("play/run2_player.png");
+    bmpLeft1 = Engine::Resources::GetInstance().GetBitmap("player/run1_player.png");
+    bmpLeft2 = Engine::Resources::GetInstance().GetBitmap("player/run2_player.png");
 
-    bmpRight1 = Engine::Resources::GetInstance().GetBitmap("play/run1_player.png");
-    bmpRight2 = Engine::Resources::GetInstance().GetBitmap("play/run2_player.png");
+    bmpRight1 = Engine::Resources::GetInstance().GetBitmap("player/run1_player.png");
+    bmpRight2 = Engine::Resources::GetInstance().GetBitmap("player/run2_player.png");
 
     //對齊
     Position.x = std::round(Position.x / 64.0f) * 64.0f + 32.0f;
     Position.y = std::round(Position.y / 64.0f) * 64.0f + 32.0f;
+
+    al_get_keyboard_state(&lastKeyState);
+    startPos = targetPos = Position;
 }
 void Player::Hit(float damage) {
 //     hp -= damage;
@@ -109,41 +112,131 @@ void Player::Update(float deltaTime) { //deltaTime 是每幀的時間增量（�
     ALLEGRO_KEYBOARD_STATE kbState;
     al_get_keyboard_state(&kbState);
 
-    Engine::Point tmp = Position;
-    // 檢查鍵盤輸入
-    if (al_key_down(&kbState, ALLEGRO_KEY_I)) {
-        tmp.y -= 5;
-        //tmp.x = Position.x;
-        bmp = (fmod(animationTimer, 0.6f) < 0.3f) ? bmpUp1 : bmpUp2;
-        isMoving = true;
-    }
-    else if (al_key_down(&kbState, ALLEGRO_KEY_K)) {
-        tmp.y += 5;
-        //tmp.x = Position.x;
-        bmp = (fmod(animationTimer, 0.6f) < 0.3f) ? bmpDown1 : bmpDown2;
-        isMoving = true;
-    }
-    else if (al_key_down(&kbState, ALLEGRO_KEY_J)) {
-        tmp.x -= 5;
-        //tmp.y = Position.y;
-        bmp = (fmod(animationTimer, 0.6f) < 0.3f) ? bmpLeft1 : bmpLeft2;
-        isMoving = true;
-    }
-    else if (al_key_down(&kbState, ALLEGRO_KEY_L)) {
-        tmp.x += 5;
-        //tmp.y = Position.y;
-        bmp = (fmod(animationTimer, 0.6f) < 0.3f) ? bmpRight1 : bmpRight2;
-        isMoving = true;
-    }
+    // Engine::Point tmp = Position;
+    // // 檢查鍵盤輸入
+    // if (al_key_down(&kbState, ALLEGRO_KEY_I)) {
+    //     tmp.y -= 5;
+    //     //tmp.x = Position.x;
+    //     bmp = (fmod(animationTimer, 0.6f) < 0.3f) ? bmpUp1 : bmpUp2;
+    //     if (al_key_down(&kbState, ALLEGRO_KEY_L) && fmod(Position.y, 64.0) == 32.0){
+    //         tmp.x += 5;
+    //         tmp.y += 5;
+    //     }
+    //     isMoving = true;
+    // }
+    // else if (al_key_down(&kbState, ALLEGRO_KEY_K)) {
+    //     tmp.y += 5;
+    //     //tmp.x = Position.x;
+    //     bmp = (fmod(animationTimer, 0.6f) < 0.3f) ? bmpDown1 : bmpDown2;
+    //     isMoving = true;
+    // }
+    // else if (al_key_down(&kbState, ALLEGRO_KEY_J)) {
+    //     tmp.x -= 5;
+    //     //tmp.y = Position.y;
+    //     bmp = (fmod(animationTimer, 0.6f) < 0.3f) ? bmpLeft1 : bmpLeft2;
+    //     isMoving = true;
+    // }
+    // else if (al_key_down(&kbState, ALLEGRO_KEY_L)) {
+    //     tmp.x += 5;
+    //     //tmp.y = Position.y;
+    //     bmp = (fmod(animationTimer, 0.6f) < 0.3f) ? bmpRight1 : bmpRight2;
+    //     isMoving = true;
+    // }
 
-    //else if (isMoving && !al_key_down(&kbState, ALLEGRO_KEY_L) && !al_key_down(&kbState, ALLEGRO_KEY_J) && !al_key_down(&kbState, ALLEGRO_KEY_K) && !al_key_down(&kbState, ALLEGRO_KEY_I)){
-    else if (!al_key_down(&kbState, ALLEGRO_KEY_L) && !al_key_down(&kbState, ALLEGRO_KEY_J) && !al_key_down(&kbState, ALLEGRO_KEY_I) && !al_key_down(&kbState, ALLEGRO_KEY_K)) {
-        bmp = bmpIdle;
-        isMoving = false;
-    }
+    // //else if (isMoving && !al_key_down(&kbState, ALLEGRO_KEY_L) && !al_key_down(&kbState, ALLEGRO_KEY_J) && !al_key_down(&kbState, ALLEGRO_KEY_K) && !al_key_down(&kbState, ALLEGRO_KEY_I)){
+    // else if (!al_key_down(&kbState, ALLEGRO_KEY_L) && !al_key_down(&kbState, ALLEGRO_KEY_J) && !al_key_down(&kbState, ALLEGRO_KEY_I) && !al_key_down(&kbState, ALLEGRO_KEY_K)) {
+    //     bmp = bmpIdle;
+    //     isMoving = false;
+    // }
 
-    Position = tmp;
+    // Position = tmp;
     //PlayScene::collision(Position.x, Position.y);
+    // 處理移動
+    if (isMoving) {
+        // 更新移動進度（0.3 秒完成）
+        moveProgress += deltaTime / 0.3f;
+        if (moveProgress >= 1.0f) {
+            Position = targetPos;
+            moveProgress = 0.0f;
+            isMoving = false;
+            // 檢查當前按鍵狀態以繼續移動
+            Engine::Point tmp = Position;
+            bool keyPressed = false;
+
+            if (al_key_down(&kbState, ALLEGRO_KEY_I)) {
+                tmp.y -= 64.0f; // 向上
+                bmp = (std::fmod(animationTimer, 0.6f) < 0.3f) ? bmpUp1 : bmpUp2;
+                keyPressed = true;
+            }
+            else if (al_key_down(&kbState, ALLEGRO_KEY_K)) {
+                tmp.y += 64.0f; // 向下
+                bmp = (std::fmod(animationTimer, 0.6f) < 0.3f) ? bmpDown1 : bmpDown2;
+                keyPressed = true;
+            }
+            else if (al_key_down(&kbState, ALLEGRO_KEY_J)) {
+                tmp.x -= 64.0f; // 向左
+                bmp = (std::fmod(animationTimer, 0.6f) < 0.3f) ? bmpLeft1 : bmpLeft2;
+                keyPressed = true;
+            }
+            else if (al_key_down(&kbState, ALLEGRO_KEY_L)) {
+                tmp.x += 64.0f; // 向右
+                bmp = (std::fmod(animationTimer, 0.6f) < 0.3f) ? bmpRight1 : bmpRight2;
+                keyPressed = true;
+            }
+
+            if (keyPressed) {
+                startPos = Position;
+                targetPos = tmp;
+                moveProgress = 0.0f;
+                isMoving = true;
+            } else {
+                bmp = bmpIdle;
+                animationTimer = 0;
+            }
+        } else {
+            // 插值計算當前位置
+            Position = startPos + (targetPos - startPos) * moveProgress;
+        }
+    }
+
+    // 檢查新輸入（僅在非移動時）
+    if (!isMoving) {
+        bool keyPressed = false;
+        Engine::Point tmp = Position;
+
+        // 檢測按鍵初次按下
+        if (al_key_down(&kbState, ALLEGRO_KEY_I) && !al_key_down(&lastKeyState, ALLEGRO_KEY_I)) {
+            tmp.y -= 64.0f; // 向上
+            bmp = (std::fmod(animationTimer, 0.6f) < 0.3f) ? bmpUp1 : bmpUp2;
+            keyPressed = true;
+        }
+        else if (al_key_down(&kbState, ALLEGRO_KEY_K) && !al_key_down(&lastKeyState, ALLEGRO_KEY_K)) {
+            tmp.y += 64.0f; // 向下
+            bmp = (std::fmod(animationTimer, 0.6f) < 0.3f) ? bmpDown1 : bmpDown2;
+            keyPressed = true;
+        }
+        else if (al_key_down(&kbState, ALLEGRO_KEY_J) && !al_key_down(&lastKeyState, ALLEGRO_KEY_J)) {
+            tmp.x -= 64.0f; // 向左
+            bmp = (std::fmod(animationTimer, 0.6f) < 0.3f) ? bmpLeft1 : bmpLeft2;
+            keyPressed = true;
+        }
+        else if (al_key_down(&kbState, ALLEGRO_KEY_L) && !al_key_down(&lastKeyState, ALLEGRO_KEY_L)) {
+            tmp.x += 64.0f; // 向右
+            bmp = (std::fmod(animationTimer, 0.6f) < 0.3f) ? bmpRight1 : bmpRight2;
+            keyPressed = true;
+        }
+
+        // 開始新移動
+        if (keyPressed) {
+            startPos = Position;
+            targetPos = tmp;
+            moveProgress = 0.0f;
+            isMoving = true;
+        }
+    }
+
+    // 更新上一次鍵盤狀態
+    lastKeyState = kbState;
 
     Sprite::Update(deltaTime);
 }
@@ -154,3 +247,4 @@ void Player::Draw() const {
         al_draw_circle(Position.x, Position.y, CollisionRadius, al_map_rgb(255, 0, 0), 2);
     }
 }
+
