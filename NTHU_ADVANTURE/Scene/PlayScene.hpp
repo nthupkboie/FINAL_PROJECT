@@ -9,6 +9,8 @@
 #include "Engine/IScene.hpp"
 #include "Engine/Point.hpp"
 
+#include "NPC/NPCDialog.hpp"
+
 class Turret;
 namespace Engine {
     class Group;
@@ -27,6 +29,7 @@ private:
     ALLEGRO_SAMPLE_ID bgmId;
     std::shared_ptr<ALLEGRO_SAMPLE_INSTANCE> deathBGMInstance;
 
+    NPCDialog dialog;  // 添加對話框成員
 protected:
     int lives;
     int money;
@@ -90,4 +93,5 @@ public:
     std::vector<std::vector<int>> CalculateBFSDistance();
     // void ModifyReadMapTiles();
 };
+
 #endif   // PLAYSCENE_HPP

@@ -1,6 +1,7 @@
 #ifndef NPC_HPP
 #define NPC_HPP
 
+#include "NPCDialog.hpp"
 #include "Engine/Sprite.hpp"
 #include <memory> // for shared_ptr
 
@@ -27,12 +28,10 @@ public:
     void Update(float deltaTime, const Player* player);
     void FacePlayer(const Player* player);
     void Draw() const override;
-    
-//    void SetDialogMessages(const std::vector<std::string>& messages);
-//     std::shared_ptr<NPCDialog> GetDialogSystem() const;
-// private:
-//     std::vector<std::string> dialogMessages;
-//     std::shared_ptr<NPCDialog> dialogSystem;
+
+    private:
+        NPCDialog dialog;
+        std::vector<std::string> npcMessages;
 };
 
 #endif

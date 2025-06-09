@@ -58,6 +58,20 @@ void PlayScene::Initialize() {
                                             2, 1,  // 左
                                             2, 2,  // 右
                                             64, 64)); // 圖塊大小
+
+    // 初始化對話框
+    dialog.Initialize();
+    
+    // 測試用 - 預設對話內容
+    std::vector<std::string> testMessages = {
+        "你好，旅行者！",
+        "這是一個測試對話。",
+        "按Enter鍵繼續..."
+    };
+
+    // 獲取NPC頭像 (使用NPC的站立圖像)
+    auto npcAvatar = Engine::Resources::GetInstance().GetBitmap("NPC/test/role/test_sheet.png");
+    dialog.StartDialog("測試NPC", npcAvatar, testMessages);
     
     // 預載資源
     Engine::Resources::GetInstance().GetBitmap("lose/benjamin-happy.png");
@@ -90,6 +104,11 @@ void PlayScene::Update(float deltaTime) {
         }
     }
 
+    // 更新對話框
+    if (dialog.IsDialogActive()) {
+        dialog.Update(deltaTime);
+    }
+
     // 檢查遊戲結束條件
     if (lives <= 0) {
         Engine::GameEngine::GetInstance().ChangeScene("lose");
@@ -99,7 +118,10 @@ void PlayScene::Update(float deltaTime) {
 void PlayScene::Draw() const {
     IScene::Draw();
     
-    // 如果需要調試信息，可以在這裡繪製
+    // 繪製對話框
+    if (dialog.IsDialogActive()) {
+        dialog.Draw();
+    }
 }
 
 void PlayScene::OnMouseDown(int button, int mx, int my) {
@@ -117,8 +139,21 @@ void PlayScene::OnMouseUp(int button, int mx, int my) {
 void PlayScene::OnKeyDown(int keyCode) {
     IScene::OnKeyDown(keyCode);
     
-    // 處理玩家輸入
-    // 例如: WASD 移動、空格跳躍等
+    // 按Enter鍵推進對話
+    if (keyCode == ALLEGRO_KEY_ENTER && dialog.IsDialogActive()) {
+        dialog.AdvanceDialog();
+    }
+    
+    // 按T鍵測試開啟對話 (可選)
+    if (keyCode == ALLEGRO_KEY_T) {
+        std::vector<std::string> testMessages = {
+            "這是按T鍵觸發的對話!",
+            "第二條測試訊息。",
+            "最後一條測試訊息。"
+        };
+        auto npcAvatar = Engine::Resources::GetInstance().GetBitmap("NPC/test/role/test_sheet.png");
+        dialog.StartDialog("測試NPC", npcAvatar, testMessages);
+    }
 }
 
 void PlayScene::ReadMap() {

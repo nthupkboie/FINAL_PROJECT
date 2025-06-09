@@ -37,6 +37,15 @@ NPC::NPC(const std::string& sheetPath, float x, float y,
     // 對齊到網格中心
     Position.x = std::round(Position.x / tileW) * tileW + tileW/2;
     Position.y = std::round(Position.y / tileH) * tileH + tileH/2;
+
+    dialog.Initialize();
+    
+    // 設置 NPC 的對話內容
+    npcMessages = {
+        "你好，旅行者！",
+        "這個世界充滿了危險，你要小心。",
+        "如果需要幫助，可以隨時來找我。"
+    };
 }
 
 // 從分開的圖片建構
@@ -59,6 +68,15 @@ NPC::NPC(const std::string& upPath, const std::string& downPath,
         Position.x = std::round(Position.x / tileW) * tileW + tileW/2;
         Position.y = std::round(Position.y / tileH) * tileH + tileH/2;
     }
+
+    dialog.Initialize();
+    
+    // 設置 NPC 的對話內容
+    npcMessages = {
+        "你好，旅行者！",
+        "這個世界充滿了危險，你要小心。",
+        "如果需要幫助，可以隨時來找我。"
+    };
 }
 
 void NPC::Update(float deltaTime, const Player* player) {
@@ -77,6 +95,20 @@ void NPC::Update(float deltaTime, const Player* player) {
         if ((std::abs(distX) <= 64.0f && std::abs(distY) <= 16.0f) ||  // 水平方向
             (std::abs(distY) <= 64.0f && std::abs(distX) <= 16.0f)) {  // 垂直方向
             FacePlayer(player);
+        }
+
+        if (isAdjacent && !dialog.IsDialogActive()) {
+            FacePlayer(player);
+            dialog.StartDialog("村民", bmpIdle_down, npcMessages);
+        }
+    }
+    // 更新對話框
+    if (dialog.IsDialogActive()) {
+        dialog.Update(deltaTime);
+        
+        // 檢查是否按下確認鍵來推進對話
+        if (al_key_down(&kbState, ALLEGRO_KEY_ENTER)) {
+            dialog.AdvanceDialog();
         }
     }
 
@@ -100,4 +132,9 @@ void NPC::FacePlayer(const Player* player) {
 
 void NPC::Draw() const {
     Engine::Sprite::Draw();
+
+    // 繪製對話框
+    if (dialog.IsDialogActive()) {
+        dialog.Draw();
+    }
 }
