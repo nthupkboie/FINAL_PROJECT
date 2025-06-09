@@ -34,6 +34,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/SettingsScene.cpp.obj.d"
   "CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/StartScene.cpp.obj"
   "CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/StartScene.cpp.obj.d"
+  "CMakeFiles/2025_I2P2_TowerDefense.dir/UI/Component/CustomImageButton.cpp.obj"
+  "CMakeFiles/2025_I2P2_TowerDefense.dir/UI/Component/CustomImageButton.cpp.obj.d"
   "CMakeFiles/2025_I2P2_TowerDefense.dir/UI/Component/Image.cpp.obj"
   "CMakeFiles/2025_I2P2_TowerDefense.dir/UI/Component/Image.cpp.obj.d"
   "CMakeFiles/2025_I2P2_TowerDefense.dir/UI/Component/ImageButton.cpp.obj"

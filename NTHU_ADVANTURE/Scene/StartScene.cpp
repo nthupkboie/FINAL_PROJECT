@@ -26,7 +26,8 @@ void StartScene::Initialize() {
     int halfH = h / 2;
     Engine::ImageButton *btn;
 
-    AddNewObject(new Engine::Label("Tower Defense", "title.ttf", 120, halfW, halfH / 3 + 50, 10, 255, 255, 255, 0.5, 0.5));
+    AddNewObject(new Engine::Image("scene/start-by.png", 0, 0, w, h));
+    AddNewObject(new Engine::Label("NTHU ADVENTURE", "title.ttf", 150, halfW, halfH / 3 + 50, 10, 100, 180, 255, 0.5, 0.5));
     
     btn = new Engine::ImageButton("stage-select/dirt.png", "stage-select/floor.png", halfW - 200, halfH / 2 + 200, 400, 100);
     btn->SetOnClickCallback(std::bind(&StartScene::PlayOnClick, this, 1));

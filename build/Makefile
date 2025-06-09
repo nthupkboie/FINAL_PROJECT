@@ -512,6 +512,30 @@ Scene/StartScene.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_TowerDefense.dir\build.make CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/StartScene.cpp.s
 .PHONY : Scene/StartScene.cpp.s
 
+UI/Component/CustomImageButton.obj: UI/Component/CustomImageButton.cpp.obj
+.PHONY : UI/Component/CustomImageButton.obj
+
+# target to build an object file
+UI/Component/CustomImageButton.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_TowerDefense.dir\build.make CMakeFiles/2025_I2P2_TowerDefense.dir/UI/Component/CustomImageButton.cpp.obj
+.PHONY : UI/Component/CustomImageButton.cpp.obj
+
+UI/Component/CustomImageButton.i: UI/Component/CustomImageButton.cpp.i
+.PHONY : UI/Component/CustomImageButton.i
+
+# target to preprocess a source file
+UI/Component/CustomImageButton.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_TowerDefense.dir\build.make CMakeFiles/2025_I2P2_TowerDefense.dir/UI/Component/CustomImageButton.cpp.i
+.PHONY : UI/Component/CustomImageButton.cpp.i
+
+UI/Component/CustomImageButton.s: UI/Component/CustomImageButton.cpp.s
+.PHONY : UI/Component/CustomImageButton.s
+
+# target to generate assembly for a file
+UI/Component/CustomImageButton.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_TowerDefense.dir\build.make CMakeFiles/2025_I2P2_TowerDefense.dir/UI/Component/CustomImageButton.cpp.s
+.PHONY : UI/Component/CustomImageButton.cpp.s
+
 UI/Component/Image.obj: UI/Component/Image.cpp.obj
 .PHONY : UI/Component/Image.obj
 
@@ -689,6 +713,9 @@ help:
 	@echo ... Scene/StartScene.obj
 	@echo ... Scene/StartScene.i
 	@echo ... Scene/StartScene.s
+	@echo ... UI/Component/CustomImageButton.obj
+	@echo ... UI/Component/CustomImageButton.i
+	@echo ... UI/Component/CustomImageButton.s
 	@echo ... UI/Component/Image.obj
 	@echo ... UI/Component/Image.i
 	@echo ... UI/Component/Image.s
