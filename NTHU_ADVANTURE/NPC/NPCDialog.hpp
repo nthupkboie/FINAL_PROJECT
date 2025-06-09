@@ -34,6 +34,8 @@ public:
     // 結束當前對話
     void EndDialog();
 
+    void SlideInFromBottom(float duration = 0.3f);
+
 private:
     // 對話狀態
     bool isActive;

@@ -3,7 +3,7 @@
 #include "Engine/LOG.hpp"
 
 #include <allegro5/allegro_primitives.h>
-
+#include <allegro5/allegro.h>
 
 NPCDialog::NPCDialog() 
     : isActive(false),
@@ -12,11 +12,11 @@ NPCDialog::NPCDialog()
       charDisplayDelay(0.05f),  // 每個字顯示的間隔時間(秒)
       isDisplayingFullMessage(false),
       font(nullptr),
-      boxWidth(600.0f),
-      boxHeight(200.0f),
-      boxX(50.0f),
-      boxY(400.0f),
-      padding(20.0f)
+      boxWidth(800.0f),    // 加寬對話框
+      boxHeight(200.0f),   // 對話框高度
+      boxX(240.0f),        // 水平位置 (居中：1280/2 - 800/2 = 240)
+      boxY(500.0f),        // 垂直位置 (靠近底部)
+      padding(25.0f)       // 內邊距加大
 {
     textColor = al_map_rgb(255, 255, 255);  // 白色文字
     boxColor = al_map_rgba(0, 0, 0, 200);   // 半透明黑色背景
@@ -84,14 +84,26 @@ void NPCDialog::Update(float deltaTime) {
 void NPCDialog::Draw() const {
     if (!isActive) return;
 
-    // 繪製對話框背景
+    // 繪製對話框背景 (增加圓角效果)
     al_draw_filled_rounded_rectangle(boxX, boxY, 
                                     boxX + boxWidth, boxY + boxHeight, 
-                                    10, 10, boxColor);
-    
-    // 繪製NPC頭像
+                                    15, 15, boxColor);
+    al_draw_rounded_rectangle(boxX, boxY, 
+                             boxX + boxWidth, boxY + boxHeight, 
+                             15, 15, al_map_rgb(255,255,255), 2);
+
+    // 繪製NPC頭像 (增加邊框效果)
     if (npcAvatar) {
-        al_draw_bitmap(npcAvatar.get(), avatarX, avatarY, 0);
+        float avatarSize = 128; // 頭像大小
+        // 頭像背景圓框
+        al_draw_filled_circle(avatarX + avatarSize/2, avatarY + avatarSize/2, 
+                             avatarSize/2 + 5, al_map_rgb(50,50,50));
+        // 實際頭像 (圓形裁切)
+        al_draw_scaled_bitmap(npcAvatar.get(), 
+                             0, 0, 
+                             al_get_bitmap_width(npcAvatar.get()),
+                             al_get_bitmap_height(npcAvatar.get()),
+                             avatarX, avatarY, avatarSize, avatarSize, 0);
     }
     
     // 繪製NPC名字
@@ -169,3 +181,9 @@ void NPCDialog::AdvanceDialog() {
 void NPCDialog::EndDialog() {
     isActive = false;
 }
+
+// void NPCDialog::SlideInFromBottom(float duration) {
+//     float targetY = boxY;
+//     boxY = al_get_display_height(); // 從屏幕底部開始
+//     // 需要實現動畫邏輯 (可以用 Update() 處理)
+// }
