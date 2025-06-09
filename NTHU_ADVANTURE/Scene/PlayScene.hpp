@@ -22,9 +22,9 @@ namespace Engine {
 class PlayScene final : public Engine::IScene {
 private:
     enum TileType {
-        TILE_DIRT,
-        TILE_FLOOR,
-        TILE_OCCUPIED,
+        TILE_ROAD,
+        TILE_GRASS,
+        TILE_TREE,
     };
     ALLEGRO_SAMPLE_ID bgmId;
     std::shared_ptr<ALLEGRO_SAMPLE_INSTANCE> deathBGMInstance;
@@ -39,35 +39,16 @@ public:
     static const std::vector<Engine::Point> directions;
     static const int MapWidth, MapHeight;
     static const int BlockSize;
-    static const float DangerTime;
-    static const Engine::Point SpawnGridPoint;
-    static const Engine::Point EndGridPoint;
     static const std::vector<int> code;
-    int MapId;
-    float ticks;
-    float deathCountDown;
-    // Map tiles.
     Group *TileMapGroup;
-    Group *GroundEffectGroup;
-    Group *DebugIndicatorGroup;
-    Group *BulletGroup;
-    Group *TowerGroup;
-    Group *EnemyGroup;
+
 
     // new add
     Group *PlayerGroup;
     Group *NPCGroup;
 
-    Group *EffectGroup;
-    Group *UIGroup;
-    Engine::Label *UIMoney;
-    Engine::Label *UILives;
-    Engine::Image *imgTarget;
-    Engine::Sprite *dangerIndicator;
-    Turret *preview;
     std::vector<std::vector<TileType>> mapState;
     std::vector<std::vector<int>> mapDistance;
-    std::list<std::pair<int, float>> enemyWaveData;
     std::list<int> keyStrokes;
 
     ALLEGRO_KEYBOARD_STATE keyboardState; // new add
