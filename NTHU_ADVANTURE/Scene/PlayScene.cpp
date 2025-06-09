@@ -442,11 +442,3 @@ std::vector<std::vector<int>> PlayScene::CalculateBFSDistance() {
     return map;
 }
 
-bool PlayScene::collision(int x, int y)
-{
-    if (x < 0 || x >= MapWidth || y < 0 || y >= MapHeight) return false;
-    if (mapState[y][x] == TILE_OCCUPIED || mapState[y][x] == TILE_DIRT) {
-        return false;
-    }
-    return true;
-}

@@ -43,6 +43,7 @@
 [ERROR] Enemy path finding error
 [ERROR] Enemy path finding error
 [ERROR] Enemy path finding error
+[ERROR] Enemy path finding error
 [INFO] Game Terminating...
 [INFO] stopped audio (bgm)
 [INFO] Game terminated
