@@ -9,9 +9,7 @@
 #include "Engine/Point.hpp"
 #include "Engine/Sprite.hpp"
 
-class Bullet;
 class PlayScene;
-class Turret;
 
 class Player : public Engine::Sprite {
 protected:
@@ -24,8 +22,6 @@ protected:
 
 public:
     float reachEndTime;
-    std::list<Turret *> lockedTurrets;
-    std::list<Bullet *> lockedBullets;
     Player(std::string img, float x, float y, float radius, float speed, float hp, int money);
     void Hit(float damage);
     void UpdatePath(const std::vector<std::vector<int>> &mapDistance);

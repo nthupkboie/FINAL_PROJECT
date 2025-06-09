@@ -13,23 +13,29 @@ file(COPY Resource DESTINATION ${CMAKE_CURRENT_BINARY_DIR})
 file(COPY allegro_monolith-5.2.dll DESTINATION ${CMAKE_CURRENT_BINARY_DIR})
 
 add_executable(2025_I2P2_TowerDefense
-    Bullet/Bullet.cpp
-    Bullet/Bullet.hpp
-    Bullet/FireBullet.cpp
-    Bullet/FireBullet.hpp
-    Bullet/LaserBullet.cpp
-    Bullet/LaserBullet.hpp
-
+    ######## NTHU ADVANTURE ########
     Player/Player.cpp
     Player/Player.hpp
 
+    Scene/RealScene.cpp
+    Scene/RealScene.hpp
+
+    ######## NTHU ADVANTURE ########
+
+    # Bullet/Bullet.cpp
+    # Bullet/Bullet.hpp
+    # Bullet/FireBullet.cpp
+    # Bullet/FireBullet.hpp
+    # Bullet/LaserBullet.cpp
+    # Bullet/LaserBullet.hpp
+
     # TODO HACKATHON-3 (3/3): Add the new enemy source files here
-    Enemy/Enemy.cpp
-    Enemy/Enemy.hpp
-    Enemy/SoldierEnemy.cpp
-    Enemy/SoldierEnemy.hpp
-    Enemy/TankEnemy.cpp
-    Enemy/TankEnemy.hpp
+    # Enemy/Enemy.cpp
+    # Enemy/Enemy.hpp
+    # Enemy/SoldierEnemy.cpp
+    # Enemy/SoldierEnemy.hpp
+    # Enemy/TankEnemy.cpp
+    # Enemy/TankEnemy.hpp
 
     Engine/Allegro5Exception.cpp
     Engine/Allegro5Exception.hpp
@@ -57,8 +63,8 @@ add_executable(2025_I2P2_TowerDefense
     Engine/Sprite.hpp
     
     # TODO HACKATHON-2 (3/3): Add the new scene source files here
-    Scene/LoseScene.cpp
-    Scene/LoseScene.hpp
+    # Scene/LoseScene.cpp
+    # Scene/LoseScene.hpp
     Scene/PlayScene.cpp
     Scene/PlayScene.hpp
     Scene/StageSelectScene.cpp
@@ -72,21 +78,21 @@ add_executable(2025_I2P2_TowerDefense
     Scene/ScoreboardScene.cpp
     Scene/ScoreboardScene.hpp
 
-    Turret/LaserTurret.cpp
-    Turret/LaserTurret.hpp
-    Turret/MachineGunTurret.cpp
-    Turret/MachineGunTurret.hpp
-    Turret/Turret.cpp
-    Turret/Turret.hpp
-    Turret/TurretButton.cpp
-    Turret/TurretButton.hpp
+    # Turret/LaserTurret.cpp
+    # Turret/LaserTurret.hpp
+    # Turret/MachineGunTurret.cpp
+    # Turret/MachineGunTurret.hpp
+    # Turret/Turret.cpp
+    # Turret/Turret.hpp
+    # Turret/TurretButton.cpp
+    # Turret/TurretButton.hpp
 
-    UI/Animation/DirtyEffect.cpp
-    UI/Animation/DirtyEffect.hpp
-    UI/Animation/ExplosionEffect.cpp
-    UI/Animation/ExplosionEffect.hpp
-    UI/Animation/Plane.cpp
-    UI/Animation/Plane.hpp
+    # UI/Animation/DirtyEffect.cpp
+    # UI/Animation/DirtyEffect.hpp
+    # UI/Animation/ExplosionEffect.cpp
+    # UI/Animation/ExplosionEffect.hpp
+    # UI/Animation/Plane.cpp
+    # UI/Animation/Plane.hpp
 
     UI/Component/Image.cpp
     UI/Component/Image.hpp
