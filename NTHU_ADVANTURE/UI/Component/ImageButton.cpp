@@ -15,6 +15,18 @@ namespace Engine {
         if (!mouseIn || !Enabled) bmp = imgOut;
         else bmp = this->imgIn;
     }
+
+    void ImageButton::Draw() const {
+        ALLEGRO_BITMAP* bitmap = mouseIn ? imgIn.get() : imgOut.get();
+        int alpha = mouseIn ? 128 : 255;  // 滑鼠移上去時透明
+        al_draw_tinted_scaled_bitmap(bitmap, al_map_rgba(255, 255, 255, alpha),
+            0, 0, al_get_bitmap_width(bitmap), al_get_bitmap_height(bitmap),
+            Position.x - Anchor.x * Size.x,
+            Position.y - Anchor.y * Size.y,
+            Size.x, Size.y, 0);
+    }
+
+
     void ImageButton::SetOnClickCallback(std::function<void(void)> onClickCallback) {
         OnClickCallback = onClickCallback;
     }
