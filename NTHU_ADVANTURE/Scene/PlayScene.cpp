@@ -187,6 +187,9 @@ void PlayScene::OnKeyDown(int keyCode) {
         dialog.AdvanceDialog();
     }
     
+    if(keyCode == ALLEGRO_KEY_B){
+        Engine::GameEngine::GetInstance().ChangeScene("battle");
+    }
     // // 按T鍵測試開啟對話 (可選)
     // if (keyCode == ALLEGRO_KEY_T) {
     //     std::vector<std::string> testMessages = {
