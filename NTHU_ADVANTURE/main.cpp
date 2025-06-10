@@ -7,6 +7,8 @@
 #include "Scene/PlayScene.hpp"
 #include "Scene/StartScene.h"
 #include "Scene/SettingsScene.hpp"
+#include "Scene/BattleScene.hpp"
+#include "Scene/SmallEatScene.hpp"
 
 #include <allegro5/allegro.h>
 #include <allegro5/allegro_image.h>
@@ -29,6 +31,8 @@ int main(int argc, char **argv) {
 	game.AddNewScene("play", new PlayScene());
 	game.AddNewScene("settings", new SettingsScene());
 	game.AddNewScene("start", new StartScene());
+	game.AddNewScene("battle", new BattleScene());
+	game.AddNewScene("smalleat", new SmallEatScene());
 
 	// game.AddNewScene("scoreboard-scene", new ScoreboardScene());
 	// game.AddNewScene("stage-select", new StageSelectScene());
