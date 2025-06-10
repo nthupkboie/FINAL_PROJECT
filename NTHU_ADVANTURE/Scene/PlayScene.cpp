@@ -234,12 +234,12 @@ void PlayScene::ReadMap() {
             
             switch(tileType) {
                 case TILE_GRASS:
-                    imagePath = "mainworld/grass.png";
+                    imagePath = "mainworld/grass1.png";
                     // imagePath = "play/dirt.png";
                     break;
                 case TILE_ROAD:
-                    // imagePath = "mainworld/road.png";
-                    imagePath = "play/floor.png";
+                     imagePath = "mainworld/road.png";
+                    // imagePath = "play/floor.png";
                     break;
                 default:
                     continue;

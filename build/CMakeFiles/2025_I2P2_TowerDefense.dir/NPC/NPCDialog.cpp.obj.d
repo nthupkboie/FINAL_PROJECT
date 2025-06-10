@@ -906,4 +906,9 @@ CMakeFiles/2025_I2P2_TowerDefense.dir/NPC/NPCDialog.cpp.obj: \
   C:/FINAL_PROJECT/NTHU_ADVANTURE/./Engine/IObject.hpp \
   C:/FINAL_PROJECT/NTHU_ADVANTURE/./Engine/Point.hpp \
   C:/FINAL_PROJECT/NTHU_ADVANTURE/./NPC/NPCDialog.hpp \
+  C:/FINAL_PROJECT/NTHU_ADVANTURE/./Player/Player.hpp \
+  c:/Users/pkboi/Downloads/llvm-mingw-20240417-msvcrt-x86_64/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/map \
+  c:/Users/pkboi/Downloads/llvm-mingw-20240417-msvcrt-x86_64/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__tree \
+  C:/FINAL_PROJECT/NTHU_ADVANTURE/./Engine/Sprite.hpp \
+  C:/FINAL_PROJECT/NTHU_ADVANTURE/./UI/Component/Image.hpp \
   C:/allegro/include/allegro5/allegro_primitives.h
