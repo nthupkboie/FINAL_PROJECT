@@ -202,7 +202,7 @@ void PlayScene::OnKeyDown(int keyCode) {
 }
 
 void PlayScene::ReadMap() {
-    std::string filename = std::string("Resource/map1") + ".txt";
+    std::string filename = std::string("Resource/mainworld") + ".txt";
 
     // 清空舊的地圖數據
     mapData.clear();
@@ -212,8 +212,10 @@ void PlayScene::ReadMap() {
     std::ifstream fin(filename);
     while (fin >> c) {
         switch (c) {
-            case '0': mapData.push_back(TILE_GRASS); break; // 草地，可走
-            case '1': mapData.push_back(TILE_ROAD); break;  // 樹木，不可走
+            case '0': mapData.push_back(TILE_GRASS); break;
+            case '1': mapData.push_back(TILE_ROAD); break;
+            // case '2': mapData.push_back(TILE_TREE); break;
+            case '3': mapData.push_back(TILE_ROAD); break;
             case '\n':
             case '\r':
             default: break;
@@ -225,6 +227,10 @@ void PlayScene::ReadMap() {
     if (static_cast<int>(mapData.size()) != MapWidth * MapHeight) {
         throw std::ios_base::failure("Map data is corrupted.");
     }
+
+    Engine::LOG(Engine::INFO) << "mapData.size() " << mapData.size();
+    Engine::LOG(Engine::INFO) << "MapWidth * MapHeight " << MapWidth * MapHeight;
+
     
     // 繪製地圖
     for (int y = 0; y < MapHeight; y++) {
@@ -235,12 +241,11 @@ void PlayScene::ReadMap() {
             switch(tileType) {
                 case TILE_GRASS:
                     imagePath = "mainworld/grass1.png";
-                    // imagePath = "play/dirt.png";
                     break;
                 case TILE_ROAD:
                      imagePath = "mainworld/road.png";
-                    // imagePath = "play/floor.png";
                     break;
+                case TILE_TREE:
                 default:
                     continue;
             }
@@ -257,6 +262,5 @@ void PlayScene::ReadMap() {
 }
 
 Engine::Point PlayScene::getCamera(){
-
     return Engine::Point(cameraOffset.x + 5 * BlockSize, cameraOffset.y + 2.5 * BlockSize);
 }

@@ -73,7 +73,7 @@ public:
 
     static const int window_x, window_y;
 
-    std::vector<int> mapData;
+    std::vector<PlayScene::TileType> mapData;
 };
 
 #endif   // PLAYSCENE_HPP
