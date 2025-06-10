@@ -3,6 +3,7 @@
 #include "Engine/LOG.hpp"
 #include "Scene/PlayScene.hpp"
 #include "Player/Player.hpp"
+#include "Engine/GameEngine.hpp"
 
 #include <allegro5/allegro_primitives.h>
 #include <allegro5/allegro.h>
@@ -44,10 +45,30 @@ bool NPCDialog::Initialize() {
         Engine::LOG(Engine::WARN) << "Failed to load font for NPCDialog";
         return false;
     }
-    //if (Player::curPos.x < PlayScene::window_x / 2) boxX = Player::curPos.x;
-    //else if (Player::curPos.x > PlayScene::window_x / 2)
-    //if (Player::curPos.y < PlayScene::window_y / 2) boxY = Player::curPos.y;
-    
+
+    // if (Player::curPos.x / 64 < PlayScene::window_x / 2) boxX = (PlayScene::window_x / 2) * PlayScene::BlockSize;
+    // else if (Player::curPos.x / 64 > PlayScene::MapWidth - PlayScene::window_x / 2) boxX = (PlayScene::MapWidth - PlayScene::window_x / 2) * PlayScene::BlockSize;
+    // else boxX = Player::curPos.x;
+    // boxX -= boxWidth / 4;
+    // if (Player::curPos.y / 64 < PlayScene::window_y / 2) boxY = (PlayScene::window_y / 2) * PlayScene::BlockSize;
+    // else if (Player::curPos.y / 64 > PlayScene::MapHeight - PlayScene::window_y / 2) boxY = (PlayScene::MapWidth - PlayScene::window_x / 2) * PlayScene::BlockSize;
+    // else boxY = Player::curPos.y;
+    // boxY += boxHeight / 4;
+    //printf("%f %f<<<<<<<<<<<<<<<<<\n", boxX, boxY);
+    // 設置對話框位置：視角中央下方
+    // PlayScene* scene = dynamic_cast<PlayScene*>(Engine::GameEngine::GetInstance().GetCurrentScene());
+    // if (scene) {
+    //     Engine::Point clientSize = scene->GetClientSize(); // 384x192
+    //     boxX = clientSize.x / 2 - boxWidth / 2; // 192 - 150 = 42
+    //     boxY = clientSize.y / 2 + 30;           // 96 + 30 = 126
+    //     avatarX = boxX + padding;
+    //     avatarY = boxY + padding;
+    //     textX = boxX + padding + 64 + padding;  // 頭像寬度 64
+    //     textY = boxY + padding + 20;
+    //     nameX = textX;
+    //     nameY = boxY + padding;
+    // }
+
     return true;
 }
 
@@ -68,6 +89,20 @@ void NPCDialog::StartDialog(const std::string& npcName,
     charDisplayTimer = 0.0f;
     isDisplayingFullMessage = false;
     isActive = true;
+
+    // 設置對話框位置：視角中央下方
+    PlayScene* scene = dynamic_cast<PlayScene*>(Engine::GameEngine::GetInstance().GetScene("play"));
+    if (scene) {
+        Engine::Point clientSize = scene->GetClientSize(); // 384x192
+        boxX = PlayScene::getCamera().x + clientSize.x / 2 - boxWidth / 2 - 300; // 192 - 150 = 42
+        boxY = PlayScene::getCamera().y + clientSize.y / 2 + 30;           // 96 + 30 = 126
+        avatarX = boxX + padding;
+        avatarY = boxY + padding;
+        textX = boxX + padding + 128 + padding;  // 頭像寬度 64
+        textY = boxY + padding + 30;
+        nameX = textX;
+        nameY = boxY + padding;
+    }
 }
 
 void NPCDialog::Update(float deltaTime) {

@@ -67,7 +67,7 @@ void PlayScene::Initialize() {
     // 圖塊寬, 圖塊高
     auto testAvatar = Engine::Resources::GetInstance().GetBitmap("NPC/test/avatar/test_avatar.png");
     NPCGroup->AddNewObject(test = new NPC("NPC",testAvatar, "NPC/test/role/test_sheet.png",
-                                            1264, 1200,
+                                            64, 64,
                                             2, 3,  // 上 (第0列第2行)
                                             2, 0,  // 下
                                             2, 1,  // 左
