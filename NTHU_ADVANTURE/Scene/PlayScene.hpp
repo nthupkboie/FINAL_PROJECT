@@ -26,6 +26,8 @@ private:
         TILE_GRASS,
         TILE_TREE,
         TILE_STAIRS,
+        NEW, TILE_NEW,
+        NOTHING,
     };
     
     ALLEGRO_SAMPLE_ID bgmId;

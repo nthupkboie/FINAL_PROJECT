@@ -212,10 +212,12 @@ void PlayScene::ReadMap() {
     std::ifstream fin(filename);
     while (fin >> c) {
         switch (c) {
-            case '0': mapData.push_back(TILE_GRASS); break;
+            case '-': mapData.push_back(TILE_GRASS); break;
             case '1': mapData.push_back(TILE_ROAD); break;
-            // case '2': mapData.push_back(TILE_TREE); break;
-            case '3': mapData.push_back(TILE_ROAD); break;
+            case 'T': mapData.push_back(TILE_TREE); break;
+            // case '3': mapData.push_back(TILE_ROAD); break;
+            case 'N': mapData.push_back(NEW); break;
+            case '=': mapData.push_back(NOTHING); break;
             case '\n':
             case '\r':
             default: break;
@@ -230,7 +232,6 @@ void PlayScene::ReadMap() {
 
     Engine::LOG(Engine::INFO) << "mapData.size() " << mapData.size();
     Engine::LOG(Engine::INFO) << "MapWidth * MapHeight " << MapWidth * MapHeight;
-
     
     // 繪製地圖
     for (int y = 0; y < MapHeight; y++) {
@@ -241,22 +242,83 @@ void PlayScene::ReadMap() {
             switch(tileType) {
                 case TILE_GRASS:
                     imagePath = "mainworld/grass1.png";
+                    TileMapGroup->AddNewObject(
+                        new Engine::Image(imagePath, 
+                                        x * BlockSize, 
+                                        y * BlockSize, 
+                                        BlockSize, 
+                                        BlockSize)
+                    );
+
+                    // imagePath = "mainworld/grass2.png";
+                    // TileMapGroup->AddNewObject(
+                    //     new Engine::Image(imagePath, 
+                    //                     x * BlockSize, 
+                    //                     y * BlockSize, 
+                    //                     BlockSize, 
+                    //                     BlockSize)
+                    // );
                     break;
                 case TILE_ROAD:
-                     imagePath = "mainworld/road.png";
+                    imagePath = "mainworld/road.png";
+                    TileMapGroup->AddNewObject(
+                        new Engine::Image(imagePath, 
+                                        x * BlockSize, 
+                                        y * BlockSize, 
+                                        BlockSize, 
+                                        BlockSize)
+                    );
                     break;
                 case TILE_TREE:
+                    // imagePath = "mainworld/grass.png";
+                    // TileMapGroup->AddNewObject(
+                    //     new Engine::Image(imagePath, 
+                    //                     x * BlockSize, 
+                    //                     y * BlockSize, 
+                    //                     BlockSize, 
+                    //                     BlockSize)
+                    // );
+
+                    imagePath = "mainworld/road.png";
+                    TileMapGroup->AddNewObject(
+                        new Engine::Image(imagePath, 
+                                        x * BlockSize, 
+                                        y * BlockSize, 
+                                        BlockSize, 
+                                        BlockSize)
+                    );
+                    break;
+                case NEW:
+                    imagePath = "mainworld/grass1.png";
+                    TileMapGroup->AddNewObject(
+                        new Engine::Image(imagePath, 
+                                        x * BlockSize, 
+                                        y * BlockSize, 
+                                        BlockSize * 7, 
+                                        BlockSize * 7)
+                    );
+
+                    imagePath = "mainworld/NEW.png";
+                    TileMapGroup->AddNewObject(
+                        new Engine::Image(imagePath, 
+                                        x * BlockSize, 
+                                        y * BlockSize, 
+                                        BlockSize * 7, 
+                                        BlockSize * 7)
+                    );
+                    break;
+                case NOTHING:
                 default:
                     continue;
             }
             
-            TileMapGroup->AddNewObject(
-                new Engine::Image(imagePath, 
-                                  x * BlockSize, 
-                                  y * BlockSize, 
-                                  BlockSize, 
-                                  BlockSize)
-            );
+            // TileMapGroup->AddNewObject(
+            //     new Engine::Image(imagePath, 
+            //                       x * BlockSize, 
+            //                       y * BlockSize, 
+            //                       BlockSize, 
+            //                       BlockSize)
+            // );
         }
     }
 }
