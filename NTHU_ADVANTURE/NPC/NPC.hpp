@@ -15,13 +15,13 @@ public:
     std::shared_ptr<ALLEGRO_BITMAP> bmpIdle_right;
 
     // 從 sprite sheet 建構
-    NPC(const std::string& sheetPath, float x, float y, 
+    NPC(const std::string& name, const std::string& sheetPath, float x, float y, 
         int upCol, int upRow, int downCol, int downRow, 
         int leftCol, int leftRow, int rightCol, int rightRow,
         int tileW = 64, int tileH = 64);
     
     // 從分開的圖片建構
-    NPC(const std::string& upPath, const std::string& downPath,
+    NPC(const std::string& name, const std::string& upPath, const std::string& downPath,
         const std::string& leftPath, const std::string& rightPath,
         float x, float y);
     
@@ -41,6 +41,11 @@ public:
     std::vector<std::string> messages; // NPC的對話內容
     NPCDialog dialog;                  // 每個NPC有自己的對話框
     bool isTalking = false;            // 是否正在對話
+
+    const std::string& GetName() const { return npcName; }
+    void SetName(const std::string& name) { npcName = name; }
+private:
+    std::string npcName;
 };
 
 #endif

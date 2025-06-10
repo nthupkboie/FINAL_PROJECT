@@ -51,7 +51,7 @@ void PlayScene::Initialize() {
     // sheet路徑, x, y, 
     // 上, 下, 左, 右, (先行在列)
     // 圖塊寬, 圖塊高
-    NPCGroup->AddNewObject(test = new NPC("NPC/test/role/test_sheet.png",
+    NPCGroup->AddNewObject(test = new NPC("NPC", "NPC/test/role/test_sheet.png",
                                             64, 64,
                                             2, 3,  // 上 (第0列第2行)
                                             2, 0,  // 下
