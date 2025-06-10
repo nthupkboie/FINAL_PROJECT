@@ -37,7 +37,7 @@ NPCDialog::~NPCDialog() {
 
 bool NPCDialog::Initialize() {
     // 使用 Resources 的 GetFont 方法，傳入字體名稱和大小
-    font = Engine::Resources::GetInstance().GetFont("normal.ttf", 18).get();
+    font = Engine::Resources::GetInstance().GetFont("normal.ttf", 24).get();
     if (!font) {
         Engine::LOG(Engine::WARN) << "Failed to load font for NPCDialog";
         return false;
