@@ -41,8 +41,6 @@ void PlayScene::Initialize() {
     lives = 3;
     money = 0;
     
-    
-
     // 添加渲染群組
     AddNewObject(TileMapGroup = new Group());      // 地圖圖層
     AddNewObject(PlayerGroup = new Group());       // 玩家角色
