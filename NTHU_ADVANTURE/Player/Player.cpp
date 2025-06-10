@@ -16,6 +16,7 @@
 #include "Scene/PlayScene.hpp"
 
 #include "Engine/Resources.hpp"
+#include "NPC/NPCDialog.hpp"
 
 PlayScene *Player::getPlayScene() {
     return dynamic_cast<PlayScene *>(Engine::GameEngine::GetInstance().GetActiveScene());
@@ -58,6 +59,9 @@ Player::Player(std::string img, float x, float y) : Engine::Sprite(img, x, y) {
 
 void Player::Update(float deltaTime) {
     // 更新動畫計時器
+
+    if (NPCDialog::talking) return;
+
     animationTimer += deltaTime;
     if (animationTimer >= 0.4f) animationTimer -= 0.4f; // 每 0.4 秒循環
 

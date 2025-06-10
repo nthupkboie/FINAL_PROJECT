@@ -58,6 +58,12 @@ add_executable(2025_I2P2_TowerDefense
     Scene/StartScene.h
     Scene/SettingsScene.cpp
     Scene/SettingsScene.hpp
+    Scene/ScoreboardScene.cpp
+    Scene/ScoreboardScene.hpp
+    Scene/LogScene.cpp
+    Scene/LogScene.hpp
+    Scene/RegisterScene.cpp
+    Scene/RegisterScene.hpp
 
     # UI
     UI/Component/Image.cpp

@@ -29,15 +29,27 @@ void StartScene::Initialize() {
     AddNewObject(new Engine::Image("scene/start-by.png", 0, 0, w, h));
     AddNewObject(new Engine::Label("NTHU ADVENTURE", "title.ttf", 150, halfW, halfH / 3 + 50, 10, 100, 180, 255, 0.5, 0.5));
     
-    btn = new Engine::ImageButton("stage-select/dirt.png", "stage-select/floor.png", halfW - 200, halfH / 2 + 200, 400, 100);
-    btn->SetOnClickCallback(std::bind(&StartScene::PlayOnClick, this, 1));
+    btn = new Engine::ImageButton("stage-select/dirt.png", "stage-select/floor.png", halfW - 200, halfH / 2 + 70, 400, 100);
+    btn->SetOnClickCallback(std::bind(&StartScene::RegisterOnClick, this, 1));
     AddNewControlObject(btn);
-    AddNewObject(new Engine::Label("Play", "title.ttf", 48, halfW, halfH / 2 + 250, 0, 0, 0, 255, 0.5, 0.5));
+    AddNewObject(new Engine::Label("register", "title.ttf", 48, halfW, halfH / 2 + 70 + 50, 0, 0, 0, 255, 0.5, 0.5));
+
+
+    btn = new Engine::ImageButton("stage-select/dirt.png", "stage-select/floor.png", halfW - 200, halfH / 2 + 200, 400, 100);
+    btn->SetOnClickCallback(std::bind(&StartScene::LogOnClick, this, 1));
+    AddNewControlObject(btn);
+    AddNewObject(new Engine::Label("log in", "title.ttf", 48, halfW, halfH / 2 + 250, 0, 0, 0, 255, 0.5, 0.5));
 
     btn = new Engine::ImageButton("stage-select/dirt.png", "stage-select/floor.png", halfW - 200, halfH * 3 / 2 - 50, 400, 100);
     btn->SetOnClickCallback(std::bind(&StartScene::SettingsOnClick, this, 2));
     AddNewControlObject(btn);
     AddNewObject(new Engine::Label("Settings", "title.ttf", 48, halfW, halfH * 3 / 2, 0, 0, 0, 255, 0.5, 0.5));
+
+    btn = new Engine::ImageButton("stage-select/dirt.png", "stage-select/floor.png", halfW - 200, halfH * 3 / 2 - 180, 400, 100);
+    btn->SetOnClickCallback(std::bind(&StartScene::ScoreboardOnClick, this, 2));
+    AddNewControlObject(btn);
+    AddNewObject(new Engine::Label("Scoreboard", "title.ttf", 48, halfW, halfH * 3 / 2 -120, 0, 0, 0, 255, 0.5, 0.5));
+
 }
 void StartScene::Terminate() {
     IScene::Terminate();
@@ -47,4 +59,13 @@ void StartScene::PlayOnClick(int stage) {
 }
 void StartScene::SettingsOnClick(int stage) {
     Engine::GameEngine::GetInstance().ChangeScene("settings");
+}
+void StartScene::ScoreboardOnClick(int stage) {
+    Engine::GameEngine::GetInstance().ChangeScene("scoreboard");
+}
+void StartScene::LogOnClick(int stage) {
+    Engine::GameEngine::GetInstance().ChangeScene("login");
+}
+void StartScene::RegisterOnClick(int stage) {
+    Engine::GameEngine::GetInstance().ChangeScene("register");
 }
