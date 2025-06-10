@@ -19,7 +19,7 @@
 
 // new add
 #include "PlayScene.hpp"
-#include "Player/Player.hpp"
+#include "Player/BattlePlayer.hpp"
 #include "NPC/NPC.hpp"
 #include "BattleScene.hpp"
 
@@ -51,8 +51,8 @@ void BattleScene::Initialize() {
     ReadMap();
     
     // 初始化玩家
-    Player* player;
-    PlayerGroup->AddNewObject(player = new Player("player/idle.png", 100, 100));
+    BattlePlayer* player;
+    PlayerGroup->AddNewObject(player = new BattlePlayer("player/idle.png", 100, 100));
 
     // 初始化攝影機，確保玩家置中
     cameraOffset.x = player->Position.x - window_x / 2 * BlockSize; // 192
@@ -101,9 +101,9 @@ void BattleScene::Update(float deltaTime) {
     IScene::Update(deltaTime);
     
     // 獲取玩家對象
-    Player* player = nullptr;
+    BattlePlayer* player = nullptr;
     for (auto& obj : PlayerGroup->GetObjects()) {
-        player = dynamic_cast<Player*>(obj);
+        player = dynamic_cast<BattlePlayer*>(obj);
         if (player) break;
     }
     
