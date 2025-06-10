@@ -52,5 +52,7 @@ public:
     int GetLastDirection() const { return lastDirection; }
 
     bool canWalk(int x, int y);
+
+    static Engine::Point curPos;
 };
 #endif   // PLAYER_HPP
