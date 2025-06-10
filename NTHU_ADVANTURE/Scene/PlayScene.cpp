@@ -22,14 +22,16 @@
 #include "Player/Player.hpp"
 #include "NPC/NPC.hpp"
 
-const int PlayScene::MapWidth = 20, PlayScene::MapHeight = 13; //會壞掉
+const int PlayScene::MapWidth = 60, PlayScene::MapHeight = 32;
 const int PlayScene::BlockSize = 64;
+
+const int window_x = 30, window_y = 16;
 
 // Engine::Point PlayScene::GetClientSize() {
 //     return Engine::Point(MapWidth * BlockSize, MapHeight * BlockSize);
 // }
 Engine::Point PlayScene::GetClientSize() {
-    return Engine::Point(6 * BlockSize, 3 * BlockSize); // 視角大小 384x192
+    return Engine::Point(window_x * BlockSize, window_y * BlockSize); // 視角大小
 }
 
 void PlayScene::Initialize() {
@@ -51,9 +53,11 @@ void PlayScene::Initialize() {
     Player* player;
     PlayerGroup->AddNewObject(player = new Player("player/idle.png", 100, 100));
 
-    // 初始化攝影機
-    cameraOffset.x = player->Position.x - 3 * BlockSize; // 384/2 = 192
-    cameraOffset.y = player->Position.y - 1.5 * BlockSize; // 192/2 = 96
+    // 初始化攝影機，確保玩家置中
+    cameraOffset.x = player->Position.x - window_x / 2 * BlockSize; // 192
+    cameraOffset.y = player->Position.y - window_y / 2 * BlockSize; // 96
+    cameraOffset.x = std::max(0.0f, std::min(cameraOffset.x, static_cast<float>(MapWidth * BlockSize - window_x * BlockSize)));
+    cameraOffset.y = std::max(0.0f, std::min(cameraOffset.y, static_cast<float>(MapHeight * BlockSize - window_y * BlockSize)));
 
     // NPC
     NPC* test;
@@ -95,6 +99,8 @@ void PlayScene::Terminate() {
 void PlayScene::Update(float deltaTime) {
     IScene::Update(deltaTime);
     
+    
+    
     // 獲取玩家對象
     Player* player = nullptr;
     for (auto& obj : PlayerGroup->GetObjects()) {
@@ -104,15 +110,21 @@ void PlayScene::Update(float deltaTime) {
     
     if (!player) return; // 確保玩家存在
 
-    // 更新攝影機
-    float targetX = player->Position.x - 3 * BlockSize; // 視角中心
-    float targetY = player->Position.y - 1.5 * BlockSize;
-    // 邊界限制
-    targetX = std::max(0.0f, std::min(targetX, static_cast<float>(MapWidth * BlockSize - 6 * BlockSize)));
-    targetY = std::max(0.0f, std::min(targetY, static_cast<float>(MapHeight * BlockSize - 3 * BlockSize)));
-    // 平滑插值（與玩家移動同步，0.3秒）
-    cameraOffset.x += (targetX - cameraOffset.x) * (deltaTime / 0.3f);
-    cameraOffset.y += (targetY - cameraOffset.y) * (deltaTime / 0.3f);
+    // 更新攝影機，直接設置偏移量
+    cameraOffset.x = player->Position.x - window_x / 2 * BlockSize; // 置中：player.x - 192
+    cameraOffset.y = player->Position.y - window_y / 2 * BlockSize; // 置中：player.y - 96
+    cameraOffset.x = std::max(0.0f, std::min(cameraOffset.x, static_cast<float>(MapWidth * BlockSize - window_x * BlockSize)));
+    cameraOffset.y = std::max(0.0f, std::min(cameraOffset.y, static_cast<float>(MapHeight * BlockSize - window_y * BlockSize)));
+
+    // // 更新攝影機
+    // float targetX = player->Position.x - 3 * BlockSize; // 視角中心
+    // float targetY = player->Position.y - 1.5 * BlockSize;
+    // // 邊界限制
+    // targetX = std::max(0.0f, std::min(targetX, static_cast<float>(MapWidth * BlockSize - 6 * BlockSize)));
+    // targetY = std::max(0.0f, std::min(targetY, static_cast<float>(MapHeight * BlockSize - 3 * BlockSize)));
+    // // 平滑插值（與玩家移動同步，0.3秒）
+    // cameraOffset.x += (targetX - cameraOffset.x) * (deltaTime / 0.3f);
+    // cameraOffset.y += (targetY - cameraOffset.y) * (deltaTime / 0.3f);
     
     // 更新所有NPC
     for (auto& obj : NPCGroup->GetObjects()) {

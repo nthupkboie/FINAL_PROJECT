@@ -26,9 +26,9 @@
 [INFO] Loaded Resource<image>: Resource/images/player/left2.png
 [INFO] Loaded Resource<image>: Resource/images/player/right1.png
 [INFO] Loaded Resource<image>: Resource/images/player/right2.png
+[INFO] Loaded Resource<image>: Resource/images/NPC/test/avatar/test_avatar.png
 [INFO] Loaded Resource<image>: Resource/images/NPC/test/role/test_sheet.png
 [INFO] Loaded Resource<font>: Resource/fonts/normal.ttf with size 24
-[INFO] Loaded Resource<image>: Resource/images/NPC/test/icon/test_icon.png
 [INFO] Loaded Resource<image>: Resource/images/lose/benjamin-happy.png
 [INFO] Loaded Resource<audio>: Resource/audios/play.ogg
 [INFO] Changed to play scene
@@ -42,9 +42,9 @@
 [INFO] Destroyed Resource<image>: player/right1.png
 [INFO] Destroyed Resource<image>: player/left2.png
 [INFO] Destroyed Resource<image>: player/down1.png
+[INFO] Destroyed Resource<image>: NPC/test/avatar/test_avatar.png
 [INFO] Destroyed Resource<image>: player/up2.png
 [INFO] Destroyed Resource<image>: player/up1.png
-[INFO] Destroyed Resource<image>: NPC/test/icon/test_icon.png
 [INFO] Destroyed Resource<image>: player/right_idle.png
 [INFO] Destroyed Resource<image>: icon.png
 [INFO] Destroyed Resource<image>: play/dirt.png?64x64

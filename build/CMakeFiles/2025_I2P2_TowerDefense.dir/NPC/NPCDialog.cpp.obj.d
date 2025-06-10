@@ -898,4 +898,12 @@ CMakeFiles/2025_I2P2_TowerDefense.dir/NPC/NPCDialog.cpp.obj: \
   c:/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__filesystem/recursive_directory_iterator.h \
   c:/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__filesystem/u8path.h \
   c:/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/iostream \
+  C:/FINAL_PROJECT/NTHU_ADVANTURE/./Scene/PlayScene.hpp \
+  c:/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/list \
+  C:/FINAL_PROJECT/NTHU_ADVANTURE/./Engine/IScene.hpp \
+  C:/FINAL_PROJECT/NTHU_ADVANTURE/./Engine/Group.hpp \
+  C:/FINAL_PROJECT/NTHU_ADVANTURE/./Engine/IControl.hpp \
+  C:/FINAL_PROJECT/NTHU_ADVANTURE/./Engine/IObject.hpp \
+  C:/FINAL_PROJECT/NTHU_ADVANTURE/./Engine/Point.hpp \
+  C:/FINAL_PROJECT/NTHU_ADVANTURE/./NPC/NPCDialog.hpp \
   C:/allegro/include/allegro5/allegro_primitives.h
