@@ -22,11 +22,14 @@
 #include "Player/Player.hpp"
 #include "NPC/NPC.hpp"
 
-const int PlayScene::MapWidth = 20, PlayScene::MapHeight = 13;
+const int PlayScene::MapWidth = 20, PlayScene::MapHeight = 13; //會壞掉
 const int PlayScene::BlockSize = 64;
 
+// Engine::Point PlayScene::GetClientSize() {
+//     return Engine::Point(MapWidth * BlockSize, MapHeight * BlockSize);
+// }
 Engine::Point PlayScene::GetClientSize() {
-    return Engine::Point(MapWidth * BlockSize, MapHeight * BlockSize);
+    return Engine::Point(6 * BlockSize, 3 * BlockSize); // 視角大小 384x192
 }
 
 void PlayScene::Initialize() {
@@ -34,6 +37,8 @@ void PlayScene::Initialize() {
     lives = 3;
     money = 0;
     
+    cameraOffset = Engine::Point(0, 0);
+
     // 添加渲染群組
     AddNewObject(TileMapGroup = new Group());      // 地圖圖層
     AddNewObject(PlayerGroup = new Group());       // 玩家角色
@@ -45,6 +50,10 @@ void PlayScene::Initialize() {
     // 初始化玩家
     Player* player;
     PlayerGroup->AddNewObject(player = new Player("player/idle.png", 100, 100));
+
+    // 初始化攝影機
+    cameraOffset.x = player->Position.x - 3 * BlockSize; // 384/2 = 192
+    cameraOffset.y = player->Position.y - 1.5 * BlockSize; // 192/2 = 96
 
     // NPC
     NPC* test;
@@ -96,6 +105,16 @@ void PlayScene::Update(float deltaTime) {
     }
     
     if (!player) return; // 確保玩家存在
+
+    // 更新攝影機
+    float targetX = player->Position.x - 3 * BlockSize; // 視角中心
+    float targetY = player->Position.y - 1.5 * BlockSize;
+    // 邊界限制
+    targetX = std::max(0.0f, std::min(targetX, static_cast<float>(MapWidth * BlockSize - 6 * BlockSize)));
+    targetY = std::max(0.0f, std::min(targetY, static_cast<float>(MapHeight * BlockSize - 3 * BlockSize)));
+    // 平滑插值（與玩家移動同步，0.3秒）
+    cameraOffset.x += (targetX - cameraOffset.x) * (deltaTime / 0.3f);
+    cameraOffset.y += (targetY - cameraOffset.y) * (deltaTime / 0.3f);
     
     // 更新所有NPC
     for (auto& obj : NPCGroup->GetObjects()) {
@@ -116,7 +135,23 @@ void PlayScene::Update(float deltaTime) {
 }
 
 void PlayScene::Draw() const {
-    IScene::Draw();
+    //IScene::Draw();
+
+    ALLEGRO_TRANSFORM transform;
+    al_copy_transform(&transform, al_get_current_transform());
+    al_translate_transform(&transform, -cameraOffset.x, -cameraOffset.y);
+    al_use_transform(&transform);
+
+    TileMapGroup->Draw();
+    PlayerGroup->Draw();
+    NPCGroup->Draw();
+
+    al_identity_transform(&transform);
+    al_use_transform(&transform);
+
+    if (dialog.IsDialogActive()) {
+        dialog.Draw();
+    }
     
     // 繪製對話框
     if (dialog.IsDialogActive()) {
