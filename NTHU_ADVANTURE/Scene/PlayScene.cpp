@@ -66,7 +66,7 @@ void PlayScene::Initialize() {
     // 圖塊寬, 圖塊高
     auto testAvatar = Engine::Resources::GetInstance().GetBitmap("NPC/test/avatar/test_avatar.png");
     NPCGroup->AddNewObject(test = new NPC("NPC",testAvatar, "NPC/test/role/test_sheet.png",
-                                            64, 64,
+                                            BlockSize * 30, BlockSize * 10,
                                             2, 3,  // 上 (第0列第2行)
                                             2, 0,  // 下
                                             2, 1,  // 左
@@ -215,6 +215,7 @@ void PlayScene::ReadMap() {
             case 'T': mapData.push_back(TILE_TREE); break;
             case 'S': mapData.push_back(TILE_STAIRS); break;
             case 'N': mapData.push_back(NEW); break;
+            case 'n': mapData.push_back(TILE_NEW); break;
             case '=': mapData.push_back(NOTHING); break;
             case '\n':
             case '\r':
@@ -239,7 +240,7 @@ void PlayScene::ReadMap() {
             
             switch(tileType) {
                 case TILE_GRASS:
-                    imagePath = "mainworld/grass1.png";
+                    imagePath = "mainworld/grasss.png";
                     TileMapGroup->AddNewObject(
                         new Engine::Image(imagePath, 
                                         x * BlockSize, 
@@ -306,6 +307,7 @@ void PlayScene::ReadMap() {
                                         BlockSize * 7)
                     );
                     break;
+                case TILE_NEW:
                 case NOTHING:
                 default:
                     continue;
