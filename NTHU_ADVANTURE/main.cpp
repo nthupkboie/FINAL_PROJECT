@@ -29,6 +29,6 @@ int main(int argc, char **argv) {
 	// game.AddNewScene("win", new WinScene());
 
 	// start from start scene
-	game.Start("start", 60, 1600, 832);
+	game.Start("start", 60, 1920, 1024);
 	return 0;
 }
