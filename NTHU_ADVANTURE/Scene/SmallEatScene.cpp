@@ -18,25 +18,25 @@
 #include "Engine/IScene.hpp"
 
 // new add
-#include "PlayScene.hpp"
+#include "SmallEatScene.hpp"
 #include "Player/Player.hpp"
 #include "NPC/NPC.hpp"
 
-const int PlayScene::MapWidth = 60, PlayScene::MapHeight = 32;
-const int PlayScene::BlockSize = 64;
+const int SmallEatScene::MapWidth = 30, SmallEatScene::MapHeight = 16;
+const int SmallEatScene::BlockSize = 64;
 
-const int PlayScene::window_x = 30, PlayScene::window_y = 16;
+const int SmallEatScene::window_x = 30, SmallEatScene::window_y = 16;
 
-// Engine::Point PlayScene::GetClientSize() {
+// Engine::Point SmallEatScene::GetClientSize() {
 //     return Engine::Point(MapWidth * BlockSize, MapHeight * BlockSize);
 // }
 
-Engine::Point PlayScene::GetClientSize() {
+Engine::Point SmallEatScene::GetClientSize() {
     return Engine::Point(window_x * BlockSize, window_y * BlockSize); // 視角大小
 }
 
-Engine::Point PlayScene::cameraOffset = Engine::Point(0, 0);
-void PlayScene::Initialize() {
+Engine::Point SmallEatScene::cameraOffset = Engine::Point(0, 0);
+void SmallEatScene::Initialize() {
     // 初始化遊戲狀態
     lives = 3;
     money = 0;
@@ -66,7 +66,7 @@ void PlayScene::Initialize() {
     // 圖塊寬, 圖塊高
     auto testAvatar = Engine::Resources::GetInstance().GetBitmap("NPC/test/avatar/test_avatar.png");
     NPCGroup->AddNewObject(test = new NPC("NPC",testAvatar, "NPC/test/role/test_sheet.png",
-                                            BlockSize * 30, BlockSize * 10,
+                                            BlockSize * 2, BlockSize * 2,
                                             2, 3,  // 上 (第0列第2行)
                                             2, 0,  // 下
                                             2, 1,  // 左
@@ -91,12 +91,12 @@ void PlayScene::Initialize() {
     bgmId = AudioHelper::PlayBGM("play.ogg");
 }
 
-void PlayScene::Terminate() {
+void SmallEatScene::Terminate() {
     AudioHelper::StopBGM(bgmId);
     IScene::Terminate();
 }
 
-void PlayScene::Update(float deltaTime) {
+void SmallEatScene::Update(float deltaTime) {
     IScene::Update(deltaTime);
     
     // 獲取玩家對象
@@ -142,7 +142,7 @@ void PlayScene::Update(float deltaTime) {
     }
 }
 
-void PlayScene::Draw() const {
+void SmallEatScene::Draw() const {
     //IScene::Draw();
 
     ALLEGRO_TRANSFORM transform;
@@ -167,40 +167,28 @@ void PlayScene::Draw() const {
     }
 }
 
-void PlayScene::OnMouseDown(int button, int mx, int my) {
+void SmallEatScene::OnMouseDown(int button, int mx, int my) {
     IScene::OnMouseDown(button, mx, my);
 }
 
-void PlayScene::OnMouseMove(int mx, int my) {
+void SmallEatScene::OnMouseMove(int mx, int my) {
     IScene::OnMouseMove(mx, my);
 }
 
-void PlayScene::OnMouseUp(int button, int mx, int my) {
+void SmallEatScene::OnMouseUp(int button, int mx, int my) {
     IScene::OnMouseUp(button, mx, my);
 }
 
-void PlayScene::OnKeyDown(int keyCode) {
+void SmallEatScene::OnKeyDown(int keyCode) {
     IScene::OnKeyDown(keyCode);
     
     // 按Enter鍵推進對話
     if (keyCode == ALLEGRO_KEY_ENTER && dialog.IsDialogActive()) {
         dialog.AdvanceDialog();
     }
-
-    if (keyCode == ALLEGRO_KEY_W) {
-        Engine::GameEngine::GetInstance().ChangeScene("win");
-    }
-
-    if (keyCode == ALLEGRO_KEY_L) {
-        Engine::GameEngine::GetInstance().ChangeScene("lose");
-    }
-
     
     if(keyCode == ALLEGRO_KEY_B){
         Engine::GameEngine::GetInstance().ChangeScene("battle");
-    }
-    if(keyCode == ALLEGRO_KEY_E){
-        Engine::GameEngine::GetInstance().ChangeScene("smalleat");
     }
     // // 按T鍵測試開啟對話 (可選)
     // if (keyCode == ALLEGRO_KEY_T) {
@@ -212,10 +200,14 @@ void PlayScene::OnKeyDown(int keyCode) {
     //     auto npcAvatar = Engine::Resources::GetInstance().GetBitmap("NPC/test/icon/test_icon.png");
     //     dialog.StartDialog("測試NPC", npcAvatar, testMessages);
     // }
+
+    if(keyCode == ALLEGRO_KEY_P){
+        Engine::GameEngine::GetInstance().ChangeScene("play");
+    }
 }
 
-void PlayScene::ReadMap() {
-    std::string filename = std::string("Resource/mainworld") + ".txt";
+void SmallEatScene::ReadMap() {
+    std::string filename = std::string("Resource/smalleat") + ".txt";
 
     // 清空舊的地圖數據
     mapData.clear();
@@ -225,7 +217,7 @@ void PlayScene::ReadMap() {
     std::ifstream fin(filename);
     while (fin >> c) {
         switch (c) {
-            case '-': mapData.push_back(TILE_GRASS); break;
+            case '0': mapData.push_back(TILE_GRASS); break;
             case 'R': mapData.push_back(TILE_ROAD); break;
             case 'T': mapData.push_back(TILE_TREE); break;
             case 'S': mapData.push_back(TILE_STAIRS); break;
@@ -339,6 +331,6 @@ void PlayScene::ReadMap() {
     }
 }
 
-Engine::Point PlayScene::getCamera(){
+Engine::Point SmallEatScene::getCamera(){
     return Engine::Point(cameraOffset.x + 5 * BlockSize, cameraOffset.y + 2.5 * BlockSize);
 }

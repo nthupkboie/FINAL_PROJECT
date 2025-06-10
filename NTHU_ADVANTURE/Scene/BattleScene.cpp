@@ -19,24 +19,25 @@
 
 // new add
 #include "PlayScene.hpp"
-#include "Player/Player.hpp"
+#include "Player/BattlePlayer.hpp"
 #include "NPC/NPC.hpp"
+#include "BattleScene.hpp"
 
-const int PlayScene::MapWidth = 60, PlayScene::MapHeight = 32;
-const int PlayScene::BlockSize = 64;
+const int BattleScene::MapWidth = 30, BattleScene::MapHeight = 16;
+const int BattleScene::BlockSize = 64;
 
-const int PlayScene::window_x = 30, PlayScene::window_y = 16;
+const int BattleScene::window_x = 30, BattleScene::window_y = 16;
 
 // Engine::Point PlayScene::GetClientSize() {
 //     return Engine::Point(MapWidth * BlockSize, MapHeight * BlockSize);
 // }
 
-Engine::Point PlayScene::GetClientSize() {
+Engine::Point BattleScene::GetClientSize() {
     return Engine::Point(window_x * BlockSize, window_y * BlockSize); // 視角大小
 }
 
-Engine::Point PlayScene::cameraOffset = Engine::Point(0, 0);
-void PlayScene::Initialize() {
+Engine::Point BattleScene::cameraOffset = Engine::Point(0, 0);
+void BattleScene::Initialize() {
     // 初始化遊戲狀態
     lives = 3;
     money = 0;
@@ -50,8 +51,8 @@ void PlayScene::Initialize() {
     ReadMap();
     
     // 初始化玩家
-    Player* player;
-    PlayerGroup->AddNewObject(player = new Player("player/idle.png", 100, 100));
+    BattlePlayer* player;
+    PlayerGroup->AddNewObject(player = new BattlePlayer("player/idle.png", 100, 100));
 
     // 初始化攝影機，確保玩家置中
     cameraOffset.x = player->Position.x - window_x / 2 * BlockSize; // 192
@@ -59,30 +60,30 @@ void PlayScene::Initialize() {
     cameraOffset.x = std::max(0.0f, std::min(cameraOffset.x, static_cast<float>(MapWidth * BlockSize - window_x * BlockSize)));
     cameraOffset.y = std::max(0.0f, std::min(cameraOffset.y, static_cast<float>(MapHeight * BlockSize - window_y * BlockSize)));
 
-    // NPC
-    NPC* test;
-    // sheet路徑, x, y, 
-    // 上, 下, 左, 右, (先行在列)
-    // 圖塊寬, 圖塊高
-    auto testAvatar = Engine::Resources::GetInstance().GetBitmap("NPC/test/avatar/test_avatar.png");
-    NPCGroup->AddNewObject(test = new NPC("NPC",testAvatar, "NPC/test/role/test_sheet.png",
-                                            BlockSize * 30, BlockSize * 10,
-                                            2, 3,  // 上 (第0列第2行)
-                                            2, 0,  // 下
-                                            2, 1,  // 左
-                                            2, 2,  // 右
-                                            64, 64)); // 圖塊大小
+    // // NPC
+    // NPC* test;
+    // // sheet路徑, x, y, 
+    // // 上, 下, 左, 右, (先行在列)
+    // // 圖塊寬, 圖塊高
+    // auto testAvatar = Engine::Resources::GetInstance().GetBitmap("NPC/test/avatar/test_avatar.png");
+    // NPCGroup->AddNewObject(test = new NPC("NPC",testAvatar, "NPC/test/role/test_sheet.png",
+    //                                         BlockSize * 30, BlockSize * 10,
+    //                                         2, 3,  // 上 (第0列第2行)
+    //                                         2, 0,  // 下
+    //                                         2, 1,  // 左
+    //                                         2, 2,  // 右
+    //                                         64, 64)); // 圖塊大小
 
-    // 初始化對話框
-    dialog.Initialize();
+    // // 初始化對話框
+    // dialog.Initialize();
     
-    // 設置NPC的對話內容
-    test->SetMessages({
-        "你好，我是村民A！",
-        "這個村莊最近不太平靜...",
-        "晚上請小心行事。",
-        "祝你好運，冒險者！"
-    });
+    // // 設置NPC的對話內容
+    // test->SetMessages({
+    //     "你好，我是村民A！",
+    //     "這個村莊最近不太平靜...",
+    //     "晚上請小心行事。",
+    //     "祝你好運，冒險者！"
+    // });
 
     // 預載資源
     Engine::Resources::GetInstance().GetBitmap("lose/benjamin-happy.png");
@@ -91,18 +92,18 @@ void PlayScene::Initialize() {
     bgmId = AudioHelper::PlayBGM("play.ogg");
 }
 
-void PlayScene::Terminate() {
+void BattleScene::Terminate() {
     AudioHelper::StopBGM(bgmId);
     IScene::Terminate();
 }
 
-void PlayScene::Update(float deltaTime) {
+void BattleScene::Update(float deltaTime) {
     IScene::Update(deltaTime);
     
     // 獲取玩家對象
-    Player* player = nullptr;
+    BattlePlayer* player = nullptr;
     for (auto& obj : PlayerGroup->GetObjects()) {
-        player = dynamic_cast<Player*>(obj);
+        player = dynamic_cast<BattlePlayer*>(obj);
         if (player) break;
     }
     
@@ -124,17 +125,17 @@ void PlayScene::Update(float deltaTime) {
     // cameraOffset.x += (targetX - cameraOffset.x) * (deltaTime / 0.3f);
     // cameraOffset.y += (targetY - cameraOffset.y) * (deltaTime / 0.3f);
     
-    // 更新所有NPC
-    for (auto& obj : NPCGroup->GetObjects()) {
-        if (auto npc = dynamic_cast<NPC*>(obj)) {
-            npc->Update(deltaTime, player);
-        }
-    }
+    // // 更新所有NPC
+    // for (auto& obj : NPCGroup->GetObjects()) {
+    //     if (auto npc = dynamic_cast<NPC*>(obj)) {
+    //         npc->Update(deltaTime, player);
+    //     }
+    // }
 
-    // 更新對話框
-    if (dialog.IsDialogActive()) {
-        dialog.Update(deltaTime);
-    }
+    // // 更新對話框
+    // if (dialog.IsDialogActive()) {
+    //     dialog.Update(deltaTime);
+    // }
 
     // 檢查遊戲結束條件
     if (lives <= 0) {
@@ -142,7 +143,7 @@ void PlayScene::Update(float deltaTime) {
     }
 }
 
-void PlayScene::Draw() const {
+void BattleScene::Draw() const {
     //IScene::Draw();
 
     ALLEGRO_TRANSFORM transform;
@@ -152,56 +153,36 @@ void PlayScene::Draw() const {
 
     TileMapGroup->Draw();
     PlayerGroup->Draw();
-    NPCGroup->Draw();
+    // NPCGroup->Draw();
 
     al_identity_transform(&transform);
     al_use_transform(&transform);
 
-    if (dialog.IsDialogActive()) {
-        dialog.Draw();
-    }
-    
-    // 繪製對話框
-    if (dialog.IsDialogActive()) {
-        dialog.Draw();
-    }
+    // if (dialog.IsDialogActive()) {
+    //     dialog.Draw();
+    // }
 }
 
-void PlayScene::OnMouseDown(int button, int mx, int my) {
+void BattleScene::OnMouseDown(int button, int mx, int my) {
     IScene::OnMouseDown(button, mx, my);
 }
 
-void PlayScene::OnMouseMove(int mx, int my) {
+void BattleScene::OnMouseMove(int mx, int my) {
     IScene::OnMouseMove(mx, my);
 }
 
-void PlayScene::OnMouseUp(int button, int mx, int my) {
+void BattleScene::OnMouseUp(int button, int mx, int my) {
     IScene::OnMouseUp(button, mx, my);
 }
 
-void PlayScene::OnKeyDown(int keyCode) {
+void BattleScene::OnKeyDown(int keyCode) {
     IScene::OnKeyDown(keyCode);
     
     // 按Enter鍵推進對話
     if (keyCode == ALLEGRO_KEY_ENTER && dialog.IsDialogActive()) {
         dialog.AdvanceDialog();
     }
-
-    if (keyCode == ALLEGRO_KEY_W) {
-        Engine::GameEngine::GetInstance().ChangeScene("win");
-    }
-
-    if (keyCode == ALLEGRO_KEY_L) {
-        Engine::GameEngine::GetInstance().ChangeScene("lose");
-    }
-
     
-    if(keyCode == ALLEGRO_KEY_B){
-        Engine::GameEngine::GetInstance().ChangeScene("battle");
-    }
-    if(keyCode == ALLEGRO_KEY_E){
-        Engine::GameEngine::GetInstance().ChangeScene("smalleat");
-    }
     // // 按T鍵測試開啟對話 (可選)
     // if (keyCode == ALLEGRO_KEY_T) {
     //     std::vector<std::string> testMessages = {
@@ -214,8 +195,8 @@ void PlayScene::OnKeyDown(int keyCode) {
     // }
 }
 
-void PlayScene::ReadMap() {
-    std::string filename = std::string("Resource/mainworld") + ".txt";
+void BattleScene::ReadMap() {
+    std::string filename = std::string("Resource/battle") + ".txt";
 
     // 清空舊的地圖數據
     mapData.clear();
@@ -225,13 +206,17 @@ void PlayScene::ReadMap() {
     std::ifstream fin(filename);
     while (fin >> c) {
         switch (c) {
-            case '-': mapData.push_back(TILE_GRASS); break;
-            case 'R': mapData.push_back(TILE_ROAD); break;
-            case 'T': mapData.push_back(TILE_TREE); break;
-            case 'S': mapData.push_back(TILE_STAIRS); break;
-            case 'N': mapData.push_back(NEW); break;
-            case 'n': mapData.push_back(TILE_NEW); break;
-            case '=': mapData.push_back(NOTHING); break;
+            case '0': mapData.push_back(TILE_GRASS); break;
+            case '1': mapData.push_back(TILE_TREE); break;
+
+            // case '-': mapData.push_back(TILE_GRASS); break;
+            // case 'R': mapData.push_back(TILE_ROAD); break;
+            // case 'T': mapData.push_back(TILE_TREE); break;
+            // case 'S': mapData.push_back(TILE_STAIRS); break;
+            // case 'N': mapData.push_back(NEW); break;
+            // case 'n': mapData.push_back(TILE_NEW); break;
+            // case '=': mapData.push_back(NOTHING); break;
+
             case '\n':
             case '\r':
             default: break;
@@ -239,10 +224,10 @@ void PlayScene::ReadMap() {
     }
     fin.close();
     
-    // 確認地圖數據完整
-    if (static_cast<int>(mapData.size()) != MapWidth * MapHeight) {
-        throw std::ios_base::failure("Map data is corrupted.");
-    }
+    // // 確認地圖數據完整
+    // if (static_cast<int>(mapData.size()) != MapWidth * MapHeight) {
+    //     throw std::ios_base::failure("Map data is corrupted.");
+    // }
 
     Engine::LOG(Engine::INFO) << "mapData.size() " << mapData.size();
     Engine::LOG(Engine::INFO) << "MapWidth * MapHeight " << MapWidth * MapHeight;
@@ -339,6 +324,6 @@ void PlayScene::ReadMap() {
     }
 }
 
-Engine::Point PlayScene::getCamera(){
+Engine::Point BattleScene::getCamera(){
     return Engine::Point(cameraOffset.x + 5 * BlockSize, cameraOffset.y + 2.5 * BlockSize);
 }
