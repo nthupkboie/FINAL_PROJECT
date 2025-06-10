@@ -30,5 +30,6 @@ int main(int argc, char **argv) {
 
 	// start from start scene
 	game.Start("start", 60, 1920, 1024);
+	//game.Start("start", 60, 64*10, 64*5);
 	return 0;
 }

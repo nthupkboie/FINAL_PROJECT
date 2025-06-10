@@ -1,6 +1,7 @@
 #include "NPCDialog.hpp"
 #include "Engine/Resources.hpp"
 #include "Engine/LOG.hpp"
+#include "Scene/PlayScene.hpp"
 
 #include <allegro5/allegro_primitives.h>
 #include <allegro5/allegro.h>

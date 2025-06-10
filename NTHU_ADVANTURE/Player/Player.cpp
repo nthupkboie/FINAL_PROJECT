@@ -94,6 +94,7 @@ void Player::Update(float deltaTime) {
 
                 if (latestKey == ALLEGRO_KEY_W) {
                     tmp.y -= 64.0f; // 向上
+                    if (!canWalk(tmp.x, tmp.y)) tmp.y += 64.0f;
                     bmp = (std::fmod(animationTimer, 0.4f) < 0.2f) ? bmpUp1 : bmpUp2;
                     keyPressed = true;
                     lastDirection = ALLEGRO_KEY_W;
@@ -101,6 +102,7 @@ void Player::Update(float deltaTime) {
                     last_down = last_left = last_right = false;
                 } else if (latestKey == ALLEGRO_KEY_S) {
                     tmp.y += 64.0f; // 向下
+                    if (!canWalk(tmp.x, tmp.y)) tmp.y -= 64.0f;
                     bmp = (std::fmod(animationTimer, 0.4f) < 0.2f) ? bmpDown1 : bmpDown2;
                     keyPressed = true;
                     lastDirection = ALLEGRO_KEY_S;
@@ -108,6 +110,7 @@ void Player::Update(float deltaTime) {
                     last_up = last_left = last_right = false;
                 } else if (latestKey == ALLEGRO_KEY_A) {
                     tmp.x -= 64.0f; // 向左
+                    if (!canWalk(tmp.x, tmp.y)) tmp.x += 64.0f;
                     bmp = (std::fmod(animationTimer, 0.4f) < 0.2f) ? bmpLeft1 : bmpLeft2;
                     keyPressed = true;
                     lastDirection = ALLEGRO_KEY_A;
@@ -115,6 +118,7 @@ void Player::Update(float deltaTime) {
                     last_down = last_up = last_right = false;
                 } else if (latestKey == ALLEGRO_KEY_D) {
                     tmp.x += 64.0f; // 向右
+                    if (!canWalk(tmp.x, tmp.y)) tmp.x -= 64.0f;
                     bmp = (std::fmod(animationTimer, 0.4f) < 0.2f) ? bmpRight1 : bmpRight2;
                     //if (std::fmod(animationTimer, 0.4f) < 0.1f) bmp = bmpRight1;
                     //else if (std::fmod(animationTimer, 0.4f) < 0.2f) bmp = bmpRight2;
@@ -165,6 +169,7 @@ void Player::Update(float deltaTime) {
 
                 if (latestKey == ALLEGRO_KEY_W) {
                     tmp.y -= 64.0f; // 向上
+                    if (!canWalk(tmp.x, tmp.y)) tmp.y += 64.0f;
                     bmp = (std::fmod(animationTimer, 0.4f) < 0.2f) ? bmpUp1 : bmpUp2;
                     keyPressed = true;
                     lastDirection = ALLEGRO_KEY_W;
@@ -172,6 +177,7 @@ void Player::Update(float deltaTime) {
                     last_down = last_left = last_right = false;
                 } else if (latestKey == ALLEGRO_KEY_S) {
                     tmp.y += 64.0f; // 向下
+                    if (!canWalk(tmp.x, tmp.y)) tmp.y -= 64.0f;
                     bmp = (std::fmod(animationTimer, 0.4f) < 0.2f) ? bmpDown1 : bmpDown2;
                     keyPressed = true;
                     lastDirection = ALLEGRO_KEY_S;
@@ -179,6 +185,7 @@ void Player::Update(float deltaTime) {
                     last_up = last_left = last_right = false;
                 } else if (latestKey == ALLEGRO_KEY_A) {
                     tmp.x -= 64.0f; // 向左
+                    if (!canWalk(tmp.x, tmp.y)) tmp.x += 64.0f;
                     bmp = (std::fmod(animationTimer, 0.4f) < 0.2f) ? bmpLeft1 : bmpLeft2;
                     keyPressed = true;
                     last_left = true;
@@ -186,6 +193,7 @@ void Player::Update(float deltaTime) {
                     lastDirection = ALLEGRO_KEY_A;
                 } else if (latestKey == ALLEGRO_KEY_D) {
                     tmp.x += 64.0f; // 向右
+                    if (!canWalk(tmp.x, tmp.y)) tmp.x -= 64.0f;
                     bmp = (std::fmod(animationTimer, 0.4f) < 0.2f) ? bmpRight1 : bmpRight2;
                     //if (std::fmod(animationTimer, 0.4f) < 0.1f) bmp = bmpRight1;
                     //else if (std::fmod(animationTimer, 0.4f) < 0.2f) bmp = bmpRight2;
@@ -226,3 +234,7 @@ void Player::Draw() const {
     Sprite::Draw();
 }
 
+bool Player::canWalk(int x, int y){
+    if (x > 64*60 || x < 0 || y < 0 || y > 64*32) return false;
+    return true;
+}

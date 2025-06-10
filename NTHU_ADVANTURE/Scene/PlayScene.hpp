@@ -64,6 +64,9 @@ public:
     void OnMouseUp(int button, int mx, int my) override;
     void OnKeyDown(int keyCode) override;
     void ReadMap();
+
+    // 攝影機偏移量
+    Engine::Point cameraOffset;
 };
 
 #endif   // PLAYSCENE_HPP

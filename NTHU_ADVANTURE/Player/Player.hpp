@@ -50,5 +50,7 @@ public:
     void Draw() const override;
 
     int GetLastDirection() const { return lastDirection; }
+
+    bool canWalk(int x, int y);
 };
 #endif   // PLAYER_HPP
