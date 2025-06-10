@@ -68,7 +68,7 @@ void NPCDialog::Update(float deltaTime) {
     if (!isActive || isDisplayingFullMessage) return;
 
     // 逐字顯示效果
-    charDisplayTimer += deltaTime;
+    charDisplayTimer += deltaTime + 0.025f;
     if (charDisplayTimer >= charDisplayDelay) {
         charDisplayTimer = 0.0f;
         
