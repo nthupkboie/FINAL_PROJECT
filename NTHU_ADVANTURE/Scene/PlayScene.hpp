@@ -25,7 +25,11 @@ private:
         TILE_ROAD,
         TILE_GRASS,
         TILE_TREE,
+        TILE_STAIRS,
+        NEW, TILE_NEW,
+        NOTHING,
     };
+    
     ALLEGRO_SAMPLE_ID bgmId;
     std::shared_ptr<ALLEGRO_SAMPLE_INSTANCE> deathBGMInstance;
 
@@ -70,6 +74,8 @@ public:
     static Engine::Point getCamera();
 
     static const int window_x, window_y;
+
+    std::vector<PlayScene::TileType> mapData;
 };
 
 #endif   // PLAYSCENE_HPP

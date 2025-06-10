@@ -30,6 +30,7 @@ const int PlayScene::window_x = 30, PlayScene::window_y = 16;
 // Engine::Point PlayScene::GetClientSize() {
 //     return Engine::Point(MapWidth * BlockSize, MapHeight * BlockSize);
 // }
+
 Engine::Point PlayScene::GetClientSize() {
     return Engine::Point(window_x * BlockSize, window_y * BlockSize); // 視角大小
 }
@@ -99,8 +100,6 @@ void PlayScene::Terminate() {
 
 void PlayScene::Update(float deltaTime) {
     IScene::Update(deltaTime);
-    
-    
     
     // 獲取玩家對象
     Player* player = nullptr;
@@ -203,16 +202,22 @@ void PlayScene::OnKeyDown(int keyCode) {
 }
 
 void PlayScene::ReadMap() {
-    std::string filename = std::string("Resource/map1") + ".txt";
+    std::string filename = std::string("Resource/mainworld") + ".txt";
+
+    // 清空舊的地圖數據
+    mapData.clear();
     
-    // read map1.txt
-    std::vector<int> mapData;
+    // 讀取地圖文件
     char c;
     std::ifstream fin(filename);
     while (fin >> c) {
         switch (c) {
-            case '0': mapData.push_back(0); break; // grass walkable
-            case '1': mapData.push_back(1); break; // rock  not walkable
+            case '-': mapData.push_back(TILE_GRASS); break;
+            case 'R': mapData.push_back(TILE_ROAD); break;
+            case 'T': mapData.push_back(TILE_TREE); break;
+            case 'S': mapData.push_back(TILE_STAIRS); break;
+            case 'N': mapData.push_back(NEW); break;
+            case '=': mapData.push_back(NOTHING); break;
             case '\n':
             case '\r':
             default: break;
@@ -220,28 +225,105 @@ void PlayScene::ReadMap() {
     }
     fin.close();
     
-    // confirm map data
-    if (static_cast<int>(mapData.size()) != MapWidth * MapHeight)
+    // 確認地圖數據完整
+    if (static_cast<int>(mapData.size()) != MapWidth * MapHeight) {
         throw std::ios_base::failure("Map data is corrupted.");
+    }
+
+    Engine::LOG(Engine::INFO) << "mapData.size() " << mapData.size();
+    Engine::LOG(Engine::INFO) << "MapWidth * MapHeight " << MapWidth * MapHeight;
     
-    // draw
-    for (int i = 0; i < MapHeight; i++) {
-        for (int j = 0; j < MapWidth; j++) {
-            switch(mapData[i * MapWidth + j]){
-                case 0:
-                    TileMapGroup->AddNewObject(new Engine::Image("play/floor.png", j * BlockSize, i * BlockSize, BlockSize, BlockSize));
+    // 繪製地圖
+    for (int y = 0; y < MapHeight; y++) {
+        for (int x = 0; x < MapWidth; x++) {
+            int tileType = mapData[y * MapWidth + x];
+            std::string imagePath;
+            
+            switch(tileType) {
+                case TILE_GRASS:
+                    imagePath = "mainworld/grass1.png";
+                    TileMapGroup->AddNewObject(
+                        new Engine::Image(imagePath, 
+                                        x * BlockSize, 
+                                        y * BlockSize, 
+                                        BlockSize, 
+                                        BlockSize)
+                    );
                     break;
-                case 1:
-                    TileMapGroup->AddNewObject(new Engine::Image("play/dirt.png", j * BlockSize, i * BlockSize, BlockSize, BlockSize));
+                case TILE_ROAD:
+                    imagePath = "mainworld/road.png";
+                    TileMapGroup->AddNewObject(
+                        new Engine::Image(imagePath, 
+                                        x * BlockSize, 
+                                        y * BlockSize, 
+                                        BlockSize, 
+                                        BlockSize)
+                    );
                     break;
+                case TILE_TREE:
+                    imagePath = "mainworld/grass.png";
+                    TileMapGroup->AddNewObject(
+                        new Engine::Image(imagePath, 
+                                        x * BlockSize, 
+                                        y * BlockSize, 
+                                        BlockSize, 
+                                        BlockSize)
+                    );
+
+                    imagePath = "mainworld/tree.png";
+                    TileMapGroup->AddNewObject(
+                        new Engine::Image(imagePath, 
+                                        x * BlockSize, 
+                                        y * BlockSize, 
+                                        BlockSize, 
+                                        BlockSize)
+                    );
+                    break;
+                case TILE_STAIRS:
+                    imagePath = "mainworld/stairs.png";
+                    TileMapGroup->AddNewObject(
+                        new Engine::Image(imagePath, 
+                                        x * BlockSize, 
+                                        y * BlockSize, 
+                                        BlockSize, 
+                                        BlockSize)
+                    );
+                    break;
+                case NEW:
+                    imagePath = "mainworld/grass1.png";
+                    TileMapGroup->AddNewObject(
+                        new Engine::Image(imagePath, 
+                                        x * BlockSize, 
+                                        y * BlockSize, 
+                                        BlockSize * 7, 
+                                        BlockSize * 7)
+                    );
+
+                    imagePath = "mainworld/NEW.png";
+                    TileMapGroup->AddNewObject(
+                        new Engine::Image(imagePath, 
+                                        x * BlockSize, 
+                                        y * BlockSize, 
+                                        BlockSize * 7, 
+                                        BlockSize * 7)
+                    );
+                    break;
+                case NOTHING:
                 default:
-                    break;
+                    continue;
             }
+            
+            // TileMapGroup->AddNewObject(
+            //     new Engine::Image(imagePath, 
+            //                       x * BlockSize, 
+            //                       y * BlockSize, 
+            //                       BlockSize, 
+            //                       BlockSize)
+            // );
         }
     }
 }
 
 Engine::Point PlayScene::getCamera(){
-
     return Engine::Point(cameraOffset.x + 5 * BlockSize, cameraOffset.y + 2.5 * BlockSize);
 }
