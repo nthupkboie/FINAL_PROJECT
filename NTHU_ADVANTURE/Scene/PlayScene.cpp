@@ -30,6 +30,7 @@ const int window_x = 30, window_y = 16;
 // Engine::Point PlayScene::GetClientSize() {
 //     return Engine::Point(MapWidth * BlockSize, MapHeight * BlockSize);
 // }
+
 Engine::Point PlayScene::GetClientSize() {
     return Engine::Point(window_x * BlockSize, window_y * BlockSize); // 視角大小
 }
@@ -98,8 +99,6 @@ void PlayScene::Terminate() {
 
 void PlayScene::Update(float deltaTime) {
     IScene::Update(deltaTime);
-    
-    
     
     // 獲取玩家對象
     Player* player = nullptr;
@@ -203,15 +202,17 @@ void PlayScene::OnKeyDown(int keyCode) {
 
 void PlayScene::ReadMap() {
     std::string filename = std::string("Resource/map1") + ".txt";
+
+    // 清空舊的地圖數據
+    mapData.clear();
     
-    // read map1.txt
-    std::vector<int> mapData;
+    // 讀取地圖文件
     char c;
     std::ifstream fin(filename);
     while (fin >> c) {
         switch (c) {
-            case '0': mapData.push_back(0); break; // grass walkable
-            case '1': mapData.push_back(1); break; // rock  not walkable
+            case '0': mapData.push_back(TILE_GRASS); break; // 草地，可走
+            case '1': mapData.push_back(TILE_ROAD); break;  // 樹木，不可走
             case '\n':
             case '\r':
             default: break;
@@ -219,23 +220,37 @@ void PlayScene::ReadMap() {
     }
     fin.close();
     
-    // confirm map data
-    if (static_cast<int>(mapData.size()) != MapWidth * MapHeight)
+    // 確認地圖數據完整
+    if (static_cast<int>(mapData.size()) != MapWidth * MapHeight) {
         throw std::ios_base::failure("Map data is corrupted.");
+    }
     
-    // draw
-    for (int i = 0; i < MapHeight; i++) {
-        for (int j = 0; j < MapWidth; j++) {
-            switch(mapData[i * MapWidth + j]){
-                case 0:
-                    TileMapGroup->AddNewObject(new Engine::Image("play/floor.png", j * BlockSize, i * BlockSize, BlockSize, BlockSize));
+    // 繪製地圖
+    for (int y = 0; y < MapHeight; y++) {
+        for (int x = 0; x < MapWidth; x++) {
+            int tileType = mapData[y * MapWidth + x];
+            std::string imagePath;
+            
+            switch(tileType) {
+                case TILE_GRASS:
+                    imagePath = "mainworld/grass.png";
+                    // imagePath = "play/dirt.png";
                     break;
-                case 1:
-                    TileMapGroup->AddNewObject(new Engine::Image("play/dirt.png", j * BlockSize, i * BlockSize, BlockSize, BlockSize));
+                case TILE_ROAD:
+                    // imagePath = "mainworld/road.png";
+                    imagePath = "play/floor.png";
                     break;
                 default:
-                    break;
+                    continue;
             }
+            
+            TileMapGroup->AddNewObject(
+                new Engine::Image(imagePath, 
+                                  x * BlockSize, 
+                                  y * BlockSize, 
+                                  BlockSize, 
+                                  BlockSize)
+            );
         }
     }
 }

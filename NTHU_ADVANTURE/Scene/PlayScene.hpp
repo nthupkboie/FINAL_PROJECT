@@ -25,7 +25,9 @@ private:
         TILE_ROAD,
         TILE_GRASS,
         TILE_TREE,
+        TILE_STAIRS,
     };
+    
     ALLEGRO_SAMPLE_ID bgmId;
     std::shared_ptr<ALLEGRO_SAMPLE_INSTANCE> deathBGMInstance;
 
@@ -67,6 +69,8 @@ public:
 
     // 攝影機偏移量
     Engine::Point cameraOffset;
+
+    std::vector<int> mapData;
 };
 
 #endif   // PLAYSCENE_HPP
