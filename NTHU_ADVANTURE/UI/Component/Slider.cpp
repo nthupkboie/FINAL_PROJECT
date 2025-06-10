@@ -1,25 +1,84 @@
 #include <algorithm>
 #include <string>
+#include <allegro5/allegro.h>
+#include <allegro5/allegro_image.h>
+#include "Engine/Resources.hpp"
+//#include <allegro5/allegro_bitmap.h>
+
+
+
 
 #include "Engine/Point.hpp"
 #include "Slider.hpp"
 
 Slider::Slider(float x, float y, float w, float h)
     : ImageButton("stage-select/slider.png", "stage-select/slider-blue.png", x, y),
-      Bar("stage-select/bar.png", x, y, w, h),
+      Bar("stage-select/empty_0.png", x, y, w, h),
       End1("stage-select/end.png", x, y + h / 2, 0, 0, 0.5, 0.5),
       End2("stage-select/end.png", x + w, y + h / 2, 0, 0, 0.5, 0.5) {
     Position.x += w;
     Position.y += h / 2;
     Anchor = Engine::Point(0.5, 0.5);
+
+    BarEmpty = Engine::Resources::GetInstance().GetBitmap("stage-select/empty_0.png");
+    BarFilled = Engine::Resources::GetInstance().GetBitmap("stage-select/full_1.png");
+
+
+    //if (!BarEmpty) fprintf(stderr, "[ERROR] Failed to load BarEmpty\n");
+    //if (!BarFilled) fprintf(stderr, "[ERROR] Failed to load BarFilled\n");
+
+
 }
+
 void Slider::Draw() const {
+    float x = Bar.Position.x;
+    float y = Bar.Position.y;
+    float w = Bar.Size.x;
+    float h = Bar.Size.y;
+    float value = (Position.x - x) / w; // 滑桿比例（0~1）
+
+    // 畫整條空白 bar
+
+    //al_draw_bitmap(BarEmpty.get(), x, y, 0); // 畫整張空白背景 bar
+
+    al_draw_scaled_bitmap(
+        BarEmpty.get(),
+        0, 0,
+        al_get_bitmap_width(BarEmpty.get()), al_get_bitmap_height(BarEmpty.get()),
+        x, y,
+        w, h,
+        0
+    );
+
+    al_draw_scaled_bitmap(
+        BarFilled.get(),
+        0, 0,
+        value * al_get_bitmap_width(BarFilled.get()), al_get_bitmap_height(BarFilled.get()),
+        x, y,
+        value * w, h,
+        0
+    );
+
+
+
+
+    // // 畫兩端裝飾
+    // End1.Draw();
+    // End2.Draw();
+
+    // 畫滑桿滑動點
+    ImageButton::Draw();
+}
+
+
+
+/*void Slider::Draw() const {
     // TODO HACKATHON-5 (3/4): The slider's component should be drawn here.
     Bar.Draw();//constructor
     End1.Draw();
     End2.Draw();
     ImageButton::Draw();
-}
+}*/
 //onValueChangedCallback是一個function指標，傳入value，回傳void，
 void Slider::SetOnValueChangedCallback(std::function<void(float value)> onValueChangedCallback) {
     OnValueChangedCallback = onValueChangedCallback;

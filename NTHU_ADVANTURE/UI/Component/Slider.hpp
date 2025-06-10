@@ -13,6 +13,9 @@ private:
     std::function<void(float value)> OnValueChangedCallback;
     float value = 0;
 
+
+
+
 public:
     const float Min = 0;
     const float Max = 1;
@@ -24,5 +27,11 @@ public:
     void OnMouseDown(int button, int mx, int my) override;
     void OnMouseUp(int button, int mx, int my) override;
     void OnMouseMove(int mx, int my) override;
+
+    std::shared_ptr<ALLEGRO_BITMAP> BarEmpty;
+    std::shared_ptr<ALLEGRO_BITMAP> BarFilled;
+
+    // ALLEGRO_BITMAP* BarEmpty;
+    // ALLEGRO_BITMAP* BarFilled;
 };
 #endif   // SLIDER_HPP
