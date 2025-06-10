@@ -21,6 +21,8 @@ PlayScene *Player::getPlayScene() {
     return dynamic_cast<PlayScene *>(Engine::GameEngine::GetInstance().GetActiveScene());
 }
 
+Engine::Point Player::curPos = Engine::Point(0,0);
+
 Player::Player(std::string img, float x, float y) : Engine::Sprite(img, x, y) {
 
     // 儲存圖像
@@ -49,6 +51,9 @@ Player::Player(std::string img, float x, float y) : Engine::Sprite(img, x, y) {
     startPos = targetPos = Position;
 
     last_down = last_left = last_right = last_up = false;
+
+    curPos.x = Position.x;
+    curPos.y = Position.y;
 }
 
 void Player::Update(float deltaTime) {
@@ -227,6 +232,9 @@ void Player::Update(float deltaTime) {
     // 更新上一次鍵盤狀態
     lastKeyState = kbState;
 
+    curPos.x = Position.x;
+    curPos.y = Position.y;
+
     Sprite::Update(deltaTime);
 }
 
@@ -235,6 +243,6 @@ void Player::Draw() const {
 }
 
 bool Player::canWalk(int x, int y){
-    if (x > 64*60 || x < 0 || y < 0 || y > 64*32) return false;
+    if (x > PlayScene::BlockSize * PlayScene::MapWidth || x < 0 || y < 0 || y > PlayScene::BlockSize * PlayScene::MapHeight) return false;
     return true;
 }
