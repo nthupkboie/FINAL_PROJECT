@@ -46,7 +46,7 @@ add_executable(2025_I2P2_TowerDefense
     Player/Player.hpp
     Player/BattlePlayer.cpp
     Player/BattlePlayer.hpp
-    
+
     # NPC
     NPC/NPC.cpp
     NPC/NPC.hpp
@@ -62,6 +62,8 @@ add_executable(2025_I2P2_TowerDefense
     Scene/SettingsScene.hpp
     Scene/BattleScene.cpp
     Scene/BattleScene.hpp
+    Scene/SmallEatScene.cpp
+    Scene/SmallEatScene.hpp
 
     # UI
     UI/Component/Image.cpp
