@@ -33,11 +33,11 @@ void SettingsScene::Initialize() {
     sliderBGM = new Slider(40 + halfW - 95, halfH - 50 - 32, 256, 64);
     sliderBGM->SetOnValueChangedCallback(std::bind(&SettingsScene::BGMSlideOnValueChanged, this, std::placeholders::_1));
     AddNewControlObject(sliderBGM);
-    AddNewObject(new Engine::Label("BGM : ", "title.ttf", 32, 40 + halfW - 60 - 95, halfH - 50, 255, 255, 255, 255, 0.5, 0.5));
+    AddNewObject(new Engine::Label("BGM :     ", "title.ttf", 32, 40 + halfW - 60 - 95, halfH - 50, 255, 255, 255, 255, 0.5, 0.5));
     sliderSFX = new Slider(40 + halfW - 95, halfH + 50 - 32, 256, 64);
     sliderSFX->SetOnValueChangedCallback(std::bind(&SettingsScene::SFXSlideOnValueChanged, this, std::placeholders::_1));
     AddNewControlObject(sliderSFX);
-    AddNewObject(new Engine::Label("SFX : ", "title.ttf", 32, 40 + halfW - 60 - 95, halfH + 50, 255, 255, 255, 255, 0.5, 0.5));
+    AddNewObject(new Engine::Label("SFX :     ", "title.ttf", 32, 40 + halfW - 60 - 95, halfH + 50, 255, 255, 255, 255, 0.5, 0.5));
     // Not safe if release resource while playing, however we only free while change scene, so it's fine.
     bgmInstance = AudioHelper::PlaySample("nthu_school_song.ogg", true, AudioHelper::BGMVolume);
     sliderBGM->SetValue(AudioHelper::BGMVolume);

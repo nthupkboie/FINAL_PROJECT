@@ -186,6 +186,15 @@ void PlayScene::OnKeyDown(int keyCode) {
     if (keyCode == ALLEGRO_KEY_ENTER && dialog.IsDialogActive()) {
         dialog.AdvanceDialog();
     }
+
+    if (keyCode == ALLEGRO_KEY_W) {
+        Engine::GameEngine::GetInstance().ChangeScene("win");
+    }
+
+    if (keyCode == ALLEGRO_KEY_L) {
+        Engine::GameEngine::GetInstance().ChangeScene("lose");
+    }
+
     
     if(keyCode == ALLEGRO_KEY_B){
         Engine::GameEngine::GetInstance().ChangeScene("battle");
