@@ -25,7 +25,7 @@
 const int PlayScene::MapWidth = 60, PlayScene::MapHeight = 32;
 const int PlayScene::BlockSize = 64;
 
-const int window_x = 30, window_y = 16;
+const int PlayScene::window_x = 30, PlayScene::window_y = 16;
 
 // Engine::Point PlayScene::GetClientSize() {
 //     return Engine::Point(MapWidth * BlockSize, MapHeight * BlockSize);
@@ -34,12 +34,13 @@ Engine::Point PlayScene::GetClientSize() {
     return Engine::Point(window_x * BlockSize, window_y * BlockSize); // 視角大小
 }
 
+Engine::Point PlayScene::cameraOffset = Engine::Point(0, 0);
 void PlayScene::Initialize() {
     // 初始化遊戲狀態
     lives = 3;
     money = 0;
     
-    cameraOffset = Engine::Point(0, 0);
+    
 
     // 添加渲染群組
     AddNewObject(TileMapGroup = new Group());      // 地圖圖層
@@ -66,7 +67,7 @@ void PlayScene::Initialize() {
     // 圖塊寬, 圖塊高
     auto testAvatar = Engine::Resources::GetInstance().GetBitmap("NPC/test/avatar/test_avatar.png");
     NPCGroup->AddNewObject(test = new NPC("NPC",testAvatar, "NPC/test/role/test_sheet.png",
-                                            64, 64,
+                                            1264, 1200,
                                             2, 3,  // 上 (第0列第2行)
                                             2, 0,  // 下
                                             2, 1,  // 左
@@ -238,4 +239,9 @@ void PlayScene::ReadMap() {
             }
         }
     }
+}
+
+Engine::Point PlayScene::getCamera(){
+
+    return Engine::Point(cameraOffset.x + 5 * BlockSize, cameraOffset.y + 2.5 * BlockSize);
 }

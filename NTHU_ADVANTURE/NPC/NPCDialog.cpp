@@ -2,6 +2,7 @@
 #include "Engine/Resources.hpp"
 #include "Engine/LOG.hpp"
 #include "Scene/PlayScene.hpp"
+#include "Player/Player.hpp"
 
 #include <allegro5/allegro_primitives.h>
 #include <allegro5/allegro.h>
@@ -13,10 +14,10 @@ NPCDialog::NPCDialog()
       charDisplayDelay(0.05f),  // 每個字顯示的間隔時間(秒)
       isDisplayingFullMessage(false),
       font(nullptr),
-      boxWidth(800.0f),    // 加寬對話框
+      boxWidth(1600.0f),    // 加寬對話框
       boxHeight(200.0f),   // 對話框高度
       boxX(240.0f),        // 水平位置 (居中：1280/2 - 800/2 = 240)
-      boxY(500.0f),        // 垂直位置 (靠近底部)
+      boxY(500.0f),        // 垂直位置 (靠近底部) 500
       padding(25.0f)       // 內邊距加大
 {
     textColor = al_map_rgb(255, 255, 255);  // 白色文字
@@ -43,6 +44,10 @@ bool NPCDialog::Initialize() {
         Engine::LOG(Engine::WARN) << "Failed to load font for NPCDialog";
         return false;
     }
+    //if (Player::curPos.x < PlayScene::window_x / 2) boxX = Player::curPos.x;
+    //else if (Player::curPos.x > PlayScene::window_x / 2)
+    //if (Player::curPos.y < PlayScene::window_y / 2) boxY = Player::curPos.y;
+    
     return true;
 }
 

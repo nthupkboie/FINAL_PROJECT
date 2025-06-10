@@ -30,6 +30,9 @@ private:
     std::shared_ptr<ALLEGRO_SAMPLE_INSTANCE> deathBGMInstance;
 
     NPCDialog dialog;  // 添加對話框成員
+
+    // 攝影機偏移量
+    static Engine::Point cameraOffset;
 protected:
     int lives;
     int money;
@@ -64,9 +67,9 @@ public:
     void OnMouseUp(int button, int mx, int my) override;
     void OnKeyDown(int keyCode) override;
     void ReadMap();
+    static Engine::Point getCamera();
 
-    // 攝影機偏移量
-    Engine::Point cameraOffset;
+    static const int window_x, window_y;
 };
 
 #endif   // PLAYSCENE_HPP
