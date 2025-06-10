@@ -464,6 +464,30 @@ NPC/NPCDialog.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_TowerDefense.dir\build.make CMakeFiles/2025_I2P2_TowerDefense.dir/NPC/NPCDialog.cpp.s
 .PHONY : NPC/NPCDialog.cpp.s
 
+Player/BattlePlayer.obj: Player/BattlePlayer.cpp.obj
+.PHONY : Player/BattlePlayer.obj
+
+# target to build an object file
+Player/BattlePlayer.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_TowerDefense.dir\build.make CMakeFiles/2025_I2P2_TowerDefense.dir/Player/BattlePlayer.cpp.obj
+.PHONY : Player/BattlePlayer.cpp.obj
+
+Player/BattlePlayer.i: Player/BattlePlayer.cpp.i
+.PHONY : Player/BattlePlayer.i
+
+# target to preprocess a source file
+Player/BattlePlayer.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_TowerDefense.dir\build.make CMakeFiles/2025_I2P2_TowerDefense.dir/Player/BattlePlayer.cpp.i
+.PHONY : Player/BattlePlayer.cpp.i
+
+Player/BattlePlayer.s: Player/BattlePlayer.cpp.s
+.PHONY : Player/BattlePlayer.s
+
+# target to generate assembly for a file
+Player/BattlePlayer.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_TowerDefense.dir\build.make CMakeFiles/2025_I2P2_TowerDefense.dir/Player/BattlePlayer.cpp.s
+.PHONY : Player/BattlePlayer.cpp.s
+
 Player/Player.obj: Player/Player.cpp.obj
 .PHONY : Player/Player.obj
 
@@ -488,6 +512,30 @@ Player/Player.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_TowerDefense.dir\build.make CMakeFiles/2025_I2P2_TowerDefense.dir/Player/Player.cpp.s
 .PHONY : Player/Player.cpp.s
 
+Scene/BattleScene.obj: Scene/BattleScene.cpp.obj
+.PHONY : Scene/BattleScene.obj
+
+# target to build an object file
+Scene/BattleScene.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_TowerDefense.dir\build.make CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/BattleScene.cpp.obj
+.PHONY : Scene/BattleScene.cpp.obj
+
+Scene/BattleScene.i: Scene/BattleScene.cpp.i
+.PHONY : Scene/BattleScene.i
+
+# target to preprocess a source file
+Scene/BattleScene.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_TowerDefense.dir\build.make CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/BattleScene.cpp.i
+.PHONY : Scene/BattleScene.cpp.i
+
+Scene/BattleScene.s: Scene/BattleScene.cpp.s
+.PHONY : Scene/BattleScene.s
+
+# target to generate assembly for a file
+Scene/BattleScene.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_TowerDefense.dir\build.make CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/BattleScene.cpp.s
+.PHONY : Scene/BattleScene.cpp.s
+
 Scene/LogScene.obj: Scene/LogScene.cpp.obj
 .PHONY : Scene/LogScene.obj
 
@@ -511,6 +559,30 @@ Scene/LogScene.s: Scene/LogScene.cpp.s
 Scene/LogScene.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_TowerDefense.dir\build.make CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/LogScene.cpp.s
 .PHONY : Scene/LogScene.cpp.s
+
+Scene/LoseScene.obj: Scene/LoseScene.cpp.obj
+.PHONY : Scene/LoseScene.obj
+
+# target to build an object file
+Scene/LoseScene.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_TowerDefense.dir\build.make CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/LoseScene.cpp.obj
+.PHONY : Scene/LoseScene.cpp.obj
+
+Scene/LoseScene.i: Scene/LoseScene.cpp.i
+.PHONY : Scene/LoseScene.i
+
+# target to preprocess a source file
+Scene/LoseScene.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_TowerDefense.dir\build.make CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/LoseScene.cpp.i
+.PHONY : Scene/LoseScene.cpp.i
+
+Scene/LoseScene.s: Scene/LoseScene.cpp.s
+.PHONY : Scene/LoseScene.s
+
+# target to generate assembly for a file
+Scene/LoseScene.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_TowerDefense.dir\build.make CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/LoseScene.cpp.s
+.PHONY : Scene/LoseScene.cpp.s
 
 Scene/PlayScene.obj: Scene/PlayScene.cpp.obj
 .PHONY : Scene/PlayScene.obj
@@ -608,6 +680,30 @@ Scene/SettingsScene.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_TowerDefense.dir\build.make CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/SettingsScene.cpp.s
 .PHONY : Scene/SettingsScene.cpp.s
 
+Scene/SmallEatScene.obj: Scene/SmallEatScene.cpp.obj
+.PHONY : Scene/SmallEatScene.obj
+
+# target to build an object file
+Scene/SmallEatScene.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_TowerDefense.dir\build.make CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/SmallEatScene.cpp.obj
+.PHONY : Scene/SmallEatScene.cpp.obj
+
+Scene/SmallEatScene.i: Scene/SmallEatScene.cpp.i
+.PHONY : Scene/SmallEatScene.i
+
+# target to preprocess a source file
+Scene/SmallEatScene.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_TowerDefense.dir\build.make CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/SmallEatScene.cpp.i
+.PHONY : Scene/SmallEatScene.cpp.i
+
+Scene/SmallEatScene.s: Scene/SmallEatScene.cpp.s
+.PHONY : Scene/SmallEatScene.s
+
+# target to generate assembly for a file
+Scene/SmallEatScene.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_TowerDefense.dir\build.make CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/SmallEatScene.cpp.s
+.PHONY : Scene/SmallEatScene.cpp.s
+
 Scene/StartScene.obj: Scene/StartScene.cpp.obj
 .PHONY : Scene/StartScene.obj
 
@@ -631,6 +727,30 @@ Scene/StartScene.s: Scene/StartScene.cpp.s
 Scene/StartScene.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_TowerDefense.dir\build.make CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/StartScene.cpp.s
 .PHONY : Scene/StartScene.cpp.s
+
+Scene/WinScene.obj: Scene/WinScene.cpp.obj
+.PHONY : Scene/WinScene.obj
+
+# target to build an object file
+Scene/WinScene.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_TowerDefense.dir\build.make CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/WinScene.cpp.obj
+.PHONY : Scene/WinScene.cpp.obj
+
+Scene/WinScene.i: Scene/WinScene.cpp.i
+.PHONY : Scene/WinScene.i
+
+# target to preprocess a source file
+Scene/WinScene.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_TowerDefense.dir\build.make CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/WinScene.cpp.i
+.PHONY : Scene/WinScene.cpp.i
+
+Scene/WinScene.s: Scene/WinScene.cpp.s
+.PHONY : Scene/WinScene.s
+
+# target to generate assembly for a file
+Scene/WinScene.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_TowerDefense.dir\build.make CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/WinScene.cpp.s
+.PHONY : Scene/WinScene.cpp.s
 
 UI/Component/CustomImageButton.obj: UI/Component/CustomImageButton.cpp.obj
 .PHONY : UI/Component/CustomImageButton.obj
@@ -827,12 +947,21 @@ help:
 	@echo ... NPC/NPCDialog.obj
 	@echo ... NPC/NPCDialog.i
 	@echo ... NPC/NPCDialog.s
+	@echo ... Player/BattlePlayer.obj
+	@echo ... Player/BattlePlayer.i
+	@echo ... Player/BattlePlayer.s
 	@echo ... Player/Player.obj
 	@echo ... Player/Player.i
 	@echo ... Player/Player.s
+	@echo ... Scene/BattleScene.obj
+	@echo ... Scene/BattleScene.i
+	@echo ... Scene/BattleScene.s
 	@echo ... Scene/LogScene.obj
 	@echo ... Scene/LogScene.i
 	@echo ... Scene/LogScene.s
+	@echo ... Scene/LoseScene.obj
+	@echo ... Scene/LoseScene.i
+	@echo ... Scene/LoseScene.s
 	@echo ... Scene/PlayScene.obj
 	@echo ... Scene/PlayScene.i
 	@echo ... Scene/PlayScene.s
@@ -845,9 +974,15 @@ help:
 	@echo ... Scene/SettingsScene.obj
 	@echo ... Scene/SettingsScene.i
 	@echo ... Scene/SettingsScene.s
+	@echo ... Scene/SmallEatScene.obj
+	@echo ... Scene/SmallEatScene.i
+	@echo ... Scene/SmallEatScene.s
 	@echo ... Scene/StartScene.obj
 	@echo ... Scene/StartScene.i
 	@echo ... Scene/StartScene.s
+	@echo ... Scene/WinScene.obj
+	@echo ... Scene/WinScene.i
+	@echo ... Scene/WinScene.s
 	@echo ... UI/Component/CustomImageButton.obj
 	@echo ... UI/Component/CustomImageButton.i
 	@echo ... UI/Component/CustomImageButton.s

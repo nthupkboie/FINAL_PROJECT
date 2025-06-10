@@ -79,6 +79,12 @@
 },
 {
   "directory": "C:/FINAL_PROJECT/build",
+  "command": "c:\\llvm-mingw-20240417-msvcrt-x86_64\\bin\\clang++.exe  @CMakeFiles/2025_I2P2_TowerDefense.dir/includes_CXX.rsp -g -o CMakeFiles\\2025_I2P2_TowerDefense.dir\\Player\\BattlePlayer.cpp.obj -c C:\\FINAL_PROJECT\\NTHU_ADVANTURE\\Player\\BattlePlayer.cpp",
+  "file": "C:/FINAL_PROJECT/NTHU_ADVANTURE/Player/BattlePlayer.cpp",
+  "output": "CMakeFiles/2025_I2P2_TowerDefense.dir/Player/BattlePlayer.cpp.obj"
+},
+{
+  "directory": "C:/FINAL_PROJECT/build",
   "command": "c:\\llvm-mingw-20240417-msvcrt-x86_64\\bin\\clang++.exe  @CMakeFiles/2025_I2P2_TowerDefense.dir/includes_CXX.rsp -g -o CMakeFiles\\2025_I2P2_TowerDefense.dir\\NPC\\NPC.cpp.obj -c C:\\FINAL_PROJECT\\NTHU_ADVANTURE\\NPC\\NPC.cpp",
   "file": "C:/FINAL_PROJECT/NTHU_ADVANTURE/NPC/NPC.cpp",
   "output": "CMakeFiles/2025_I2P2_TowerDefense.dir/NPC/NPC.cpp.obj"
@@ -124,6 +130,30 @@
   "command": "c:\\llvm-mingw-20240417-msvcrt-x86_64\\bin\\clang++.exe  @CMakeFiles/2025_I2P2_TowerDefense.dir/includes_CXX.rsp -g -o CMakeFiles\\2025_I2P2_TowerDefense.dir\\Scene\\RegisterScene.cpp.obj -c C:\\FINAL_PROJECT\\NTHU_ADVANTURE\\Scene\\RegisterScene.cpp",
   "file": "C:/FINAL_PROJECT/NTHU_ADVANTURE/Scene/RegisterScene.cpp",
   "output": "CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/RegisterScene.cpp.obj"
+},
+{
+  "directory": "C:/FINAL_PROJECT/build",
+  "command": "c:\\llvm-mingw-20240417-msvcrt-x86_64\\bin\\clang++.exe  @CMakeFiles/2025_I2P2_TowerDefense.dir/includes_CXX.rsp -g -o CMakeFiles\\2025_I2P2_TowerDefense.dir\\Scene\\WinScene.cpp.obj -c C:\\FINAL_PROJECT\\NTHU_ADVANTURE\\Scene\\WinScene.cpp",
+  "file": "C:/FINAL_PROJECT/NTHU_ADVANTURE/Scene/WinScene.cpp",
+  "output": "CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/WinScene.cpp.obj"
+},
+{
+  "directory": "C:/FINAL_PROJECT/build",
+  "command": "c:\\llvm-mingw-20240417-msvcrt-x86_64\\bin\\clang++.exe  @CMakeFiles/2025_I2P2_TowerDefense.dir/includes_CXX.rsp -g -o CMakeFiles\\2025_I2P2_TowerDefense.dir\\Scene\\LoseScene.cpp.obj -c C:\\FINAL_PROJECT\\NTHU_ADVANTURE\\Scene\\LoseScene.cpp",
+  "file": "C:/FINAL_PROJECT/NTHU_ADVANTURE/Scene/LoseScene.cpp",
+  "output": "CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/LoseScene.cpp.obj"
+},
+{
+  "directory": "C:/FINAL_PROJECT/build",
+  "command": "c:\\llvm-mingw-20240417-msvcrt-x86_64\\bin\\clang++.exe  @CMakeFiles/2025_I2P2_TowerDefense.dir/includes_CXX.rsp -g -o CMakeFiles\\2025_I2P2_TowerDefense.dir\\Scene\\BattleScene.cpp.obj -c C:\\FINAL_PROJECT\\NTHU_ADVANTURE\\Scene\\BattleScene.cpp",
+  "file": "C:/FINAL_PROJECT/NTHU_ADVANTURE/Scene/BattleScene.cpp",
+  "output": "CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/BattleScene.cpp.obj"
+},
+{
+  "directory": "C:/FINAL_PROJECT/build",
+  "command": "c:\\llvm-mingw-20240417-msvcrt-x86_64\\bin\\clang++.exe  @CMakeFiles/2025_I2P2_TowerDefense.dir/includes_CXX.rsp -g -o CMakeFiles\\2025_I2P2_TowerDefense.dir\\Scene\\SmallEatScene.cpp.obj -c C:\\FINAL_PROJECT\\NTHU_ADVANTURE\\Scene\\SmallEatScene.cpp",
+  "file": "C:/FINAL_PROJECT/NTHU_ADVANTURE/Scene/SmallEatScene.cpp",
+  "output": "CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/SmallEatScene.cpp.obj"
 },
 {
   "directory": "C:/FINAL_PROJECT/build",

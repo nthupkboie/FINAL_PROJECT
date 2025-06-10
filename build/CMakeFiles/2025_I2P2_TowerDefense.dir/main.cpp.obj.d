@@ -911,4 +911,8 @@ CMakeFiles/2025_I2P2_TowerDefense.dir/main.cpp.obj: \
   C:/FINAL_PROJECT/NTHU_ADVANTURE/Scene/ScoreboardScene.hpp \
   C:/FINAL_PROJECT/NTHU_ADVANTURE/Scene/LogScene.hpp \
   C:/FINAL_PROJECT/NTHU_ADVANTURE/Scene/RegisterScene.hpp \
-  C:/allegro/include/allegro5/allegro_image.h
+  C:/FINAL_PROJECT/NTHU_ADVANTURE/Scene/BattleScene.hpp \
+  C:/FINAL_PROJECT/NTHU_ADVANTURE/Scene/SmallEatScene.hpp \
+  C:/allegro/include/allegro5/allegro_image.h \
+  C:/FINAL_PROJECT/NTHU_ADVANTURE/Scene/LoseScene.hpp \
+  C:/FINAL_PROJECT/NTHU_ADVANTURE/Scene/WinScene.hpp

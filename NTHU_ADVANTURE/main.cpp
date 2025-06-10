@@ -34,8 +34,11 @@ int main(int argc, char **argv) {
 	game.AddNewScene("play", new PlayScene());
 	game.AddNewScene("settings", new SettingsScene());
 	game.AddNewScene("start", new StartScene());
-
-	// game.AddNewScene("scoreboard-scene", new ScoreboardScene());
+	game.AddNewScene("battle", new BattleScene());
+	game.AddNewScene("smalleat", new SmallEatScene());
+	game.AddNewScene("scoreboard", new ScoreboardScene());
+	game.AddNewScene("login", new LogScene());
+	game.AddNewScene("register", new RegisterScene());
 	// game.AddNewScene("stage-select", new StageSelectScene());
 	 game.AddNewScene("lose", new LoseScene());
 	 game.AddNewScene("win", new WinScene());

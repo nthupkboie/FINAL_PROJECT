@@ -263,11 +263,26 @@ CMakeFiles/2025_I2P2_TowerDefense.dir/Player/Player.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/2025_I2P2_TowerDefense.dir/Player/Player.cpp.s"
 	c:\llvm-mingw-20240417-msvcrt-x86_64\bin\clang++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\FINAL_PROJECT\NTHU_ADVANTURE\Player\Player.cpp -o CMakeFiles\2025_I2P2_TowerDefense.dir\Player\Player.cpp.s
 
+CMakeFiles/2025_I2P2_TowerDefense.dir/Player/BattlePlayer.cpp.obj: CMakeFiles/2025_I2P2_TowerDefense.dir/flags.make
+CMakeFiles/2025_I2P2_TowerDefense.dir/Player/BattlePlayer.cpp.obj: CMakeFiles/2025_I2P2_TowerDefense.dir/includes_CXX.rsp
+CMakeFiles/2025_I2P2_TowerDefense.dir/Player/BattlePlayer.cpp.obj: C:/FINAL_PROJECT/NTHU_ADVANTURE/Player/BattlePlayer.cpp
+CMakeFiles/2025_I2P2_TowerDefense.dir/Player/BattlePlayer.cpp.obj: CMakeFiles/2025_I2P2_TowerDefense.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\FINAL_PROJECT\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/2025_I2P2_TowerDefense.dir/Player/BattlePlayer.cpp.obj"
+	c:\llvm-mingw-20240417-msvcrt-x86_64\bin\clang++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/2025_I2P2_TowerDefense.dir/Player/BattlePlayer.cpp.obj -MF CMakeFiles\2025_I2P2_TowerDefense.dir\Player\BattlePlayer.cpp.obj.d -o CMakeFiles\2025_I2P2_TowerDefense.dir\Player\BattlePlayer.cpp.obj -c C:\FINAL_PROJECT\NTHU_ADVANTURE\Player\BattlePlayer.cpp
+
+CMakeFiles/2025_I2P2_TowerDefense.dir/Player/BattlePlayer.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/2025_I2P2_TowerDefense.dir/Player/BattlePlayer.cpp.i"
+	c:\llvm-mingw-20240417-msvcrt-x86_64\bin\clang++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\FINAL_PROJECT\NTHU_ADVANTURE\Player\BattlePlayer.cpp > CMakeFiles\2025_I2P2_TowerDefense.dir\Player\BattlePlayer.cpp.i
+
+CMakeFiles/2025_I2P2_TowerDefense.dir/Player/BattlePlayer.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/2025_I2P2_TowerDefense.dir/Player/BattlePlayer.cpp.s"
+	c:\llvm-mingw-20240417-msvcrt-x86_64\bin\clang++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\FINAL_PROJECT\NTHU_ADVANTURE\Player\BattlePlayer.cpp -o CMakeFiles\2025_I2P2_TowerDefense.dir\Player\BattlePlayer.cpp.s
+
 CMakeFiles/2025_I2P2_TowerDefense.dir/NPC/NPC.cpp.obj: CMakeFiles/2025_I2P2_TowerDefense.dir/flags.make
 CMakeFiles/2025_I2P2_TowerDefense.dir/NPC/NPC.cpp.obj: CMakeFiles/2025_I2P2_TowerDefense.dir/includes_CXX.rsp
 CMakeFiles/2025_I2P2_TowerDefense.dir/NPC/NPC.cpp.obj: C:/FINAL_PROJECT/NTHU_ADVANTURE/NPC/NPC.cpp
 CMakeFiles/2025_I2P2_TowerDefense.dir/NPC/NPC.cpp.obj: CMakeFiles/2025_I2P2_TowerDefense.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\FINAL_PROJECT\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/2025_I2P2_TowerDefense.dir/NPC/NPC.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\FINAL_PROJECT\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/2025_I2P2_TowerDefense.dir/NPC/NPC.cpp.obj"
 	c:\llvm-mingw-20240417-msvcrt-x86_64\bin\clang++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/2025_I2P2_TowerDefense.dir/NPC/NPC.cpp.obj -MF CMakeFiles\2025_I2P2_TowerDefense.dir\NPC\NPC.cpp.obj.d -o CMakeFiles\2025_I2P2_TowerDefense.dir\NPC\NPC.cpp.obj -c C:\FINAL_PROJECT\NTHU_ADVANTURE\NPC\NPC.cpp
 
 CMakeFiles/2025_I2P2_TowerDefense.dir/NPC/NPC.cpp.i: cmake_force
@@ -282,7 +297,7 @@ CMakeFiles/2025_I2P2_TowerDefense.dir/NPC/NPCDialog.cpp.obj: CMakeFiles/2025_I2P
 CMakeFiles/2025_I2P2_TowerDefense.dir/NPC/NPCDialog.cpp.obj: CMakeFiles/2025_I2P2_TowerDefense.dir/includes_CXX.rsp
 CMakeFiles/2025_I2P2_TowerDefense.dir/NPC/NPCDialog.cpp.obj: C:/FINAL_PROJECT/NTHU_ADVANTURE/NPC/NPCDialog.cpp
 CMakeFiles/2025_I2P2_TowerDefense.dir/NPC/NPCDialog.cpp.obj: CMakeFiles/2025_I2P2_TowerDefense.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\FINAL_PROJECT\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/2025_I2P2_TowerDefense.dir/NPC/NPCDialog.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\FINAL_PROJECT\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/2025_I2P2_TowerDefense.dir/NPC/NPCDialog.cpp.obj"
 	c:\llvm-mingw-20240417-msvcrt-x86_64\bin\clang++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/2025_I2P2_TowerDefense.dir/NPC/NPCDialog.cpp.obj -MF CMakeFiles\2025_I2P2_TowerDefense.dir\NPC\NPCDialog.cpp.obj.d -o CMakeFiles\2025_I2P2_TowerDefense.dir\NPC\NPCDialog.cpp.obj -c C:\FINAL_PROJECT\NTHU_ADVANTURE\NPC\NPCDialog.cpp
 
 CMakeFiles/2025_I2P2_TowerDefense.dir/NPC/NPCDialog.cpp.i: cmake_force
@@ -297,7 +312,7 @@ CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/PlayScene.cpp.obj: CMakeFiles/2025_I
 CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/PlayScene.cpp.obj: CMakeFiles/2025_I2P2_TowerDefense.dir/includes_CXX.rsp
 CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/PlayScene.cpp.obj: C:/FINAL_PROJECT/NTHU_ADVANTURE/Scene/PlayScene.cpp
 CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/PlayScene.cpp.obj: CMakeFiles/2025_I2P2_TowerDefense.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\FINAL_PROJECT\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/PlayScene.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\FINAL_PROJECT\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/PlayScene.cpp.obj"
 	c:\llvm-mingw-20240417-msvcrt-x86_64\bin\clang++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/PlayScene.cpp.obj -MF CMakeFiles\2025_I2P2_TowerDefense.dir\Scene\PlayScene.cpp.obj.d -o CMakeFiles\2025_I2P2_TowerDefense.dir\Scene\PlayScene.cpp.obj -c C:\FINAL_PROJECT\NTHU_ADVANTURE\Scene\PlayScene.cpp
 
 CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/PlayScene.cpp.i: cmake_force
@@ -312,7 +327,7 @@ CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/StartScene.cpp.obj: CMakeFiles/2025_
 CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/StartScene.cpp.obj: CMakeFiles/2025_I2P2_TowerDefense.dir/includes_CXX.rsp
 CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/StartScene.cpp.obj: C:/FINAL_PROJECT/NTHU_ADVANTURE/Scene/StartScene.cpp
 CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/StartScene.cpp.obj: CMakeFiles/2025_I2P2_TowerDefense.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\FINAL_PROJECT\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/StartScene.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\FINAL_PROJECT\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/StartScene.cpp.obj"
 	c:\llvm-mingw-20240417-msvcrt-x86_64\bin\clang++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/StartScene.cpp.obj -MF CMakeFiles\2025_I2P2_TowerDefense.dir\Scene\StartScene.cpp.obj.d -o CMakeFiles\2025_I2P2_TowerDefense.dir\Scene\StartScene.cpp.obj -c C:\FINAL_PROJECT\NTHU_ADVANTURE\Scene\StartScene.cpp
 
 CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/StartScene.cpp.i: cmake_force
@@ -327,7 +342,7 @@ CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/SettingsScene.cpp.obj: CMakeFiles/20
 CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/SettingsScene.cpp.obj: CMakeFiles/2025_I2P2_TowerDefense.dir/includes_CXX.rsp
 CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/SettingsScene.cpp.obj: C:/FINAL_PROJECT/NTHU_ADVANTURE/Scene/SettingsScene.cpp
 CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/SettingsScene.cpp.obj: CMakeFiles/2025_I2P2_TowerDefense.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\FINAL_PROJECT\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/SettingsScene.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\FINAL_PROJECT\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/SettingsScene.cpp.obj"
 	c:\llvm-mingw-20240417-msvcrt-x86_64\bin\clang++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/SettingsScene.cpp.obj -MF CMakeFiles\2025_I2P2_TowerDefense.dir\Scene\SettingsScene.cpp.obj.d -o CMakeFiles\2025_I2P2_TowerDefense.dir\Scene\SettingsScene.cpp.obj -c C:\FINAL_PROJECT\NTHU_ADVANTURE\Scene\SettingsScene.cpp
 
 CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/SettingsScene.cpp.i: cmake_force
@@ -342,7 +357,7 @@ CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/ScoreboardScene.cpp.obj: CMakeFiles/
 CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/ScoreboardScene.cpp.obj: CMakeFiles/2025_I2P2_TowerDefense.dir/includes_CXX.rsp
 CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/ScoreboardScene.cpp.obj: C:/FINAL_PROJECT/NTHU_ADVANTURE/Scene/ScoreboardScene.cpp
 CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/ScoreboardScene.cpp.obj: CMakeFiles/2025_I2P2_TowerDefense.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\FINAL_PROJECT\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/ScoreboardScene.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\FINAL_PROJECT\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building CXX object CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/ScoreboardScene.cpp.obj"
 	c:\llvm-mingw-20240417-msvcrt-x86_64\bin\clang++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/ScoreboardScene.cpp.obj -MF CMakeFiles\2025_I2P2_TowerDefense.dir\Scene\ScoreboardScene.cpp.obj.d -o CMakeFiles\2025_I2P2_TowerDefense.dir\Scene\ScoreboardScene.cpp.obj -c C:\FINAL_PROJECT\NTHU_ADVANTURE\Scene\ScoreboardScene.cpp
 
 CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/ScoreboardScene.cpp.i: cmake_force
@@ -357,7 +372,7 @@ CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/LogScene.cpp.obj: CMakeFiles/2025_I2
 CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/LogScene.cpp.obj: CMakeFiles/2025_I2P2_TowerDefense.dir/includes_CXX.rsp
 CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/LogScene.cpp.obj: C:/FINAL_PROJECT/NTHU_ADVANTURE/Scene/LogScene.cpp
 CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/LogScene.cpp.obj: CMakeFiles/2025_I2P2_TowerDefense.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\FINAL_PROJECT\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building CXX object CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/LogScene.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\FINAL_PROJECT\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building CXX object CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/LogScene.cpp.obj"
 	c:\llvm-mingw-20240417-msvcrt-x86_64\bin\clang++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/LogScene.cpp.obj -MF CMakeFiles\2025_I2P2_TowerDefense.dir\Scene\LogScene.cpp.obj.d -o CMakeFiles\2025_I2P2_TowerDefense.dir\Scene\LogScene.cpp.obj -c C:\FINAL_PROJECT\NTHU_ADVANTURE\Scene\LogScene.cpp
 
 CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/LogScene.cpp.i: cmake_force
@@ -372,7 +387,7 @@ CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/RegisterScene.cpp.obj: CMakeFiles/20
 CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/RegisterScene.cpp.obj: CMakeFiles/2025_I2P2_TowerDefense.dir/includes_CXX.rsp
 CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/RegisterScene.cpp.obj: C:/FINAL_PROJECT/NTHU_ADVANTURE/Scene/RegisterScene.cpp
 CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/RegisterScene.cpp.obj: CMakeFiles/2025_I2P2_TowerDefense.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\FINAL_PROJECT\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building CXX object CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/RegisterScene.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\FINAL_PROJECT\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building CXX object CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/RegisterScene.cpp.obj"
 	c:\llvm-mingw-20240417-msvcrt-x86_64\bin\clang++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/RegisterScene.cpp.obj -MF CMakeFiles\2025_I2P2_TowerDefense.dir\Scene\RegisterScene.cpp.obj.d -o CMakeFiles\2025_I2P2_TowerDefense.dir\Scene\RegisterScene.cpp.obj -c C:\FINAL_PROJECT\NTHU_ADVANTURE\Scene\RegisterScene.cpp
 
 CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/RegisterScene.cpp.i: cmake_force
@@ -383,11 +398,71 @@ CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/RegisterScene.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/RegisterScene.cpp.s"
 	c:\llvm-mingw-20240417-msvcrt-x86_64\bin\clang++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\FINAL_PROJECT\NTHU_ADVANTURE\Scene\RegisterScene.cpp -o CMakeFiles\2025_I2P2_TowerDefense.dir\Scene\RegisterScene.cpp.s
 
+CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/WinScene.cpp.obj: CMakeFiles/2025_I2P2_TowerDefense.dir/flags.make
+CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/WinScene.cpp.obj: CMakeFiles/2025_I2P2_TowerDefense.dir/includes_CXX.rsp
+CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/WinScene.cpp.obj: C:/FINAL_PROJECT/NTHU_ADVANTURE/Scene/WinScene.cpp
+CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/WinScene.cpp.obj: CMakeFiles/2025_I2P2_TowerDefense.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\FINAL_PROJECT\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building CXX object CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/WinScene.cpp.obj"
+	c:\llvm-mingw-20240417-msvcrt-x86_64\bin\clang++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/WinScene.cpp.obj -MF CMakeFiles\2025_I2P2_TowerDefense.dir\Scene\WinScene.cpp.obj.d -o CMakeFiles\2025_I2P2_TowerDefense.dir\Scene\WinScene.cpp.obj -c C:\FINAL_PROJECT\NTHU_ADVANTURE\Scene\WinScene.cpp
+
+CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/WinScene.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/WinScene.cpp.i"
+	c:\llvm-mingw-20240417-msvcrt-x86_64\bin\clang++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\FINAL_PROJECT\NTHU_ADVANTURE\Scene\WinScene.cpp > CMakeFiles\2025_I2P2_TowerDefense.dir\Scene\WinScene.cpp.i
+
+CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/WinScene.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/WinScene.cpp.s"
+	c:\llvm-mingw-20240417-msvcrt-x86_64\bin\clang++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\FINAL_PROJECT\NTHU_ADVANTURE\Scene\WinScene.cpp -o CMakeFiles\2025_I2P2_TowerDefense.dir\Scene\WinScene.cpp.s
+
+CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/LoseScene.cpp.obj: CMakeFiles/2025_I2P2_TowerDefense.dir/flags.make
+CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/LoseScene.cpp.obj: CMakeFiles/2025_I2P2_TowerDefense.dir/includes_CXX.rsp
+CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/LoseScene.cpp.obj: C:/FINAL_PROJECT/NTHU_ADVANTURE/Scene/LoseScene.cpp
+CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/LoseScene.cpp.obj: CMakeFiles/2025_I2P2_TowerDefense.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\FINAL_PROJECT\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building CXX object CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/LoseScene.cpp.obj"
+	c:\llvm-mingw-20240417-msvcrt-x86_64\bin\clang++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/LoseScene.cpp.obj -MF CMakeFiles\2025_I2P2_TowerDefense.dir\Scene\LoseScene.cpp.obj.d -o CMakeFiles\2025_I2P2_TowerDefense.dir\Scene\LoseScene.cpp.obj -c C:\FINAL_PROJECT\NTHU_ADVANTURE\Scene\LoseScene.cpp
+
+CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/LoseScene.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/LoseScene.cpp.i"
+	c:\llvm-mingw-20240417-msvcrt-x86_64\bin\clang++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\FINAL_PROJECT\NTHU_ADVANTURE\Scene\LoseScene.cpp > CMakeFiles\2025_I2P2_TowerDefense.dir\Scene\LoseScene.cpp.i
+
+CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/LoseScene.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/LoseScene.cpp.s"
+	c:\llvm-mingw-20240417-msvcrt-x86_64\bin\clang++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\FINAL_PROJECT\NTHU_ADVANTURE\Scene\LoseScene.cpp -o CMakeFiles\2025_I2P2_TowerDefense.dir\Scene\LoseScene.cpp.s
+
+CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/BattleScene.cpp.obj: CMakeFiles/2025_I2P2_TowerDefense.dir/flags.make
+CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/BattleScene.cpp.obj: CMakeFiles/2025_I2P2_TowerDefense.dir/includes_CXX.rsp
+CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/BattleScene.cpp.obj: C:/FINAL_PROJECT/NTHU_ADVANTURE/Scene/BattleScene.cpp
+CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/BattleScene.cpp.obj: CMakeFiles/2025_I2P2_TowerDefense.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\FINAL_PROJECT\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Building CXX object CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/BattleScene.cpp.obj"
+	c:\llvm-mingw-20240417-msvcrt-x86_64\bin\clang++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/BattleScene.cpp.obj -MF CMakeFiles\2025_I2P2_TowerDefense.dir\Scene\BattleScene.cpp.obj.d -o CMakeFiles\2025_I2P2_TowerDefense.dir\Scene\BattleScene.cpp.obj -c C:\FINAL_PROJECT\NTHU_ADVANTURE\Scene\BattleScene.cpp
+
+CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/BattleScene.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/BattleScene.cpp.i"
+	c:\llvm-mingw-20240417-msvcrt-x86_64\bin\clang++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\FINAL_PROJECT\NTHU_ADVANTURE\Scene\BattleScene.cpp > CMakeFiles\2025_I2P2_TowerDefense.dir\Scene\BattleScene.cpp.i
+
+CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/BattleScene.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/BattleScene.cpp.s"
+	c:\llvm-mingw-20240417-msvcrt-x86_64\bin\clang++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\FINAL_PROJECT\NTHU_ADVANTURE\Scene\BattleScene.cpp -o CMakeFiles\2025_I2P2_TowerDefense.dir\Scene\BattleScene.cpp.s
+
+CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/SmallEatScene.cpp.obj: CMakeFiles/2025_I2P2_TowerDefense.dir/flags.make
+CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/SmallEatScene.cpp.obj: CMakeFiles/2025_I2P2_TowerDefense.dir/includes_CXX.rsp
+CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/SmallEatScene.cpp.obj: C:/FINAL_PROJECT/NTHU_ADVANTURE/Scene/SmallEatScene.cpp
+CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/SmallEatScene.cpp.obj: CMakeFiles/2025_I2P2_TowerDefense.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\FINAL_PROJECT\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Building CXX object CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/SmallEatScene.cpp.obj"
+	c:\llvm-mingw-20240417-msvcrt-x86_64\bin\clang++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/SmallEatScene.cpp.obj -MF CMakeFiles\2025_I2P2_TowerDefense.dir\Scene\SmallEatScene.cpp.obj.d -o CMakeFiles\2025_I2P2_TowerDefense.dir\Scene\SmallEatScene.cpp.obj -c C:\FINAL_PROJECT\NTHU_ADVANTURE\Scene\SmallEatScene.cpp
+
+CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/SmallEatScene.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/SmallEatScene.cpp.i"
+	c:\llvm-mingw-20240417-msvcrt-x86_64\bin\clang++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\FINAL_PROJECT\NTHU_ADVANTURE\Scene\SmallEatScene.cpp > CMakeFiles\2025_I2P2_TowerDefense.dir\Scene\SmallEatScene.cpp.i
+
+CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/SmallEatScene.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/SmallEatScene.cpp.s"
+	c:\llvm-mingw-20240417-msvcrt-x86_64\bin\clang++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\FINAL_PROJECT\NTHU_ADVANTURE\Scene\SmallEatScene.cpp -o CMakeFiles\2025_I2P2_TowerDefense.dir\Scene\SmallEatScene.cpp.s
+
 CMakeFiles/2025_I2P2_TowerDefense.dir/UI/Component/Image.cpp.obj: CMakeFiles/2025_I2P2_TowerDefense.dir/flags.make
 CMakeFiles/2025_I2P2_TowerDefense.dir/UI/Component/Image.cpp.obj: CMakeFiles/2025_I2P2_TowerDefense.dir/includes_CXX.rsp
 CMakeFiles/2025_I2P2_TowerDefense.dir/UI/Component/Image.cpp.obj: C:/FINAL_PROJECT/NTHU_ADVANTURE/UI/Component/Image.cpp
 CMakeFiles/2025_I2P2_TowerDefense.dir/UI/Component/Image.cpp.obj: CMakeFiles/2025_I2P2_TowerDefense.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\FINAL_PROJECT\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building CXX object CMakeFiles/2025_I2P2_TowerDefense.dir/UI/Component/Image.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\FINAL_PROJECT\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_27) "Building CXX object CMakeFiles/2025_I2P2_TowerDefense.dir/UI/Component/Image.cpp.obj"
 	c:\llvm-mingw-20240417-msvcrt-x86_64\bin\clang++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/2025_I2P2_TowerDefense.dir/UI/Component/Image.cpp.obj -MF CMakeFiles\2025_I2P2_TowerDefense.dir\UI\Component\Image.cpp.obj.d -o CMakeFiles\2025_I2P2_TowerDefense.dir\UI\Component\Image.cpp.obj -c C:\FINAL_PROJECT\NTHU_ADVANTURE\UI\Component\Image.cpp
 
 CMakeFiles/2025_I2P2_TowerDefense.dir/UI/Component/Image.cpp.i: cmake_force
@@ -402,7 +477,7 @@ CMakeFiles/2025_I2P2_TowerDefense.dir/UI/Component/ImageButton.cpp.obj: CMakeFil
 CMakeFiles/2025_I2P2_TowerDefense.dir/UI/Component/ImageButton.cpp.obj: CMakeFiles/2025_I2P2_TowerDefense.dir/includes_CXX.rsp
 CMakeFiles/2025_I2P2_TowerDefense.dir/UI/Component/ImageButton.cpp.obj: C:/FINAL_PROJECT/NTHU_ADVANTURE/UI/Component/ImageButton.cpp
 CMakeFiles/2025_I2P2_TowerDefense.dir/UI/Component/ImageButton.cpp.obj: CMakeFiles/2025_I2P2_TowerDefense.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\FINAL_PROJECT\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building CXX object CMakeFiles/2025_I2P2_TowerDefense.dir/UI/Component/ImageButton.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\FINAL_PROJECT\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_28) "Building CXX object CMakeFiles/2025_I2P2_TowerDefense.dir/UI/Component/ImageButton.cpp.obj"
 	c:\llvm-mingw-20240417-msvcrt-x86_64\bin\clang++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/2025_I2P2_TowerDefense.dir/UI/Component/ImageButton.cpp.obj -MF CMakeFiles\2025_I2P2_TowerDefense.dir\UI\Component\ImageButton.cpp.obj.d -o CMakeFiles\2025_I2P2_TowerDefense.dir\UI\Component\ImageButton.cpp.obj -c C:\FINAL_PROJECT\NTHU_ADVANTURE\UI\Component\ImageButton.cpp
 
 CMakeFiles/2025_I2P2_TowerDefense.dir/UI/Component/ImageButton.cpp.i: cmake_force
@@ -417,7 +492,7 @@ CMakeFiles/2025_I2P2_TowerDefense.dir/UI/Component/CustomImageButton.cpp.obj: CM
 CMakeFiles/2025_I2P2_TowerDefense.dir/UI/Component/CustomImageButton.cpp.obj: CMakeFiles/2025_I2P2_TowerDefense.dir/includes_CXX.rsp
 CMakeFiles/2025_I2P2_TowerDefense.dir/UI/Component/CustomImageButton.cpp.obj: C:/FINAL_PROJECT/NTHU_ADVANTURE/UI/Component/CustomImageButton.cpp
 CMakeFiles/2025_I2P2_TowerDefense.dir/UI/Component/CustomImageButton.cpp.obj: CMakeFiles/2025_I2P2_TowerDefense.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\FINAL_PROJECT\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building CXX object CMakeFiles/2025_I2P2_TowerDefense.dir/UI/Component/CustomImageButton.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\FINAL_PROJECT\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_29) "Building CXX object CMakeFiles/2025_I2P2_TowerDefense.dir/UI/Component/CustomImageButton.cpp.obj"
 	c:\llvm-mingw-20240417-msvcrt-x86_64\bin\clang++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/2025_I2P2_TowerDefense.dir/UI/Component/CustomImageButton.cpp.obj -MF CMakeFiles\2025_I2P2_TowerDefense.dir\UI\Component\CustomImageButton.cpp.obj.d -o CMakeFiles\2025_I2P2_TowerDefense.dir\UI\Component\CustomImageButton.cpp.obj -c C:\FINAL_PROJECT\NTHU_ADVANTURE\UI\Component\CustomImageButton.cpp
 
 CMakeFiles/2025_I2P2_TowerDefense.dir/UI/Component/CustomImageButton.cpp.i: cmake_force
@@ -432,7 +507,7 @@ CMakeFiles/2025_I2P2_TowerDefense.dir/UI/Component/Label.cpp.obj: CMakeFiles/202
 CMakeFiles/2025_I2P2_TowerDefense.dir/UI/Component/Label.cpp.obj: CMakeFiles/2025_I2P2_TowerDefense.dir/includes_CXX.rsp
 CMakeFiles/2025_I2P2_TowerDefense.dir/UI/Component/Label.cpp.obj: C:/FINAL_PROJECT/NTHU_ADVANTURE/UI/Component/Label.cpp
 CMakeFiles/2025_I2P2_TowerDefense.dir/UI/Component/Label.cpp.obj: CMakeFiles/2025_I2P2_TowerDefense.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\FINAL_PROJECT\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Building CXX object CMakeFiles/2025_I2P2_TowerDefense.dir/UI/Component/Label.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\FINAL_PROJECT\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_30) "Building CXX object CMakeFiles/2025_I2P2_TowerDefense.dir/UI/Component/Label.cpp.obj"
 	c:\llvm-mingw-20240417-msvcrt-x86_64\bin\clang++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/2025_I2P2_TowerDefense.dir/UI/Component/Label.cpp.obj -MF CMakeFiles\2025_I2P2_TowerDefense.dir\UI\Component\Label.cpp.obj.d -o CMakeFiles\2025_I2P2_TowerDefense.dir\UI\Component\Label.cpp.obj -c C:\FINAL_PROJECT\NTHU_ADVANTURE\UI\Component\Label.cpp
 
 CMakeFiles/2025_I2P2_TowerDefense.dir/UI/Component/Label.cpp.i: cmake_force
@@ -447,7 +522,7 @@ CMakeFiles/2025_I2P2_TowerDefense.dir/UI/Component/Slider.cpp.obj: CMakeFiles/20
 CMakeFiles/2025_I2P2_TowerDefense.dir/UI/Component/Slider.cpp.obj: CMakeFiles/2025_I2P2_TowerDefense.dir/includes_CXX.rsp
 CMakeFiles/2025_I2P2_TowerDefense.dir/UI/Component/Slider.cpp.obj: C:/FINAL_PROJECT/NTHU_ADVANTURE/UI/Component/Slider.cpp
 CMakeFiles/2025_I2P2_TowerDefense.dir/UI/Component/Slider.cpp.obj: CMakeFiles/2025_I2P2_TowerDefense.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\FINAL_PROJECT\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Building CXX object CMakeFiles/2025_I2P2_TowerDefense.dir/UI/Component/Slider.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\FINAL_PROJECT\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_31) "Building CXX object CMakeFiles/2025_I2P2_TowerDefense.dir/UI/Component/Slider.cpp.obj"
 	c:\llvm-mingw-20240417-msvcrt-x86_64\bin\clang++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/2025_I2P2_TowerDefense.dir/UI/Component/Slider.cpp.obj -MF CMakeFiles\2025_I2P2_TowerDefense.dir\UI\Component\Slider.cpp.obj.d -o CMakeFiles\2025_I2P2_TowerDefense.dir\UI\Component\Slider.cpp.obj -c C:\FINAL_PROJECT\NTHU_ADVANTURE\UI\Component\Slider.cpp
 
 CMakeFiles/2025_I2P2_TowerDefense.dir/UI/Component/Slider.cpp.i: cmake_force
@@ -462,7 +537,7 @@ CMakeFiles/2025_I2P2_TowerDefense.dir/main.cpp.obj: CMakeFiles/2025_I2P2_TowerDe
 CMakeFiles/2025_I2P2_TowerDefense.dir/main.cpp.obj: CMakeFiles/2025_I2P2_TowerDefense.dir/includes_CXX.rsp
 CMakeFiles/2025_I2P2_TowerDefense.dir/main.cpp.obj: C:/FINAL_PROJECT/NTHU_ADVANTURE/main.cpp
 CMakeFiles/2025_I2P2_TowerDefense.dir/main.cpp.obj: CMakeFiles/2025_I2P2_TowerDefense.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\FINAL_PROJECT\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_27) "Building CXX object CMakeFiles/2025_I2P2_TowerDefense.dir/main.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\FINAL_PROJECT\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_32) "Building CXX object CMakeFiles/2025_I2P2_TowerDefense.dir/main.cpp.obj"
 	c:\llvm-mingw-20240417-msvcrt-x86_64\bin\clang++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/2025_I2P2_TowerDefense.dir/main.cpp.obj -MF CMakeFiles\2025_I2P2_TowerDefense.dir\main.cpp.obj.d -o CMakeFiles\2025_I2P2_TowerDefense.dir\main.cpp.obj -c C:\FINAL_PROJECT\NTHU_ADVANTURE\main.cpp
 
 CMakeFiles/2025_I2P2_TowerDefense.dir/main.cpp.i: cmake_force
@@ -488,6 +563,7 @@ CMakeFiles/2025_I2P2_TowerDefense.dir/main.cpp.s: cmake_force
 "CMakeFiles/2025_I2P2_TowerDefense.dir/Engine/Resources.cpp.obj" \
 "CMakeFiles/2025_I2P2_TowerDefense.dir/Engine/Sprite.cpp.obj" \
 "CMakeFiles/2025_I2P2_TowerDefense.dir/Player/Player.cpp.obj" \
+"CMakeFiles/2025_I2P2_TowerDefense.dir/Player/BattlePlayer.cpp.obj" \
 "CMakeFiles/2025_I2P2_TowerDefense.dir/NPC/NPC.cpp.obj" \
 "CMakeFiles/2025_I2P2_TowerDefense.dir/NPC/NPCDialog.cpp.obj" \
 "CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/PlayScene.cpp.obj" \
@@ -496,6 +572,10 @@ CMakeFiles/2025_I2P2_TowerDefense.dir/main.cpp.s: cmake_force
 "CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/ScoreboardScene.cpp.obj" \
 "CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/LogScene.cpp.obj" \
 "CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/RegisterScene.cpp.obj" \
+"CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/WinScene.cpp.obj" \
+"CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/LoseScene.cpp.obj" \
+"CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/BattleScene.cpp.obj" \
+"CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/SmallEatScene.cpp.obj" \
 "CMakeFiles/2025_I2P2_TowerDefense.dir/UI/Component/Image.cpp.obj" \
 "CMakeFiles/2025_I2P2_TowerDefense.dir/UI/Component/ImageButton.cpp.obj" \
 "CMakeFiles/2025_I2P2_TowerDefense.dir/UI/Component/CustomImageButton.cpp.obj" \
@@ -519,6 +599,7 @@ CMakeFiles/2025_I2P2_TowerDefense.dir/main.cpp.s: cmake_force
 2025_I2P2_TowerDefense.exe: CMakeFiles/2025_I2P2_TowerDefense.dir/Engine/Resources.cpp.obj
 2025_I2P2_TowerDefense.exe: CMakeFiles/2025_I2P2_TowerDefense.dir/Engine/Sprite.cpp.obj
 2025_I2P2_TowerDefense.exe: CMakeFiles/2025_I2P2_TowerDefense.dir/Player/Player.cpp.obj
+2025_I2P2_TowerDefense.exe: CMakeFiles/2025_I2P2_TowerDefense.dir/Player/BattlePlayer.cpp.obj
 2025_I2P2_TowerDefense.exe: CMakeFiles/2025_I2P2_TowerDefense.dir/NPC/NPC.cpp.obj
 2025_I2P2_TowerDefense.exe: CMakeFiles/2025_I2P2_TowerDefense.dir/NPC/NPCDialog.cpp.obj
 2025_I2P2_TowerDefense.exe: CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/PlayScene.cpp.obj
@@ -527,6 +608,10 @@ CMakeFiles/2025_I2P2_TowerDefense.dir/main.cpp.s: cmake_force
 2025_I2P2_TowerDefense.exe: CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/ScoreboardScene.cpp.obj
 2025_I2P2_TowerDefense.exe: CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/LogScene.cpp.obj
 2025_I2P2_TowerDefense.exe: CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/RegisterScene.cpp.obj
+2025_I2P2_TowerDefense.exe: CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/WinScene.cpp.obj
+2025_I2P2_TowerDefense.exe: CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/LoseScene.cpp.obj
+2025_I2P2_TowerDefense.exe: CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/BattleScene.cpp.obj
+2025_I2P2_TowerDefense.exe: CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/SmallEatScene.cpp.obj
 2025_I2P2_TowerDefense.exe: CMakeFiles/2025_I2P2_TowerDefense.dir/UI/Component/Image.cpp.obj
 2025_I2P2_TowerDefense.exe: CMakeFiles/2025_I2P2_TowerDefense.dir/UI/Component/ImageButton.cpp.obj
 2025_I2P2_TowerDefense.exe: CMakeFiles/2025_I2P2_TowerDefense.dir/UI/Component/CustomImageButton.cpp.obj
@@ -537,7 +622,7 @@ CMakeFiles/2025_I2P2_TowerDefense.dir/main.cpp.s: cmake_force
 2025_I2P2_TowerDefense.exe: CMakeFiles/2025_I2P2_TowerDefense.dir/linkLibs.rsp
 2025_I2P2_TowerDefense.exe: CMakeFiles/2025_I2P2_TowerDefense.dir/objects1.rsp
 2025_I2P2_TowerDefense.exe: CMakeFiles/2025_I2P2_TowerDefense.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=C:\FINAL_PROJECT\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_28) "Linking CXX executable 2025_I2P2_TowerDefense.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=C:\FINAL_PROJECT\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_33) "Linking CXX executable 2025_I2P2_TowerDefense.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\2025_I2P2_TowerDefense.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
