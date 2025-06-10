@@ -187,7 +187,7 @@ void PlayScene::OnKeyDown(int keyCode) {
         dialog.AdvanceDialog();
     }
 
-    if (keyCode == ALLEGRO_KEY_W) {
+    if (keyCode == ALLEGRO_KEY_V) {
         Engine::GameEngine::GetInstance().ChangeScene("win");
     }
 
