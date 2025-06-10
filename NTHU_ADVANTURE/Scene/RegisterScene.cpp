@@ -44,21 +44,7 @@ void RegisterScene::Initialize() {
     btn->SetOnClickCallback(std::bind(&RegisterScene::BackOnClick, this, 1));
     AddNewControlObject(btn);
     AddNewObject(new Engine::Label("Back", "title.ttf", 48, halfW, halfH * 3 / 2 + 100, 0, 0, 0, 255, 0.5, 0.5));
-
-
-    // if (current_page+1 < total_pages){
-    //     btn = new Engine::ImageButton("stage-select/dirt.png", "stage-select/floor.png", halfW * 3 / 2 - 100, halfH * 3 / 2 + 50, 400, 100);
-    //     btn->SetOnClickCallback(std::bind(&ScoreboardScene::NextOnClick, this, 1));
-    //     AddNewControlObject(btn);
-    //     AddNewObject(new Engine::Label("-->", "pirulen.ttf", 48, halfW * 3 / 2 + 100, halfH * 3 / 2 + 100, 0, 0, 0, 255, 0.5, 0.5));
-    // }
-    
-    // if (current_page > 0){
-    //     btn = new Engine::ImageButton("stage-select/dirt.png", "stage-select/floor.png", halfW / 2 - 300, halfH * 3 / 2 + 50, 400, 100);
-    //     btn->SetOnClickCallback(std::bind(&ScoreboardScene::LastOnClick, this, 1));
-    //     AddNewControlObject(btn);
-    //     AddNewObject(new Engine::Label("<--", "pirulen.ttf", 48, halfW / 2 - 100, halfH * 3 / 2 + 100, 0, 0, 0, 255, 0.5, 0.5));
-    // }    
+ 
     //這個不能刪 否則terminate時會刪掉不存在的東西 注意StageSelectScene刪掉的東西裡面也沒有這個 特別寫在下面了
     bgmInstance = AudioHelper::PlaySample("select.ogg", true, AudioHelper::BGMVolume);
 
