@@ -8,6 +8,10 @@
 #include "Scene/StartScene.h"
 #include "Scene/SettingsScene.hpp"
 
+#include <allegro5/allegro.h>
+#include <allegro5/allegro_image.h>
+
+
 // No USE
 // #include "Scene/ScoreboardScene.hpp"
 // #include "Scene/LoseScene.hpp"
@@ -17,6 +21,9 @@
 int main(int argc, char **argv) {
 	Engine::LOG::SetConfig(true);
 	Engine::GameEngine& game = Engine::GameEngine::GetInstance();
+
+	al_init_image_addon();
+
 
     // TODO HACKATHON-2 (2/3): Register Scenes here
 	game.AddNewScene("play", new PlayScene());
