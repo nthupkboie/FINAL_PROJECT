@@ -188,6 +188,15 @@ void PlayScene::OnKeyDown(int keyCode) {
     if (keyCode == ALLEGRO_KEY_ENTER && dialog.IsDialogActive()) {
         dialog.AdvanceDialog();
     }
+
+    if (keyCode == ALLEGRO_KEY_W) {
+        Engine::GameEngine::GetInstance().ChangeScene("win");
+    }
+
+    if (keyCode == ALLEGRO_KEY_L) {
+        Engine::GameEngine::GetInstance().ChangeScene("lose");
+    }
+
     
     // // 按T鍵測試開啟對話 (可選)
     // if (keyCode == ALLEGRO_KEY_T) {
