@@ -49,9 +49,6 @@ public:
         return messages.size();
     }
 
-
-    void SlideInFromBottom(float duration = 0.3f);
-
 private:
     // 對話狀態
     bool isActive;

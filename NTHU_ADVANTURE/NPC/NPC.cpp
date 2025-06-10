@@ -21,11 +21,11 @@ static std::shared_ptr<ALLEGRO_BITMAP> LoadSpriteFromSheet(
 }
 
 // 從 sprite sheet 建構
-NPC::NPC(const std::string& name, const std::string& sheetPath, float x, float y, 
+NPC::NPC(const std::string& name,std::shared_ptr<ALLEGRO_BITMAP> avatar, const std::string& sheetPath, float x, float y, 
          int upCol, int upRow, int downCol, int downRow,
          int leftCol, int leftRow, int rightCol, int rightRow,
          int tileW, int tileH)
-    : Engine::Sprite(sheetPath, x, y), npcName(name)
+    : Engine::Sprite(sheetPath, x, y), npcName(name), npcAvatar(avatar ? avatar : bmpIdle_down)  // 如果沒有提供頭像，默認使用朝下的圖像
 {
     bmpIdle_up = LoadSpriteFromSheet(sheetPath, upCol, upRow, tileW, tileH);
     bmpIdle_down = LoadSpriteFromSheet(sheetPath, downCol, downRow, tileW, tileH);
@@ -42,10 +42,10 @@ NPC::NPC(const std::string& name, const std::string& sheetPath, float x, float y
 }
 
 // 從分開的圖片建構
-NPC::NPC(const std::string& name, const std::string& upPath, const std::string& downPath,
+NPC::NPC(const std::string& name, std::shared_ptr<ALLEGRO_BITMAP> avatar, const std::string& upPath, const std::string& downPath,
          const std::string& leftPath, const std::string& rightPath,
          float x, float y)
-    : Engine::Sprite(downPath, x, y), npcName(name)
+    : Engine::Sprite(downPath, x, y), npcName(name), npcAvatar(avatar ? avatar : bmpIdle_down)  // 如果沒有提供頭像，默認使用朝下的圖像
 {
     bmpIdle_up = Engine::Resources::GetInstance().GetBitmap(upPath);
     bmpIdle_down = Engine::Resources::GetInstance().GetBitmap(downPath);
@@ -85,7 +85,7 @@ void NPC::Update(float deltaTime, const Player* player) {
         if (!isTalking && !messages.empty()) {
             FacePlayer(player);
             isTalking = true;
-            dialog.StartDialog(npcName, bmpIdle_down, messages);
+            dialog.StartDialog(npcName, npcAvatar, messages);
             // 重置Enter鍵狀態，避免立即觸發
             enterWasDown = true;
         }

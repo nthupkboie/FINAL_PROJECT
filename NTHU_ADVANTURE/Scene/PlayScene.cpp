@@ -60,7 +60,8 @@ void PlayScene::Initialize() {
     // sheet路徑, x, y, 
     // 上, 下, 左, 右, (先行在列)
     // 圖塊寬, 圖塊高
-    NPCGroup->AddNewObject(test = new NPC("NPC", "NPC/test/role/test_sheet.png",
+    auto testAvatar = Engine::Resources::GetInstance().GetBitmap("NPC/test/avatar/test_avatar.png");
+    NPCGroup->AddNewObject(test = new NPC("NPC",testAvatar, "NPC/test/role/test_sheet.png",
                                             64, 64,
                                             2, 3,  // 上 (第0列第2行)
                                             2, 0,  // 下
@@ -79,9 +80,6 @@ void PlayScene::Initialize() {
         "祝你好運，冒險者！"
     });
 
-    // 獲取NPC頭像 (使用NPC的站立圖像)
-    auto npcAvatar = Engine::Resources::GetInstance().GetBitmap("NPC/test/icon/test_icon.png");
-    
     // 預載資源
     Engine::Resources::GetInstance().GetBitmap("lose/benjamin-happy.png");
     
