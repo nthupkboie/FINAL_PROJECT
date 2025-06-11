@@ -46,10 +46,10 @@ void SettingsScene::Initialize() {
      AddNewControlObject(sliderSFX);
     // AddNewObject(new Engine::Label("SFX :     ", "title.ttf", 32, 40 + halfW - 60 - 95, halfH + 50, 255, 255, 255, 255, 0.5, 0.5));
 
-    labelBGM = new Engine::Label("", "Retro.ttf", 32, 40 + halfW - 60 - 95, halfH - 50, 255, 255, 255, 255, 0.5, 0.5);
+    labelBGM = new Engine::Label("", "Retro.ttf", 32, 40 + halfW - 60 - 95 - 50, halfH - 50, 255, 255, 255, 255, 0.5, 0.5);
     AddNewObject(labelBGM);
 
-    labelSFX = new Engine::Label("", "Retro.ttf", 32, 40 + halfW - 60 - 95, halfH + 50, 255, 255, 255, 255, 0.5, 0.5);
+    labelSFX = new Engine::Label("", "Retro.ttf", 32, 40 + halfW - 60 - 95 - 50, halfH + 50, 255, 255, 255, 255, 0.5, 0.5);
     AddNewObject(labelSFX);
 
     // Not safe if release resource while playing, however we only free while change scene, so it's fine.
@@ -68,10 +68,10 @@ void SettingsScene::Initialize() {
 
 
     langBtn->SetOnClickCallback([=]() {
-        static bool isZh = false;
-        isZh = !isZh;
-        if (isZh) LanguageManager::GetInstance().LoadLanguage("zh");
-        else      LanguageManager::GetInstance().LoadLanguage("en");
+        auto& langMgr = LanguageManager::GetInstance();
+        std::string curLang = langMgr.GetCurrentLanguage();
+        if (curLang == "en") langMgr.LoadLanguage("zh");
+        else                 langMgr.LoadLanguage("en");
         RefreshLabels();
     });
     AddNewControlObject(langBtn);
@@ -80,7 +80,7 @@ void SettingsScene::Initialize() {
     AddNewObject(labelLanguage);
 
     // 載入預設語言
-    LanguageManager::GetInstance().LoadLanguage("en");
+    //LanguageManager::GetInstance().LoadLanguage("en");
     RefreshLabels();
 
     // 音樂播放

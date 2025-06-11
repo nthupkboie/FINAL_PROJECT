@@ -1,6 +1,6 @@
 #include <allegro5/allegro_font.h>
 #include <memory>
-
+#include <iostream>
 #include "Engine/IObject.hpp"
 #include "Engine/Point.hpp"
 #include "Engine/Resources.hpp"
@@ -17,5 +17,11 @@ namespace Engine {
     }
     int Label::GetTextHeight() const {
         return al_get_font_line_height(font.get());
+    }
+}
+void Engine::Label::SetText(const std::string& text) {
+    if (Text != text) {
+        std::cout << "[Label] SetText: " << text << std::endl;
+        Text = text;
     }
 }

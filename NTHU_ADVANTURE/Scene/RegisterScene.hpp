@@ -1,5 +1,5 @@
 #ifndef RegisterScene_HPP
-#define RegsiterScene_HPP
+#define RegisterScene_HPP
 #include <memory>
 #include <string>
 #include <vector>

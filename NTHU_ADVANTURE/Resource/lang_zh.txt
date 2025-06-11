@@ -1,4 +1,12 @@
-back=返回
-bgm=背景音樂：
-sfx=音效：
-language=語言
+title = 清華大冒險
+register = 註冊
+test = 登入
+settings = 設定
+scoreboard = 排行榜
+play = 開始遊戲
+back = 返回
+bgm = 背景音樂      
+sfx = 音效      
+language = 語言
+start = 開始
+exit = 離開
