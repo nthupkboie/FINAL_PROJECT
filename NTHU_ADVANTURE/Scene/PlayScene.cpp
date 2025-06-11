@@ -24,6 +24,8 @@
 #include <allegro5/allegro_primitives.h>
 
 
+bool PlayScene::inPlay = true;
+
 const int PlayScene::MapWidth = 60, PlayScene::MapHeight = 32;
 const int PlayScene::BlockSize = 64;
 
@@ -36,6 +38,8 @@ const int PlayScene::window_x = 30, PlayScene::window_y = 16;
 Engine::Point PlayScene::GetClientSize() {
     return Engine::Point(window_x * BlockSize, window_y * BlockSize); // 視角大小
 }
+
+
 
 Engine::Point PlayScene::cameraOffset = Engine::Point(0, 0);
 void PlayScene::Initialize() {
@@ -60,6 +64,7 @@ void PlayScene::Initialize() {
     cameraOffset.y = player->Position.y - window_y / 2 * BlockSize; // 96
     cameraOffset.x = std::max(0.0f, std::min(cameraOffset.x, static_cast<float>(MapWidth * BlockSize - window_x * BlockSize)));
     cameraOffset.y = std::max(0.0f, std::min(cameraOffset.y, static_cast<float>(MapHeight * BlockSize - window_y * BlockSize)));
+
 
     // NPC
     NPC* test;
@@ -201,9 +206,11 @@ void PlayScene::OnKeyDown(int keyCode) {
     }    
     if(keyCode == ALLEGRO_KEY_B){
         Engine::GameEngine::GetInstance().ChangeScene("battle");
+        inPlay = false;
     }
     if(keyCode == ALLEGRO_KEY_E){
         Engine::GameEngine::GetInstance().ChangeScene("smalleat");
+        inPlay = false;
     }
     // // 按T鍵測試開啟對話 (可選)
     // if (keyCode == ALLEGRO_KEY_T) {

@@ -75,6 +75,7 @@ public:
     void DrawMiniMap() const;
 
     static const int window_x, window_y;
+    static bool inPlay;
 
     std::vector<PlayScene::TileType> mapData;
 };
