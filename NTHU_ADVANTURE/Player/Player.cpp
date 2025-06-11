@@ -249,16 +249,19 @@ void Player::Draw() const {
 }
 
 bool Player::canWalk(int x, int y){
-    //printf("LLLLLLLLll\n");
     if (x > PlayScene::BlockSize * PlayScene::MapWidth || x < 0 || y < 0 || y > PlayScene::BlockSize * PlayScene::MapHeight) return false;
-    if (!PlayScene::inPlay){
-        BattleScene* scene = dynamic_cast<BattleScene*>(Engine::GameEngine::GetInstance().GetScene("battle"));
-        if (!scene->collision(x, y)) {
-            //printf("HHHHHHHHHHHHHH\n");
+    if (PlayScene::inPlay){
+        
+        if (!PlayScene::collision(x, y)) {
+            //printf("NOOOOOOOOO\n");
+            return false;
+        }
+    }
+    else if (PlayScene::inSmallEat){
+        if (!SmallEatScene::collision(x, y)){
             return false;
         }
     }
     
-    //printf("TTTTTTTTTTTTTT\n");
     return true;
 }

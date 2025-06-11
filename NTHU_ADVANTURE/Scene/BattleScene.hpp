@@ -19,14 +19,7 @@ namespace Engine {
 
 class BattleScene final : public Engine::IScene {
 private:
-    enum TileType {
-        TILE_ROAD,
-        TILE_GRASS,
-        TILE_TREE,
-        TILE_STAIRS,
-        NEW, TILE_NEW,
-        NOTHING,
-    };
+    
     
     ALLEGRO_SAMPLE_ID bgmId;
     std::shared_ptr<ALLEGRO_SAMPLE_INSTANCE> deathBGMInstance;
@@ -43,6 +36,15 @@ protected:
     float timeLimit;    // 時間限制（秒）
 
 public:
+    enum TileType {
+        TILE_ROAD,
+        TILE_GRASS,
+        TILE_TREE,
+        TILE_STAIRS,
+        NEW, TILE_NEW,
+        NOTHING,
+    };
+
     static const std::vector<Engine::Point> directions;
     static const int MapWidth, MapHeight;
     static const int BlockSize;
@@ -56,7 +58,7 @@ public:
     Group *PlayerGroup;
     Group *NPCGroup;
 
-    std::vector<std::vector<TileType>> mapState;
+    static std::vector<std::vector<TileType>> mapState;
     std::vector<std::vector<int>> mapDistance;
     std::list<int> keyStrokes;
     std::vector<int> mapData; // 修改為 int 以匹配 TileType
@@ -80,8 +82,8 @@ public:
 
     static const int window_x, window_y;
 
-    bool collision(int x, int y);
-    static bool canWalk;
+    static bool collision(int x, int y);
+    //static bool canWalk;
 
     //std::vector<BattleScene::TileType> mapData;
 };

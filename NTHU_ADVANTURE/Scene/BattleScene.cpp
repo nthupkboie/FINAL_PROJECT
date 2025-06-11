@@ -30,7 +30,9 @@ const int BattleScene::BlockSize = 64;
 
 const int BattleScene::window_x = 30, BattleScene::window_y = 16;
 
-bool canWalk = true;
+std::vector<std::vector<BattleScene::TileType>> BattleScene::mapState;
+
+//bool canWalk = true;
 
 // Engine::Point PlayScene::GetClientSize() {
 //     return Engine::Point(MapWidth * BlockSize, MapHeight * BlockSize);

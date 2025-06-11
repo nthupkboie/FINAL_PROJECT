@@ -247,8 +247,8 @@ bool BattlePlayer::canWalk(int x, int y){
     //printf("LLLLLLLLll\n");
     if (x > BattleScene::BlockSize * BattleScene::MapWidth || x < 0 || y < 0 || y > BattleScene::BlockSize * BattleScene::MapHeight) return false;
     if (!PlayScene::inPlay){
-        BattleScene* scene = dynamic_cast<BattleScene*>(Engine::GameEngine::GetInstance().GetScene("battle"));
-        if (!scene->collision(x, y)) {
+        //BattleScene* scene = dynamic_cast<BattleScene*>(Engine::GameEngine::GetInstance().GetScene("battle"));
+        if (!BattleScene::collision(x, y)) {
             //printf("HHHHHHHHHHHHHH\n");
             return false;
         }

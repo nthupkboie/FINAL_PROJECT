@@ -24,12 +24,14 @@
 #include <allegro5/allegro_primitives.h>
 
 
-bool PlayScene::inPlay = true;
+bool PlayScene::inPlay = true, PlayScene::inSmallEat = false;
 
 const int PlayScene::MapWidth = 60, PlayScene::MapHeight = 32;
 const int PlayScene::BlockSize = 64;
 
 const int PlayScene::window_x = 30, PlayScene::window_y = 16;
+
+std::vector<PlayScene::TileType> PlayScene::mapData;
 
 // Engine::Point PlayScene::GetClientSize() {
 //     return Engine::Point(MapWidth * BlockSize, MapHeight * BlockSize);
@@ -210,6 +212,7 @@ void PlayScene::OnKeyDown(int keyCode) {
     if(keyCode == ALLEGRO_KEY_E){
         Engine::GameEngine::GetInstance().ChangeScene("smalleat");
         inPlay = false;
+        inSmallEat = true;
     }
     // // 按T鍵測試開啟對話 (可選)
     // if (keyCode == ALLEGRO_KEY_T) {
@@ -426,4 +429,24 @@ void PlayScene::DrawMiniMap() const {
     float w = window_x * BlockSize * scale;
     float h = window_y * BlockSize * scale;
     al_draw_rectangle(cx, cy, cx + w, cy + h, al_map_rgb(255, 255, 0), 1); // 黃框
+}
+
+//walkable
+bool PlayScene::collision(int x, int y){
+    //printf("NOOOOOOOOOOO\n");
+    switch (mapData[y/BlockSize *MapWidth + x/BlockSize]){
+        case TILE_AVANUE:
+        case TILE_GRASS:
+        case TILE_ROAD:
+        case TILE_STAIRS:
+            return true;
+        case TILE_TREE:
+        case NEW:
+        case INFORMATIONELETRIC:
+        case NOTHING:
+        default:
+            return false;
+    }
+    // if (mapState[y/BlockSize][x/BlockSize] == TILE_TREE) return false;
+    // else return true;
 }
