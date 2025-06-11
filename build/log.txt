@@ -1,0 +1,470 @@
+[INFO] Game Initializing...
+[INFO] Loaded Resource<image>: Resource/images/icon.png
+[INFO] Loaded window icon from: icon.png
+[INFO] There are total 16 supported mouse buttons
+[INFO] Allegro5 initialized
+[INFO] Game begin
+[INFO] Loaded Resource<image>: Resource/images/scene/start-by.png scaled to 1920x1024
+[INFO] Loaded Resource<font>: Resource/fonts/title.ttf with size 150
+[INFO] Loaded Resource<image>: Resource/images/stage-select/dirt.png scaled to 400x100
+[INFO] Loaded Resource<image>: Resource/images/stage-select/dirt.png
+[INFO] Loaded Resource<image>: Resource/images/stage-select/floor.png
+[INFO] Loaded Resource<font>: Resource/fonts/title.ttf with size 48
+[INFO] Game initialized
+[INFO] Game start event loop
+[INFO] Loaded Resource<audio>: Resource/audios/select.ogg
+[INFO] Created<sample_instance>: Resource/audios/select.ogg
+[INFO] Changed to login scene
+[INFO] stopped audio (sample)
+[INFO] mapData.size() 1920
+[INFO] MapWidth * MapHeight 1920
+[INFO] Loaded Resource<image>: Resource/images/mainworld/grass.png scaled to 64x64
+[INFO] Loaded Resource<image>: Resource/images/mainworld/tree.png scaled to 64x64
+[INFO] Loaded Resource<image>: Resource/images/mainworld/road.png scaled to 64x64
+[INFO] Loaded Resource<image>: Resource/images/mainworld/grasss.png scaled to 64x64
+[INFO] Loaded Resource<image>: Resource/images/mainworld/grass1.png scaled to 448x448
+[INFO] Loaded Resource<image>: Resource/images/mainworld/NEW.png scaled to 448x448
+[INFO] Loaded Resource<image>: Resource/images/mainworld/stairs.png scaled to 64x64
+[INFO] Loaded Resource<image>: Resource/images/player/idle.png
+[INFO] Loaded Resource<image>: Resource/images/player/left_idle.png
+[INFO] Loaded Resource<image>: Resource/images/player/right_idle.png
+[INFO] Loaded Resource<image>: Resource/images/player/up_idle.png
+[INFO] Loaded Resource<image>: Resource/images/player/up1.png
+[INFO] Loaded Resource<image>: Resource/images/player/up2.png
+[INFO] Loaded Resource<image>: Resource/images/player/down1.png
+[INFO] Loaded Resource<image>: Resource/images/player/down2.png
+[INFO] Loaded Resource<image>: Resource/images/player/left1.png
+[INFO] Loaded Resource<image>: Resource/images/player/left2.png
+[INFO] Loaded Resource<image>: Resource/images/player/right1.png
+[INFO] Loaded Resource<image>: Resource/images/player/right2.png
+[INFO] Loaded Resource<image>: Resource/images/NPC/test/avatar/test_avatar.png
+[INFO] Loaded Resource<image>: Resource/images/NPC/test/role/test_sheet.png
+[INFO] Loaded Resource<font>: Resource/fonts/normal.ttf with size 24
+[INFO] Loaded Resource<image>: Resource/images/lose/benjamin-happy.png
+[INFO] Loaded Resource<audio>: Resource/audios/play.ogg
+[INFO] Changed to play scene
+[INFO] stopped audio (bgm)
+[INFO] Initial tree count: 263 (67.0918%)
+[WARN] No path found or path too long (200 steps), regenerating maze...
+[INFO] Initial tree count: 265 (67.602%)
+[WARN] No path found or path too long (200 steps), regenerating maze...
+[INFO] Initial tree count: 291 (74.2347%)
+[WARN] No path found or path too long (200 steps), regenerating maze...
+[INFO] Initial tree count: 266 (67.8571%)
+[WARN] No path found or path too long (200 steps), regenerating maze...
+[INFO] Initial tree count: 275 (70.1531%)
+[WARN] No path found or path too long (200 steps), regenerating maze...
+[INFO] Initial tree count: 285 (72.7041%)
+[WARN] No path found or path too long (200 steps), regenerating maze...
+[INFO] Initial tree count: 290 (73.9796%)
+[WARN] No path found or path too long (200 steps), regenerating maze...
+[INFO] Initial tree count: 263 (67.0918%)
+[INFO] Path length: 144
+[INFO] Final tree count: 335 (69.7917%)
+[INFO] Final tree count after extra: 335 (69.7917%)
+[INFO] Loaded Resource<image>: Resource/images/BattlePlayer/left_idle.png
+[INFO] Loaded Resource<image>: Resource/images/BattlePlayer/right_idle.png
+[INFO] Loaded Resource<image>: Resource/images/BattlePlayer/up_idle.png
+[INFO] Loaded Resource<image>: Resource/images/BattlePlayer/up1.png
+[INFO] Loaded Resource<image>: Resource/images/BattlePlayer/up2.png
+[INFO] Loaded Resource<image>: Resource/images/BattlePlayer/down1.png
+[INFO] Loaded Resource<image>: Resource/images/BattlePlayer/down2.png
+[INFO] Loaded Resource<image>: Resource/images/BattlePlayer/left1.png
+[INFO] Loaded Resource<image>: Resource/images/BattlePlayer/left2.png
+[INFO] Loaded Resource<image>: Resource/images/BattlePlayer/right1.png
+[INFO] Loaded Resource<image>: Resource/images/BattlePlayer/right2.png
+[INFO] Changed to battle scene
+[INFO] stopped audio (bgm)
+[INFO] mapData.size() 1920
+[INFO] MapWidth * MapHeight 1920
+[INFO] Changed to play scene
+[INFO] stopped audio (bgm)
+[INFO] Initial tree count: 278 (70.9184%)
+[WARN] No path found or path too long (200 steps), regenerating maze...
+[INFO] Initial tree count: 273 (69.6429%)
+[INFO] Path length: 130
+[INFO] Final tree count: 337 (70.2083%)
+[INFO] Final tree count after extra: 337 (70.2083%)
+[INFO] Changed to battle scene
+[INFO] stopped audio (bgm)
+[INFO] mapData.size() 1920
+[INFO] MapWidth * MapHeight 1920
+[INFO] Changed to play scene
+[INFO] stopped audio (bgm)
+[INFO] Initial tree count: 266 (67.8571%)
+[INFO] Path length: 110
+[INFO] Final tree count: 342 (71.25%)
+[INFO] Final tree count after extra: 346 (72.0833%)
+[INFO] Changed to battle scene
+[INFO] stopped audio (bgm)
+[INFO] mapData.size() 1920
+[INFO] MapWidth * MapHeight 1920
+[INFO] Changed to play scene
+[INFO] stopped audio (bgm)
+[INFO] Initial tree count: 278 (70.9184%)
+[WARN] No path found or path too long (200 steps), regenerating maze...
+[INFO] Initial tree count: 284 (72.449%)
+[INFO] Path length: 170
+[INFO] Final tree count: 304 (63.3333%)
+[INFO] Final tree count after extra: 304 (63.3333%)
+[INFO] Changed to battle scene
+[INFO] stopped audio (bgm)
+[INFO] mapData.size() 1920
+[INFO] MapWidth * MapHeight 1920
+[INFO] Changed to play scene
+[INFO] stopped audio (bgm)
+[INFO] Initial tree count: 273 (69.6429%)
+[WARN] No path found or path too long (200 steps), regenerating maze...
+[INFO] Initial tree count: 273 (69.6429%)
+[INFO] Path length: 138
+[INFO] Final tree count: 335 (69.7917%)
+[INFO] Final tree count after extra: 335 (69.7917%)
+[INFO] Changed to battle scene
+[INFO] stopped audio (bgm)
+[INFO] mapData.size() 1920
+[INFO] MapWidth * MapHeight 1920
+[INFO] Changed to play scene
+[INFO] stopped audio (bgm)
+[INFO] Initial tree count: 282 (71.9388%)
+[WARN] No path found or path too long (200 steps), regenerating maze...
+[INFO] Initial tree count: 281 (71.6837%)
+[WARN] No path found or path too long (200 steps), regenerating maze...
+[INFO] Initial tree count: 281 (71.6837%)
+[WARN] No path found or path too long (200 steps), regenerating maze...
+[INFO] Initial tree count: 261 (66.5816%)
+[WARN] No path found or path too long (200 steps), regenerating maze...
+[INFO] Initial tree count: 293 (74.7449%)
+[INFO] Path length: 168
+[INFO] Final tree count: 311 (64.7917%)
+[INFO] Final tree count after extra: 311 (64.7917%)
+[INFO] Changed to battle scene
+[INFO] stopped audio (bgm)
+[INFO] mapData.size() 1920
+[INFO] MapWidth * MapHeight 1920
+[INFO] Changed to play scene
+[INFO] stopped audio (bgm)
+[INFO] Initial tree count: 287 (73.2143%)
+[INFO] Path length: 106
+[INFO] Final tree count: 342 (71.25%)
+[INFO] Final tree count after extra: 345 (71.875%)
+[INFO] Changed to battle scene
+[INFO] stopped audio (bgm)
+[INFO] mapData.size() 1920
+[INFO] MapWidth * MapHeight 1920
+[INFO] Changed to play scene
+[INFO] stopped audio (bgm)
+[INFO] Initial tree count: 287 (73.2143%)
+[WARN] No path found or path too long (200 steps), regenerating maze...
+[INFO] Initial tree count: 272 (69.3878%)
+[WARN] No path found or path too long (200 steps), regenerating maze...
+[INFO] Initial tree count: 272 (69.3878%)
+[INFO] Path length: 148
+[INFO] Final tree count: 330 (68.75%)
+[INFO] Final tree count after extra: 330 (68.75%)
+[INFO] Changed to battle scene
+[INFO] stopped audio (bgm)
+[INFO] mapData.size() 1920
+[INFO] MapWidth * MapHeight 1920
+[INFO] Changed to play scene
+[INFO] stopped audio (bgm)
+[INFO] Initial tree count: 278 (70.9184%)
+[WARN] No path found or path too long (200 steps), regenerating maze...
+[INFO] Initial tree count: 280 (71.4286%)
+[WARN] No path found or path too long (200 steps), regenerating maze...
+[INFO] Initial tree count: 282 (71.9388%)
+[WARN] No path found or path too long (200 steps), regenerating maze...
+[INFO] Initial tree count: 277 (70.6633%)
+[WARN] No path found or path too long (200 steps), regenerating maze...
+[INFO] Initial tree count: 273 (69.6429%)
+[WARN] No path found or path too long (200 steps), regenerating maze...
+[INFO] Initial tree count: 271 (69.1327%)
+[WARN] No path found or path too long (200 steps), regenerating maze...
+[INFO] Initial tree count: 270 (68.8776%)
+[INFO] Path length: 124
+[INFO] Final tree count: 355 (73.9583%)
+[INFO] Final tree count after extra: 355 (73.9583%)
+[INFO] Changed to battle scene
+[INFO] stopped audio (bgm)
+[INFO] mapData.size() 1920
+[INFO] MapWidth * MapHeight 1920
+[INFO] Changed to play scene
+[INFO] stopped audio (bgm)
+[INFO] Initial tree count: 272 (69.3878%)
+[WARN] No path found or path too long (200 steps), regenerating maze...
+[INFO] Initial tree count: 275 (70.1531%)
+[INFO] Path length: 196
+[INFO] Final tree count: 280 (58.3333%)
+[INFO] Final tree count after extra: 280 (58.3333%)
+[INFO] Changed to battle scene
+[INFO] stopped audio (bgm)
+[INFO] mapData.size() 1920
+[INFO] MapWidth * MapHeight 1920
+[INFO] Changed to play scene
+[INFO] stopped audio (bgm)
+[INFO] Initial tree count: 277 (70.6633%)
+[WARN] No path found or path too long (200 steps), regenerating maze...
+[INFO] Initial tree count: 259 (66.0714%)
+[INFO] Path length: 118
+[INFO] Final tree count: 343 (71.4583%)
+[INFO] Final tree count after extra: 346 (72.0833%)
+[INFO] Changed to battle scene
+[INFO] stopped audio (bgm)
+[INFO] mapData.size() 1920
+[INFO] MapWidth * MapHeight 1920
+[INFO] Changed to play scene
+[INFO] stopped audio (bgm)
+[INFO] Initial tree count: 272 (69.3878%)
+[WARN] No path found or path too long (200 steps), regenerating maze...
+[INFO] Initial tree count: 291 (74.2347%)
+[WARN] No path found or path too long (200 steps), regenerating maze...
+[INFO] Initial tree count: 270 (68.8776%)
+[WARN] No path found or path too long (200 steps), regenerating maze...
+[INFO] Initial tree count: 285 (72.7041%)
+[WARN] No path found or path too long (200 steps), regenerating maze...
+[INFO] Initial tree count: 264 (67.3469%)
+[WARN] No path found or path too long (200 steps), regenerating maze...
+[INFO] Initial tree count: 266 (67.8571%)
+[WARN] No path found or path too long (200 steps), regenerating maze...
+[INFO] Initial tree count: 289 (73.7245%)
+[INFO] Path length: 180
+[INFO] Final tree count: 299 (62.2917%)
+[INFO] Final tree count after extra: 299 (62.2917%)
+[INFO] Changed to battle scene
+[INFO] stopped audio (bgm)
+[INFO] mapData.size() 1920
+[INFO] MapWidth * MapHeight 1920
+[INFO] Changed to play scene
+[INFO] stopped audio (bgm)
+[INFO] Initial tree count: 291 (74.2347%)
+[WARN] No path found or path too long (200 steps), regenerating maze...
+[INFO] Initial tree count: 265 (67.602%)
+[INFO] Path length: 122
+[INFO] Final tree count: 350 (72.9167%)
+[INFO] Final tree count after extra: 352 (73.3333%)
+[INFO] Changed to battle scene
+[INFO] stopped audio (bgm)
+[INFO] mapData.size() 1920
+[INFO] MapWidth * MapHeight 1920
+[INFO] Changed to play scene
+[INFO] stopped audio (bgm)
+[INFO] Initial tree count: 294 (75%)
+[WARN] No path found or path too long (200 steps), regenerating maze...
+[INFO] Initial tree count: 265 (67.602%)
+[INFO] Path length: 172
+[INFO] Final tree count: 303 (63.125%)
+[INFO] Final tree count after extra: 304 (63.3333%)
+[INFO] Changed to battle scene
+[INFO] stopped audio (bgm)
+[INFO] mapData.size() 1920
+[INFO] MapWidth * MapHeight 1920
+[INFO] Changed to play scene
+[INFO] stopped audio (bgm)
+[INFO] Initial tree count: 287 (73.2143%)
+[INFO] Path length: 176
+[INFO] Final tree count: 277 (57.7083%)
+[INFO] Final tree count after extra: 277 (57.7083%)
+[INFO] Changed to battle scene
+[INFO] stopped audio (bgm)
+[INFO] mapData.size() 1920
+[INFO] MapWidth * MapHeight 1920
+[INFO] Changed to play scene
+[INFO] stopped audio (bgm)
+[INFO] Initial tree count: 276 (70.4082%)
+[WARN] No path found or path too long (200 steps), regenerating maze...
+[INFO] Initial tree count: 272 (69.3878%)
+[WARN] No path found or path too long (200 steps), regenerating maze...
+[INFO] Initial tree count: 274 (69.898%)
+[INFO] Path length: 148
+[INFO] Final tree count: 331 (68.9583%)
+[INFO] Final tree count after extra: 331 (68.9583%)
+[INFO] Changed to battle scene
+[INFO] stopped audio (bgm)
+[INFO] mapData.size() 1920
+[INFO] MapWidth * MapHeight 1920
+[INFO] Changed to play scene
+[INFO] stopped audio (bgm)
+[INFO] Initial tree count: 263 (67.0918%)
+[INFO] Path length: 112
+[INFO] Final tree count: 340 (70.8333%)
+[INFO] Final tree count after extra: 342 (71.25%)
+[INFO] Changed to battle scene
+[INFO] stopped audio (bgm)
+[INFO] mapData.size() 1920
+[INFO] MapWidth * MapHeight 1920
+[INFO] Changed to play scene
+[INFO] stopped audio (bgm)
+[INFO] Initial tree count: 271 (69.1327%)
+[INFO] Path length: 164
+[INFO] Final tree count: 285 (59.375%)
+[INFO] Final tree count after extra: 285 (59.375%)
+[INFO] Changed to battle scene
+[INFO] stopped audio (bgm)
+[INFO] mapData.size() 1920
+[INFO] MapWidth * MapHeight 1920
+[INFO] Changed to play scene
+[INFO] stopped audio (bgm)
+[INFO] Initial tree count: 296 (75.5102%)
+[INFO] Path length: 118
+[INFO] Final tree count: 334 (69.5833%)
+[INFO] Final tree count after extra: 338 (70.4167%)
+[INFO] Changed to battle scene
+[INFO] stopped audio (bgm)
+[INFO] mapData.size() 1920
+[INFO] MapWidth * MapHeight 1920
+[INFO] Changed to play scene
+[INFO] stopped audio (bgm)
+[INFO] Initial tree count: 275 (70.1531%)
+[INFO] Path length: 146
+[INFO] Final tree count: 310 (64.5833%)
+[INFO] Final tree count after extra: 312 (65%)
+[INFO] Changed to battle scene
+[INFO] stopped audio (bgm)
+[INFO] mapData.size() 1920
+[INFO] MapWidth * MapHeight 1920
+[INFO] Changed to play scene
+[INFO] stopped audio (bgm)
+[INFO] Initial tree count: 269 (68.6224%)
+[WARN] No path found or path too long (200 steps), regenerating maze...
+[INFO] Initial tree count: 272 (69.3878%)
+[WARN] No path found or path too long (200 steps), regenerating maze...
+[INFO] Initial tree count: 280 (71.4286%)
+[WARN] No path found or path too long (200 steps), regenerating maze...
+[INFO] Initial tree count: 287 (73.2143%)
+[INFO] Path length: 172
+[INFO] Final tree count: 306 (63.75%)
+[INFO] Final tree count after extra: 306 (63.75%)
+[INFO] Changed to battle scene
+[INFO] stopped audio (bgm)
+[INFO] mapData.size() 1920
+[INFO] MapWidth * MapHeight 1920
+[INFO] Changed to play scene
+[INFO] stopped audio (bgm)
+[INFO] Initial tree count: 283 (72.1939%)
+[INFO] Path length: 130
+[INFO] Final tree count: 327 (68.125%)
+[INFO] Final tree count after extra: 328 (68.3333%)
+[INFO] Changed to battle scene
+[INFO] stopped audio (bgm)
+[INFO] mapData.size() 1920
+[INFO] MapWidth * MapHeight 1920
+[INFO] Changed to play scene
+[INFO] stopped audio (bgm)
+[INFO] Initial tree count: 256 (65.3061%)
+[WARN] No path found or path too long (200 steps), regenerating maze...
+[INFO] Initial tree count: 285 (72.7041%)
+[WARN] No path found or path too long (200 steps), regenerating maze...
+[INFO] Initial tree count: 257 (65.5612%)
+[INFO] Path length: 122
+[INFO] Final tree count: 351 (73.125%)
+[INFO] Final tree count after extra: 352 (73.3333%)
+[INFO] Changed to battle scene
+[INFO] stopped audio (bgm)
+[INFO] mapData.size() 1920
+[INFO] MapWidth * MapHeight 1920
+[INFO] Changed to play scene
+[INFO] stopped audio (bgm)
+[INFO] Initial tree count: 277 (70.6633%)
+[WARN] No path found or path too long (200 steps), regenerating maze...
+[INFO] Initial tree count: 276 (70.4082%)
+[INFO] Path length: 178
+[INFO] Final tree count: 296 (61.6667%)
+[INFO] Final tree count after extra: 296 (61.6667%)
+[INFO] Changed to battle scene
+[INFO] stopped audio (bgm)
+[INFO] mapData.size() 1920
+[INFO] MapWidth * MapHeight 1920
+[INFO] Changed to play scene
+[INFO] stopped audio (bgm)
+[INFO] Initial tree count: 260 (66.3265%)
+[WARN] No path found or path too long (200 steps), regenerating maze...
+[INFO] Initial tree count: 286 (72.9592%)
+[WARN] No path found or path too long (200 steps), regenerating maze...
+[INFO] Initial tree count: 286 (72.9592%)
+[WARN] No path found or path too long (200 steps), regenerating maze...
+[INFO] Initial tree count: 273 (69.6429%)
+[WARN] No path found or path too long (200 steps), regenerating maze...
+[INFO] Initial tree count: 273 (69.6429%)
+[WARN] No path found or path too long (200 steps), regenerating maze...
+[INFO] Initial tree count: 286 (72.9592%)
+[INFO] Path length: 152
+[INFO] Final tree count: 327 (68.125%)
+[INFO] Final tree count after extra: 327 (68.125%)
+[INFO] Changed to battle scene
+[INFO] stopped audio (bgm)
+[INFO] mapData.size() 1920
+[INFO] MapWidth * MapHeight 1920
+[INFO] Changed to play scene
+[INFO] stopped audio (bgm)
+[INFO] Initial tree count: 273 (69.6429%)
+[WARN] No path found or path too long (200 steps), regenerating maze...
+[INFO] Initial tree count: 278 (70.9184%)
+[WARN] No path found or path too long (200 steps), regenerating maze...
+[INFO] Initial tree count: 270 (68.8776%)
+[INFO] Path length: 182
+[INFO] Final tree count: 295 (61.4583%)
+[INFO] Final tree count after extra: 295 (61.4583%)
+[INFO] Changed to battle scene
+[INFO] Reached goal! Switching to win scene.
+[INFO] stopped audio (bgm)
+[INFO] Loaded Resource<image>: Resource/images/win/win.png scaled to 1920x1024
+[INFO] Loaded Resource<image>: Resource/images/win/dirt.png scaled to 400x100
+[INFO] Loaded Resource<image>: Resource/images/win/dirt.png
+[INFO] Loaded Resource<image>: Resource/images/win/floor.png
+[INFO] Loaded Resource<font>: Resource/fonts/pirulen.ttf with size 48
+[INFO] Loaded Resource<audio>: Resource/audios/win.ogg
+[INFO] Changed to win scene
+[INFO] stopped audio (bgm)
+[INFO] Changed to start scene
+[INFO] Game Terminating...
+[INFO] Game terminated
+[INFO] Game end
+[INFO] Destroyed Resource<image>: win/floor.png
+[INFO] Destroyed Resource<image>: win/dirt.png?400x100
+[INFO] Destroyed Resource<image>: win/win.png?1920x1024
+[INFO] Destroyed Resource<image>: BattlePlayer/left2.png
+[INFO] Destroyed Resource<image>: BattlePlayer/right_idle.png
+[INFO] Destroyed Resource<image>: BattlePlayer/down2.png
+[INFO] Destroyed Resource<image>: BattlePlayer/up1.png
+[INFO] Destroyed Resource<image>: NPC/test/role/test_sheet.png
+[INFO] Destroyed Resource<image>: NPC/test/avatar/test_avatar.png
+[INFO] Destroyed Resource<image>: BattlePlayer/up2.png
+[INFO] Destroyed Resource<image>: player/right2.png
+[INFO] Destroyed Resource<image>: BattlePlayer/right1.png
+[INFO] Destroyed Resource<image>: player/left1.png
+[INFO] Destroyed Resource<image>: player/up2.png
+[INFO] Destroyed Resource<image>: player/up1.png
+[INFO] Destroyed Resource<image>: win/dirt.png
+[INFO] Destroyed Resource<image>: player/left2.png
+[INFO] Destroyed Resource<image>: player/up_idle.png
+[INFO] Destroyed Resource<image>: lose/benjamin-happy.png
+[INFO] Destroyed Resource<image>: player/idle.png
+[INFO] Destroyed Resource<image>: mainworld/stairs.png?64x64
+[INFO] Destroyed Resource<image>: mainworld/NEW.png?448x448
+[INFO] Destroyed Resource<image>: BattlePlayer/right2.png
+[INFO] Destroyed Resource<image>: player/down2.png
+[INFO] Destroyed Resource<image>: mainworld/grasss.png?64x64
+[INFO] Destroyed Resource<image>: stage-select/dirt.png?400x100
+[INFO] Destroyed Resource<image>: stage-select/dirt.png
+[INFO] Destroyed Resource<image>: mainworld/tree.png?64x64
+[INFO] Destroyed Resource<image>: BattlePlayer/down1.png
+[INFO] Destroyed Resource<image>: player/down1.png
+[INFO] Destroyed Resource<image>: mainworld/road.png?64x64
+[INFO] Destroyed Resource<image>: BattlePlayer/up_idle.png
+[INFO] Destroyed Resource<image>: stage-select/floor.png
+[INFO] Destroyed Resource<image>: BattlePlayer/left1.png
+[INFO] Destroyed Resource<image>: scene/start-by.png?1920x1024
+[INFO] Destroyed Resource<image>: player/right1.png
+[INFO] Destroyed Resource<image>: BattlePlayer/left_idle.png
+[INFO] Destroyed Resource<image>: mainworld/grass1.png?448x448
+[INFO] Destroyed Resource<image>: player/right_idle.png
+[INFO] Destroyed Resource<image>: mainworld/grass.png?64x64
+[INFO] Destroyed Resource<image>: player/left_idle.png
+[INFO] Destroyed Resource<image>: icon.png
+[INFO] Destroyed Resource<font>: normal.ttf?24
+[INFO] Destroyed Resource<font>: title.ttf?48
+[INFO] Destroyed Resource<font>: pirulen.ttf?48
+[INFO] Destroyed Resource<font>: title.ttf?150
+[INFO] Destroyed<sample_instance>: select.ogg
+[INFO] Destroyed Resource<audio>: win.ogg
+[INFO] Destroyed Resource<audio>: play.ogg
+[INFO] Destroyed Resource<audio>: select.ogg
