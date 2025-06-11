@@ -2,6 +2,8 @@
 #include "Engine/Resources.hpp"
 #include "Engine/LOG.hpp"
 #include "Scene/PlayScene.hpp"
+#include "Scene/BattleScene.hpp"
+#include "Scene/SmallEatScene.hpp"
 #include "Player/Player.hpp"
 #include "Engine/GameEngine.hpp"
 
@@ -95,18 +97,30 @@ void NPCDialog::StartDialog(const std::string& npcName,
     isActive = true;
 
     // 設置對話框位置：視角中央下方
-    PlayScene* scene = dynamic_cast<PlayScene*>(Engine::GameEngine::GetInstance().GetScene("play"));
-    if (scene) {
-        Engine::Point clientSize = scene->GetClientSize(); // 384x192
-        boxX = PlayScene::getCamera().x + clientSize.x / 2 - boxWidth / 2 - 300; // 192 - 150 = 42
-        boxY = PlayScene::getCamera().y + clientSize.y / 2 + 30;           // 96 + 30 = 126
-        avatarX = boxX + padding;
-        avatarY = boxY + padding;
-        textX = boxX + padding + 128 + padding;  // 頭像寬度 64
-        textY = boxY + padding + 30;
-        nameX = textX;
-        nameY = boxY + padding;
+    //IScene* scene;
+    //if (PlayScene::inBattle) scene = dynamic_cast<BattleScene*>(Engine::GameEngine::GetInstance().GetScene("play"));
+    //PlayScene* scene = dynamic_cast<PlayScene*>(Engine::GameEngine::GetInstance().GetScene("play"));
+    //if (scene) {
+    Engine::Point clientSize;
+    Engine::Point camera;
+    if (!PlayScene::inPlay) {
+        clientSize = BattleScene::GetClientSize();
+        camera = BattleScene::getCamera();
     }
+    else {
+        clientSize = PlayScene::GetClientSize(); // 384x192
+        camera = PlayScene::getCamera();
+        //printf("WWWWWWWWWWW\n");
+    }
+    boxX = camera.x + clientSize.x / 2 - boxWidth / 2 - 300; // 192 - 150 = 42
+    boxY = camera.y + clientSize.y / 2 + 30;           // 96 + 30 = 126
+    avatarX = boxX + padding;
+    avatarY = boxY + padding;
+    textX = boxX + padding + 128 + padding;  // 頭像寬度 64
+    textY = boxY + padding + 30;
+    nameX = textX;
+    nameY = boxY + padding;
+    //}
 }
 
 void NPCDialog::Update(float deltaTime) {

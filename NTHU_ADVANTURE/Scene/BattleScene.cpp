@@ -67,7 +67,7 @@ void BattleScene::Initialize() {
     // // 圖塊寬, 圖塊高
     // auto testAvatar = Engine::Resources::GetInstance().GetBitmap("NPC/test/avatar/test_avatar.png");
     // NPCGroup->AddNewObject(test = new NPC("NPC",testAvatar, "NPC/test/role/test_sheet.png",
-    //                                         BlockSize * 30, BlockSize * 10,
+    //                                         BlockSize * 2, BlockSize * 2,
     //                                         2, 3,  // 上 (第0列第2行)
     //                                         2, 0,  // 下
     //                                         2, 1,  // 左
@@ -153,7 +153,7 @@ void BattleScene::Draw() const {
 
     TileMapGroup->Draw();
     PlayerGroup->Draw();
-    // NPCGroup->Draw();
+    NPCGroup->Draw();
 
     al_identity_transform(&transform);
     al_use_transform(&transform);
@@ -181,6 +181,11 @@ void BattleScene::OnKeyDown(int keyCode) {
     // 按Enter鍵推進對話
     if (keyCode == ALLEGRO_KEY_ENTER && dialog.IsDialogActive()) {
         dialog.AdvanceDialog();
+    }
+
+    if(keyCode == ALLEGRO_KEY_P){
+        PlayScene::inPlay = true;
+        Engine::GameEngine::GetInstance().ChangeScene("play");
     }
     
     // // 按T鍵測試開啟對話 (可選)
