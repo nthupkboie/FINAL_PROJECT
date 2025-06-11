@@ -21,6 +21,8 @@
 #include "PlayScene.hpp"
 #include "Player/Player.hpp"
 #include "NPC/NPC.hpp"
+#include <allegro5/allegro_primitives.h>
+
 
 const int PlayScene::MapWidth = 60, PlayScene::MapHeight = 32;
 const int PlayScene::BlockSize = 64;
@@ -156,6 +158,9 @@ void PlayScene::Draw() const {
 
     al_identity_transform(&transform);
     al_use_transform(&transform);
+
+    DrawMiniMap();
+
 
     if (dialog.IsDialogActive()) {
         dialog.Draw();
@@ -341,3 +346,45 @@ Engine::Point PlayScene::getCamera(){
     return Engine::Point(cameraOffset.x + 5 * BlockSize, cameraOffset.y + 2.5 * BlockSize);
 }
 
+void PlayScene::DrawMiniMap() const {
+    const int minimapX = MapWidth*BlockSize*(0.4) - 10;  // 右上角 x
+    const int minimapY = 10;  // 右上角 y
+    const float scale = 0.1f; // 縮小比例
+
+    for (int y = 0; y < MapHeight; ++y) {
+        for (int x = 0; x < MapWidth; ++x) {
+            int tile = mapData[y * MapWidth + x];
+            ALLEGRO_COLOR color;
+            switch (tile) {
+                case TILE_GRASS: color = al_map_rgb(34, 139, 34); break; // 綠色
+                case TILE_ROAD:  color = al_map_rgb(128, 128, 128); break; // 灰色
+                case TILE_TREE:  color = al_map_rgb(0, 100, 0); break; // 深綠
+                case TILE_STAIRS:color = al_map_rgb(255, 255, 255); break; // 白
+                default:         color = al_map_rgb(0, 0, 0); break;
+            }
+            al_draw_filled_rectangle(
+                minimapX + x * BlockSize * scale,
+                minimapY + y * BlockSize * scale,
+                minimapX + (x + 1) * BlockSize * scale,
+                minimapY + (y + 1) * BlockSize * scale,
+                color
+            );
+        }
+    }
+
+    // 畫出玩家位置
+    for (auto obj : PlayerGroup->GetObjects()) {
+        if (auto* player = dynamic_cast<Player*>(obj)) {
+            float px = minimapX + player->Position.x * scale;
+            float py = minimapY + player->Position.y * scale;
+            al_draw_filled_circle(px, py, 3, al_map_rgb(255, 0, 0)); // 紅色小圓點
+        }
+    }
+
+    // 畫出視窗範圍框
+    float cx = minimapX + cameraOffset.x * scale;
+    float cy = minimapY + cameraOffset.y * scale;
+    float w = window_x * BlockSize * scale;
+    float h = window_y * BlockSize * scale;
+    al_draw_rectangle(cx, cy, cx + w, cy + h, al_map_rgb(255, 255, 0), 1); // 黃框
+}

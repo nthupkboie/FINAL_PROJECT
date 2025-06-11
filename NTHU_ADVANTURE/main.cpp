@@ -15,6 +15,8 @@
 
 #include <allegro5/allegro.h>
 #include <allegro5/allegro_image.h>
+#include <allegro5/allegro_primitives.h>
+
 
 
 // No USE
@@ -27,7 +29,10 @@ int main(int argc, char **argv) {
 	Engine::LOG::SetConfig(true);
 	Engine::GameEngine& game = Engine::GameEngine::GetInstance();
 
-	al_init_image_addon();
+	al_init();                     // 初始化 Allegro
+	al_init_image_addon();        // 初始化圖片載入
+	al_init_primitives_addon();   // 初始化繪圖基本圖形
+
 
 
     // TODO HACKATHON-2 (2/3): Register Scenes here
