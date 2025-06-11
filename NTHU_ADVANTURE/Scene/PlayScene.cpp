@@ -46,6 +46,9 @@ void PlayScene::Initialize() {
     // 初始化遊戲狀態
     lives = 3;
     money = 0;
+
+    PlayScene::inPlay = true;
+    PlayScene::inSmallEat = false;
     
     // 添加渲染群組
     AddNewObject(TileMapGroup = new Group());      // 地圖圖層

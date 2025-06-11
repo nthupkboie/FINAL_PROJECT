@@ -1,4 +1,5 @@
-#pragma once
+#ifndef BATTLESCENE_HPP
+#define BATTLESCENE_HPP
 #include <allegro5/allegro_audio.h>
 #include <list>
 #include <memory>
@@ -87,3 +88,5 @@ public:
 
     //std::vector<BattleScene::TileType> mapData;
 };
+
+#endif   // BATTLESCENE_HPP
