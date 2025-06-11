@@ -49,6 +49,8 @@ public:
         return messages.size();
     }
 
+    static bool talking;
+
 private:
     // 對話狀態
     bool isActive;

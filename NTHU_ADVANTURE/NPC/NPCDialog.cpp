@@ -38,6 +38,8 @@ NPCDialog::~NPCDialog() {
     // 字體由Resources管理，不需要在這裡釋放
 }
 
+bool NPCDialog::talking = false;
+
 bool NPCDialog::Initialize() {
     // 使用 Resources 的 GetFont 方法，傳入字體名稱和大小
     font = Engine::Resources::GetInstance().GetFont("normal.ttf", 24).get();
@@ -79,6 +81,8 @@ void NPCDialog::StartDialog(const std::string& npcName,
         Engine::LOG(Engine::WARN) << "Attempted to start dialog with no messages";
         return;
     }
+
+    talking = true;
 
     this->npcName = npcName;
     this->npcAvatar = npcAvatar;
@@ -215,6 +219,7 @@ void NPCDialog::AdvanceDialog() {
         } else {
             // 沒有更多訊息了，結束對話
             EndDialog();
+            talking = false;
         }
     }
 }

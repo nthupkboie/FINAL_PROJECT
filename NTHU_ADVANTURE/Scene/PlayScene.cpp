@@ -193,8 +193,7 @@ void PlayScene::OnKeyDown(int keyCode) {
 
     if (keyCode == ALLEGRO_KEY_L) {
         Engine::GameEngine::GetInstance().ChangeScene("lose");
-    }
-    
+    }    
     if(keyCode == ALLEGRO_KEY_B){
         Engine::GameEngine::GetInstance().ChangeScene("battle");
     }

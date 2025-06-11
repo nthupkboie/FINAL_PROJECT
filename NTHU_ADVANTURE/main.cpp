@@ -7,6 +7,9 @@
 #include "Scene/PlayScene.hpp"
 #include "Scene/StartScene.h"
 #include "Scene/SettingsScene.hpp"
+#include "Scene/ScoreboardScene.hpp"
+#include "Scene/LogScene.hpp"
+#include "Scene/RegisterScene.hpp"
 #include "Scene/BattleScene.hpp"
 #include "Scene/SmallEatScene.hpp"
 
@@ -33,8 +36,9 @@ int main(int argc, char **argv) {
 	game.AddNewScene("start", new StartScene());
 	game.AddNewScene("battle", new BattleScene());
 	game.AddNewScene("smalleat", new SmallEatScene());
-
-	// game.AddNewScene("scoreboard-scene", new ScoreboardScene());
+	game.AddNewScene("scoreboard", new ScoreboardScene());
+	game.AddNewScene("login", new LogScene());
+	game.AddNewScene("register", new RegisterScene());
 	// game.AddNewScene("stage-select", new StageSelectScene());
 	 game.AddNewScene("lose", new LoseScene());
 	 game.AddNewScene("win", new WinScene());
