@@ -15,7 +15,7 @@ NPCDialog::NPCDialog()
       charDisplayDelay(0.05f),  // 每個字顯示的間隔時間(秒)
       isDisplayingFullMessage(false),
       font(nullptr),
-      boxWidth(1600.0f),    // 加寬對話框
+      boxWidth(1600.0f),   // 加寬對話框
       boxHeight(200.0f),   // 對話框高度
       boxX(240.0f),        // 水平位置 (居中：1280/2 - 800/2 = 240)
       boxY(500.0f),        // 垂直位置 (靠近底部) 500
