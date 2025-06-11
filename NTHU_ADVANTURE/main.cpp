@@ -33,8 +33,6 @@ int main(int argc, char **argv) {
 	al_init_image_addon();        // 初始化圖片載入
 	al_init_primitives_addon();   // 初始化繪圖基本圖形
 
-
-
     // TODO HACKATHON-2 (2/3): Register Scenes here
 	game.AddNewScene("play", new PlayScene());
 	game.AddNewScene("settings", new SettingsScene());

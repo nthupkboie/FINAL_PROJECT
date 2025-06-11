@@ -237,9 +237,10 @@ void PlayScene::ReadMap() {
         switch (c) {
             case 'G': // grass
             case 'W': // watersmall
-            case 'A': // avune
             case 'L': // lake
             case 'C': // wingcloud
+            case 'E': // smalleat
+            case 'D': // Talda
             case '-': mapData.push_back(TILE_GRASS); break;
             case 'R': mapData.push_back(TILE_ROAD); break;
             case 'T': mapData.push_back(TILE_TREE); break;
@@ -247,6 +248,8 @@ void PlayScene::ReadMap() {
             case 'N': mapData.push_back(NEW); break;
             case 'n': mapData.push_back(TILE_NEW); break;
             case '=': mapData.push_back(NOTHING); break;
+            case 'I': mapData.push_back(INFORMATIONELETRIC); break;
+            case 'A': mapData.push_back(TILE_AVANUE); break;
             case '\n':
             case '\r':
             default: break;
@@ -318,6 +321,16 @@ void PlayScene::ReadMap() {
                                         BlockSize)
                     );
                     break;
+                case TILE_AVANUE:
+                    imagePath = "mainworld/avanue.png";
+                    TileMapGroup->AddNewObject(
+                        new Engine::Image(imagePath, 
+                                        x * BlockSize, 
+                                        y * BlockSize, 
+                                        BlockSize, 
+                                        BlockSize)
+                    );
+                    break;
                 case NEW:
                     imagePath = "mainworld/grass1.png";
                     TileMapGroup->AddNewObject(
@@ -335,6 +348,16 @@ void PlayScene::ReadMap() {
                                         y * BlockSize, 
                                         BlockSize * 7, 
                                         BlockSize * 7)
+                    );
+                    break;
+                case INFORMATIONELETRIC:
+                    imagePath = "mainworld/informationeletric.png";
+                    TileMapGroup->AddNewObject(
+                        new Engine::Image(imagePath, 
+                                        x * BlockSize, 
+                                        y * BlockSize, 
+                                        BlockSize * 8, 
+                                        BlockSize * 8)
                     );
                     break;
                 case TILE_NEW:
@@ -372,6 +395,11 @@ void PlayScene::DrawMiniMap() const {
                 case TILE_ROAD:  color = al_map_rgb(128, 128, 128); break; // 灰色
                 case TILE_TREE:  color = al_map_rgb(0, 100, 0); break; // 深綠
                 case TILE_STAIRS:color = al_map_rgb(255, 255, 255); break; // 白
+                case TILE_AVANUE:color = al_map_rgb(50, 255, 255); break;
+                case NEW:
+                case NOTHING:
+                    color = al_map_rgb(255, 132, 132);
+                break;
                 default:         color = al_map_rgb(0, 0, 0); break;
             }
             al_draw_filled_rectangle(
