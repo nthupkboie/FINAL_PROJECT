@@ -223,6 +223,7 @@ void PlayScene::ReadMap() {
     std::ifstream fin(filename);
     while (fin >> c) {
         switch (c) {
+            case 'G':
             case '-': mapData.push_back(TILE_GRASS); break;
             case 'R': mapData.push_back(TILE_ROAD); break;
             case 'T': mapData.push_back(TILE_TREE); break;
