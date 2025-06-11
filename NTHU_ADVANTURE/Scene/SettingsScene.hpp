@@ -16,6 +16,13 @@ public:
     void BackOnClick(int stage);
     void BGMSlideOnValueChanged(float value);
     void SFXSlideOnValueChanged(float value);
+
+    void RefreshLabels();
+    Engine::Label* labelBack;
+    Engine::Label* labelBGM;
+    Engine::Label* labelSFX;
+    Engine::Label* labelLanguage;
+
 };
 
 #endif   // SettingsScene_HPP
