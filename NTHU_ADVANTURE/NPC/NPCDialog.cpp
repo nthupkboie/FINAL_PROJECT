@@ -104,8 +104,8 @@ void NPCDialog::StartDialog(const std::string& npcName,
     Engine::Point clientSize;
     Engine::Point camera;
     if (!PlayScene::inPlay) {
-        clientSize = BattleScene::GetClientSize();
-        camera = BattleScene::getCamera();
+        clientSize = SmallEatScene::GetClientSize();
+        camera = SmallEatScene::getCamera();
     }
     else {
         clientSize = PlayScene::GetClientSize(); // 384x192

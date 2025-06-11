@@ -39,6 +39,8 @@ protected:
     int lives;
     int money;
     int SpeedMult;
+    float timer;        // 計時器
+    float timeLimit;    // 時間限制（秒）
 
 public:
     static const std::vector<Engine::Point> directions;
@@ -69,6 +71,7 @@ public:
     void OnMouseUp(int button, int mx, int my) override;
     void OnKeyDown(int keyCode) override;
     void ReadMap();
+    void GenerateMaze();    // 新增：生成迷宮
     static Engine::Point getCamera();
 
     static const int window_x, window_y;
