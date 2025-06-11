@@ -19,6 +19,7 @@
 
 // new add
 #include "SmallEatScene.hpp"
+#include "PlayScene.hpp"
 #include "Player/Player.hpp"
 #include "NPC/NPC.hpp"
 
@@ -202,6 +203,7 @@ void SmallEatScene::OnKeyDown(int keyCode) {
     // }
 
     if(keyCode == ALLEGRO_KEY_P){
+        PlayScene::inPlay = true;
         Engine::GameEngine::GetInstance().ChangeScene("play");
     }
 }

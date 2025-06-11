@@ -97,7 +97,8 @@ void LogScene::OnKeyDown(int keyCode){
             if (warning2) warning2->Text = "";
         }
         else if (keyCode == ALLEGRO_KEY_BACKSPACE){
-            pswd = pswd.substr(0, pswd.length() - 1);
+            if (pswd == "") ID_entered = 0;
+            else pswd = pswd.substr(0, pswd.length() - 1);
             if (warning2) warning2->Text = "";
         }
         else if (keyCode == ALLEGRO_KEY_ENTER){
