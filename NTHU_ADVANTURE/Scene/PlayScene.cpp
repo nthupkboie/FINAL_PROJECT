@@ -187,15 +187,13 @@ void PlayScene::OnKeyDown(int keyCode) {
         dialog.AdvanceDialog();
     }
 
-    if (keyCode == ALLEGRO_KEY_I) {
+    if (keyCode == ALLEGRO_KEY_V) {
         Engine::GameEngine::GetInstance().ChangeScene("win");
     }
 
     if (keyCode == ALLEGRO_KEY_L) {
         Engine::GameEngine::GetInstance().ChangeScene("lose");
-    }
-
-    
+    }    
     if(keyCode == ALLEGRO_KEY_B){
         Engine::GameEngine::GetInstance().ChangeScene("battle");
     }
@@ -342,3 +340,4 @@ void PlayScene::ReadMap() {
 Engine::Point PlayScene::getCamera(){
     return Engine::Point(cameraOffset.x + 5 * BlockSize, cameraOffset.y + 2.5 * BlockSize);
 }
+

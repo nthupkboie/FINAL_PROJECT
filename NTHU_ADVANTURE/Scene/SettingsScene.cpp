@@ -53,6 +53,7 @@ void SettingsScene::BackOnClick(int stage) {
     Engine::GameEngine::GetInstance().ChangeScene("start");
 }
 
+
 //OnValueChangedCallBack實際上會變這個
 void SettingsScene::BGMSlideOnValueChanged(float value) {
     AudioHelper::ChangeSampleVolume(bgmInstance, value);

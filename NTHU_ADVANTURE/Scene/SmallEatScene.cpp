@@ -221,6 +221,8 @@ void SmallEatScene::ReadMap() {
             case 'R': mapData.push_back(TILE_ROAD); break;
             case 'T': mapData.push_back(TILE_TREE); break;
             case 'S': mapData.push_back(TILE_STAIRS); break;
+            case 'W': mapData.push_back(TILE_WALL); break;
+            case 'F': mapData.push_back(TILE_FLOOR); break;
             case 'N': mapData.push_back(NEW); break;
             case 'n': mapData.push_back(TILE_NEW); break;
             case '=': mapData.push_back(NOTHING); break;
@@ -287,6 +289,26 @@ void SmallEatScene::ReadMap() {
                     break;
                 case TILE_STAIRS:
                     imagePath = "mainworld/stairs.png";
+                    TileMapGroup->AddNewObject(
+                        new Engine::Image(imagePath, 
+                                        x * BlockSize, 
+                                        y * BlockSize, 
+                                        BlockSize, 
+                                        BlockSize)
+                    );
+                    break;
+                case TILE_WALL:
+                    imagePath = "smalleat/wall.png";
+                    TileMapGroup->AddNewObject(
+                        new Engine::Image(imagePath, 
+                                        x * BlockSize, 
+                                        y * BlockSize, 
+                                        BlockSize, 
+                                        BlockSize)
+                    );
+                    break;
+                case TILE_FLOOR:
+                    imagePath = "smalleat/floor.png";
                     TileMapGroup->AddNewObject(
                         new Engine::Image(imagePath, 
                                         x * BlockSize, 
