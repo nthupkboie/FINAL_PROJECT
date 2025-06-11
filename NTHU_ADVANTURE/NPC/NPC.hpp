@@ -45,6 +45,8 @@ public:
     const std::string& GetName() const { return npcName; }
     void SetName(const std::string& name) { npcName = name; }
     void SetAvatar(std::shared_ptr<ALLEGRO_BITMAP> avatar) { npcAvatar = avatar; }
+
+    bool enterWasDown = false;
 private:
     std::string npcName;
     std::shared_ptr<ALLEGRO_BITMAP> npcAvatar;

@@ -76,7 +76,6 @@ void NPC::Update(float deltaTime, const Player* player) {
     bool isAdjacent = (std::abs(distX) <= 64.0f && std::abs(distY) <= 64.0f);
 
     // 檢查Enter鍵是否剛被按下
-    static bool enterWasDown = false;
     bool enterIsDown = al_key_down(&kbState, ALLEGRO_KEY_ENTER);
     bool enterPressed = enterIsDown && !enterWasDown;
     enterWasDown = enterIsDown;

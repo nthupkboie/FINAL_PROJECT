@@ -67,12 +67,30 @@ void SmallEatScene::Initialize() {
     // 圖塊寬, 圖塊高
     auto testAvatar = Engine::Resources::GetInstance().GetBitmap("NPC/test/avatar/test_avatar.png");
     NPCGroup->AddNewObject(test = new NPC("NPC",testAvatar, "NPC/test/role/test_sheet.png",
-                                            BlockSize * 2, BlockSize * 2,
+                                            BlockSize * 5, BlockSize * 5,
                                             2, 3,  // 上 (第0列第2行)
                                             2, 0,  // 下
                                             2, 1,  // 左
                                             2, 2,  // 右
                                             64, 64)); // 圖塊大小
+
+    NPC* Yang;
+    auto YangAvatar = Engine::Resources::GetInstance().GetBitmap("NPC/test/avatar/test_avatar.png");
+    // NPCGroup->AddNewObject(Yang = new NPC("Yang",YangAvatar, "NPC/Yang/role/Male1.png",
+    //                                         BlockSize * 8, BlockSize * 8,
+    //                                         0, 2,  // 上 (第0列第2行)
+    //                                         0, 1,  // 下
+    //                                         0, 0,  // 左
+    //                                         0, 0,  // 右
+    //                                         64, 64)); // 圖塊大小
+    NPCGroup->AddNewObject(Yang = new NPC("NPC",testAvatar, "NPC/test/role/test_sheet.png",
+                                            BlockSize * 8, BlockSize * 8,
+                                            2, 3,  // 上 (第0列第2行)
+                                            2, 0,  // 下
+                                            2, 1,  // 左
+                                            2, 2,  // 右
+                                            64, 64)); // 圖塊大小
+
 
     // 初始化對話框
     dialog.Initialize();
@@ -84,6 +102,11 @@ void SmallEatScene::Initialize() {
         "晚上請小心行事。",
         "祝你好運，冒險者！",
         "Shawty had them Apple Bottom jeans, jeans"
+    });
+
+    Yang->SetMessages({
+        "我是楊舜仁！",
+        "我不會當人",
     });
 
     // 預載資源
@@ -115,16 +138,6 @@ void SmallEatScene::Update(float deltaTime) {
     cameraOffset.y = player->Position.y - window_y / 2 * BlockSize; // 置中：player.y - 96
     cameraOffset.x = std::max(0.0f, std::min(cameraOffset.x, static_cast<float>(MapWidth * BlockSize - window_x * BlockSize)));
     cameraOffset.y = std::max(0.0f, std::min(cameraOffset.y, static_cast<float>(MapHeight * BlockSize - window_y * BlockSize)));
-
-    // // 更新攝影機
-    // float targetX = player->Position.x - 3 * BlockSize; // 視角中心
-    // float targetY = player->Position.y - 1.5 * BlockSize;
-    // // 邊界限制
-    // targetX = std::max(0.0f, std::min(targetX, static_cast<float>(MapWidth * BlockSize - 6 * BlockSize)));
-    // targetY = std::max(0.0f, std::min(targetY, static_cast<float>(MapHeight * BlockSize - 3 * BlockSize)));
-    // // 平滑插值（與玩家移動同步，0.3秒）
-    // cameraOffset.x += (targetX - cameraOffset.x) * (deltaTime / 0.3f);
-    // cameraOffset.y += (targetY - cameraOffset.y) * (deltaTime / 0.3f);
     
     // 更新所有NPC
     for (auto& obj : NPCGroup->GetObjects()) {
