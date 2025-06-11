@@ -49,6 +49,8 @@ public:
     static const std::vector<int> code;
     Group *TileMapGroup;
 
+    
+
 
     // new add
     Group *PlayerGroup;
@@ -57,6 +59,7 @@ public:
     std::vector<std::vector<TileType>> mapState;
     std::vector<std::vector<int>> mapDistance;
     std::list<int> keyStrokes;
+    std::vector<int> mapData; // 修改為 int 以匹配 TileType
 
     ALLEGRO_KEYBOARD_STATE keyboardState; // new add
 
@@ -76,5 +79,5 @@ public:
 
     static const int window_x, window_y;
 
-    std::vector<BattleScene::TileType> mapData;
+    //std::vector<BattleScene::TileType> mapData;
 };
