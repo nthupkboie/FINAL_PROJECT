@@ -28,7 +28,7 @@ void SettingsScene::Initialize() {
     AddNewObject(new Engine::Image("scene/setting.png", 0, 0, w, h));
 
     Engine::ImageButton *btn;
-    btn = new Engine::ImageButton("stage-select/dirt.png", "stage-select/floor.png", halfW - 200, halfH * 3 / 2 - 50, 400, 100);
+    btn = new Engine::ImageButton("stage-select/cloud.png", "stage-select/floor.png", halfW - 150, halfH * 3 / 2 - 130, 300, 200);
     btn->SetOnClickCallback(std::bind(&SettingsScene::BackOnClick, this, 1));
     AddNewControlObject(btn);
     //AddNewObject(new Engine::Label("Back", "title.ttf", 48, halfW, halfH * 3 / 2, 0, 0, 0, 255, 0.5, 0.5));
@@ -61,9 +61,9 @@ void SettingsScene::Initialize() {
 
     // 語言切換按鈕
     auto langBtn = new Engine::ImageButton(
-        "stage-select/dirt.png",    // 改成已存在的圖片
-        "stage-select/floor.png",
-        halfW + 200, halfH * 3 / 2 - 50, 150, 100
+        "stage-select/cloud.png",    // 改成已存在的圖片
+        "stage-select/cloud.png",
+        halfW - 150, halfH / 2 - 110, 300, 200
     );
 
 
@@ -76,7 +76,7 @@ void SettingsScene::Initialize() {
     });
     AddNewControlObject(langBtn);
 
-    labelLanguage = new Engine::Label("", "Retro.ttf", 32, halfW + 275, halfH * 3 / 2 + 20, 255, 255, 255, 255, 0.5, 0.5);
+    labelLanguage = new Engine::Label("", "Retro.ttf", 32, halfW, halfH / 2 + 20, 0, 0, 0, 255, 0.5, 0.5);
     AddNewObject(labelLanguage);
 
     // 載入預設語言
