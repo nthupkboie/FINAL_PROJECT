@@ -28,6 +28,8 @@ const int SmallEatScene::BlockSize = 64;
 
 const int SmallEatScene::window_x = 30, SmallEatScene::window_y = 16;
 
+std::vector<SmallEatScene::TileType> SmallEatScene::mapData;
+
 // Engine::Point SmallEatScene::GetClientSize() {
 //     return Engine::Point(MapWidth * BlockSize, MapHeight * BlockSize);
 // }
@@ -219,6 +221,7 @@ void SmallEatScene::OnKeyDown(int keyCode) {
 
     if(keyCode == ALLEGRO_KEY_P){
         PlayScene::inPlay = true;
+        PlayScene::inSmallEat = false;
         Engine::GameEngine::GetInstance().ChangeScene("play");
     }
 }
@@ -384,4 +387,19 @@ void SmallEatScene::ReadMap() {
 
 Engine::Point SmallEatScene::getCamera(){
     return Engine::Point(cameraOffset.x + 5 * BlockSize, cameraOffset.y + 2.5 * BlockSize);
+}
+
+bool SmallEatScene::collision(int x, int y){
+    switch(mapData[y/BlockSize * MapWidth + x / BlockSize]){
+        case TILE_FLOOR:
+        case TILE_GRASS:
+        case TILE_ROAD:
+        case TILE_STAIRS:
+            return true;
+        case TILE_WALL:
+        case NEW:
+        case NOTHING:
+        default:
+            return false;
+    }
 }

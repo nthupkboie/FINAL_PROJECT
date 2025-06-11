@@ -14,6 +14,8 @@
 #include "Engine/IScene.hpp"
 #include "Engine/LOG.hpp"
 #include "Scene/PlayScene.hpp"
+#include "Scene/SmallEatScene.hpp"
+#include "Scene/BattleScene.hpp"
 
 #include "Engine/Resources.hpp"
 #include "NPC/NPCDialog.hpp"
@@ -248,5 +250,18 @@ void Player::Draw() const {
 
 bool Player::canWalk(int x, int y){
     if (x > PlayScene::BlockSize * PlayScene::MapWidth || x < 0 || y < 0 || y > PlayScene::BlockSize * PlayScene::MapHeight) return false;
+    if (PlayScene::inPlay){
+        
+        if (!PlayScene::collision(x, y)) {
+            //printf("NOOOOOOOOO\n");
+            return false;
+        }
+    }
+    else if (PlayScene::inSmallEat){
+        if (!SmallEatScene::collision(x, y)){
+            return false;
+        }
+    }
+    
     return true;
 }

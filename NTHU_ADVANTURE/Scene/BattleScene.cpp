@@ -30,6 +30,10 @@ const int BattleScene::BlockSize = 64;
 
 const int BattleScene::window_x = 30, BattleScene::window_y = 16;
 
+std::vector<std::vector<BattleScene::TileType>> BattleScene::mapState;
+
+//bool canWalk = true;
+
 // Engine::Point PlayScene::GetClientSize() {
 //     return Engine::Point(MapWidth * BlockSize, MapHeight * BlockSize);
 // }
@@ -197,6 +201,21 @@ void BattleScene::Draw() const {
 }
 
 void BattleScene::OnMouseDown(int button, int mx, int my) {
+    if (button & 1) {
+        //int worldX = mx + cameraOffset.x;
+        //int worldY = my + cameraOffset.y;
+        int gridX = mx / BlockSize;
+        int gridY = my / BlockSize;
+
+        if (gridX >= 0 && gridX < MapWidth && gridY >= 0 && gridY < MapHeight &&
+            !(gridX == MapWidth - 1 && gridY == MapHeight - 1)) {
+            Engine::LOG(Engine::INFO) << "Clicked grid: (" << gridX << ", " << gridY << ")";
+            mapState[gridY][gridX] = TILE_ROAD;
+            mapData[gridY * MapWidth + gridX] = static_cast<int>(TILE_ROAD);
+            UpdateTileMap(gridX, gridY);
+        }
+    }
+    
     IScene::OnMouseDown(button, mx, my);
 }
 
@@ -361,6 +380,55 @@ void BattleScene::ReadMap() {
         }
     }
 }
+
+// 新增函數：更新指定格子的圖塊
+void BattleScene::UpdateTileMap(int gridX, int gridY) {
+    // 使用迭代器遍歷 TileMapGroup 的物件
+    auto objects = TileMapGroup->GetObjects();
+    std::vector<std::list<IObject*>::iterator> iteratorsToRemove;
+    
+    for (auto it = objects.begin(); it != objects.end(); ++it) {
+        Engine::Image* img = dynamic_cast<Engine::Image*>(*it);
+        if (img && static_cast<int>(img->Position.x / BlockSize) == gridX &&
+                static_cast<int>(img->Position.y / BlockSize) == gridY) {
+            iteratorsToRemove.push_back(it);
+        }
+    }
+
+    // 移除舊圖塊
+    // for (auto it : iteratorsToRemove) {
+    //     TileMapGroup->RemoveObject(it);
+    // }
+
+    // 根據 mapState 添加新圖塊
+    TileType tileType = mapState[gridY][gridX];
+    std::string imagePath = "mainworld/grass.png";
+    TileMapGroup->AddNewObject(
+        new Engine::Image(imagePath, gridX * BlockSize, gridY * BlockSize, BlockSize, BlockSize)
+    );
+
+    switch (tileType) {
+        case TILE_ROAD:
+            break;
+        case TILE_TREE:
+            imagePath = "mainworld/tree.png";
+            TileMapGroup->AddNewObject(
+                new Engine::Image(imagePath, gridX * BlockSize, gridY * BlockSize, BlockSize, BlockSize)
+            );
+            break;
+        case TILE_STAIRS:
+            imagePath = "mainworld/stairs.png";
+            TileMapGroup->AddNewObject(
+                new Engine::Image(imagePath, gridX * BlockSize, gridY * BlockSize, BlockSize, BlockSize)
+            );
+            break;
+        default:
+            break;
+    }
+
+    Engine::LOG(Engine::INFO) << "Updated tile at (" << gridX << ", " << gridY << ") to type " << tileType;
+}
+
 void BattleScene::GenerateMaze() {
     // 初始化隨機數生成器
     std::random_device rd;
@@ -534,4 +602,9 @@ void BattleScene::GenerateMaze() {
 
 Engine::Point BattleScene::getCamera(){
     return Engine::Point(cameraOffset.x + 5 * BlockSize, cameraOffset.y + 2.5 * BlockSize);
+}
+
+bool BattleScene::collision(int x, int y){
+    if (mapState[y/BlockSize][x/BlockSize] == TILE_TREE) return false;
+    else return true;
 }

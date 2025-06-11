@@ -21,16 +21,7 @@ namespace Engine {
 
 class SmallEatScene final : public Engine::IScene {
 private:
-    enum TileType {
-        TILE_ROAD,
-        TILE_GRASS,
-        TILE_TREE,
-        TILE_STAIRS,
-        TILE_WALL,
-        TILE_FLOOR,
-        NEW, TILE_NEW,
-        NOTHING,
-    };
+    
     
     ALLEGRO_SAMPLE_ID bgmId;
     std::shared_ptr<ALLEGRO_SAMPLE_INSTANCE> deathBGMInstance;
@@ -45,6 +36,17 @@ protected:
     int SpeedMult;
 
 public:
+    enum TileType {
+        TILE_ROAD,
+        TILE_GRASS,
+        TILE_TREE,
+        TILE_STAIRS,
+        TILE_WALL,
+        TILE_FLOOR,
+        NEW, TILE_NEW,
+        NOTHING,
+    };
+
     static const std::vector<Engine::Point> directions;
     static const int MapWidth, MapHeight;
     static const int BlockSize;
@@ -77,7 +79,9 @@ public:
 
     static const int window_x, window_y;
 
-    std::vector<SmallEatScene::TileType> mapData;
+    static std::vector<SmallEatScene::TileType> mapData;
+
+    static bool collision(int x, int y);
 };
 
 #endif   // SmallEatScene_HPP

@@ -21,6 +21,19 @@ namespace Engine {
 
 class PlayScene final : public Engine::IScene {
 private:
+    ALLEGRO_SAMPLE_ID bgmId;
+    std::shared_ptr<ALLEGRO_SAMPLE_INSTANCE> deathBGMInstance;
+
+    NPCDialog dialog;  // 添加對話框成員
+
+    // 攝影機偏移量
+    static Engine::Point cameraOffset;
+protected:
+    int lives;
+    int money;
+    int SpeedMult;
+
+public:
     enum TileType {
         TILE_ROAD,
         TILE_GRASS,
@@ -35,20 +48,7 @@ private:
         TALDA,
         LAKE,
     };
-    
-    ALLEGRO_SAMPLE_ID bgmId;
-    std::shared_ptr<ALLEGRO_SAMPLE_INSTANCE> deathBGMInstance;
 
-    NPCDialog dialog;  // 添加對話框成員
-
-    // 攝影機偏移量
-    static Engine::Point cameraOffset;
-protected:
-    int lives;
-    int money;
-    int SpeedMult;
-
-public:
     static const std::vector<Engine::Point> directions;
     static const int MapWidth, MapHeight;
     static const int BlockSize;
@@ -81,8 +81,11 @@ public:
 
     static const int window_x, window_y;
     static bool inPlay;
+    static bool inSmallEat;
 
-    std::vector<PlayScene::TileType> mapData;
+    static std::vector<PlayScene::TileType> mapData;
+
+    static bool collision(int x, int y);
 };
 
 #endif   // PLAYSCENE_HPP
