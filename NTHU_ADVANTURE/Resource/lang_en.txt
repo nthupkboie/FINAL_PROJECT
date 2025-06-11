@@ -1,4 +1,12 @@
-back=Back
-bgm=BGM：
-sfx=SFX：
-language=Language
+title = NTHU ADVENTURE
+register = Register
+test = Log In
+settings = Settings
+scoreboard = Scoreboard
+play = Play
+back = Back
+bgm = BGM :    
+sfx = SFX :    
+language = Language
+start = Start
+exit = Exit

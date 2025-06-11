@@ -3,6 +3,7 @@
 // You can register your scenes here, and start the game.
 #include "Engine/GameEngine.hpp"
 #include "Engine/LOG.hpp"
+#include "Engine/LanguageManager.hpp"
 
 #include "Scene/PlayScene.hpp"
 #include "Scene/StartScene.h"
@@ -26,6 +27,9 @@
 #include "Scene/WinScene.hpp"
 
 int main(int argc, char **argv) {
+
+	LanguageManager::GetInstance().LoadLanguage("en");
+
 	Engine::LOG::SetConfig(true);
 	Engine::GameEngine& game = Engine::GameEngine::GetInstance();
 

@@ -8,7 +8,9 @@ public:
 
     void LoadLanguage(const std::string& langCode);
     std::string GetText(const std::string& key) const;
+    const std::string& GetCurrentLanguage() const;
 
 private:
     std::map<std::string, std::string> dictionary;
+    std::string currentLanguage;
 };

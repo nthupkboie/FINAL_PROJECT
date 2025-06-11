@@ -50,6 +50,8 @@ namespace Engine {
         /// </summary>
         /// <returns>Height of the text.</returns>
         int GetTextHeight() const;
+        void SetText(const std::string& text);
+
     };
 }
 
