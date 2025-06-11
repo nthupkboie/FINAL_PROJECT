@@ -21,8 +21,6 @@ namespace Engine {
 
 class PlayScene final : public Engine::IScene {
 private:
-    
-    
     ALLEGRO_SAMPLE_ID bgmId;
     std::shared_ptr<ALLEGRO_SAMPLE_INSTANCE> deathBGMInstance;
 
@@ -45,6 +43,10 @@ public:
         NEW, TILE_NEW,
         NOTHING,
         INFORMATIONELETRIC,
+        WINDCLOUD,
+        WATERWOOD,
+        TALDA,
+        LAKE,
     };
 
     static const std::vector<Engine::Point> directions;
@@ -52,7 +54,6 @@ public:
     static const int BlockSize;
     static const std::vector<int> code;
     Group *TileMapGroup;
-
 
     // new add
     Group *PlayerGroup;

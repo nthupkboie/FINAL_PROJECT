@@ -41,8 +41,6 @@ Engine::Point PlayScene::GetClientSize() {
     return Engine::Point(window_x * BlockSize, window_y * BlockSize); // 視角大小
 }
 
-
-
 Engine::Point PlayScene::cameraOffset = Engine::Point(0, 0);
 void PlayScene::Initialize() {
     // 初始化遊戲狀態
@@ -201,7 +199,6 @@ void PlayScene::OnKeyDown(int keyCode) {
     if (keyCode == ALLEGRO_KEY_V) {
         Engine::GameEngine::GetInstance().ChangeScene("win");
     }
-
     if (keyCode == ALLEGRO_KEY_L) {
         Engine::GameEngine::GetInstance().ChangeScene("lose");
     }    
@@ -266,6 +263,20 @@ void PlayScene::ReadMap() {
 
     Engine::LOG(Engine::INFO) << "mapData.size() " << mapData.size();
     Engine::LOG(Engine::INFO) << "MapWidth * MapHeight " << MapWidth * MapHeight;
+
+    // init init
+    for(int y = 0; y < MapHeight; y++){
+        for(int x = 0; x < MapWidth; x++){
+                    std::string imagePath = "mainworld/road.png";
+                    TileMapGroup->AddNewObject(
+                        new Engine::Image(imagePath, 
+                                        x * BlockSize, 
+                                        y * BlockSize, 
+                                        BlockSize, 
+                                        BlockSize)
+                    );
+        }
+    }
     
     // 繪製地圖
     for (int y = 0; y < MapHeight; y++) {
@@ -303,7 +314,6 @@ void PlayScene::ReadMap() {
                                         BlockSize, 
                                         BlockSize)
                     );
-
                     imagePath = "mainworld/tree.png";
                     TileMapGroup->AddNewObject(
                         new Engine::Image(imagePath, 
@@ -334,15 +344,14 @@ void PlayScene::ReadMap() {
                     );
                     break;
                 case NEW:
-                    imagePath = "mainworld/grass1.png";
-                    TileMapGroup->AddNewObject(
-                        new Engine::Image(imagePath, 
-                                        x * BlockSize, 
-                                        y * BlockSize, 
-                                        BlockSize * 7, 
-                                        BlockSize * 7)
-                    );
-
+                    // imagePath = "mainworld/grass1.png";
+                    // TileMapGroup->AddNewObject(
+                    //     new Engine::Image(imagePath, 
+                    //                     x * BlockSize, 
+                    //                     y * BlockSize, 
+                    //                     BlockSize * 7, 
+                    //                     BlockSize * 7)
+                    // );
                     imagePath = "mainworld/NEW.png";
                     TileMapGroup->AddNewObject(
                         new Engine::Image(imagePath, 
