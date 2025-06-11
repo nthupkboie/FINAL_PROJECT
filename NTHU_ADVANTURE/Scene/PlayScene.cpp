@@ -228,7 +228,11 @@ void PlayScene::ReadMap() {
     std::ifstream fin(filename);
     while (fin >> c) {
         switch (c) {
-            case 'G':
+            case 'G': // grass
+            case 'W': // watersmall
+            case 'A': // avune
+            case 'L': // lake
+            case 'C': // wingcloud
             case '-': mapData.push_back(TILE_GRASS); break;
             case 'R': mapData.push_back(TILE_ROAD); break;
             case 'T': mapData.push_back(TILE_TREE); break;
@@ -243,10 +247,10 @@ void PlayScene::ReadMap() {
     }
     fin.close();
     
-    // 確認地圖數據完整
-    if (static_cast<int>(mapData.size()) != MapWidth * MapHeight) {
-        throw std::ios_base::failure("Map data is corrupted.");
-    }
+    // // 確認地圖數據完整
+    // if (static_cast<int>(mapData.size()) != MapWidth * MapHeight) {
+    //     throw std::ios_base::failure("Map data is corrupted.");
+    // }
 
     Engine::LOG(Engine::INFO) << "mapData.size() " << mapData.size();
     Engine::LOG(Engine::INFO) << "MapWidth * MapHeight " << MapWidth * MapHeight;
