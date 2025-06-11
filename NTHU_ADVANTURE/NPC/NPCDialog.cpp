@@ -2,6 +2,8 @@
 #include "Engine/Resources.hpp"
 #include "Engine/LOG.hpp"
 #include "Scene/PlayScene.hpp"
+#include "Scene/BattleScene.hpp"
+#include "Scene/SmallEatScene.hpp"
 #include "Player/Player.hpp"
 #include "Engine/GameEngine.hpp"
 
@@ -15,7 +17,7 @@ NPCDialog::NPCDialog()
       charDisplayDelay(0.05f),  // 每個字顯示的間隔時間(秒)
       isDisplayingFullMessage(false),
       font(nullptr),
-      boxWidth(1600.0f),    // 加寬對話框
+      boxWidth(1600.0f),   // 加寬對話框
       boxHeight(200.0f),   // 對話框高度
       boxX(240.0f),        // 水平位置 (居中：1280/2 - 800/2 = 240)
       boxY(500.0f),        // 垂直位置 (靠近底部) 500
@@ -95,18 +97,30 @@ void NPCDialog::StartDialog(const std::string& npcName,
     isActive = true;
 
     // 設置對話框位置：視角中央下方
-    PlayScene* scene = dynamic_cast<PlayScene*>(Engine::GameEngine::GetInstance().GetScene("play"));
-    if (scene) {
-        Engine::Point clientSize = scene->GetClientSize(); // 384x192
-        boxX = PlayScene::getCamera().x + clientSize.x / 2 - boxWidth / 2 - 300; // 192 - 150 = 42
-        boxY = PlayScene::getCamera().y + clientSize.y / 2 + 30;           // 96 + 30 = 126
-        avatarX = boxX + padding;
-        avatarY = boxY + padding;
-        textX = boxX + padding + 128 + padding;  // 頭像寬度 64
-        textY = boxY + padding + 30;
-        nameX = textX;
-        nameY = boxY + padding;
+    //IScene* scene;
+    //if (PlayScene::inBattle) scene = dynamic_cast<BattleScene*>(Engine::GameEngine::GetInstance().GetScene("play"));
+    //PlayScene* scene = dynamic_cast<PlayScene*>(Engine::GameEngine::GetInstance().GetScene("play"));
+    //if (scene) {
+    Engine::Point clientSize;
+    Engine::Point camera;
+    if (!PlayScene::inPlay) {
+        clientSize = SmallEatScene::GetClientSize();
+        camera = SmallEatScene::getCamera();
     }
+    else {
+        clientSize = PlayScene::GetClientSize(); // 384x192
+        camera = PlayScene::getCamera();
+        //printf("WWWWWWWWWWW\n");
+    }
+    boxX = camera.x + clientSize.x / 2 - boxWidth / 2 - 300; // 192 - 150 = 42
+    boxY = camera.y + clientSize.y / 2 + 30;           // 96 + 30 = 126
+    avatarX = boxX + padding;
+    avatarY = boxY + padding;
+    textX = boxX + padding + 128 + padding;  // 頭像寬度 64
+    textY = boxY + padding + 30;
+    nameX = textX;
+    nameY = boxY + padding;
+    //}
 }
 
 void NPCDialog::Update(float deltaTime) {
@@ -158,47 +172,53 @@ void NPCDialog::Draw() const {
     
     // 繪製對話文字
     if (font && !currentDisplayText.empty()) {
-        // 使用多行文字繪製
+        // 計算可用寬度 (減去頭像和內邊距)
+        float availableWidth = boxWidth - (textX - boxX) - padding;
         float lineHeight = al_get_font_line_height(font);
         float currentY = textY;
-        std::string remainingText = currentDisplayText;
         
-        while (!remainingText.empty()) {
-            // 計算這一行可以容納多少文字
-            size_t spacePos = remainingText.find(' ');
-            size_t lineEnd = remainingText.length();
-            float textWidth = 0;
-            
-            // 簡單的文字換行處理
-            for (size_t i = 0; i < remainingText.length(); ++i) {
-                const char* testStr = remainingText.substr(0, i+1).c_str();
-                textWidth = al_get_text_width(font, testStr);
-                
-                if (textWidth > (boxWidth - textX - padding * 2)) {
-                    // 如果超過寬度，找前一個空格處斷行
-                    if (spacePos != std::string::npos && spacePos < i) {
-                        lineEnd = spacePos;
-                    } else {
-                        lineEnd = i;
-                    }
-                    break;
+        // 分割文本為單詞
+        std::vector<std::string> words;
+        std::string currentWord;
+        for (char c : currentDisplayText) {
+            if (c == ' ') {
+                if (!currentWord.empty()) {
+                    words.push_back(currentWord);
+                    currentWord.clear();
                 }
-                
-                if (remainingText[i] == ' ') {
-                    spacePos = i;
-                }
+                words.push_back(" "); // 空格作為單獨元素
+            } else {
+                currentWord += c;
             }
+        }
+        if (!currentWord.empty()) {
+            words.push_back(currentWord);
+        }
+        
+        // 構建行
+        std::string currentLine;
+        for (const auto& word : words) {
+            std::string testLine = currentLine + word;
+            float testWidth = al_get_text_width(font, testLine.c_str());
             
-            std::string line = remainingText.substr(0, lineEnd);
-            al_draw_text(font, textColor, textX, currentY, ALLEGRO_ALIGN_LEFT, line.c_str());
-            
-            if (lineEnd >= remainingText.length()) break;
-            remainingText = remainingText.substr(lineEnd + 1);
-            currentY += lineHeight;
+            if (testWidth > availableWidth) {
+                // 如果添加這個詞會超過寬度，先繪製當前行
+                if (!currentLine.empty()) {
+                    al_draw_text(font, textColor, textX, currentY, ALLEGRO_ALIGN_LEFT, currentLine.c_str());
+                    currentY += lineHeight;
+                }
+                currentLine = word; // 新行從這個詞開始
+            } else {
+                currentLine = testLine;
+            }
+        }
+        
+        // 繪製最後一行
+        if (!currentLine.empty()) {
+            al_draw_text(font, textColor, textX, currentY, ALLEGRO_ALIGN_LEFT, currentLine.c_str());
         }
     }
 }
-
 bool NPCDialog::IsDialogActive() const {
     return isActive;
 }

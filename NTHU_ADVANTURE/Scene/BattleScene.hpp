@@ -19,14 +19,7 @@ namespace Engine {
 
 class BattleScene final : public Engine::IScene {
 private:
-    enum TileType {
-        TILE_ROAD,
-        TILE_GRASS,
-        TILE_TREE,
-        TILE_STAIRS,
-        NEW, TILE_NEW,
-        NOTHING,
-    };
+    
     
     ALLEGRO_SAMPLE_ID bgmId;
     std::shared_ptr<ALLEGRO_SAMPLE_INSTANCE> deathBGMInstance;
@@ -39,22 +32,36 @@ protected:
     int lives;
     int money;
     int SpeedMult;
+    float timer;        // 計時器
+    float timeLimit;    // 時間限制（秒）
 
 public:
+    enum TileType {
+        TILE_ROAD,
+        TILE_GRASS,
+        TILE_TREE,
+        TILE_STAIRS,
+        NEW, TILE_NEW,
+        NOTHING,
+    };
+
     static const std::vector<Engine::Point> directions;
     static const int MapWidth, MapHeight;
     static const int BlockSize;
     static const std::vector<int> code;
     Group *TileMapGroup;
 
+    
+
 
     // new add
     Group *PlayerGroup;
     Group *NPCGroup;
 
-    std::vector<std::vector<TileType>> mapState;
+    static std::vector<std::vector<TileType>> mapState;
     std::vector<std::vector<int>> mapDistance;
     std::list<int> keyStrokes;
+    std::vector<int> mapData; // 修改為 int 以匹配 TileType
 
     ALLEGRO_KEYBOARD_STATE keyboardState; // new add
 
@@ -69,9 +76,14 @@ public:
     void OnMouseUp(int button, int mx, int my) override;
     void OnKeyDown(int keyCode) override;
     void ReadMap();
+    void GenerateMaze();    // 新增：生成迷宮
     static Engine::Point getCamera();
+    void UpdateTileMap(int gridX, int gridY);
 
     static const int window_x, window_y;
 
-    std::vector<BattleScene::TileType> mapData;
+    static bool collision(int x, int y);
+    //static bool canWalk;
+
+    //std::vector<BattleScene::TileType> mapData;
 };

@@ -21,15 +21,6 @@ namespace Engine {
 
 class PlayScene final : public Engine::IScene {
 private:
-    enum TileType {
-        TILE_ROAD,
-        TILE_GRASS,
-        TILE_TREE,
-        TILE_STAIRS,
-        NEW, TILE_NEW,
-        NOTHING,
-    };
-    
     ALLEGRO_SAMPLE_ID bgmId;
     std::shared_ptr<ALLEGRO_SAMPLE_INSTANCE> deathBGMInstance;
 
@@ -43,12 +34,26 @@ protected:
     int SpeedMult;
 
 public:
+    enum TileType {
+        TILE_ROAD,
+        TILE_GRASS,
+        TILE_AVANUE,
+        TILE_TREE,
+        TILE_STAIRS,
+        NEW, TILE_NEW,
+        NOTHING,
+        INFORMATIONELETRIC,
+        WINDCLOUD,
+        WATERWOOD,
+        TALDA,
+        LAKE,
+    };
+
     static const std::vector<Engine::Point> directions;
     static const int MapWidth, MapHeight;
     static const int BlockSize;
     static const std::vector<int> code;
     Group *TileMapGroup;
-
 
     // new add
     Group *PlayerGroup;
@@ -75,8 +80,12 @@ public:
     void DrawMiniMap() const;
 
     static const int window_x, window_y;
+    static bool inPlay;
+    static bool inSmallEat;
 
-    std::vector<PlayScene::TileType> mapData;
+    static std::vector<PlayScene::TileType> mapData;
+
+    static bool collision(int x, int y);
 };
 
 #endif   // PLAYSCENE_HPP

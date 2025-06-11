@@ -24,10 +24,14 @@
 #include <allegro5/allegro_primitives.h>
 
 
+bool PlayScene::inPlay = true, PlayScene::inSmallEat = false;
+
 const int PlayScene::MapWidth = 60, PlayScene::MapHeight = 32;
 const int PlayScene::BlockSize = 64;
 
 const int PlayScene::window_x = 30, PlayScene::window_y = 16;
+
+std::vector<PlayScene::TileType> PlayScene::mapData;
 
 // Engine::Point PlayScene::GetClientSize() {
 //     return Engine::Point(MapWidth * BlockSize, MapHeight * BlockSize);
@@ -60,7 +64,7 @@ void PlayScene::Initialize() {
     cameraOffset.y = player->Position.y - window_y / 2 * BlockSize; // 96
     cameraOffset.x = std::max(0.0f, std::min(cameraOffset.x, static_cast<float>(MapWidth * BlockSize - window_x * BlockSize)));
     cameraOffset.y = std::max(0.0f, std::min(cameraOffset.y, static_cast<float>(MapHeight * BlockSize - window_y * BlockSize)));
-
+    
     // NPC
     NPC* test;
     // sheet路徑, x, y, 
@@ -195,15 +199,17 @@ void PlayScene::OnKeyDown(int keyCode) {
     if (keyCode == ALLEGRO_KEY_V) {
         Engine::GameEngine::GetInstance().ChangeScene("win");
     }
-
     if (keyCode == ALLEGRO_KEY_L) {
         Engine::GameEngine::GetInstance().ChangeScene("lose");
     }    
     if(keyCode == ALLEGRO_KEY_B){
         Engine::GameEngine::GetInstance().ChangeScene("battle");
+        inPlay = false;
     }
     if(keyCode == ALLEGRO_KEY_E){
         Engine::GameEngine::GetInstance().ChangeScene("smalleat");
+        inPlay = false;
+        inSmallEat = true;
     }
     // // 按T鍵測試開啟對話 (可選)
     // if (keyCode == ALLEGRO_KEY_T) {
@@ -228,6 +234,12 @@ void PlayScene::ReadMap() {
     std::ifstream fin(filename);
     while (fin >> c) {
         switch (c) {
+            case 'G': // grass
+            case 'W': // watersmall
+            case 'L': // lake
+            case 'C': // wingcloud
+            case 'E': // smalleat
+            case 'D': // Talda
             case '-': mapData.push_back(TILE_GRASS); break;
             case 'R': mapData.push_back(TILE_ROAD); break;
             case 'T': mapData.push_back(TILE_TREE); break;
@@ -235,6 +247,8 @@ void PlayScene::ReadMap() {
             case 'N': mapData.push_back(NEW); break;
             case 'n': mapData.push_back(TILE_NEW); break;
             case '=': mapData.push_back(NOTHING); break;
+            case 'I': mapData.push_back(INFORMATIONELETRIC); break;
+            case 'A': mapData.push_back(TILE_AVANUE); break;
             case '\n':
             case '\r':
             default: break;
@@ -242,13 +256,27 @@ void PlayScene::ReadMap() {
     }
     fin.close();
     
-    // 確認地圖數據完整
-    if (static_cast<int>(mapData.size()) != MapWidth * MapHeight) {
-        throw std::ios_base::failure("Map data is corrupted.");
-    }
+    // // 確認地圖數據完整
+    // if (static_cast<int>(mapData.size()) != MapWidth * MapHeight) {
+    //     throw std::ios_base::failure("Map data is corrupted.");
+    // }
 
     Engine::LOG(Engine::INFO) << "mapData.size() " << mapData.size();
     Engine::LOG(Engine::INFO) << "MapWidth * MapHeight " << MapWidth * MapHeight;
+
+    // init init
+    for(int y = 0; y < MapHeight; y++){
+        for(int x = 0; x < MapWidth; x++){
+                    std::string imagePath = "mainworld/road.png";
+                    TileMapGroup->AddNewObject(
+                        new Engine::Image(imagePath, 
+                                        x * BlockSize, 
+                                        y * BlockSize, 
+                                        BlockSize, 
+                                        BlockSize)
+                    );
+        }
+    }
     
     // 繪製地圖
     for (int y = 0; y < MapHeight; y++) {
@@ -286,7 +314,6 @@ void PlayScene::ReadMap() {
                                         BlockSize, 
                                         BlockSize)
                     );
-
                     imagePath = "mainworld/tree.png";
                     TileMapGroup->AddNewObject(
                         new Engine::Image(imagePath, 
@@ -306,16 +333,25 @@ void PlayScene::ReadMap() {
                                         BlockSize)
                     );
                     break;
-                case NEW:
-                    imagePath = "mainworld/grass1.png";
+                case TILE_AVANUE:
+                    imagePath = "mainworld/avanue.png";
                     TileMapGroup->AddNewObject(
                         new Engine::Image(imagePath, 
                                         x * BlockSize, 
                                         y * BlockSize, 
-                                        BlockSize * 7, 
-                                        BlockSize * 7)
+                                        BlockSize, 
+                                        BlockSize)
                     );
-
+                    break;
+                case NEW:
+                    // imagePath = "mainworld/grass1.png";
+                    // TileMapGroup->AddNewObject(
+                    //     new Engine::Image(imagePath, 
+                    //                     x * BlockSize, 
+                    //                     y * BlockSize, 
+                    //                     BlockSize * 7, 
+                    //                     BlockSize * 7)
+                    // );
                     imagePath = "mainworld/NEW.png";
                     TileMapGroup->AddNewObject(
                         new Engine::Image(imagePath, 
@@ -323,6 +359,16 @@ void PlayScene::ReadMap() {
                                         y * BlockSize, 
                                         BlockSize * 7, 
                                         BlockSize * 7)
+                    );
+                    break;
+                case INFORMATIONELETRIC:
+                    imagePath = "mainworld/informationeletric.png";
+                    TileMapGroup->AddNewObject(
+                        new Engine::Image(imagePath, 
+                                        x * BlockSize, 
+                                        y * BlockSize, 
+                                        BlockSize * 8, 
+                                        BlockSize * 8)
                     );
                     break;
                 case TILE_NEW:
@@ -360,6 +406,11 @@ void PlayScene::DrawMiniMap() const {
                 case TILE_ROAD:  color = al_map_rgb(128, 128, 128); break; // 灰色
                 case TILE_TREE:  color = al_map_rgb(0, 100, 0); break; // 深綠
                 case TILE_STAIRS:color = al_map_rgb(255, 255, 255); break; // 白
+                case TILE_AVANUE:color = al_map_rgb(50, 255, 255); break;
+                case NEW:
+                case NOTHING:
+                    color = al_map_rgb(255, 132, 132);
+                break;
                 default:         color = al_map_rgb(0, 0, 0); break;
             }
             al_draw_filled_rectangle(
@@ -387,4 +438,24 @@ void PlayScene::DrawMiniMap() const {
     float w = window_x * BlockSize * scale;
     float h = window_y * BlockSize * scale;
     al_draw_rectangle(cx, cy, cx + w, cy + h, al_map_rgb(255, 255, 0), 1); // 黃框
+}
+
+//walkable
+bool PlayScene::collision(int x, int y){
+    //printf("NOOOOOOOOOOO\n");
+    switch (mapData[y/BlockSize *MapWidth + x/BlockSize]){
+        case TILE_AVANUE:
+        case TILE_GRASS:
+        case TILE_ROAD:
+        case TILE_STAIRS:
+            return true;
+        case TILE_TREE:
+        case NEW:
+        case INFORMATIONELETRIC:
+        case NOTHING:
+        default:
+            return false;
+    }
+    // if (mapState[y/BlockSize][x/BlockSize] == TILE_TREE) return false;
+    // else return true;
 }

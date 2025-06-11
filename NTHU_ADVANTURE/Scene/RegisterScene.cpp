@@ -48,6 +48,8 @@ void RegisterScene::Initialize() {
     //這個不能刪 否則terminate時會刪掉不存在的東西 注意StageSelectScene刪掉的東西裡面也沒有這個 特別寫在下面了
     bgmInstance = AudioHelper::PlaySample("select.ogg", true, AudioHelper::BGMVolume);
 
+    LoadFromFile();
+
 }
 
 void RegisterScene::OnKeyDown(int keyCode){
@@ -56,17 +58,27 @@ void RegisterScene::OnKeyDown(int keyCode){
         if (keyCode >= ALLEGRO_KEY_A && keyCode <= ALLEGRO_KEY_Z) {
             char c = 'A' + (keyCode - ALLEGRO_KEY_A);
             name += c;
+            if (warning1) warning1->Text = "";
         } 
         else if (keyCode >= ALLEGRO_KEY_0 && keyCode <= ALLEGRO_KEY_9) {
             char c = '0' + (keyCode - ALLEGRO_KEY_0);
             name += c;
+            if (warning1) warning1->Text = "";
         }
         else if (keyCode == ALLEGRO_KEY_BACKSPACE){
             name = name.substr(0, name.length() - 1);
+            if (warning1) warning1->Text = "";
         }
         else if (keyCode == ALLEGRO_KEY_ENTER){
-            
-            ID_entered = 1;
+            if (checkID(name)) {
+                int w = Engine::GameEngine::GetInstance().GetScreenSize().x;
+                int h = Engine::GameEngine::GetInstance().GetScreenSize().y;
+                int halfW = w / 2;
+                int halfH = h / 2;
+                AddNewObject(warning1 = new Engine::Label("The account exists", "title.ttf", 48, halfW, halfH / 2 + 400, 255, 255, 255, 255, 0.5, 0.5));
+
+            }
+            else ID_entered = 1;
         }
         label_name->Text = name;
     }
@@ -80,7 +92,8 @@ void RegisterScene::OnKeyDown(int keyCode){
             pswd += c;
         }
         else if (keyCode == ALLEGRO_KEY_BACKSPACE){
-            pswd = pswd.substr(0, pswd.length() - 1);
+            if (pswd == "") ID_entered = 0;
+            else pswd = pswd.substr(0, pswd.length() - 1);
         }
         else if (keyCode == ALLEGRO_KEY_ENTER){
             
@@ -142,7 +155,7 @@ void RegisterScene::LoadFromFile() {
 }
 
 void RegisterScene::SaveToFile(void){
-    LoadFromFile();
+    //LoadFromFile();
     
     std::ofstream ofs("C:/FINAL_PROJECT/NTHU_ADVANTURE/Resource/account.txt");
     if (!ofs.is_open()) {
@@ -156,4 +169,14 @@ void RegisterScene::SaveToFile(void){
 
     ofs << name << "," <<  pswd << "\n"; //新的
     ofs.close();
+}
+
+bool RegisterScene::checkID(std::string ID){
+    //bool flag = false;
+    for (int i=0;i<IDs.size();i++){
+        if (IDs[i] == ID) {
+            return true;
+        }
+    }
+    return false;
 }

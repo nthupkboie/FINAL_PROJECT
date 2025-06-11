@@ -19,6 +19,7 @@
 
 // new add
 #include "SmallEatScene.hpp"
+#include "PlayScene.hpp"
 #include "Player/Player.hpp"
 #include "NPC/NPC.hpp"
 
@@ -26,6 +27,8 @@ const int SmallEatScene::MapWidth = 30, SmallEatScene::MapHeight = 16;
 const int SmallEatScene::BlockSize = 64;
 
 const int SmallEatScene::window_x = 30, SmallEatScene::window_y = 16;
+
+std::vector<SmallEatScene::TileType> SmallEatScene::mapData;
 
 // Engine::Point SmallEatScene::GetClientSize() {
 //     return Engine::Point(MapWidth * BlockSize, MapHeight * BlockSize);
@@ -66,12 +69,31 @@ void SmallEatScene::Initialize() {
     // 圖塊寬, 圖塊高
     auto testAvatar = Engine::Resources::GetInstance().GetBitmap("NPC/test/avatar/test_avatar.png");
     NPCGroup->AddNewObject(test = new NPC("NPC",testAvatar, "NPC/test/role/test_sheet.png",
-                                            BlockSize * 2, BlockSize * 2,
+                                            BlockSize * 5, BlockSize * 5,
                                             2, 3,  // 上 (第0列第2行)
                                             2, 0,  // 下
                                             2, 1,  // 左
                                             2, 2,  // 右
                                             64, 64)); // 圖塊大小
+
+    NPC* Yang;
+    auto YangAvatar = Engine::Resources::GetInstance().GetBitmap("NPC/test/avatar/test_avatar.png");
+    NPCGroup->AddNewObject(Yang = new NPC("Yang", YangAvatar, 
+                                            "NPC/Yang/role/YangU.png",
+                                            "NPC/Yang/role/YangD.png", 
+                                            "NPC/Yang/role/YangL.png",
+                                            "NPC/Yang/role/YangR.png",
+                                            BlockSize * 8, BlockSize * 8
+                                        ));
+
+    // NPCGroup->AddNewObject(Yang = new NPC("NPC",testAvatar, "NPC/test/role/test_sheet.png",
+    //                                         BlockSize * 8, BlockSize * 8,
+    //                                         2, 3,  // 上 (第0列第2行)
+    //                                         2, 0,  // 下
+    //                                         2, 1,  // 左
+    //                                         2, 2,  // 右
+    //                                         64, 64)); // 圖塊大小
+
 
     // 初始化對話框
     dialog.Initialize();
@@ -81,7 +103,13 @@ void SmallEatScene::Initialize() {
         "你好，我是村民A！",
         "這個村莊最近不太平靜...",
         "晚上請小心行事。",
-        "祝你好運，冒險者！"
+        "祝你好運，冒險者！",
+        "Shawty had them Apple Bottom jeans, jeans"
+    });
+
+    Yang->SetMessages({
+        "我是楊舜仁！",
+        "我不會當人",
     });
 
     // 預載資源
@@ -113,16 +141,6 @@ void SmallEatScene::Update(float deltaTime) {
     cameraOffset.y = player->Position.y - window_y / 2 * BlockSize; // 置中：player.y - 96
     cameraOffset.x = std::max(0.0f, std::min(cameraOffset.x, static_cast<float>(MapWidth * BlockSize - window_x * BlockSize)));
     cameraOffset.y = std::max(0.0f, std::min(cameraOffset.y, static_cast<float>(MapHeight * BlockSize - window_y * BlockSize)));
-
-    // // 更新攝影機
-    // float targetX = player->Position.x - 3 * BlockSize; // 視角中心
-    // float targetY = player->Position.y - 1.5 * BlockSize;
-    // // 邊界限制
-    // targetX = std::max(0.0f, std::min(targetX, static_cast<float>(MapWidth * BlockSize - 6 * BlockSize)));
-    // targetY = std::max(0.0f, std::min(targetY, static_cast<float>(MapHeight * BlockSize - 3 * BlockSize)));
-    // // 平滑插值（與玩家移動同步，0.3秒）
-    // cameraOffset.x += (targetX - cameraOffset.x) * (deltaTime / 0.3f);
-    // cameraOffset.y += (targetY - cameraOffset.y) * (deltaTime / 0.3f);
     
     // 更新所有NPC
     for (auto& obj : NPCGroup->GetObjects()) {
@@ -202,6 +220,8 @@ void SmallEatScene::OnKeyDown(int keyCode) {
     // }
 
     if(keyCode == ALLEGRO_KEY_P){
+        PlayScene::inPlay = true;
+        PlayScene::inSmallEat = false;
         Engine::GameEngine::GetInstance().ChangeScene("play");
     }
 }
@@ -240,6 +260,20 @@ void SmallEatScene::ReadMap() {
 
     Engine::LOG(Engine::INFO) << "mapData.size() " << mapData.size();
     Engine::LOG(Engine::INFO) << "MapWidth * MapHeight " << MapWidth * MapHeight;
+
+    // init init
+    for(int y = 0; y < MapHeight; y++){
+        for(int x = 0; x < MapWidth; x++){
+                    std::string imagePath = "mainworld/grasss.png";
+                    TileMapGroup->AddNewObject(
+                        new Engine::Image(imagePath, 
+                                        x * BlockSize, 
+                                        y * BlockSize, 
+                                        BlockSize, 
+                                        BlockSize)
+                    );
+        }
+    }
     
     // 繪製地圖
     for (int y = 0; y < MapHeight; y++) {
@@ -277,7 +311,6 @@ void SmallEatScene::ReadMap() {
                                         BlockSize, 
                                         BlockSize)
                     );
-
                     imagePath = "mainworld/tree.png";
                     TileMapGroup->AddNewObject(
                         new Engine::Image(imagePath, 
@@ -326,7 +359,6 @@ void SmallEatScene::ReadMap() {
                                         BlockSize * 7, 
                                         BlockSize * 7)
                     );
-
                     imagePath = "mainworld/NEW.png";
                     TileMapGroup->AddNewObject(
                         new Engine::Image(imagePath, 
@@ -355,4 +387,19 @@ void SmallEatScene::ReadMap() {
 
 Engine::Point SmallEatScene::getCamera(){
     return Engine::Point(cameraOffset.x + 5 * BlockSize, cameraOffset.y + 2.5 * BlockSize);
+}
+
+bool SmallEatScene::collision(int x, int y){
+    switch(mapData[y/BlockSize * MapWidth + x / BlockSize]){
+        case TILE_FLOOR:
+        case TILE_GRASS:
+        case TILE_ROAD:
+        case TILE_STAIRS:
+            return true;
+        case TILE_WALL:
+        case NEW:
+        case NOTHING:
+        default:
+            return false;
+    }
 }

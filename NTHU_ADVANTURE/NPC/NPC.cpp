@@ -41,29 +41,32 @@ NPC::NPC(const std::string& name,std::shared_ptr<ALLEGRO_BITMAP> avatar, const s
     dialog.Initialize();
 }
 
-// 從分開的圖片建構
-NPC::NPC(const std::string& name, std::shared_ptr<ALLEGRO_BITMAP> avatar, const std::string& upPath, const std::string& downPath,
+// 從分開的圖片建構 (完全對照Player方式)
+NPC::NPC(const std::string& name, std::shared_ptr<ALLEGRO_BITMAP> avatar, 
+         const std::string& upPath, const std::string& downPath,
          const std::string& leftPath, const std::string& rightPath,
          float x, float y)
-    : Engine::Sprite(downPath, x, y), npcName(name), npcAvatar(avatar ? avatar : bmpIdle_down)  // 如果沒有提供頭像，默認使用朝下的圖像
+    : Engine::Sprite(downPath, x, y), npcName(name), npcAvatar(avatar)
 {
+    Size.x = 32;
+    Size.y = 64;
+    
+    // 載入靜態圖片 (對照Player的bmpIdle_*)
     bmpIdle_up = Engine::Resources::GetInstance().GetBitmap(upPath);
     bmpIdle_down = Engine::Resources::GetInstance().GetBitmap(downPath);
     bmpIdle_left = Engine::Resources::GetInstance().GetBitmap(leftPath);
     bmpIdle_right = Engine::Resources::GetInstance().GetBitmap(rightPath);
+
+    // 設置默認朝向 (完全對照Player邏輯)
+    bmp = bmpIdle_down;
     
-    bmp = bmpIdle_down; // 預設朝下
-    
-    // 自動計算圖塊大小 (假設所有方向圖片大小相同)
-    if (bmpIdle_down) {
-        int tileW = al_get_bitmap_width(bmpIdle_down.get());
-        int tileH = al_get_bitmap_height(bmpIdle_down.get());
-        Position.x = std::round(Position.x / tileW) * tileW + tileW/2;
-        Position.y = std::round(Position.y / tileH) * tileH + tileH/2;
-    }
+    // 對齊方式 (與Player一致)
+    Position.x = std::round(Position.x / 64.0f) * 64.0f + 32.0f;
+    Position.y = std::round(Position.y / 64.0f) * 64.0f + 32.0f;
 
     dialog.Initialize();
 }
+
 
 void NPC::Update(float deltaTime, const Player* player) {
     ALLEGRO_KEYBOARD_STATE kbState;
@@ -76,7 +79,6 @@ void NPC::Update(float deltaTime, const Player* player) {
     bool isAdjacent = (std::abs(distX) <= 64.0f && std::abs(distY) <= 64.0f);
 
     // 檢查Enter鍵是否剛被按下
-    static bool enterWasDown = false;
     bool enterIsDown = al_key_down(&kbState, ALLEGRO_KEY_ENTER);
     bool enterPressed = enterIsDown && !enterWasDown;
     enterWasDown = enterIsDown;

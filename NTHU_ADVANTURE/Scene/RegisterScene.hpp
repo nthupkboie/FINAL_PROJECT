@@ -18,6 +18,7 @@ private:
     std::string pswd;
     Engine::Label* label_name;
     Engine::Label* label_pswd;
+    Engine::Label* warning1;
     int ID_entered = 0;
 
 public:
@@ -29,6 +30,7 @@ public:
     void BackOnClick(int stage);
     void LoadFromFile(void);
     void SaveToFile(void);
+    bool checkID(std::string ID);
 };
 
 
