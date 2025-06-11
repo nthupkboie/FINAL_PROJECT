@@ -28,7 +28,7 @@ void SettingsScene::Initialize() {
     AddNewObject(new Engine::Image("scene/setting.png", 0, 0, w, h));
 
     Engine::ImageButton *btn;
-    btn = new Engine::ImageButton("stage-select/cloud.png", "stage-select/floor.png", halfW - 150, halfH * 3 / 2 - 130, 300, 200);
+    btn = new Engine::ImageButton("stage-select/cloud.png", "stage-select/cloud.png", halfW - 150, halfH * 3 / 2 - 130, 300, 200);
     btn->SetOnClickCallback(std::bind(&SettingsScene::BackOnClick, this, 1));
     AddNewControlObject(btn);
     //AddNewObject(new Engine::Label("Back", "title.ttf", 48, halfW, halfH * 3 / 2, 0, 0, 0, 255, 0.5, 0.5));
