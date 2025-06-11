@@ -172,47 +172,53 @@ void NPCDialog::Draw() const {
     
     // 繪製對話文字
     if (font && !currentDisplayText.empty()) {
-        // 使用多行文字繪製
+        // 計算可用寬度 (減去頭像和內邊距)
+        float availableWidth = boxWidth - (textX - boxX) - padding;
         float lineHeight = al_get_font_line_height(font);
         float currentY = textY;
-        std::string remainingText = currentDisplayText;
         
-        while (!remainingText.empty()) {
-            // 計算這一行可以容納多少文字
-            size_t spacePos = remainingText.find(' ');
-            size_t lineEnd = remainingText.length();
-            float textWidth = 0;
-            
-            // 簡單的文字換行處理
-            for (size_t i = 0; i < remainingText.length(); ++i) {
-                const char* testStr = remainingText.substr(0, i+1).c_str();
-                textWidth = al_get_text_width(font, testStr);
-                
-                if (textWidth > (boxWidth - textX - padding * 2)) {
-                    // 如果超過寬度，找前一個空格處斷行
-                    if (spacePos != std::string::npos && spacePos < i) {
-                        lineEnd = spacePos;
-                    } else {
-                        lineEnd = i;
-                    }
-                    break;
+        // 分割文本為單詞
+        std::vector<std::string> words;
+        std::string currentWord;
+        for (char c : currentDisplayText) {
+            if (c == ' ') {
+                if (!currentWord.empty()) {
+                    words.push_back(currentWord);
+                    currentWord.clear();
                 }
-                
-                if (remainingText[i] == ' ') {
-                    spacePos = i;
-                }
+                words.push_back(" "); // 空格作為單獨元素
+            } else {
+                currentWord += c;
             }
+        }
+        if (!currentWord.empty()) {
+            words.push_back(currentWord);
+        }
+        
+        // 構建行
+        std::string currentLine;
+        for (const auto& word : words) {
+            std::string testLine = currentLine + word;
+            float testWidth = al_get_text_width(font, testLine.c_str());
             
-            std::string line = remainingText.substr(0, lineEnd);
-            al_draw_text(font, textColor, textX, currentY, ALLEGRO_ALIGN_LEFT, line.c_str());
-            
-            if (lineEnd >= remainingText.length()) break;
-            remainingText = remainingText.substr(lineEnd + 1);
-            currentY += lineHeight;
+            if (testWidth > availableWidth) {
+                // 如果添加這個詞會超過寬度，先繪製當前行
+                if (!currentLine.empty()) {
+                    al_draw_text(font, textColor, textX, currentY, ALLEGRO_ALIGN_LEFT, currentLine.c_str());
+                    currentY += lineHeight;
+                }
+                currentLine = word; // 新行從這個詞開始
+            } else {
+                currentLine = testLine;
+            }
+        }
+        
+        // 繪製最後一行
+        if (!currentLine.empty()) {
+            al_draw_text(font, textColor, textX, currentY, ALLEGRO_ALIGN_LEFT, currentLine.c_str());
         }
     }
 }
-
 bool NPCDialog::IsDialogActive() const {
     return isActive;
 }

@@ -82,7 +82,8 @@ void SmallEatScene::Initialize() {
         "你好，我是村民A！",
         "這個村莊最近不太平靜...",
         "晚上請小心行事。",
-        "祝你好運，冒險者！"
+        "祝你好運，冒險者！",
+        "Shawty had them Apple Bottom jeans, jeans"
     });
 
     // 預載資源
