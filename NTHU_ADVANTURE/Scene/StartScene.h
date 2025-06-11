@@ -16,5 +16,8 @@ public:
     void Terminate() override;
     void PlayOnClick(int stage);
     void SettingsOnClick(int stage);
+    void ScoreboardOnClick(int stage);
+    void LogOnClick(int stage);
+    void RegisterOnClick(int stage);
 };
 #endif   // INC_2025_I2P2_TOWERDEFENSE_WITH_ANSWER_STARTSCENE_H
