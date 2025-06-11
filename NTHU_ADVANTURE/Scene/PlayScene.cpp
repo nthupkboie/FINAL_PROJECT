@@ -64,8 +64,7 @@ void PlayScene::Initialize() {
     cameraOffset.y = player->Position.y - window_y / 2 * BlockSize; // 96
     cameraOffset.x = std::max(0.0f, std::min(cameraOffset.x, static_cast<float>(MapWidth * BlockSize - window_x * BlockSize)));
     cameraOffset.y = std::max(0.0f, std::min(cameraOffset.y, static_cast<float>(MapHeight * BlockSize - window_y * BlockSize)));
-
-
+    
     // NPC
     NPC* test;
     // sheet路徑, x, y, 
