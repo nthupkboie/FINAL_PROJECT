@@ -1,4 +1,0 @@
-back=返回
-bgm=背景音樂：
-sfx=音效：
-language=語言
