@@ -38,6 +38,8 @@ add_executable(2025_I2P2_TowerDefense
     Engine/Resources.hpp
     Engine/Sprite.cpp
     Engine/Sprite.hpp
+    Engine/LanguageManager.cpp
+    Engine/LanguageManager.hpp
 
     ### NTHU ###
 

@@ -2,6 +2,7 @@
 #include <functional>
 #include <memory>
 #include <string>
+#include <iostream>
 
 #include "Engine/AudioHelper.hpp"
 #include "Engine/GameEngine.hpp"
@@ -13,6 +14,9 @@
 #include "UI/Component/Label.hpp"
 #include "UI/Component/Slider.hpp"
 #include <allegro5/allegro_primitives.h>
+#include "Engine/LanguageManager.hpp"
+
+
 
 
 void SettingsScene::Initialize() {
@@ -27,18 +31,59 @@ void SettingsScene::Initialize() {
     btn = new Engine::ImageButton("stage-select/dirt.png", "stage-select/floor.png", halfW - 200, halfH * 3 / 2 - 50, 400, 100);
     btn->SetOnClickCallback(std::bind(&SettingsScene::BackOnClick, this, 1));
     AddNewControlObject(btn);
-    AddNewObject(new Engine::Label("Back", "title.ttf", 48, halfW, halfH * 3 / 2, 0, 0, 0, 255, 0.5, 0.5));
+    //AddNewObject(new Engine::Label("Back", "title.ttf", 48, halfW, halfH * 3 / 2, 0, 0, 0, 255, 0.5, 0.5));
+    labelBack = new Engine::Label("", "Retro.ttf", 48, halfW, halfH * 3 / 2, 0, 0, 0, 255, 0.5, 0.5);
+    AddNewObject(labelBack);
+
 
     Slider *sliderBGM, *sliderSFX;
     sliderBGM = new Slider(40 + halfW - 95, halfH - 50 - 32, 256, 64);
     sliderBGM->SetOnValueChangedCallback(std::bind(&SettingsScene::BGMSlideOnValueChanged, this, std::placeholders::_1));
-    AddNewControlObject(sliderBGM);
-    AddNewObject(new Engine::Label("BGM :     ", "title.ttf", 32, 40 + halfW - 60 - 95, halfH - 50, 255, 255, 255, 255, 0.5, 0.5));
-    sliderSFX = new Slider(40 + halfW - 95, halfH + 50 - 32, 256, 64);
-    sliderSFX->SetOnValueChangedCallback(std::bind(&SettingsScene::SFXSlideOnValueChanged, this, std::placeholders::_1));
-    AddNewControlObject(sliderSFX);
-    AddNewObject(new Engine::Label("SFX :     ", "title.ttf", 32, 40 + halfW - 60 - 95, halfH + 50, 255, 255, 255, 255, 0.5, 0.5));
+     AddNewControlObject(sliderBGM);
+    // AddNewObject(new Engine::Label("BGM :     ", "title.ttf", 32, 40 + halfW - 60 - 95, halfH - 50, 255, 255, 255, 255, 0.5, 0.5));
+     sliderSFX = new Slider(40 + halfW - 95, halfH + 50 - 32, 256, 64);
+     sliderSFX->SetOnValueChangedCallback(std::bind(&SettingsScene::SFXSlideOnValueChanged, this, std::placeholders::_1));
+     AddNewControlObject(sliderSFX);
+    // AddNewObject(new Engine::Label("SFX :     ", "title.ttf", 32, 40 + halfW - 60 - 95, halfH + 50, 255, 255, 255, 255, 0.5, 0.5));
+
+    labelBGM = new Engine::Label("", "Retro.ttf", 32, 40 + halfW - 60 - 95, halfH - 50, 255, 255, 255, 255, 0.5, 0.5);
+    AddNewObject(labelBGM);
+
+    labelSFX = new Engine::Label("", "Retro.ttf", 32, 40 + halfW - 60 - 95, halfH + 50, 255, 255, 255, 255, 0.5, 0.5);
+    AddNewObject(labelSFX);
+
     // Not safe if release resource while playing, however we only free while change scene, so it's fine.
+    bgmInstance = AudioHelper::PlaySample("nthu_school_song.ogg", true, AudioHelper::BGMVolume);
+    sliderBGM->SetValue(AudioHelper::BGMVolume);
+    sliderSFX->SetValue(AudioHelper::SFXVolume);
+
+
+
+    // 語言切換按鈕
+    auto langBtn = new Engine::ImageButton(
+        "stage-select/dirt.png",    // 改成已存在的圖片
+        "stage-select/floor.png",
+        halfW + 200, halfH * 3 / 2 - 50, 150, 100
+    );
+
+
+    langBtn->SetOnClickCallback([=]() {
+        static bool isZh = false;
+        isZh = !isZh;
+        if (isZh) LanguageManager::GetInstance().LoadLanguage("zh");
+        else      LanguageManager::GetInstance().LoadLanguage("en");
+        RefreshLabels();
+    });
+    AddNewControlObject(langBtn);
+
+    labelLanguage = new Engine::Label("", "Retro.ttf", 32, halfW + 275, halfH * 3 / 2 + 20, 255, 255, 255, 255, 0.5, 0.5);
+    AddNewObject(labelLanguage);
+
+    // 載入預設語言
+    LanguageManager::GetInstance().LoadLanguage("en");
+    RefreshLabels();
+
+    // 音樂播放
     bgmInstance = AudioHelper::PlaySample("nthu_school_song.ogg", true, AudioHelper::BGMVolume);
     sliderBGM->SetValue(AudioHelper::BGMVolume);
     sliderSFX->SetValue(AudioHelper::SFXVolume);
@@ -62,3 +107,17 @@ void SettingsScene::BGMSlideOnValueChanged(float value) {
 void SettingsScene::SFXSlideOnValueChanged(float value) {
     AudioHelper::SFXVolume = value;
 }
+
+void SettingsScene::RefreshLabels() {
+    labelBack->Text = LanguageManager::GetInstance().GetText("back");
+    labelBGM->Text = LanguageManager::GetInstance().GetText("bgm");
+    labelSFX->Text = LanguageManager::GetInstance().GetText("sfx");
+    labelLanguage->Text = LanguageManager::GetInstance().GetText("language");
+    
+    //std::cout << "[LANG] back = " << back << ", length = " << back.length() << std::endl;
+    std::string back = LanguageManager::GetInstance().GetText("back");
+    std::cout << "[LANG] back loaded. Length = " << back.length() << std::endl;
+
+
+}
+
