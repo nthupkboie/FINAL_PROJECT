@@ -51,6 +51,10 @@ void LogScene::Initialize() {
 void LogScene::OnKeyDown(int keyCode){
     IScene::OnKeyDown(keyCode);
     if (keyCode == ALLEGRO_KEY_LCTRL) Engine::GameEngine::GetInstance().ChangeScene("play");
+
+    if (keyCode == ALLEGRO_KEY_LCTRL){
+        Engine::GameEngine::GetInstance().ChangeScene("play");
+    }
     if (!ID_entered){
         if (keyCode >= ALLEGRO_KEY_A && keyCode <= ALLEGRO_KEY_Z) {
             char c = 'A' + (keyCode - ALLEGRO_KEY_A);
