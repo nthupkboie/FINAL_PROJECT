@@ -30,6 +30,10 @@ private:
         NEW, TILE_NEW,
         NOTHING,
         INFORMATIONELETRIC,
+        WINDCLOUD,
+        WATERWOOD,
+        TALDA,
+        LAKE,
     };
     
     ALLEGRO_SAMPLE_ID bgmId;
@@ -50,7 +54,6 @@ public:
     static const int BlockSize;
     static const std::vector<int> code;
     Group *TileMapGroup;
-
 
     // new add
     Group *PlayerGroup;

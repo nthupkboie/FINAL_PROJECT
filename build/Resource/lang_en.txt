@@ -1,0 +1,4 @@
+back=Back
+bgm=BGM：
+sfx=SFX：
+language=Language
