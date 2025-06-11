@@ -72,6 +72,7 @@ public:
     void OnKeyDown(int keyCode) override;
     void ReadMap();
     static Engine::Point getCamera();
+    void DrawMiniMap() const;
 
     static const int window_x, window_y;
 
