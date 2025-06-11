@@ -14,6 +14,8 @@
 #include "Engine/IScene.hpp"
 #include "Engine/LOG.hpp"
 #include "Scene/PlayScene.hpp"
+#include "Scene/SmallEatScene.hpp"
+#include "Scene/BattleScene.hpp"
 
 #include "Engine/Resources.hpp"
 #include "NPC/NPCDialog.hpp"
@@ -247,6 +249,16 @@ void Player::Draw() const {
 }
 
 bool Player::canWalk(int x, int y){
+    //printf("LLLLLLLLll\n");
     if (x > PlayScene::BlockSize * PlayScene::MapWidth || x < 0 || y < 0 || y > PlayScene::BlockSize * PlayScene::MapHeight) return false;
+    if (!PlayScene::inPlay){
+        BattleScene* scene = dynamic_cast<BattleScene*>(Engine::GameEngine::GetInstance().GetScene("battle"));
+        if (!scene->collision(x, y)) {
+            //printf("HHHHHHHHHHHHHH\n");
+            return false;
+        }
+    }
+    
+    //printf("TTTTTTTTTTTTTT\n");
     return true;
 }

@@ -76,8 +76,12 @@ public:
     void ReadMap();
     void GenerateMaze();    // 新增：生成迷宮
     static Engine::Point getCamera();
+    void UpdateTileMap(int gridX, int gridY);
 
     static const int window_x, window_y;
+
+    bool collision(int x, int y);
+    static bool canWalk;
 
     //std::vector<BattleScene::TileType> mapData;
 };
