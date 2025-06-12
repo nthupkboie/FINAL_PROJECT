@@ -1,8 +1,4 @@
-[INFO] Loaded Resource<image>: Resource/images/stage-select/sword.png
 [INFO] Game Initializing...
-[INFO] Loaded Resource<font>: Resource/fonts/title.ttf with size 48
-[INFO] Loaded Resource<image>: Resource/images/stage-select/sword2.png scaled to 800x150
-[INFO] Loaded Resource<image>: Resource/images/stage-select/sword2.png
 [INFO] Loaded Resource<image>: Resource/images/icon.png
 [INFO] Loaded window icon from: icon.png
 [INFO] There are total 2 supported mouse buttons
@@ -18,9 +14,24 @@
 [INFO] Loaded Resource<audio>: Resource/audios/start.ogg
 [INFO] Game initialized
 [INFO] Game start event loop
-[INFO] Loaded Resource<audio>: Resource/audios/start.ogg
-[INFO] Game initialized
-[INFO] Game start event loop
+[INFO] stopped audio (bgm)
+[INFO] Loaded Resource<image>: Resource/images/scene/setting.png scaled to 1920x1024
+[INFO] Loaded Resource<image>: Resource/images/stage-select/cloud.png scaled to 300x200
+[INFO] Loaded Resource<image>: Resource/images/stage-select/cloud.png
+[INFO] Loaded Resource<image>: Resource/images/stage-select/me.png scaled to 64x64
+[INFO] Loaded Resource<image>: Resource/images/stage-select/me.png
+[INFO] Loaded Resource<image>: Resource/images/stage-select/empty_0.png scaled to 256x64
+[INFO] Loaded Resource<image>: Resource/images/stage-select/end.png
+[INFO] Loaded Resource<image>: Resource/images/stage-select/empty_0.png
+[INFO] Loaded Resource<image>: Resource/images/stage-select/full_1.png
+[INFO] Loaded Resource<font>: Resource/fonts/normal.ttf with size 32
+[INFO] Loaded Resource<audio>: Resource/audios/nthu_school_song.ogg
+[INFO] Created<sample_instance>: Resource/audios/nthu_school_song.ogg
+[INFO] Loaded Resource<font>: Resource/fonts/Retro.ttf with size 32
+[INFO] Created<sample_instance>: Resource/audios/nthu_school_song.ogg
+[INFO] Changed to settings scene
+[INFO] stopped audio (sample)
+[INFO] Changed to start scene
 [INFO] stopped audio (bgm)
 [INFO] Loaded Resource<image>: Resource/images/scene/login.png scaled to 1920x1024
 [INFO] Loaded Resource<font>: Resource/fonts/title.ttf with size 56
@@ -90,277 +101,95 @@
 [DEBUGGING] NPC 'NPC' reached point 3
 [DEBUGGING] NPC 'NPC' reached point 0
 [DEBUGGING] NPC 'NPC' reached point 1
-[DEBUGGING] NPC 'NPC' reached point 2
-[DEBUGGING] NPC 'NPC' reached point 3
-[DEBUGGING] NPC 'NPC' reached point 0
-[DEBUGGING] NPC 'NPC' reached point 1
-[DEBUGGING] NPC 'NPC' reached point 2
-[DEBUGGING] NPC 'NPC' reached point 3
-[DEBUGGING] NPC 'NPC' reached point 0
-[DEBUGGING] NPC 'NPC' reached point 1
-[DEBUGGING] NPC 'NPC' reached point 2
-[DEBUGGING] NPC 'NPC' reached point 3
-[DEBUGGING] NPC 'NPC' reached point 0
-[DEBUGGING] NPC 'NPC' reached point 1
-[DEBUGGING] NPC 'NPC' reached point 2
-[DEBUGGING] NPC 'NPC' reached point 3
-[DEBUGGING] NPC 'NPC' reached point 0
-[DEBUGGING] NPC 'NPC' reached point 1
-[DEBUGGING] NPC 'NPC' reached point 2
-[DEBUGGING] NPC 'NPC' reached point 3
-[DEBUGGING] NPC 'NPC' reached point 0
-[DEBUGGING] NPC 'NPC' reached point 1
-[DEBUGGING] NPC 'NPC' reached point 2
-[DEBUGGING] NPC 'NPC' reached point 3
-[DEBUGGING] NPC 'NPC' reached point 0
-[DEBUGGING] NPC 'NPC' reached point 1
-[DEBUGGING] NPC 'NPC' reached point 2
-[DEBUGGING] NPC 'NPC' reached point 3
-[DEBUGGING] NPC 'NPC' reached point 0
-[DEBUGGING] NPC 'NPC' reached point 1
-[DEBUGGING] NPC 'NPC' reached point 2
-[DEBUGGING] NPC 'NPC' reached point 3
-[DEBUGGING] NPC 'NPC' reached point 0
-[DEBUGGING] NPC 'NPC' reached point 1
-[DEBUGGING] NPC 'NPC' reached point 2
-[DEBUGGING] NPC 'NPC' reached point 3
-[DEBUGGING] NPC 'NPC' reached point 0
-[INFO] stopped audio (bgm)
-[INFO] Loaded Resource<image>: Resource/images/win/lose.png scaled to 1920x1024
-[INFO] Loaded Resource<image>: Resource/images/win/dirt.png scaled to 400x100
-[INFO] Loaded Resource<image>: Resource/images/win/dirt.png
-[INFO] Loaded Resource<image>: Resource/images/win/floor.png
-[INFO] Loaded Resource<font>: Resource/fonts/pirulen.ttf with size 48
-[INFO] Loaded Resource<audio>: Resource/audios/lose.ogg
-[INFO] Created<sample_instance>: Resource/audios/lose.ogg
-[INFO] Changed to lose scene
-[INFO] stopped audio (sample)
-[INFO] Changed to start scene
-[INFO] stopped audio (bgm)
-[INFO] Loaded Resource<image>: Resource/images/scene/setting.png scaled to 1920x1024
-[INFO] Loaded Resource<image>: Resource/images/stage-select/cloud.png scaled to 300x200
-[INFO] Loaded Resource<image>: Resource/images/stage-select/cloud.png
-[INFO] Loaded Resource<image>: Resource/images/stage-select/me.png scaled to 64x64
-[INFO] Loaded Resource<image>: Resource/images/stage-select/me.png
-[INFO] Loaded Resource<image>: Resource/images/stage-select/empty_0.png scaled to 256x64
-[INFO] Loaded Resource<image>: Resource/images/stage-select/end.png
-[INFO] Loaded Resource<image>: Resource/images/stage-select/empty_0.png
-[INFO] Loaded Resource<image>: Resource/images/stage-select/full_1.png
-[INFO] Loaded Resource<font>: Resource/fonts/normal.ttf with size 32
-[INFO] Loaded Resource<audio>: Resource/audios/nthu_school_song.ogg
-[INFO] Created<sample_instance>: Resource/audios/nthu_school_song.ogg
-[INFO] Loaded Resource<font>: Resource/fonts/Retro.ttf with size 32
-[INFO] Created<sample_instance>: Resource/audios/nthu_school_song.ogg
-[INFO] Changed to settings scene
-[INFO] stopped audio (sample)
-[INFO] Changed to start scene
-[INFO] stopped audio (bgm)
-[INFO] Created<sample_instance>: Resource/audios/coconut.ogg
-[INFO] Changed to login scene
-[INFO] stopped audio (sample)
-[INFO] mapData.size() 1920
-[INFO] MapWidth * MapHeight 1920
-[DEBUGGING] Added patrol point to NPC 'NPC': (1952, 672)
-[DEBUGGING] Added patrol point to NPC 'NPC': (1824, 672)
-[DEBUGGING] Added patrol point to NPC 'NPC': (1824, 544)
-[DEBUGGING] Added patrol point to NPC 'NPC': (1952, 544)
-[INFO] Changed to play scene
-[DEBUGGING] NPC 'NPC' reached point 1
-[DEBUGGING] NPC 'NPC' reached point 2
-[DEBUGGING] NPC 'NPC' reached point 3
-[DEBUGGING] NPC 'NPC' reached point 0
-[DEBUGGING] NPC 'NPC' reached point 1
-[DEBUGGING] NPC 'NPC' reached point 2
-[DEBUGGING] NPC 'NPC' reached point 3
-[DEBUGGING] NPC 'NPC' reached point 0
-[DEBUGGING] NPC 'NPC' reached point 1
 [INFO] stopped audio (bgm)
 [INFO] mapData.size() 480
 [INFO] MapWidth * MapHeight 480
 [INFO] Loaded Resource<image>: Resource/images/mainworld/grasss.png scaled to 64x64
 [INFO] Loaded Resource<image>: Resource/images/smalleat/wall.png scaled to 64x64
 [INFO] Loaded Resource<image>: Resource/images/smalleat/floor.png scaled to 64x64
-[INFO] Loaded Resource<image>: Resource/images/smalleat/TABLE.png scaled to 64x64
 [INFO] Loaded Resource<image>: Resource/images/NPC/Yang/role/YangD.png
 [INFO] Loaded Resource<image>: Resource/images/NPC/Yang/role/YangU.png
 [INFO] Loaded Resource<image>: Resource/images/NPC/Yang/role/YangL.png
 [INFO] Loaded Resource<image>: Resource/images/NPC/Yang/role/YangR.png
-[INFO] Loaded Resource<image>: Resource/images/NPC/axeman/role/axemanD.png
-[INFO] Loaded Resource<image>: Resource/images/NPC/axeman/role/axemanU.png
-[INFO] Loaded Resource<image>: Resource/images/NPC/axeman/role/axemanL.png
-[INFO] Loaded Resource<image>: Resource/images/NPC/axeman/role/axemanR.png
-[DEBUGGING] Added patrol point to Shopper 'axeman': (672, 672)
-[DEBUGGING] Added patrol point to Shopper 'axeman': (800, 672)
-[DEBUGGING] Added patrol point to Shopper 'axeman': (800, 544)
-[DEBUGGING] Added patrol point to Shopper 'axeman': (672, 544)
-[INFO] Loaded Resource<image>: Resource/images/NPC/Lucy/role/lucyD.png
-[INFO] Loaded Resource<image>: Resource/images/NPC/Lucy/role/lucyU.png
-[INFO] Loaded Resource<image>: Resource/images/NPC/Lucy/role/lucyL.png
-[INFO] Loaded Resource<image>: Resource/images/NPC/Lucy/role/lucyR.png
-[INFO] Loaded Resource<image>: Resource/images/lose/benjamin-happy.png
-[INFO] Loaded Resource<audio>: Resource/audios/XCB.ogg
-[INFO] Changed to smalleat scene
-[DEBUGGING] NPC 'axeman' reached point 1
-[DEBUGGING] NPC 'axeman' reached point 2
-[DEBUGGING] NPC 'axeman' reached point 3
-[DEBUGGING] NPC 'axeman' reached point 0
-[DEBUGGING] NPC 'axeman' reached point 1
-[DEBUGGING] NPC 'axeman' reached point 2
-[INFO] stopped audio (bgm)
-[INFO] mapData.size() 1920
-[INFO] MapWidth * MapHeight 1920
-[DEBUGGING] Added patrol point to NPC 'NPC': (1952, 672)
-[DEBUGGING] Added patrol point to NPC 'NPC': (1824, 672)
-[DEBUGGING] Added patrol point to NPC 'NPC': (1824, 544)
-[DEBUGGING] Added patrol point to NPC 'NPC': (1952, 544)
-[INFO] Changed to play scene
-[DEBUGGING] NPC 'NPC' reached point 1
-[DEBUGGING] NPC 'NPC' reached point 2
-[DEBUGGING] NPC 'NPC' reached point 3
-[INFO] stopped audio (bgm)
-[INFO] mapData.size() 480
-[INFO] MapWidth * MapHeight 480
 [INFO] Loaded Resource<audio>: Resource/audios/waterwood.ogg
 [INFO] Changed to waterwood scene
-[INFO] stopped audio (bgm)
-[INFO] mapData.size() 1920
-[INFO] MapWidth * MapHeight 1920
-[DEBUGGING] Added patrol point to NPC 'NPC': (1952, 672)
-[DEBUGGING] Added patrol point to NPC 'NPC': (1824, 672)
-[DEBUGGING] Added patrol point to NPC 'NPC': (1824, 544)
-[DEBUGGING] Added patrol point to NPC 'NPC': (1952, 544)
-[INFO] Changed to play scene
-[DEBUGGING] NPC 'NPC' reached point 1
-[DEBUGGING] NPC 'NPC' reached point 2
-[DEBUGGING] NPC 'NPC' reached point 3
-[INFO] stopped audio (bgm)
-[INFO] mapData.size() 480
-[INFO] MapWidth * MapHeight 480
-[INFO] Changed to windcloud scene
-[INFO] stopped audio (bgm)
-[INFO] mapData.size() 1920
-[INFO] MapWidth * MapHeight 1920
-[DEBUGGING] Added patrol point to NPC 'NPC': (1952, 672)
-[DEBUGGING] Added patrol point to NPC 'NPC': (1824, 672)
-[DEBUGGING] Added patrol point to NPC 'NPC': (1824, 544)
-[DEBUGGING] Added patrol point to NPC 'NPC': (1952, 544)
-[INFO] Changed to play scene
-[DEBUGGING] NPC 'NPC' reached point 1
-[DEBUGGING] NPC 'NPC' reached point 2
-[INFO] stopped audio (bgm)
-[INFO] mapData.size() 480
-[INFO] MapWidth * MapHeight 480
-[INFO] Loaded Resource<audio>: Resource/audios/Ruby.ogg
-[INFO] Changed to EE scene
 [INFO] Game Terminating...
 [INFO] stopped audio (bgm)
 [INFO] Game terminated
 [INFO] Game end
-[INFO] Destroyed Resource<image>: lose/benjamin-happy.png
-[INFO] Destroyed Resource<image>: NPC/Lucy/role/lucyU.png
-[INFO] Destroyed Resource<image>: NPC/Lucy/role/lucyD.png
-[INFO] Destroyed Resource<image>: NPC/axeman/role/axemanL.png
-[INFO] Destroyed Resource<image>: NPC/axeman/role/axemanU.png
-[INFO] Destroyed Resource<image>: NPC/axeman/role/axemanD.png
 [INFO] Destroyed Resource<image>: NPC/Yang/role/YangL.png
 [INFO] Destroyed Resource<image>: NPC/Yang/role/YangU.png
-[INFO] Destroyed Resource<image>: smalleat/TABLE.png?64x64
 [INFO] Destroyed Resource<image>: smalleat/wall.png?64x64
 [INFO] Destroyed Resource<image>: mainworld/grasss.png?64x64
-[INFO] Destroyed Resource<image>: NPC/Lucy/role/lucyR.png
-[INFO] Destroyed Resource<image>: stage-select/empty_0.png
-[INFO] Destroyed Resource<image>: stage-select/me.png
-[INFO] Destroyed Resource<image>: stage-select/cloud.png?300x200
-[INFO] Destroyed Resource<image>: win/floor.png
-[INFO] Destroyed Resource<image>: win/dirt.png
-[INFO] Destroyed Resource<image>: win/dirt.png?400x100
-[INFO] Destroyed Resource<image>: stage-select/end.png
-[INFO] Destroyed Resource<image>: mainworld/2ROAD.png?64x64
-[INFO] Destroyed Resource<image>: NPC/test/role/test_sheet.png
-[INFO] Destroyed Resource<image>: player/right_idle.png
-[INFO] Destroyed Resource<image>: NPC/test/avatar/test_avatar.png
+[INFO] Destroyed Resource<image>: player/right2.png
+[INFO] Destroyed Resource<image>: player/left2.png
+[INFO] Destroyed Resource<image>: player/left1.png
 [INFO] Destroyed Resource<image>: player/down2.png
 [INFO] Destroyed Resource<image>: player/down1.png
-[INFO] Destroyed Resource<image>: player/right1.png
-[INFO] Destroyed Resource<image>: player/up2.png
-[INFO] Destroyed Resource<image>: player/left2.png
-[INFO] Destroyed Resource<image>: player/up_idle.png
 [INFO] Destroyed Resource<image>: player/left_idle.png
-[INFO] Destroyed Resource<image>: scene/setting.png?1920x1024
 [INFO] Destroyed Resource<image>: play/dollar.png?56x56
+[INFO] Destroyed Resource<image>: scene/setting.png?1920x1024
 [INFO] Destroyed Resource<image>: player/idle.png
-[INFO] Destroyed Resource<image>: stage-select/me.png?64x64
-[INFO] Destroyed Resource<image>: mainworld/informationeletric.png?512x512
-[INFO] Destroyed Resource<image>: mainworld/waterwood.png?512x512
 [INFO] Destroyed Resource<image>: mainworld/lake.png?640x512
 [INFO] Destroyed Resource<image>: mainworld/windcloud.png?512x512
 [INFO] Destroyed Resource<image>: mainworld/UROAD.png?64x64
-[INFO] Destroyed Resource<image>: player/right2.png
 [INFO] Destroyed Resource<image>: mainworld/DROAD.png?64x64
 [INFO] Destroyed Resource<image>: mainworld/1ROAD.png?64x64
+[INFO] Destroyed Resource<image>: NPC/test/role/test_sheet.png
+[INFO] Destroyed Resource<image>: stage-select/end.png
+[INFO] Destroyed Resource<image>: mainworld/2ROAD.png?64x64
+[INFO] Destroyed Resource<image>: mainworld/RROAD.png?64x64
 [INFO] Destroyed Resource<image>: mainworld/LROAD.png?64x64
-[INFO] Destroyed Resource<image>: mainworld/0ROAD.png?64x64
-[INFO] Destroyed Resource<image>: scene/login.png?1920x1024
-[INFO] Destroyed Resource<image>: stage-select/sword2.png?800x150
-[INFO] Destroyed Resource<image>: NPC/Lucy/role/lucyL.png
-[INFO] Destroyed Resource<image>: mainworld/talda.png?512x512
+[INFO] Destroyed Resource<image>: mainworld/NEW.png?512x512
+[INFO] Destroyed Resource<image>: stage-select/me.png?64x64
+[INFO] Destroyed Resource<image>: mainworld/waterwood.png?512x512
+[INFO] Destroyed Resource<image>: mainworld/informationeletric.png?512x512
 [INFO] Destroyed Resource<image>: mainworld/RED.png?64x64
 [INFO] Destroyed Resource<image>: mainworld/PINK.png?64x64
+[INFO] Destroyed Resource<image>: player/up1.png
+[INFO] Destroyed Resource<image>: mainworld/BUSH.png?64x64
 [INFO] Destroyed Resource<image>: mainworld/3ROAD.png?64x64
 [INFO] Destroyed Resource<image>: mainworld/MUSHROOM.png?64x64
-[INFO] Destroyed Resource<image>: mainworld/BUSH.png?64x64
-[INFO] Destroyed Resource<image>: stage-select/sword.png
 [INFO] Destroyed Resource<image>: stage-select/dirt.png?400x100
 [INFO] Destroyed Resource<image>: stage-select/dirt.png
+[INFO] Destroyed Resource<image>: stage-select/sword.png
 [INFO] Destroyed Resource<image>: mainworld/tree.png?64x64
-[INFO] Destroyed Resource<image>: NPC/Yang/role/YangD.png
-[INFO] Destroyed Resource<image>: stage-select/empty_0.png?256x64
-[INFO] Destroyed Resource<image>: stage-select/cloud.png
-[INFO] Destroyed Resource<image>: mainworld/grass.png?64x64
-[INFO] Destroyed Resource<image>: mainworld/NEW.png?512x512
-[INFO] Destroyed Resource<image>: stage-select/full_1.png
-[INFO] Destroyed Resource<image>: win/lose.png?1920x1024
 [INFO] Destroyed Resource<image>: stage-select/floor.png
-[INFO] Destroyed Resource<image>: player/up1.png
+[INFO] Destroyed Resource<image>: stage-select/full_1.png
+[INFO] Destroyed Resource<image>: mainworld/GAS.png?64x64
+[INFO] Destroyed Resource<image>: NPC/test/avatar/test_avatar.png
+[INFO] Destroyed Resource<image>: player/right_idle.png
+[INFO] Destroyed Resource<image>: stage-select/me.png
+[INFO] Destroyed Resource<image>: stage-select/empty_0.png
+[INFO] Destroyed Resource<image>: NPC/Yang/role/YangD.png
+[INFO] Destroyed Resource<image>: stage-select/cloud.png
+[INFO] Destroyed Resource<image>: stage-select/empty_0.png?256x64
+[INFO] Destroyed Resource<image>: mainworld/grass.png?64x64
+[INFO] Destroyed Resource<image>: player/up_idle.png
+[INFO] Destroyed Resource<image>: icon.png
+[INFO] Destroyed Resource<image>: stage-select/sword2.png
+[INFO] Destroyed Resource<image>: scene/start-by.png?1920x1024
+[INFO] Destroyed Resource<image>: player/right1.png
+[INFO] Destroyed Resource<image>: player/up2.png
+[INFO] Destroyed Resource<image>: stage-select/sword2.png?800x150
+[INFO] Destroyed Resource<image>: scene/login.png?1920x1024
 [INFO] Destroyed Resource<image>: NPC/Yang/role/YangR.png
 [INFO] Destroyed Resource<image>: smalleat/floor.png?64x64
 [INFO] Destroyed Resource<image>: mainworld/smalleat.png?512x512
 [INFO] Destroyed Resource<image>: stage-select/sword.png?800x150
-[INFO] Destroyed Resource<image>: player/left1.png
-[INFO] Destroyed Resource<image>: NPC/axeman/role/axemanR.png
-[INFO] Destroyed Resource<image>: stage-select/sword2.png
-[INFO] Destroyed Resource<image>: mainworld/GAS.png?64x64
-[INFO] Destroyed Resource<image>: icon.png
-[INFO] Destroyed Resource<image>: mainworld/RROAD.png?64x64
-[INFO] Destroyed Resource<image>: scene/start-by.png?1920x1024
-[INFO] Destroyed Resource<font>: Retro.ttf?32
-[INFO] Destroyed Resource<font>: normal.ttf?32
-[INFO] Destroyed Resource<font>: pirulen.ttf?48
+[INFO] Destroyed Resource<image>: mainworld/0ROAD.png?64x64
+[INFO] Destroyed Resource<image>: mainworld/talda.png?512x512
+[INFO] Destroyed Resource<image>: stage-select/cloud.png?300x200
+[INFO] Destroyed Resource<font>: normal.ttf?24
 [INFO] Destroyed Resource<font>: normal.ttf?128
 [INFO] Destroyed Resource<font>: title.ttf?56
-[INFO] Destroyed Resource<font>: normal.ttf?24
+[INFO] Destroyed Resource<font>: Retro.ttf?32
+[INFO] Destroyed Resource<font>: normal.ttf?32
 [INFO] Destroyed Resource<font>: title.ttf?48
-[INFO] Destroyed<sample_instance>: nthu_school_song.ogg
-[INFO] Destroyed<sample_instance>: lose.ogg
 [INFO] Destroyed<sample_instance>: coconut.ogg
-[INFO] Destroyed Resource<audio>: Ruby.ogg
+[INFO] Destroyed<sample_instance>: nthu_school_song.ogg
 [INFO] Destroyed Resource<audio>: waterwood.ogg
-[INFO] Destroyed Resource<audio>: XCB.ogg
-[INFO] Destroyed Resource<audio>: lose.ogg
-[INFO] Destroyed Resource<audio>: play.ogg
 [INFO] Destroyed Resource<audio>: coconut.ogg
+[INFO] Destroyed Resource<audio>: play.ogg
 [INFO] Destroyed Resource<audio>: nthu_school_song.ogg
-[INFO] Destroyed Resource<audio>: start.ogg
-[INFO] Game Terminating...
-[INFO] stopped audio (bgm)
-[INFO] Game terminated
-[INFO] Game end
-[INFO] Destroyed Resource<image>: stage-select/sword2.png
-[INFO] Destroyed Resource<image>: stage-select/sword.png
-[INFO] Destroyed Resource<image>: stage-select/sword.png?800x150
-[INFO] Destroyed Resource<image>: icon.png
-[INFO] Destroyed Resource<image>: stage-select/sword2.png?800x150
-[INFO] Destroyed Resource<image>: scene/start-by.png?1920x1024
-[INFO] Destroyed Resource<font>: title.ttf?48
-[INFO] Destroyed Resource<font>: normal.ttf?128
 [INFO] Destroyed Resource<audio>: start.ogg
