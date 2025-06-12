@@ -4,6 +4,7 @@
 #include "NPCDialog.hpp"
 #include "Engine/Sprite.hpp"
 #include <memory> // for shared_ptr
+#include <vector>
 
 class Player;
 
@@ -36,8 +37,17 @@ public:
     
     // 檢查是否正在對話
     bool IsTalking() const { return isTalking; }
+    void UpdateFacingDirection(const Engine::Point& dir);
+
+    // 添加巡邏點
+    void AddPatrolPoint(const Engine::Point& point);
     
-    private:
+    // 設置移動速度 (可選)
+    void SetMoveSpeed(float speed) { moveSpeed = speed; }
+
+    float waitTime = 0.0f;
+    float maxWaitTime = 2.0f; // 最大等待2秒
+private:
     std::vector<std::string> messages; // NPC的對話內容
     NPCDialog dialog;                  // 每個NPC有自己的對話框
     bool isTalking = false;            // 是否正在對話
@@ -47,9 +57,14 @@ public:
     void SetAvatar(std::shared_ptr<ALLEGRO_BITMAP> avatar) { npcAvatar = avatar; }
 
     bool enterWasDown = false;
-private:
+
     std::string npcName;
     std::shared_ptr<ALLEGRO_BITMAP> npcAvatar;
+
+    std::vector<Engine::Point> patrolPoints;
+    size_t currentPatrolIndex = 0;
+    float moveSpeed = 1.0f;
+    bool isPatrolling = true;
 };
 
 #endif

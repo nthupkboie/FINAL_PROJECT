@@ -57,13 +57,9 @@ protected:
 
 public:
     enum TileType {
-        TILE_ROAD,
-        TILE_GRASS,
-        TILE_TREE,
-        TILE_STAIRS,
         TILE_WALL,
         TILE_FLOOR,
-        NEW, TILE_NEW,
+        TABLE,
         NOTHING,
     };
 

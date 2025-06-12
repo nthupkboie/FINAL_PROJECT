@@ -32,6 +32,7 @@ public:
 
     void OnKeyDown(int keyCode) override;
     bool checkID(std::string ID);
+    void Draw() const override;
 
     static int money;
     static bool haveAxe;
