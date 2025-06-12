@@ -16,7 +16,7 @@
 #include "UI/Component/ImageButton.hpp"
 #include "UI/Component/Label.hpp"
 #include "UI/Component/Slider.hpp"
-
+#include <allegro5/allegro_primitives.h>
 #include "RegisterScene.hpp"
 
 
@@ -29,10 +29,11 @@ void RegisterScene::Initialize() {
     name = pswd = "";
     ID_entered = 0;
 
-    AddNewObject(new Engine::Label("Enter the ID you want to create:", "title.ttf", 48, halfW, halfH / 2, 255, 255, 255, 255, 0.5, 0.5));
-    AddNewObject(label_name = new Engine::Label(name, "title.ttf", 48, halfW, halfH / 2 + 100, 255, 255, 255, 255, 0.5, 0.5));
-    AddNewObject(new Engine::Label("Create its password:", "title.ttf", 48, halfW, halfH / 2 + 200, 255, 255, 255, 255, 0.5, 0.5));
-    AddNewObject(label_pswd = new Engine::Label(pswd, "title.ttf", 48, halfW, halfH / 2 + 300, 255, 255, 255, 255, 0.5, 0.5));
+    AddNewObject(new Engine::Image("scene/register.png", 0, 0, w, h));
+    AddNewObject(new Engine::Label("Enter the ID you want to create:", "retro.ttf", 56, halfW, halfH / 2, 11, 23, 70, 255, 0.5, 0.5));
+    AddNewObject(label_name = new Engine::Label(name, "title.ttf", 56, halfW, halfH / 2 + 100, 255, 97, 0, 255, 0.5, 0.5));
+    AddNewObject(new Engine::Label("Create its password:", "retro.ttf", 56, halfW, halfH / 2 + 200, 11, 23, 70, 255, 0.5, 0.5));
+    AddNewObject(label_pswd = new Engine::Label(pswd, "title.ttf", 56, halfW, halfH / 2 + 300, 255, 97, 0, 255, 0.5, 0.5));
 
 
     // LoadFromFile();
@@ -179,4 +180,42 @@ bool RegisterScene::checkID(std::string ID){
         }
     }
     return false;
+}
+
+void RegisterScene::Draw() const {
+    IScene::Draw(); // 繪製背景與按鈕等
+
+    ALLEGRO_COLOR gray = al_map_rgb(200, 200, 200);
+    float boxW = 600; // 固定寬度
+    float boxH = 80;  // 固定高度
+
+    // Label: ID
+    if (label_name) {
+        float x = label_name->Position.x;
+        float y = label_name->Position.y;
+        float drawX = x - boxW / 2;
+        float drawY = y - boxH / 2;
+        al_draw_filled_rectangle(drawX, drawY, drawX + boxW, drawY + boxH, gray);
+        label_name->Draw();
+    }
+
+    // Label: Password
+    if (label_pswd) {
+        float x = label_pswd->Position.x;
+        float y = label_pswd->Position.y;
+        float drawX = x - boxW / 2;
+        float drawY = y - boxH / 2;
+        al_draw_filled_rectangle(drawX, drawY, drawX + boxW, drawY + boxH, gray);
+        label_pswd->Draw();
+    }
+
+    // Label: warning
+    if (warning1) {
+        float x = warning1->Position.x;
+        float y = warning1->Position.y;
+        float drawX = x - boxW / 2;
+        float drawY = y - boxH / 2;
+        al_draw_filled_rectangle(drawX, drawY, drawX + boxW, drawY + boxH, gray);
+        warning1->Draw();
+    }
 }

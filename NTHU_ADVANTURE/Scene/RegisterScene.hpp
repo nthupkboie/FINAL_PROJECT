@@ -31,6 +31,8 @@ public:
     void LoadFromFile(void);
     void SaveToFile(void);
     bool checkID(std::string ID);
+    void Draw() const override;
+
 };
 
 
