@@ -1,4 +1,5 @@
-#pragma once
+#ifndef BATTLESCENE_HPP
+#define BATTLESCENE_HPP
 #include <allegro5/allegro_audio.h>
 #include <list>
 #include <memory>
@@ -49,6 +50,7 @@ public:
     static const int MapWidth, MapHeight;
     static const int BlockSize;
     static const std::vector<int> code;
+
     Group *TileMapGroup;
 
     
@@ -57,6 +59,7 @@ public:
     // new add
     Group *PlayerGroup;
     Group *NPCGroup;
+    Group *UIGroup;
 
     static std::vector<std::vector<TileType>> mapState;
     std::vector<std::vector<int>> mapDistance;
@@ -83,7 +86,13 @@ public:
     static const int window_x, window_y;
 
     static bool collision(int x, int y);
+    void AxeOnClick();
+    bool canChop = false; // 是否允許砍樹
+
+    Engine::Image* axeImage = nullptr; // 跟隨玩家的斧頭圖片
     //static bool canWalk;
 
     //std::vector<BattleScene::TileType> mapData;
 };
+
+#endif   // BATTLESCENE_HPP

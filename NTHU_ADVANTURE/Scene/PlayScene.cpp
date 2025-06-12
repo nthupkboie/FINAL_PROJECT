@@ -24,7 +24,7 @@
 #include <allegro5/allegro_primitives.h>
 
 
-bool PlayScene::inPlay = true, PlayScene::inSmallEat = false;
+bool PlayScene::inPlay = true, PlayScene::inSmallEat = false, PlayScene::haveAxe = true;
 
 const int PlayScene::MapWidth = 60, PlayScene::MapHeight = 32;
 const int PlayScene::BlockSize = 64;
@@ -46,6 +46,9 @@ void PlayScene::Initialize() {
     // 初始化遊戲狀態
     lives = 3;
     money = 0;
+
+    PlayScene::inPlay = true;
+    PlayScene::inSmallEat = false;
     
     // 添加渲染群組
     AddNewObject(TileMapGroup = new Group());      // 地圖圖層
@@ -210,6 +213,7 @@ void PlayScene::OnKeyDown(int keyCode) {
         Engine::GameEngine::GetInstance().ChangeScene("smalleat");
         inPlay = false;
         inSmallEat = true;
+        //haveAxe = true;
     }
     // // 按T鍵測試開啟對話 (可選)
     // if (keyCode == ALLEGRO_KEY_T) {

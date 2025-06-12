@@ -82,6 +82,7 @@ public:
     static const int window_x, window_y;
     static bool inPlay;
     static bool inSmallEat;
+    static bool haveAxe;
 
     static std::vector<PlayScene::TileType> mapData;
 

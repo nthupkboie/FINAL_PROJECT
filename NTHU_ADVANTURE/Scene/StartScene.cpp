@@ -27,25 +27,25 @@ void StartScene::Initialize() {
     labelTitle = new Engine::Label("", "normal.ttf", 128, halfW, halfH / 3 + 50, 10, 100, 180, 255, 0.5, 0.5);
     AddNewObject(labelTitle);
 
-    btn = new Engine::ImageButton("stage-select/dirt.png", "stage-select/floor.png", halfW - 200, halfH / 2 + 70, 400, 100);
+    btn = new Engine::ImageButton("stage-select/sword.png", "stage-select/sword.png", halfW - 400, halfH / 2 + 40, 800, 150);
     btn->SetOnClickCallback(std::bind(&StartScene::RegisterOnClick, this, 1));
     AddNewControlObject(btn);
     labelRegister = new Engine::Label("", "title.ttf", 48, halfW, halfH / 2 + 120, 0, 0, 0, 255, 0.5, 0.5);
     AddNewObject(labelRegister);
 
-    btn = new Engine::ImageButton("stage-select/dirt.png", "stage-select/floor.png", halfW - 200, halfH / 2 + 200, 400, 100);
+    btn = new Engine::ImageButton("stage-select/sword2.png", "stage-select/sword2.png", halfW - 400, halfH / 2 + 170, 800, 150);
     btn->SetOnClickCallback(std::bind(&StartScene::LogOnClick, this, 1));
     AddNewControlObject(btn);
     labelLog = new Engine::Label("", "title.ttf", 48, halfW, halfH / 2 + 250, 0, 0, 0, 255, 0.5, 0.5);
     AddNewObject(labelLog);
 
-    btn = new Engine::ImageButton("stage-select/dirt.png", "stage-select/floor.png", halfW - 200, halfH * 3 / 2 - 50, 400, 100);
+    btn = new Engine::ImageButton("stage-select/sword2.png", "stage-select/sword2.png", halfW - 400, halfH * 3 / 2 - 80, 800, 150);
     btn->SetOnClickCallback(std::bind(&StartScene::SettingsOnClick, this, 2));
     AddNewControlObject(btn);
     labelSettings = new Engine::Label("", "title.ttf", 48, halfW, halfH * 3 / 2, 0, 0, 0, 255, 0.5, 0.5);
     AddNewObject(labelSettings);
 
-    btn = new Engine::ImageButton("stage-select/dirt.png", "stage-select/floor.png", halfW - 200, halfH * 3 / 2 - 180, 400, 100);
+    btn = new Engine::ImageButton("stage-select/sword.png", "stage-select/sword.png", halfW - 400, halfH * 3 / 2 - 200, 800, 150);
     btn->SetOnClickCallback(std::bind(&StartScene::ScoreboardOnClick, this, 2));
     AddNewControlObject(btn);
     labelScoreboard = new Engine::Label("", "title.ttf", 48, halfW, halfH * 3 / 2 - 120, 0, 0, 0, 255, 0.5, 0.5);

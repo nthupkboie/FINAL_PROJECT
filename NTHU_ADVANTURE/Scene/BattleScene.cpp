@@ -24,6 +24,8 @@
 #include "Player/BattlePlayer.hpp"
 #include "NPC/NPC.hpp"
 #include "BattleScene.hpp"
+#include "UI/Component/ImageButton.hpp"
+
 
 const int BattleScene::MapWidth = 30, BattleScene::MapHeight = 16;
 const int BattleScene::BlockSize = 64;
@@ -52,6 +54,7 @@ void BattleScene::Initialize() {
     AddNewObject(TileMapGroup = new Group());      // 地圖圖層
     AddNewObject(PlayerGroup = new Group());       // 玩家角色
     AddNewObject(NPCGroup = new Group());
+    AddNewObject(UIGroup = new Group()); // 新增 UIGroup
     
     // 讀取地圖
     //ReadMap();
@@ -101,6 +104,12 @@ void BattleScene::Initialize() {
     // 開始背景音樂
     bgmId = AudioHelper::PlayBGM("play.ogg");
 
+    if (PlayScene::haveAxe){
+        Engine::ImageButton* axeButton;
+        axeButton = new Engine::ImageButton("stage-select/axe.png", "stage-select/axe.png", 1700, 50, 150, 150);
+        axeButton->SetOnClickCallback(std::bind(&BattleScene::AxeOnClick, this));
+        AddNewControlObject(axeButton);
+    }
     
 }
 
@@ -128,6 +137,8 @@ void BattleScene::Update(float deltaTime) {
     }
     
     if (!player) return; // 確保玩家存在
+
+    
 
     // 檢查終點
     int gridX = static_cast<int>(std::floor(player->Position.x / BlockSize));
@@ -173,7 +184,7 @@ void BattleScene::Update(float deltaTime) {
 }
 
 void BattleScene::Draw() const {
-    //IScene::Draw();
+    
 
     ALLEGRO_TRANSFORM transform;
     al_copy_transform(&transform, al_get_current_transform());
@@ -187,6 +198,8 @@ void BattleScene::Draw() const {
     al_identity_transform(&transform);
     al_use_transform(&transform);
 
+    UIGroup->Draw(); // 繪製斧頭圖片
+    IScene::Draw(); //畫斧頭 要放在最後
     // 繪製計時器
     ALLEGRO_FONT* font = Engine::Resources::GetInstance().GetFont("normal.ttf", 24).get();
     if (font) {
@@ -195,13 +208,14 @@ void BattleScene::Draw() const {
         al_draw_text(font, al_map_rgb(255, 255, 255), 20, 20, ALLEGRO_ALIGN_LEFT, timeStr);
     }
 
+    
     // if (dialog.IsDialogActive()) {
     //     dialog.Draw();
     // }
 }
 
 void BattleScene::OnMouseDown(int button, int mx, int my) {
-    if (button & 1) {
+    if ((button & 1) && canChop) {
         //int worldX = mx + cameraOffset.x;
         //int worldY = my + cameraOffset.y;
         int gridX = mx / BlockSize;
@@ -213,7 +227,12 @@ void BattleScene::OnMouseDown(int button, int mx, int my) {
             mapState[gridY][gridX] = TILE_ROAD;
             mapData[gridY * MapWidth + gridX] = static_cast<int>(TILE_ROAD);
             UpdateTileMap(gridX, gridY);
+            canChop = false; // 砍樹後禁用
         }
+        if (axeImage) {
+                UIGroup->RemoveObject(axeImage->GetObjectIterator());
+                axeImage = nullptr;
+            }
     }
     
     IScene::OnMouseDown(button, mx, my);
@@ -221,6 +240,10 @@ void BattleScene::OnMouseDown(int button, int mx, int my) {
 
 void BattleScene::OnMouseMove(int mx, int my) {
     IScene::OnMouseMove(mx, my);
+    // 更新斧頭圖片位置
+    if (axeImage) {
+        axeImage->Position = Engine::Point(mx - 48, my - 48);
+    }
 }
 
 void BattleScene::OnMouseUp(int button, int mx, int my) {
@@ -239,6 +262,8 @@ void BattleScene::OnKeyDown(int keyCode) {
         PlayScene::inPlay = true;
         Engine::GameEngine::GetInstance().ChangeScene("play");
     }
+
+    //else if (keyCode == ALLEGRO_KEY_X) PlayScene::haveAxe = true;
     
     // // 按T鍵測試開啟對話 (可選)
     // if (keyCode == ALLEGRO_KEY_T) {
@@ -607,4 +632,16 @@ Engine::Point BattleScene::getCamera(){
 bool BattleScene::collision(int x, int y){
     if (mapState[y/BlockSize][x/BlockSize] == TILE_TREE) return false;
     else return true;
+}
+
+void BattleScene::AxeOnClick() {
+    canChop = true;
+    if (!axeImage) {
+        axeImage = new Engine::Image("stage-select/axe.png", 1750, 100, 96, 96);
+        UIGroup->AddNewObject(axeImage);
+        if (!Engine::Resources::GetInstance().GetBitmap("stage-select/sword.png")) {
+            Engine::LOG(Engine::ERROR) << "Failed to load stage-select/sword.png for axeImage";
+        }
+    }
+    Engine::LOG(Engine::INFO) << "Axe activated, canChop = true";
 }
