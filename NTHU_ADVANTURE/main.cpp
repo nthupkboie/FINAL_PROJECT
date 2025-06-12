@@ -13,6 +13,8 @@
 #include "Scene/RegisterScene.hpp"
 #include "Scene/BattleScene.hpp"
 #include "Scene/SmallEatScene.hpp"
+#include "Scene/WaterWoodScene.hpp"
+#include "Scene/WindCloudScene.hpp"
 
 #include <allegro5/allegro.h>
 #include <allegro5/allegro_image.h>
@@ -43,12 +45,14 @@ int main(int argc, char **argv) {
 	game.AddNewScene("start", new StartScene());
 	game.AddNewScene("battle", new BattleScene());
 	game.AddNewScene("smalleat", new SmallEatScene());
+	game.AddNewScene("waterwood", new WaterWoodScene());
+	game.AddNewScene("windcloud", new WindCloudScene());
 	game.AddNewScene("scoreboard", new ScoreboardScene());
 	game.AddNewScene("login", new LogScene());
 	game.AddNewScene("register", new RegisterScene());
 	// game.AddNewScene("stage-select", new StageSelectScene());
-	 game.AddNewScene("lose", new LoseScene());
-	 game.AddNewScene("win", new WinScene());
+	game.AddNewScene("lose", new LoseScene());
+	game.AddNewScene("win", new WinScene());
 
 	// start from start scene
 	game.Start("start", 60, 1920, 1024);

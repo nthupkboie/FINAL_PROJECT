@@ -209,8 +209,20 @@ void PlayScene::OnKeyDown(int keyCode) {
         Engine::GameEngine::GetInstance().ChangeScene("battle");
         inPlay = false;
     }
-    if(keyCode == ALLEGRO_KEY_E){
+    if(keyCode == ALLEGRO_KEY_1){
         Engine::GameEngine::GetInstance().ChangeScene("smalleat");
+        inPlay = false;
+        inSmallEat = true;
+        //haveAxe = true;
+    }
+    if(keyCode == ALLEGRO_KEY_2){
+        Engine::GameEngine::GetInstance().ChangeScene("waterwood");
+        inPlay = false;
+        inSmallEat = true;
+        //haveAxe = true;
+    }
+    if(keyCode == ALLEGRO_KEY_3){
+        Engine::GameEngine::GetInstance().ChangeScene("windcloud");
         inPlay = false;
         inSmallEat = true;
         //haveAxe = true;
@@ -238,12 +250,14 @@ void PlayScene::ReadMap() {
     std::ifstream fin(filename);
     while (fin >> c) {
         switch (c) {
-            case 'G': // grass
-            case 'W': // watersmall
-            case 'L': // lake
-            case 'C': // wingcloud
-            case 'E': // smalleat
-            case 'D': // Talda
+            case 'G': 
+            case 'W': mapData.push_back(WATERWOOD); break;
+            case 'L': mapData.push_back(LAKE); break;
+            case 'C': mapData.push_back(WINDCLOUD); break;
+            case 'E': mapData.push_back(SMALLEAT); break;
+            case 'D': mapData.push_back(TALDA); break;
+            case '$':
+            case 'A':
             case '-': mapData.push_back(TILE_GRASS); break;
             case 'R': mapData.push_back(TILE_ROAD); break;
             case 'T': mapData.push_back(TILE_TREE); break;
@@ -252,7 +266,7 @@ void PlayScene::ReadMap() {
             case 'n': mapData.push_back(TILE_NEW); break;
             case '=': mapData.push_back(NOTHING); break;
             case 'I': mapData.push_back(INFORMATIONELETRIC); break;
-            case 'A': mapData.push_back(TILE_AVANUE); break;
+            //case 'A': mapData.push_back(TILE_AVANUE); break;
             case '\n':
             case '\r':
             default: break;
@@ -271,7 +285,7 @@ void PlayScene::ReadMap() {
     // init init
     for(int y = 0; y < MapHeight; y++){
         for(int x = 0; x < MapWidth; x++){
-                    std::string imagePath = "mainworld/road.png";
+                    std::string imagePath = "mainworld/GAS.png";
                     TileMapGroup->AddNewObject(
                         new Engine::Image(imagePath, 
                                         x * BlockSize, 
@@ -289,8 +303,36 @@ void PlayScene::ReadMap() {
             std::string imagePath;
             
             switch(tileType) {
-                case TILE_GRASS:
-                    imagePath = "mainworld/grasss.png";
+                case TILE_GRASS: {
+                    imagePath = "mainworld/GAS.png";
+                    TileMapGroup->AddNewObject(
+                        new Engine::Image(imagePath, 
+                                        x * BlockSize, 
+                                        y * BlockSize, 
+                                        BlockSize, 
+                                        BlockSize)
+                    );
+                    // 使用隨機裝飾物（裝飾物圖檔要先準備好）
+                    int randVal = rand() % 100; // 0~99 的隨機數
+
+                    if (randVal < 10) {
+                        // 10% 香菇
+                        imagePath = "mainworld/MUSHROOM.png";
+                    } else if (randVal < 20) {
+                        // 10% 粉紅色花
+                        imagePath = "mainworld/PINK.png";
+                    } else if (randVal < 30) {
+                        // 10% 紅色花
+                        imagePath = "mainworld/RED.png";
+                    } else if (randVal < 40) {
+                        // 10% 草叢
+                        imagePath = "mainworld/BUSH.png";
+                    } else {
+                        // 其他 60% 不加裝飾物
+                        break;
+                    }
+
+                    // 貼上裝飾物圖層
                     TileMapGroup->AddNewObject(
                         new Engine::Image(imagePath, 
                                         x * BlockSize, 
@@ -299,8 +341,33 @@ void PlayScene::ReadMap() {
                                         BlockSize)
                     );
                     break;
-                case TILE_ROAD:
-                    imagePath = "mainworld/road.png";
+                }
+                case TILE_ROAD: {
+                    // 判斷周圍格子是否為草地
+                    auto isGrass = [&](int nx, int ny) {
+                        if (nx < 0 || ny < 0 || nx >= MapWidth || ny >= MapHeight)
+                            return false;
+                        return mapData[ny * MapWidth + nx] == TILE_GRASS;
+                    };
+
+                    std::string suffix = "";
+                    if (isGrass(x, y - 1)) suffix += "U";
+                    if (isGrass(x, y + 1)) suffix += "D";
+                    if (isGrass(x - 1, y)) suffix += "L";
+                    if (isGrass(x + 1, y)) suffix += "R";
+
+                    if(suffix.empty()){
+                        if (isGrass(x - 1, y - 1)) suffix += "0";
+                        else if (isGrass(x + 1, y - 1)) suffix += "1";
+                        else if (isGrass(x - 1, y + 1)) suffix += "2";
+                        else if (isGrass(x + 1, y + 1)) suffix += "3";
+                    }
+
+                    // if (!suffix.empty())
+                    //     suffix.pop_back(); // 移除最後一個底線
+
+                    imagePath = + "mainworld/" + suffix + "ROAD.png";
+
                     TileMapGroup->AddNewObject(
                         new Engine::Image(imagePath, 
                                         x * BlockSize, 
@@ -309,6 +376,7 @@ void PlayScene::ReadMap() {
                                         BlockSize)
                     );
                     break;
+                }
                 case TILE_TREE:
                     imagePath = "mainworld/grass.png";
                     TileMapGroup->AddNewObject(
@@ -361,8 +429,8 @@ void PlayScene::ReadMap() {
                         new Engine::Image(imagePath, 
                                         x * BlockSize, 
                                         y * BlockSize, 
-                                        BlockSize * 7, 
-                                        BlockSize * 7)
+                                        BlockSize * 8, 
+                                        BlockSize * 8)
                     );
                     break;
                 case INFORMATIONELETRIC:
@@ -375,7 +443,56 @@ void PlayScene::ReadMap() {
                                         BlockSize * 8)
                     );
                     break;
-                case TILE_NEW:
+                case SMALLEAT:
+                    imagePath = "mainworld/informationeletric.png";
+                    TileMapGroup->AddNewObject(
+                        new Engine::Image(imagePath, 
+                                        x * BlockSize, 
+                                        y * BlockSize, 
+                                        BlockSize * 8, 
+                                        BlockSize * 8)
+                    );
+                    break;
+                case WATERWOOD:
+                    imagePath = "mainworld/informationeletric.png";
+                    TileMapGroup->AddNewObject(
+                        new Engine::Image(imagePath, 
+                                        x * BlockSize, 
+                                        y * BlockSize, 
+                                        BlockSize * 8, 
+                                        BlockSize * 8)
+                    );
+                    break;
+                case WINDCLOUD:
+                    imagePath = "mainworld/informationeletric.png";
+                    TileMapGroup->AddNewObject(
+                        new Engine::Image(imagePath, 
+                                        x * BlockSize, 
+                                        y * BlockSize, 
+                                        BlockSize * 8, 
+                                        BlockSize * 8)
+                    );
+                    break;
+                case LAKE:
+                    imagePath = "mainworld/informationeletric.png";
+                    TileMapGroup->AddNewObject(
+                        new Engine::Image(imagePath, 
+                                        x * BlockSize, 
+                                        y * BlockSize, 
+                                        BlockSize * 10, 
+                                        BlockSize * 8)
+                    );
+                    break;
+                case TALDA:
+                    imagePath = "mainworld/informationeletric.png";
+                    TileMapGroup->AddNewObject(
+                        new Engine::Image(imagePath, 
+                                        x * BlockSize, 
+                                        y * BlockSize, 
+                                        BlockSize * 8, 
+                                        BlockSize * 8)
+                    );
+                    break;
                 case NOTHING:
                 default:
                     continue;

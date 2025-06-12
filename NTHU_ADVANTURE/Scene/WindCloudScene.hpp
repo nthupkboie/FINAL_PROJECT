@@ -1,5 +1,5 @@
-#ifndef PLAYSCENE_HPP
-#define PLAYSCENE_HPP
+#ifndef WindCloudScene_HPP
+#define WindCloudScene_HPP
 #include <allegro5/allegro_audio.h>
 #include <list>
 #include <memory>
@@ -19,8 +19,10 @@ namespace Engine {
     class Sprite;
 }   // namespace Engine
 
-class PlayScene final : public Engine::IScene {
+class WindCloudScene final : public Engine::IScene {
 private:
+    
+    
     ALLEGRO_SAMPLE_ID bgmId;
     std::shared_ptr<ALLEGRO_SAMPLE_INSTANCE> deathBGMInstance;
 
@@ -35,19 +37,10 @@ protected:
 
 public:
     enum TileType {
-        TILE_ROAD,
-        TILE_GRASS,
-        TILE_AVANUE,
-        TILE_TREE,
-        TILE_STAIRS,
-        NEW, TILE_NEW,
+        TILE_WALL,
+        TILE_FLOOR,
+        TABLE,
         NOTHING,
-        INFORMATIONELETRIC,
-        SMALLEAT,
-        WINDCLOUD,
-        WATERWOOD,
-        TALDA,
-        LAKE,
     };
 
     static const std::vector<Engine::Point> directions;
@@ -55,6 +48,7 @@ public:
     static const int BlockSize;
     static const std::vector<int> code;
     Group *TileMapGroup;
+
 
     // new add
     Group *PlayerGroup;
@@ -67,7 +61,7 @@ public:
     ALLEGRO_KEYBOARD_STATE keyboardState; // new add
 
     static Engine::Point GetClientSize();
-    explicit PlayScene() = default;
+    explicit WindCloudScene() = default;
     void Initialize() override;
     void Terminate() override;
     void Update(float deltaTime) override;
@@ -78,16 +72,12 @@ public:
     void OnKeyDown(int keyCode) override;
     void ReadMap();
     static Engine::Point getCamera();
-    void DrawMiniMap() const;
 
     static const int window_x, window_y;
-    static bool inPlay;
-    static bool inSmallEat;
-    static bool haveAxe;
 
-    static std::vector<PlayScene::TileType> mapData;
+    static std::vector<WindCloudScene::TileType> mapData;
 
     static bool collision(int x, int y);
 };
 
-#endif   // PLAYSCENE_HPP
+#endif   // WindCloudScene_HPP

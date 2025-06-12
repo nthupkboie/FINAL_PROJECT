@@ -18,28 +18,28 @@
 #include "Engine/IScene.hpp"
 
 // new add
-#include "SmallEatScene.hpp"
+#include "WaterWoodScene.hpp"
 #include "PlayScene.hpp"
 #include "Player/Player.hpp"
 #include "NPC/NPC.hpp"
 
-const int SmallEatScene::MapWidth = 30, SmallEatScene::MapHeight = 16;
-const int SmallEatScene::BlockSize = 64;
+const int WaterWoodScene::MapWidth = 30, WaterWoodScene::MapHeight = 16;
+const int WaterWoodScene::BlockSize = 64;
 
-const int SmallEatScene::window_x = 30, SmallEatScene::window_y = 16;
+const int WaterWoodScene::window_x = 30, WaterWoodScene::window_y = 16;
 
-std::vector<SmallEatScene::TileType> SmallEatScene::mapData;
+std::vector<WaterWoodScene::TileType> WaterWoodScene::mapData;
 
-// Engine::Point SmallEatScene::GetClientSize() {
+// Engine::Point WaterWoodScene::GetClientSize() {
 //     return Engine::Point(MapWidth * BlockSize, MapHeight * BlockSize);
 // }
 
-Engine::Point SmallEatScene::GetClientSize() {
+Engine::Point WaterWoodScene::GetClientSize() {
     return Engine::Point(window_x * BlockSize, window_y * BlockSize); // 視角大小
 }
 
-Engine::Point SmallEatScene::cameraOffset = Engine::Point(0, 0);
-void SmallEatScene::Initialize() {
+Engine::Point WaterWoodScene::cameraOffset = Engine::Point(0, 0);
+void WaterWoodScene::Initialize() {
     // 初始化遊戲狀態
     lives = 3;
     money = 0;
@@ -119,12 +119,12 @@ void SmallEatScene::Initialize() {
     bgmId = AudioHelper::PlayBGM("play.ogg");
 }
 
-void SmallEatScene::Terminate() {
+void WaterWoodScene::Terminate() {
     AudioHelper::StopBGM(bgmId);
     IScene::Terminate();
 }
 
-void SmallEatScene::Update(float deltaTime) {
+void WaterWoodScene::Update(float deltaTime) {
     IScene::Update(deltaTime);
     
     // 獲取玩家對象
@@ -160,7 +160,7 @@ void SmallEatScene::Update(float deltaTime) {
     }
 }
 
-void SmallEatScene::Draw() const {
+void WaterWoodScene::Draw() const {
     //IScene::Draw();
 
     ALLEGRO_TRANSFORM transform;
@@ -185,28 +185,24 @@ void SmallEatScene::Draw() const {
     }
 }
 
-void SmallEatScene::OnMouseDown(int button, int mx, int my) {
+void WaterWoodScene::OnMouseDown(int button, int mx, int my) {
     IScene::OnMouseDown(button, mx, my);
 }
 
-void SmallEatScene::OnMouseMove(int mx, int my) {
+void WaterWoodScene::OnMouseMove(int mx, int my) {
     IScene::OnMouseMove(mx, my);
 }
 
-void SmallEatScene::OnMouseUp(int button, int mx, int my) {
+void WaterWoodScene::OnMouseUp(int button, int mx, int my) {
     IScene::OnMouseUp(button, mx, my);
 }
 
-void SmallEatScene::OnKeyDown(int keyCode) {
+void WaterWoodScene::OnKeyDown(int keyCode) {
     IScene::OnKeyDown(keyCode);
     
     // 按Enter鍵推進對話
     if (keyCode == ALLEGRO_KEY_ENTER && dialog.IsDialogActive()) {
         dialog.AdvanceDialog();
-    }
-    
-    if(keyCode == ALLEGRO_KEY_B){
-        Engine::GameEngine::GetInstance().ChangeScene("battle");
     }
     // // 按T鍵測試開啟對話 (可選)
     // if (keyCode == ALLEGRO_KEY_T) {
@@ -226,7 +222,7 @@ void SmallEatScene::OnKeyDown(int keyCode) {
     }
 }
 
-void SmallEatScene::ReadMap() {
+void WaterWoodScene::ReadMap() {
     std::string filename = std::string("Resource/smalleat") + ".txt";
 
     // 清空舊的地圖數據
@@ -359,11 +355,11 @@ void SmallEatScene::ReadMap() {
     }
 }
 
-Engine::Point SmallEatScene::getCamera(){
+Engine::Point WaterWoodScene::getCamera(){
     return Engine::Point(cameraOffset.x + 5 * BlockSize, cameraOffset.y + 2.5 * BlockSize);
 }
 
-bool SmallEatScene::collision(int x, int y){
+bool WaterWoodScene::collision(int x, int y){
     switch(mapData[y/BlockSize * MapWidth + x / BlockSize]){
         case TILE_FLOOR:
             return true;
