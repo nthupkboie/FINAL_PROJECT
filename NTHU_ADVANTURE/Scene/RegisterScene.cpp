@@ -208,14 +208,4 @@ void RegisterScene::Draw() const {
         al_draw_filled_rectangle(drawX, drawY, drawX + boxW, drawY + boxH, gray);
         label_pswd->Draw();
     }
-
-    // Label: warning
-    if (warning1) {
-        float x = warning1->Position.x;
-        float y = warning1->Position.y;
-        float drawX = x - boxW / 2;
-        float drawY = y - boxH / 2;
-        al_draw_filled_rectangle(drawX, drawY, drawX + boxW, drawY + boxH, gray);
-        warning1->Draw();
-    }
 }
