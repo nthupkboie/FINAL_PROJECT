@@ -24,7 +24,7 @@ void StartScene::Initialize() {
 
     AddNewObject(new Engine::Image("scene/start-by.png", 0, 0, w, h));
 
-    labelTitle = new Engine::Label("", "title.ttf", 80, halfW, halfH / 3 + 50, 10, 100, 80, 255, 0.5, 0.5);
+    labelTitle = new Engine::Label("", "normal.ttf", 128, halfW, halfH / 3 + 50, 10, 100, 180, 255, 0.5, 0.5);
     AddNewObject(labelTitle);
 
     btn = new Engine::ImageButton("stage-select/sword.png", "stage-select/sword.png", halfW - 400, halfH / 2 + 40, 800, 150);
