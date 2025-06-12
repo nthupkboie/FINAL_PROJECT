@@ -962,4 +962,5 @@ CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/BattleScene.cpp.obj: \
   C:/FINAL_PROJECT/NTHU_ADVANTURE/./Engine/Sprite.hpp \
   C:/FINAL_PROJECT/NTHU_ADVANTURE/./UI/Component/Image.hpp \
   C:/FINAL_PROJECT/NTHU_ADVANTURE/./NPC/NPC.hpp \
-  C:/FINAL_PROJECT/NTHU_ADVANTURE/Scene/BattleScene.hpp
+  C:/FINAL_PROJECT/NTHU_ADVANTURE/Scene/BattleScene.hpp \
+  C:/FINAL_PROJECT/NTHU_ADVANTURE/./UI/Component/ImageButton.hpp

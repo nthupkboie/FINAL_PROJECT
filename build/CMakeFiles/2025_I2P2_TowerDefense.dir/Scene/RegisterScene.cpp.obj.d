@@ -911,4 +911,5 @@ CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/RegisterScene.cpp.obj: \
   C:/FINAL_PROJECT/NTHU_ADVANTURE/./UI/Component/Image.hpp \
   C:/FINAL_PROJECT/NTHU_ADVANTURE/./UI/Component/Label.hpp \
   C:/FINAL_PROJECT/NTHU_ADVANTURE/./UI/Component/Slider.hpp \
+  C:/allegro/include/allegro5/allegro_primitives.h \
   C:/FINAL_PROJECT/NTHU_ADVANTURE/Scene/RegisterScene.hpp

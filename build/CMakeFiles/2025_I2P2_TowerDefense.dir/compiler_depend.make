@@ -13685,6 +13685,7 @@ CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/BattleScene.cpp.obj: C:/FINAL_PROJEC
   C:/FINAL_PROJECT/NTHU_ADVANTURE/NPC/NPCDialog.hpp \
   C:/FINAL_PROJECT/NTHU_ADVANTURE/Player/BattlePlayer.hpp \
   C:/FINAL_PROJECT/NTHU_ADVANTURE/UI/Component/Image.hpp \
+  C:/FINAL_PROJECT/NTHU_ADVANTURE/UI/Component/ImageButton.hpp \
   C:/FINAL_PROJECT/NTHU_ADVANTURE/Scene/BattleScene.hpp \
   C:/FINAL_PROJECT/NTHU_ADVANTURE/Scene/PlayScene.hpp \
   C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/include/_mingw.h \
@@ -15508,6 +15509,7 @@ CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/LogScene.cpp.obj: C:/FINAL_PROJECT/N
   C:/allegro/include/allegro5/allegro.h \
   C:/allegro/include/allegro5/allegro_audio.h \
   C:/allegro/include/allegro5/allegro_font.h \
+  C:/allegro/include/allegro5/allegro_primitives.h \
   C:/allegro/include/allegro5/altime.h \
   C:/allegro/include/allegro5/base.h \
   C:/allegro/include/allegro5/bitmap.h \
@@ -18210,6 +18212,7 @@ CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/RegisterScene.cpp.obj: C:/FINAL_PROJ
   C:/allegro/include/allegro5/allegro.h \
   C:/allegro/include/allegro5/allegro_audio.h \
   C:/allegro/include/allegro5/allegro_font.h \
+  C:/allegro/include/allegro5/allegro_primitives.h \
   C:/allegro/include/allegro5/altime.h \
   C:/allegro/include/allegro5/base.h \
   C:/allegro/include/allegro5/bitmap.h \
