@@ -21,6 +21,7 @@
 
 // new add
 #include "PlayScene.hpp"
+#include "LogScene.hpp"
 #include "Player/BattlePlayer.hpp"
 #include "NPC/NPC.hpp"
 #include "BattleScene.hpp"
@@ -104,7 +105,7 @@ void BattleScene::Initialize() {
     // 開始背景音樂
     bgmId = AudioHelper::PlayBGM("play.ogg");
 
-    if (PlayScene::haveAxe){
+    if (LogScene::haveAxe){
         Engine::ImageButton* axeButton;
         axeButton = new Engine::ImageButton("stage-select/axe.png", "stage-select/axe.png", 1700, 50, 150, 150);
         axeButton->SetOnClickCallback(std::bind(&BattleScene::AxeOnClick, this));
@@ -260,6 +261,7 @@ void BattleScene::OnKeyDown(int keyCode) {
 
     if(keyCode == ALLEGRO_KEY_P){
         PlayScene::inPlay = true;
+        LogScene::money += 10;
         Engine::GameEngine::GetInstance().ChangeScene("play");
     }
 
@@ -468,7 +470,7 @@ void BattleScene::GenerateMaze() {
     int treeCount = 0;
     for (int y = 1; y < MapHeight - 1; y++) {
         for (int x = 1; x < MapWidth - 1; x++) {
-            if (dis(gen) < 0.7) {
+            if (dis(gen) < 0.65) {
                 mapState[y][x] = TILE_TREE;
                 mapData[y * MapWidth + x] = static_cast<int>(TILE_TREE);
                 treeCount++;

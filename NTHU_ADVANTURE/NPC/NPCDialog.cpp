@@ -108,12 +108,11 @@ void NPCDialog::StartDialog(const std::string& npcName,
         camera = SmallEatScene::getCamera();
     }
     else {
-        clientSize = PlayScene::GetClientSize(); // 384x192
+        clientSize = PlayScene::GetClientSize();
         camera = PlayScene::getCamera();
-        //printf("WWWWWWWWWWW\n");
     }
-    boxX = camera.x + clientSize.x / 2 - boxWidth / 2 - 300; // 192 - 150 = 42
-    boxY = camera.y + clientSize.y / 2 + 30;           // 96 + 30 = 126
+    boxX = camera.x + clientSize.x / 2 - boxWidth / 2 - 300;
+    boxY = camera.y + clientSize.y / 2 + 30;
     avatarX = boxX + padding;
     avatarY = boxY + padding;
     textX = boxX + padding + 128 + padding;  // 頭像寬度 64

@@ -1,4 +1,4 @@
-#include "NPC.hpp"
+#include "Shopper.hpp"
 #include "Player/Player.hpp"
 #include "Engine/Resources.hpp"
 #include "Engine/LOG.hpp"
@@ -7,10 +7,12 @@
 #include "UI/Component/ImageButton.hpp"
 #include "UI/Component/Label.hpp"
 
+bool Shopper::canBuy = false, Shopper::isTalking = false;
+
 // 從 sprite sheet 載入子圖的輔助函數
 static std::shared_ptr<ALLEGRO_BITMAP> LoadSpriteFromSheet(
     const std::string& sheetKey, int col, int row, 
-    int tileW = 64, int tileH = 64) 
+    int tileW = 64, int tileH = 64)
 {
     auto sheetPtr = Engine::Resources::GetInstance().GetBitmap(sheetKey);
     if (!sheetPtr) return nullptr;
@@ -23,7 +25,7 @@ static std::shared_ptr<ALLEGRO_BITMAP> LoadSpriteFromSheet(
 }
 
 // 從 sprite sheet 建構
-NPC::NPC(const std::string& name,std::shared_ptr<ALLEGRO_BITMAP> avatar, const std::string& sheetPath, float x, float y, 
+Shopper::Shopper(const std::string& name,std::shared_ptr<ALLEGRO_BITMAP> avatar, const std::string& sheetPath, float x, float y, 
          int upCol, int upRow, int downCol, int downRow,
          int leftCol, int leftRow, int rightCol, int rightRow,
          int tileW, int tileH)
@@ -41,10 +43,11 @@ NPC::NPC(const std::string& name,std::shared_ptr<ALLEGRO_BITMAP> avatar, const s
     Position.y = std::round(Position.y / tileH) * tileH + tileH/2;
 
     dialog.Initialize();
+    //canBuy = false;
 }
 
 // 從分開的圖片建構 (完全對照Player方式)
-NPC::NPC(const std::string& name, std::shared_ptr<ALLEGRO_BITMAP> avatar, 
+Shopper::Shopper(const std::string& name, std::shared_ptr<ALLEGRO_BITMAP> avatar, 
          const std::string& upPath, const std::string& downPath,
          const std::string& leftPath, const std::string& rightPath,
          float x, float y)
@@ -67,36 +70,11 @@ NPC::NPC(const std::string& name, std::shared_ptr<ALLEGRO_BITMAP> avatar,
     Position.y = std::round(Position.y / 64.0f) * 64.0f + 32.0f;
 
     dialog.Initialize();
+    //canBuy = false;
 }
 
 
-void NPC::Update(float deltaTime, const Player* player) {
-    // 只在非對話狀態巡邏
-    if (!isTalking && isPatrolling && !patrolPoints.empty()) {
-        Engine::Point target = patrolPoints[currentPatrolIndex];
-        Engine::Point direction = target - Position;
-        float distance = sqrt(direction.x * direction.x + direction.y * direction.y);
-        
-        if (distance < 5.0f) { // 到達點
-            currentPatrolIndex = (currentPatrolIndex + 1) % patrolPoints.size();
-            waitTime = (rand() % 1000) / 1000.0f * maxWaitTime; // 0~2秒隨機等待
-            // DEBUG: 打印切換到下一巡邏點
-            Engine::LOG(Engine::DEBUGGING) << "NPC '" << npcName << "' reached point " 
-                                         << currentPatrolIndex;
-        } else {
-            waitTime -= deltaTime;
-            // 標準化方向向量並考慮幀時間
-            direction.x /= distance;
-            direction.y /= distance;
-            
-            // 更新位置 (使用 deltaTime 使移動速度與幀率無關)
-            Position.x += direction.x * moveSpeed * deltaTime * 60.0f; // 60.0f 是基準幀率
-            Position.y += direction.y * moveSpeed * deltaTime * 60.0f;
-            
-            UpdateFacingDirection(direction);
-        }
-    }
-
+void Shopper::Update(float deltaTime, const Player* player) {
     ALLEGRO_KEYBOARD_STATE kbState;
     al_get_keyboard_state(&kbState);
 
@@ -136,6 +114,7 @@ void NPC::Update(float deltaTime, const Player* player) {
                 //Engine::ImageButton *btn;
 
                 isTalking = false;
+                canBuy = true;
             }
         }
     }
@@ -143,7 +122,7 @@ void NPC::Update(float deltaTime, const Player* player) {
     Engine::Sprite::Update(deltaTime);
 }
 
-void NPC::FacePlayer(const Player* player) {
+void Shopper::FacePlayer(const Player* player) {
     Engine::Point playerPos = player->Position;
     float dx = playerPos.x - Position.x;
     float dy = playerPos.y - Position.y;
@@ -158,27 +137,11 @@ void NPC::FacePlayer(const Player* player) {
     }
 }
 
-void NPC::Draw() const {
+void Shopper::Draw() const {
     Engine::Sprite::Draw();
 
     // 繪製對話框
     if (isTalking) {
         dialog.Draw();
     }
-}
-
-void NPC::UpdateFacingDirection(const Engine::Point& dir) {
-    if (abs(dir.x) > abs(dir.y)) {
-        bmp = (dir.x > 0) ? bmpIdle_right : bmpIdle_left;
-    } else {
-        bmp = (dir.y > 0) ? bmpIdle_down : bmpIdle_up;
-    }
-}
-
-void NPC::AddPatrolPoint(const Engine::Point& point) {
-    patrolPoints.push_back(point);
-    
-    // DEBUG: 打印添加的巡邏點 (開發時可移除)
-    Engine::LOG(Engine::DEBUGGING) << "Added patrol point to NPC '" << npcName 
-                                  << "': (" << point.x << ", " << point.y << ")";
 }
