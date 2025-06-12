@@ -43,12 +43,11 @@ private:
     Shopper* axeman = nullptr; // 新增：NPC 引用
     int items = 0;
     bool canBuyAxe = false;
+
+    
     Engine::Label* moneyLabel;
     Engine::Image* moneyImage;
     Engine::Image* axeImage = nullptr;
-
-    
-
 
 protected:
     int lives;

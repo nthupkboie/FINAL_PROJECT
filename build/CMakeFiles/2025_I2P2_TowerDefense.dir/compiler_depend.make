@@ -19187,6 +19187,7 @@ CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/RegisterScene.cpp.obj: C:/FINAL_PROJ
   C:/allegro/include/allegro5/utf8.h
 
 CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/ScoreboardScene.cpp.obj: C:/FINAL_PROJECT/NTHU_ADVANTURE/Scene/ScoreboardScene.cpp \
+  C:/FINAL_PROJECT/NTHU_ADVANTURE/Engine/AudioHelper.hpp \
   C:/FINAL_PROJECT/NTHU_ADVANTURE/Engine/GameEngine.hpp \
   C:/FINAL_PROJECT/NTHU_ADVANTURE/Engine/Group.hpp \
   C:/FINAL_PROJECT/NTHU_ADVANTURE/Engine/IControl.hpp \

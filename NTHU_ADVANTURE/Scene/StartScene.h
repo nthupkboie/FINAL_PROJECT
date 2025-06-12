@@ -9,6 +9,7 @@
 #include <memory>
 #include "Engine/IScene.hpp"
 #include "UI/Component/Label.hpp"
+#include <string>
 
 class StartScene final : public Engine::IScene {
 public:
@@ -23,6 +24,7 @@ public:
     void LogOnClick(int stage);
     void RegisterOnClick(int stage);
     void Update(float deltaTime) override;
+    void AIChatOnClick(int stage);
     std::string currentLanguage;
 
 private:
@@ -32,5 +34,6 @@ private:
     Engine::Label* labelScoreboard;
     Engine::Label* labelLog;
     Engine::Label* labelRegister;
+    Engine::Label* labelAIChat;
 };
 #endif   // INC_2025_I2P2_TOWERDEFENSE_WITH_ANSWER_STARTSCENE_H

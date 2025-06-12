@@ -99,6 +99,8 @@ void PlayScene::Initialize() {
     test->AddPatrolPoint(testPoint2);
     test->AddPatrolPoint(testPoint3);
 
+    test->SetMoveSpeed(10.0f);
+
     // 設置NPC的對話內容
     test->SetMessages({
         "你好，我是村民A！",
@@ -113,7 +115,7 @@ void PlayScene::Initialize() {
     // 開始背景音樂
     bgmId = AudioHelper::PlayBGM("play.ogg");
 
-    LabelGroup->AddNewObject(moneyLabel = new Engine::Label(std::to_string(LogScene::money), "title.ttf", 64, 130, 70, 255, 255, 255, 255, 0.5, 0.5));
+    LabelGroup->AddNewObject(moneyLabel = new Engine::Label(std::to_string(LogScene::money), "title.ttf", 48, 130, 70, 255, 255, 255, 255, 0.5, 0.5));
     LabelGroup->AddNewObject(moneyImage = new Engine::Image("play/dollar.png", 20, 35, 56, 56));
     if (LogScene::haveAxe) LabelGroup->AddNewObject(axeImage = new Engine::Image("stage-select/axe.png", 20, 105, 56, 56));
 }
@@ -249,6 +251,17 @@ void PlayScene::OnKeyDown(int keyCode) {
     }
     if(keyCode == ALLEGRO_KEY_3){
         Engine::GameEngine::GetInstance().ChangeScene("windcloud");
+        inPlay = false;
+        inSmallEat = true;
+        //haveAxe = true;
+    }
+    if(keyCode == ALLEGRO_KEY_4){
+        Engine::GameEngine::GetInstance().ChangeScene("EE");
+        inPlay = false;
+        inSmallEat = true;
+    }
+    if(keyCode == ALLEGRO_KEY_5){
+        Engine::GameEngine::GetInstance().ChangeScene("talda");
         inPlay = false;
         inSmallEat = true;
         //haveAxe = true;
@@ -480,7 +493,7 @@ void PlayScene::ReadMap() {
                     );
                     break;
                 case WATERWOOD:
-                    imagePath = "mainworld/informationeletric.png";
+                    imagePath = "mainworld/waterwood.png";
                     TileMapGroup->AddNewObject(
                         new Engine::Image(imagePath, 
                                         x * BlockSize, 

@@ -10,3 +10,4 @@ sfx = SFX :
 language = Language
 start = Start
 exit = Exit
+aichat = AIChat

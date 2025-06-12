@@ -15,12 +15,14 @@
 #include "Scene/SmallEatScene.hpp"
 #include "Scene/WaterWoodScene.hpp"
 #include "Scene/WindCloudScene.hpp"
+#include "Scene/EEScene.hpp"
+#include "Scene/TaldaScene.hpp"
+
+#include "Scene/AIChatScene.hpp"
 
 #include <allegro5/allegro.h>
 #include <allegro5/allegro_image.h>
 #include <allegro5/allegro_primitives.h>
-
-
 
 // No USE
 // #include "Scene/ScoreboardScene.hpp"
@@ -50,9 +52,13 @@ int main(int argc, char **argv) {
 	game.AddNewScene("scoreboard", new ScoreboardScene());
 	game.AddNewScene("login", new LogScene());
 	game.AddNewScene("register", new RegisterScene());
+	game.AddNewScene("talda", new TaldaScene());
+	game.AddNewScene("EE", new EEScene());
 	// game.AddNewScene("stage-select", new StageSelectScene());
 	game.AddNewScene("lose", new LoseScene());
 	game.AddNewScene("win", new WinScene());
+
+	//game.AddNewScene("aichat", new AIChatScene());
 
 	// start from start scene
 	game.Start("start", 60, 1920, 1024);

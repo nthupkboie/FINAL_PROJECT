@@ -30,6 +30,7 @@ void LogScene::Initialize() {
     int halfH = h / 2;
 
     money = 0;
+    haveAxe = false;
 
     name = pswd = "";
     warning1 = label_name = label_pswd = nullptr;

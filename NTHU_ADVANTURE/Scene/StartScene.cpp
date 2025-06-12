@@ -39,17 +39,24 @@ void StartScene::Initialize() {
     labelLog = new Engine::Label("", "title.ttf", 48, halfW, halfH / 2 + 250, 0, 0, 0, 255, 0.5, 0.5);
     AddNewObject(labelLog);
 
+    btn = new Engine::ImageButton("stage-select/sword.png", "stage-select/sword.png", halfW - 400, halfH * 3 / 2 - 200, 800, 150);
+    btn->SetOnClickCallback(std::bind(&StartScene::ScoreboardOnClick, this, 2));
+    AddNewControlObject(btn);
+    labelScoreboard = new Engine::Label("", "title.ttf", 48, halfW, halfH * 3 / 2 - 120, 0, 0, 0, 255, 0.5, 0.5);
+    AddNewObject(labelScoreboard);
+
     btn = new Engine::ImageButton("stage-select/sword2.png", "stage-select/sword2.png", halfW - 400, halfH * 3 / 2 - 80, 800, 150);
     btn->SetOnClickCallback(std::bind(&StartScene::SettingsOnClick, this, 2));
     AddNewControlObject(btn);
     labelSettings = new Engine::Label("", "title.ttf", 48, halfW, halfH * 3 / 2, 0, 0, 0, 255, 0.5, 0.5);
     AddNewObject(labelSettings);
 
-    btn = new Engine::ImageButton("stage-select/sword.png", "stage-select/sword.png", halfW - 400, halfH * 3 / 2 - 200, 800, 150);
-    btn->SetOnClickCallback(std::bind(&StartScene::ScoreboardOnClick, this, 2));
+    //////////////////////////
+    btn = new Engine::ImageButton("stage-select/sword.png", "stage-select/sword.png", halfW - 400, halfH * 3 / 2 + 40, 800, 150);
+    btn->SetOnClickCallback(std::bind(&StartScene::AIChatOnClick, this, 1));
     AddNewControlObject(btn);
-    labelScoreboard = new Engine::Label("", "title.ttf", 48, halfW, halfH * 3 / 2 - 120, 0, 0, 0, 255, 0.5, 0.5);
-    AddNewObject(labelScoreboard);
+    labelAIChat = new Engine::Label("", "title.ttf", 48, halfW, halfH * 3 / 2 + 120, 0, 0, 0, 255, 0.5, 0.5);
+    AddNewObject(labelAIChat);
 
     currentLanguage = LanguageManager::GetInstance().GetCurrentLanguage();
     RefreshLabels();
@@ -82,12 +89,17 @@ void StartScene::RegisterOnClick(int stage) {
     Engine::GameEngine::GetInstance().ChangeScene("register");
 }
 
+void StartScene::AIChatOnClick(int stage) {
+    Engine::GameEngine::GetInstance().ChangeScene("aichat");
+}
+
 void StartScene::RefreshLabels() {
     labelTitle->SetText(LanguageManager::GetInstance().GetText("title"));
     labelRegister->SetText(LanguageManager::GetInstance().GetText("register"));
     labelLog->SetText(LanguageManager::GetInstance().GetText("test"));  // "log" 改為 "test"，如需恢復請調整
     labelSettings->SetText(LanguageManager::GetInstance().GetText("settings"));
     labelScoreboard->SetText(LanguageManager::GetInstance().GetText("scoreboard"));
+    labelAIChat->SetText(LanguageManager::GetInstance().GetText("aichat"));
 }
 
 void StartScene::Update(float deltaTime) {
