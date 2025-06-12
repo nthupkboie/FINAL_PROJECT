@@ -15,7 +15,7 @@
 #include "Engine/LOG.hpp"
 #include "Scene/BattleScene.hpp"
 #include "Scene/PlayScene.hpp"
-
+#include "Scene/LogScene.hpp"
 #include "Engine/Resources.hpp"
 
 BattleScene *BattlePlayer::getBattleScene() {
@@ -76,10 +76,12 @@ void BattlePlayer::Update(float deltaTime) {
         }
     }
 
+    if (LogScene::haveSpeedUp) speed = 0.2f / (LogScene::haveSpeedUp);
+
     // 處理移動
     if (isMoving) {
         // 更新移動進度（0.3 秒完成）
-        moveProgress += deltaTime / 0.2f;
+        moveProgress += deltaTime / speed;
         if (moveProgress >= 1.0f) {
             Position = targetPos;
             moveProgress = 0.0f;

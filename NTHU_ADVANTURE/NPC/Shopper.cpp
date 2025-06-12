@@ -7,7 +7,8 @@
 #include "UI/Component/ImageButton.hpp"
 #include "UI/Component/Label.hpp"
 
-bool Shopper::canBuy = false, Shopper::isTalking = false;
+//bool Shopper::canBuy = false, 
+//bool Shopper::isTalking = false;
 
 // 從 sprite sheet 載入子圖的輔助函數
 static std::shared_ptr<ALLEGRO_BITMAP> LoadSpriteFromSheet(
@@ -19,6 +20,7 @@ static std::shared_ptr<ALLEGRO_BITMAP> LoadSpriteFromSheet(
 
     ALLEGRO_BITMAP* sheet = sheetPtr.get();
     ALLEGRO_BITMAP* sub = al_create_sub_bitmap(sheet, col * tileW, row * tileH, tileW, tileH);
+    
     return std::shared_ptr<ALLEGRO_BITMAP>(sub, [](ALLEGRO_BITMAP* bmp) {
         // 注意: 不實際刪除 sub-bitmap，由父圖管理生命週期
     });
@@ -43,7 +45,7 @@ Shopper::Shopper(const std::string& name,std::shared_ptr<ALLEGRO_BITMAP> avatar,
     Position.y = std::round(Position.y / tileH) * tileH + tileH/2;
 
     dialog.Initialize();
-    //canBuy = false;
+    canBuy = false;
 }
 
 // 從分開的圖片建構 (完全對照Player方式)
@@ -70,7 +72,7 @@ Shopper::Shopper(const std::string& name, std::shared_ptr<ALLEGRO_BITMAP> avatar
     Position.y = std::round(Position.y / 64.0f) * 64.0f + 32.0f;
 
     dialog.Initialize();
-    //canBuy = false;
+    canBuy = false;
 }
 
 
@@ -141,9 +143,19 @@ void Shopper::Update(float deltaTime, const Player* player) {
 
                 isTalking = false;
                 canBuy = true;
+                Engine::LOG(Engine::WARN) << "Shopper '" << npcName << "' dialog ended, canBuy = true";
             }
         }
     }
+    // // 更新對話框
+    // if (isTalking) {
+    //     dialog.Update(deltaTime);
+    //     if (!dialog.IsDialogActive()) {
+    //         isTalking = false;
+    //         canBuy = true;
+    //         Engine::LOG(Engine::INFO) << "Shopper '" << npcName << "' dialog ended, canBuy = true";
+    //     }
+    // }
 
     Engine::Sprite::Update(deltaTime);
 }
