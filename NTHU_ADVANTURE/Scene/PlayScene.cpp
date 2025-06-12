@@ -451,7 +451,7 @@ void PlayScene::ReadMap() {
                     );
                     break;
                 case SMALLEAT:
-                    imagePath = "mainworld/informationeletric.png";
+                    imagePath = "mainworld/smalleat.png";
                     TileMapGroup->AddNewObject(
                         new Engine::Image(imagePath, 
                                         x * BlockSize, 
@@ -471,7 +471,7 @@ void PlayScene::ReadMap() {
                     );
                     break;
                 case WINDCLOUD:
-                    imagePath = "mainworld/informationeletric.png";
+                    imagePath = "mainworld/windcloud.png";
                     TileMapGroup->AddNewObject(
                         new Engine::Image(imagePath, 
                                         x * BlockSize, 
@@ -481,7 +481,7 @@ void PlayScene::ReadMap() {
                     );
                     break;
                 case LAKE:
-                    imagePath = "mainworld/informationeletric.png";
+                    imagePath = "mainworld/lake.png";
                     TileMapGroup->AddNewObject(
                         new Engine::Image(imagePath, 
                                         x * BlockSize, 
