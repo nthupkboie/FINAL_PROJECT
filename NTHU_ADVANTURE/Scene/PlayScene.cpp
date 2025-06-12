@@ -19,12 +19,17 @@
 
 // new add
 #include "PlayScene.hpp"
+#include "LogScene.hpp"
 #include "Player/Player.hpp"
 #include "NPC/NPC.hpp"
 #include <allegro5/allegro_primitives.h>
+#include "UI/Component/Label.hpp"
+#include "UI/Component/Image.hpp"
 
 
-bool PlayScene::inPlay = true, PlayScene::inSmallEat = false, PlayScene::haveAxe = true;
+bool PlayScene::inPlay = true, PlayScene::inSmallEat = false;
+
+//int PlayScene::money = 0;
 
 const int PlayScene::MapWidth = 60, PlayScene::MapHeight = 32;
 const int PlayScene::BlockSize = 64;
@@ -45,15 +50,17 @@ Engine::Point PlayScene::cameraOffset = Engine::Point(0, 0);
 void PlayScene::Initialize() {
     // 初始化遊戲狀態
     lives = 3;
-    money = 0;
+    //money = 0;
 
     PlayScene::inPlay = true;
     PlayScene::inSmallEat = false;
+    //PlayScene::money = 0;
     
     // 添加渲染群組
     AddNewObject(TileMapGroup = new Group());      // 地圖圖層
     AddNewObject(PlayerGroup = new Group());       // 玩家角色
     AddNewObject(NPCGroup = new Group());
+    AddNewObject(LabelGroup = new Group());
     
     // 讀取地圖
     ReadMap();
@@ -82,9 +89,16 @@ void PlayScene::Initialize() {
                                             2, 2,  // 右
                                             64, 64)); // 圖塊大小
 
-    // 初始化對話框
-    dialog.Initialize();
-    
+    Engine::Point testPoint0(BlockSize * 30, BlockSize * 10);
+    Engine::Point testPoint1(BlockSize * 28, BlockSize * 10);
+    Engine::Point testPoint2(BlockSize * 28, BlockSize * 8);
+    Engine::Point testPoint3(BlockSize * 30, BlockSize * 8);
+
+    test->AddPatrolPoint(testPoint0);
+    test->AddPatrolPoint(testPoint1);
+    test->AddPatrolPoint(testPoint2);
+    test->AddPatrolPoint(testPoint3);
+
     // 設置NPC的對話內容
     test->SetMessages({
         "你好，我是村民A！",
@@ -98,6 +112,10 @@ void PlayScene::Initialize() {
     
     // 開始背景音樂
     bgmId = AudioHelper::PlayBGM("play.ogg");
+
+    LabelGroup->AddNewObject(moneyLabel = new Engine::Label(std::to_string(LogScene::money), "title.ttf", 48, 130, 70, 255, 255, 255, 255, 0.5, 0.5));
+    LabelGroup->AddNewObject(moneyImage = new Engine::Image("play/coin.png", 20, 35, 56, 56));
+    if (LogScene::haveAxe) LabelGroup->AddNewObject(axeImage = new Engine::Image("stage-select/axe.png", 20, 105, 56, 56));
 }
 
 void PlayScene::Terminate() {
@@ -149,11 +167,14 @@ void PlayScene::Update(float deltaTime) {
     if (lives <= 0) {
         Engine::GameEngine::GetInstance().ChangeScene("lose");
     }
+
+    moneyLabel->Position = Engine::Point(130 + cameraOffset.x, 70 + cameraOffset.y);
+    moneyImage->Position = Engine::Point(20 + cameraOffset.x, 35 + cameraOffset.y);
+    if (axeImage) axeImage->Position = Engine::Point(20 + cameraOffset.x, 105 + cameraOffset.y);
 }
 
 void PlayScene::Draw() const {
     //IScene::Draw();
-
     ALLEGRO_TRANSFORM transform;
     al_copy_transform(&transform, al_get_current_transform());
     al_translate_transform(&transform, -cameraOffset.x, -cameraOffset.y);
@@ -162,6 +183,7 @@ void PlayScene::Draw() const {
     TileMapGroup->Draw();
     PlayerGroup->Draw();
     NPCGroup->Draw();
+    LabelGroup->Draw();
 
     al_identity_transform(&transform);
     al_use_transform(&transform);
@@ -177,6 +199,10 @@ void PlayScene::Draw() const {
     if (dialog.IsDialogActive()) {
         dialog.Draw();
     }
+
+    //IScene::Draw();
+
+    
 }
 
 void PlayScene::OnMouseDown(int button, int mx, int my) {
