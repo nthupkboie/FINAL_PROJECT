@@ -43,6 +43,7 @@ public:
         NEW, TILE_NEW,
         NOTHING,
         INFORMATIONELETRIC,
+        SMALLEAT,
         WINDCLOUD,
         WATERWOOD,
         TALDA,

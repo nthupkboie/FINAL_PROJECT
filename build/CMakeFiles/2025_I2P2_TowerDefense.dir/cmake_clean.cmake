@@ -54,17 +54,12 @@ file(REMOVE_RECURSE
   "CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/SmallEatScene.cpp.obj.d"
   "CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/StartScene.cpp.obj"
   "CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/StartScene.cpp.obj.d"
-<<<<<<< HEAD
   "CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/WaterWoodScene.cpp.obj"
   "CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/WaterWoodScene.cpp.obj.d"
   "CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/WinScene.cpp.obj"
   "CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/WinScene.cpp.obj.d"
   "CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/WindCloudScene.cpp.obj"
   "CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/WindCloudScene.cpp.obj.d"
-=======
-  "CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/WinScene.cpp.obj"
-  "CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/WinScene.cpp.obj.d"
->>>>>>> cb2c6b9f2404347e6aac701f07e6b323ca491359
   "CMakeFiles/2025_I2P2_TowerDefense.dir/UI/Component/CustomImageButton.cpp.obj"
   "CMakeFiles/2025_I2P2_TowerDefense.dir/UI/Component/CustomImageButton.cpp.obj.d"
   "CMakeFiles/2025_I2P2_TowerDefense.dir/UI/Component/Image.cpp.obj"

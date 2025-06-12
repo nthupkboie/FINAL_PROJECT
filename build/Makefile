@@ -752,7 +752,6 @@ Scene/StartScene.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_TowerDefense.dir\build.make CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/StartScene.cpp.s
 .PHONY : Scene/StartScene.cpp.s
 
-<<<<<<< HEAD
 Scene/WaterWoodScene.obj: Scene/WaterWoodScene.cpp.obj
 .PHONY : Scene/WaterWoodScene.obj
 
@@ -777,8 +776,6 @@ Scene/WaterWoodScene.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_TowerDefense.dir\build.make CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/WaterWoodScene.cpp.s
 .PHONY : Scene/WaterWoodScene.cpp.s
 
-=======
->>>>>>> cb2c6b9f2404347e6aac701f07e6b323ca491359
 Scene/WinScene.obj: Scene/WinScene.cpp.obj
 .PHONY : Scene/WinScene.obj
 
@@ -803,7 +800,6 @@ Scene/WinScene.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_TowerDefense.dir\build.make CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/WinScene.cpp.s
 .PHONY : Scene/WinScene.cpp.s
 
-<<<<<<< HEAD
 Scene/WindCloudScene.obj: Scene/WindCloudScene.cpp.obj
 .PHONY : Scene/WindCloudScene.obj
 
@@ -828,8 +824,6 @@ Scene/WindCloudScene.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_TowerDefense.dir\build.make CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/WindCloudScene.cpp.s
 .PHONY : Scene/WindCloudScene.cpp.s
 
-=======
->>>>>>> cb2c6b9f2404347e6aac701f07e6b323ca491359
 UI/Component/CustomImageButton.obj: UI/Component/CustomImageButton.cpp.obj
 .PHONY : UI/Component/CustomImageButton.obj
 
@@ -1061,7 +1055,6 @@ help:
 	@echo ... Scene/StartScene.obj
 	@echo ... Scene/StartScene.i
 	@echo ... Scene/StartScene.s
-<<<<<<< HEAD
 	@echo ... Scene/WaterWoodScene.obj
 	@echo ... Scene/WaterWoodScene.i
 	@echo ... Scene/WaterWoodScene.s
@@ -1071,11 +1064,6 @@ help:
 	@echo ... Scene/WindCloudScene.obj
 	@echo ... Scene/WindCloudScene.i
 	@echo ... Scene/WindCloudScene.s
-=======
-	@echo ... Scene/WinScene.obj
-	@echo ... Scene/WinScene.i
-	@echo ... Scene/WinScene.s
->>>>>>> cb2c6b9f2404347e6aac701f07e6b323ca491359
 	@echo ... UI/Component/CustomImageButton.obj
 	@echo ... UI/Component/CustomImageButton.i
 	@echo ... UI/Component/CustomImageButton.s

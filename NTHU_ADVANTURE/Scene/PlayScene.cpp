@@ -250,12 +250,12 @@ void PlayScene::ReadMap() {
     std::ifstream fin(filename);
     while (fin >> c) {
         switch (c) {
-            case 'G': // grass
-            case 'W': // watersmall
-            case 'L': // lake
-            case 'C': // wingcloud
-            case 'E': // smalleat
-            case 'D': // Talda
+            case 'G': 
+            case 'W': mapData.push_back(WATERWOOD); break;
+            case 'L': mapData.push_back(LAKE); break;
+            case 'C': mapData.push_back(WINDCLOUD); break;
+            case 'E': mapData.push_back(SMALLEAT); break;
+            case 'D': mapData.push_back(TALDA); break;
             case '$':
             case 'A':
             case '-': mapData.push_back(TILE_GRASS); break;
@@ -285,7 +285,7 @@ void PlayScene::ReadMap() {
     // init init
     for(int y = 0; y < MapHeight; y++){
         for(int x = 0; x < MapWidth; x++){
-                    std::string imagePath = "mainworld/ROAD.png";
+                    std::string imagePath = "mainworld/GAS.png";
                     TileMapGroup->AddNewObject(
                         new Engine::Image(imagePath, 
                                         x * BlockSize, 
@@ -443,7 +443,56 @@ void PlayScene::ReadMap() {
                                         BlockSize * 8)
                     );
                     break;
-                case TILE_NEW:
+                case SMALLEAT:
+                    imagePath = "mainworld/informationeletric.png";
+                    TileMapGroup->AddNewObject(
+                        new Engine::Image(imagePath, 
+                                        x * BlockSize, 
+                                        y * BlockSize, 
+                                        BlockSize * 8, 
+                                        BlockSize * 8)
+                    );
+                    break;
+                case WATERWOOD:
+                    imagePath = "mainworld/informationeletric.png";
+                    TileMapGroup->AddNewObject(
+                        new Engine::Image(imagePath, 
+                                        x * BlockSize, 
+                                        y * BlockSize, 
+                                        BlockSize * 8, 
+                                        BlockSize * 8)
+                    );
+                    break;
+                case WINDCLOUD:
+                    imagePath = "mainworld/informationeletric.png";
+                    TileMapGroup->AddNewObject(
+                        new Engine::Image(imagePath, 
+                                        x * BlockSize, 
+                                        y * BlockSize, 
+                                        BlockSize * 8, 
+                                        BlockSize * 8)
+                    );
+                    break;
+                case LAKE:
+                    imagePath = "mainworld/informationeletric.png";
+                    TileMapGroup->AddNewObject(
+                        new Engine::Image(imagePath, 
+                                        x * BlockSize, 
+                                        y * BlockSize, 
+                                        BlockSize * 10, 
+                                        BlockSize * 8)
+                    );
+                    break;
+                case TALDA:
+                    imagePath = "mainworld/informationeletric.png";
+                    TileMapGroup->AddNewObject(
+                        new Engine::Image(imagePath, 
+                                        x * BlockSize, 
+                                        y * BlockSize, 
+                                        BlockSize * 8, 
+                                        BlockSize * 8)
+                    );
+                    break;
                 case NOTHING:
                 default:
                     continue;

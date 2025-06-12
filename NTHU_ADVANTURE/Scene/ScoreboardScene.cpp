@@ -1,4 +1,4 @@
-#include "ScoreBoardScene.hpp"
+#include "ScoreboardScene.hpp"
 #include "Engine/GameEngine.hpp"
 #include "Engine/Point.hpp"
 #include "Engine/Resources.hpp"

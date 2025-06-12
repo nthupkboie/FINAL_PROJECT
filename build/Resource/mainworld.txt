@@ -1,6 +1,5 @@
 TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT
 TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT
-<<<<<<< HEAD
 TT$$$$$$$$$$$$---------------$$$$$$$$$$$$$$$$$$$$$$$$-----TT
 TT$$$$$$$$$$$$---------------$$I=======$$$$D=======$$-----TT
 TT$$N=======$$---------------$$========$$$$========$$-----TT
@@ -29,35 +28,5 @@ TT--========----==========-----========----========-------TT
 TT--========----==========-----========----========-------TT
 TT--------------------------------------------------------TT
 TT--------------------------------------------------------TT
-=======
-TTRRRRRRRRRRR----------------RRRRRRRRRRRRRRRRRRRRRRRR-----TT
-TTRRRRRRRRRRR----------------RRI=======RRRRD=======RR-----TT
-TTRRN======RR----------------RR========RRRR========RR-----TT
-TTRR=======RR----------------RR========RRRR========RR-----TT
-TTRR=======RR----------------RR========RRRR========RR-----TT
-TTRR=======RR----------------RR========RRRR========RR-----TT
-TTRR=======RR----------------RR========RRRR========RR-----TT
-TTRR=======RR----------------RR========RRRR========RR-----TT
-TTRR=======RR----------------RR========RRRR========RR-----TT
-TTRRRRRRRRRRRGGGGGGGGAAAAAAAARRRRRRRRRRRRRRRRRRRRRRRR-----TT
-TTRRRRRRRRRRRGGGGGGGGAAAAAAAARRRRRRRRRRRRRRRRRRRRRRRR-----TT
-TTGGGGGGGGGGGGGGGGGGGAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA-----TT
-TTGGGGGGGGGGGGGGGGGGGAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA-----TT
-TTGGGGGGGGGGGGGGGGGGGAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA-----TT
-TTAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA-------TT
-TTAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA-------TT
-TTAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA-------TT
-TTAAAC=======AAAL=========AAAW=======AAAE=======AAA-------TT
-TTAAA========AAA==========AAA========AAA========AAA-------TT
-TTAAA========AAA==========AAA========AAA========AAA-------TT
-TTAAA========AAA==========AAA========AAA========AAA-------TT
-TTAAA========AAA==========AAA========AAA========AAA-------TT
-TTAAA========AAA==========AAA========AAA========AAA-------TT
-TTAAA========AAA==========AAA========AAA========AAA-------TT
-TTAAA========AAA==========AAA========AAA========AAA-------TT
-TTAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA-------TT
-TTAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA-------TT
-TTAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA-------TT
->>>>>>> cb2c6b9f2404347e6aac701f07e6b323ca491359
 TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT
 TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT

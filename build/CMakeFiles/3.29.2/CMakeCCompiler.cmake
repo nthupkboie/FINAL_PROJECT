@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 set(CMAKE_C_COMPILER "c:/Users/pkboi/Downloads/llvm-mingw-20240417-msvcrt-x86_64/llvm-mingw-20240417-msvcrt-x86_64/bin/clang.exe")
-=======
-set(CMAKE_C_COMPILER "C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/bin/clang.exe")
->>>>>>> cb2c6b9f2404347e6aac701f07e6b323ca491359
 set(CMAKE_C_COMPILER_ARG1 "")
 set(CMAKE_C_COMPILER_ID "Clang")
 set(CMAKE_C_COMPILER_VERSION "18.1.4")
@@ -25,7 +21,6 @@ set(CMAKE_C_SIMULATE_VERSION "")
 
 
 
-<<<<<<< HEAD
 set(CMAKE_AR "C:/Users/pkboi/Downloads/llvm-mingw-20240417-msvcrt-x86_64/llvm-mingw-20240417-msvcrt-x86_64/bin/llvm-ar.exe")
 set(CMAKE_C_COMPILER_AR "C:/Users/pkboi/Downloads/llvm-mingw-20240417-msvcrt-x86_64/llvm-mingw-20240417-msvcrt-x86_64/bin/llvm-ar.exe")
 set(CMAKE_RANLIB "C:/Users/pkboi/Downloads/llvm-mingw-20240417-msvcrt-x86_64/llvm-mingw-20240417-msvcrt-x86_64/bin/llvm-ranlib.exe")
@@ -34,16 +29,6 @@ set(CMAKE_LINKER "C:/Users/pkboi/Downloads/llvm-mingw-20240417-msvcrt-x86_64/llv
 set(CMAKE_LINKER_LINK "")
 set(CMAKE_LINKER_LLD "")
 set(CMAKE_C_COMPILER_LINKER "c:/Users/pkboi/Downloads/llvm-mingw-20240417-msvcrt-x86_64/llvm-mingw-20240417-msvcrt-x86_64/bin/ld.lld")
-=======
-set(CMAKE_AR "C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/bin/llvm-ar.exe")
-set(CMAKE_C_COMPILER_AR "C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/bin/llvm-ar.exe")
-set(CMAKE_RANLIB "C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/bin/llvm-ranlib.exe")
-set(CMAKE_C_COMPILER_RANLIB "C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/bin/llvm-ranlib.exe")
-set(CMAKE_LINKER "C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/bin/ld.lld.exe")
-set(CMAKE_LINKER_LINK "")
-set(CMAKE_LINKER_LLD "")
-set(CMAKE_C_COMPILER_LINKER "C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/bin/ld.lld")
->>>>>>> cb2c6b9f2404347e6aac701f07e6b323ca491359
 set(CMAKE_C_COMPILER_LINKER_ID "LLD")
 set(CMAKE_C_COMPILER_LINKER_VERSION 18.1.4)
 set(CMAKE_C_COMPILER_LINKER_FRONTEND_VARIANT GNU)
@@ -89,13 +74,7 @@ endif()
 
 
 
-<<<<<<< HEAD
 set(CMAKE_C_IMPLICIT_INCLUDE_DIRECTORIES "C:/Users/pkboi/Downloads/llvm-mingw-20240417-msvcrt-x86_64/llvm-mingw-20240417-msvcrt-x86_64/lib/clang/18/include;C:/Users/pkboi/Downloads/llvm-mingw-20240417-msvcrt-x86_64/llvm-mingw-20240417-msvcrt-x86_64/include")
 set(CMAKE_C_IMPLICIT_LINK_LIBRARIES "mingw32;unwind;moldname;mingwex;advapi32;shell32;user32;kernel32;mingw32;unwind;moldname;mingwex;kernel32")
 set(CMAKE_C_IMPLICIT_LINK_DIRECTORIES "C:/Users/pkboi/Downloads/llvm-mingw-20240417-msvcrt-x86_64/llvm-mingw-20240417-msvcrt-x86_64/x86_64-w64-mingw32/lib;C:/Users/pkboi/Downloads/llvm-mingw-20240417-msvcrt-x86_64/llvm-mingw-20240417-msvcrt-x86_64/x86_64-w64-mingw32/mingw/lib;C:/Users/pkboi/Downloads/llvm-mingw-20240417-msvcrt-x86_64/llvm-mingw-20240417-msvcrt-x86_64/lib;C:/Users/pkboi/Downloads/llvm-mingw-20240417-msvcrt-x86_64/llvm-mingw-20240417-msvcrt-x86_64/lib/clang/18/lib/windows")
-=======
-set(CMAKE_C_IMPLICIT_INCLUDE_DIRECTORIES "C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/lib/clang/18/include;C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/include")
-set(CMAKE_C_IMPLICIT_LINK_LIBRARIES "mingw32;unwind;moldname;mingwex;advapi32;shell32;user32;kernel32;mingw32;unwind;moldname;mingwex;kernel32")
-set(CMAKE_C_IMPLICIT_LINK_DIRECTORIES "C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/x86_64-w64-mingw32/lib;C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/x86_64-w64-mingw32/mingw/lib;C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/lib;C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/lib/clang/18/lib/windows")
->>>>>>> cb2c6b9f2404347e6aac701f07e6b323ca491359
 set(CMAKE_C_IMPLICIT_LINK_FRAMEWORK_DIRECTORIES "")
