@@ -923,6 +923,9 @@ CMakeFiles/2025_I2P2_TowerDefense.dir/main.cpp.obj: \
   C:/FINAL_PROJECT/NTHU_ADVANTURE/./UI/Component/ImageButton.hpp \
   C:/FINAL_PROJECT/NTHU_ADVANTURE/Scene/WaterWoodScene.hpp \
   C:/FINAL_PROJECT/NTHU_ADVANTURE/Scene/WindCloudScene.hpp \
+  C:/FINAL_PROJECT/NTHU_ADVANTURE/Scene/EEScene.hpp \
+  C:/FINAL_PROJECT/NTHU_ADVANTURE/Scene/TaldaScene.hpp \
+  C:/FINAL_PROJECT/NTHU_ADVANTURE/Scene/AIChatScene.hpp \
   C:/allegro/include/allegro5/allegro_image.h \
   C:/allegro/include/allegro5/allegro_primitives.h \
   C:/FINAL_PROJECT/NTHU_ADVANTURE/Scene/LoseScene.hpp \

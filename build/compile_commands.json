@@ -181,6 +181,18 @@
 },
 {
   "directory": "C:/FINAL_PROJECT/build",
+  "command": "C:\\Users\\USER\\Downloads\\llvm-mingw-20240417-msvcrt-x86_64\\bin\\clang++.exe  @CMakeFiles/2025_I2P2_TowerDefense.dir/includes_CXX.rsp -g -o CMakeFiles\\2025_I2P2_TowerDefense.dir\\Scene\\TaldaScene.cpp.obj -c C:\\FINAL_PROJECT\\NTHU_ADVANTURE\\Scene\\TaldaScene.cpp",
+  "file": "C:/FINAL_PROJECT/NTHU_ADVANTURE/Scene/TaldaScene.cpp",
+  "output": "CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/TaldaScene.cpp.obj"
+},
+{
+  "directory": "C:/FINAL_PROJECT/build",
+  "command": "C:\\Users\\USER\\Downloads\\llvm-mingw-20240417-msvcrt-x86_64\\bin\\clang++.exe  @CMakeFiles/2025_I2P2_TowerDefense.dir/includes_CXX.rsp -g -o CMakeFiles\\2025_I2P2_TowerDefense.dir\\Scene\\EEScene.cpp.obj -c C:\\FINAL_PROJECT\\NTHU_ADVANTURE\\Scene\\EEScene.cpp",
+  "file": "C:/FINAL_PROJECT/NTHU_ADVANTURE/Scene/EEScene.cpp",
+  "output": "CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/EEScene.cpp.obj"
+},
+{
+  "directory": "C:/FINAL_PROJECT/build",
   "command": "C:\\Users\\USER\\Downloads\\llvm-mingw-20240417-msvcrt-x86_64\\bin\\clang++.exe  @CMakeFiles/2025_I2P2_TowerDefense.dir/includes_CXX.rsp -g -o CMakeFiles\\2025_I2P2_TowerDefense.dir\\UI\\Component\\Image.cpp.obj -c C:\\FINAL_PROJECT\\NTHU_ADVANTURE\\UI\\Component\\Image.cpp",
   "file": "C:/FINAL_PROJECT/NTHU_ADVANTURE/UI/Component/Image.cpp",
   "output": "CMakeFiles/2025_I2P2_TowerDefense.dir/UI/Component/Image.cpp.obj"

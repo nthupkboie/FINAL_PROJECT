@@ -10,3 +10,4 @@ sfx = 音效
 language = 語言
 start = 開始
 exit = 離開
+aichat = 人工智能實驗

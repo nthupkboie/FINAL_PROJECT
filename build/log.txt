@@ -24,6 +24,11 @@
 [INFO] Created<sample_instance>: Resource/audios/coconut.ogg
 [INFO] Changed to login scene
 [INFO] stopped audio (sample)
+[INFO] Changed to start scene
+[INFO] stopped audio (bgm)
+[INFO] Created<sample_instance>: Resource/audios/coconut.ogg
+[INFO] Changed to login scene
+[INFO] stopped audio (sample)
 [INFO] mapData.size() 1920
 [INFO] MapWidth * MapHeight 1920
 [INFO] Loaded Resource<image>: Resource/images/mainworld/GAS.png scaled to 64x64
@@ -46,6 +51,7 @@
 [INFO] Loaded Resource<image>: Resource/images/mainworld/2ROAD.png scaled to 64x64
 [INFO] Loaded Resource<image>: Resource/images/mainworld/windcloud.png scaled to 512x512
 [INFO] Loaded Resource<image>: Resource/images/mainworld/lake.png scaled to 640x512
+[INFO] Loaded Resource<image>: Resource/images/mainworld/waterwood.png scaled to 512x512
 [INFO] Loaded Resource<image>: Resource/images/mainworld/smalleat.png scaled to 512x512
 [INFO] Loaded Resource<image>: Resource/images/player/idle.png
 [INFO] Loaded Resource<image>: Resource/images/player/left_idle.png
@@ -67,7 +73,6 @@
 [DEBUGGING] Added patrol point to NPC 'NPC': (1824, 544)
 [DEBUGGING] Added patrol point to NPC 'NPC': (1952, 544)
 [INFO] Loaded Resource<audio>: Resource/audios/play.ogg
-[INFO] Loaded Resource<font>: Resource/fonts/title.ttf with size 64
 [INFO] Loaded Resource<image>: Resource/images/play/dollar.png scaled to 56x56
 [INFO] Changed to play scene
 [DEBUGGING] NPC 'NPC' reached point 1
@@ -78,6 +83,44 @@
 [DEBUGGING] NPC 'NPC' reached point 2
 [DEBUGGING] NPC 'NPC' reached point 3
 [DEBUGGING] NPC 'NPC' reached point 0
+[DEBUGGING] NPC 'NPC' reached point 1
+[DEBUGGING] NPC 'NPC' reached point 2
+[DEBUGGING] NPC 'NPC' reached point 3
+[DEBUGGING] NPC 'NPC' reached point 0
+[DEBUGGING] NPC 'NPC' reached point 1
+[DEBUGGING] NPC 'NPC' reached point 2
+[DEBUGGING] NPC 'NPC' reached point 3
+[DEBUGGING] NPC 'NPC' reached point 0
+[DEBUGGING] NPC 'NPC' reached point 1
+[DEBUGGING] NPC 'NPC' reached point 2
+[DEBUGGING] NPC 'NPC' reached point 3
+[DEBUGGING] NPC 'NPC' reached point 0
+[DEBUGGING] NPC 'NPC' reached point 1
+[DEBUGGING] NPC 'NPC' reached point 2
+[DEBUGGING] NPC 'NPC' reached point 3
+[DEBUGGING] NPC 'NPC' reached point 0
+[DEBUGGING] NPC 'NPC' reached point 1
+[DEBUGGING] NPC 'NPC' reached point 2
+[DEBUGGING] NPC 'NPC' reached point 3
+[DEBUGGING] NPC 'NPC' reached point 0
+[DEBUGGING] NPC 'NPC' reached point 1
+[DEBUGGING] NPC 'NPC' reached point 2
+[DEBUGGING] NPC 'NPC' reached point 3
+[DEBUGGING] NPC 'NPC' reached point 0
+[DEBUGGING] NPC 'NPC' reached point 1
+[DEBUGGING] NPC 'NPC' reached point 2
+[DEBUGGING] NPC 'NPC' reached point 3
+[DEBUGGING] NPC 'NPC' reached point 0
+[DEBUGGING] NPC 'NPC' reached point 1
+[DEBUGGING] NPC 'NPC' reached point 2
+[DEBUGGING] NPC 'NPC' reached point 3
+[DEBUGGING] NPC 'NPC' reached point 0
+[DEBUGGING] NPC 'NPC' reached point 1
+[DEBUGGING] NPC 'NPC' reached point 2
+[DEBUGGING] NPC 'NPC' reached point 3
+[DEBUGGING] NPC 'NPC' reached point 0
+[DEBUGGING] NPC 'NPC' reached point 1
+[DEBUGGING] NPC 'NPC' reached point 2
 [INFO] Game Terminating...
 [INFO] stopped audio (bgm)
 [INFO] Game terminated
@@ -92,6 +135,7 @@
 [INFO] Destroyed Resource<image>: player/right_idle.png
 [INFO] Destroyed Resource<image>: player/left_idle.png
 [INFO] Destroyed Resource<image>: player/idle.png
+[INFO] Destroyed Resource<image>: mainworld/waterwood.png?512x512
 [INFO] Destroyed Resource<image>: mainworld/lake.png?640x512
 [INFO] Destroyed Resource<image>: mainworld/windcloud.png?512x512
 [INFO] Destroyed Resource<image>: mainworld/UROAD.png?64x64
@@ -128,7 +172,6 @@
 [INFO] Destroyed Resource<image>: mainworld/2ROAD.png?64x64
 [INFO] Destroyed Resource<image>: mainworld/RROAD.png?64x64
 [INFO] Destroyed Resource<image>: scene/start-by.png?1920x1024
-[INFO] Destroyed Resource<font>: title.ttf?64
 [INFO] Destroyed Resource<font>: title.ttf?56
 [INFO] Destroyed Resource<font>: normal.ttf?24
 [INFO] Destroyed Resource<font>: title.ttf?48

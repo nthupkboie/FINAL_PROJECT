@@ -584,6 +584,30 @@ Scene/BattleScene.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_TowerDefense.dir\build.make CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/BattleScene.cpp.s
 .PHONY : Scene/BattleScene.cpp.s
 
+Scene/EEScene.obj: Scene/EEScene.cpp.obj
+.PHONY : Scene/EEScene.obj
+
+# target to build an object file
+Scene/EEScene.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_TowerDefense.dir\build.make CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/EEScene.cpp.obj
+.PHONY : Scene/EEScene.cpp.obj
+
+Scene/EEScene.i: Scene/EEScene.cpp.i
+.PHONY : Scene/EEScene.i
+
+# target to preprocess a source file
+Scene/EEScene.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_TowerDefense.dir\build.make CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/EEScene.cpp.i
+.PHONY : Scene/EEScene.cpp.i
+
+Scene/EEScene.s: Scene/EEScene.cpp.s
+.PHONY : Scene/EEScene.s
+
+# target to generate assembly for a file
+Scene/EEScene.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_TowerDefense.dir\build.make CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/EEScene.cpp.s
+.PHONY : Scene/EEScene.cpp.s
+
 Scene/LogScene.obj: Scene/LogScene.cpp.obj
 .PHONY : Scene/LogScene.obj
 
@@ -775,6 +799,30 @@ Scene/StartScene.s: Scene/StartScene.cpp.s
 Scene/StartScene.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_TowerDefense.dir\build.make CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/StartScene.cpp.s
 .PHONY : Scene/StartScene.cpp.s
+
+Scene/TaldaScene.obj: Scene/TaldaScene.cpp.obj
+.PHONY : Scene/TaldaScene.obj
+
+# target to build an object file
+Scene/TaldaScene.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_TowerDefense.dir\build.make CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/TaldaScene.cpp.obj
+.PHONY : Scene/TaldaScene.cpp.obj
+
+Scene/TaldaScene.i: Scene/TaldaScene.cpp.i
+.PHONY : Scene/TaldaScene.i
+
+# target to preprocess a source file
+Scene/TaldaScene.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_TowerDefense.dir\build.make CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/TaldaScene.cpp.i
+.PHONY : Scene/TaldaScene.cpp.i
+
+Scene/TaldaScene.s: Scene/TaldaScene.cpp.s
+.PHONY : Scene/TaldaScene.s
+
+# target to generate assembly for a file
+Scene/TaldaScene.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_TowerDefense.dir\build.make CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/TaldaScene.cpp.s
+.PHONY : Scene/TaldaScene.cpp.s
 
 Scene/WaterWoodScene.obj: Scene/WaterWoodScene.cpp.obj
 .PHONY : Scene/WaterWoodScene.obj
@@ -1058,6 +1106,9 @@ help:
 	@echo ... Scene/BattleScene.obj
 	@echo ... Scene/BattleScene.i
 	@echo ... Scene/BattleScene.s
+	@echo ... Scene/EEScene.obj
+	@echo ... Scene/EEScene.i
+	@echo ... Scene/EEScene.s
 	@echo ... Scene/LogScene.obj
 	@echo ... Scene/LogScene.i
 	@echo ... Scene/LogScene.s
@@ -1082,6 +1133,9 @@ help:
 	@echo ... Scene/StartScene.obj
 	@echo ... Scene/StartScene.i
 	@echo ... Scene/StartScene.s
+	@echo ... Scene/TaldaScene.obj
+	@echo ... Scene/TaldaScene.i
+	@echo ... Scene/TaldaScene.s
 	@echo ... Scene/WaterWoodScene.obj
 	@echo ... Scene/WaterWoodScene.i
 	@echo ... Scene/WaterWoodScene.s
