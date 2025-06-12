@@ -4,6 +4,7 @@
 #include "Engine/Resources.hpp"
 #include "UI/Component/ImageButton.hpp"
 #include "UI/Component/Label.hpp"
+#include "Engine/AudioHelper.hpp"
 #include <fstream>
 #include <sstream>
 #include <ctime>
@@ -303,6 +304,8 @@ void ScoreboardScene::Initialize() {
         0.6f,
         0.0f
     });
+
+    bgmId = AudioHelper::PlayBGM("scoreboard.ogg");
 }
 
 void ScoreboardScene::Update(float deltaTime) {
@@ -386,6 +389,7 @@ void ScoreboardScene::AddSampleScores() {
 }
 
 void ScoreboardScene::Terminate() {
+    AudioHelper::StopBGM(bgmId);
     IScene::Terminate();
 }
 

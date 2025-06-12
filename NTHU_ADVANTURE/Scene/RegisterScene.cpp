@@ -47,7 +47,7 @@ void RegisterScene::Initialize() {
     AddNewObject(new Engine::Label("Back", "title.ttf", 48, halfW, halfH * 3 / 2 + 100, 0, 0, 0, 255, 0.5, 0.5));
  
     //這個不能刪 否則terminate時會刪掉不存在的東西 注意StageSelectScene刪掉的東西裡面也沒有這個 特別寫在下面了
-    bgmInstance = AudioHelper::PlaySample("select.ogg", true, AudioHelper::BGMVolume);
+    bgmInstance = AudioHelper::PlaySample("coconut.ogg", true, AudioHelper::BGMVolume);
 
     LoadFromFile();
 
@@ -208,14 +208,4 @@ void RegisterScene::Draw() const {
         al_draw_filled_rectangle(drawX, drawY, drawX + boxW, drawY + boxH, gray);
         label_pswd->Draw();
     }
-
-    // Label: warning
-    // if (warning1) {
-    //     float x = warning1->Position.x;
-    //     float y = warning1->Position.y;
-    //     float drawX = x - boxW / 2;
-    //     float drawY = y - boxH / 2;
-    //     al_draw_filled_rectangle(drawX, drawY, drawX + boxW, drawY + boxH, gray);
-    //     warning1->Draw();
-    // }
 }
