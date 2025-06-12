@@ -195,7 +195,7 @@ void SmallEatScene::Initialize() {
     Engine::Resources::GetInstance().GetBitmap("lose/benjamin-happy.png");
     
     // 開始背景音樂
-    bgmId = AudioHelper::PlayBGM("play.ogg");
+    bgmId = AudioHelper::PlayBGM("XCB.ogg");
 
     //Lucy->canBuy = axeman->canBuy = false;
 
