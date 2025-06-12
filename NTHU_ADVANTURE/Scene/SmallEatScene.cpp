@@ -22,6 +22,9 @@
 #include "PlayScene.hpp"
 #include "Player/Player.hpp"
 #include "NPC/NPC.hpp"
+#include "LogScene.hpp"
+#include "UI/Component/Label.hpp"
+
 
 const int SmallEatScene::MapWidth = 30, SmallEatScene::MapHeight = 16;
 const int SmallEatScene::BlockSize = 64;
@@ -42,12 +45,18 @@ Engine::Point SmallEatScene::cameraOffset = Engine::Point(0, 0);
 void SmallEatScene::Initialize() {
     // 初始化遊戲狀態
     lives = 3;
-    money = 0;
+    //money = 0;
+    Shopper::canBuy = false;
     
+    if (LogScene::money>=50 && !LogScene::haveAxe) canBuyAxe = true;
+    else canBuyAxe = false;
+
     // 添加渲染群組
     AddNewObject(TileMapGroup = new Group());      // 地圖圖層
     AddNewObject(PlayerGroup = new Group());       // 玩家角色
     AddNewObject(NPCGroup = new Group());
+    AddNewObject(ShopperGroup = new Group());
+    AddNewObject(LabelGroup = new Group());
     
     // 讀取地圖
     ReadMap();
@@ -85,6 +94,16 @@ void SmallEatScene::Initialize() {
                                             "NPC/Yang/role/YangR.png",
                                             BlockSize * 8, BlockSize * 8
                                         ));
+    
+    //Shopper* axeman;
+    auto axemanAvatar = Engine::Resources::GetInstance().GetBitmap("NPC/test/avatar/test_avatar.png");
+    ShopperGroup->AddNewObject(axeman = new Shopper("axeman", axemanAvatar, 
+                                            "NPC/axeman/role/axemanU.png",
+                                            "NPC/axeman/role/axemanD.png", 
+                                            "NPC/axeman/role/axemanL.png",
+                                            "NPC/axeman/role/axemanR.png",
+                                            BlockSize * 10, BlockSize * 10
+                                        ));
 
     // NPCGroup->AddNewObject(Yang = new NPC("NPC",testAvatar, "NPC/test/role/test_sheet.png",
     //                                         BlockSize * 8, BlockSize * 8,
@@ -112,11 +131,32 @@ void SmallEatScene::Initialize() {
         "我不會當人",
     });
 
+    if (canBuyAxe){
+        axeman->SetMessages({
+            "這位相貌堂堂骨骼驚奇的客官，上好黑鐵斧頭要嗎?"
+        });
+    }
+    else if (LogScene::haveAxe) {
+        axeman->SetMessages({
+            "你買過斧頭了，不要在這裡擋我拉客，走開!"
+        });
+    }
+    else {
+        axeman->SetMessages({
+            "窮鬼滾"
+        });
+    }
+    
+
     // 預載資源
     Engine::Resources::GetInstance().GetBitmap("lose/benjamin-happy.png");
     
     // 開始背景音樂
     bgmId = AudioHelper::PlayBGM("play.ogg");
+
+    LabelGroup->AddNewObject(moneyLabel = new Engine::Label(std::to_string(LogScene::money), "title.ttf", 48, 130, 70, 255, 255, 255, 255, 0.5, 0.5));
+    LabelGroup->AddNewObject(moneyImage = new Engine::Image("play/coin.png", 20, 35, 56, 56));
+    if (LogScene::haveAxe) AddNewObject(axeImage = new Engine::Image("stage-select/axe.png", 20, 105, 56, 56));
 }
 
 void SmallEatScene::Terminate() {
@@ -126,7 +166,7 @@ void SmallEatScene::Terminate() {
 
 void SmallEatScene::Update(float deltaTime) {
     IScene::Update(deltaTime);
-    
+    //moneyLabel->Text = std::to_string(LogScene::money);
     // 獲取玩家對象
     Player* player = nullptr;
     for (auto& obj : PlayerGroup->GetObjects()) {
@@ -149,6 +189,12 @@ void SmallEatScene::Update(float deltaTime) {
         }
     }
 
+    for (auto& obj : ShopperGroup->GetObjects()) {
+        if (auto npc = dynamic_cast<Shopper*>(obj)) {
+            npc->Update(deltaTime, player);
+        }
+    }
+
     // 更新對話框
     if (dialog.IsDialogActive()) {
         dialog.Update(deltaTime);
@@ -157,6 +203,44 @@ void SmallEatScene::Update(float deltaTime) {
     // 檢查遊戲結束條件
     if (lives <= 0) {
         Engine::GameEngine::GetInstance().ChangeScene("lose");
+    }
+    //if (LogScene::money>=50 && !LogScene::haveAxe) canBuyAxe = true;
+    if (LogScene::haveAxe){
+        canBuyAxe = false;
+        axeman->SetMessages({
+            "你買過斧頭了，不要在這裡擋我拉客，走開!"
+        });
+    }
+
+    // 更新 NPC
+    //Engine::LOG(Engine::WARN) << "000";
+    if (axeman) {
+        //axeman->Update(deltaTime, player);
+        // 檢查對話結束，顯示購買按鈕
+        //Engine::LOG(Engine::WARN) << "11111111111";
+        //if (!axeman->IsTalking() && !showShopButtons && axeman->dialog.IsDialogActive() == false) {
+        if (canBuyAxe && Shopper::canBuy){
+            //Engine::LOG(Engine::WARN) << "2222222222";
+            if (!buyButton && !cancelButton) {
+                //Engine::LOG(Engine::WARN) << "333";
+                buyButton = new Engine::ImageButton("stage-select/full_1.png", "stage-select/full_1.png", 960 - 400, 300, 800, 100);
+                buyButton->SetOnClickCallback(std::bind(&SmallEatScene::BuyOnClick, this));
+                AddNewControlObject(buyButton);
+                buyLabel = new Engine::Label("要要要", "title.ttf", 48, 960, 360, 0, 0, 0, 255, 0.5, 0.5);
+                AddNewObject(buyLabel);
+                
+                cancelButton = new Engine::ImageButton("stage-select/full_1.png", "stage-select/full_1.png", 960 - 400, 500, 800, 100);
+                cancelButton->SetOnClickCallback(std::bind(&SmallEatScene::CancelOnClick, this));
+                AddNewControlObject(cancelButton);
+                cancelLabel = new Engine::Label("先不要", "title.ttf", 48, 960, 560, 0, 0, 0, 255, 0.5, 0.5);
+                AddNewObject(cancelLabel);
+                
+                showShopButtons = true;
+                //Engine::LOG(Engine::INFO_LOG) << "Shop buttons displayed";
+                NPCDialog::talking = true;
+                Shopper::canBuy = false;
+            }
+        }
     }
 }
 
@@ -171,6 +255,10 @@ void SmallEatScene::Draw() const {
     TileMapGroup->Draw();
     PlayerGroup->Draw();
     NPCGroup->Draw();
+    LabelGroup->Draw();
+    ShopperGroup->Draw();
+    
+    IScene::Draw();
 
     al_identity_transform(&transform);
     al_use_transform(&transform);
@@ -402,4 +490,57 @@ bool SmallEatScene::collision(int x, int y){
         default:
             return false;
     }
+}
+
+void SmallEatScene::BuyOnClick() {
+    if (LogScene::money >= 50) {
+        LogScene::money -= 50;
+        items++;
+        Engine::LOG(Engine::WARN) << "Purchased item, money: " << LogScene::money << ", items: " << items;
+    } else {
+        Engine::LOG(Engine::WARN) << "Not enough money to buy item";
+    }
+    
+    // 移除按鈕
+    if (buyButton) {
+        RemoveObject(buyButton->GetObjectIterator());
+        buyButton = nullptr;
+        RemoveObject(buyLabel->GetObjectIterator());
+        buyLabel = nullptr;
+    }
+    if (cancelButton) {
+        RemoveObject(cancelButton->GetObjectIterator());
+        cancelButton = nullptr;
+        RemoveObject(cancelLabel->GetObjectIterator());
+        cancelLabel = nullptr;
+    }
+    showShopButtons = false;
+    Shopper::canBuy = false;
+    Shopper::isTalking = false;
+    NPCDialog::talking = false;
+    LogScene::haveAxe = true;
+    moneyLabel->Text = std::to_string(LogScene::money);
+    if (!axeImage) AddNewObject(axeImage = new Engine::Image("stage-select/axe.png", 20, 105, 56, 56));
+}
+
+void SmallEatScene::CancelOnClick() {
+    Engine::LOG(Engine::WARN) << "Purchase cancelled";
+    
+    // 移除按鈕
+    if (buyButton) {
+        RemoveObject(buyButton->GetObjectIterator());
+        buyButton = nullptr;
+        RemoveObject(buyLabel->GetObjectIterator());
+        buyLabel = nullptr;
+    }
+    if (cancelButton) {
+        RemoveObject(cancelButton->GetObjectIterator());
+        cancelButton = nullptr;
+        RemoveObject(cancelLabel->GetObjectIterator());
+        cancelLabel = nullptr;
+    }
+    showShopButtons = false;
+    Shopper::canBuy = false;
+    Shopper::isTalking = false;
+    NPCDialog::talking = false;
 }

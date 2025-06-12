@@ -4,6 +4,8 @@
 #include "Engine/LOG.hpp"
 #include <cmath>
 #include <allegro5/allegro_primitives.h>
+#include "UI/Component/ImageButton.hpp"
+#include "UI/Component/Label.hpp"
 
 // 從 sprite sheet 載入子圖的輔助函數
 static std::shared_ptr<ALLEGRO_BITMAP> LoadSpriteFromSheet(
@@ -105,6 +107,8 @@ void NPC::Update(float deltaTime, const Player* player) {
             
             // 如果對話結束
             if (!dialog.IsDialogActive()) {
+                //Engine::ImageButton *btn;
+
                 isTalking = false;
             }
         }

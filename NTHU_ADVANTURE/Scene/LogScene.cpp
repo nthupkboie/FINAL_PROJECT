@@ -19,12 +19,16 @@
 
 #include "LogScene.hpp"
 
+int LogScene::money = 0;
+bool LogScene::haveAxe = false;
 
 void LogScene::Initialize() {
     int w = Engine::GameEngine::GetInstance().GetScreenSize().x;
     int h = Engine::GameEngine::GetInstance().GetScreenSize().y;
     int halfW = w / 2;
     int halfH = h / 2;
+
+    money = 0;
 
     name = pswd = "";
     warning1 = label_name = label_pswd = nullptr;

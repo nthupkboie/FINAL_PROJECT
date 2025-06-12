@@ -28,9 +28,13 @@ private:
 
     // 攝影機偏移量
     static Engine::Point cameraOffset;
+
+    Engine::Label* moneyLabel;
+    Engine::Image* moneyImage;
+    Engine::Image* axeImage;
 protected:
     int lives;
-    int money;
+    //int money;
     int SpeedMult;
 
 public:
@@ -58,6 +62,7 @@ public:
     // new add
     Group *PlayerGroup;
     Group *NPCGroup;
+    Group *LabelGroup;
 
     std::vector<std::vector<TileType>> mapState;
     std::vector<std::vector<int>> mapDistance;
@@ -82,11 +87,13 @@ public:
     static const int window_x, window_y;
     static bool inPlay;
     static bool inSmallEat;
-    static bool haveAxe;
+    //static bool haveAxe;
 
     static std::vector<PlayScene::TileType> mapData;
 
     static bool collision(int x, int y);
+
+    //static int money;
 };
 
 #endif   // PLAYSCENE_HPP

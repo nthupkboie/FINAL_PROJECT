@@ -10,6 +10,8 @@
 #include "Engine/Point.hpp"
 
 #include "NPC/NPCDialog.hpp"
+#include "NPC/Shopper.hpp"
+#include "UI/Component/ImageButton.hpp"
 
 class Turret;
 namespace Engine {
@@ -30,9 +32,27 @@ private:
 
     // 攝影機偏移量
     static Engine::Point cameraOffset;
+
+    bool buyingAxe = false;
+
+    bool showShopButtons = false; // 新增：控制購買按鈕顯示
+    Engine::ImageButton* buyButton = nullptr; // 新增：購買按鈕
+    Engine::ImageButton* cancelButton = nullptr; // 新增：取消按鈕
+    Engine::Label* buyLabel;
+    Engine::Label* cancelLabel; 
+    Shopper* axeman = nullptr; // 新增：NPC 引用
+    int items = 0;
+    bool canBuyAxe = false;
+    Engine::Label* moneyLabel;
+    Engine::Image* moneyImage;
+    Engine::Image* axeImage = nullptr;
+
+    
+
+
 protected:
     int lives;
-    int money;
+    //int money;
     int SpeedMult;
 
 public:
@@ -57,6 +77,8 @@ public:
     // new add
     Group *PlayerGroup;
     Group *NPCGroup;
+    Group *ShopperGroup;
+    Group *LabelGroup;
 
     std::vector<std::vector<TileType>> mapState;
     std::vector<std::vector<int>> mapDistance;
@@ -82,6 +104,9 @@ public:
     static std::vector<SmallEatScene::TileType> mapData;
 
     static bool collision(int x, int y);
+
+    void BuyOnClick();
+    void CancelOnClick();
 };
 
 #endif   // SmallEatScene_HPP
