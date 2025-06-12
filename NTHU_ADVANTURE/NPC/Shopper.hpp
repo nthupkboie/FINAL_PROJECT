@@ -52,15 +52,18 @@ public:
     //private:
     std::vector<std::string> messages; // NPC的對話內容
     NPCDialog dialog;                  // 每個NPC有自己的對話框
-    static bool isTalking;            // 是否正在對話
+    //static bool isTalking;            // 是否正在對話
 
-    const std::string& GetName() const { return npcName; }
+    //const std::string& GetName() const { return npcName; }
+    std::string GetName() const { return npcName; } // 新增：獲取名稱用於日誌
     void SetName(const std::string& name) { npcName = name; }
     void SetAvatar(std::shared_ptr<ALLEGRO_BITMAP> avatar) { npcAvatar = avatar; }
 
     bool enterWasDown = false;
-    static bool canBuy; //講完話了沒
+    bool canBuy; //講完話了沒
+    bool isTalking = false; //是否正在講話 改為非靜態
 private:
+    
     std::string npcName;
     std::shared_ptr<ALLEGRO_BITMAP> npcAvatar;
     bool showShopButtons = false; // 新增：控制購買按鈕顯示

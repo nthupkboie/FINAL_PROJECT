@@ -41,13 +41,17 @@ private:
     Engine::Label* buyLabel;
     Engine::Label* cancelLabel; 
     Shopper* axeman = nullptr; // 新增：NPC 引用
+    Shopper* Lucy = nullptr; // 新增：NPC 引用
     int items = 0;
     bool canBuyAxe = false;
+    bool canBuySpeed = false;
 
-    
+
     Engine::Label* moneyLabel;
     Engine::Image* moneyImage;
     Engine::Image* axeImage = nullptr;
+    Engine::Image* speedImage = nullptr;
+    Engine::Label* speedLabel;
 
     
 
@@ -63,6 +67,11 @@ public:
         TILE_FLOOR,
         TABLE,
         NOTHING,
+    };
+
+    enum ItemType {
+        AXE,
+        SPEED,
     };
 
     static const std::vector<Engine::Point> directions;
@@ -103,8 +112,15 @@ public:
 
     static bool collision(int x, int y);
 
-    void BuyOnClick();
+    void BuyOnClick(int item);
     void CancelOnClick();
+
+    bool readyToBuyAxe = false;
+    bool readyToBuySpeed = false;
+
+    void BuyOnClick2();
+    void CancelOnClick2();
+
 };
 
 #endif   // SmallEatScene_HPP

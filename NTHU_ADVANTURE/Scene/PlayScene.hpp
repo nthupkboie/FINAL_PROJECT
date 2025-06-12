@@ -30,8 +30,11 @@ private:
     static Engine::Point cameraOffset;
 
     Engine::Label* moneyLabel;
-    Engine::Image* moneyImage;
+    Engine::Image* moneyImage = nullptr;
     Engine::Image* axeImage;
+    Engine::Image* speedImage = nullptr;
+    Engine::Label* speedLabel;
+
 protected:
     int lives;
     //int money;

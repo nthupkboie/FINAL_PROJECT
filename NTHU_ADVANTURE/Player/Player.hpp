@@ -43,6 +43,7 @@ protected:
     std::map<int, float> keyPressTimes;
     int lastDirection; // 記錄最後方向（ALLEGRO_KEY_*）
     float gameTime; // 累計遊戲時間
+    float speed = 0.2f;
     
 public:
     Player(std::string img, float x, float y);

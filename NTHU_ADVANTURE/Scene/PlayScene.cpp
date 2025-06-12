@@ -113,9 +113,14 @@ void PlayScene::Initialize() {
     // 開始背景音樂
     bgmId = AudioHelper::PlayBGM("play.ogg");
 
+    //道具
     LabelGroup->AddNewObject(moneyLabel = new Engine::Label(std::to_string(LogScene::money), "title.ttf", 48, 130, 70, 255, 255, 255, 255, 0.5, 0.5));
     LabelGroup->AddNewObject(moneyImage = new Engine::Image("play/dollar.png", 20, 35, 56, 56));
     if (LogScene::haveAxe) LabelGroup->AddNewObject(axeImage = new Engine::Image("stage-select/axe.png", 20, 105, 56, 56));
+    if (LogScene::haveSpeedUp){
+        LabelGroup->AddNewObject(speedImage = new Engine::Image("play/potion.png", 20, 175, 56, 56));
+        LabelGroup->AddNewObject(speedLabel = new Engine::Label(std::to_string((int)LogScene::haveSpeedUp), "title.ttf", 48, 130, 210, 255, 255, 255, 255, 0.5, 0.5));
+    } 
 }
 
 void PlayScene::Terminate() {
@@ -168,9 +173,15 @@ void PlayScene::Update(float deltaTime) {
         Engine::GameEngine::GetInstance().ChangeScene("lose");
     }
 
+
+    //道具
     moneyLabel->Position = Engine::Point(130 + cameraOffset.x, 70 + cameraOffset.y);
     moneyImage->Position = Engine::Point(20 + cameraOffset.x, 35 + cameraOffset.y);
     if (axeImage) axeImage->Position = Engine::Point(20 + cameraOffset.x, 105 + cameraOffset.y);
+    if (speedImage) {
+        speedImage->Position = Engine::Point(20 + cameraOffset.x, 175 + cameraOffset.y);
+        speedLabel->Position = Engine::Point(130 + cameraOffset.x, 210 + cameraOffset.y);
+    }
 }
 
 void PlayScene::Draw() const {

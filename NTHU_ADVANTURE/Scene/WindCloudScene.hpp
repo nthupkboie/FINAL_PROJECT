@@ -34,6 +34,8 @@ private:
     Engine::Label* moneyLabel;
     Engine::Image* moneyImage;
     Engine::Image* axeImage = nullptr;
+    Engine::Image* speedImage = nullptr;
+    Engine::Label* speedLabel;
 protected:
     int lives;
     int money;
