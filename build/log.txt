@@ -1,0 +1,267 @@
+[INFO] Game Initializing...
+[INFO] Loaded Resource<image>: Resource/images/icon.png
+[INFO] Loaded window icon from: icon.png
+[INFO] There are total 16 supported mouse buttons
+[INFO] Allegro5 initialized
+[INFO] Game begin
+[INFO] Loaded Resource<image>: Resource/images/scene/start-by.png scaled to 1920x1024
+[INFO] Loaded Resource<font>: Resource/fonts/title.ttf with size 80
+[INFO] Loaded Resource<image>: Resource/images/stage-select/sword.png scaled to 800x150
+[INFO] Loaded Resource<image>: Resource/images/stage-select/sword.png
+[INFO] Loaded Resource<font>: Resource/fonts/title.ttf with size 48
+[INFO] Loaded Resource<image>: Resource/images/stage-select/sword2.png scaled to 800x150
+[INFO] Loaded Resource<image>: Resource/images/stage-select/sword2.png
+[INFO] Game initialized
+[INFO] Game start event loop
+[INFO] Loaded Resource<image>: Resource/images/stage-select/dirt.png scaled to 400x100
+[INFO] Loaded Resource<image>: Resource/images/stage-select/dirt.png
+[INFO] Loaded Resource<image>: Resource/images/stage-select/floor.png
+[INFO] Loaded Resource<audio>: Resource/audios/select.ogg
+[INFO] Created<sample_instance>: Resource/audios/select.ogg
+[INFO] Changed to login scene
+[INFO] stopped audio (sample)
+[INFO] mapData.size() 1920
+[INFO] MapWidth * MapHeight 1920
+[INFO] Loaded Resource<image>: Resource/images/mainworld/road.png scaled to 64x64
+[INFO] Loaded Resource<image>: Resource/images/mainworld/grass.png scaled to 64x64
+[INFO] Loaded Resource<image>: Resource/images/mainworld/tree.png scaled to 64x64
+[INFO] Loaded Resource<image>: Resource/images/mainworld/grasss.png scaled to 64x64
+[INFO] Loaded Resource<image>: Resource/images/mainworld/informationeletric.png scaled to 512x512
+[INFO] Loaded Resource<image>: Resource/images/mainworld/NEW.png scaled to 448x448
+[INFO] Loaded Resource<image>: Resource/images/mainworld/avanue.png scaled to 64x64
+[INFO] Loaded Resource<image>: Resource/images/player/idle.png
+[INFO] Loaded Resource<image>: Resource/images/player/left_idle.png
+[INFO] Loaded Resource<image>: Resource/images/player/right_idle.png
+[INFO] Loaded Resource<image>: Resource/images/player/up_idle.png
+[INFO] Loaded Resource<image>: Resource/images/player/up1.png
+[INFO] Loaded Resource<image>: Resource/images/player/up2.png
+[INFO] Loaded Resource<image>: Resource/images/player/down1.png
+[INFO] Loaded Resource<image>: Resource/images/player/down2.png
+[INFO] Loaded Resource<image>: Resource/images/player/left1.png
+[INFO] Loaded Resource<image>: Resource/images/player/left2.png
+[INFO] Loaded Resource<image>: Resource/images/player/right1.png
+[INFO] Loaded Resource<image>: Resource/images/player/right2.png
+[INFO] Loaded Resource<image>: Resource/images/NPC/test/avatar/test_avatar.png
+[INFO] Loaded Resource<image>: Resource/images/NPC/test/role/test_sheet.png
+[INFO] Loaded Resource<font>: Resource/fonts/normal.ttf with size 24
+[INFO] Loaded Resource<image>: Resource/images/lose/benjamin-happy.png
+[INFO] Loaded Resource<audio>: Resource/audios/play.ogg
+[INFO] Loaded Resource<image>: Resource/images/play/coin.png scaled to 56x56
+[INFO] Changed to play scene
+[INFO] stopped audio (bgm)
+[INFO] mapData.size() 480
+[INFO] MapWidth * MapHeight 480
+[INFO] Loaded Resource<image>: Resource/images/smalleat/wall.png scaled to 64x64
+[INFO] Loaded Resource<image>: Resource/images/smalleat/floor.png scaled to 64x64
+[INFO] Loaded Resource<image>: Resource/images/NPC/Yang/role/YangD.png
+[INFO] Loaded Resource<image>: Resource/images/NPC/Yang/role/YangU.png
+[INFO] Loaded Resource<image>: Resource/images/NPC/Yang/role/YangL.png
+[INFO] Loaded Resource<image>: Resource/images/NPC/Yang/role/YangR.png
+[INFO] Loaded Resource<image>: Resource/images/NPC/axeman/role/axemanD.png
+[INFO] Loaded Resource<image>: Resource/images/NPC/axeman/role/axemanU.png
+[INFO] Loaded Resource<image>: Resource/images/NPC/axeman/role/axemanL.png
+[INFO] Loaded Resource<image>: Resource/images/NPC/axeman/role/axemanR.png
+[INFO] Changed to smalleat scene
+[INFO] stopped audio (bgm)
+[INFO] Initial tree count: 254 (64.7959%)
+[WARN] No path found or path too long (200 steps), regenerating maze...
+[INFO] Initial tree count: 254 (64.7959%)
+[INFO] Path length: 160
+[INFO] Final tree count: 286 (59.5833%)
+[INFO] Final tree count after extra: 287 (59.7917%)
+[INFO] Loaded Resource<image>: Resource/images/mainworld/stairs.png scaled to 64x64
+[INFO] Loaded Resource<image>: Resource/images/BattlePlayer/left_idle.png
+[INFO] Loaded Resource<image>: Resource/images/BattlePlayer/right_idle.png
+[INFO] Loaded Resource<image>: Resource/images/BattlePlayer/up_idle.png
+[INFO] Loaded Resource<image>: Resource/images/BattlePlayer/up1.png
+[INFO] Loaded Resource<image>: Resource/images/BattlePlayer/up2.png
+[INFO] Loaded Resource<image>: Resource/images/BattlePlayer/down1.png
+[INFO] Loaded Resource<image>: Resource/images/BattlePlayer/down2.png
+[INFO] Loaded Resource<image>: Resource/images/BattlePlayer/left1.png
+[INFO] Loaded Resource<image>: Resource/images/BattlePlayer/left2.png
+[INFO] Loaded Resource<image>: Resource/images/BattlePlayer/right1.png
+[INFO] Loaded Resource<image>: Resource/images/BattlePlayer/right2.png
+[INFO] Changed to battle scene
+[INFO] stopped audio (bgm)
+[INFO] mapData.size() 1920
+[INFO] MapWidth * MapHeight 1920
+[INFO] Changed to play scene
+[INFO] stopped audio (bgm)
+[INFO] Initial tree count: 260 (66.3265%)
+[WARN] No path found or path too long (200 steps), regenerating maze...
+[INFO] Initial tree count: 260 (66.3265%)
+[INFO] Path length: 150
+[INFO] Final tree count: 318 (66.25%)
+[INFO] Final tree count after extra: 319 (66.4583%)
+[INFO] Changed to battle scene
+[INFO] stopped audio (bgm)
+[INFO] mapData.size() 1920
+[INFO] MapWidth * MapHeight 1920
+[INFO] Changed to play scene
+[INFO] stopped audio (bgm)
+[INFO] Initial tree count: 241 (61.4796%)
+[WARN] No path found or path too long (200 steps), regenerating maze...
+[INFO] Initial tree count: 253 (64.5408%)
+[WARN] No path found or path too long (200 steps), regenerating maze...
+[INFO] Initial tree count: 259 (66.0714%)
+[WARN] No path found or path too long (200 steps), regenerating maze...
+[INFO] Initial tree count: 253 (64.5408%)
+[WARN] No path found or path too long (200 steps), regenerating maze...
+[INFO] Initial tree count: 265 (67.602%)
+[WARN] No path found or path too long (200 steps), regenerating maze...
+[INFO] Initial tree count: 242 (61.7347%)
+[WARN] No path found or path too long (200 steps), regenerating maze...
+[INFO] Initial tree count: 245 (62.5%)
+[INFO] Path length: 126
+[INFO] Final tree count: 353 (73.5417%)
+[INFO] Final tree count after extra: 353 (73.5417%)
+[INFO] Changed to battle scene
+[INFO] stopped audio (bgm)
+[INFO] mapData.size() 1920
+[INFO] MapWidth * MapHeight 1920
+[INFO] Changed to play scene
+[INFO] stopped audio (bgm)
+[INFO] Initial tree count: 264 (67.3469%)
+[WARN] No path found or path too long (200 steps), regenerating maze...
+[INFO] Initial tree count: 257 (65.5612%)
+[INFO] Path length: 166
+[INFO] Final tree count: 302 (62.9167%)
+[INFO] Final tree count after extra: 302 (62.9167%)
+[INFO] Changed to battle scene
+[INFO] stopped audio (bgm)
+[INFO] mapData.size() 1920
+[INFO] MapWidth * MapHeight 1920
+[INFO] Changed to play scene
+[INFO] stopped audio (bgm)
+[INFO] Initial tree count: 237 (60.4592%)
+[INFO] Path length: 176
+[INFO] Final tree count: 270 (56.25%)
+[INFO] Final tree count after extra: 271 (56.4583%)
+[INFO] Changed to battle scene
+[INFO] stopped audio (bgm)
+[INFO] mapData.size() 1920
+[INFO] MapWidth * MapHeight 1920
+[INFO] Changed to play scene
+[INFO] stopped audio (bgm)
+[INFO] mapData.size() 480
+[INFO] MapWidth * MapHeight 480
+[INFO] Changed to smalleat scene
+[INFO] Loaded Resource<image>: Resource/images/stage-select/full_1.png scaled to 800x100
+[INFO] Loaded Resource<image>: Resource/images/stage-select/full_1.png
+[WARN] Purchase cancelled
+[WARN] Purchased item, money: 0, items: 1
+[INFO] Loaded Resource<image>: Resource/images/stage-select/axe.png scaled to 56x56
+[WARN] Not enough money to buy item
+[INFO] stopped audio (bgm)
+[INFO] mapData.size() 1920
+[INFO] MapWidth * MapHeight 1920
+[INFO] Changed to play scene
+[INFO] stopped audio (bgm)
+[INFO] Initial tree count: 248 (63.2653%)
+[WARN] No path found or path too long (200 steps), regenerating maze...
+[INFO] Initial tree count: 262 (66.8367%)
+[WARN] No path found or path too long (200 steps), regenerating maze...
+[INFO] Initial tree count: 255 (65.051%)
+[WARN] No path found or path too long (200 steps), regenerating maze...
+[INFO] Initial tree count: 269 (68.6224%)
+[WARN] No path found or path too long (200 steps), regenerating maze...
+[INFO] Initial tree count: 251 (64.0306%)
+[WARN] No path found or path too long (200 steps), regenerating maze...
+[INFO] Initial tree count: 270 (68.8776%)
+[INFO] Path length: 100
+[INFO] Final tree count: 379 (78.9583%)
+[INFO] Final tree count after extra: 379 (78.9583%)
+[INFO] Loaded Resource<image>: Resource/images/stage-select/axe.png scaled to 150x150
+[INFO] Loaded Resource<image>: Resource/images/stage-select/axe.png
+[INFO] Changed to battle scene
+[INFO] Loaded Resource<image>: Resource/images/stage-select/axe.png scaled to 96x96
+[INFO] Axe activated, canChop = true
+[INFO] Clicked grid: (8, 5)
+[INFO] Updated tile at (8, 5) to type 0
+[INFO] Axe activated, canChop = true
+[INFO] Clicked grid: (13, 7)
+[INFO] Updated tile at (13, 7) to type 0
+[INFO] Axe activated, canChop = true
+[INFO] Clicked grid: (14, 7)
+[INFO] Updated tile at (14, 7) to type 0
+[INFO] Axe activated, canChop = true
+[INFO] Clicked grid: (15, 7)
+[INFO] Updated tile at (15, 7) to type 0
+[INFO] stopped audio (bgm)
+[INFO] mapData.size() 1920
+[INFO] MapWidth * MapHeight 1920
+[INFO] Changed to play scene
+[INFO] stopped audio (bgm)
+[INFO] mapData.size() 480
+[INFO] MapWidth * MapHeight 480
+[INFO] Changed to smalleat scene
+[INFO] Game Terminating...
+[INFO] stopped audio (bgm)
+[INFO] Game terminated
+[INFO] Game end
+[INFO] Destroyed Resource<image>: stage-select/axe.png?96x96
+[INFO] Destroyed Resource<image>: stage-select/full_1.png?800x100
+[INFO] Destroyed Resource<image>: BattlePlayer/right2.png
+[INFO] Destroyed Resource<image>: BattlePlayer/right1.png
+[INFO] Destroyed Resource<image>: BattlePlayer/left1.png
+[INFO] Destroyed Resource<image>: player/right_idle.png
+[INFO] Destroyed Resource<image>: NPC/test/avatar/test_avatar.png
+[INFO] Destroyed Resource<image>: BattlePlayer/left_idle.png
+[INFO] Destroyed Resource<image>: mainworld/stairs.png?64x64
+[INFO] Destroyed Resource<image>: smalleat/floor.png?64x64
+[INFO] Destroyed Resource<image>: NPC/Yang/role/YangR.png
+[INFO] Destroyed Resource<image>: player/right1.png
+[INFO] Destroyed Resource<image>: player/up2.png
+[INFO] Destroyed Resource<image>: BattlePlayer/up1.png
+[INFO] Destroyed Resource<image>: NPC/axeman/role/axemanU.png
+[INFO] Destroyed Resource<image>: NPC/test/role/test_sheet.png
+[INFO] Destroyed Resource<image>: play/coin.png?56x56
+[INFO] Destroyed Resource<image>: NPC/axeman/role/axemanL.png
+[INFO] Destroyed Resource<image>: player/right2.png
+[INFO] Destroyed Resource<image>: player/left1.png
+[INFO] Destroyed Resource<image>: player/down1.png
+[INFO] Destroyed Resource<image>: player/down2.png
+[INFO] Destroyed Resource<image>: BattlePlayer/up2.png
+[INFO] Destroyed Resource<image>: mainworld/road.png?64x64
+[INFO] Destroyed Resource<image>: NPC/Yang/role/YangL.png
+[INFO] Destroyed Resource<image>: stage-select/axe.png
+[INFO] Destroyed Resource<image>: BattlePlayer/down1.png
+[INFO] Destroyed Resource<image>: player/left2.png
+[INFO] Destroyed Resource<image>: player/up_idle.png
+[INFO] Destroyed Resource<image>: lose/benjamin-happy.png
+[INFO] Destroyed Resource<image>: mainworld/avanue.png?64x64
+[INFO] Destroyed Resource<image>: player/idle.png
+[INFO] Destroyed Resource<image>: player/left_idle.png
+[INFO] Destroyed Resource<image>: stage-select/sword2.png
+[INFO] Destroyed Resource<image>: NPC/axeman/role/axemanR.png
+[INFO] Destroyed Resource<image>: stage-select/axe.png?56x56
+[INFO] Destroyed Resource<image>: mainworld/grass.png?64x64
+[INFO] Destroyed Resource<image>: NPC/Yang/role/YangD.png
+[INFO] Destroyed Resource<image>: player/up1.png
+[INFO] Destroyed Resource<image>: BattlePlayer/right_idle.png
+[INFO] Destroyed Resource<image>: mainworld/informationeletric.png?512x512
+[INFO] Destroyed Resource<image>: mainworld/grasss.png?64x64
+[INFO] Destroyed Resource<image>: BattlePlayer/up_idle.png
+[INFO] Destroyed Resource<image>: stage-select/sword.png
+[INFO] Destroyed Resource<image>: stage-select/dirt.png?400x100
+[INFO] Destroyed Resource<image>: stage-select/dirt.png
+[INFO] Destroyed Resource<image>: mainworld/tree.png?64x64
+[INFO] Destroyed Resource<image>: NPC/Yang/role/YangU.png
+[INFO] Destroyed Resource<image>: stage-select/full_1.png
+[INFO] Destroyed Resource<image>: stage-select/floor.png
+[INFO] Destroyed Resource<image>: mainworld/NEW.png?448x448
+[INFO] Destroyed Resource<image>: BattlePlayer/left2.png
+[INFO] Destroyed Resource<image>: BattlePlayer/down2.png
+[INFO] Destroyed Resource<image>: stage-select/sword.png?800x150
+[INFO] Destroyed Resource<image>: smalleat/wall.png?64x64
+[INFO] Destroyed Resource<image>: icon.png
+[INFO] Destroyed Resource<image>: stage-select/axe.png?150x150
+[INFO] Destroyed Resource<image>: NPC/axeman/role/axemanD.png
+[INFO] Destroyed Resource<image>: stage-select/sword2.png?800x150
+[INFO] Destroyed Resource<image>: scene/start-by.png?1920x1024
+[INFO] Destroyed Resource<font>: normal.ttf?24
+[INFO] Destroyed Resource<font>: title.ttf?48
+[INFO] Destroyed Resource<font>: title.ttf?80
+[INFO] Destroyed<sample_instance>: select.ogg
+[INFO] Destroyed Resource<audio>: play.ogg
+[INFO] Destroyed Resource<audio>: select.ogg
