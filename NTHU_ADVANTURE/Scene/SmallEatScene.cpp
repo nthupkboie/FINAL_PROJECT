@@ -105,6 +105,16 @@ void SmallEatScene::Initialize() {
                                             BlockSize * 10, BlockSize * 10
                                         ));
 
+    Engine::Point axe0(BlockSize * 10 + BlockSize / 2, BlockSize * 10 + BlockSize / 2);
+    Engine::Point axe1(BlockSize * 12 + BlockSize / 2, BlockSize * 10 + BlockSize / 2);
+    Engine::Point axe2(BlockSize * 12 + BlockSize / 2, BlockSize * 8 + BlockSize / 2);
+    Engine::Point axe3(BlockSize * 10 + BlockSize / 2, BlockSize * 8 + BlockSize / 2);
+
+    axeman->AddPatrolPoint(axe0);
+    axeman->AddPatrolPoint(axe1);
+    axeman->AddPatrolPoint(axe2);
+    axeman->AddPatrolPoint(axe3);
+
     // NPCGroup->AddNewObject(Yang = new NPC("NPC",testAvatar, "NPC/test/role/test_sheet.png",
     //                                         BlockSize * 8, BlockSize * 8,
     //                                         2, 3,  // 上 (第0列第2行)
@@ -155,7 +165,7 @@ void SmallEatScene::Initialize() {
     bgmId = AudioHelper::PlayBGM("play.ogg");
 
     LabelGroup->AddNewObject(moneyLabel = new Engine::Label(std::to_string(LogScene::money), "title.ttf", 48, 130, 70, 255, 255, 255, 255, 0.5, 0.5));
-    LabelGroup->AddNewObject(moneyImage = new Engine::Image("play/coin.png", 20, 35, 56, 56));
+    LabelGroup->AddNewObject(moneyImage = new Engine::Image("play/dollar.png", 20, 35, 56, 56));
     if (LogScene::haveAxe) AddNewObject(axeImage = new Engine::Image("stage-select/axe.png", 20, 105, 56, 56));
 }
 

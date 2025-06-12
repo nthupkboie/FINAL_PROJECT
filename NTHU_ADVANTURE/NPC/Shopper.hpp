@@ -37,6 +37,17 @@ public:
     
     // 檢查是否正在對話
     bool IsTalking() const { return isTalking; }
+
+    void UpdateFacingDirection(const Engine::Point& dir);
+
+    // 添加巡邏點
+    void AddPatrolPoint(const Engine::Point& point);
+    
+    // 設置移動速度 (可選)
+    void SetMoveSpeed(float speed) { moveSpeed = speed; }
+
+    float waitTime = 0.0f;
+    float maxWaitTime = 2.0f; // 最大等待2秒
     
     //private:
     std::vector<std::string> messages; // NPC的對話內容
@@ -55,6 +66,11 @@ private:
     bool showShopButtons = false; // 新增：控制購買按鈕顯示
     Engine::ImageButton* buyButton = nullptr; // 新增：購買按鈕
     Engine::ImageButton* cancelButton = nullptr; // 新增：取消按鈕
+
+    std::vector<Engine::Point> patrolPoints;
+    size_t currentPatrolIndex = 0;
+    float moveSpeed = 1.0f;
+    bool isPatrolling = true;
 };
 
 #endif
