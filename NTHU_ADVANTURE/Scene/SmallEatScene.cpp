@@ -166,7 +166,7 @@ void SmallEatScene::Initialize() {
 
     LabelGroup->AddNewObject(moneyLabel = new Engine::Label(std::to_string(LogScene::money), "title.ttf", 48, 130, 70, 255, 255, 255, 255, 0.5, 0.5));
     LabelGroup->AddNewObject(moneyImage = new Engine::Image("play/dollar.png", 20, 35, 56, 56));
-    if (LogScene::haveAxe) AddNewObject(axeImage = new Engine::Image("stage-select/axe.png", 20, 105, 56, 56));
+    if (LogScene::haveAxe) LabelGroup->AddNewObject(axeImage = new Engine::Image("stage-select/axe.png", 20, 105, 56, 56));
 }
 
 void SmallEatScene::Terminate() {
