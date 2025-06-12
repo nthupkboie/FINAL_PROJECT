@@ -76,6 +76,14 @@ add_executable(2025_I2P2_TowerDefense
     Scene/BattleScene.hpp
     Scene/SmallEatScene.cpp
     Scene/SmallEatScene.hpp
+    Scene/WaterWoodScene.cpp
+    Scene/WaterWoodScene.hpp
+    Scene/WindCloudScene.cpp
+    Scene/WindCloudScene.hpp
+    # Scene/TaldaScene.cpp
+    # Scene/TaldaScene.hpp
+    # Scene/EEScene.cpp
+    # Scene/EEScene.hpp
 
     # UI
     UI/Component/Image.cpp

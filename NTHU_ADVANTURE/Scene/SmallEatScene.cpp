@@ -237,14 +237,15 @@ void SmallEatScene::ReadMap() {
     std::ifstream fin(filename);
     while (fin >> c) {
         switch (c) {
-            case '0': mapData.push_back(TILE_GRASS); break;
-            case 'R': mapData.push_back(TILE_ROAD); break;
-            case 'T': mapData.push_back(TILE_TREE); break;
-            case 'S': mapData.push_back(TILE_STAIRS); break;
+            // case '0': mapData.push_back(TILE_GRASS); break;
+            // case 'R': mapData.push_back(TILE_ROAD); break;
+            // case 'T': mapData.push_back(TILE_TREE); break;
+            // case 'S': mapData.push_back(TILE_STAIRS); break;
             case 'W': mapData.push_back(TILE_WALL); break;
+            case '^': mapData.push_back(TABLE); break;
             case 'F': mapData.push_back(TILE_FLOOR); break;
-            case 'N': mapData.push_back(NEW); break;
-            case 'n': mapData.push_back(TILE_NEW); break;
+            // case 'N': mapData.push_back(NEW); break;
+            // case 'n': mapData.push_back(TILE_NEW); break;
             case '=': mapData.push_back(NOTHING); break;
             case '\n':
             case '\r':
@@ -253,10 +254,10 @@ void SmallEatScene::ReadMap() {
     }
     fin.close();
     
-    // 確認地圖數據完整
-    if (static_cast<int>(mapData.size()) != MapWidth * MapHeight) {
-        throw std::ios_base::failure("Map data is corrupted.");
-    }
+    // // 確認地圖數據完整
+    // if (static_cast<int>(mapData.size()) != MapWidth * MapHeight) {
+    //     throw std::ios_base::failure("Map data is corrupted.");
+    // }
 
     Engine::LOG(Engine::INFO) << "mapData.size() " << mapData.size();
     Engine::LOG(Engine::INFO) << "MapWidth * MapHeight " << MapWidth * MapHeight;
@@ -282,54 +283,7 @@ void SmallEatScene::ReadMap() {
             std::string imagePath;
             
             switch(tileType) {
-                case TILE_GRASS:
-                    imagePath = "mainworld/grasss.png";
-                    TileMapGroup->AddNewObject(
-                        new Engine::Image(imagePath, 
-                                        x * BlockSize, 
-                                        y * BlockSize, 
-                                        BlockSize, 
-                                        BlockSize)
-                    );
-                    break;
-                case TILE_ROAD:
-                    imagePath = "mainworld/road.png";
-                    TileMapGroup->AddNewObject(
-                        new Engine::Image(imagePath, 
-                                        x * BlockSize, 
-                                        y * BlockSize, 
-                                        BlockSize, 
-                                        BlockSize)
-                    );
-                    break;
-                case TILE_TREE:
-                    imagePath = "mainworld/grass.png";
-                    TileMapGroup->AddNewObject(
-                        new Engine::Image(imagePath, 
-                                        x * BlockSize, 
-                                        y * BlockSize, 
-                                        BlockSize, 
-                                        BlockSize)
-                    );
-                    imagePath = "mainworld/tree.png";
-                    TileMapGroup->AddNewObject(
-                        new Engine::Image(imagePath, 
-                                        x * BlockSize, 
-                                        y * BlockSize, 
-                                        BlockSize, 
-                                        BlockSize)
-                    );
-                    break;
-                case TILE_STAIRS:
-                    imagePath = "mainworld/stairs.png";
-                    TileMapGroup->AddNewObject(
-                        new Engine::Image(imagePath, 
-                                        x * BlockSize, 
-                                        y * BlockSize, 
-                                        BlockSize, 
-                                        BlockSize)
-                    );
-                    break;
+                ///////////////////////
                 case TILE_WALL:
                     imagePath = "smalleat/wall.png";
                     TileMapGroup->AddNewObject(
@@ -340,7 +294,7 @@ void SmallEatScene::ReadMap() {
                                         BlockSize)
                     );
                     break;
-                case TILE_FLOOR:
+                case TILE_FLOOR: {
                     imagePath = "smalleat/floor.png";
                     TileMapGroup->AddNewObject(
                         new Engine::Image(imagePath, 
@@ -349,26 +303,46 @@ void SmallEatScene::ReadMap() {
                                         BlockSize, 
                                         BlockSize)
                     );
-                    break;
-                case NEW:
-                    imagePath = "mainworld/grass1.png";
+
+                    // int randVal = rand() % 100; // 0~99 的隨機數
+
+                    // if (randVal < 5) {
+                    //     imagePath = "smalleat/BAG.png";
+                    // }
+                    // else {
+                    //     break;
+                    // }
+
+                    // TileMapGroup->AddNewObject(
+                    //     new Engine::Image(imagePath, 
+                    //                     x * BlockSize, 
+                    //                     y * BlockSize, 
+                    //                     BlockSize, 
+                    //                     BlockSize)
+                    // );
+                    // break;
+                }
+                break;
+                case TABLE:
+                    imagePath = "smalleat/floor.png";
                     TileMapGroup->AddNewObject(
                         new Engine::Image(imagePath, 
                                         x * BlockSize, 
                                         y * BlockSize, 
-                                        BlockSize * 7, 
-                                        BlockSize * 7)
+                                        BlockSize, 
+                                        BlockSize)
                     );
-                    imagePath = "mainworld/NEW.png";
+
+                    imagePath = "smalleat/TABLE.png";
                     TileMapGroup->AddNewObject(
                         new Engine::Image(imagePath, 
                                         x * BlockSize, 
                                         y * BlockSize, 
-                                        BlockSize * 7, 
-                                        BlockSize * 7)
+                                        BlockSize, 
+                                        BlockSize)
                     );
-                    break;
-                case TILE_NEW:
+                    break; 
+                //////////////////////////////
                 case NOTHING:
                 default:
                     continue;
@@ -392,12 +366,8 @@ Engine::Point SmallEatScene::getCamera(){
 bool SmallEatScene::collision(int x, int y){
     switch(mapData[y/BlockSize * MapWidth + x / BlockSize]){
         case TILE_FLOOR:
-        case TILE_GRASS:
-        case TILE_ROAD:
-        case TILE_STAIRS:
             return true;
         case TILE_WALL:
-        case NEW:
         case NOTHING:
         default:
             return false;
