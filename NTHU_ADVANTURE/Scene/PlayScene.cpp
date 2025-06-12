@@ -480,7 +480,7 @@ void PlayScene::ReadMap() {
                     );
                     break;
                 case WATERWOOD:
-                    imagePath = "mainworld/informationeletric.png";
+                    imagePath = "mainworld/waterwood.png";
                     TileMapGroup->AddNewObject(
                         new Engine::Image(imagePath, 
                                         x * BlockSize, 
