@@ -53,9 +53,6 @@ private:
     Engine::Image* speedImage = nullptr;
     Engine::Label* speedLabel;
 
-    
-
-
 protected:
     int lives;
     //int money;

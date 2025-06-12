@@ -99,6 +99,8 @@ void PlayScene::Initialize() {
     test->AddPatrolPoint(testPoint2);
     test->AddPatrolPoint(testPoint3);
 
+    test->SetMoveSpeed(10.0f);
+
     // 設置NPC的對話內容
     test->SetMessages({
         "你好，我是村民A！",
@@ -108,7 +110,7 @@ void PlayScene::Initialize() {
     });
 
     // 預載資源
-    Engine::Resources::GetInstance().GetBitmap("lose/benjamin-happy.png");
+    //Engine::Resources::GetInstance().GetBitmap("lose/benjamin-happy.png");
     
     // 開始背景音樂
     bgmId = AudioHelper::PlayBGM("play.ogg");
@@ -260,6 +262,17 @@ void PlayScene::OnKeyDown(int keyCode) {
     }
     if(keyCode == ALLEGRO_KEY_3){
         Engine::GameEngine::GetInstance().ChangeScene("windcloud");
+        inPlay = false;
+        inSmallEat = true;
+        //haveAxe = true;
+    }
+    if(keyCode == ALLEGRO_KEY_4){
+        Engine::GameEngine::GetInstance().ChangeScene("EE");
+        inPlay = false;
+        inSmallEat = true;
+    }
+    if(keyCode == ALLEGRO_KEY_5){
+        Engine::GameEngine::GetInstance().ChangeScene("talda");
         inPlay = false;
         inSmallEat = true;
         //haveAxe = true;
@@ -491,7 +504,7 @@ void PlayScene::ReadMap() {
                     );
                     break;
                 case WATERWOOD:
-                    imagePath = "mainworld/informationeletric.png";
+                    imagePath = "mainworld/waterwood.png";
                     TileMapGroup->AddNewObject(
                         new Engine::Image(imagePath, 
                                         x * BlockSize, 

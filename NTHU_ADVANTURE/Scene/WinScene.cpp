@@ -24,7 +24,7 @@ void WinScene::Initialize() {
     AddNewControlObject(btn);
     AddNewObject(new Engine::Label("Back", "pirulen.ttf", 48, halfW, halfH * 7 / 4, 0, 0, 0, 255, 0.5, 0.5));
     //bgmId = AudioHelper::PlayAudio("win.wav");
-    bgmId = AudioHelper::PlayBGM("win.ogg");
+    bgmId = AudioHelper::PlayBGM("win_25.ogg");
     
 }
 void WinScene::Terminate() {

@@ -16,9 +16,6 @@
 #include <allegro5/allegro_primitives.h>
 #include "Engine/LanguageManager.hpp"
 
-
-
-
 void SettingsScene::Initialize() {
     int w = Engine::GameEngine::GetInstance().GetScreenSize().x;
     int h = Engine::GameEngine::GetInstance().GetScreenSize().y;
