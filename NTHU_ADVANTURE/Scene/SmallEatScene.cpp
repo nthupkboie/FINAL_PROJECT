@@ -43,6 +43,7 @@ Engine::Point SmallEatScene::GetClientSize() {
 
 Engine::Point SmallEatScene::cameraOffset = Engine::Point(0, 0);
 void SmallEatScene::Initialize() {
+    firstTime = true;
     // 初始化遊戲狀態
     lives = 3;
     //money = 0;
@@ -102,27 +103,18 @@ void SmallEatScene::Initialize() {
                                             "NPC/axeman/role/axemanD.png", 
                                             "NPC/axeman/role/axemanL.png",
                                             "NPC/axeman/role/axemanR.png",
-                                            BlockSize * 10, BlockSize * 10
+                                            BlockSize * 9, BlockSize * 7
                                         ));
 
-    Engine::Point axe0(BlockSize * 10 + BlockSize / 2, BlockSize * 10 + BlockSize / 2);
-    Engine::Point axe1(BlockSize * 12 + BlockSize / 2, BlockSize * 10 + BlockSize / 2);
-    Engine::Point axe2(BlockSize * 12 + BlockSize / 2, BlockSize * 8 + BlockSize / 2);
-    Engine::Point axe3(BlockSize * 10 + BlockSize / 2, BlockSize * 8 + BlockSize / 2);
+    Engine::Point axe0(BlockSize * 9 + BlockSize / 2, BlockSize * 7 + BlockSize / 2);
+    Engine::Point axe1(BlockSize * 9 + BlockSize / 2, BlockSize * 11 + BlockSize / 2);
+    Engine::Point axe2(BlockSize * 12 + BlockSize / 2, BlockSize * 11 + BlockSize / 2);
+    Engine::Point axe3(BlockSize * 12 + BlockSize / 2, BlockSize * 7 + BlockSize / 2);
 
     axeman->AddPatrolPoint(axe0);
     axeman->AddPatrolPoint(axe1);
     axeman->AddPatrolPoint(axe2);
     axeman->AddPatrolPoint(axe3);
-
-    // NPCGroup->AddNewObject(Yang = new NPC("NPC",testAvatar, "NPC/test/role/test_sheet.png",
-    //                                         BlockSize * 8, BlockSize * 8,
-    //                                         2, 3,  // 上 (第0列第2行)
-    //                                         2, 0,  // 下
-    //                                         2, 1,  // 左
-    //                                         2, 2,  // 右
-    //                                         64, 64)); // 圖塊大小
-
 
     // 初始化對話框
     dialog.Initialize();
@@ -306,16 +298,35 @@ void SmallEatScene::OnKeyDown(int keyCode) {
     if(keyCode == ALLEGRO_KEY_B){
         Engine::GameEngine::GetInstance().ChangeScene("battle");
     }
-    // // 按T鍵測試開啟對話 (可選)
-    // if (keyCode == ALLEGRO_KEY_T) {
-    //     std::vector<std::string> testMessages = {
-    //         "這是按T鍵觸發的對話!",
-    //         "第二條測試訊息。",
-    //         "最後一條測試訊息。"
-    //     };
-    //     auto npcAvatar = Engine::Resources::GetInstance().GetBitmap("NPC/test/icon/test_icon.png");
-    //     dialog.StartDialog("測試NPC", npcAvatar, testMessages);
-    // }
+    
+    if(firstTime){
+        std::vector<std::string> testMessages = {
+        "小吃部建築由本校校友張昌華設計。",
+        "事實上，校園內許多建築都出自大師之手，包括原子爐、百齡堂(今水漾餐廳)、台北月涵堂等。他的作品外觀多呈簡潔的白色，且擁有明亮的大窗景。",
+        "🍙小吃部的前身為「大餐廳」，一開始只在正餐時間營業，供應自助餐。",
+        "核工碩79級校友、本校財規室李敏主任表示，他印象中的大餐廳擺設很簡單，就是一排排整齊的長桌。",
+        "而且當年的自助餐不是自己夾菜，而是裝好一碟一碟的，想吃什麼就拿一盤到自己的托盤上。",
+        "「吃得超飽只要8到10元！」李敏笑說，物價跟現在真的差很多呢。",
+        "大餐廳的形式維持了近20年，直到1983年胡德總務長及學生代表討論後，改成提供多樣化餐點的「小吃部」，營業時間也更加彈性，讓同學即使錯過正餐時間也有「小吃」可以吃，當時可是全國大學首創的「攤位式餐飲」。"
+        };
+        auto testAvatar = Engine::Resources::GetInstance().GetBitmap("NPC/test/avatar/test_avatar.png");
+        dialog.StartDialog("小吃部", testAvatar, testMessages);
+
+        firstTime = false;
+    }
+    if (keyCode == ALLEGRO_KEY_T) {
+        std::vector<std::string> testMessages = {
+        "小吃部建築由本校校友張昌華設計。",
+        "事實上，校園內許多建築都出自大師之手，包括原子爐、百齡堂(今水漾餐廳)、台北月涵堂等。他的作品外觀多呈簡潔的白色，且擁有明亮的大窗景。",
+        "🍙小吃部的前身為「大餐廳」，一開始只在正餐時間營業，供應自助餐。",
+        "核工碩79級校友、本校財規室李敏主任表示，他印象中的大餐廳擺設很簡單，就是一排排整齊的長桌。",
+        "而且當年的自助餐不是自己夾菜，而是裝好一碟一碟的，想吃什麼就拿一盤到自己的托盤上。",
+        "「吃得超飽只要8到10元！」李敏笑說，物價跟現在真的差很多呢。",
+        "大餐廳的形式維持了近20年，直到1983年胡德總務長及學生代表討論後，改成提供多樣化餐點的「小吃部」，營業時間也更加彈性，讓同學即使錯過正餐時間也有「小吃」可以吃，當時可是全國大學首創的「攤位式餐飲」。"
+        };
+        auto testAvatar = Engine::Resources::GetInstance().GetBitmap("NPC/test/avatar/test_avatar.png");
+        dialog.StartDialog("小吃部", testAvatar, testMessages);
+    }
 
     if(keyCode == ALLEGRO_KEY_P){
         PlayScene::inPlay = true;
@@ -335,15 +346,11 @@ void SmallEatScene::ReadMap() {
     std::ifstream fin(filename);
     while (fin >> c) {
         switch (c) {
-            // case '0': mapData.push_back(TILE_GRASS); break;
-            // case 'R': mapData.push_back(TILE_ROAD); break;
-            // case 'T': mapData.push_back(TILE_TREE); break;
-            // case 'S': mapData.push_back(TILE_STAIRS); break;
             case 'W': mapData.push_back(TILE_WALL); break;
             case '^': mapData.push_back(TABLE); break;
             case 'F': mapData.push_back(TILE_FLOOR); break;
-            // case 'N': mapData.push_back(NEW); break;
-            // case 'n': mapData.push_back(TILE_NEW); break;
+            case 'L': mapData.push_back(LSEAT); break;
+            case 'R': mapData.push_back(RSEAT); break;
             case '=': mapData.push_back(NOTHING); break;
             case '\n':
             case '\r':
@@ -401,24 +408,6 @@ void SmallEatScene::ReadMap() {
                                         BlockSize, 
                                         BlockSize)
                     );
-
-                    // int randVal = rand() % 100; // 0~99 的隨機數
-
-                    // if (randVal < 5) {
-                    //     imagePath = "smalleat/BAG.png";
-                    // }
-                    // else {
-                    //     break;
-                    // }
-
-                    // TileMapGroup->AddNewObject(
-                    //     new Engine::Image(imagePath, 
-                    //                     x * BlockSize, 
-                    //                     y * BlockSize, 
-                    //                     BlockSize, 
-                    //                     BlockSize)
-                    // );
-                    // break;
                 }
                 break;
                 case TABLE:
@@ -440,6 +429,42 @@ void SmallEatScene::ReadMap() {
                                         BlockSize)
                     );
                     break; 
+                case LSEAT:
+                    imagePath = "smalleat/floor.png";
+                    TileMapGroup->AddNewObject(
+                        new Engine::Image(imagePath, 
+                                        x * BlockSize, 
+                                        y * BlockSize, 
+                                        BlockSize, 
+                                        BlockSize)
+                    );
+                    imagePath = "smalleat/LSEAT.png";
+                    TileMapGroup->AddNewObject(
+                        new Engine::Image(imagePath, 
+                                        x * BlockSize, 
+                                        y * BlockSize, 
+                                        BlockSize, 
+                                        BlockSize)
+                    );
+                    break;
+                case RSEAT:
+                    imagePath = "smalleat/floor.png";
+                    TileMapGroup->AddNewObject(
+                        new Engine::Image(imagePath, 
+                                        x * BlockSize, 
+                                        y * BlockSize, 
+                                        BlockSize, 
+                                        BlockSize)
+                    );
+                    imagePath = "smalleat/RSEAT.png";
+                    TileMapGroup->AddNewObject(
+                        new Engine::Image(imagePath, 
+                                        x * BlockSize, 
+                                        y * BlockSize, 
+                                        BlockSize, 
+                                        BlockSize)
+                    );
+                    break;
                 //////////////////////////////
                 case NOTHING:
                 default:

@@ -571,7 +571,7 @@ void PlayScene::DrawMiniMap() const {
                 case NOTHING:
                     color = al_map_rgb(255, 132, 132);
                 break;
-                default:         color = al_map_rgb(0, 0, 0); break;
+                default: color = al_map_rgb(255, 132, 132); break;
             }
             al_draw_filled_rectangle(
                 minimapX + x * BlockSize * scale,

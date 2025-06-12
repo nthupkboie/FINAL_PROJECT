@@ -24,7 +24,6 @@ namespace Engine {
 class SmallEatScene final : public Engine::IScene {
 private:
     
-    
     ALLEGRO_SAMPLE_ID bgmId;
     std::shared_ptr<ALLEGRO_SAMPLE_INSTANCE> deathBGMInstance;
 
@@ -60,6 +59,8 @@ public:
         TILE_FLOOR,
         TABLE,
         NOTHING,
+        LSEAT,
+        RSEAT,
     };
 
     static const std::vector<Engine::Point> directions;
@@ -102,6 +103,8 @@ public:
 
     void BuyOnClick();
     void CancelOnClick();
+
+    bool firstTime = true;
 };
 
 #endif   // SmallEatScene_HPP
