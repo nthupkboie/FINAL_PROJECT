@@ -53,9 +53,12 @@ void StartScene::Initialize() {
 
     currentLanguage = LanguageManager::GetInstance().GetCurrentLanguage();
     RefreshLabels();
+
+    bgmId = AudioHelper::PlayBGM("start.ogg");
 }
 
 void StartScene::Terminate() {
+    AudioHelper::StopBGM(bgmId);
     IScene::Terminate();
 }
 

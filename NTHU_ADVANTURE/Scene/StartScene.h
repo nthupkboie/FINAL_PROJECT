@@ -12,6 +12,7 @@
 
 class StartScene final : public Engine::IScene {
 public:
+    ALLEGRO_SAMPLE_ID bgmId;
     explicit StartScene() = default;
     void Initialize() override;
     void Terminate() override;

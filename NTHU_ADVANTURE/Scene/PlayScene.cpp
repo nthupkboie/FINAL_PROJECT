@@ -108,7 +108,7 @@ void PlayScene::Initialize() {
     });
 
     // 預載資源
-    Engine::Resources::GetInstance().GetBitmap("lose/benjamin-happy.png");
+    //Engine::Resources::GetInstance().GetBitmap("lose/benjamin-happy.png");
     
     // 開始背景音樂
     bgmId = AudioHelper::PlayBGM("play.ogg");

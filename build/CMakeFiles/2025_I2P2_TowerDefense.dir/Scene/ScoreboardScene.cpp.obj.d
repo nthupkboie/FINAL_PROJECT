@@ -852,13 +852,14 @@ CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/ScoreboardScene.cpp.obj: \
   C:/FINAL_PROJECT/NTHU_ADVANTURE/./Engine/IControl.hpp \
   C:/FINAL_PROJECT/NTHU_ADVANTURE/./Engine/IObject.hpp \
   C:/FINAL_PROJECT/NTHU_ADVANTURE/./Engine/Point.hpp \
+  C:/allegro/include/allegro5/allegro_audio.h \
   C:/FINAL_PROJECT/NTHU_ADVANTURE/./Engine/GameEngine.hpp \
   C:/FINAL_PROJECT/NTHU_ADVANTURE/./Engine/Resources.hpp \
-  C:/allegro/include/allegro5/allegro_audio.h \
   C:/allegro/include/allegro5/allegro_font.h \
   C:/FINAL_PROJECT/NTHU_ADVANTURE/./UI/Component/ImageButton.hpp \
   C:/FINAL_PROJECT/NTHU_ADVANTURE/./UI/Component/Image.hpp \
   C:/FINAL_PROJECT/NTHU_ADVANTURE/./UI/Component/Label.hpp \
+  C:/FINAL_PROJECT/NTHU_ADVANTURE/./Engine/AudioHelper.hpp \
   C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/fstream \
   C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/filesystem \
   C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__filesystem/copy_options.h \

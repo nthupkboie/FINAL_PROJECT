@@ -6,6 +6,7 @@
 #include <allegro5/allegro.h>
 #include "Engine/IScene.hpp"
 #include "Engine/Point.hpp"
+#include <allegro5/allegro_audio.h>
 
 struct AnimatedElement {
     Engine::IObject* object;
@@ -40,10 +41,11 @@ private:
     void SaveScores();
     void AddSampleScores(); // 測試用
 public:
+    ALLEGRO_SAMPLE_ID bgmId;
     ScoreboardScene() = default;
     void Initialize() override;
     void Terminate() override;
     void Update(float deltaTime) override;
     void OnKeyDown(int keyCode) override;
-    static void AddScore(const std::string& playerName, int score, int stage);
+    static void AddScore(const std::string&playerName, int score, int stage);
 };
