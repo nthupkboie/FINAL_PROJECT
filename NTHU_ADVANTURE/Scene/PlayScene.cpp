@@ -82,9 +82,16 @@ void PlayScene::Initialize() {
                                             2, 2,  // 右
                                             64, 64)); // 圖塊大小
 
-    // 初始化對話框
-    dialog.Initialize();
-    
+    Engine::Point testPoint0(BlockSize * 30, BlockSize * 10);
+    Engine::Point testPoint1(BlockSize * 28, BlockSize * 10);
+    Engine::Point testPoint2(BlockSize * 28, BlockSize * 8);
+    Engine::Point testPoint3(BlockSize * 30, BlockSize * 8);
+
+    test->AddPatrolPoint(testPoint0);
+    test->AddPatrolPoint(testPoint1);
+    test->AddPatrolPoint(testPoint2);
+    test->AddPatrolPoint(testPoint3);
+
     // 設置NPC的對話內容
     test->SetMessages({
         "你好，我是村民A！",
