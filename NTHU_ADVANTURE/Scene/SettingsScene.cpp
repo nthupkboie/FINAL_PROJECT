@@ -32,7 +32,7 @@ void SettingsScene::Initialize() {
     btn->SetOnClickCallback(std::bind(&SettingsScene::BackOnClick, this, 1));
     AddNewControlObject(btn);
     //AddNewObject(new Engine::Label("Back", "title.ttf", 48, halfW, halfH * 3 / 2, 0, 0, 0, 255, 0.5, 0.5));
-    labelBack = new Engine::Label("", "Retro.ttf", 48, halfW, halfH * 3 / 2, 0, 0, 0, 255, 0.5, 0.5);
+    labelBack = new Engine::Label("", "title.ttf", 48, halfW, halfH * 3 / 2, 0, 0, 0, 255, 0.5, 0.5);
     AddNewObject(labelBack);
 
 
@@ -41,15 +41,15 @@ void SettingsScene::Initialize() {
     sliderBGM->SetOnValueChangedCallback(std::bind(&SettingsScene::BGMSlideOnValueChanged, this, std::placeholders::_1));
      AddNewControlObject(sliderBGM);
     // AddNewObject(new Engine::Label("BGM :     ", "title.ttf", 32, 40 + halfW - 60 - 95, halfH - 50, 255, 255, 255, 255, 0.5, 0.5));
-     sliderSFX = new Slider(40 + halfW - 95, halfH + 50 - 32, 256, 64);
-     sliderSFX->SetOnValueChangedCallback(std::bind(&SettingsScene::SFXSlideOnValueChanged, this, std::placeholders::_1));
-     AddNewControlObject(sliderSFX);
+    sliderSFX = new Slider(40 + halfW - 95, halfH + 50 - 32, 256, 64);
+    sliderSFX->SetOnValueChangedCallback(std::bind(&SettingsScene::SFXSlideOnValueChanged, this, std::placeholders::_1));
+    AddNewControlObject(sliderSFX);
     // AddNewObject(new Engine::Label("SFX :     ", "title.ttf", 32, 40 + halfW - 60 - 95, halfH + 50, 255, 255, 255, 255, 0.5, 0.5));
 
-    labelBGM = new Engine::Label("", "Retro.ttf", 32, 40 + halfW - 60 - 95 - 50, halfH - 50, 255, 255, 255, 255, 0.5, 0.5);
+    labelBGM = new Engine::Label("", "normal.ttf", 32, 40 + halfW - 60 - 95 - 50, halfH - 50, 255, 255, 255, 255, 0.5, 0.5);
     AddNewObject(labelBGM);
 
-    labelSFX = new Engine::Label("", "Retro.ttf", 32, 40 + halfW - 60 - 95 - 50, halfH + 50, 255, 255, 255, 255, 0.5, 0.5);
+    labelSFX = new Engine::Label("", "normal.ttf", 32, 40 + halfW - 60 - 95 - 50, halfH + 50, 255, 255, 255, 255, 0.5, 0.5);
     AddNewObject(labelSFX);
 
     // Not safe if release resource while playing, however we only free while change scene, so it's fine.
