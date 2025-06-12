@@ -89,10 +89,10 @@ void PlayScene::Initialize() {
                                             2, 2,  // 右
                                             64, 64)); // 圖塊大小
 
-    Engine::Point testPoint0(BlockSize * 30, BlockSize * 10);
-    Engine::Point testPoint1(BlockSize * 28, BlockSize * 10);
-    Engine::Point testPoint2(BlockSize * 28, BlockSize * 8);
-    Engine::Point testPoint3(BlockSize * 30, BlockSize * 8);
+    Engine::Point testPoint0(BlockSize * 30 + BlockSize / 2, BlockSize * 10 + BlockSize / 2);
+    Engine::Point testPoint1(BlockSize * 28 + BlockSize / 2, BlockSize * 10 + BlockSize / 2);
+    Engine::Point testPoint2(BlockSize * 28 + BlockSize / 2, BlockSize * 8 + BlockSize / 2);
+    Engine::Point testPoint3(BlockSize * 30 + BlockSize / 2, BlockSize * 8 + BlockSize / 2);
 
     test->AddPatrolPoint(testPoint0);
     test->AddPatrolPoint(testPoint1);
@@ -113,7 +113,7 @@ void PlayScene::Initialize() {
     // 開始背景音樂
     bgmId = AudioHelper::PlayBGM("play.ogg");
 
-    LabelGroup->AddNewObject(moneyLabel = new Engine::Label(std::to_string(LogScene::money), "title.ttf", 48, 130, 70, 255, 255, 255, 255, 0.5, 0.5));
+    LabelGroup->AddNewObject(moneyLabel = new Engine::Label(std::to_string(LogScene::money), "title.ttf", 64, 130, 70, 255, 255, 255, 255, 0.5, 0.5));
     LabelGroup->AddNewObject(moneyImage = new Engine::Image("play/dollar.png", 20, 35, 56, 56));
     if (LogScene::haveAxe) LabelGroup->AddNewObject(axeImage = new Engine::Image("stage-select/axe.png", 20, 105, 56, 56));
 }
@@ -470,7 +470,7 @@ void PlayScene::ReadMap() {
                     );
                     break;
                 case SMALLEAT:
-                    imagePath = "mainworld/informationeletric.png";
+                    imagePath = "mainworld/smalleat.png";
                     TileMapGroup->AddNewObject(
                         new Engine::Image(imagePath, 
                                         x * BlockSize, 
@@ -490,7 +490,7 @@ void PlayScene::ReadMap() {
                     );
                     break;
                 case WINDCLOUD:
-                    imagePath = "mainworld/informationeletric.png";
+                    imagePath = "mainworld/windcloud.png";
                     TileMapGroup->AddNewObject(
                         new Engine::Image(imagePath, 
                                         x * BlockSize, 
@@ -500,7 +500,7 @@ void PlayScene::ReadMap() {
                     );
                     break;
                 case LAKE:
-                    imagePath = "mainworld/informationeletric.png";
+                    imagePath = "mainworld/lake.png";
                     TileMapGroup->AddNewObject(
                         new Engine::Image(imagePath, 
                                         x * BlockSize, 
@@ -510,7 +510,7 @@ void PlayScene::ReadMap() {
                     );
                     break;
                 case TALDA:
-                    imagePath = "mainworld/informationeletric.png";
+                    imagePath = "mainworld/talda.png";
                     TileMapGroup->AddNewObject(
                         new Engine::Image(imagePath, 
                                         x * BlockSize, 
