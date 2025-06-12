@@ -30,6 +30,10 @@ private:
 
     // 攝影機偏移量
     static Engine::Point cameraOffset;
+
+    Engine::Label* moneyLabel;
+    Engine::Image* moneyImage;
+    Engine::Image* axeImage = nullptr;
 protected:
     int lives;
     int money;
@@ -52,6 +56,7 @@ public:
 
     // new add
     Group *PlayerGroup;
+    Group *LabelGroup;
     Group *NPCGroup;
 
     std::vector<std::vector<TileType>> mapState;

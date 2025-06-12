@@ -22,6 +22,9 @@
 #include "PlayScene.hpp"
 #include "Player/Player.hpp"
 #include "NPC/NPC.hpp"
+#include "UI/Component/Image.hpp"
+#include "UI/Component/Label.hpp"
+#include "LogScene.hpp"
 
 const int WaterWoodScene::MapWidth = 30, WaterWoodScene::MapHeight = 16;
 const int WaterWoodScene::BlockSize = 64;
@@ -48,6 +51,7 @@ void WaterWoodScene::Initialize() {
     AddNewObject(TileMapGroup = new Group());      // 地圖圖層
     AddNewObject(PlayerGroup = new Group());       // 玩家角色
     AddNewObject(NPCGroup = new Group());
+    AddNewObject(LabelGroup = new Group());
     
     // 讀取地圖
     ReadMap();
@@ -117,6 +121,10 @@ void WaterWoodScene::Initialize() {
     
     // 開始背景音樂
     bgmId = AudioHelper::PlayBGM("play.ogg");
+    LabelGroup->AddNewObject(moneyLabel = new Engine::Label(std::to_string(LogScene::money), "title.ttf", 48, 130, 70, 255, 255, 255, 255, 0.5, 0.5));
+    LabelGroup->AddNewObject(moneyImage = new Engine::Image("play/dollar.png", 20, 35, 56, 56));
+    if (LogScene::haveAxe) LabelGroup->AddNewObject(axeImage = new Engine::Image("stage-select/axe.png", 20, 105, 56, 56));
+
 }
 
 void WaterWoodScene::Terminate() {
@@ -171,6 +179,7 @@ void WaterWoodScene::Draw() const {
     TileMapGroup->Draw();
     PlayerGroup->Draw();
     NPCGroup->Draw();
+    LabelGroup->Draw();
 
     al_identity_transform(&transform);
     al_use_transform(&transform);
