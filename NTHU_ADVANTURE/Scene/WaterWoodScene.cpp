@@ -232,7 +232,7 @@ void WaterWoodScene::OnKeyDown(int keyCode) {
 }
 
 void WaterWoodScene::ReadMap() {
-    std::string filename = std::string("Resource/smalleat") + ".txt";
+    std::string filename = std::string("Resource/waterwood") + ".txt";
 
     // 清空舊的地圖數據
     mapData.clear();

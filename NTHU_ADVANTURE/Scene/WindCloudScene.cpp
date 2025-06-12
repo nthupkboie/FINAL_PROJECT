@@ -232,7 +232,7 @@ void WindCloudScene::OnKeyDown(int keyCode) {
 }
 
 void WindCloudScene::ReadMap() {
-    std::string filename = std::string("Resource/smalleat") + ".txt";
+    std::string filename = std::string("Resource/windcloud") + ".txt";
 
     // 清空舊的地圖數據
     mapData.clear();

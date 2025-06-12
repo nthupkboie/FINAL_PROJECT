@@ -82,10 +82,10 @@ add_executable(2025_I2P2_TowerDefense
     Scene/WaterWoodScene.hpp
     Scene/WindCloudScene.cpp
     Scene/WindCloudScene.hpp
-    # Scene/TaldaScene.cpp
-    # Scene/TaldaScene.hpp
-    # Scene/EEScene.cpp
-    # Scene/EEScene.hpp
+    Scene/TaldaScene.cpp
+    Scene/TaldaScene.hpp
+    Scene/EEScene.cpp
+    Scene/EEScene.hpp
     # Scene/AIChatScene.cpp
     # Scene/AIChatScene.hpp
 

@@ -99,6 +99,8 @@ void PlayScene::Initialize() {
     test->AddPatrolPoint(testPoint2);
     test->AddPatrolPoint(testPoint3);
 
+    test->SetMoveSpeed(10.0f);
+
     // 設置NPC的對話內容
     test->SetMessages({
         "你好，我是村民A！",
@@ -249,6 +251,17 @@ void PlayScene::OnKeyDown(int keyCode) {
     }
     if(keyCode == ALLEGRO_KEY_3){
         Engine::GameEngine::GetInstance().ChangeScene("windcloud");
+        inPlay = false;
+        inSmallEat = true;
+        //haveAxe = true;
+    }
+    if(keyCode == ALLEGRO_KEY_4){
+        Engine::GameEngine::GetInstance().ChangeScene("EE");
+        inPlay = false;
+        inSmallEat = true;
+    }
+    if(keyCode == ALLEGRO_KEY_5){
+        Engine::GameEngine::GetInstance().ChangeScene("talda");
         inPlay = false;
         inSmallEat = true;
         //haveAxe = true;

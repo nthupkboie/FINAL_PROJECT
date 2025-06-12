@@ -49,9 +49,6 @@ private:
     Engine::Image* moneyImage;
     Engine::Image* axeImage = nullptr;
 
-    
-
-
 protected:
     int lives;
     //int money;
