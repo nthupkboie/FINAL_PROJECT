@@ -126,17 +126,8 @@ void SmallEatScene::Initialize() {
                                             "NPC/Lucy/role/lucyD.png", 
                                             "NPC/Lucy/role/lucyL.png",
                                             "NPC/Lucy/role/lucyR.png",
-                                            BlockSize * 15, BlockSize * 5
+                                            BlockSize * 25, BlockSize * 5
                                         ));
-
-    // NPCGroup->AddNewObject(Yang = new NPC("NPC",testAvatar, "NPC/test/role/test_sheet.png",
-    //                                         BlockSize * 8, BlockSize * 8,
-    //                                         2, 3,  // 上 (第0列第2行)
-    //                                         2, 0,  // 下
-    //                                         2, 1,  // 左
-    //                                         2, 2,  // 右
-    //                                         64, 64)); // 圖塊大小
-
 
     // 初始化對話框
     dialog.Initialize();
@@ -310,69 +301,6 @@ void SmallEatScene::Update(float deltaTime) {
         });
     }
 
-    // // 更新 NPC
-    // //Engine::LOG(Engine::WARN) << "000";
-    // if (axeman) {
-    //     //axeman->Update(deltaTime, player);
-    //     // 檢查對話結束，顯示購買按鈕
-    //     //Engine::LOG(Engine::WARN) << "11111111111";
-    //     //if (!axeman->IsTalking() && !showShopButtons && axeman->dialog.IsDialogActive() == false) {
-    //     if (canBuyAxe && axeman->canBuy){
-    //         //Engine::LOG(Engine::WARN) << "2222222222";
-    //         if (!buyButton && !cancelButton) {
-    //             Engine::LOG(Engine::WARN) << "axe !!!!!!!!!!!!!";
-    //             buyButton = new Engine::ImageButton("stage-select/full_1.png", "stage-select/full_1.png", 960 - 400, 300, 800, 100);
-    //             buyButton->SetOnClickCallback(std::bind(&SmallEatScene::BuyOnClick, this, AXE));
-    //             AddNewControlObject(buyButton);
-    //             buyLabel = new Engine::Label("要要要", "title.ttf", 48, 960, 360, 0, 0, 0, 255, 0.5, 0.5);
-    //             AddNewObject(buyLabel);
-                
-    //             cancelButton = new Engine::ImageButton("stage-select/full_1.png", "stage-select/full_1.png", 960 - 400, 500, 800, 100);
-    //             cancelButton->SetOnClickCallback(std::bind(&SmallEatScene::CancelOnClick, this));
-    //             AddNewControlObject(cancelButton);
-    //             cancelLabel = new Engine::Label("先不要", "title.ttf", 48, 960, 560, 0, 0, 0, 255, 0.5, 0.5);
-    //             AddNewObject(cancelLabel);
-                
-    //             showShopButtons = true;
-    //             //Engine::LOG(Engine::INFO_LOG) << "Shop buttons displayed";
-    //             NPCDialog::talking = true;
-    //             axeman->canBuy = false;
-    //         }
-    //     }
-    // }
-
-    // if (Lucy) {
-    //     //axeman->Update(deltaTime, player);
-    //     // 檢查對話結束，顯示購買按鈕
-    //     //Engine::LOG(Engine::WARN) << "11111111111";
-    //     //if (!axeman->IsTalking() && !showShopButtons && axeman->dialog.IsDialogActive() == false) {
-    //     if (Lucy->canBuy && canBuySpeed){
-    //         //Engine::LOG(Engine::WARN) << "2222222222";
-    //         if (!buyButton && !cancelButton) {
-    //             Engine::LOG(Engine::WARN) << "speed !!!!!!!!!!!!!!!!";
-    //             buyButton = new Engine::ImageButton("stage-select/full_1.png", "stage-select/full_1.png", 960 - 400, 300, 800, 100);
-    //             buyButton->SetOnClickCallback(std::bind(&SmallEatScene::BuyOnClick, this, SPEED));
-    //             AddNewControlObject(buyButton);
-    //             buyLabel = new Engine::Label("好...好啊", "title.ttf", 48, 960, 360, 0, 0, 0, 255, 0.5, 0.5);
-    //             AddNewObject(buyLabel);
-                
-    //             cancelButton = new Engine::ImageButton("stage-select/full_1.png", "stage-select/full_1.png", 960 - 400, 500, 800, 100);
-    //             cancelButton->SetOnClickCallback(std::bind(&SmallEatScene::CancelOnClick, this));
-    //             AddNewControlObject(cancelButton);
-    //             cancelLabel = new Engine::Label("先不要", "title.ttf", 48, 960, 560, 0, 0, 0, 255, 0.5, 0.5);
-    //             AddNewObject(cancelLabel);
-                
-    //             showShopButtons = true;
-    //             //Engine::LOG(Engine::INFO_LOG) << "Shop buttons displayed";
-    //             NPCDialog::talking = true;
-    //             Lucy->canBuy = false;
-    //         }
-    //     }
-    // }
-    // 檢查是否有 Shopper 的對話剛結束
-    //if (!showShopButtons) Engine::LOG(Engine::WARN) << "!showShopButtons";
-    //if (!dialog.IsDialogActive()) Engine::LOG(Engine::WARN) << "!dialog.IsDialogActive()";
-    //if (currentShopper) Engine::LOG(Engine::WARN) << "currentShopper";
     if (currentShopper && !currentShopper->IsTalking()) Engine::LOG(Engine::WARN) << "!currentShopper->IsTalking()";
     if (!showShopButtons && !dialog.IsDialogActive() && currentShopper && currentShopper->canBuy) {
         Engine::LOG(Engine::WARN) << "Shop buttons displayed";
@@ -476,10 +404,9 @@ void SmallEatScene::OnMouseUp(int button, int mx, int my) {
 void SmallEatScene::OnKeyDown(int keyCode) {
     IScene::OnKeyDown(keyCode);
     
-    // 按Enter鍵推進對話
-    // if (keyCode == ALLEGRO_KEY_ENTER && dialog.IsDialogActive()) {
-    //     dialog.AdvanceDialog();
-    // }
+    if (keyCode == ALLEGRO_KEY_ENTER && dialog.IsDialogActive()) {
+        dialog.AdvanceDialog();
+    }
     
     if(keyCode == ALLEGRO_KEY_B){
         Engine::GameEngine::GetInstance().ChangeScene("battle");
@@ -500,7 +427,7 @@ void SmallEatScene::OnKeyDown(int keyCode) {
 
         firstTime = false;
     }
-    if (keyCode == ALLEGRO_KEY_T) {
+    if (keyCode == ALLEGRO_KEY_I) {
         std::vector<std::string> testMessages = {
         "小吃部建築由本校校友張昌華設計。",
         "事實上，校園內許多建築都出自大師之手，包括原子爐、百齡堂(今水漾餐廳)、台北月涵堂等。他的作品外觀多呈簡潔的白色，且擁有明亮的大窗景。",
