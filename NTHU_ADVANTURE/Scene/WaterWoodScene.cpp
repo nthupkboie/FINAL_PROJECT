@@ -221,18 +221,30 @@ void WaterWoodScene::OnKeyDown(int keyCode) {
     }
     if(firstTime){
         std::vector<std::string> testMessages = {
-            "我是水木"
+            "「水木清華」是北京清華大學校園中的一個著名景點，",
+            "位於工字廳的北側，",
+            "也是清華園的代表性建築之一。",
+
+            "這個景點由「水木」與「清華」兩個部分組成，",
+            "分別代表了清華校園的自然環境（水）和人文底蘊（木），",
+            "以及清華大學的優越性（清華）。"
         };
-        auto testAvatar = Engine::Resources::GetInstance().GetBitmap("NPC/test/avatar/test_avatar.png");
+        auto testAvatar = Engine::Resources::GetInstance().GetBitmap("NPC/test/avatar/waterwoodicon.png");
         dialog.StartDialog("水木", testAvatar, testMessages);
 
         firstTime = false;
     }
     if (keyCode == ALLEGRO_KEY_I) {
         std::vector<std::string> testMessages = {
-            "我是水木"
+            "「水木清華」是北京清華大學校園中的一個著名景點，",
+            "位於工字廳的北側，",
+            "也是清華園的代表性建築之一。",
+
+            "這個景點由「水木」與「清華」兩個部分組成，",
+            "分別代表了清華校園的自然環境（水）和人文底蘊（木），",
+            "以及清華大學的優越性（清華）。"
         };
-        auto testAvatar = Engine::Resources::GetInstance().GetBitmap("NPC/test/avatar/test_avatar.png");
+        auto testAvatar = Engine::Resources::GetInstance().GetBitmap("NPC/test/avatar/waterwoodicon.png");
         dialog.StartDialog("水木", testAvatar, testMessages);
     }
 

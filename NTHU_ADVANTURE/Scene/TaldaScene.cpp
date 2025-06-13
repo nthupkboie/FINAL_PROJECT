@@ -210,18 +210,38 @@ void TaldaScene::OnKeyDown(int keyCode) {
 
     if(firstTime){
         std::vector<std::string> testMessages = {
-            "我是台達館"
+            "台達館座落於原紅樓舊址，",
+            "由台達電公司捐款，並配合政府補助，",
+            "清華大學「邁向頂尖大學」款項興建，",
+            "於2011年落成啟用。",
+
+            "台達館設計時納入台達電致力於環境保護，",
+            "推廣綠建築的理念，",
+            "更以「兼重人文藝術與科技」、「綠能校園」為主要訴求。",
+
+            "設計時將地形、氣候、風向及溫濕度等因素考量在內，",
+            "以創造一個永續、宜人、節能且環保的綠建築。"
         };
-        auto testAvatar = Engine::Resources::GetInstance().GetBitmap("NPC/test/avatar/test_avatar.png");
+        auto testAvatar = Engine::Resources::GetInstance().GetBitmap("NPC/test/avatar/taldaicon.png");
         dialog.StartDialog("台達館", testAvatar, testMessages);
 
         firstTime = false;
     }
     if (keyCode == ALLEGRO_KEY_I) {
         std::vector<std::string> testMessages = {
-            "我是台達館"
+            "台達館座落於原紅樓舊址，",
+            "由台達電公司捐款，並配合政府補助，",
+            "清華大學「邁向頂尖大學」款項興建，",
+            "於2011年落成啟用。",
+
+            "台達館設計時納入台達電致力於環境保護，",
+            "推廣綠建築的理念，",
+            "更以「兼重人文藝術與科技」、「綠能校園」為主要訴求。",
+
+            "設計時將地形、氣候、風向及溫濕度等因素考量在內，",
+            "以創造一個永續、宜人、節能且環保的綠建築。"
         };
-        auto testAvatar = Engine::Resources::GetInstance().GetBitmap("NPC/test/avatar/test_avatar.png");
+        auto testAvatar = Engine::Resources::GetInstance().GetBitmap("NPC/test/avatar/talicon.png");
         dialog.StartDialog("台達館", testAvatar, testMessages);
     }
 

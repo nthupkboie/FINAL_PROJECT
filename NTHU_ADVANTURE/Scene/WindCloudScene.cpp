@@ -222,18 +222,28 @@ void WindCloudScene::OnKeyDown(int keyCode) {
     }
     if(firstTime){
         std::vector<std::string> testMessages = {
-            "我是風雲"
+            "清大「風雲樓」主要作為國際學生活動中心，",
+            "曾是印度學生舉辦活動的主要場地，",
+            "例如「印度排燈節」慶典。",
+
+            "此外，它也是清華大學校友中心的辦公場所，",
+            "提供各項服務給清華校友。"
         };
-        auto testAvatar = Engine::Resources::GetInstance().GetBitmap("NPC/test/avatar/test_avatar.png");
+        auto testAvatar = Engine::Resources::GetInstance().GetBitmap("NPC/test/avatar/windcloudicon.png");
         dialog.StartDialog("風雲", testAvatar, testMessages);
 
         firstTime = false;
     }
     if (keyCode == ALLEGRO_KEY_I) {
         std::vector<std::string> testMessages = {
-            "我是風雲"
+            "清大「風雲樓」主要作為國際學生活動中心，",
+            "曾是印度學生舉辦活動的主要場地，",
+            "例如「印度排燈節」慶典。",
+
+            "此外，它也是清華大學校友中心的辦公場所，",
+            "提供各項服務給清華校友。"
         };
-        auto testAvatar = Engine::Resources::GetInstance().GetBitmap("NPC/test/avatar/test_avatar.png");
+        auto testAvatar = Engine::Resources::GetInstance().GetBitmap("NPC/test/avatar/windcloudicon.png");
         dialog.StartDialog("風雲", testAvatar, testMessages);
     }
     if(keyCode == ALLEGRO_KEY_P){

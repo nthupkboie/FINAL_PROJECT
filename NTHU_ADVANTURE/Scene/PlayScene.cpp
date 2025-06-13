@@ -27,7 +27,7 @@
 #include "UI/Component/Image.hpp"
 
 
-bool PlayScene::inPlay = true, PlayScene::inSmallEat = false, PlayScene::inTalda = false, PlayScene::inCGLake = false, PlayScene::inWaterWood = false, PlayScene::inWindCloud = false, PlayScene::inEE = false, PlayScene::inBattle = false;
+bool PlayScene::inPlay = true, PlayScene::inSmallEat = false, PlayScene::inTalda = false, PlayScene::inCGLake = false, PlayScene::inWaterWood = false, PlayScene::inWindCloud = false, PlayScene::inEE = false, PlayScene::inBattle = false, PlayScene::inNEW = false;
 
 //int PlayScene::money = 0;
 
@@ -308,24 +308,10 @@ void PlayScene::OnKeyDown(int keyCode) {
         inCGLake = true;
         //haveAxe = true;
     }
-// fix
-    if(firstTime){
-        std::vector<std::string> testMessages = {
-            "這裡是清大校園，有新齋、小吃、水木、風雲、成功湖、資電、台達", 
-            "請冒險者們去一探究竟清大的秘密吧",
-        };
-        auto testAvatar = Engine::Resources::GetInstance().GetBitmap("NPC/test/avatar/test_avatar.png");
-        dialog.StartDialog("校園", testAvatar, testMessages);
-
-        firstTime = false;
-    }
-    if (keyCode == ALLEGRO_KEY_I) {
-        std::vector<std::string> testMessages = {
-            "這裡是清大校園，有新齋、小吃、水木、風雲、成功湖、資電、台達", 
-            "請冒險者們去一探究竟清大的秘密吧",
-        };
-        auto testAvatar = Engine::Resources::GetInstance().GetBitmap("NPC/test/avatar/test_avatar.png");
-        dialog.StartDialog("校園", testAvatar, testMessages);
+    if(keyCode == ALLEGRO_KEY_0){
+        Engine::GameEngine::GetInstance().ChangeScene("new");
+        inPlay = false;
+        inNEW = true;
     }
 }
 
@@ -587,14 +573,6 @@ void PlayScene::ReadMap() {
                 default:
                     continue;
             }
-            
-            // TileMapGroup->AddNewObject(
-            //     new Engine::Image(imagePath, 
-            //                       x * BlockSize, 
-            //                       y * BlockSize, 
-            //                       BlockSize, 
-            //                       BlockSize)
-            // );
         }
     }
 }

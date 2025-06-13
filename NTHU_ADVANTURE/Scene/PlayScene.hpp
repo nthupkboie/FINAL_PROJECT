@@ -99,6 +99,7 @@ public:
     static bool inTalda;
     static bool inWaterWood;
     static bool inWindCloud;
+    static bool inNEW;
     //static bool haveAxe;
 
     static std::vector<PlayScene::TileType> mapData;
