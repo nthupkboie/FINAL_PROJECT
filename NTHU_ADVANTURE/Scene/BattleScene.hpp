@@ -42,6 +42,7 @@ public:
         TILE_GRASS,
         TILE_TREE,
         TILE_STAIRS,
+        TILE_DSTN,
         NEW, TILE_NEW,
         NOTHING,
     };

@@ -257,6 +257,7 @@ void EEScene::Update(float deltaTime) {
         //}
     }
     if (yang->canBuy && index == 4) Engine::GameEngine::GetInstance().ChangeScene("win");
+    else if (yang->canBuy && index == 5) Engine::GameEngine::GetInstance().ChangeScene("lose");
 }
 
 void EEScene::Draw() const {
@@ -502,7 +503,7 @@ void EEScene::oneOnClick() {
         RemoveObject(fourLabel->GetObjectIterator());
         fourLabel = nullptr;
     }
-    if (answer[index] != 'A') Engine::GameEngine::GetInstance().ChangeScene("lose");
+    if (answer[index] != 'A') index = 5;
     
 
     //Engine::LOG(Engine::WARN) << "ITEM: " << item;
@@ -574,7 +575,7 @@ void EEScene::twoOnClick() {
         RemoveObject(fourLabel->GetObjectIterator());
         fourLabel = nullptr;
     }
-    if (answer[index] != 'B') Engine::GameEngine::GetInstance().ChangeScene("lose");
+    if (answer[index] != 'B') index = 5;
     showShopButtons = false;
     //Lucy->canBuy = false;
     //axeman->canBuy = false;
@@ -586,6 +587,7 @@ void EEScene::twoOnClick() {
             shopper->canBuy = false;
         }
     }
+    openingDialog();
 }
 void EEScene::threeOnClick() {
     //Engine::LOG(Engine::WARN) << "Purchase cancelled";
@@ -612,7 +614,7 @@ void EEScene::threeOnClick() {
         RemoveObject(fourLabel->GetObjectIterator());
         fourLabel = nullptr;
     }
-    if (answer[index] != 'C') Engine::GameEngine::GetInstance().ChangeScene("lose");
+    if (answer[index] != 'C') index = 5;
     showShopButtons = false;
     //Lucy->canBuy = false;
     //axeman->canBuy = false;
@@ -624,6 +626,7 @@ void EEScene::threeOnClick() {
             shopper->canBuy = false;
         }
     }
+    openingDialog();
 }
 void EEScene::fourOnClick() {
     //Engine::LOG(Engine::WARN) << "Purchase cancelled";
@@ -650,7 +653,7 @@ void EEScene::fourOnClick() {
         RemoveObject(fourLabel->GetObjectIterator());
         fourLabel = nullptr;
     }
-    if (answer[index] != 'D') Engine::GameEngine::GetInstance().ChangeScene("lose");
+    if (answer[index] != 'D') index = 5;
     showShopButtons = false;
     //Lucy->canBuy = false;
     //axeman->canBuy = false;
@@ -662,6 +665,7 @@ void EEScene::fourOnClick() {
             shopper->canBuy = false;
         }
     }
+    openingDialog();
 }
 
 void EEScene::openingDialog()
@@ -695,6 +699,13 @@ void EEScene::openingDialog()
         yang->npcAvatar = Engine::Resources::GetInstance().GetBitmap("NPC/Yang/avatar/Yang5.png");
         yang->SetMessages({
             "沒...沒想到我乂卍煞氣a楊舜仁卍乂竟然敗給這種小摟摟...呃啊(吐血)(癱倒)(伸手向太陽)(陰暗爬行)(失去意識)",
+        });
+    }
+    else if (index == 5){
+        yang->npcAvatar = Engine::Resources::GetInstance().GetBitmap("NPC/Yang/avatar/Yang.png");
+        yang->SetMessages({
+            "唔姆.. 你輸了 (茶",
+            "去死吧 wwwww (咳咳",
         });
     }
 
