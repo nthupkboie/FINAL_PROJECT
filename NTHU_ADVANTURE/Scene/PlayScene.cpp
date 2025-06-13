@@ -109,7 +109,7 @@ void PlayScene::Initialize() {
         "祝你好運，冒險者！"
     });
 
-    auto KaoAvatar = Engine::Resources::GetInstance().GetBitmap("NPC/test/avatar/test_avatar.png");
+    auto KaoAvatar = Engine::Resources::GetInstance().GetBitmap("NPC/Kao/avatar/Kao.png");
     NPCGroup->AddNewObject(Kao = new NPC("高為元", KaoAvatar, 
                                             "NPC/Kao/role/KaoU.png",
                                             "NPC/Kao/role/KaoD.png", 
@@ -124,7 +124,7 @@ void PlayScene::Initialize() {
         "不說了，我要去健身了"
     });
 
-    auto dyyAvatar = Engine::Resources::GetInstance().GetBitmap("NPC/test/avatar/test_avatar.png");
+    auto dyyAvatar = Engine::Resources::GetInstance().GetBitmap("NPC/dyy/avatar/dyy.png");
     NPCGroup->AddNewObject(dyy = new NPC("顏東勇", dyyAvatar, 
                                             "NPC/dyy/role/dyyU.png",
                                             "NPC/dyy/role/dyyD.png", 
@@ -136,7 +136,7 @@ void PlayScene::Initialize() {
         dyy->SetMessages({
             "你混哪裡的?知道成功湖是誰蓋的嗎?",
             "跟你賭一顆糖果，成功湖有四座濾水系統，循環一次要7.8天",
-            "我蓋的美麗動人成功湖現在被n百顆樹長滿了",
+            "我蓋的情侶約會聖地成功湖現在被n百顆樹長滿了",
             "幫我清出環湖步道，否則就當掉你"
         });
     }
@@ -176,6 +176,12 @@ void PlayScene::Terminate() {
 
 void PlayScene::Update(float deltaTime) {
     IScene::Update(deltaTime);
+
+    if (LogScene::clearedLake == 2) {
+        dyy->SetMessages({
+            "同學不錯嘛，加你0.2分"
+        });
+    }
     
     // 獲取玩家對象
     Player* player = nullptr;

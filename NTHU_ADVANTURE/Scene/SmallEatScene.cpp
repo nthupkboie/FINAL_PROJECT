@@ -91,7 +91,7 @@ void SmallEatScene::Initialize() {
                                             64, 64)); // 圖塊大小
 
     NPC* Yang;
-    auto YangAvatar = Engine::Resources::GetInstance().GetBitmap("NPC/test/avatar/test_avatar.png");
+    auto YangAvatar = Engine::Resources::GetInstance().GetBitmap("NPC/Yang/avatar/Yang.png");
     NPCGroup->AddNewObject(Yang = new NPC("Yang", YangAvatar, 
                                             "NPC/Yang/role/YangU.png",
                                             "NPC/Yang/role/YangD.png", 
@@ -104,7 +104,7 @@ void SmallEatScene::Initialize() {
     auto axemanAvatar = Engine::Resources::GetInstance().GetBitmap("NPC/test/avatar/test_avatar.png");
     ShopperGroup->AddNewObject(axeman = new Shopper("axeman", axemanAvatar, 
                                             "NPC/axeman/role/axemanU.png",
-                                            "NPC/axeman/role/axemanD.png", 
+                                            "NPC/axeman/role/axemanD.png",
                                             "NPC/axeman/role/axemanL.png",
                                             "NPC/axeman/role/axemanR.png",
                                             BlockSize * 9, BlockSize * 7
@@ -120,7 +120,7 @@ void SmallEatScene::Initialize() {
     axeman->AddPatrolPoint(axe2);
     axeman->AddPatrolPoint(axe3);
 
-    auto LucyAvatar = Engine::Resources::GetInstance().GetBitmap("NPC/test/avatar/test_avatar.png");
+    auto LucyAvatar = Engine::Resources::GetInstance().GetBitmap("NPC/Lucy/avatar/lucyAvatar.png");
     ShopperGroup->AddNewObject(Lucy = new Shopper("Lucy醬", LucyAvatar, 
                                             "NPC/Lucy/role/lucyU.png",
                                             "NPC/Lucy/role/lucyD.png", 

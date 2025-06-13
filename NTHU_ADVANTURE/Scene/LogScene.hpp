@@ -21,6 +21,7 @@ private:
     Engine::Label* label_pswd;
     Engine::Label* warning1;
     Engine::Label* warning2;
+    Engine::Image* arrowImage;
     int ID_entered = 0;
 
 public:

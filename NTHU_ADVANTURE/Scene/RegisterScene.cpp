@@ -34,7 +34,9 @@ void RegisterScene::Initialize() {
     AddNewObject(label_name = new Engine::Label(name, "title.ttf", 56, halfW, halfH / 2 + 100, 255, 97, 0, 255, 0.5, 0.5));
     AddNewObject(new Engine::Label("Create its password:", "retro.ttf", 56, halfW, halfH / 2 + 200, 11, 23, 70, 255, 0.5, 0.5));
     AddNewObject(label_pswd = new Engine::Label(pswd, "title.ttf", 56, halfW, halfH / 2 + 300, 255, 97, 0, 255, 0.5, 0.5));
-
+    
+    //AddNewObject(imageGroup = new Group());
+    AddNewObject(arrowImage = new Engine::Image("stage-select/right-arrow.png", halfW / 2 + 50, halfH / 2 + 40, 128, 128));
 
     // LoadFromFile();
 
@@ -77,9 +79,12 @@ void RegisterScene::OnKeyDown(int keyCode){
                 int halfW = w / 2;
                 int halfH = h / 2;
                 AddNewObject(warning1 = new Engine::Label("The account exists", "title.ttf", 48, halfW, halfH / 2 + 400, 255, 255, 255, 255, 0.5, 0.5));
-
+                
             }
-            else ID_entered = 1;
+            else {
+                ID_entered = 1;
+                arrowImage->Position.y = Engine::GameEngine::GetInstance().GetScreenSize().y / 4 + 240;
+            }
         }
         label_name->Text = name;
     }
@@ -93,7 +98,10 @@ void RegisterScene::OnKeyDown(int keyCode){
             pswd += c;
         }
         else if (keyCode == ALLEGRO_KEY_BACKSPACE){
-            if (pswd == "") ID_entered = 0;
+            if (pswd == "") {
+                ID_entered = 0;
+                arrowImage->Position.y = Engine::GameEngine::GetInstance().GetScreenSize().y / 4 + 40;
+            }
             else pswd = pswd.substr(0, pswd.length() - 1);
         }
         else if (keyCode == ALLEGRO_KEY_ENTER){

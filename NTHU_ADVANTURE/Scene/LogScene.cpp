@@ -42,6 +42,7 @@ void LogScene::Initialize() {
     AddNewObject(label_name = new Engine::Label(name, "title.ttf", 56, halfW, halfH / 2 + 100, 255, 97, 0, 255, 0.5, 0.5));
     AddNewObject(new Engine::Label("Enter your password:", "title.ttf", 56, halfW, halfH / 2 + 200, 11, 23, 70, 255, 0.5, 0.5));
     AddNewObject(label_pswd = new Engine::Label(pswd, "title.ttf", 56, halfW, halfH / 2 + 300, 255, 97, 0, 255, 0.5, 0.5));
+    AddNewObject(arrowImage = new Engine::Image("stage-select/right-arrow.png", halfW / 2 + 50, halfH / 2 + 40, 128, 128));
 
     Engine::ImageButton *btn;
     btn = new Engine::ImageButton("stage-select/dirt.png", "stage-select/floor.png", halfW - 200, halfH * 3 / 2 + 50, 400, 100);
@@ -82,6 +83,7 @@ void LogScene::OnKeyDown(int keyCode){
             if (checkID(name)) {
                 ID_entered = 1;
                 if (warning1) warning1->Text = "";
+                arrowImage->Position.y = Engine::GameEngine::GetInstance().GetScreenSize().y / 4 + 240;
             }
             else {
                 int w = Engine::GameEngine::GetInstance().GetScreenSize().x;
@@ -105,7 +107,10 @@ void LogScene::OnKeyDown(int keyCode){
             if (warning2) warning2->Text = "";
         }
         else if (keyCode == ALLEGRO_KEY_BACKSPACE){
-            if (pswd == "") ID_entered = 0;
+            if (pswd == "") {
+                ID_entered = 0;
+                arrowImage->Position.y = Engine::GameEngine::GetInstance().GetScreenSize().y / 4 + 40;
+            }
             else pswd = pswd.substr(0, pswd.length() - 1);
             if (warning2) warning2->Text = "";
         }
