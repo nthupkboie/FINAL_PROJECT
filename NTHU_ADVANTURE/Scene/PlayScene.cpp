@@ -123,6 +123,36 @@ void PlayScene::Initialize() {
         "幫我去樹德樓繞一圈評分五顆星，一次給你10塊錢",
         "不說了，我要去健身了"
     });
+
+    auto dyyAvatar = Engine::Resources::GetInstance().GetBitmap("NPC/test/avatar/test_avatar.png");
+    NPCGroup->AddNewObject(dyy = new NPC("顏東勇", dyyAvatar, 
+                                            "NPC/dyy/role/dyyU.png",
+                                            "NPC/dyy/role/dyyD.png", 
+                                            "NPC/dyy/role/dyyL.png",
+                                            "NPC/dyy/role/dyyR.png",
+                                            BlockSize * 20, BlockSize * 19
+                                        ));
+    if (!LogScene::clearedLake){
+        dyy->SetMessages({
+            "你混哪裡的?知道成功湖是誰蓋的嗎?",
+            "跟你賭一顆糖果，成功湖有四座濾水系統，循環一次要7.8天",
+            "我蓋的美麗動人成功湖現在被n百顆樹長滿了",
+            "幫我清出環湖步道，否則就當掉你"
+        });
+    }
+    else if (LogScene::clearedLake == 1) {
+        dyy->SetMessages({
+            "同學不錯嘛，加你0.2分"
+        });
+        LogScene::clearedLake++;
+    }
+    else {
+        dyy->SetMessages({
+            "你知道倒數的英文嗎? reciprocal!!",
+            "學英文是欸尼time欸尼place!!"
+        });
+    }
+    
     // 預載資源
     //Engine::Resources::GetInstance().GetBitmap("lose/benjamin-happy.png");
     
@@ -136,7 +166,7 @@ void PlayScene::Initialize() {
     if (LogScene::haveSpeedUp){
         LabelGroup->AddNewObject(speedImage = new Engine::Image("play/potion.png", 20, 175, 56, 56));
         LabelGroup->AddNewObject(speedLabel = new Engine::Label(std::to_string((int)LogScene::haveSpeedUp), "title.ttf", 48, 130, 210, 255, 255, 255, 255, 0.5, 0.5));
-    } 
+    }
 }
 
 void PlayScene::Terminate() {

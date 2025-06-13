@@ -117,6 +117,7 @@ void CGLakeScene::Initialize() {
 
 void CGLakeScene::Terminate() {
     AudioHelper::StopBGM(bgmId);
+    SaveToFile();
     IScene::Terminate();
 }
 
@@ -145,9 +146,10 @@ void CGLakeScene::Update(float deltaTime) {
     // 檢查終點
     int gridX = static_cast<int>(std::floor(player->Position.x / BlockSize));
     int gridY = static_cast<int>(std::floor(player->Position.y / BlockSize));
-    if (gridX == MapWidth - 1 && gridY == MapHeight - 1) { // (29, 15)
-        Engine::LOG(Engine::INFO) << "Reached goal! Switching to win scene.";
-        Engine::GameEngine::GetInstance().ChangeScene("win");
+    if (gridX == 6 && gridY == 0) { // (29, 15)
+        Engine::LOG(Engine::INFO) << "Reached goal! Switching to play scene from lake.";
+        LogScene::clearedLake++;
+        Engine::GameEngine::GetInstance().ChangeScene("play");
         return;
     }
 
@@ -229,12 +231,14 @@ void CGLakeScene::OnMouseDown(int button, int mx, int my) {
             //mapState[gridY][gridX] = TILE_ROAD;
             mapData[gridY * MapWidth + gridX] = TILE_GRASS;
             UpdateTileMap(gridX, gridY);
-            canChop = false; // 砍樹後禁用
         }
+    }
+    else if((button & 2) && canChop){
+        canChop = false; // 砍樹後禁用
         if (axeImage) {
-                UIGroup->RemoveObject(axeImage->GetObjectIterator());
-                axeImage = nullptr;
-            }
+            UIGroup->RemoveObject(axeImage->GetObjectIterator());
+            axeImage = nullptr;
+        }
     }
     
     IScene::OnMouseDown(button, mx, my);
@@ -296,6 +300,7 @@ void CGLakeScene::ReadMap() {
             case '1': mapData.push_back(TILE_TREE); break;
             case '2': mapData.push_back(TILE_WATER); break;
             case '3': mapData.push_back(TILE_LOTUS); break;
+            case '4': mapData.push_back(TILE_DSTN); break;
 
             // case '-': mapData.push_back(TILE_GRASS); break;
             // case 'R': mapData.push_back(TILE_ROAD); break;
@@ -407,6 +412,25 @@ void CGLakeScene::ReadMap() {
                     break;
                 case TILE_LOTUS:
                     imagePath = "mainworld/lotus.png";
+                    TileMapGroup->AddNewObject(
+                        new Engine::Image(imagePath, 
+                                        x * BlockSize, 
+                                        y * BlockSize, 
+                                        BlockSize, 
+                                        BlockSize)
+                    );
+                    break;
+                case TILE_DSTN:
+                    imagePath = "mainworld/grasss.png";
+                    TileMapGroup->AddNewObject(
+                        new Engine::Image(imagePath, 
+                                        x * BlockSize, 
+                                        y * BlockSize, 
+                                        BlockSize, 
+                                        BlockSize)
+                    );
+
+                    imagePath = "mainworld/running.png";
                     TileMapGroup->AddNewObject(
                         new Engine::Image(imagePath, 
                                         x * BlockSize, 
@@ -658,6 +682,7 @@ Engine::Point CGLakeScene::getCamera(){
 bool CGLakeScene::collision(int x, int y){
     switch(mapData[y/BlockSize * MapWidth + x / BlockSize]){
         case TILE_GRASS:
+        case TILE_DSTN:
             return true;
         case TILE_WATER:
         case TILE_LOTUS:
@@ -678,4 +703,33 @@ void CGLakeScene::AxeOnClick() {
         }
     }
     Engine::LOG(Engine::INFO) << "Axe activated, canChop = true";
+}
+
+void CGLakeScene::SaveToFile(void){
+    //LoadFromFile();
+    
+    std::ofstream ofs("Resource/CGLake.txt");
+    if (!ofs.is_open()) {
+        printf("Failed to open account.txt!!!!!!!!!!!!!!!!!!!!!!!!!!!\n");
+        return;
+    }
+    
+    for (int i=0;i<MapHeight;i++){
+        for (int j=0;j<MapWidth;j++){
+            if (mapData[i * MapWidth + j] == TILE_GRASS) ofs << 0;
+            else if (mapData[i * MapWidth + j] == TILE_TREE) ofs << 1;
+            else if (mapData[i * MapWidth + j] == TILE_WATER) ofs << 2;
+            else if (mapData[i * MapWidth + j] == TILE_LOTUS) ofs << 3;
+            else if (mapData[i * MapWidth + j] == TILE_DSTN) ofs << 4;
+        }
+        ofs << "\n";
+    }
+    //ofs << "score,timestamp,playerName,mapId\n";
+    //for (int i=0;i<IDs.size();i++){
+        //ofs << IDs[i] << "," << passwords[i] << "\n";
+    //}
+
+
+    //ofs << name << "," <<  pswd << "\n"; //新的
+    ofs.close();
 }

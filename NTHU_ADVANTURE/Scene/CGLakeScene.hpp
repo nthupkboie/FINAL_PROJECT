@@ -44,6 +44,7 @@ public:
         TILE_STAIRS,
         TILE_WATER,
         TILE_LOTUS,
+        TILE_DSTN,
         NEW, TILE_NEW,
         NOTHING,
     };
@@ -96,6 +97,7 @@ public:
     //static bool canWalk;
 
     //std::vector<CGLakeScene::TileType> mapData;
+    void SaveToFile();
 };
 
 #endif   // CGLakeScene_HPP
