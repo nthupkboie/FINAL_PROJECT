@@ -19,6 +19,7 @@
 
 // new add
 #include "PlayScene.hpp"
+#include "CGLakeScene.hpp"
 #include "LogScene.hpp"
 #include "Player/Player.hpp"
 #include "NPC/NPC.hpp"
@@ -732,15 +733,28 @@ void PlayScene::ReadMap() {
                     );
                     break;
                 case LAKE:
-                    imagePath = "mainworld/lake.png";
-                    TileMapGroup->AddNewObject(
-                        new Engine::Image(imagePath, 
-                                        x * BlockSize, 
-                                        y * BlockSize, 
-                                        BlockSize * 10, 
-                                        BlockSize * 8)
-                    );
-                    break;
+                    if(LogScene::clearedLake == 0){
+                        imagePath = "mainworld/lake.png";
+                        TileMapGroup->AddNewObject(
+                            new Engine::Image(imagePath, 
+                                            x * BlockSize, 
+                                            y * BlockSize, 
+                                            BlockSize * 10, 
+                                            BlockSize * 8)
+                        );
+                        break;
+                    }
+                    else{
+                        imagePath = "mainworld/CGlake.png";
+                        TileMapGroup->AddNewObject(
+                            new Engine::Image(imagePath, 
+                                            x * BlockSize, 
+                                            y * BlockSize, 
+                                            BlockSize * 10, 
+                                            BlockSize * 8)
+                        );
+                        break;
+                    }
                 case TALDA:
                     imagePath = "mainworld/talda.png";
                     TileMapGroup->AddNewObject(

@@ -622,7 +622,7 @@ void SmallEatScene::ReadMap() {
                                         x * BlockSize, 
                                         y * BlockSize, 
                                         BlockSize * 8, 
-                                        BlockSize * 9)
+                                        BlockSize * 10)
                     );
                     break;
                 case NOTHING:
