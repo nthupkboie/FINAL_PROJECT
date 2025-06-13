@@ -115,7 +115,7 @@ void LogScene::OnKeyDown(int keyCode){
             if (warning2) warning2->Text = "";
         }
         else if (keyCode == ALLEGRO_KEY_ENTER){
-            if (pswd == right_pswd) {Engine::GameEngine::GetInstance().ChangeScene("play");Engine::GameEngine::GetInstance().ChangeScene("new");}
+            if (pswd == right_pswd) {Engine::GameEngine::GetInstance().ChangeScene("play");}
             else {
                 int w = Engine::GameEngine::GetInstance().GetScreenSize().x;
                 int h = Engine::GameEngine::GetInstance().GetScreenSize().y;

@@ -89,7 +89,7 @@ void WaterWoodScene::Initialize() {
                                             "NPC/nineSky/role/nineSky2.png", 
                                             "NPC/nineSky/role/nineSky3.png",
                                             "NPC/nineSky/role/nineSkyR.png",
-                                            BlockSize * 27, BlockSize * 7
+                                            BlockSize * 18, BlockSize * 7
                                         ));
 
     // NPCGroup->AddNewObject(Yang = new NPC("NPC",testAvatar, "NPC/test/role/test_sheet.png",
