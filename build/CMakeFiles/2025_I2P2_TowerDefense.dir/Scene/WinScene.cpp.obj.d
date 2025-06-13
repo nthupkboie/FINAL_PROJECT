@@ -855,13 +855,14 @@ CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/WinScene.cpp.obj: \
   C:/FINAL_PROJECT/NTHU_ADVANTURE/./Engine/Group.hpp \
   C:/FINAL_PROJECT/NTHU_ADVANTURE/./Engine/IControl.hpp \
   C:/FINAL_PROJECT/NTHU_ADVANTURE/./Engine/IObject.hpp \
+  C:/FINAL_PROJECT/NTHU_ADVANTURE/./NPC/NPC.hpp \
   C:/FINAL_PROJECT/NTHU_ADVANTURE/./NPC/NPCDialog.hpp \
   C:/allegro/include/allegro5/allegro_font.h \
+  C:/FINAL_PROJECT/NTHU_ADVANTURE/./Engine/Sprite.hpp \
+  C:/FINAL_PROJECT/NTHU_ADVANTURE/./UI/Component/Image.hpp \
   C:/FINAL_PROJECT/NTHU_ADVANTURE/./Player/Player.hpp \
   C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/map \
   C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__tree \
-  C:/FINAL_PROJECT/NTHU_ADVANTURE/./Engine/Sprite.hpp \
-  C:/FINAL_PROJECT/NTHU_ADVANTURE/./UI/Component/Image.hpp \
   C:/FINAL_PROJECT/NTHU_ADVANTURE/./UI/Component/ImageButton.hpp \
   C:/FINAL_PROJECT/NTHU_ADVANTURE/./UI/Component/Label.hpp \
   C:/FINAL_PROJECT/NTHU_ADVANTURE/Scene/WinScene.hpp

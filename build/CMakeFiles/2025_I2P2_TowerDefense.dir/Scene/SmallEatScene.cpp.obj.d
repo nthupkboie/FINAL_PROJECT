@@ -912,9 +912,9 @@ CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/SmallEatScene.cpp.obj: \
   C:/FINAL_PROJECT/NTHU_ADVANTURE/./UI/Component/Image.hpp \
   C:/FINAL_PROJECT/NTHU_ADVANTURE/./UI/Component/ImageButton.hpp \
   C:/FINAL_PROJECT/NTHU_ADVANTURE/Scene/PlayScene.hpp \
+  C:/FINAL_PROJECT/NTHU_ADVANTURE/./NPC/NPC.hpp \
   C:/FINAL_PROJECT/NTHU_ADVANTURE/./Player/Player.hpp \
   C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/map \
   C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__tree \
-  C:/FINAL_PROJECT/NTHU_ADVANTURE/./NPC/NPC.hpp \
   C:/FINAL_PROJECT/NTHU_ADVANTURE/Scene/LogScene.hpp \
   C:/FINAL_PROJECT/NTHU_ADVANTURE/./UI/Component/Label.hpp

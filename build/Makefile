@@ -608,6 +608,30 @@ Scene/BattleScene.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_TowerDefense.dir\build.make CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/BattleScene.cpp.s
 .PHONY : Scene/BattleScene.cpp.s
 
+Scene/CGLakeScene.obj: Scene/CGLakeScene.cpp.obj
+.PHONY : Scene/CGLakeScene.obj
+
+# target to build an object file
+Scene/CGLakeScene.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_TowerDefense.dir\build.make CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/CGLakeScene.cpp.obj
+.PHONY : Scene/CGLakeScene.cpp.obj
+
+Scene/CGLakeScene.i: Scene/CGLakeScene.cpp.i
+.PHONY : Scene/CGLakeScene.i
+
+# target to preprocess a source file
+Scene/CGLakeScene.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_TowerDefense.dir\build.make CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/CGLakeScene.cpp.i
+.PHONY : Scene/CGLakeScene.cpp.i
+
+Scene/CGLakeScene.s: Scene/CGLakeScene.cpp.s
+.PHONY : Scene/CGLakeScene.s
+
+# target to generate assembly for a file
+Scene/CGLakeScene.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_TowerDefense.dir\build.make CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/CGLakeScene.cpp.s
+.PHONY : Scene/CGLakeScene.cpp.s
+
 Scene/EEScene.obj: Scene/EEScene.cpp.obj
 .PHONY : Scene/EEScene.obj
 
@@ -1133,6 +1157,9 @@ help:
 	@echo ... Scene/BattleScene.obj
 	@echo ... Scene/BattleScene.i
 	@echo ... Scene/BattleScene.s
+	@echo ... Scene/CGLakeScene.obj
+	@echo ... Scene/CGLakeScene.i
+	@echo ... Scene/CGLakeScene.s
 	@echo ... Scene/EEScene.obj
 	@echo ... Scene/EEScene.i
 	@echo ... Scene/EEScene.s

@@ -962,6 +962,8 @@ CMakeFiles/2025_I2P2_TowerDefense.dir/Player/BattlePlayer.cpp.obj: \
   C:/FINAL_PROJECT/NTHU_ADVANTURE/./NPC/NPCDialog.hpp \
   C:/allegro/include/allegro5/allegro_font.h \
   C:/FINAL_PROJECT/NTHU_ADVANTURE/./Scene/PlayScene.hpp \
+  C:/FINAL_PROJECT/NTHU_ADVANTURE/./NPC/NPC.hpp \
   C:/FINAL_PROJECT/NTHU_ADVANTURE/./Player/Player.hpp \
   C:/FINAL_PROJECT/NTHU_ADVANTURE/./Scene/LogScene.hpp \
+  C:/FINAL_PROJECT/NTHU_ADVANTURE/./Scene/CGLakeScene.hpp \
   C:/FINAL_PROJECT/NTHU_ADVANTURE/./Engine/Resources.hpp

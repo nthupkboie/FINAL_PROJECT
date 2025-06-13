@@ -52,8 +52,6 @@ public:
     static bool talking;
 
     std::string DrawRandomLot();
-
-
 private:
     // 對話狀態
     bool isActive;

@@ -907,11 +907,12 @@ CMakeFiles/2025_I2P2_TowerDefense.dir/main.cpp.obj: \
   C:/FINAL_PROJECT/NTHU_ADVANTURE/./Engine/IControl.hpp \
   C:/FINAL_PROJECT/NTHU_ADVANTURE/./Engine/IObject.hpp \
   C:/FINAL_PROJECT/NTHU_ADVANTURE/./Engine/Point.hpp \
+  C:/FINAL_PROJECT/NTHU_ADVANTURE/./NPC/NPC.hpp \
   C:/FINAL_PROJECT/NTHU_ADVANTURE/./NPC/NPCDialog.hpp \
   C:/allegro/include/allegro5/allegro_font.h \
-  C:/FINAL_PROJECT/NTHU_ADVANTURE/./Player/Player.hpp \
   C:/FINAL_PROJECT/NTHU_ADVANTURE/./Engine/Sprite.hpp \
   C:/FINAL_PROJECT/NTHU_ADVANTURE/./UI/Component/Image.hpp \
+  C:/FINAL_PROJECT/NTHU_ADVANTURE/./Player/Player.hpp \
   C:/FINAL_PROJECT/NTHU_ADVANTURE/Scene/StartScene.h \
   C:/FINAL_PROJECT/NTHU_ADVANTURE/./UI/Component/Label.hpp \
   C:/FINAL_PROJECT/NTHU_ADVANTURE/Scene/SettingsScene.hpp \
@@ -926,6 +927,7 @@ CMakeFiles/2025_I2P2_TowerDefense.dir/main.cpp.obj: \
   C:/FINAL_PROJECT/NTHU_ADVANTURE/Scene/WindCloudScene.hpp \
   C:/FINAL_PROJECT/NTHU_ADVANTURE/Scene/EEScene.hpp \
   C:/FINAL_PROJECT/NTHU_ADVANTURE/Scene/TaldaScene.hpp \
+  C:/FINAL_PROJECT/NTHU_ADVANTURE/Scene/CGLakeScene.hpp \
   C:/FINAL_PROJECT/NTHU_ADVANTURE/Scene/AIChatScene.hpp \
   C:/allegro/include/allegro5/allegro_image.h \
   C:/allegro/include/allegro5/allegro_primitives.h \

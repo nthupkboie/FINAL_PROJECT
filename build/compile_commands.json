@@ -193,6 +193,12 @@
 },
 {
   "directory": "C:/FINAL_PROJECT/build",
+  "command": "C:\\Users\\USER\\Downloads\\llvm-mingw-20240417-msvcrt-x86_64\\bin\\clang++.exe  @CMakeFiles/2025_I2P2_TowerDefense.dir/includes_CXX.rsp -g -o CMakeFiles\\2025_I2P2_TowerDefense.dir\\Scene\\CGLakeScene.cpp.obj -c C:\\FINAL_PROJECT\\NTHU_ADVANTURE\\Scene\\CGLakeScene.cpp",
+  "file": "C:/FINAL_PROJECT/NTHU_ADVANTURE/Scene/CGLakeScene.cpp",
+  "output": "CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/CGLakeScene.cpp.obj"
+},
+{
+  "directory": "C:/FINAL_PROJECT/build",
   "command": "C:\\Users\\USER\\Downloads\\llvm-mingw-20240417-msvcrt-x86_64\\bin\\clang++.exe  @CMakeFiles/2025_I2P2_TowerDefense.dir/includes_CXX.rsp -g -o CMakeFiles\\2025_I2P2_TowerDefense.dir\\Scene\\AIChatScene.cpp.obj -c C:\\FINAL_PROJECT\\NTHU_ADVANTURE\\Scene\\AIChatScene.cpp",
   "file": "C:/FINAL_PROJECT/NTHU_ADVANTURE/Scene/AIChatScene.cpp",
   "output": "CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/AIChatScene.cpp.obj"

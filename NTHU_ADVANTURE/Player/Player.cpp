@@ -17,6 +17,10 @@
 #include "Scene/SmallEatScene.hpp"
 #include "Scene/BattleScene.hpp"
 #include "Scene/LogScene.hpp"
+#include "Scene/EEScene.hpp"
+#include "Scene/TaldaScene.hpp"
+#include "Scene/WaterWoodScene.hpp"
+#include "Scene/WindCloudScene.hpp"
 
 #include "Engine/Resources.hpp"
 #include "NPC/NPCDialog.hpp"
@@ -263,6 +267,26 @@ bool Player::canWalk(int x, int y){
             return false;
         }
     }
-    // collsion
+    else if (PlayScene::inEE){
+        if (!EEScene::collision(x, y)){
+            return false;
+        }
+    }
+    else if (PlayScene::inTalda){
+        if (!TaldaScene::collision(x, y)){
+            return false;
+        }
+    }
+    else if (PlayScene::inWindCloud){
+        if (!WindCloudScene::collision(x, y)){
+            return false;
+        }
+    }
+    else if (PlayScene::inWaterWood){
+        if (!WaterWoodScene::collision(x, y)){
+            return false;
+        }
+    }
+    
     return true;
 }

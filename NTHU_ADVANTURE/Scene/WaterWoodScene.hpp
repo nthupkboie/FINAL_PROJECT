@@ -84,6 +84,8 @@ public:
     static std::vector<WaterWoodScene::TileType> mapData;
 
     static bool collision(int x, int y);
+
+    bool firstTime = true;
 };
 
 #endif   // WaterWoodScene_HPP

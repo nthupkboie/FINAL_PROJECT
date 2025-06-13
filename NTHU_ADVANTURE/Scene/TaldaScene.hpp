@@ -83,4 +83,6 @@ public:
     static std::vector<TaldaScene::TileType> mapData;
 
     static bool collision(int x, int y);
+
+    bool firstTime = true;
 };

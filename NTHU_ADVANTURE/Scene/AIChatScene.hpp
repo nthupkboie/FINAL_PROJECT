@@ -34,8 +34,6 @@ public:
     void SendMyMessage();
     void BackToStart();
 
-    bool isWaitingForResponse;
-    float loadingAnimationTime;
 };
 
 #endif // AICHATSCENE_HPP

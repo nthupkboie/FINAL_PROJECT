@@ -396,7 +396,7 @@ void ScoreboardScene::Terminate() {
 void ScoreboardScene::OnKeyDown(int keyCode) {
     // ESC鍵返回
     if (keyCode == ALLEGRO_KEY_ESCAPE) {
-        Engine::GameEngine::GetInstance().ChangeScene("stage-select");
+        Engine::GameEngine::GetInstance().ChangeScene("start");
     }
 }
 

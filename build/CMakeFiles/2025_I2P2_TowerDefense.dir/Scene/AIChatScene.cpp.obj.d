@@ -779,47 +779,8 @@ CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/AIChatScene.cpp.obj: \
   C:/allegro/include/allegro5/allegro_font.h \
   C:/allegro/include/allegro5/allegro_primitives.h \
   C:/allegro/include/allegro5/allegro_ttf.h \
-  C:/FINAL_PROJECT/NTHU_ADVANTURE/Scene/AIChatScene.hpp \
-  C:/FINAL_PROJECT/NTHU_ADVANTURE/./Engine/IScene.hpp \
-  C:/FINAL_PROJECT/NTHU_ADVANTURE/./Engine/Group.hpp \
-  C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/list \
-  C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/functional \
-  C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__functional/binary_negate.h \
-  C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__functional/bind.h \
-  C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__functional/bind_back.h \
-  C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__functional/perfect_forward.h \
-  C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__functional/bind_front.h \
-  C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__functional/binder1st.h \
-  C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__functional/binder2nd.h \
-  C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__functional/boyer_moore_searcher.h \
-  C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/array \
-  C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/vector \
-  C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__bit_reference \
-  C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__format/formatter.h \
-  C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__format/format_fwd.h \
-  C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__format/formatter_bool.h \
-  C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__format/concepts.h \
-  C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__format/format_parse_context.h \
-  C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__format/format_error.h \
-  C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__format/formatter_integral.h \
-  C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__charconv/to_chars_integral.h \
-  C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__charconv/tables.h \
-  C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__charconv/to_chars_base_10.h \
-  C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__charconv/to_chars_result.h \
-  C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__system_error/errc.h \
-  C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/cerrno \
-  C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__charconv/traits.h \
-  C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__type_traits/make_32_64_or_128_bit.h \
-  C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__format/formatter_output.h \
-  C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__format/buffer.h \
-  C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__format/format_to_n_result.h \
-  C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__format/parser_std_format_spec.h \
-  C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__format/format_arg.h \
-  C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__format/format_string.h \
-  C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__format/unicode.h \
-  C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__format/extended_grapheme_cluster_table.h \
-  C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__format/width_estimation_table.h \
-  C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/locale \
+  C:/FINAL_PROJECT/NTHU_ADVANTURE/./Engine/LOG.hpp \
+  C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/fstream \
   C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__locale \
   C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__mutex/once_flag.h \
   C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__utility/no_destroy.h \
@@ -827,10 +788,44 @@ CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/AIChatScene.cpp.obj: \
   C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/locale.h \
   C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/include/locale.h \
   C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__support/win32/locale_win32.h \
-  C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/ios \
-  C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__system_error/error_category.h \
+  C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/filesystem \
+  C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__filesystem/copy_options.h \
+  C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__filesystem/directory_entry.h \
+  C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__filesystem/file_status.h \
+  C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__filesystem/file_type.h \
+  C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__filesystem/perms.h \
+  C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__filesystem/file_time_type.h \
+  C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__chrono/file_clock.h \
+  C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__filesystem/filesystem_error.h \
+  C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__filesystem/path.h \
+  C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/iomanip \
+  C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/istream \
+  C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/ostream \
   C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__system_error/error_code.h \
+  C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__system_error/errc.h \
+  C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/cerrno \
+  C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__system_error/error_category.h \
   C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__system_error/error_condition.h \
+  C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/bitset \
+  C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__bit_reference \
+  C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/format \
+  C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__format/buffer.h \
+  C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__format/concepts.h \
+  C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__format/format_fwd.h \
+  C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__format/format_parse_context.h \
+  C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__format/format_error.h \
+  C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__format/format_to_n_result.h \
+  C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__format/container_adaptor.h \
+  C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__format/formatter.h \
+  C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__format/range_default_formatter.h \
+  C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__chrono/statically_widen.h \
+  C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__format/range_formatter.h \
+  C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__format/format_context.h \
+  C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__format/format_arg.h \
+  C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__format/format_arg_store.h \
+  C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__format/format_args.h \
+  C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/locale \
+  C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/ios \
   C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__system_error/system_error.h \
   C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/mutex \
   C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__condition_variable/condition_variable.h \
@@ -843,8 +838,36 @@ CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/AIChatScene.cpp.obj: \
   C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/streambuf \
   C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__locale_dir/locale_base_api/bsd_locale_defaults.h \
   C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/cstdarg \
+  C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__format/formatter_output.h \
+  C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__format/parser_std_format_spec.h \
+  C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__format/format_string.h \
+  C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__format/unicode.h \
+  C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__format/extended_grapheme_cluster_table.h \
+  C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__format/width_estimation_table.h \
+  C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__ranges/ref_view.h \
+  C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/queue \
+  C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/deque \
   C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__memory/temp_value.h \
   C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__split_buffer \
+  C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/functional \
+  C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__functional/binary_negate.h \
+  C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__functional/bind.h \
+  C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__functional/bind_back.h \
+  C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__functional/perfect_forward.h \
+  C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__functional/bind_front.h \
+  C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__functional/binder1st.h \
+  C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__functional/binder2nd.h \
+  C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__functional/boyer_moore_searcher.h \
+  C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/array \
+  C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/vector \
+  C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__format/formatter_bool.h \
+  C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__format/formatter_integral.h \
+  C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__charconv/to_chars_integral.h \
+  C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__charconv/tables.h \
+  C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__charconv/to_chars_base_10.h \
+  C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__charconv/to_chars_result.h \
+  C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__charconv/traits.h \
+  C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__type_traits/make_32_64_or_128_bit.h \
   C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__functional/compose.h \
   C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__functional/default_searcher.h \
   C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__functional/function.h \
@@ -856,6 +879,32 @@ CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/AIChatScene.cpp.obj: \
   C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__functional/pointer_to_binary_function.h \
   C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__functional/pointer_to_unary_function.h \
   C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__functional/unary_negate.h \
+  C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/stack \
+  C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__format/format_functions.h \
+  C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__format/formatter_char.h \
+  C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__format/write_escaped.h \
+  C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__format/escaped_output_table.h \
+  C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__format/formatter_floating_point.h \
+  C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__charconv/chars_format.h \
+  C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__charconv/to_chars_floating_point.h \
+  C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__format/formatter_integer.h \
+  C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__format/formatter_pointer.h \
+  C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__format/formatter_string.h \
+  C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__format/formatter_tuple.h \
+  C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/print \
+  C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__filesystem/operations.h \
+  C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__filesystem/perm_options.h \
+  C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__filesystem/space_info.h \
+  C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__filesystem/directory_iterator.h \
+  C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__filesystem/directory_options.h \
+  C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__filesystem/path_iterator.h \
+  C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__filesystem/recursive_directory_iterator.h \
+  C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__filesystem/u8path.h \
+  C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/iostream \
+  C:/FINAL_PROJECT/NTHU_ADVANTURE/Scene/AIChatScene.hpp \
+  C:/FINAL_PROJECT/NTHU_ADVANTURE/./Engine/IScene.hpp \
+  C:/FINAL_PROJECT/NTHU_ADVANTURE/./Engine/Group.hpp \
+  C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/list \
   C:/FINAL_PROJECT/NTHU_ADVANTURE/./Engine/IControl.hpp \
   C:/FINAL_PROJECT/NTHU_ADVANTURE/./Engine/IObject.hpp \
   C:/FINAL_PROJECT/NTHU_ADVANTURE/./httplib.h \
@@ -1120,35 +1169,6 @@ CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/AIChatScene.cpp.obj: \
   C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__stop_token/atomic_unique_lock.h \
   C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__stop_token/intrusive_list_view.h \
   C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__stop_token/stop_token.h \
-  C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/iomanip \
-  C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/istream \
-  C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/ostream \
-  C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/bitset \
-  C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/format \
-  C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__format/container_adaptor.h \
-  C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__format/range_default_formatter.h \
-  C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__chrono/statically_widen.h \
-  C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__format/range_formatter.h \
-  C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__format/format_context.h \
-  C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__format/format_arg_store.h \
-  C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__format/format_args.h \
-  C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__ranges/ref_view.h \
-  C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/queue \
-  C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/deque \
-  C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/stack \
-  C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__format/format_functions.h \
-  C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__format/formatter_char.h \
-  C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__format/write_escaped.h \
-  C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__format/escaped_output_table.h \
-  C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__format/formatter_floating_point.h \
-  C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__charconv/chars_format.h \
-  C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__charconv/to_chars_floating_point.h \
-  C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__format/formatter_integer.h \
-  C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__format/formatter_pointer.h \
-  C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__format/formatter_string.h \
-  C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__format/formatter_tuple.h \
-  C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/print \
-  C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/iostream \
   C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/map \
   C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__tree \
   C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/random \
@@ -1216,7 +1236,6 @@ CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/AIChatScene.cpp.obj: \
   C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__chrono/concepts.h \
   C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__chrono/hh_mm_ss.h \
   C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__chrono/day.h \
-  C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__chrono/file_clock.h \
   C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__chrono/month.h \
   C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__chrono/month_weekday.h \
   C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__chrono/weekday.h \
@@ -1230,21 +1249,4 @@ CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/AIChatScene.cpp.obj: \
   C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/unordered_set \
   C:/FINAL_PROJECT/NTHU_ADVANTURE/./json.hpp \
   C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/valarray \
-  C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/filesystem \
-  C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__filesystem/copy_options.h \
-  C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__filesystem/directory_entry.h \
-  C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__filesystem/file_status.h \
-  C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__filesystem/file_type.h \
-  C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__filesystem/perms.h \
-  C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__filesystem/file_time_type.h \
-  C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__filesystem/filesystem_error.h \
-  C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__filesystem/path.h \
-  C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__filesystem/operations.h \
-  C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__filesystem/perm_options.h \
-  C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__filesystem/space_info.h \
-  C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__filesystem/directory_iterator.h \
-  C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__filesystem/directory_options.h \
-  C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__filesystem/path_iterator.h \
-  C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__filesystem/recursive_directory_iterator.h \
-  C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__filesystem/u8path.h \
   C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/any

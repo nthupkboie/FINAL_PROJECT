@@ -859,12 +859,13 @@ CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/StartScene.cpp.obj: \
   C:/FINAL_PROJECT/NTHU_ADVANTURE/./Engine/GameEngine.hpp \
   C:/FINAL_PROJECT/NTHU_ADVANTURE/./Engine/Resources.hpp \
   C:/FINAL_PROJECT/NTHU_ADVANTURE/Scene/PlayScene.hpp \
+  C:/FINAL_PROJECT/NTHU_ADVANTURE/./NPC/NPC.hpp \
   C:/FINAL_PROJECT/NTHU_ADVANTURE/./NPC/NPCDialog.hpp \
+  C:/FINAL_PROJECT/NTHU_ADVANTURE/./Engine/Sprite.hpp \
+  C:/FINAL_PROJECT/NTHU_ADVANTURE/./UI/Component/Image.hpp \
   C:/FINAL_PROJECT/NTHU_ADVANTURE/./Player/Player.hpp \
   C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/map \
   C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__tree \
-  C:/FINAL_PROJECT/NTHU_ADVANTURE/./Engine/Sprite.hpp \
-  C:/FINAL_PROJECT/NTHU_ADVANTURE/./UI/Component/Image.hpp \
   C:/FINAL_PROJECT/NTHU_ADVANTURE/./Scene/StartScene.h \
   C:/FINAL_PROJECT/NTHU_ADVANTURE/./UI/Component/ImageButton.hpp \
   C:/FINAL_PROJECT/NTHU_ADVANTURE/./UI/Component/Slider.hpp \

@@ -959,6 +959,7 @@ CMakeFiles/2025_I2P2_TowerDefense.dir/Player/Player.cpp.obj: \
   C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/__filesystem/u8path.h \
   C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/include/c++/v1/iostream \
   C:/FINAL_PROJECT/NTHU_ADVANTURE/./Scene/PlayScene.hpp \
+  C:/FINAL_PROJECT/NTHU_ADVANTURE/./NPC/NPC.hpp \
   C:/FINAL_PROJECT/NTHU_ADVANTURE/./NPC/NPCDialog.hpp \
   C:/allegro/include/allegro5/allegro_font.h \
   C:/FINAL_PROJECT/NTHU_ADVANTURE/./Player/Player.hpp \
@@ -967,4 +968,8 @@ CMakeFiles/2025_I2P2_TowerDefense.dir/Player/Player.cpp.obj: \
   C:/FINAL_PROJECT/NTHU_ADVANTURE/./UI/Component/ImageButton.hpp \
   C:/FINAL_PROJECT/NTHU_ADVANTURE/./Scene/BattleScene.hpp \
   C:/FINAL_PROJECT/NTHU_ADVANTURE/./Scene/LogScene.hpp \
+  C:/FINAL_PROJECT/NTHU_ADVANTURE/./Scene/EEScene.hpp \
+  C:/FINAL_PROJECT/NTHU_ADVANTURE/./Scene/TaldaScene.hpp \
+  C:/FINAL_PROJECT/NTHU_ADVANTURE/./Scene/WaterWoodScene.hpp \
+  C:/FINAL_PROJECT/NTHU_ADVANTURE/./Scene/WindCloudScene.hpp \
   C:/FINAL_PROJECT/NTHU_ADVANTURE/./Engine/Resources.hpp

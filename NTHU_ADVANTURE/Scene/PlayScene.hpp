@@ -8,7 +8,7 @@
 
 #include "Engine/IScene.hpp"
 #include "Engine/Point.hpp"
-
+#include "NPC/NPC.hpp"
 #include "NPC/NPCDialog.hpp"
 #include "Player/Player.hpp"
 
@@ -37,6 +37,8 @@ private:
     Engine::Image* axeImage;
     Engine::Image* speedImage = nullptr;
     Engine::Label* speedLabel;
+    NPC* Kao = nullptr;
+    NPC* dyy = nullptr;
    
     
     struct BuildingZone {
@@ -110,6 +112,12 @@ public:
     static const int window_x, window_y;
     static bool inPlay;
     static bool inSmallEat;
+    static bool inBattle;
+    static bool inCGLake;
+    static bool inEE;
+    static bool inTalda;
+    static bool inWaterWood;
+    static bool inWindCloud;
     //static bool haveAxe;
 
     static std::vector<PlayScene::TileType> mapData;
@@ -125,7 +133,7 @@ public:
     // 顯示進入建築物的提示
     void ShowEnterPrompt(const std::string& buildingName, int zoneX, int zoneY);
 
-    //static int money;
+    bool firstTime = true;
 };
 
 #endif   // PLAYSCENE_HPP
