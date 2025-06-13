@@ -157,6 +157,14 @@ void PlayScene::Initialize() {
     // 預載資源
     //Engine::Resources::GetInstance().GetBitmap("lose/benjamin-happy.png");
     
+    AddBuildingZone(8, 13, 2, 1, "新齋"); 
+    AddBuildingZone(35, 12, 2, 1, "資電館");  
+    AddBuildingZone(47, 12, 2, 1, "台達館");
+    AddBuildingZone(8, 19, 2, 1, "風雲樓");
+    AddBuildingZone(21, 19, 2, 1, "成功湖");
+    AddBuildingZone(35, 19, 2, 1, "水木");
+    AddBuildingZone(47, 19, 2, 1, "小吃部");
+    
     // 開始背景音樂
     bgmId = AudioHelper::PlayBGM("play.ogg");
 
@@ -168,6 +176,11 @@ void PlayScene::Initialize() {
         LabelGroup->AddNewObject(speedImage = new Engine::Image("play/potion.png", 20, 175, 56, 56));
         LabelGroup->AddNewObject(speedLabel = new Engine::Label(std::to_string((int)LogScene::haveSpeedUp), "title.ttf", 48, 130, 210, 255, 255, 255, 255, 0.5, 0.5));
     }
+}
+
+void PlayScene::AddBuildingZone(int x, int y, int width, int height, const std::string& buildingName) {
+    // 設置建築物的範圍區域並儲存
+    buildingZones.push_back(BuildingZone{x, y, width, height, buildingName});
 }
 
 void PlayScene::Terminate() {
@@ -192,7 +205,24 @@ void PlayScene::Update(float deltaTime) {
     cameraOffset.y = player->Position.y - window_y / 2 * BlockSize; // 置中：player.y - 96
     cameraOffset.x = std::max(0.0f, std::min(cameraOffset.x, static_cast<float>(MapWidth * BlockSize - window_x * BlockSize)));
     cameraOffset.y = std::max(0.0f, std::min(cameraOffset.y, static_cast<float>(MapHeight * BlockSize - window_y * BlockSize)));
+
+    // // 更新攝影機
+    // float targetX = player->Position.x - 3 * BlockSize; // 視角中心
+    // float targetY = player->Position.y - 1.5 * BlockSize;
+    // // 邊界限制
+    // targetX = std::max(0.0f, std::min(targetX, static_cast<float>(MapWidth * BlockSize - 6 * BlockSize)));
+    // targetY = std::max(0.0f, std::min(targetY, static_cast<float>(MapHeight * BlockSize - 3 * BlockSize)));
+    // // 平滑插值（與玩家移動同步，0.3秒）
+    // cameraOffset.x += (targetX - cameraOffset.x) * (deltaTime / 0.3f);
+    // cameraOffset.y += (targetY - cameraOffset.y) * (deltaTime / 0.3f);
     
+    for (const auto& zone : buildingZones) {
+        if (IsPlayerNearBuilding(player, zone)) {
+            ShowEnterPrompt(zone.buildingName, zone.x, zone.y);
+
+        }
+    }
+
     // 更新所有NPC
     for (auto& obj : NPCGroup->GetObjects()) {
         if (auto npc = dynamic_cast<NPC*>(obj)) {
@@ -218,7 +248,53 @@ void PlayScene::Update(float deltaTime) {
         speedImage->Position = Engine::Point(20 + cameraOffset.x, 175 + cameraOffset.y);
         speedLabel->Position = Engine::Point(130 + cameraOffset.x, 210 + cameraOffset.y);
     }
+
+    bool nearAnyBuilding = false;
+    for (const auto& zone : buildingZones) {
+        if (IsPlayerNearBuilding(player, zone)) {
+            ShowEnterPrompt(zone.buildingName,zone.x,zone.y);
+            nearAnyBuilding = true;
+            //break;
+        }
+    }
+    if (!nearAnyBuilding && enterPromptLabel) {
+        LabelGroup->RemoveObject(enterPromptLabel);  
+        enterPromptLabel = nullptr;
+        currentBuildingName = "";
+    }
 }
+
+void PlayScene::ShowEnterPrompt(const std::string& buildingName, int zoneX, int zoneY) {
+    // 顯示提示文字（例如 "Press E to enter {buildingName}"）
+
+    if (currentBuildingName == buildingName) return;  
+                
+
+    // 移除舊的提示
+    if (enterPromptLabel) {
+        LabelGroup->RemoveObject(enterPromptLabel);
+        enterPromptLabel = nullptr;
+    }
+
+    currentBuildingName = buildingName; 
+    
+    // 計算提示文字顯示的位置
+    float labelX = zoneX * BlockSize + BlockSize / 2;
+    float labelY = zoneY * BlockSize ;
+
+
+
+    enterPromptLabel = new Engine::Label(
+        "Press E to enter " + buildingName,
+        "Retro.ttf", 30,
+        labelX, labelY,
+        255, 255, 255, 255,
+        0.5, 0.5
+    );
+    LabelGroup->AddNewObject(enterPromptLabel);
+
+}
+
 
 void PlayScene::Draw() const {
     //IScene::Draw();
@@ -256,6 +332,7 @@ void PlayScene::OnMouseUp(int button, int mx, int my) {
 
 void PlayScene::OnKeyDown(int keyCode) {
     IScene::OnKeyDown(keyCode);
+    
     
     // 按Enter鍵推進對話
     if (keyCode == ALLEGRO_KEY_ENTER && dialog.IsDialogActive()) {
@@ -308,12 +385,78 @@ void PlayScene::OnKeyDown(int keyCode) {
         inCGLake = true;
         //haveAxe = true;
     }
+    // 按下 E 鍵進入建築物
+    if (keyCode == ALLEGRO_KEY_E) {
+
+        Player* player = nullptr;
+        for (auto& obj : PlayerGroup->GetObjects()) {
+            player = dynamic_cast<Player*>(obj);
+            if (player) break;
+        }
+        if (!player) {
+            std::cout << "Player not found!" << std::endl;
+            return;
+        }
+        for (const auto& zone : buildingZones) {
+            if (IsPlayerNearBuilding(player, zone)) {
+                std::cout << "Entering " << zone.buildingName << "!" << std::endl;
+                // 進入建築物的邏輯，例如進入新場景等
+                break;
+            }
+        }
+        for (const auto& zone : buildingZones) {
+            if (IsPlayerNearBuilding(player, zone)) {
+                std::cout << "Entering " << zone.buildingName << "!" << std::endl;
+
+                if (zone.buildingName == "新齋") {
+                    Engine::GameEngine::GetInstance().ChangeScene("new");
+                } else if (zone.buildingName == "小吃部") {
+                    Engine::GameEngine::GetInstance().ChangeScene("smalleat");
+                    inPlay = false;
+                    inSmallEat = true;
+                } else if (zone.buildingName == "資電館") {
+                    Engine::GameEngine::GetInstance().ChangeScene("EE");
+                    inPlay = false;
+                    inEE = true;
+                } else if (zone.buildingName == "台達館") {
+                    Engine::GameEngine::GetInstance().ChangeScene("talda");
+                    inPlay = false;
+                    inTalda = true;
+                } else if (zone.buildingName == "水木") {
+                    Engine::GameEngine::GetInstance().ChangeScene("waterwood");
+                    inPlay = false;
+                    inWaterWood = true;
+                } else if (zone.buildingName == "風雲樓") {
+                    Engine::GameEngine::GetInstance().ChangeScene("windcloud");
+                    inPlay = false;
+                    inWindCloud = true;
+                } else if (zone.buildingName == "成功湖") {
+                    Engine::GameEngine::GetInstance().ChangeScene("CGLake");
+                    inPlay = false;
+                    inCGLake = true;
+                }
+
+                break;  // 找到一個就跳出，不需要檢查更多建築
+            }
+        }
+    }
+    // // 按T鍵測試開啟對話 (可選)
+    // if (keyCode == ALLEGRO_KEY_T) {
+    //     std::vector<std::string> testMessages = {
+    //         "這是按T鍵觸發的對話!",
+    //         "第二條測試訊息。",
+    //         "最後一條測試訊息。"
+    //     };
+    //     auto npcAvatar = Engine::Resources::GetInstance().GetBitmap("NPC/test/icon/test_icon.png");
+    //     dialog.StartDialog("測試NPC", npcAvatar, testMessages);
+    // }
     if(keyCode == ALLEGRO_KEY_0){
         Engine::GameEngine::GetInstance().ChangeScene("new");
         inPlay = false;
         inNEW = true;
     }
 }
+
 
 void PlayScene::ReadMap() {
     std::string filename = std::string("Resource/mainworld") + ".txt";
@@ -647,4 +790,28 @@ bool PlayScene::collision(int x, int y){
     }
     // if (mapState[y/BlockSize][x/BlockSize] == TILE_TREE) return false;
     // else return true;
+}
+
+bool PlayScene::IsPlayerNearBuilding(Player* player, const BuildingZone& zone) {
+    // 將建築物格子坐標轉為像素坐標
+    float zonePixelX = zone.x * BlockSize;
+    float zonePixelY = zone.y * BlockSize;
+    float zonePixelW = zone.width * BlockSize;
+    float zonePixelH = zone.height * BlockSize;
+    
+    // 玩家中心點 (像素坐標)
+    float playerX = player->Position.x + BlockSize/2;
+    float playerY = player->Position.y + BlockSize/2;
+    
+    // 建築物中心點 (像素坐標)
+    float buildingCenterX = zonePixelX + zonePixelW/2;
+    float buildingCenterY = zonePixelY + zonePixelH/2;
+    
+    // 計算距離
+    float dx = playerX - buildingCenterX;
+    float dy = playerY - buildingCenterY;
+    float distance = sqrt(dx*dx + dy*dy);
+    
+    // 檢測距離 (2.5個格子的範圍)
+    return distance < (2.5f * BlockSize);
 }
