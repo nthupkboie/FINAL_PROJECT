@@ -33,6 +33,9 @@ public:
     void AddMessage(const std::string& message);
     void SendMyMessage();
     void BackToStart();
+
+    bool isWaitingForResponse;
+    float loadingAnimationTime;
 };
 
 #endif // AICHATSCENE_HPP

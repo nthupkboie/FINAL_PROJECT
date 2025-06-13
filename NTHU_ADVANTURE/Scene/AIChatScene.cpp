@@ -13,28 +13,25 @@ AIChatScene::AIChatScene()
     : isActive(true),
       currentInput(""),
       font(nullptr),
-      boxWidth(800.0f),
-      boxHeight(600.0f),
-      boxX(240.0f),
-      boxY(100.0f),
-      padding(20.0f) {
-    textColor = al_map_rgb(255, 255, 255);  // 白色文字
-    boxColor = al_map_rgba(0, 0, 0, 200);   // 半透明黑色背景
+      isWaitingForResponse(false),  // 新增
+      loadingAnimationTime(0.0f),    // 新增
+      boxWidth(1400.0f),    // 更大的對話框寬度
+      boxHeight(800.0f),    // 更大的對話框高度
+      boxX((1920 - 1400) / 2.0f),  // 水平居中
+      boxY((1024 - 800) / 2.0f),    // 垂直居中
+      padding(30.0f) {      // 更大的內邊距
+    textColor = al_map_rgb(255, 255, 255);
+    boxColor = al_map_rgba(0, 0, 0, 220);  // 更不透明的背景
 }
 
 void AIChatScene::Initialize() {
-    // 方法1: 直接載入字體 (不使用 Resources)
-    font = al_load_ttf_font("resources/fonts/normal.ttf", 24, 0);
+    // 使用更大的字體
+    font = al_load_ttf_font("resources/fonts/normal.ttf", 32, 0);  // 從 24 加大到 32
     
-    // 方法2: 如果 Resources 返回的是 ALLEGRO_FONT* 而不是 shared_ptr
-    // font = Engine::Resources::GetInstance().GetFont("normal.ttf", 24);
-    
-    // 如果兩種方法都失敗，使用內建字體
     if (!font) {
         font = al_create_builtin_font();
     }
     
-    // 初始消息
     AddMessage("AI: 你好！我是AI助手，請問有什麼可以幫你的嗎？");
 }
 
@@ -51,57 +48,83 @@ void AIChatScene::Terminate() {
 
 void AIChatScene::Update(float deltaTime) {
     IScene::Update(deltaTime);
+    
+    // 更新 loading 動畫時間
+    if (isWaitingForResponse) {
+        loadingAnimationTime += deltaTime;
+    }
 }
 
+
 void AIChatScene::Draw() const {
-    // 繪製對話框背景
-    al_draw_filled_rectangle(boxX, boxY, 
-                            boxX + boxWidth, boxY + boxHeight, 
-                            boxColor);
-    al_draw_rectangle(boxX, boxY, 
-                     boxX + boxWidth, boxY + boxHeight, 
-                     al_map_rgb(255,255,255), 2);
+    // 繪製全螢幕半透明背景
+    al_draw_filled_rectangle(0, 0, 1920, 1024, al_map_rgba(0, 0, 0, 150));
     
-    // 計算可用寬度
+    // 繪製主對話框
+    al_draw_filled_rounded_rectangle(boxX, boxY, 
+                                   boxX + boxWidth, boxY + boxHeight, 
+                                   15, 15, boxColor);
+    al_draw_rounded_rectangle(boxX, boxY, 
+                            boxX + boxWidth, boxY + boxHeight, 
+                            15, 15, al_map_rgb(255, 255, 255), 4);  // 更粗的邊框
+    
+    // 計算文字區域
     float textWidth = boxWidth - 2 * padding;
+    float maxContentHeight = boxHeight - 120;  // 留出輸入框空間
     
     // 繪製聊天記錄
     float currentY = boxY + padding;
     for (const auto& msg : messages) {
-        // 分割訊息為多行
         std::vector<std::string> lines;
         SplitTextIntoLines(msg, lines, textWidth);
         
-        // 繪製每一行
         for (const auto& line : lines) {
-            if (currentY + al_get_font_line_height(font) > boxY + boxHeight - 60) {
-                break;  // 不要繪製到輸入框區域
+            if (currentY + al_get_font_line_height(font) > boxY + maxContentHeight) {
+                break;
             }
             al_draw_text(font, textColor, boxX + padding, currentY, ALLEGRO_ALIGN_LEFT, line.c_str());
-            currentY += al_get_font_line_height(font) + 5;
+            currentY += al_get_font_line_height(font) + 10;  // 更大的行距
         }
     }
     
-    // 繪製輸入框
-    al_draw_filled_rectangle(boxX, boxY + boxHeight - 60, 
-                            boxX + boxWidth, boxY + boxHeight - 20, 
-                            al_map_rgba(64, 64, 64, 200));
+    // 繪製輸入區域
+    float inputBoxY = boxY + boxHeight - 90;
+    al_draw_filled_rounded_rectangle(boxX + 10, inputBoxY,
+                                   boxX + boxWidth - 10, boxY + boxHeight - 20,
+                                   10, 10, al_map_rgba(70, 70, 70, 220));
     
-    // 分割輸入文字為多行
+    // 輸入文字
     std::vector<std::string> inputLines;
-    SplitTextIntoLines("You: " + currentInput, inputLines, textWidth);
+    SplitTextIntoLines("You: " + currentInput, inputLines, textWidth - 20);
     
-    // 繪製輸入文字
-    float inputY = boxY + boxHeight - 50;
+    float inputY = inputBoxY + 15;
     for (const auto& line : inputLines) {
         al_draw_text(font, textColor, boxX + padding, inputY, 
                     ALLEGRO_ALIGN_LEFT, line.c_str());
         inputY += al_get_font_line_height(font);
     }
     
-    // 繪製返回提示
-    al_draw_text(font, textColor, boxX + boxWidth - 150, boxY + boxHeight - 50, 
-                ALLEGRO_ALIGN_LEFT, "Press ESC to back");
+    // 繪製返回提示 (右下角)
+    ALLEGRO_FONT* hintFont = al_load_ttf_font("resources/fonts/normal.ttf", 24, 0);
+    if (!hintFont) hintFont = al_create_builtin_font();
+    al_draw_text(hintFont, al_map_rgb(180, 180, 180), 
+                boxX + boxWidth - 20, boxY + boxHeight - 40, 
+                ALLEGRO_ALIGN_RIGHT, "ESC 返回主選單");
+    if (hintFont && hintFont != al_create_builtin_font()) {
+        al_destroy_font(hintFont);
+    }
+
+        // 在輸入框下方繪製 Loading 狀態
+    if (isWaitingForResponse) {
+        // 動態的 loading 動畫
+        std::string loadingText = "AI 思考中";
+        int dotCount = static_cast<int>(loadingAnimationTime * 2) % 4;
+        loadingText += std::string(dotCount, '.');
+        
+        al_draw_text(font, al_map_rgb(150, 150, 255), 
+                    boxX + boxWidth / 2, boxY + boxHeight - 100,
+                    ALLEGRO_ALIGN_CENTER, loadingText.c_str());
+    }
 }
 
 void AIChatScene::SplitTextIntoLines(const std::string& text, std::vector<std::string>& lines, float maxWidth) const {
@@ -164,7 +187,7 @@ void AIChatScene::AddMessage(const std::string& message) {
     messages.push_back(message);
     
     // 限制消息數量
-    if (messages.size() > 15) {
+    if (messages.size() > 25) {  // 從 15 增加到 25
         messages.erase(messages.begin());
     }
 }
