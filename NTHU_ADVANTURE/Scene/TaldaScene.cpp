@@ -227,7 +227,7 @@ void TaldaScene::OnKeyDown(int keyCode) {
 
     if(keyCode == ALLEGRO_KEY_P){
         PlayScene::inPlay = true;
-        PlayScene::inSmallEat = false;
+        PlayScene::inTalda = false;
         Engine::GameEngine::GetInstance().ChangeScene("play");
     }
 }

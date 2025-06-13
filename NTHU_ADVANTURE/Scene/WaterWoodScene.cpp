@@ -238,7 +238,7 @@ void WaterWoodScene::OnKeyDown(int keyCode) {
 
     if(keyCode == ALLEGRO_KEY_P){
         PlayScene::inPlay = true;
-        PlayScene::inSmallEat = false;
+        PlayScene::inWaterWood = false;
         Engine::GameEngine::GetInstance().ChangeScene("play");
     }
 }

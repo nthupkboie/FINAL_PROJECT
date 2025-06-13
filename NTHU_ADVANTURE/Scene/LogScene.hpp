@@ -37,6 +37,7 @@ public:
     static int money;
     static bool haveAxe;
     static float haveSpeedUp;
+    static int clearedLake;
 };
 
 
