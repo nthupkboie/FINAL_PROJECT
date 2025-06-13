@@ -506,7 +506,7 @@ void PlayScene::ReadMap() {
     // init init
     for(int y = 0; y < MapHeight; y++){
         for(int x = 0; x < MapWidth; x++){
-                    std::string imagePath = "mainworld/GAS.png";
+                    std::string imagePath = "mainworld/GASS.png";
                     TileMapGroup->AddNewObject(
                         new Engine::Image(imagePath, 
                                         x * BlockSize, 

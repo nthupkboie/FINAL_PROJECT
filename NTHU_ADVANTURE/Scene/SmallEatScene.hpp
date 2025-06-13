@@ -65,6 +65,7 @@ public:
         NOTHING,
         LSEAT,
         RSEAT,
+        MC
     };
 
     enum ItemType {
