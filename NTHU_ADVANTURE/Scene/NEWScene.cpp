@@ -59,7 +59,7 @@ void NEWScene::Initialize() {
     
     // 初始化玩家
     Player* player;
-    PlayerGroup->AddNewObject(player = new Player("player/idle.png", 100, 100));
+    PlayerGroup->AddNewObject(player = new Player("player/idle.png", BlockSize * 14, BlockSize * 2));
 
     // 初始化攝影機，確保玩家置中
     cameraOffset.x = player->Position.x - window_x / 2 * BlockSize; // 192
@@ -68,18 +68,18 @@ void NEWScene::Initialize() {
     cameraOffset.y = std::max(0.0f, std::min(cameraOffset.y, static_cast<float>(MapHeight * BlockSize - window_y * BlockSize)));
 
     // NPC
-    NPC* test;
+    //NPC* test;
     // sheet路徑, x, y, 
     // 上, 下, 左, 右, (先行在列)
     // 圖塊寬, 圖塊高
-    auto testAvatar = Engine::Resources::GetInstance().GetBitmap("NPC/test/avatar/test_avatar.png");
-    NPCGroup->AddNewObject(test = new NPC("NPC",testAvatar, "NPC/test/role/test_sheet.png",
-                                            BlockSize * 5, BlockSize * 5,
-                                            2, 3,  // 上 (第0列第2行)
-                                            2, 0,  // 下
-                                            2, 1,  // 左
-                                            2, 2,  // 右
-                                            64, 64)); // 圖塊大小
+    // auto testAvatar = Engine::Resources::GetInstance().GetBitmap("NPC/test/avatar/test_avatar.png");
+    // NPCGroup->AddNewObject(test = new NPC("NPC",testAvatar, "NPC/test/role/test_sheet.png",
+    //                                         BlockSize * 5, BlockSize * 5,
+    //                                         2, 3,  // 上 (第0列第2行)
+    //                                         2, 0,  // 下
+    //                                         2, 1,  // 左
+    //                                         2, 2,  // 右
+    //                                         64, 64)); // 圖塊大小
 
     NPC* bablo;
     auto babloAvatar = Engine::Resources::GetInstance().GetBitmap("NPC/bablo/avatar/bablo.png");
@@ -99,18 +99,27 @@ void NEWScene::Initialize() {
     //                                         2, 2,  // 右
     //                                         64, 64)); // 圖塊大小
 
+    // NPC* Yang;
+    // auto YangAvatar = Engine::Resources::GetInstance().GetBitmap("NPC/test/avatar/test_avatar.png");
+    // NPCGroup->AddNewObject(Yang = new NPC("Yang", YangAvatar, 
+    //                                         "NPC/Yang/role/YangU.png",
+    //                                         "NPC/Yang/role/YangD.png", 
+    //                                         "NPC/Yang/role/YangL.png",
+    //                                         "NPC/Yang/role/YangR.png",
+    //                                         BlockSize * 8, BlockSize * 8
+    //                                     ));
 
     // 初始化對話框
     dialog.Initialize();
     
-    // 設置NPC的對話內容
-    test->SetMessages({
-        "你好，我是村民A！",
-        "這個村莊最近不太平靜...",
-        "晚上請小心行事。",
-        "祝你好運，冒險者！",
-        "Shawty had them Apple Bottom jeans, jeans"
-    });
+    // // 設置NPC的對話內容
+    // test->SetMessages({
+    //     "你好，我是村民A！",
+    //     "這個村莊最近不太平靜...",
+    //     "晚上請小心行事。",
+    //     "祝你好運，冒險者！",
+    //     "Shawty had them Apple Bottom jeans, jeans"
+    // });
 
     bablo->SetMessages({
         "下次不會再喝酒了...",
@@ -261,7 +270,7 @@ void NEWScene::OnKeyDown(int keyCode) {
 }
 
 void NEWScene::ReadMap() {
-    std::string filename = std::string("Resource/talda") + ".txt";
+    std::string filename = std::string("Resource/NEWblock") + ".txt";
 
     // 清空舊的地圖數據
     mapData.clear();
@@ -271,13 +280,11 @@ void NEWScene::ReadMap() {
     std::ifstream fin(filename);
     while (fin >> c) {
         switch (c) {
-            // case '0': mapData.push_back(TILE_GRASS); break;
-            // case 'R': mapData.push_back(TILE_ROAD); break;
-            // case 'T': mapData.push_back(TILE_TREE); break;
-            // case 'S': mapData.push_back(TILE_STAIRS); break;
-            case 'W': mapData.push_back(TILE_WALL); break;
+            case '+': mapData.push_back(TILE_WOOD); break;
+            case '.': mapData.push_back(TILE_WALL); break;
             case '^': mapData.push_back(TABLE); break;
             case 'F': mapData.push_back(TILE_FLOOR); break;
+            case '&': mapData.push_back(NEWMAP); break;
             // case 'N': mapData.push_back(NEW); break;
             // case 'n': mapData.push_back(TILE_NEW); break;
             case '=': mapData.push_back(NOTHING); break;
@@ -299,14 +306,14 @@ void NEWScene::ReadMap() {
     // init init
     for(int y = 0; y < MapHeight; y++){
         for(int x = 0; x < MapWidth; x++){
-                    std::string imagePath = "mainworld/grasss.png";
-                    TileMapGroup->AddNewObject(
-                        new Engine::Image(imagePath, 
-                                        x * BlockSize, 
-                                        y * BlockSize, 
-                                        BlockSize, 
-                                        BlockSize)
-                    );
+            std::string imagePath = "NEW/newfloor.png";
+            TileMapGroup->AddNewObject(
+                new Engine::Image(imagePath, 
+                                x * BlockSize, 
+                                y * BlockSize, 
+                                BlockSize, 
+                                BlockSize)
+            );
         }
     }
     
@@ -319,7 +326,7 @@ void NEWScene::ReadMap() {
             switch(tileType) {
                 ///////////////////////
                 case TILE_WALL:
-                    imagePath = "smalleat/wall.png";
+                    imagePath = "NEW/newwall.png";
                     TileMapGroup->AddNewObject(
                         new Engine::Image(imagePath, 
                                         x * BlockSize, 
@@ -329,7 +336,7 @@ void NEWScene::ReadMap() {
                     );
                     break;
                 case TILE_FLOOR: {
-                    imagePath = "smalleat/floor.png";
+                    imagePath = "NEW/newfloor.png";
                     TileMapGroup->AddNewObject(
                         new Engine::Image(imagePath, 
                                         x * BlockSize, 
@@ -377,6 +384,26 @@ void NEWScene::ReadMap() {
                     );
                     break; 
                 //////////////////////////////
+                case TILE_WOOD:
+                    imagePath = "NEW/woodfloor.png";
+                    TileMapGroup->AddNewObject(
+                        new Engine::Image(imagePath, 
+                                        x * BlockSize, 
+                                        y * BlockSize, 
+                                        BlockSize, 
+                                        BlockSize)
+                    );
+                    break;
+                case NEWMAP:
+                    imagePath = "NEW/NEWmap.png";
+                    TileMapGroup->AddNewObject(
+                        new Engine::Image(imagePath, 
+                                        x * BlockSize, 
+                                        y * BlockSize, 
+                                        BlockSize * 30, 
+                                        BlockSize * 16)
+                    );
+                    Engine::LOG(Engine::INFO) << x << ", " << y;
                 case NOTHING:
                 default:
                     continue;
@@ -391,6 +418,14 @@ void NEWScene::ReadMap() {
             // );
         }
     }
+    std::string imagePath = "NEW/NEWmap.png";
+    TileMapGroup->AddNewObject(
+                            new Engine::Image(imagePath, 
+                                            0 * BlockSize, 
+                                            0 * BlockSize, 
+                                            BlockSize * 30, 
+                                            BlockSize * 16)
+                        );
 }
 
 Engine::Point NEWScene::getCamera(){
@@ -400,9 +435,11 @@ Engine::Point NEWScene::getCamera(){
 bool NEWScene::collision(int x, int y){
     switch(mapData[y/BlockSize * MapWidth + x / BlockSize]){
         case TILE_FLOOR:
+        case TILE_WOOD:
+        case NEWMAP:
+        case NOTHING:
             return true;
         case TILE_WALL:
-        case NOTHING:
         default:
             return false;
     }

@@ -26,6 +26,10 @@
 #include "UI/Component/Label.hpp"
 #include "LogScene.hpp"
 
+#include <allegro5/allegro_primitives.h>
+#include <allegro5/allegro_font.h>
+
+
 const int WindCloudScene::MapWidth = 30, WindCloudScene::MapHeight = 16;
 const int WindCloudScene::BlockSize = 64;
 
@@ -113,9 +117,20 @@ void WindCloudScene::Initialize() {
     });
 
     Yang->SetMessages({
-        "我是楊舜仁！",
-        "我不會當人",
+        "初次見面",
+        "我是楊舜仁的弟弟",
+        "羊順人"
     });
+
+    Yang->SetTriggerEvent([this]() {
+        if (!wordleFinished) {
+            isPlayingWordle = true;
+            dialog.StartDialog("楊舜仁的弟弟", Engine::Resources::GetInstance().GetBitmap("NPC/test/avatar/test_avatar.png"), {
+                "我來出個單字給你猜，5個字母！"
+            });
+        }
+    });
+
 
     // 預載資源
     Engine::Resources::GetInstance().GetBitmap("lose/benjamin-happy.png");
@@ -142,6 +157,7 @@ void WindCloudScene::Terminate() {
 void WindCloudScene::Update(float deltaTime) {
     IScene::Update(deltaTime);
     
+
     if(firstTime){
         std::vector<std::string> testMessages = {
             "清大「風雲樓」主要作為國際學生活動中心，",
@@ -156,6 +172,8 @@ void WindCloudScene::Update(float deltaTime) {
 
         firstTime = false;
     }
+
+
     // 獲取玩家對象
     Player* player = nullptr;
     for (auto& obj : PlayerGroup->GetObjects()) {
@@ -187,6 +205,58 @@ void WindCloudScene::Update(float deltaTime) {
     if (lives <= 0) {
         Engine::GameEngine::GetInstance().ChangeScene("lose");
     }
+
+    if (keyInputCooldown > 0) keyInputCooldown -= deltaTime;
+
+    if (isPlayingWordle && !wordleFinished) {
+        
+        if (keyInputCooldown <= 0) {
+            ALLEGRO_KEYBOARD_STATE kbState;
+            al_get_keyboard_state(&kbState);
+        
+            // 偵測鍵盤輸入 A-Z
+            for (int k = ALLEGRO_KEY_A; k <= ALLEGRO_KEY_Z; ++k) {
+                
+                al_get_keyboard_state(&kbState);
+
+                if (al_key_down(&kbState, k)) {
+
+                    if (currentGuess.length() < 5) {
+                        currentGuess += (char)(k - ALLEGRO_KEY_A + 'A');
+                        keyInputCooldown = 0.2;
+                    }
+                }
+            }
+
+            // 刪除鍵
+            al_get_keyboard_state(&kbState);
+
+            if (al_key_down(&kbState, ALLEGRO_KEY_BACKSPACE)) {
+                if (!currentGuess.empty())
+                    currentGuess.pop_back();
+                    keyInputCooldown = 0.2;
+            }
+
+            // 按 Enter 鍵提交
+            if (al_key_down(&kbState, ALLEGRO_KEY_ENTER)) {
+                if (currentGuess.length() == 5) {
+                    wordleGuesses.push_back(currentGuess);
+                    wordleAttempt++;
+                    if (currentGuess == wordleAnswer) {
+                        wordleSuccess = true;
+                        wordleFinished = true;
+                        LogScene::money += 100; 
+                    } else if (wordleAttempt >= 6) {
+                        wordleFinished = true; 
+                    }
+                    currentGuess = "";
+                    keyInputCooldown = 0.2;
+                }
+            }
+        }
+
+    }
+
 }
 
 void WindCloudScene::Draw() const {
@@ -213,6 +283,49 @@ void WindCloudScene::Draw() const {
     if (dialog.IsDialogActive()) {
         dialog.Draw();
     }
+
+    if (isPlayingWordle) {
+        const int startX = 100, startY = 100, boxSize = 64;
+        for (int i = 0; i < wordleGuesses.size(); ++i) {
+            for (int j = 0; j < 5; ++j) {
+                char c = wordleGuesses[i][j];
+                ALLEGRO_COLOR color = al_map_rgb(100, 100, 100);
+                if (c == wordleAnswer[j]) {
+                    color = al_map_rgb(0, 200, 0); // 綠
+                } else if (wordleAnswer.find(c) != std::string::npos) {
+                    color = al_map_rgb(200, 200, 0); // 黃
+                } else {
+                    color = al_map_rgb(50, 50, 50); // 灰
+                }
+                al_draw_filled_rectangle(startX + j * boxSize, startY + i * boxSize,
+                                        startX + j * boxSize + boxSize, startY + i * boxSize + boxSize,
+                                        color);
+                al_draw_text(Engine::Resources::GetInstance().GetFont("pirulen.ttf", 32).get(),
+                            al_map_rgb(255, 255, 255), startX + j * boxSize + boxSize / 2,
+                            startY + i * boxSize + boxSize / 4, ALLEGRO_ALIGN_CENTER, std::string(1, c).c_str());
+            }
+        }
+
+        // 畫出目前輸入
+        for (int j = 0; j < currentGuess.length(); ++j) {
+            char c = currentGuess[j];
+            al_draw_filled_rectangle(startX + j * boxSize, startY + wordleGuesses.size() * boxSize,
+                                    startX + j * boxSize + boxSize, startY + wordleGuesses.size() * boxSize + boxSize,
+                                    al_map_rgb(80, 80, 80));
+            al_draw_text(Engine::Resources::GetInstance().GetFont("pirulen.ttf", 32).get(),
+                        al_map_rgb(255, 255, 255), startX + j * boxSize + boxSize / 2,
+                        startY + wordleGuesses.size() * boxSize + boxSize / 4, ALLEGRO_ALIGN_CENTER, std::string(1, c).c_str());
+        }
+
+        if (wordleFinished) {
+            std::string result = wordleSuccess ? "你成功了！獲得 100 元！" : "挑戰失敗，答案是 BINGO";
+            al_draw_text(Engine::Resources::GetInstance().GetFont("pirulen.ttf", 32).get(),
+                        al_map_rgb(255, 255, 255), startX, startY + 7 * boxSize,
+                        0, result.c_str());
+        }
+    }
+
+
 }
 
 void WindCloudScene::OnMouseDown(int button, int mx, int my) {
@@ -393,7 +506,7 @@ void WindCloudScene::ReadMap() {
                                         x * BlockSize, 
                                         y * BlockSize, 
                                         BlockSize * 8, 
-                                        BlockSize * 9)
+                                        BlockSize * 10)
                     );
                     break;
                 case NOTHING:
