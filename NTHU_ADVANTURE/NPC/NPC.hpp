@@ -5,6 +5,8 @@
 #include "Engine/Sprite.hpp"
 #include <memory> // for shared_ptr
 #include <vector>
+#include <functional>
+
 
 class Player;
 
@@ -14,6 +16,11 @@ public:
     std::shared_ptr<ALLEGRO_BITMAP> bmpIdle_down;
     std::shared_ptr<ALLEGRO_BITMAP> bmpIdle_left;
     std::shared_ptr<ALLEGRO_BITMAP> bmpIdle_right;
+    std::function<void()> triggerEvent;
+
+    void SetTriggerEvent(std::function<void()> func);
+
+
 
     // 從 sprite sheet 建構
     NPC(const std::string& name, std::shared_ptr<ALLEGRO_BITMAP> avatar, const std::string& sheetPath, float x, float y, 

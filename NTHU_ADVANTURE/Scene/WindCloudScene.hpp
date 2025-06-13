@@ -22,7 +22,8 @@ namespace Engine {
 class WindCloudScene final : public Engine::IScene {
 private:
     
-    
+    float keyInputCooldown = 0;
+    const float KEY_INPUT_INTERVAL = 5000000000;
     ALLEGRO_SAMPLE_ID bgmId;
     std::shared_ptr<ALLEGRO_SAMPLE_INSTANCE> deathBGMInstance;
 
@@ -36,6 +37,16 @@ private:
     Engine::Image* axeImage = nullptr;
     Engine::Image* speedImage = nullptr;
     Engine::Label* speedLabel;
+
+    bool isPlayingWordle = false;
+    std::string currentGuess = "";
+    int wordleAttempt = 0;
+    const std::string wordleAnswer = "BINGO";
+    std::vector<std::string> wordleGuesses;
+    bool wordleSuccess = false;
+    bool wordleFinished = false;
+
+
 protected:
     int lives;
     int money;
