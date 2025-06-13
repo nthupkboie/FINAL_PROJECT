@@ -354,7 +354,7 @@ void PlayScene::ReadMap() {
             
             switch(tileType) {
                 case TILE_GRASS: {
-                    imagePath = "mainworld/GAS.png";
+                    imagePath = "mainworld/GASS.png";
                     TileMapGroup->AddNewObject(
                         new Engine::Image(imagePath, 
                                         x * BlockSize, 
