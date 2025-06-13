@@ -86,8 +86,15 @@ add_executable(2025_I2P2_TowerDefense
     Scene/TaldaScene.hpp
     Scene/EEScene.cpp
     Scene/EEScene.hpp
+<<<<<<< main
+    # Scene/AIChatScene.cpp
+    # Scene/AIChatScene.hpp
+    Scene/CGLakeScene.cpp
+    Scene/CGLakeScene.hpp
+=======
     Scene/AIChatScene.cpp
     Scene/AIChatScene.hpp
+>>>>>>> main
 
     # UI
     UI/Component/Image.cpp

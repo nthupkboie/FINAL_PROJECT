@@ -24,16 +24,17 @@
 #include "LogScene.hpp"
 #include "Player/BattlePlayer.hpp"
 #include "NPC/NPC.hpp"
-#include "BattleScene.hpp"
+#include "CGLakeScene.hpp"
 #include "UI/Component/ImageButton.hpp"
 
 
-const int BattleScene::MapWidth = 30, BattleScene::MapHeight = 16;
-const int BattleScene::BlockSize = 64;
+const int CGLakeScene::MapWidth = 30, CGLakeScene::MapHeight = 16;
+const int CGLakeScene::BlockSize = 64;
 
-const int BattleScene::window_x = 30, BattleScene::window_y = 16;
+const int CGLakeScene::window_x = 30, CGLakeScene::window_y = 16;
 
-std::vector<std::vector<BattleScene::TileType>> BattleScene::mapState;
+std::vector<std::vector<CGLakeScene::TileType>> CGLakeScene::mapState;
+std::vector<CGLakeScene::TileType> CGLakeScene::mapData;
 
 //bool canWalk = true;
 
@@ -41,12 +42,12 @@ std::vector<std::vector<BattleScene::TileType>> BattleScene::mapState;
 //     return Engine::Point(MapWidth * BlockSize, MapHeight * BlockSize);
 // }
 
-Engine::Point BattleScene::GetClientSize() {
+Engine::Point CGLakeScene::GetClientSize() {
     return Engine::Point(window_x * BlockSize, window_y * BlockSize); // 視角大小
 }
 
-Engine::Point BattleScene::cameraOffset = Engine::Point(0, 0);
-void BattleScene::Initialize() {
+Engine::Point CGLakeScene::cameraOffset = Engine::Point(0, 0);
+void CGLakeScene::Initialize() {
     // 初始化遊戲狀態
     lives = 3;
     money = 0;
@@ -58,11 +59,11 @@ void BattleScene::Initialize() {
     AddNewObject(UIGroup = new Group()); // 新增 UIGroup
     
     // 讀取地圖
-    //ReadMap();
+    ReadMap();
 
-    timer = 60.0f;          // 60 秒限制
-    timeLimit = 60.0f;
-    GenerateMaze();
+    //timer = 60.0f;          // 60 秒限制
+    //timeLimit = 60.0f;
+    //GenerateMaze();
     
     // 初始化玩家
     BattlePlayer* player;
@@ -108,27 +109,27 @@ void BattleScene::Initialize() {
     if (LogScene::haveAxe){
         Engine::ImageButton* axeButton;
         axeButton = new Engine::ImageButton("stage-select/axe.png", "stage-select/axe.png", 1700, 50, 150, 150);
-        axeButton->SetOnClickCallback(std::bind(&BattleScene::AxeOnClick, this));
+        axeButton->SetOnClickCallback(std::bind(&CGLakeScene::AxeOnClick, this));
         AddNewControlObject(axeButton);
     }
     
 }
 
-void BattleScene::Terminate() {
+void CGLakeScene::Terminate() {
     AudioHelper::StopBGM(bgmId);
     IScene::Terminate();
 }
 
-void BattleScene::Update(float deltaTime) {
+void CGLakeScene::Update(float deltaTime) {
     IScene::Update(deltaTime);
 
     // 計時器
-    timer -= deltaTime;
-    if (timer <= 0) {
-        Engine::LOG(Engine::INFO) << "Time's up! Switching to lose scene.";
-        Engine::GameEngine::GetInstance().ChangeScene("lose");
-        return;
-    }
+    // timer -= deltaTime;
+    // if (timer <= 0) {
+    //     Engine::LOG(Engine::INFO) << "Time's up! Switching to lose scene.";
+    //     Engine::GameEngine::GetInstance().ChangeScene("lose");
+    //     return;
+    // }
     
     // 獲取玩家對象
     BattlePlayer* player = nullptr;
@@ -146,7 +147,6 @@ void BattleScene::Update(float deltaTime) {
     int gridY = static_cast<int>(std::floor(player->Position.y / BlockSize));
     if (gridX == MapWidth - 1 && gridY == MapHeight - 1) { // (29, 15)
         Engine::LOG(Engine::INFO) << "Reached goal! Switching to win scene.";
-        PlayScene::inBattle = false;
         Engine::GameEngine::GetInstance().ChangeScene("win");
         return;
     }
@@ -181,13 +181,11 @@ void BattleScene::Update(float deltaTime) {
 
     // 檢查遊戲結束條件
     if (lives <= 0) {
-        PlayScene::inBattle = false;
         Engine::GameEngine::GetInstance().ChangeScene("lose");
-        
     }
 }
 
-void BattleScene::Draw() const {
+void CGLakeScene::Draw() const {
     
 
     ALLEGRO_TRANSFORM transform;
@@ -204,13 +202,13 @@ void BattleScene::Draw() const {
 
     UIGroup->Draw(); // 繪製斧頭圖片
     IScene::Draw(); //畫斧頭 要放在最後
-    //繪製計時器
-    ALLEGRO_FONT* font = Engine::Resources::GetInstance().GetFont("normal.ttf", 24).get();
-    if (font) {
-        char timeStr[16];
-        snprintf(timeStr, sizeof(timeStr), "Time: %.1f", timer);
-        al_draw_text(font, al_map_rgb(255, 255, 255), 20, 20, ALLEGRO_ALIGN_LEFT, timeStr);
-    }
+    // 繪製計時器
+    // ALLEGRO_FONT* font = Engine::Resources::GetInstance().GetFont("normal.ttf", 24).get();
+    // if (font) {
+    //     char timeStr[16];
+    //     snprintf(timeStr, sizeof(timeStr), "Time: %.1f", timer);
+    //     al_draw_text(font, al_map_rgb(255, 255, 255), 20, 20, ALLEGRO_ALIGN_LEFT, timeStr);
+    // }
 
     
     // if (dialog.IsDialogActive()) {
@@ -218,7 +216,7 @@ void BattleScene::Draw() const {
     // }
 }
 
-void BattleScene::OnMouseDown(int button, int mx, int my) {
+void CGLakeScene::OnMouseDown(int button, int mx, int my) {
     if ((button & 1) && canChop) {
         //int worldX = mx + cameraOffset.x;
         //int worldY = my + cameraOffset.y;
@@ -228,8 +226,8 @@ void BattleScene::OnMouseDown(int button, int mx, int my) {
         if (gridX >= 0 && gridX < MapWidth && gridY >= 0 && gridY < MapHeight &&
             !(gridX == MapWidth - 1 && gridY == MapHeight - 1)) {
             Engine::LOG(Engine::INFO) << "Clicked grid: (" << gridX << ", " << gridY << ")";
-            mapState[gridY][gridX] = TILE_ROAD;
-            mapData[gridY * MapWidth + gridX] = static_cast<int>(TILE_ROAD);
+            //mapState[gridY][gridX] = TILE_ROAD;
+            mapData[gridY * MapWidth + gridX] = TILE_GRASS;
             UpdateTileMap(gridX, gridY);
             canChop = false; // 砍樹後禁用
         }
@@ -242,7 +240,7 @@ void BattleScene::OnMouseDown(int button, int mx, int my) {
     IScene::OnMouseDown(button, mx, my);
 }
 
-void BattleScene::OnMouseMove(int mx, int my) {
+void CGLakeScene::OnMouseMove(int mx, int my) {
     IScene::OnMouseMove(mx, my);
     // 更新斧頭圖片位置
     if (axeImage) {
@@ -250,11 +248,11 @@ void BattleScene::OnMouseMove(int mx, int my) {
     }
 }
 
-void BattleScene::OnMouseUp(int button, int mx, int my) {
+void CGLakeScene::OnMouseUp(int button, int mx, int my) {
     IScene::OnMouseUp(button, mx, my);
 }
 
-void BattleScene::OnKeyDown(int keyCode) {
+void CGLakeScene::OnKeyDown(int keyCode) {
     IScene::OnKeyDown(keyCode);
     
     // 按Enter鍵推進對話
@@ -264,8 +262,8 @@ void BattleScene::OnKeyDown(int keyCode) {
 
     if(keyCode == ALLEGRO_KEY_P){
         PlayScene::inPlay = true;
-        PlayScene::inBattle = false;
-        LogScene::money += 10;
+        //LogScene::money += 10;
+        PlayScene::inCGLake = false;
         Engine::GameEngine::GetInstance().ChangeScene("play");
     }
 
@@ -283,8 +281,8 @@ void BattleScene::OnKeyDown(int keyCode) {
     // }
 }
 
-void BattleScene::ReadMap() {
-    std::string filename = std::string("Resource/battle") + ".txt";
+void CGLakeScene::ReadMap() {
+    std::string filename = std::string("Resource/CGLake") + ".txt";
 
     // 清空舊的地圖數據
     mapData.clear();
@@ -296,6 +294,8 @@ void BattleScene::ReadMap() {
         switch (c) {
             case '0': mapData.push_back(TILE_GRASS); break;
             case '1': mapData.push_back(TILE_TREE); break;
+            case '2': mapData.push_back(TILE_WATER); break;
+            case '3': mapData.push_back(TILE_LOTUS); break;
 
             // case '-': mapData.push_back(TILE_GRASS); break;
             // case 'R': mapData.push_back(TILE_ROAD); break;
@@ -348,7 +348,7 @@ void BattleScene::ReadMap() {
                     );
                     break;
                 case TILE_TREE:
-                    imagePath = "mainworld/grass.png";
+                    imagePath = "mainworld/grasss.png";
                     TileMapGroup->AddNewObject(
                         new Engine::Image(imagePath, 
                                         x * BlockSize, 
@@ -395,6 +395,26 @@ void BattleScene::ReadMap() {
                                         BlockSize * 7)
                     );
                     break;
+                case TILE_WATER:
+                    imagePath = "mainworld/water.png";
+                    TileMapGroup->AddNewObject(
+                        new Engine::Image(imagePath, 
+                                        x * BlockSize, 
+                                        y * BlockSize, 
+                                        BlockSize, 
+                                        BlockSize)
+                    );
+                    break;
+                case TILE_LOTUS:
+                    imagePath = "mainworld/lotus.png";
+                    TileMapGroup->AddNewObject(
+                        new Engine::Image(imagePath, 
+                                        x * BlockSize, 
+                                        y * BlockSize, 
+                                        BlockSize, 
+                                        BlockSize)
+                    );
+                    break;
                 case TILE_NEW:
                 case NOTHING:
                 default:
@@ -413,7 +433,7 @@ void BattleScene::ReadMap() {
 }
 
 // 新增函數：更新指定格子的圖塊
-void BattleScene::UpdateTileMap(int gridX, int gridY) {
+void CGLakeScene::UpdateTileMap(int gridX, int gridY) {
     // 使用迭代器遍歷 TileMapGroup 的物件
     auto objects = TileMapGroup->GetObjects();
     std::vector<std::list<IObject*>::iterator> iteratorsToRemove;
@@ -432,8 +452,8 @@ void BattleScene::UpdateTileMap(int gridX, int gridY) {
     // }
 
     // 根據 mapState 添加新圖塊
-    TileType tileType = mapState[gridY][gridX];
-    std::string imagePath = "mainworld/grass.png";
+    TileType tileType = mapData[gridY * MapWidth + gridX];
+    std::string imagePath = "mainworld/grasss.png";
     TileMapGroup->AddNewObject(
         new Engine::Image(imagePath, gridX * BlockSize, gridY * BlockSize, BlockSize, BlockSize)
     );
@@ -460,187 +480,195 @@ void BattleScene::UpdateTileMap(int gridX, int gridY) {
     Engine::LOG(Engine::INFO) << "Updated tile at (" << gridX << ", " << gridY << ") to type " << tileType;
 }
 
-void BattleScene::GenerateMaze() {
-    // 初始化隨機數生成器
-    std::random_device rd;
-    std::mt19937 gen(rd());
-    std::uniform_real_distribution<> dis(0.0, 1.0);
+// void CGLakeScene::GenerateMaze() {
+//     // 初始化隨機數生成器
+//     std::random_device rd;
+//     std::mt19937 gen(rd());
+//     std::uniform_real_distribution<> dis(0.0, 1.0);
 
-    // 初始化地圖
-    mapState.resize(MapHeight, std::vector<TileType>(MapWidth, TILE_ROAD));
-    mapData.resize(MapWidth * MapHeight, static_cast<int>(TILE_ROAD));
+//     // 初始化地圖
+//     mapState.resize(MapHeight, std::vector<TileType>(MapWidth, TILE_ROAD));
+//     mapData.resize(MapWidth * MapHeight, static_cast<int>(TILE_ROAD));
 
-    // 隨機生成牆壁（70% 機率）
-    int treeCount = 0;
-    for (int y = 1; y < MapHeight - 1; y++) {
-        for (int x = 1; x < MapWidth - 1; x++) {
-            if (dis(gen) < 0.65) {
-                mapState[y][x] = TILE_TREE;
-                mapData[y * MapWidth + x] = static_cast<int>(TILE_TREE);
-                treeCount++;
-            }
-        }
-    }
-    Engine::LOG(Engine::INFO) << "Initial tree count: " << treeCount << " (" << (float)treeCount / ((MapWidth - 2) * (MapHeight - 2)) * 100 << "%)";
+//     // 隨機生成牆壁（70% 機率）
+//     int treeCount = 0;
+//     for (int y = 1; y < MapHeight - 1; y++) {
+//         for (int x = 1; x < MapWidth - 1; x++) {
+//             if (dis(gen) < 0.65) {
+//                 mapState[y][x] = TILE_TREE;
+//                 mapData[y * MapWidth + x] = static_cast<int>(TILE_TREE);
+//                 treeCount++;
+//             }
+//         }
+//     }
+//     Engine::LOG(Engine::INFO) << "Initial tree count: " << treeCount << " (" << (float)treeCount / ((MapWidth - 2) * (MapHeight - 2)) * 100 << "%)";
 
-    // 設置邊界為牆壁
-    for (int x = 0; x < MapWidth; x++) {
-        mapState[0][x] = TILE_TREE;
-        mapState[MapHeight - 1][x] = TILE_TREE;
-        mapData[x] = static_cast<int>(TILE_TREE);
-        mapData[(MapHeight - 1) * MapWidth + x] = static_cast<int>(TILE_TREE);
-    }
-    for (int y = 0; y < MapHeight; y++) {
-        mapState[y][0] = TILE_TREE;
-        mapState[y][MapWidth - 1] = TILE_TREE;
-        mapData[y * MapWidth] = static_cast<int>(TILE_TREE);
-        mapData[y * MapWidth + MapWidth - 1] = static_cast<int>(TILE_TREE);
-    }
+//     // 設置邊界為牆壁
+//     for (int x = 0; x < MapWidth; x++) {
+//         mapState[0][x] = TILE_TREE;
+//         mapState[MapHeight - 1][x] = TILE_TREE;
+//         mapData[x] = static_cast<int>(TILE_TREE);
+//         mapData[(MapHeight - 1) * MapWidth + x] = static_cast<int>(TILE_TREE);
+//     }
+//     for (int y = 0; y < MapHeight; y++) {
+//         mapState[y][0] = TILE_TREE;
+//         mapState[y][MapWidth - 1] = TILE_TREE;
+//         mapData[y * MapWidth] = static_cast<int>(TILE_TREE);
+//         mapData[y * MapWidth + MapWidth - 1] = static_cast<int>(TILE_TREE);
+//     }
 
-    // 設置起點和終點
-    mapState[2][2] = TILE_ROAD;
-    mapData[2 * MapWidth + 2] = static_cast<int>(TILE_ROAD);
-    mapState[MapHeight - 1][MapWidth - 1] = TILE_STAIRS;
-    mapData[(MapHeight - 1) * MapWidth + MapWidth - 1] = static_cast<int>(TILE_STAIRS);
+//     // 設置起點和終點
+//     mapState[2][2] = TILE_ROAD;
+//     mapData[2 * MapWidth + 2] = static_cast<int>(TILE_ROAD);
+//     mapState[MapHeight - 1][MapWidth - 1] = TILE_STAIRS;
+//     mapData[(MapHeight - 1) * MapWidth + MapWidth - 1] = static_cast<int>(TILE_STAIRS);
 
-    // 非遞迴 DFS
-    std::vector<std::vector<bool>> visited(MapHeight, std::vector<bool>(MapWidth, false));
-    std::stack<std::pair<int, int>> stack;
-    std::vector<std::pair<int, int>> path; // 記錄最終路徑
-    bool found = false;
-    int pathLength = 0;
-    const int maxSteps = 200; // 限制路徑長度
+//     // 非遞迴 DFS
+//     std::vector<std::vector<bool>> visited(MapHeight, std::vector<bool>(MapWidth, false));
+//     std::stack<std::pair<int, int>> stack;
+//     std::vector<std::pair<int, int>> path; // 記錄最終路徑
+//     bool found = false;
+//     int pathLength = 0;
+//     const int maxSteps = 200; // 限制路徑長度
 
-    stack.push({2, 2});
-    visited[2][2] = true;
-    path.push_back({2, 2});
+//     stack.push({2, 2});
+//     visited[2][2] = true;
+//     path.push_back({2, 2});
 
-    while (!stack.empty() && pathLength < maxSteps) {
-        auto [x, y] = stack.top();
-        if (x == MapWidth - 1 && y == MapHeight - 1) {
-            found = true;
-            break;
-        }
+//     while (!stack.empty() && pathLength < maxSteps) {
+//         auto [x, y] = stack.top();
+//         if (x == MapWidth - 1 && y == MapHeight - 1) {
+//             found = true;
+//             break;
+//         }
 
-        // 方向：右、下、左、上
-        std::vector<std::pair<int, int>> directions = {
-            {1, 0},  // 右
-            {0, 1},  // 下
-            {-1, 0}, // 左
-            {0, -1}  // 上
-        };
-        std::vector<float> weights = {0.45f, 0.45f, 0.05f, 0.05f}; // 右下 45%，左上 5%
+//         // 方向：右、下、左、上
+//         std::vector<std::pair<int, int>> directions = {
+//             {1, 0},  // 右
+//             {0, 1},  // 下
+//             {-1, 0}, // 左
+//             {0, -1}  // 上
+//         };
+//         std::vector<float> weights = {0.45f, 0.45f, 0.05f, 0.05f}; // 右下 45%，左上 5%
 
-        // 隨機打亂方向
-        for (int i = 0; i < 4; i++) {
-            int j = i + (int)(dis(gen) * (4 - i));
-            std::swap(directions[i], directions[j]);
-            std::swap(weights[i], weights[j]);
-        }
+//         // 隨機打亂方向
+//         for (int i = 0; i < 4; i++) {
+//             int j = i + (int)(dis(gen) * (4 - i));
+//             std::swap(directions[i], directions[j]);
+//             std::swap(weights[i], weights[j]);
+//         }
 
-        bool moved = false;
-        for (int i = 0; i < 4; i++) {
-            int nx = x + directions[i].first;
-            int ny = y + directions[i].second;
-            if (nx >= 0 && nx < MapWidth && ny >= 0 && ny < MapHeight && !visited[ny][nx]) {
-                stack.push({nx, ny});
-                visited[ny][nx] = true;
-                path.push_back({nx, ny});
-                pathLength++;
-                moved = true;
-                break;
-            }
-        }
+//         bool moved = false;
+//         for (int i = 0; i < 4; i++) {
+//             int nx = x + directions[i].first;
+//             int ny = y + directions[i].second;
+//             if (nx >= 0 && nx < MapWidth && ny >= 0 && ny < MapHeight && !visited[ny][nx]) {
+//                 stack.push({nx, ny});
+//                 visited[ny][nx] = true;
+//                 path.push_back({nx, ny});
+//                 pathLength++;
+//                 moved = true;
+//                 break;
+//             }
+//         }
 
-        if (!moved) {
-            stack.pop();
-            path.pop_back();
-            pathLength--;
-        }
-    }
+//         if (!moved) {
+//             stack.pop();
+//             path.pop_back();
+//             pathLength--;
+//         }
+//     }
 
-    // 若未找到路徑或路徑過長，重生成
-    if (!found || pathLength >= maxSteps) {
-        Engine::LOG(Engine::WARN) << "No path found or path too long (" << pathLength << " steps), regenerating maze...";
-        GenerateMaze();
-        return;
-    }
+//     // 若未找到路徑或路徑過長，重生成
+//     if (!found || pathLength >= maxSteps) {
+//         Engine::LOG(Engine::WARN) << "No path found or path too long (" << pathLength << " steps), regenerating maze...";
+//         GenerateMaze();
+//         return;
+//     }
 
-    // 僅將最終路徑設為 TILE_ROAD
-    for (const auto& [x, y] : path) {
-        if (mapState[y][x] != TILE_STAIRS) {
-            mapState[y][x] = TILE_ROAD;
-            mapData[y * MapWidth + x] = static_cast<int>(TILE_ROAD);
-        }
-    }
+//     // 僅將最終路徑設為 TILE_ROAD
+//     for (const auto& [x, y] : path) {
+//         if (mapState[y][x] != TILE_STAIRS) {
+//             mapState[y][x] = TILE_ROAD;
+//             mapData[y * MapWidth + x] = static_cast<int>(TILE_ROAD);
+//         }
+//     }
 
-    // 統計最終樹數量
-    treeCount = 0;
-    for (int y = 0; y < MapHeight; y++) {
-        for (int x = 0; x < MapWidth; x++) {
-            if (mapState[y][x] == TILE_TREE) treeCount++;
-        }
-    }
-    Engine::LOG(Engine::INFO) << "Path length: " << pathLength;
-    Engine::LOG(Engine::INFO) << "Final tree count: " << treeCount << " (" << (float)treeCount / (MapWidth * MapHeight) * 100 << "%)";
+//     // 統計最終樹數量
+//     treeCount = 0;
+//     for (int y = 0; y < MapHeight; y++) {
+//         for (int x = 0; x < MapWidth; x++) {
+//             if (mapState[y][x] == TILE_TREE) treeCount++;
+//         }
+//     }
+//     Engine::LOG(Engine::INFO) << "Path length: " << pathLength;
+//     Engine::LOG(Engine::INFO) << "Final tree count: " << treeCount << " (" << (float)treeCount / (MapWidth * MapHeight) * 100 << "%)";
 
-    // 額外增加樹密度（10% 非路徑格子）
-    for (int y = 1; y < MapHeight - 1; y++) {
-        for (int x = 1; x < MapWidth - 1; x++) {
-            if (mapState[y][x] == TILE_ROAD && !visited[y][x] && dis(gen) < 0.1) {
-                mapState[y][x] = TILE_TREE;
-                mapData[y * MapWidth + x] = static_cast<int>(TILE_TREE);
-                treeCount++;
-            }
-        }
-    }
-    Engine::LOG(Engine::INFO) << "Final tree count after extra: " << treeCount << " (" << (float)treeCount / (MapWidth * MapHeight) * 100 << "%)";
+//     // 額外增加樹密度（10% 非路徑格子）
+//     for (int y = 1; y < MapHeight - 1; y++) {
+//         for (int x = 1; x < MapWidth - 1; x++) {
+//             if (mapState[y][x] == TILE_ROAD && !visited[y][x] && dis(gen) < 0.1) {
+//                 mapState[y][x] = TILE_TREE;
+//                 mapData[y * MapWidth + x] = static_cast<int>(TILE_TREE);
+//                 treeCount++;
+//             }
+//         }
+//     }
+//     Engine::LOG(Engine::INFO) << "Final tree count after extra: " << treeCount << " (" << (float)treeCount / (MapWidth * MapHeight) * 100 << "%)";
 
-    // 繪製地圖
-    for (int y = 0; y < MapHeight; y++) {
-        for (int x = 0; x < MapWidth; x++) {
-            TileType tileType = mapState[y][x];
-            std::string imagePath;
+//     // 繪製地圖
+//     for (int y = 0; y < MapHeight; y++) {
+//         for (int x = 0; x < MapWidth; x++) {
+//             TileType tileType = mapState[y][x];
+//             std::string imagePath;
 
-            // 底圖：草地
-            imagePath = "mainworld/grass.png";
-            TileMapGroup->AddNewObject(
-                new Engine::Image(imagePath, x * BlockSize, y * BlockSize, BlockSize, BlockSize)
-            );
+//             // 底圖：草地
+//             imagePath = "mainworld/grass.png";
+//             TileMapGroup->AddNewObject(
+//                 new Engine::Image(imagePath, x * BlockSize, y * BlockSize, BlockSize, BlockSize)
+//             );
 
-            switch (tileType) {
-                case TILE_ROAD:
-                    // 路徑無需額外圖層
-                    break;
-                case TILE_TREE:
-                    imagePath = "mainworld/tree.png";
-                    TileMapGroup->AddNewObject(
-                        new Engine::Image(imagePath, x * BlockSize, y * BlockSize, BlockSize, BlockSize)
-                    );
-                    break;
-                case TILE_STAIRS:
-                    imagePath = "mainworld/stairs.png";
-                    TileMapGroup->AddNewObject(
-                        new Engine::Image(imagePath, x * BlockSize, y * BlockSize, BlockSize, BlockSize)
-                    );
-                    break;
-                default:
-                    break;
-            }
-        }
-    }
-}
+//             switch (tileType) {
+//                 case TILE_ROAD:
+//                     // 路徑無需額外圖層
+//                     break;
+//                 case TILE_TREE:
+//                     imagePath = "mainworld/tree.png";
+//                     TileMapGroup->AddNewObject(
+//                         new Engine::Image(imagePath, x * BlockSize, y * BlockSize, BlockSize, BlockSize)
+//                     );
+//                     break;
+//                 case TILE_STAIRS:
+//                     imagePath = "mainworld/stairs.png";
+//                     TileMapGroup->AddNewObject(
+//                         new Engine::Image(imagePath, x * BlockSize, y * BlockSize, BlockSize, BlockSize)
+//                     );
+//                     break;
+//                 default:
+//                     break;
+//             }
+//         }
+//     }
+// }
 
-Engine::Point BattleScene::getCamera(){
+Engine::Point CGLakeScene::getCamera(){
     return Engine::Point(cameraOffset.x + 5 * BlockSize, cameraOffset.y + 2.5 * BlockSize);
 }
 
-bool BattleScene::collision(int x, int y){
-    if (mapState[y/BlockSize][x/BlockSize] == TILE_TREE) return false;
-    else return true;
+bool CGLakeScene::collision(int x, int y){
+    switch(mapData[y/BlockSize * MapWidth + x / BlockSize]){
+        case TILE_GRASS:
+            return true;
+        case TILE_WATER:
+        case TILE_LOTUS:
+        case TILE_TREE:
+        case NOTHING:
+        default:
+            return false;
+    }
 }
 
-void BattleScene::AxeOnClick() {
+void CGLakeScene::AxeOnClick() {
     canChop = true;
     if (!axeImage) {
         axeImage = new Engine::Image("stage-select/axe.png", 1750, 100, 96, 96);
