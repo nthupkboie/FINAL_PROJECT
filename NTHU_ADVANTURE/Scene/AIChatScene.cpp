@@ -104,7 +104,7 @@ void AIChatScene::Draw() const {
     ALLEGRO_FONT* hintFont = al_load_ttf_font("Resource/fonts/normal.ttf", 40, 0);  // Larger font
     if (!hintFont) hintFont = al_create_builtin_font();
     al_draw_text(hintFont, al_map_rgb(180, 180, 180), 
-                boxX + boxWidth - 25, boxY + boxHeight - 45, 
+                boxX + boxWidth - 25, boxY + boxHeight - 200, 
                 ALLEGRO_ALIGN_RIGHT, "ESC to return to menu");
     if (hintFont && hintFont != al_create_builtin_font()) {
         al_destroy_font(hintFont);
@@ -160,9 +160,6 @@ void AIChatScene::OnKeyDown(int keyCode) {
     } 
     else if (keyCode == ALLEGRO_KEY_ENTER && !currentInput.empty()) {
         Engine::LOG(Engine::INFO) << "Enter pressed with input, sending message";
-        // AddMessage("You: " + currentInput);
-        // AddMessage("AI: Thinking...");  // 立即顯示思考中
-        // al_flip_display();
         SendMyMessage();
     }
     else if (keyCode == ALLEGRO_KEY_ESCAPE) {

@@ -40,8 +40,6 @@
 // SPDX-FileCopyrightText: 2013 - 2025 Niels Lohmann <https://nlohmann.me>
 // SPDX-License-Identifier: MIT
 
-
-
 #include <utility>
 
 // #include <nlohmann/detail/abi_macros.hpp>
