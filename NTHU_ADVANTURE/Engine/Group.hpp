@@ -118,6 +118,9 @@ namespace Engine {
         /// </summary>
         /// <param name="it">The iterator of the Object.</param>
         void RemoveObject(std::list<std::pair<bool, IObject *>>::iterator it);
+        void RemoveObject(IObject* obj); // ← 在 public 加這行（你原本叫 RemoveObject1）
+
+
         /// <summary>
         /// Remove the Control from this scene.
         /// </summary>

@@ -68,56 +68,39 @@ void TaldaScene::Initialize() {
     cameraOffset.x = std::max(0.0f, std::min(cameraOffset.x, static_cast<float>(MapWidth * BlockSize - window_x * BlockSize)));
     cameraOffset.y = std::max(0.0f, std::min(cameraOffset.y, static_cast<float>(MapHeight * BlockSize - window_y * BlockSize)));
 
-    // NPC
-    NPC* test;
-    // sheet路徑, x, y, 
-    // 上, 下, 左, 右, (先行在列)
-    // 圖塊寬, 圖塊高
-    auto testAvatar = Engine::Resources::GetInstance().GetBitmap("NPC/test/avatar/test_avatar.png");
-    NPCGroup->AddNewObject(test = new NPC("NPC",testAvatar, "NPC/test/role/test_sheet.png",
-                                            BlockSize * 5, BlockSize * 5,
-                                            2, 3,  // 上 (第0列第2行)
-                                            2, 0,  // 下
-                                            2, 1,  // 左
-                                            2, 2,  // 右
-                                            64, 64)); // 圖塊大小
-
-    NPC* Yang;
-    auto YangAvatar = Engine::Resources::GetInstance().GetBitmap("NPC/test/avatar/test_avatar.png");
-    NPCGroup->AddNewObject(Yang = new NPC("Yang", YangAvatar, 
-                                            "NPC/Yang/role/YangU.png",
-                                            "NPC/Yang/role/YangD.png", 
-                                            "NPC/Yang/role/YangL.png",
-                                            "NPC/Yang/role/YangR.png",
-                                            BlockSize * 8, BlockSize * 8
-                                        ));
-
     // 初始化對話框
     dialog.Initialize();
-    
-    // 設置NPC的對話內容
-    test->SetMessages({
-        "你好，我是村民A！",
-        "這個村莊最近不太平靜...",
-        "晚上請小心行事。",
-        "祝你好運，冒險者！",
-        "Shawty had them Apple Bottom jeans, jeans"
-    });
-
-    Yang->SetMessages({
-        "我是楊舜仁！",
-        "我不會當人",
-    });
-
-    // 預載資源
-    Engine::Resources::GetInstance().GetBitmap("lose/benjamin-happy.png");
-    
+   
     // 開始背景音樂
     bgmId = AudioHelper::PlayBGM("play.ogg");
     LabelGroup->AddNewObject(moneyLabel = new Engine::Label(std::to_string(LogScene::money), "title.ttf", 48, 130, 70, 255, 255, 255, 255, 0.5, 0.5));
     LabelGroup->AddNewObject(moneyImage = new Engine::Image("play/dollar.png", 20, 35, 56, 56));
     if (LogScene::haveAxe) LabelGroup->AddNewObject(axeImage = new Engine::Image("stage-select/axe.png", 20, 105, 56, 56));
 
+    // 黑板的顯示位置與尺寸
+    float bb_x = 1920 / 4 - 350;
+    float bb_y = 1024 / 4 - 50;
+    float bb_width = 1650;
+    float bb_height = 650;
+
+    // 顯示黑板背景
+    LabelGroup->AddNewObject(new Engine::Image("scene/bb.png", bb_x, bb_y, bb_width, bb_height));
+
+    bb_x = 1920 / 2 ;
+    // 顯示「地點功能」的規則文字，每行一個Label，文字置左
+    LabelGroup->AddNewObject(new Engine::Label("地點功能:", "Retro.ttf", 30, bb_x + 30, bb_y + 40, 255, 255, 255, 255, 0.5, 0.5));
+    LabelGroup->AddNewObject(new Engine::Label("1. 新齋 : 人見人愛的八卦地點", "Retro.ttf", 30, bb_x + 30, bb_y + 80, 255, 255, 255, 255, 0.5, 0.5));
+    LabelGroup->AddNewObject(new Engine::Label("2. 小吃部 : 可以購買你需要的技能，但這是屬於有錢人的地盤，如果沒錢請前往迷宮賺錢喔", "Retro.ttf", 30, bb_x + 30, bb_y + 120, 255, 255, 255, 255, 0.5, 0.5));
+    LabelGroup->AddNewObject(new Engine::Label("3. 迷宮 : 若在時間內走出則可贏取金幣", "Retro.ttf", 30, bb_x + 30, bb_y + 160, 255, 255, 255, 255, 0.5, 0.5));
+    LabelGroup->AddNewObject(new Engine::Label("4. 水木 : 想知道本日運勢嗎? 求神問卜好所在", "Retro.ttf", 30, bb_x + 30, bb_y + 200, 255, 255, 255, 255, 0.5, 0.5));
+    LabelGroup->AddNewObject(new Engine::Label("5. 風雲樓 : 待開放", "Retro.ttf", 30, bb_x + 30, bb_y + 240, 255, 255, 255, 255, 0.5, 0.5));
+    LabelGroup->AddNewObject(new Engine::Label("6. 台達 : 就是這裡啦，這是我最愛的秘密基地，在台達可以學到好多有趣的密技喔，資工系的學生都說讚", "Retro.ttf", 30, bb_x + 30, bb_y + 280, 255, 255, 255, 255, 0.5, 0.5));
+    LabelGroup->AddNewObject(new Engine::Label("7. 資電 : 哎呀呀，成敗關鍵之地，被當與否，就看你有沒有認真囉", "Retro.ttf", 30, bb_x + 30, bb_y + 320, 255, 255, 255, 255, 0.5, 0.5));
+
+    // 顯示「贏得遊戲的方法」文字，手動換行
+    LabelGroup->AddNewObject(new Engine::Label("贏得遊戲的方法:", "Retro.ttf", 30, bb_x + 30, bb_y + 470, 255, 255, 255, 255, 0.5, 0.5));
+    LabelGroup->AddNewObject(new Engine::Label("在各位小朋友好好努力學習與探索校園後，回答幾個小問題就可以決定你們能否通過遊戲考驗，", "Retro.ttf", 30, bb_x + 30, bb_y + 520, 255, 255, 255, 255, 0.5, 0.5));
+    LabelGroup->AddNewObject(new Engine::Label("但是，這個遊戲是有玄機的，我們的排名方式要依照通關速度還有剩餘金錢喔，請大家務必認真學習。", "Retro.ttf", 30, bb_x + 30, bb_y + 560, 255, 255, 255, 255, 0.5, 0.5));
 }
 
 void TaldaScene::Terminate() {

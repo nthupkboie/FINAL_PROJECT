@@ -10,13 +10,16 @@
 #include "Engine/Point.hpp"
 
 #include "NPC/NPCDialog.hpp"
+#include "Player/Player.hpp"
 
+class Player;
 class Turret;
 namespace Engine {
     class Group;
     class Image;
     class Label;
     class Sprite;
+    
 }   // namespace Engine
 
 class PlayScene final : public Engine::IScene {
@@ -34,6 +37,18 @@ private:
     Engine::Image* axeImage;
     Engine::Image* speedImage = nullptr;
     Engine::Label* speedLabel;
+   
+    
+    struct BuildingZone {
+        int x;          // x 座標 (像素)
+        int y;          // y 座標 (像素)
+        int width;      // 寬度 (像素)
+        int height;     // 高度 (像素)
+        std::string buildingName;  // 建築物名稱
+    };
+
+    // 存儲所有建築物的範圍
+    std::vector<BuildingZone> buildingZones;
 
 protected:
     int lives;
@@ -62,6 +77,7 @@ public:
     static const int BlockSize;
     static const std::vector<int> code;
     Group *TileMapGroup;
+    Player* player;
 
     // new add
     Group *PlayerGroup;
@@ -71,8 +87,11 @@ public:
     std::vector<std::vector<TileType>> mapState;
     std::vector<std::vector<int>> mapDistance;
     std::list<int> keyStrokes;
+    std::string currentBuildingName = ""; // <- 追蹤目前提示哪棟建築
 
     ALLEGRO_KEYBOARD_STATE keyboardState; // new add
+    Engine::Label* enterPromptLabel = nullptr;
+    
 
     static Engine::Point GetClientSize();
     explicit PlayScene() = default;
@@ -96,6 +115,15 @@ public:
     static std::vector<PlayScene::TileType> mapData;
 
     static bool collision(int x, int y);
+
+    // 初始化建築物範圍
+    void AddBuildingZone(int x, int y, int width, int height, const std::string& buildingName);
+
+    // 檢查玩家是否在建築物範圍內
+    bool IsPlayerNearBuilding(Player* player, const BuildingZone& zone);
+
+    // 顯示進入建築物的提示
+    void ShowEnterPrompt(const std::string& buildingName, int zoneX, int zoneY);
 
     //static int money;
 };
