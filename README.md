@@ -10,8 +10,12 @@
 - Procedural generated level (maze generater)
 - Camera movement
 - Mini map
+- Get today's fortune
+- 
 - [Hard]
-- NPC Dialog animates
+- NPC & NPC Dialog animates & NPC walking
+- perfect story connection
+- 
 ## Individual Contribution
 - 113062330 林柏崴 (%): Local account system
 - 113062237 徐鈺婷 (%): DRAW
