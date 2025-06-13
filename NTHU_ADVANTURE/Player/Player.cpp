@@ -63,7 +63,7 @@ Player::Player(std::string img, float x, float y) : Engine::Sprite(img, x, y) {
 void Player::Update(float deltaTime) {
     // 更新動畫計時器
 
-    if (NPCDialog::talking) return;
+    if (NPCDialog::talking && PlayScene::inPlay) return;
 
     animationTimer += deltaTime;
     if (animationTimer >= 0.4f) animationTimer -= 0.4f; // 每 0.4 秒循環
@@ -252,8 +252,7 @@ void Player::Draw() const {
 
 bool Player::canWalk(int x, int y){
     if (x > PlayScene::BlockSize * PlayScene::MapWidth || x < 0 || y < 0 || y > PlayScene::BlockSize * PlayScene::MapHeight) return false;
-    if (PlayScene::inPlay){
-        
+    if (PlayScene::inPlay){   
         if (!PlayScene::collision(x, y)) {
             //printf("NOOOOOOOOO\n");
             return false;
@@ -264,6 +263,6 @@ bool Player::canWalk(int x, int y){
             return false;
         }
     }
-    
+    // collsion
     return true;
 }

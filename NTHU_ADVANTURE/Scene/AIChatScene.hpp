@@ -20,9 +20,10 @@ private:
     float boxX;
     float boxY;
     float padding;
-    
+
+    void SplitTextIntoLines(const std::string& text, std::vector<std::string>& lines, float maxWidth) const;
 public:
-    AIChatScene();
+    explicit AIChatScene();
     void Initialize() override;
     void Terminate() override;
     void Update(float deltaTime) override;
@@ -30,8 +31,11 @@ public:
     void OnKeyDown(int keyCode) override;
     
     void AddMessage(const std::string& message);
-    void SendMessage();
+    void SendMyMessage();
     void BackToStart();
+
+    bool isWaitingForResponse;
+    float loadingAnimationTime;
 };
 
 #endif // AICHATSCENE_HPP

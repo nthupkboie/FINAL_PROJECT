@@ -354,7 +354,7 @@ void PlayScene::ReadMap() {
             
             switch(tileType) {
                 case TILE_GRASS: {
-                    imagePath = "mainworld/GAS.png";
+                    imagePath = "mainworld/GASS.png";
                     TileMapGroup->AddNewObject(
                         new Engine::Image(imagePath, 
                                         x * BlockSize, 
@@ -582,7 +582,7 @@ void PlayScene::DrawMiniMap() const {
                 case NOTHING:
                     color = al_map_rgb(255, 132, 132);
                 break;
-                default:         color = al_map_rgb(0, 0, 0); break;
+                default: color = al_map_rgb(255, 132, 132); break;
             }
             al_draw_filled_rectangle(
                 minimapX + x * BlockSize * scale,
