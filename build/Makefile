@@ -704,6 +704,30 @@ Scene/LoseScene.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_TowerDefense.dir\build.make CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/LoseScene.cpp.s
 .PHONY : Scene/LoseScene.cpp.s
 
+Scene/NEWScene.obj: Scene/NEWScene.cpp.obj
+.PHONY : Scene/NEWScene.obj
+
+# target to build an object file
+Scene/NEWScene.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_TowerDefense.dir\build.make CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/NEWScene.cpp.obj
+.PHONY : Scene/NEWScene.cpp.obj
+
+Scene/NEWScene.i: Scene/NEWScene.cpp.i
+.PHONY : Scene/NEWScene.i
+
+# target to preprocess a source file
+Scene/NEWScene.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_TowerDefense.dir\build.make CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/NEWScene.cpp.i
+.PHONY : Scene/NEWScene.cpp.i
+
+Scene/NEWScene.s: Scene/NEWScene.cpp.s
+.PHONY : Scene/NEWScene.s
+
+# target to generate assembly for a file
+Scene/NEWScene.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2025_I2P2_TowerDefense.dir\build.make CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/NEWScene.cpp.s
+.PHONY : Scene/NEWScene.cpp.s
+
 Scene/PlayScene.obj: Scene/PlayScene.cpp.obj
 .PHONY : Scene/PlayScene.obj
 
@@ -1169,6 +1193,9 @@ help:
 	@echo ... Scene/LoseScene.obj
 	@echo ... Scene/LoseScene.i
 	@echo ... Scene/LoseScene.s
+	@echo ... Scene/NEWScene.obj
+	@echo ... Scene/NEWScene.i
+	@echo ... Scene/NEWScene.s
 	@echo ... Scene/PlayScene.obj
 	@echo ... Scene/PlayScene.i
 	@echo ... Scene/PlayScene.s

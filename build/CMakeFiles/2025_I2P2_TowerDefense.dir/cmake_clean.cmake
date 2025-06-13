@@ -50,6 +50,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/LogScene.cpp.obj.d"
   "CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/LoseScene.cpp.obj"
   "CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/LoseScene.cpp.obj.d"
+  "CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/NEWScene.cpp.obj"
+  "CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/NEWScene.cpp.obj.d"
   "CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/PlayScene.cpp.obj"
   "CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/PlayScene.cpp.obj.d"
   "CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/RegisterScene.cpp.obj"

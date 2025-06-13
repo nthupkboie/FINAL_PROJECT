@@ -10,6 +10,7 @@
 #include "Engine/Point.hpp"
 
 #include "NPC/NPCDialog.hpp"
+#include "NPC/NPC.hpp"
 
 class Turret;
 namespace Engine {
@@ -36,6 +37,11 @@ private:
     Engine::Image* axeImage = nullptr;
     Engine::Image* speedImage = nullptr;
     Engine::Label* speedLabel;
+    NPC* nineSky;
+    float timer = 3.0f;
+    std::shared_ptr<ALLEGRO_BITMAP> bmp1;
+    std::shared_ptr<ALLEGRO_BITMAP> bmp2;
+    std::shared_ptr<ALLEGRO_BITMAP> bmp3;
 protected:
     int lives;
     int money;

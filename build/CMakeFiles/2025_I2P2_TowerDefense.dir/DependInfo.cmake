@@ -32,6 +32,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "C:/FINAL_PROJECT/NTHU_ADVANTURE/Scene/EEScene.cpp" "CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/EEScene.cpp.obj" "gcc" "CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/EEScene.cpp.obj.d"
   "C:/FINAL_PROJECT/NTHU_ADVANTURE/Scene/LogScene.cpp" "CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/LogScene.cpp.obj" "gcc" "CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/LogScene.cpp.obj.d"
   "C:/FINAL_PROJECT/NTHU_ADVANTURE/Scene/LoseScene.cpp" "CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/LoseScene.cpp.obj" "gcc" "CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/LoseScene.cpp.obj.d"
+  "C:/FINAL_PROJECT/NTHU_ADVANTURE/Scene/NEWScene.cpp" "CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/NEWScene.cpp.obj" "gcc" "CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/NEWScene.cpp.obj.d"
   "C:/FINAL_PROJECT/NTHU_ADVANTURE/Scene/PlayScene.cpp" "CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/PlayScene.cpp.obj" "gcc" "CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/PlayScene.cpp.obj.d"
   "C:/FINAL_PROJECT/NTHU_ADVANTURE/Scene/RegisterScene.cpp" "CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/RegisterScene.cpp.obj" "gcc" "CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/RegisterScene.cpp.obj.d"
   "C:/FINAL_PROJECT/NTHU_ADVANTURE/Scene/ScoreboardScene.cpp" "CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/ScoreboardScene.cpp.obj" "gcc" "CMakeFiles/2025_I2P2_TowerDefense.dir/Scene/ScoreboardScene.cpp.obj.d"
