@@ -972,4 +972,5 @@ CMakeFiles/2025_I2P2_TowerDefense.dir/Player/Player.cpp.obj: \
   C:/FINAL_PROJECT/NTHU_ADVANTURE/./Scene/TaldaScene.hpp \
   C:/FINAL_PROJECT/NTHU_ADVANTURE/./Scene/WaterWoodScene.hpp \
   C:/FINAL_PROJECT/NTHU_ADVANTURE/./Scene/WindCloudScene.hpp \
+  C:/FINAL_PROJECT/NTHU_ADVANTURE/./Scene/NewScene.hpp \
   C:/FINAL_PROJECT/NTHU_ADVANTURE/./Engine/Resources.hpp

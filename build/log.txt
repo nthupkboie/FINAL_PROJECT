@@ -2,7 +2,7 @@
 [INFO] Game Initializing...
 [INFO] Loaded Resource<image>: Resource/images/icon.png
 [INFO] Loaded window icon from: icon.png
-[INFO] There are total 2 supported mouse buttons
+[INFO] There are total 16 supported mouse buttons
 [INFO] Allegro5 initialized
 [INFO] Game begin
 [INFO] Loaded Resource<image>: Resource/images/scene/start-by.png scaled to 1920x1024
@@ -93,30 +93,9 @@
 [DEBUGGING] NPC 'NPC' reached point 3
 [DEBUGGING] NPC 'NPC' reached point 0
 [DEBUGGING] NPC 'NPC' reached point 1
-[DEBUGGING] NPC 'NPC' reached point 2
-[DEBUGGING] NPC 'NPC' reached point 3
-[DEBUGGING] NPC 'NPC' reached point 0
-[DEBUGGING] NPC 'NPC' reached point 1
-[DEBUGGING] NPC 'NPC' reached point 2
-[DEBUGGING] NPC 'NPC' reached point 3
-[DEBUGGING] NPC 'NPC' reached point 0
-[DEBUGGING] NPC 'NPC' reached point 1
-[DEBUGGING] NPC 'NPC' reached point 2
-[DEBUGGING] NPC 'NPC' reached point 3
-[DEBUGGING] NPC 'NPC' reached point 0
-[DEBUGGING] NPC 'NPC' reached point 1
-[DEBUGGING] NPC 'NPC' reached point 2
-[DEBUGGING] NPC 'NPC' reached point 3
-[DEBUGGING] NPC 'NPC' reached point 0
-[DEBUGGING] NPC 'NPC' reached point 1
-[DEBUGGING] NPC 'NPC' reached point 2
-[DEBUGGING] NPC 'NPC' reached point 3
-[DEBUGGING] NPC 'NPC' reached point 0
 [INFO] Loaded Resource<font>: Resource/fonts/Retro.ttf with size 30
-[DEBUGGING] NPC 'NPC' reached point 1
 [DEBUGGING] NPC 'NPC' reached point 2
 [DEBUGGING] NPC 'NPC' reached point 3
-[DEBUGGING] NPC 'NPC' reached point 0
 [INFO] stopped audio (bgm)
 [INFO] mapData.size() 480
 [INFO] MapWidth * MapHeight 480
@@ -128,77 +107,9 @@
 [INFO] Loaded Resource<image>: Resource/images/NPC/Yang/role/YangL.png
 [INFO] Loaded Resource<image>: Resource/images/NPC/Yang/role/YangR.png
 [INFO] Loaded Resource<image>: Resource/images/lose/benjamin-happy.png
-[INFO] Changed to windcloud scene
-[INFO] stopped audio (bgm)
-[INFO] mapData.size() 1920
-[INFO] MapWidth * MapHeight 1920
-[DEBUGGING] Added patrol point to NPC 'NPC': (1952, 672)
-[DEBUGGING] Added patrol point to NPC 'NPC': (1824, 672)
-[DEBUGGING] Added patrol point to NPC 'NPC': (1824, 544)
-[DEBUGGING] Added patrol point to NPC 'NPC': (1952, 544)
-[INFO] Changed to play scene
-[DEBUGGING] NPC 'NPC' reached point 1
-[DEBUGGING] NPC 'NPC' reached point 2
-[DEBUGGING] NPC 'NPC' reached point 3
-[DEBUGGING] NPC 'NPC' reached point 0
-[DEBUGGING] NPC 'NPC' reached point 1
-[DEBUGGING] NPC 'NPC' reached point 2
-[DEBUGGING] NPC 'NPC' reached point 3
-[DEBUGGING] NPC 'NPC' reached point 0
-[DEBUGGING] NPC 'NPC' reached point 1
-[DEBUGGING] NPC 'NPC' reached point 2
-[DEBUGGING] NPC 'NPC' reached point 3
-[DEBUGGING] NPC 'NPC' reached point 0
-[DEBUGGING] NPC 'NPC' reached point 1
-[DEBUGGING] NPC 'NPC' reached point 2
-[DEBUGGING] NPC 'NPC' reached point 3
-[DEBUGGING] NPC 'NPC' reached point 0
-[DEBUGGING] NPC 'NPC' reached point 1
-[DEBUGGING] NPC 'NPC' reached point 2
-[DEBUGGING] NPC 'NPC' reached point 3
-[DEBUGGING] NPC 'NPC' reached point 0
-[DEBUGGING] NPC 'NPC' reached point 1
-[DEBUGGING] NPC 'NPC' reached point 2
-[DEBUGGING] NPC 'NPC' reached point 3
-[DEBUGGING] NPC 'NPC' reached point 0
-[DEBUGGING] NPC 'NPC' reached point 1
-[DEBUGGING] NPC 'NPC' reached point 2
-[DEBUGGING] NPC 'NPC' reached point 3
-[DEBUGGING] NPC 'NPC' reached point 0
-[DEBUGGING] NPC 'NPC' reached point 1
-[DEBUGGING] NPC 'NPC' reached point 2
-[DEBUGGING] NPC 'NPC' reached point 3
-[DEBUGGING] NPC 'NPC' reached point 0
-[DEBUGGING] NPC 'NPC' reached point 1
-[DEBUGGING] NPC 'NPC' reached point 2
-[DEBUGGING] NPC 'NPC' reached point 3
-[DEBUGGING] NPC 'NPC' reached point 0
-[DEBUGGING] NPC 'NPC' reached point 1
-[DEBUGGING] NPC 'NPC' reached point 2
-[DEBUGGING] NPC 'NPC' reached point 3
-[DEBUGGING] NPC 'NPC' reached point 0
-[DEBUGGING] NPC 'NPC' reached point 1
-[DEBUGGING] NPC 'NPC' reached point 2
-[DEBUGGING] NPC 'NPC' reached point 3
-[DEBUGGING] NPC 'NPC' reached point 0
-[DEBUGGING] NPC 'NPC' reached point 1
-[DEBUGGING] NPC 'NPC' reached point 2
-[DEBUGGING] NPC 'NPC' reached point 3
-[DEBUGGING] NPC 'NPC' reached point 0
-[DEBUGGING] NPC 'NPC' reached point 1
-[DEBUGGING] NPC 'NPC' reached point 2
-[DEBUGGING] NPC 'NPC' reached point 3
-[DEBUGGING] NPC 'NPC' reached point 0
-[DEBUGGING] NPC 'NPC' reached point 1
-[DEBUGGING] NPC 'NPC' reached point 2
-[DEBUGGING] NPC 'NPC' reached point 3
-[DEBUGGING] NPC 'NPC' reached point 0
-[DEBUGGING] NPC 'NPC' reached point 1
-[INFO] stopped audio (bgm)
-[INFO] mapData.size() 480
-[INFO] MapWidth * MapHeight 480
 [INFO] Loaded Resource<audio>: Resource/audios/Ruby.ogg
-[INFO] Changed to EE scene
+[INFO] Changed to new scene
+[INFO] Loaded Resource<image>: Resource/images/NPC/test/avatar/NEWicon.png
 [INFO] stopped audio (bgm)
 [INFO] mapData.size() 1920
 [INFO] MapWidth * MapHeight 1920
@@ -211,35 +122,32 @@
 [DEBUGGING] NPC 'NPC' reached point 2
 [DEBUGGING] NPC 'NPC' reached point 3
 [DEBUGGING] NPC 'NPC' reached point 0
-[DEBUGGING] NPC 'NPC' reached point 1
-[DEBUGGING] NPC 'NPC' reached point 2
-[DEBUGGING] NPC 'NPC' reached point 3
-[DEBUGGING] NPC 'NPC' reached point 0
-[DEBUGGING] NPC 'NPC' reached point 1
-[DEBUGGING] NPC 'NPC' reached point 2
-[DEBUGGING] NPC 'NPC' reached point 3
-[DEBUGGING] NPC 'NPC' reached point 0
-[DEBUGGING] NPC 'NPC' reached point 1
-[DEBUGGING] NPC 'NPC' reached point 2
-[DEBUGGING] NPC 'NPC' reached point 3
-[DEBUGGING] NPC 'NPC' reached point 0
-[DEBUGGING] NPC 'NPC' reached point 1
-[DEBUGGING] NPC 'NPC' reached point 2
-[DEBUGGING] NPC 'NPC' reached point 3
-[DEBUGGING] NPC 'NPC' reached point 0
-[DEBUGGING] NPC 'NPC' reached point 1
-[DEBUGGING] NPC 'NPC' reached point 2
-[DEBUGGING] NPC 'NPC' reached point 3
-[DEBUGGING] NPC 'NPC' reached point 0
-[DEBUGGING] NPC 'NPC' reached point 1
-[DEBUGGING] NPC 'NPC' reached point 2
-[DEBUGGING] NPC 'NPC' reached point 3
-[DEBUGGING] NPC 'NPC' reached point 0
-[DEBUGGING] NPC 'NPC' reached point 1
 [INFO] stopped audio (bgm)
 [INFO] mapData.size() 480
 [INFO] MapWidth * MapHeight 480
+[INFO] Changed to new scene
+[INFO] stopped audio (bgm)
+[INFO] mapData.size() 1920
+[INFO] MapWidth * MapHeight 1920
+[DEBUGGING] Added patrol point to NPC 'NPC': (1952, 672)
+[DEBUGGING] Added patrol point to NPC 'NPC': (1824, 672)
+[DEBUGGING] Added patrol point to NPC 'NPC': (1824, 544)
+[DEBUGGING] Added patrol point to NPC 'NPC': (1952, 544)
+[INFO] Changed to play scene
+[DEBUGGING] NPC 'NPC' reached point 1
+[DEBUGGING] NPC 'NPC' reached point 2
+[DEBUGGING] NPC 'NPC' reached point 3
+[DEBUGGING] NPC 'NPC' reached point 0
+[DEBUGGING] NPC 'NPC' reached point 1
+[DEBUGGING] NPC 'NPC' reached point 2
+[DEBUGGING] NPC 'NPC' reached point 3
+[INFO] stopped audio (bgm)
+[INFO] mapData.size() 450
+[INFO] MapWidth * MapHeight 480
+[INFO] Loaded Resource<image>: Resource/images/smalleat/LSEAT.png scaled to 64x64
+[INFO] Loaded Resource<image>: Resource/images/smalleat/RSEAT.png scaled to 64x64
 [INFO] Changed to windcloud scene
+[INFO] Loaded Resource<image>: Resource/images/NPC/test/avatar/windcloudicon.png
 [INFO] stopped audio (bgm)
 [INFO] mapData.size() 1920
 [INFO] MapWidth * MapHeight 1920
@@ -260,16 +168,1157 @@
 [DEBUGGING] NPC 'NPC' reached point 2
 [DEBUGGING] NPC 'NPC' reached point 3
 [DEBUGGING] NPC 'NPC' reached point 0
+[DEBUGGING] NPC 'NPC' reached point 1
+[DEBUGGING] NPC 'NPC' reached point 2
+[DEBUGGING] NPC 'NPC' reached point 3
+[DEBUGGING] NPC 'NPC' reached point 0
+[DEBUGGING] NPC 'NPC' reached point 1
+[DEBUGGING] NPC 'NPC' reached point 2
+[DEBUGGING] NPC 'NPC' reached point 3
+[DEBUGGING] NPC 'NPC' reached point 0
+[DEBUGGING] NPC 'NPC' reached point 1
+[DEBUGGING] NPC 'NPC' reached point 2
+[DEBUGGING] NPC 'NPC' reached point 3
+[DEBUGGING] NPC 'NPC' reached point 0
+[DEBUGGING] NPC 'NPC' reached point 1
+[DEBUGGING] NPC 'NPC' reached point 2
+[DEBUGGING] NPC 'NPC' reached point 3
+[DEBUGGING] NPC 'NPC' reached point 0
+[DEBUGGING] NPC 'NPC' reached point 1
+[DEBUGGING] NPC 'NPC' reached point 2
+[DEBUGGING] NPC 'NPC' reached point 3
+[DEBUGGING] NPC 'NPC' reached point 0
+[DEBUGGING] NPC 'NPC' reached point 1
+[DEBUGGING] NPC 'NPC' reached point 2
+[DEBUGGING] NPC 'NPC' reached point 3
+[DEBUGGING] NPC 'NPC' reached point 0
+[DEBUGGING] NPC 'NPC' reached point 1
+[DEBUGGING] NPC 'NPC' reached point 2
+[DEBUGGING] NPC 'NPC' reached point 3
+[DEBUGGING] NPC 'NPC' reached point 0
+[DEBUGGING] NPC 'NPC' reached point 1
+[DEBUGGING] NPC 'NPC' reached point 2
+[DEBUGGING] NPC 'NPC' reached point 3
+[DEBUGGING] NPC 'NPC' reached point 0
+[DEBUGGING] NPC 'NPC' reached point 1
+[DEBUGGING] NPC 'NPC' reached point 2
+[DEBUGGING] NPC 'NPC' reached point 3
+[DEBUGGING] NPC 'NPC' reached point 0
+[DEBUGGING] NPC 'NPC' reached point 1
+[DEBUGGING] NPC 'NPC' reached point 2
+[DEBUGGING] NPC 'NPC' reached point 3
+[DEBUGGING] NPC 'NPC' reached point 0
+[DEBUGGING] NPC 'NPC' reached point 1
+[DEBUGGING] NPC 'NPC' reached point 2
+[DEBUGGING] NPC 'NPC' reached point 3
+[DEBUGGING] NPC 'NPC' reached point 0
+[DEBUGGING] NPC 'NPC' reached point 1
+[DEBUGGING] NPC 'NPC' reached point 2
+[DEBUGGING] NPC 'NPC' reached point 3
+[INFO] stopped audio (bgm)
+[INFO] mapData.size() 480
+[INFO] MapWidth * MapHeight 480
+[INFO] Loaded Resource<image>: Resource/images/mainworld/water.png scaled to 64x64
+[INFO] Loaded Resource<image>: Resource/images/mainworld/running.png scaled to 64x64
+[INFO] Loaded Resource<image>: Resource/images/mainworld/lotus.png scaled to 64x64
+[INFO] Loaded Resource<image>: Resource/images/BattlePlayer/left_idle.png
+[INFO] Loaded Resource<image>: Resource/images/BattlePlayer/right_idle.png
+[INFO] Loaded Resource<image>: Resource/images/BattlePlayer/up_idle.png
+[INFO] Loaded Resource<image>: Resource/images/BattlePlayer/up1.png
+[INFO] Loaded Resource<image>: Resource/images/BattlePlayer/up2.png
+[INFO] Loaded Resource<image>: Resource/images/BattlePlayer/down1.png
+[INFO] Loaded Resource<image>: Resource/images/BattlePlayer/down2.png
+[INFO] Loaded Resource<image>: Resource/images/BattlePlayer/left1.png
+[INFO] Loaded Resource<image>: Resource/images/BattlePlayer/left2.png
+[INFO] Loaded Resource<image>: Resource/images/BattlePlayer/right1.png
+[INFO] Loaded Resource<image>: Resource/images/BattlePlayer/right2.png
+[INFO] Changed to CGLake scene
+[INFO] stopped audio (bgm)
+[INFO] mapData.size() 1920
+[INFO] MapWidth * MapHeight 1920
+[DEBUGGING] Added patrol point to NPC 'NPC': (1952, 672)
+[DEBUGGING] Added patrol point to NPC 'NPC': (1824, 672)
+[DEBUGGING] Added patrol point to NPC 'NPC': (1824, 544)
+[DEBUGGING] Added patrol point to NPC 'NPC': (1952, 544)
+[INFO] Changed to play scene
+[DEBUGGING] NPC 'NPC' reached point 1
+[DEBUGGING] NPC 'NPC' reached point 2
+[DEBUGGING] NPC 'NPC' reached point 3
+[DEBUGGING] NPC 'NPC' reached point 0
+[DEBUGGING] NPC 'NPC' reached point 1
+[DEBUGGING] NPC 'NPC' reached point 2
+[DEBUGGING] NPC 'NPC' reached point 3
+[DEBUGGING] NPC 'NPC' reached point 0
+[DEBUGGING] NPC 'NPC' reached point 1
+[DEBUGGING] NPC 'NPC' reached point 2
+[DEBUGGING] NPC 'NPC' reached point 3
+[DEBUGGING] NPC 'NPC' reached point 0
+[DEBUGGING] NPC 'NPC' reached point 1
+[DEBUGGING] NPC 'NPC' reached point 2
+[DEBUGGING] NPC 'NPC' reached point 3
+[DEBUGGING] NPC 'NPC' reached point 0
+[DEBUGGING] NPC 'NPC' reached point 1
+[DEBUGGING] NPC 'NPC' reached point 2
+[DEBUGGING] NPC 'NPC' reached point 3
+[DEBUGGING] NPC 'NPC' reached point 0
+[DEBUGGING] NPC 'NPC' reached point 1
+[DEBUGGING] NPC 'NPC' reached point 2
+[DEBUGGING] NPC 'NPC' reached point 3
+[DEBUGGING] NPC 'NPC' reached point 0
+[DEBUGGING] NPC 'NPC' reached point 1
+[DEBUGGING] NPC 'NPC' reached point 2
+[DEBUGGING] NPC 'NPC' reached point 3
+[DEBUGGING] NPC 'NPC' reached point 0
+[DEBUGGING] NPC 'NPC' reached point 1
+[DEBUGGING] NPC 'NPC' reached point 2
+[DEBUGGING] NPC 'NPC' reached point 3
+[DEBUGGING] NPC 'NPC' reached point 0
+[DEBUGGING] NPC 'NPC' reached point 1
+[DEBUGGING] NPC 'NPC' reached point 2
+[DEBUGGING] NPC 'NPC' reached point 3
+[INFO] stopped audio (bgm)
+[INFO] mapData.size() 480
+[INFO] MapWidth * MapHeight 480
+[INFO] Loaded Resource<image>: Resource/images/scene/bb.png scaled to 1650x650
+[INFO] Changed to talda scene
+[INFO] Loaded Resource<image>: Resource/images/NPC/test/avatar/taldaicon.png
+[INFO] stopped audio (bgm)
+[INFO] mapData.size() 1920
+[INFO] MapWidth * MapHeight 1920
+[DEBUGGING] Added patrol point to NPC 'NPC': (1952, 672)
+[DEBUGGING] Added patrol point to NPC 'NPC': (1824, 672)
+[DEBUGGING] Added patrol point to NPC 'NPC': (1824, 544)
+[DEBUGGING] Added patrol point to NPC 'NPC': (1952, 544)
+[INFO] Changed to play scene
+[DEBUGGING] NPC 'NPC' reached point 1
+[DEBUGGING] NPC 'NPC' reached point 2
+[DEBUGGING] NPC 'NPC' reached point 3
+[DEBUGGING] NPC 'NPC' reached point 0
+[DEBUGGING] NPC 'NPC' reached point 1
+[DEBUGGING] NPC 'NPC' reached point 2
+[DEBUGGING] NPC 'NPC' reached point 3
+[DEBUGGING] NPC 'NPC' reached point 0
+[DEBUGGING] NPC 'NPC' reached point 1
+[DEBUGGING] NPC 'NPC' reached point 2
+[DEBUGGING] NPC 'NPC' reached point 3
+[DEBUGGING] NPC 'NPC' reached point 0
+[DEBUGGING] NPC 'NPC' reached point 1
+[DEBUGGING] NPC 'NPC' reached point 2
+[DEBUGGING] NPC 'NPC' reached point 3
+[DEBUGGING] NPC 'NPC' reached point 0
+[DEBUGGING] NPC 'NPC' reached point 1
+[DEBUGGING] NPC 'NPC' reached point 2
+[DEBUGGING] NPC 'NPC' reached point 3
+[DEBUGGING] NPC 'NPC' reached point 0
+[DEBUGGING] NPC 'NPC' reached point 1
+[DEBUGGING] NPC 'NPC' reached point 2
+[DEBUGGING] NPC 'NPC' reached point 3
+[DEBUGGING] NPC 'NPC' reached point 0
+[DEBUGGING] NPC 'NPC' reached point 1
+[DEBUGGING] NPC 'NPC' reached point 2
+[DEBUGGING] NPC 'NPC' reached point 3
+[DEBUGGING] NPC 'NPC' reached point 0
+[DEBUGGING] NPC 'NPC' reached point 1
+[INFO] stopped audio (bgm)
+[INFO] mapData.size() 450
+[INFO] MapWidth * MapHeight 480
+[INFO] Loaded Resource<image>: Resource/images/NPC/axeman/role/axemanD.png
+[INFO] Loaded Resource<image>: Resource/images/NPC/axeman/role/axemanU.png
+[INFO] Loaded Resource<image>: Resource/images/NPC/axeman/role/axemanL.png
+[INFO] Loaded Resource<image>: Resource/images/NPC/axeman/role/axemanR.png
+[DEBUGGING] Added patrol point to Shopper 'axeman': (608, 480)
+[DEBUGGING] Added patrol point to Shopper 'axeman': (608, 736)
+[DEBUGGING] Added patrol point to Shopper 'axeman': (800, 736)
+[DEBUGGING] Added patrol point to Shopper 'axeman': (800, 480)
+[INFO] Loaded Resource<image>: Resource/images/NPC/Lucy/role/lucyD.png
+[INFO] Loaded Resource<image>: Resource/images/NPC/Lucy/role/lucyU.png
+[INFO] Loaded Resource<image>: Resource/images/NPC/Lucy/role/lucyL.png
+[INFO] Loaded Resource<image>: Resource/images/NPC/Lucy/role/lucyR.png
+[INFO] Loaded Resource<audio>: Resource/audios/XCB.ogg
+[INFO] Changed to smalleat scene
+[INFO] Loaded Resource<image>: Resource/images/NPC/test/avatar/smalleaticon.png
+[DEBUGGING] NPC 'axeman' reached point 1
+[DEBUGGING] NPC 'axeman' reached point 2
+[DEBUGGING] NPC 'axeman' reached point 3
+[DEBUGGING] NPC 'axeman' reached point 0
+[WARN] Shopper 'Lucy醬' dialog ended, canBuy = true
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[DEBUGGING] NPC 'axeman' reached point 1
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[DEBUGGING] NPC 'axeman' reached point 2
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] !currentShopper->IsTalking()
+[WARN] Shop buttons displayed
+[WARN] !currentShopper->IsTalking()
+[WARN] Shop buttons displayed
+[WARN] !currentShopper->IsTalking()
+[WARN] Shop buttons displayed
+[WARN] !currentShopper->IsTalking()
+[WARN] Shop buttons displayed
+[WARN] !currentShopper->IsTalking()
+[WARN] Shop buttons displayed
+[WARN] !currentShopper->IsTalking()
+[WARN] Shop buttons displayed
+[WARN] !currentShopper->IsTalking()
+[WARN] Shop buttons displayed
+[WARN] !currentShopper->IsTalking()
+[WARN] Shop buttons displayed
+[WARN] !currentShopper->IsTalking()
+[WARN] Shop buttons displayed
+[WARN] !currentShopper->IsTalking()
+[WARN] Shop buttons displayed
+[WARN] !currentShopper->IsTalking()
+[WARN] Shop buttons displayed
+[WARN] !currentShopper->IsTalking()
+[WARN] Shop buttons displayed
+[WARN] !currentShopper->IsTalking()
+[WARN] Shop buttons displayed
+[WARN] !currentShopper->IsTalking()
+[WARN] Shop buttons displayed
+[WARN] !currentShopper->IsTalking()
+[WARN] Shop buttons displayed
+[WARN] !currentShopper->IsTalking()
+[WARN] Shop buttons displayed
+[WARN] !currentShopper->IsTalking()
+[WARN] Shop buttons displayed
+[WARN] !currentShopper->IsTalking()
+[WARN] Shop buttons displayed
+[WARN] !currentShopper->IsTalking()
+[WARN] Shop buttons displayed
+[WARN] !currentShopper->IsTalking()
+[WARN] Shop buttons displayed
+[WARN] !currentShopper->IsTalking()
+[WARN] Shop buttons displayed
+[WARN] !currentShopper->IsTalking()
+[WARN] Shop buttons displayed
+[WARN] !currentShopper->IsTalking()
+[WARN] Shop buttons displayed
+[WARN] !currentShopper->IsTalking()
+[WARN] Shop buttons displayed
+[WARN] !currentShopper->IsTalking()
+[WARN] Shop buttons displayed
+[WARN] !currentShopper->IsTalking()
+[WARN] Shop buttons displayed
+[WARN] !currentShopper->IsTalking()
+[WARN] Shop buttons displayed
+[WARN] !currentShopper->IsTalking()
+[WARN] Shop buttons displayed
+[WARN] !currentShopper->IsTalking()
+[WARN] Shop buttons displayed
+[WARN] !currentShopper->IsTalking()
+[WARN] Shop buttons displayed
+[WARN] !currentShopper->IsTalking()
+[WARN] Shop buttons displayed
+[WARN] !currentShopper->IsTalking()
+[WARN] Shop buttons displayed
+[WARN] !currentShopper->IsTalking()
+[WARN] Shop buttons displayed
+[WARN] !currentShopper->IsTalking()
+[WARN] Shop buttons displayed
+[WARN] !currentShopper->IsTalking()
+[WARN] Shop buttons displayed
+[WARN] !currentShopper->IsTalking()
+[WARN] Shop buttons displayed
+[WARN] !currentShopper->IsTalking()
+[WARN] Shop buttons displayed
+[WARN] !currentShopper->IsTalking()
+[WARN] Shop buttons displayed
+[WARN] !currentShopper->IsTalking()
+[WARN] Shop buttons displayed
+[WARN] !currentShopper->IsTalking()
+[WARN] Shop buttons displayed
+[WARN] !currentShopper->IsTalking()
+[WARN] Shop buttons displayed
+[WARN] !currentShopper->IsTalking()
+[WARN] Shop buttons displayed
+[WARN] !currentShopper->IsTalking()
+[WARN] Shop buttons displayed
+[WARN] !currentShopper->IsTalking()
+[WARN] Shop buttons displayed
+[WARN] !currentShopper->IsTalking()
+[WARN] Shop buttons displayed
+[WARN] !currentShopper->IsTalking()
+[WARN] Shop buttons displayed
+[WARN] !currentShopper->IsTalking()
+[WARN] Shop buttons displayed
+[WARN] !currentShopper->IsTalking()
+[WARN] Shop buttons displayed
+[WARN] !currentShopper->IsTalking()
+[WARN] Shop buttons displayed
+[WARN] !currentShopper->IsTalking()
+[WARN] Shop buttons displayed
+[WARN] !currentShopper->IsTalking()
+[WARN] Shop buttons displayed
+[WARN] !currentShopper->IsTalking()
+[WARN] Shop buttons displayed
+[WARN] !currentShopper->IsTalking()
+[WARN] Shop buttons displayed
+[WARN] !currentShopper->IsTalking()
+[WARN] Shop buttons displayed
+[WARN] !currentShopper->IsTalking()
+[WARN] Shop buttons displayed
+[WARN] !currentShopper->IsTalking()
+[WARN] Shop buttons displayed
+[WARN] !currentShopper->IsTalking()
+[WARN] Shop buttons displayed
+[WARN] !currentShopper->IsTalking()
+[WARN] Shop buttons displayed
+[WARN] !currentShopper->IsTalking()
+[WARN] Shop buttons displayed
+[WARN] !currentShopper->IsTalking()
+[WARN] Shop buttons displayed
+[WARN] !currentShopper->IsTalking()
+[WARN] Shop buttons displayed
+[WARN] !currentShopper->IsTalking()
+[WARN] Shop buttons displayed
+[WARN] !currentShopper->IsTalking()
+[WARN] Shop buttons displayed
+[WARN] !currentShopper->IsTalking()
+[WARN] Shop buttons displayed
+[WARN] !currentShopper->IsTalking()
+[WARN] Shop buttons displayed
+[WARN] !currentShopper->IsTalking()
+[WARN] Shop buttons displayed
+[WARN] !currentShopper->IsTalking()
+[WARN] Shop buttons displayed
+[WARN] !currentShopper->IsTalking()
+[WARN] Shop buttons displayed
+[WARN] !currentShopper->IsTalking()
+[WARN] Shop buttons displayed
+[WARN] !currentShopper->IsTalking()
+[WARN] Shop buttons displayed
+[WARN] !currentShopper->IsTalking()
+[WARN] Shop buttons displayed
+[WARN] !currentShopper->IsTalking()
+[WARN] Shop buttons displayed
+[WARN] !currentShopper->IsTalking()
+[WARN] Shop buttons displayed
+[WARN] !currentShopper->IsTalking()
+[WARN] Shop buttons displayed
+[WARN] !currentShopper->IsTalking()
+[WARN] Shop buttons displayed
+[WARN] !currentShopper->IsTalking()
+[WARN] Shop buttons displayed
+[WARN] !currentShopper->IsTalking()
+[WARN] Shop buttons displayed
+[WARN] !currentShopper->IsTalking()
+[WARN] Shop buttons displayed
+[WARN] !currentShopper->IsTalking()
+[WARN] Shop buttons displayed
+[WARN] !currentShopper->IsTalking()
+[WARN] Shop buttons displayed
+[WARN] !currentShopper->IsTalking()
+[WARN] Shop buttons displayed
+[WARN] !currentShopper->IsTalking()
+[WARN] Shop buttons displayed
+[WARN] !currentShopper->IsTalking()
+[WARN] Shop buttons displayed
+[WARN] !currentShopper->IsTalking()
+[WARN] Shop buttons displayed
+[WARN] !currentShopper->IsTalking()
+[WARN] Shop buttons displayed
+[WARN] !currentShopper->IsTalking()
+[WARN] Shop buttons displayed
+[WARN] !currentShopper->IsTalking()
+[WARN] Shop buttons displayed
+[WARN] !currentShopper->IsTalking()
+[WARN] Shop buttons displayed
+[WARN] !currentShopper->IsTalking()
+[WARN] Shop buttons displayed
+[WARN] !currentShopper->IsTalking()
+[WARN] Shop buttons displayed
+[WARN] !currentShopper->IsTalking()
+[WARN] Shop buttons displayed
+[WARN] !currentShopper->IsTalking()
+[WARN] Shop buttons displayed
+[WARN] !currentShopper->IsTalking()
+[WARN] Shop buttons displayed
+[WARN] !currentShopper->IsTalking()
+[WARN] Shop buttons displayed
+[WARN] !currentShopper->IsTalking()
+[WARN] Shop buttons displayed
+[WARN] !currentShopper->IsTalking()
+[WARN] Shop buttons displayed
+[WARN] !currentShopper->IsTalking()
+[WARN] Shop buttons displayed
+[WARN] !currentShopper->IsTalking()
+[WARN] Shop buttons displayed
+[WARN] !currentShopper->IsTalking()
+[WARN] Shop buttons displayed
+[WARN] !currentShopper->IsTalking()
+[WARN] Shop buttons displayed
+[WARN] !currentShopper->IsTalking()
+[WARN] Shop buttons displayed
+[WARN] !currentShopper->IsTalking()
+[WARN] Shop buttons displayed
+[WARN] !currentShopper->IsTalking()
+[WARN] Shop buttons displayed
+[WARN] !currentShopper->IsTalking()
+[WARN] Shop buttons displayed
+[WARN] !currentShopper->IsTalking()
+[WARN] Shop buttons displayed
+[WARN] !currentShopper->IsTalking()
+[WARN] Shop buttons displayed
+[WARN] !currentShopper->IsTalking()
+[WARN] Shop buttons displayed
+[WARN] !currentShopper->IsTalking()
+[WARN] Shop buttons displayed
+[WARN] !currentShopper->IsTalking()
+[WARN] Shop buttons displayed
+[WARN] !currentShopper->IsTalking()
+[WARN] Shop buttons displayed
+[WARN] !currentShopper->IsTalking()
+[WARN] Shop buttons displayed
+[WARN] !currentShopper->IsTalking()
+[WARN] Shop buttons displayed
+[WARN] !currentShopper->IsTalking()
+[WARN] Shop buttons displayed
+[WARN] !currentShopper->IsTalking()
+[WARN] Shop buttons displayed
+[WARN] !currentShopper->IsTalking()
+[WARN] Shop buttons displayed
+[WARN] !currentShopper->IsTalking()
+[WARN] Shop buttons displayed
+[WARN] !currentShopper->IsTalking()
+[WARN] Shop buttons displayed
+[WARN] !currentShopper->IsTalking()
+[WARN] Shop buttons displayed
+[WARN] !currentShopper->IsTalking()
+[WARN] Shop buttons displayed
+[WARN] !currentShopper->IsTalking()
+[WARN] Shop buttons displayed
+[WARN] !currentShopper->IsTalking()
+[WARN] Shop buttons displayed
+[WARN] !currentShopper->IsTalking()
+[WARN] Shop buttons displayed
+[WARN] !currentShopper->IsTalking()
+[WARN] Shop buttons displayed
+[WARN] !currentShopper->IsTalking()
+[WARN] Shop buttons displayed
+[WARN] !currentShopper->IsTalking()
+[WARN] Shop buttons displayed
+[WARN] !currentShopper->IsTalking()
+[WARN] Shop buttons displayed
+[WARN] !currentShopper->IsTalking()
+[WARN] Shop buttons displayed
+[WARN] Shop buttons displayed
+[WARN] Shop buttons displayed
+[WARN] Shop buttons displayed
+[WARN] Shop buttons displayed
+[WARN] Shop buttons displayed
+[WARN] Shop buttons displayed
+[WARN] Shop buttons displayed
+[WARN] Shop buttons displayed
+[WARN] Shop buttons displayed
+[WARN] Shop buttons displayed
+[WARN] Shop buttons displayed
+[WARN] Shop buttons displayed
+[WARN] Shop buttons displayed
+[WARN] Shop buttons displayed
+[WARN] Shop buttons displayed
+[WARN] Shop buttons displayed
+[DEBUGGING] NPC 'axeman' reached point 3
+[WARN] Shop buttons displayed
+[WARN] Shop buttons displayed
+[WARN] Shop buttons displayed
+[WARN] Shop buttons displayed
+[WARN] Shop buttons displayed
+[WARN] Shop buttons displayed
+[WARN] Shop buttons displayed
+[WARN] Shop buttons displayed
+[WARN] Shop buttons displayed
+[WARN] Shop buttons displayed
+[WARN] Shop buttons displayed
+[WARN] Shop buttons displayed
+[WARN] Shop buttons displayed
+[WARN] Shop buttons displayed
+[WARN] Shop buttons displayed
+[WARN] Shop buttons displayed
+[WARN] Shop buttons displayed
+[WARN] Shop buttons displayed
+[WARN] Shop buttons displayed
+[WARN] Shop buttons displayed
+[WARN] Shop buttons displayed
+[WARN] Shop buttons displayed
+[WARN] Shop buttons displayed
+[WARN] Shop buttons displayed
+[WARN] Shop buttons displayed
+[WARN] Shop buttons displayed
+[WARN] Shop buttons displayed
+[WARN] Shop buttons displayed
+[WARN] Shop buttons displayed
+[WARN] Shop buttons displayed
+[WARN] Shop buttons displayed
+[WARN] Shop buttons displayed
+[WARN] Shop buttons displayed
+[WARN] Shop buttons displayed
+[WARN] Shop buttons displayed
+[WARN] Shop buttons displayed
+[WARN] Shop buttons displayed
+[WARN] Shop buttons displayed
+[WARN] Shop buttons displayed
+[WARN] Shop buttons displayed
+[WARN] Shop buttons displayed
+[WARN] Shop buttons displayed
+[WARN] Shop buttons displayed
+[WARN] Shop buttons displayed
+[WARN] Shop buttons displayed
+[WARN] Shop buttons displayed
+[WARN] Shop buttons displayed
+[WARN] Shop buttons displayed
+[WARN] Shop buttons displayed
+[WARN] Shop buttons displayed
+[WARN] Shop buttons displayed
+[WARN] Shop buttons displayed
+[WARN] Shop buttons displayed
+[WARN] Shop buttons displayed
+[WARN] Shop buttons displayed
+[WARN] Shop buttons displayed
+[WARN] Shop buttons displayed
+[WARN] Shop buttons displayed
+[WARN] Shop buttons displayed
+[WARN] Shop buttons displayed
+[WARN] Shop buttons displayed
+[WARN] Shop buttons displayed
+[WARN] Shop buttons displayed
+[WARN] Shop buttons displayed
+[WARN] Shop buttons displayed
+[WARN] Shop buttons displayed
+[WARN] Shop buttons displayed
+[WARN] Shop buttons displayed
+[WARN] Shop buttons displayed
+[WARN] Shop buttons displayed
+[WARN] Shop buttons displayed
+[WARN] Shop buttons displayed
+[WARN] Shop buttons displayed
+[WARN] Shop buttons displayed
+[WARN] Shop buttons displayed
+[WARN] Shop buttons displayed
+[WARN] Shop buttons displayed
+[WARN] Shop buttons displayed
+[WARN] Shop buttons displayed
+[WARN] Shop buttons displayed
+[WARN] Shop buttons displayed
+[WARN] Shop buttons displayed
+[WARN] Shop buttons displayed
+[WARN] Shop buttons displayed
+[WARN] Shop buttons displayed
+[WARN] Shop buttons displayed
+[WARN] Shop buttons displayed
+[WARN] Shop buttons displayed
+[WARN] Shop buttons displayed
+[WARN] Shopper 'Lucy醬' dialog ended, canBuy = true
+[WARN] !currentShopper->IsTalking()
+[WARN] Shop buttons displayed
+[WARN] !currentShopper->IsTalking()
+[WARN] Shop buttons displayed
+[WARN] !currentShopper->IsTalking()
+[WARN] Shop buttons displayed
+[WARN] !currentShopper->IsTalking()
+[WARN] Shop buttons displayed
+[WARN] !currentShopper->IsTalking()
+[WARN] Shop buttons displayed
+[WARN] !currentShopper->IsTalking()
+[WARN] Shop buttons displayed
+[WARN] !currentShopper->IsTalking()
+[WARN] Shop buttons displayed
+[WARN] !currentShopper->IsTalking()
+[WARN] Shop buttons displayed
+[WARN] !currentShopper->IsTalking()
+[WARN] Shop buttons displayed
+[WARN] !currentShopper->IsTalking()
+[WARN] Shop buttons displayed
+[WARN] !currentShopper->IsTalking()
+[WARN] Shop buttons displayed
+[WARN] !currentShopper->IsTalking()
+[WARN] Shop buttons displayed
+[WARN] !currentShopper->IsTalking()
+[WARN] Shop buttons displayed
+[WARN] !currentShopper->IsTalking()
+[WARN] Shop buttons displayed
+[WARN] !currentShopper->IsTalking()
+[WARN] Shop buttons displayed
+[WARN] !currentShopper->IsTalking()
+[WARN] Shop buttons displayed
+[WARN] !currentShopper->IsTalking()
+[WARN] Shop buttons displayed
+[WARN] !currentShopper->IsTalking()
+[WARN] Shop buttons displayed
+[WARN] !currentShopper->IsTalking()
+[WARN] Shop buttons displayed
+[WARN] !currentShopper->IsTalking()
+[WARN] Shop buttons displayed
+[WARN] !currentShopper->IsTalking()
+[WARN] Shop buttons displayed
+[WARN] !currentShopper->IsTalking()
+[WARN] Shop buttons displayed
+[WARN] !currentShopper->IsTalking()
+[WARN] Shop buttons displayed
+[WARN] !currentShopper->IsTalking()
+[WARN] Shop buttons displayed
+[WARN] !currentShopper->IsTalking()
+[WARN] Shop buttons displayed
+[WARN] !currentShopper->IsTalking()
+[WARN] Shop buttons displayed
+[WARN] !currentShopper->IsTalking()
+[WARN] Shop buttons displayed
+[WARN] !currentShopper->IsTalking()
+[WARN] Shop buttons displayed
+[WARN] !currentShopper->IsTalking()
+[WARN] Shop buttons displayed
+[WARN] !currentShopper->IsTalking()
+[WARN] Shop buttons displayed
+[WARN] !currentShopper->IsTalking()
+[WARN] Shop buttons displayed
+[WARN] !currentShopper->IsTalking()
+[WARN] Shop buttons displayed
+[WARN] !currentShopper->IsTalking()
+[WARN] Shop buttons displayed
+[WARN] !currentShopper->IsTalking()
+[WARN] Shop buttons displayed
+[WARN] !currentShopper->IsTalking()
+[WARN] Shop buttons displayed
+[WARN] !currentShopper->IsTalking()
+[WARN] Shop buttons displayed
+[WARN] !currentShopper->IsTalking()
+[WARN] Shop buttons displayed
+[WARN] !currentShopper->IsTalking()
+[WARN] Shop buttons displayed
+[WARN] !currentShopper->IsTalking()
+[WARN] Shop buttons displayed
+[WARN] !currentShopper->IsTalking()
+[WARN] Shop buttons displayed
+[WARN] !currentShopper->IsTalking()
+[WARN] Shop buttons displayed
+[WARN] !currentShopper->IsTalking()
+[WARN] Shop buttons displayed
+[WARN] !currentShopper->IsTalking()
+[WARN] Shop buttons displayed
+[WARN] !currentShopper->IsTalking()
+[WARN] Shop buttons displayed
+[WARN] !currentShopper->IsTalking()
+[WARN] Shop buttons displayed
+[WARN] !currentShopper->IsTalking()
+[WARN] Shop buttons displayed
+[WARN] !currentShopper->IsTalking()
+[WARN] Shop buttons displayed
+[WARN] !currentShopper->IsTalking()
+[WARN] Shop buttons displayed
+[WARN] !currentShopper->IsTalking()
+[WARN] Shop buttons displayed
+[WARN] !currentShopper->IsTalking()
+[WARN] Shop buttons displayed
+[WARN] !currentShopper->IsTalking()
+[WARN] Shop buttons displayed
+[WARN] !currentShopper->IsTalking()
+[WARN] Shop buttons displayed
+[WARN] !currentShopper->IsTalking()
+[WARN] Shop buttons displayed
+[WARN] !currentShopper->IsTalking()
+[WARN] Shop buttons displayed
+[WARN] !currentShopper->IsTalking()
+[WARN] Shop buttons displayed
+[WARN] !currentShopper->IsTalking()
+[WARN] Shop buttons displayed
+[WARN] !currentShopper->IsTalking()
+[WARN] Shop buttons displayed
+[WARN] !currentShopper->IsTalking()
+[WARN] Shop buttons displayed
+[WARN] !currentShopper->IsTalking()
+[WARN] Shop buttons displayed
+[WARN] !currentShopper->IsTalking()
+[WARN] Shop buttons displayed
+[WARN] !currentShopper->IsTalking()
+[WARN] Shop buttons displayed
+[WARN] !currentShopper->IsTalking()
+[WARN] Shop buttons displayed
+[WARN] !currentShopper->IsTalking()
+[WARN] Shop buttons displayed
+[WARN] !currentShopper->IsTalking()
+[WARN] Shop buttons displayed
+[WARN] !currentShopper->IsTalking()
+[WARN] Shop buttons displayed
+[WARN] !currentShopper->IsTalking()
+[WARN] Shop buttons displayed
+[WARN] !currentShopper->IsTalking()
+[WARN] Shop buttons displayed
+[WARN] !currentShopper->IsTalking()
+[WARN] Shop buttons displayed
+[WARN] !currentShopper->IsTalking()
+[WARN] Shop buttons displayed
+[WARN] !currentShopper->IsTalking()
+[WARN] Shop buttons displayed
+[WARN] !currentShopper->IsTalking()
+[WARN] Shop buttons displayed
+[WARN] !currentShopper->IsTalking()
+[WARN] Shop buttons displayed
+[WARN] !currentShopper->IsTalking()
+[WARN] Shop buttons displayed
+[WARN] !currentShopper->IsTalking()
+[WARN] Shop buttons displayed
+[WARN] !currentShopper->IsTalking()
+[WARN] Shop buttons displayed
+[WARN] !currentShopper->IsTalking()
+[WARN] Shop buttons displayed
+[WARN] !currentShopper->IsTalking()
+[WARN] Shop buttons displayed
+[WARN] !currentShopper->IsTalking()
+[WARN] Shop buttons displayed
+[WARN] !currentShopper->IsTalking()
+[WARN] Shop buttons displayed
+[WARN] !currentShopper->IsTalking()
+[WARN] Shop buttons displayed
+[WARN] !currentShopper->IsTalking()
+[WARN] Shop buttons displayed
+[WARN] !currentShopper->IsTalking()
+[WARN] Shop buttons displayed
+[WARN] !currentShopper->IsTalking()
+[WARN] Shop buttons displayed
+[WARN] !currentShopper->IsTalking()
+[WARN] Shop buttons displayed
+[WARN] !currentShopper->IsTalking()
+[WARN] Shop buttons displayed
+[WARN] !currentShopper->IsTalking()
+[WARN] Shop buttons displayed
+[WARN] !currentShopper->IsTalking()
+[WARN] Shop buttons displayed
+[WARN] !currentShopper->IsTalking()
+[WARN] Shop buttons displayed
+[WARN] !currentShopper->IsTalking()
+[WARN] Shop buttons displayed
+[WARN] !currentShopper->IsTalking()
+[WARN] Shop buttons displayed
+[INFO] stopped audio (bgm)
+[INFO] mapData.size() 1920
+[INFO] MapWidth * MapHeight 1920
+[DEBUGGING] Added patrol point to NPC 'NPC': (1952, 672)
+[DEBUGGING] Added patrol point to NPC 'NPC': (1824, 672)
+[DEBUGGING] Added patrol point to NPC 'NPC': (1824, 544)
+[DEBUGGING] Added patrol point to NPC 'NPC': (1952, 544)
+[INFO] Changed to play scene
+[DEBUGGING] NPC 'NPC' reached point 1
+[DEBUGGING] NPC 'NPC' reached point 2
+[DEBUGGING] NPC 'NPC' reached point 3
+[DEBUGGING] NPC 'NPC' reached point 0
+[DEBUGGING] NPC 'NPC' reached point 1
+[DEBUGGING] NPC 'NPC' reached point 2
+[DEBUGGING] NPC 'NPC' reached point 3
+[DEBUGGING] NPC 'NPC' reached point 0
+[DEBUGGING] NPC 'NPC' reached point 1
+[DEBUGGING] NPC 'NPC' reached point 2
+[DEBUGGING] NPC 'NPC' reached point 3
+[DEBUGGING] NPC 'NPC' reached point 0
+[DEBUGGING] NPC 'NPC' reached point 1
+[DEBUGGING] NPC 'NPC' reached point 2
+[DEBUGGING] NPC 'NPC' reached point 3
+[DEBUGGING] NPC 'NPC' reached point 0
+[DEBUGGING] NPC 'NPC' reached point 1
+[DEBUGGING] NPC 'NPC' reached point 2
+[DEBUGGING] NPC 'NPC' reached point 3
+[DEBUGGING] NPC 'NPC' reached point 0
+[DEBUGGING] NPC 'NPC' reached point 1
+[DEBUGGING] NPC 'NPC' reached point 2
+[DEBUGGING] NPC 'NPC' reached point 3
+[DEBUGGING] NPC 'NPC' reached point 0
+[DEBUGGING] NPC 'NPC' reached point 1
+[DEBUGGING] NPC 'NPC' reached point 2
+[DEBUGGING] NPC 'NPC' reached point 3
+[DEBUGGING] NPC 'NPC' reached point 0
+[DEBUGGING] NPC 'NPC' reached point 1
+[DEBUGGING] NPC 'NPC' reached point 2
+[DEBUGGING] NPC 'NPC' reached point 3
+[DEBUGGING] NPC 'NPC' reached point 0
+[DEBUGGING] NPC 'NPC' reached point 1
+[DEBUGGING] NPC 'NPC' reached point 2
+[DEBUGGING] NPC 'NPC' reached point 3
+[DEBUGGING] NPC 'NPC' reached point 0
+[DEBUGGING] NPC 'NPC' reached point 1
+[DEBUGGING] NPC 'NPC' reached point 2
 [INFO] Game Terminating...
 [INFO] stopped audio (bgm)
 [INFO] Game terminated
 [INFO] Game end
+[INFO] Destroyed Resource<image>: NPC/Lucy/role/lucyR.png
+[INFO] Destroyed Resource<image>: NPC/Lucy/role/lucyD.png
+[INFO] Destroyed Resource<image>: NPC/axeman/role/axemanL.png
+[INFO] Destroyed Resource<image>: NPC/axeman/role/axemanD.png
+[INFO] Destroyed Resource<image>: NPC/axeman/role/axemanU.png
+[INFO] Destroyed Resource<image>: scene/bb.png?1650x650
+[INFO] Destroyed Resource<image>: BattlePlayer/right2.png
+[INFO] Destroyed Resource<image>: NPC/test/avatar/taldaicon.png
+[INFO] Destroyed Resource<image>: BattlePlayer/left1.png
+[INFO] Destroyed Resource<image>: BattlePlayer/up2.png
+[INFO] Destroyed Resource<image>: BattlePlayer/right_idle.png
+[INFO] Destroyed Resource<image>: NPC/test/avatar/NEWicon.png
 [INFO] Destroyed Resource<image>: lose/benjamin-happy.png
 [INFO] Destroyed Resource<image>: NPC/Yang/role/YangL.png
 [INFO] Destroyed Resource<image>: NPC/Yang/role/YangU.png
 [INFO] Destroyed Resource<image>: smalleat/wall.png?64x64
 [INFO] Destroyed Resource<image>: mainworld/grasss.png?64x64
+[INFO] Destroyed Resource<image>: NPC/Lucy/role/lucyU.png
 [INFO] Destroyed Resource<image>: NPC/dyy/role/dyyR.png
+[INFO] Destroyed Resource<image>: NPC/test/avatar/windcloudicon.png
 [INFO] Destroyed Resource<image>: NPC/dyy/role/dyyU.png
 [INFO] Destroyed Resource<image>: NPC/dyy/role/dyyD.png
 [INFO] Destroyed Resource<image>: NPC/Kao/role/KaoR.png
@@ -277,21 +1326,27 @@
 [INFO] Destroyed Resource<image>: NPC/Kao/role/KaoD.png
 [INFO] Destroyed Resource<image>: mainworld/2ROAD.png?64x64
 [INFO] Destroyed Resource<image>: NPC/test/role/test_sheet.png
+[INFO] Destroyed Resource<image>: BattlePlayer/left_idle.png
 [INFO] Destroyed Resource<image>: player/right_idle.png
 [INFO] Destroyed Resource<image>: NPC/test/avatar/test_avatar.png
 [INFO] Destroyed Resource<image>: player/down2.png
 [INFO] Destroyed Resource<image>: player/down1.png
+[INFO] Destroyed Resource<image>: BattlePlayer/up1.png
 [INFO] Destroyed Resource<image>: player/right1.png
 [INFO] Destroyed Resource<image>: player/up2.png
+[INFO] Destroyed Resource<image>: BattlePlayer/down1.png
+[INFO] Destroyed Resource<image>: smalleat/LSEAT.png?64x64
 [INFO] Destroyed Resource<image>: player/left2.png
 [INFO] Destroyed Resource<image>: player/up_idle.png
 [INFO] Destroyed Resource<image>: play/dollar.png?56x56
 [INFO] Destroyed Resource<image>: player/idle.png
+[INFO] Destroyed Resource<image>: NPC/test/avatar/smalleaticon.png
 [INFO] Destroyed Resource<image>: mainworld/informationeletric.png?512x512
 [INFO] Destroyed Resource<image>: mainworld/waterwood.png?512x512
 [INFO] Destroyed Resource<image>: mainworld/lake.png?640x512
 [INFO] Destroyed Resource<image>: mainworld/windcloud.png?512x512
 [INFO] Destroyed Resource<image>: mainworld/UROAD.png?64x64
+[INFO] Destroyed Resource<image>: mainworld/lotus.png?64x64
 [INFO] Destroyed Resource<image>: player/right2.png
 [INFO] Destroyed Resource<image>: mainworld/DROAD.png?64x64
 [INFO] Destroyed Resource<image>: mainworld/1ROAD.png?64x64
@@ -299,15 +1354,19 @@
 [INFO] Destroyed Resource<image>: mainworld/0ROAD.png?64x64
 [INFO] Destroyed Resource<image>: scene/login.png?1920x1024
 [INFO] Destroyed Resource<image>: stage-select/sword2.png?800x150
+[INFO] Destroyed Resource<image>: NPC/Lucy/role/lucyL.png
+[INFO] Destroyed Resource<image>: mainworld/running.png?64x64
 [INFO] Destroyed Resource<image>: NPC/dyy/role/dyyL.png
 [INFO] Destroyed Resource<image>: mainworld/talda.png?512x512
 [INFO] Destroyed Resource<image>: mainworld/RED.png?64x64
 [INFO] Destroyed Resource<image>: mainworld/GASS.png?64x64
 [INFO] Destroyed Resource<image>: mainworld/PINK.png?64x64
+[INFO] Destroyed Resource<image>: smalleat/RSEAT.png?64x64
 [INFO] Destroyed Resource<image>: mainworld/3ROAD.png?64x64
 [INFO] Destroyed Resource<image>: mainworld/MUSHROOM.png?64x64
 [INFO] Destroyed Resource<image>: mainworld/BUSH.png?64x64
 [INFO] Destroyed Resource<image>: player/left_idle.png
+[INFO] Destroyed Resource<image>: BattlePlayer/up_idle.png
 [INFO] Destroyed Resource<image>: stage-select/sword.png
 [INFO] Destroyed Resource<image>: stage-select/dirt.png?400x100
 [INFO] Destroyed Resource<image>: stage-select/dirt.png
@@ -318,12 +1377,17 @@
 [INFO] Destroyed Resource<image>: stage-select/floor.png
 [INFO] Destroyed Resource<image>: NPC/Kao/role/KaoL.png
 [INFO] Destroyed Resource<image>: player/up1.png
+[INFO] Destroyed Resource<image>: mainworld/water.png?64x64
 [INFO] Destroyed Resource<image>: NPC/Yang/role/YangR.png
 [INFO] Destroyed Resource<image>: smalleat/floor.png?64x64
 [INFO] Destroyed Resource<image>: mainworld/smalleat.png?512x512
+[INFO] Destroyed Resource<image>: BattlePlayer/left2.png
+[INFO] Destroyed Resource<image>: BattlePlayer/down2.png
 [INFO] Destroyed Resource<image>: stage-select/sword.png?800x150
 [INFO] Destroyed Resource<image>: player/left1.png
+[INFO] Destroyed Resource<image>: NPC/axeman/role/axemanR.png
 [INFO] Destroyed Resource<image>: stage-select/sword2.png
+[INFO] Destroyed Resource<image>: BattlePlayer/right1.png
 [INFO] Destroyed Resource<image>: mainworld/GAS.png?64x64
 [INFO] Destroyed Resource<image>: icon.png
 [INFO] Destroyed Resource<image>: mainworld/RROAD.png?64x64
@@ -335,6 +1399,7 @@
 [INFO] Destroyed Resource<font>: normal.ttf?128
 [INFO] Destroyed<sample_instance>: coconut.ogg
 [INFO] Destroyed Resource<audio>: Ruby.ogg
+[INFO] Destroyed Resource<audio>: XCB.ogg
 [INFO] Destroyed Resource<audio>: coconut.ogg
 [INFO] Destroyed Resource<audio>: play.ogg
 [INFO] Destroyed Resource<audio>: start.ogg
