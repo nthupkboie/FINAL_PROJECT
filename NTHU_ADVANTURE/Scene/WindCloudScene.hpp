@@ -47,6 +47,8 @@ public:
         TILE_FLOOR,
         TABLE,
         NOTHING,
+        LSEAT,
+        RSEAT,
     };
 
     static const std::vector<Engine::Point> directions;

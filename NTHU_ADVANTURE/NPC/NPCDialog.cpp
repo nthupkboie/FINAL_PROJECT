@@ -100,11 +100,6 @@ void NPCDialog::StartDialog(const std::string& npcName,
     isDisplayingFullMessage = false;
     isActive = true;
 
-    // 設置對話框位置：視角中央下方
-    //IScene* scene;
-    //if (PlayScene::inBattle) scene = dynamic_cast<BattleScene*>(Engine::GameEngine::GetInstance().GetScene("play"));
-    //PlayScene* scene = dynamic_cast<PlayScene*>(Engine::GameEngine::GetInstance().GetScene("play"));
-    //if (scene) {
     Engine::Point clientSize;
     Engine::Point camera;
     if (!PlayScene::inPlay) {
@@ -172,9 +167,6 @@ void NPCDialog::Draw() const {
     if (font && !npcName.empty()) {
         al_draw_text(font, nameColor, nameX, nameY, ALLEGRO_ALIGN_LEFT, npcName.c_str());
     }
-    
-    
-
 
     // 繪製對話文字
     if (font && !currentDisplayText.empty()) {
@@ -238,9 +230,6 @@ void NPCDialog::Draw() const {
 
             al_draw_text(font, dynamicColor, textX, currentY, ALLEGRO_ALIGN_LEFT, currentLine.c_str());
         }
-
-
-
     }
 }
 bool NPCDialog::IsDialogActive() const {
@@ -249,23 +238,6 @@ bool NPCDialog::IsDialogActive() const {
 
 void NPCDialog::AdvanceDialog() {
     if (!isActive) return;
-
-    // if (!isDisplayingFullMessage) {
-    //     // 如果還沒顯示完整訊息，直接顯示完整訊息
-    //     currentDisplayText = messages[currentMessageIndex];
-    //     isDisplayingFullMessage = true;
-    // } else {
-    //     // 如果已經顯示完整訊息，跳到下一條
-    //     currentMessageIndex++;
-    //     if (currentMessageIndex < messages.size()) {
-    //         currentDisplayText.clear();
-    //         isDisplayingFullMessage = false;
-    //     } else {
-    //         // 沒有更多訊息了，結束對話
-    //         EndDialog();
-    //         talking = false;
-    //     }
-    // }
 
     // 第一次顯示該訊息就檢查是否是特殊指令
     if (isDisplayingFullMessage) {
@@ -286,9 +258,6 @@ void NPCDialog::AdvanceDialog() {
         currentDisplayText = messages[currentMessageIndex];
         isDisplayingFullMessage = true;
     }
-
-
-
 }
 
 void NPCDialog::EndDialog() {

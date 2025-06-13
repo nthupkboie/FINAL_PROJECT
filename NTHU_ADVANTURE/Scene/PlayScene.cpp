@@ -28,7 +28,7 @@
 #include "LogScene.hpp"
 
 
-bool PlayScene::inPlay = true, PlayScene::inSmallEat = false, PlayScene::inTalda = false, PlayScene::inCGLake = false, PlayScene::inWaterWood = false, PlayScene::inWindCloud = false, PlayScene::inEE = false, PlayScene::inBattle = false;
+bool PlayScene::inPlay = true, PlayScene::inSmallEat = false, PlayScene::inTalda = false, PlayScene::inCGLake = false, PlayScene::inWaterWood = false, PlayScene::inWindCloud = false, PlayScene::inEE = false, PlayScene::inBattle = false, PlayScene::inNEW = false;
 
 //int PlayScene::money = 0;
 
@@ -447,6 +447,8 @@ void PlayScene::OnKeyDown(int keyCode) {
 
                 if (zone.buildingName == "新齋") {
                     Engine::GameEngine::GetInstance().ChangeScene("new");
+                    inPlay = false;
+                    inNEW = true;
                 } else if (zone.buildingName == "小吃部") {
                     Engine::GameEngine::GetInstance().ChangeScene("smalleat");
                     inPlay = false;
@@ -487,6 +489,11 @@ void PlayScene::OnKeyDown(int keyCode) {
     //     auto npcAvatar = Engine::Resources::GetInstance().GetBitmap("NPC/test/icon/test_icon.png");
     //     dialog.StartDialog("測試NPC", npcAvatar, testMessages);
     // }
+    if(keyCode == ALLEGRO_KEY_0){
+        Engine::GameEngine::GetInstance().ChangeScene("new");
+        inPlay = false;
+        inNEW = true;
+    }
 }
 
 
@@ -748,14 +755,6 @@ void PlayScene::ReadMap() {
                 default:
                     continue;
             }
-            
-            // TileMapGroup->AddNewObject(
-            //     new Engine::Image(imagePath, 
-            //                       x * BlockSize, 
-            //                       y * BlockSize, 
-            //                       BlockSize, 
-            //                       BlockSize)
-            // );
         }
     }
 }
