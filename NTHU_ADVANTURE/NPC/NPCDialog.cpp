@@ -7,6 +7,10 @@
 #include "Player/Player.hpp"
 #include "Engine/GameEngine.hpp"
 
+#include <fstream>
+#include <cstdlib>
+#include <ctime>
+
 #include <allegro5/allegro_primitives.h>
 #include <allegro5/allegro.h>
 
@@ -169,6 +173,9 @@ void NPCDialog::Draw() const {
         al_draw_text(font, nameColor, nameX, nameY, ALLEGRO_ALIGN_LEFT, npcName.c_str());
     }
     
+    
+
+
     // 繪製對話文字
     if (font && !currentDisplayText.empty()) {
         // 計算可用寬度 (減去頭像和內邊距)
@@ -213,9 +220,27 @@ void NPCDialog::Draw() const {
         }
         
         // 繪製最後一行
+        // if (!currentLine.empty()) {
+        //     al_draw_text(font, textColor, textX, currentY, ALLEGRO_ALIGN_LEFT, currentLine.c_str());
+        // }
+        
         if (!currentLine.empty()) {
-            al_draw_text(font, textColor, textX, currentY, ALLEGRO_ALIGN_LEFT, currentLine.c_str());
+            ALLEGRO_COLOR dynamicColor = textColor;
+            if (currentDisplayText.find("【大吉】") != std::string::npos) {
+                dynamicColor = al_map_rgb(255, 223, 0); // 金色
+            } else if (currentDisplayText.find("【中吉】") != std::string::npos) {
+                dynamicColor = al_map_rgb(144, 238, 144); // 淺綠
+            } else if (currentDisplayText.find("【小吉】") != std::string::npos || currentDisplayText.find("【吉】") != std::string::npos) {
+                dynamicColor = al_map_rgb(173, 216, 230); // 淡藍
+            } else if (currentDisplayText.find("【凶】") != std::string::npos) {
+                dynamicColor = al_map_rgb(255, 99, 71); // 番茄紅
+            }
+
+            al_draw_text(font, dynamicColor, textX, currentY, ALLEGRO_ALIGN_LEFT, currentLine.c_str());
         }
+
+
+
     }
 }
 bool NPCDialog::IsDialogActive() const {
@@ -225,24 +250,66 @@ bool NPCDialog::IsDialogActive() const {
 void NPCDialog::AdvanceDialog() {
     if (!isActive) return;
 
-    if (!isDisplayingFullMessage) {
-        // 如果還沒顯示完整訊息，直接顯示完整訊息
-        currentDisplayText = messages[currentMessageIndex];
-        isDisplayingFullMessage = true;
-    } else {
-        // 如果已經顯示完整訊息，跳到下一條
+    // if (!isDisplayingFullMessage) {
+    //     // 如果還沒顯示完整訊息，直接顯示完整訊息
+    //     currentDisplayText = messages[currentMessageIndex];
+    //     isDisplayingFullMessage = true;
+    // } else {
+    //     // 如果已經顯示完整訊息，跳到下一條
+    //     currentMessageIndex++;
+    //     if (currentMessageIndex < messages.size()) {
+    //         currentDisplayText.clear();
+    //         isDisplayingFullMessage = false;
+    //     } else {
+    //         // 沒有更多訊息了，結束對話
+    //         EndDialog();
+    //         talking = false;
+    //     }
+    // }
+
+    // 第一次顯示該訊息就檢查是否是特殊指令
+    if (isDisplayingFullMessage) {
         currentMessageIndex++;
         if (currentMessageIndex < messages.size()) {
+            // 檢查是否是 #lottery 指令
+            std::string& msg = messages[currentMessageIndex];
+            if (msg == "#lottery") {
+                msg = DrawRandomLot(); // 抽籤
+            }
             currentDisplayText.clear();
             isDisplayingFullMessage = false;
         } else {
-            // 沒有更多訊息了，結束對話
             EndDialog();
             talking = false;
         }
+    } else {
+        currentDisplayText = messages[currentMessageIndex];
+        isDisplayingFullMessage = true;
     }
+
+
+
 }
 
 void NPCDialog::EndDialog() {
     isActive = false;
+}
+
+std::string NPCDialog::DrawRandomLot() {
+    std::ifstream fin("Resource/lottery.txt");
+    std::vector<std::string> lots;
+    std::string line;
+
+    while (std::getline(fin, line)) {
+        if (!line.empty()) {
+            lots.push_back(line);
+        }
+    }
+    fin.close();
+
+    if (lots.empty()) return "抽籤失敗，沒有籤詩。";
+
+    std::srand(static_cast<unsigned>(std::time(nullptr))); // 設定隨機種子
+    int idx = std::rand() % lots.size();
+    return "【你抽到了】：\n" + lots[idx];
 }
