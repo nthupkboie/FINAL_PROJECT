@@ -84,14 +84,20 @@ namespace Engine {
         if (it->first) delete it->second;
         objects.erase(it);
     }
+    void Group::RemoveObject(IObject* obj) {
+        for (auto it = objects.begin(); it != objects.end(); ++it) {
+            if (it->second == obj) {
+                Group::RemoveObject(it); // 原本的 iterator 版本
+                return;
+            }
+        }
+    }
+
     void Group::RemoveControl(std::list<std::pair<bool, IControl *>>::iterator it) {
         if (it->first) delete it->second;
         controls.erase(it);
     }
-    void Group::RemoveControlObject(std::list<std::pair<bool, IControl *>>::iterator ctrlIt, std::list<std::pair<bool, IObject *>>::iterator objIt) {
-        RemoveControl(ctrlIt);
-        RemoveObject(objIt);
-    }
+
     void Group::AddNewObject(IObject *obj) {
         addObject(true, obj);
     }
