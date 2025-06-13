@@ -146,6 +146,7 @@ void BattleScene::Update(float deltaTime) {
     int gridY = static_cast<int>(std::floor(player->Position.y / BlockSize));
     if (gridX == MapWidth - 1 && gridY == MapHeight - 1) { // (29, 15)
         Engine::LOG(Engine::INFO) << "Reached goal! Switching to win scene.";
+        PlayScene::inBattle = false;
         Engine::GameEngine::GetInstance().ChangeScene("win");
         return;
     }
@@ -180,7 +181,9 @@ void BattleScene::Update(float deltaTime) {
 
     // 檢查遊戲結束條件
     if (lives <= 0) {
+        PlayScene::inBattle = false;
         Engine::GameEngine::GetInstance().ChangeScene("lose");
+        
     }
 }
 
@@ -201,7 +204,7 @@ void BattleScene::Draw() const {
 
     UIGroup->Draw(); // 繪製斧頭圖片
     IScene::Draw(); //畫斧頭 要放在最後
-    // 繪製計時器
+    //繪製計時器
     ALLEGRO_FONT* font = Engine::Resources::GetInstance().GetFont("normal.ttf", 24).get();
     if (font) {
         char timeStr[16];
@@ -261,6 +264,7 @@ void BattleScene::OnKeyDown(int keyCode) {
 
     if(keyCode == ALLEGRO_KEY_P){
         PlayScene::inPlay = true;
+        PlayScene::inBattle = false;
         LogScene::money += 10;
         Engine::GameEngine::GetInstance().ChangeScene("play");
     }

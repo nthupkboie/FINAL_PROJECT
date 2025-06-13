@@ -8,7 +8,7 @@
 
 #include "Engine/IScene.hpp"
 #include "Engine/Point.hpp"
-
+#include "NPC/NPC.hpp"
 #include "NPC/NPCDialog.hpp"
 
 class Turret;
@@ -34,6 +34,7 @@ private:
     Engine::Image* axeImage;
     Engine::Image* speedImage = nullptr;
     Engine::Label* speedLabel;
+    NPC* Kao = nullptr;
 
 protected:
     int lives;
@@ -91,6 +92,12 @@ public:
     static const int window_x, window_y;
     static bool inPlay;
     static bool inSmallEat;
+    static bool inBattle;
+    static bool inCGLake;
+    static bool inEE;
+    static bool inTalda;
+    static bool inWaterWood;
+    static bool inWindCloud;
     //static bool haveAxe;
 
     static std::vector<PlayScene::TileType> mapData;

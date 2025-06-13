@@ -226,7 +226,7 @@ void EEScene::OnKeyDown(int keyCode) {
 
     if(keyCode == ALLEGRO_KEY_P){
         PlayScene::inPlay = true;
-        PlayScene::inSmallEat = false;
+        PlayScene::inEE = false;
         Engine::GameEngine::GetInstance().ChangeScene("play");
     }
 }

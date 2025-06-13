@@ -16,6 +16,7 @@
 #include "Scene/BattleScene.hpp"
 #include "Scene/PlayScene.hpp"
 #include "Scene/LogScene.hpp"
+#include "Scene/CGLakeScene.hpp"
 #include "Engine/Resources.hpp"
 
 BattleScene *BattlePlayer::getBattleScene() {
@@ -250,10 +251,17 @@ bool BattlePlayer::canWalk(int x, int y){
     if (x > BattleScene::BlockSize * BattleScene::MapWidth || x < 0 || y < 0 || y > BattleScene::BlockSize * BattleScene::MapHeight) return false;
     if (!PlayScene::inPlay){
         //BattleScene* scene = dynamic_cast<BattleScene*>(Engine::GameEngine::GetInstance().GetScene("battle"));
-        if (!BattleScene::collision(x, y)) {
-            //printf("HHHHHHHHHHHHHH\n");
-            return false;
+        if (PlayScene::inBattle){
+            if (!BattleScene::collision(x, y)) {
+                return false;
+            }
         }
+        else if (PlayScene::inCGLake){
+            if (!CGLakeScene::collision(x, y)){
+                return false;
+            }
+        }
+        
     }
     
     //printf("TTTTTTTTTTTTTT\n");

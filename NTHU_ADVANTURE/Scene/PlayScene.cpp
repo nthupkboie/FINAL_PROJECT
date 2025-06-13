@@ -27,7 +27,7 @@
 #include "UI/Component/Image.hpp"
 
 
-bool PlayScene::inPlay = true, PlayScene::inSmallEat = false;
+bool PlayScene::inPlay = true, PlayScene::inSmallEat = false, PlayScene::inTalda = false, PlayScene::inCGLake = false, PlayScene::inWaterWood = false, PlayScene::inWindCloud = false, PlayScene::inEE = false, PlayScene::inBattle = false;
 
 //int PlayScene::money = 0;
 
@@ -109,6 +109,20 @@ void PlayScene::Initialize() {
         "祝你好運，冒險者！"
     });
 
+    auto KaoAvatar = Engine::Resources::GetInstance().GetBitmap("NPC/test/avatar/test_avatar.png");
+    NPCGroup->AddNewObject(Kao = new NPC("高為元", KaoAvatar, 
+                                            "NPC/Kao/role/KaoU.png",
+                                            "NPC/Kao/role/KaoD.png", 
+                                            "NPC/Kao/role/KaoL.png",
+                                            "NPC/Kao/role/KaoR.png",
+                                            BlockSize * 20, BlockSize * 14
+                                        ));
+
+    Kao->SetMessages({
+        "同學，樹德樓真的很好住唷",
+        "幫我去樹德樓繞一圈評分五顆星，一次給你10塊錢",
+        "不說了，我要去健身了"
+    });
     // 預載資源
     //Engine::Resources::GetInstance().GetBitmap("lose/benjamin-happy.png");
     
@@ -247,6 +261,7 @@ void PlayScene::OnKeyDown(int keyCode) {
     if(keyCode == ALLEGRO_KEY_B){
         Engine::GameEngine::GetInstance().ChangeScene("battle");
         inPlay = false;
+        inBattle = true;
     }
     if(keyCode == ALLEGRO_KEY_1){
         Engine::GameEngine::GetInstance().ChangeScene("smalleat");
@@ -257,24 +272,30 @@ void PlayScene::OnKeyDown(int keyCode) {
     if(keyCode == ALLEGRO_KEY_2){
         Engine::GameEngine::GetInstance().ChangeScene("waterwood");
         inPlay = false;
-        inSmallEat = true;
+        inWaterWood = true;
         //haveAxe = true;
     }
     if(keyCode == ALLEGRO_KEY_3){
         Engine::GameEngine::GetInstance().ChangeScene("windcloud");
         inPlay = false;
-        inSmallEat = true;
+        inWindCloud = true;
         //haveAxe = true;
     }
     if(keyCode == ALLEGRO_KEY_4){
         Engine::GameEngine::GetInstance().ChangeScene("EE");
         inPlay = false;
-        inSmallEat = true;
+        inEE = true;
     }
     if(keyCode == ALLEGRO_KEY_5){
         Engine::GameEngine::GetInstance().ChangeScene("talda");
         inPlay = false;
-        inSmallEat = true;
+        inTalda = true;
+        //haveAxe = true;
+    }
+    if(keyCode == ALLEGRO_KEY_6){
+        Engine::GameEngine::GetInstance().ChangeScene("CGLake");
+        inPlay = false;
+        inCGLake = true;
         //haveAxe = true;
     }
     // // 按T鍵測試開啟對話 (可選)
