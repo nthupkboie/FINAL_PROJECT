@@ -40,6 +40,7 @@ public:
     static float haveSpeedUp;
     static int clearedLake;
     static Engine::Point lastPlayerPos;
+    static std::string myName;
 };
 
 

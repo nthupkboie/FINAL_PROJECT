@@ -81,13 +81,13 @@ void NEWScene::Initialize() {
                                             2, 2,  // 右
                                             64, 64)); // 圖塊大小
 
-    NPC* Yang;
-    auto YangAvatar = Engine::Resources::GetInstance().GetBitmap("NPC/test/avatar/test_avatar.png");
-    NPCGroup->AddNewObject(Yang = new NPC("Yang", YangAvatar, 
-                                            "NPC/Yang/role/YangU.png",
-                                            "NPC/Yang/role/YangD.png", 
-                                            "NPC/Yang/role/YangL.png",
-                                            "NPC/Yang/role/YangR.png",
+    NPC* bablo;
+    auto babloAvatar = Engine::Resources::GetInstance().GetBitmap("NPC/bablo/avatar/bablo.png");
+    NPCGroup->AddNewObject(bablo = new NPC("李君萎", babloAvatar, 
+                                            "NPC/bablo/role/babloU.png",
+                                            "NPC/bablo/role/babloD.png", 
+                                            "NPC/bablo/role/babloL.png",
+                                            "NPC/bablo/role/babloR.png",
                                             BlockSize * 8, BlockSize * 8
                                         ));
 
@@ -112,9 +112,9 @@ void NEWScene::Initialize() {
         "Shawty had them Apple Bottom jeans, jeans"
     });
 
-    Yang->SetMessages({
-        "我是楊舜仁！",
-        "我不會當人",
+    bablo->SetMessages({
+        "下次不會再喝酒了...",
+        "王哨橙 摔角"
     });
 
     // 預載資源

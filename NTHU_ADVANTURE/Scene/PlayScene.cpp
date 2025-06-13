@@ -204,7 +204,8 @@ void PlayScene::Update(float deltaTime) {
 
     if (LogScene::clearedLake == 2) {
         dyy->SetMessages({
-            "同學不錯嘛，加你0.2分"
+            "你知道倒數的英文嗎? reciprocal!!",
+            "學英文是欸尼time欸尼place!!"
         });
     }
     

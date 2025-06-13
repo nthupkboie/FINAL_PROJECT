@@ -9,6 +9,8 @@
 #include "Engine/Point.hpp"
 
 #include "NPC/NPCDialog.hpp"
+#include "NPC/Shopper.hpp"
+#include "UI/Component/ImageButton.hpp"
 
 class Turret;
 namespace Engine {
@@ -33,6 +35,21 @@ private:
     Engine::Label* moneyLabel;
     Engine::Image* moneyImage;
     Engine::Image* axeImage = nullptr;
+
+    bool showShopButtons = false; // 新增：控制購買按鈕顯示
+    Engine::ImageButton* oneButton = nullptr; // 新增：購買按鈕
+    Engine::ImageButton* twoButton = nullptr; // 新增：取消按鈕
+    Engine::ImageButton* threeButton = nullptr;
+    Engine::ImageButton* fourButton = nullptr;
+    Engine::Label* oneLabel;
+    Engine::Label* twoLabel;
+    Engine::Label* threeLabel;
+    Engine::Label* fourLabel;
+    Shopper* yang = nullptr; // 新增：NPC 引用
+
+    int index = -1;
+    char answer[5] = {'A', 'A', 'A', 'A', 'A'};
+    std::shared_ptr<ALLEGRO_BITMAP> bmp1;
 protected:
     int lives;
     int money;
@@ -57,6 +74,7 @@ public:
     Group *PlayerGroup;
     Group *LabelGroup;
     Group *NPCGroup;
+    Group *ShopperGroup;
 
     std::vector<std::vector<TileType>> mapState;
     std::vector<std::vector<int>> mapDistance;
@@ -84,4 +102,10 @@ public:
     static bool collision(int x, int y);
 
     bool firstTime = true;
+
+    void oneOnClick();
+    void twoOnClick();
+    void threeOnClick();
+    void fourOnClick();
+    void openingDialog();
 };
