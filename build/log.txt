@@ -1,0 +1,836 @@
+[INFO] Game Initializing...
+[INFO] Loaded Resource<image>: Resource/images/icon.png
+[INFO] Loaded window icon from: icon.png
+[INFO] There are total 16 supported mouse buttons
+[INFO] Allegro5 initialized
+[INFO] Game begin
+[INFO] Loaded Resource<image>: Resource/images/scene/start-by.png scaled to 1920x1024
+[INFO] Loaded Resource<font>: Resource/fonts/normal.ttf with size 128
+[INFO] Loaded Resource<image>: Resource/images/stage-select/sword.png scaled to 800x150
+[INFO] Loaded Resource<image>: Resource/images/stage-select/sword.png
+[INFO] Loaded Resource<font>: Resource/fonts/title.ttf with size 48
+[INFO] Loaded Resource<image>: Resource/images/stage-select/sword2.png scaled to 800x150
+[INFO] Loaded Resource<image>: Resource/images/stage-select/sword2.png
+[INFO] Loaded Resource<audio>: Resource/audios/start.ogg
+[INFO] Game initialized
+[INFO] Game start event loop
+[INFO] stopped audio (bgm)
+[INFO] Loaded Resource<image>: Resource/images/scene/login.png scaled to 1920x1024
+[INFO] Loaded Resource<font>: Resource/fonts/title.ttf with size 56
+[INFO] Loaded Resource<image>: Resource/images/stage-select/dirt.png scaled to 400x100
+[INFO] Loaded Resource<image>: Resource/images/stage-select/dirt.png
+[INFO] Loaded Resource<image>: Resource/images/stage-select/floor.png
+[INFO] Loaded Resource<audio>: Resource/audios/coconut.ogg
+[INFO] Created<sample_instance>: Resource/audios/coconut.ogg
+[INFO] Changed to login scene
+[INFO] stopped audio (sample)
+[INFO] mapData.size() 1920
+[INFO] MapWidth * MapHeight 1920
+[INFO] Loaded Resource<image>: Resource/images/mainworld/GAS.png scaled to 64x64
+[INFO] Loaded Resource<image>: Resource/images/mainworld/grass.png scaled to 64x64
+[INFO] Loaded Resource<image>: Resource/images/mainworld/tree.png scaled to 64x64
+[INFO] Loaded Resource<image>: Resource/images/mainworld/GASS.png scaled to 64x64
+[INFO] Loaded Resource<image>: Resource/images/mainworld/BUSH.png scaled to 64x64
+[INFO] Loaded Resource<image>: Resource/images/mainworld/MUSHROOM.png scaled to 64x64
+[INFO] Loaded Resource<image>: Resource/images/mainworld/RED.png scaled to 64x64
+[INFO] Loaded Resource<image>: Resource/images/mainworld/PINK.png scaled to 64x64
+[INFO] Loaded Resource<image>: Resource/images/mainworld/informationeletric.png scaled to 512x512
+[INFO] Loaded Resource<image>: Resource/images/mainworld/talda.png scaled to 512x512
+[INFO] Loaded Resource<image>: Resource/images/mainworld/NEW.png scaled to 512x512
+[INFO] Loaded Resource<image>: Resource/images/mainworld/LROAD.png scaled to 64x64
+[INFO] Loaded Resource<image>: Resource/images/mainworld/RROAD.png scaled to 64x64
+[INFO] Loaded Resource<image>: Resource/images/mainworld/1ROAD.png scaled to 64x64
+[INFO] Loaded Resource<image>: Resource/images/mainworld/UROAD.png scaled to 64x64
+[INFO] Loaded Resource<image>: Resource/images/mainworld/0ROAD.png scaled to 64x64
+[INFO] Loaded Resource<image>: Resource/images/mainworld/3ROAD.png scaled to 64x64
+[INFO] Loaded Resource<image>: Resource/images/mainworld/DROAD.png scaled to 64x64
+[INFO] Loaded Resource<image>: Resource/images/mainworld/2ROAD.png scaled to 64x64
+[INFO] Loaded Resource<image>: Resource/images/mainworld/windcloud.png scaled to 512x512
+[INFO] Loaded Resource<image>: Resource/images/mainworld/lake.png scaled to 640x512
+[INFO] Loaded Resource<image>: Resource/images/mainworld/waterwood.png scaled to 512x512
+[INFO] Loaded Resource<image>: Resource/images/mainworld/smalleat.png scaled to 512x512
+[INFO] Loaded Resource<image>: Resource/images/player/idle.png
+[INFO] Loaded Resource<image>: Resource/images/player/left_idle.png
+[INFO] Loaded Resource<image>: Resource/images/player/right_idle.png
+[INFO] Loaded Resource<image>: Resource/images/player/up_idle.png
+[INFO] Loaded Resource<image>: Resource/images/player/up1.png
+[INFO] Loaded Resource<image>: Resource/images/player/up2.png
+[INFO] Loaded Resource<image>: Resource/images/player/down1.png
+[INFO] Loaded Resource<image>: Resource/images/player/down2.png
+[INFO] Loaded Resource<image>: Resource/images/player/left1.png
+[INFO] Loaded Resource<image>: Resource/images/player/left2.png
+[INFO] Loaded Resource<image>: Resource/images/player/right1.png
+[INFO] Loaded Resource<image>: Resource/images/player/right2.png
+[INFO] Loaded Resource<image>: Resource/images/NPC/test/avatar/test_avatar.png
+[INFO] Loaded Resource<image>: Resource/images/NPC/test/role/test_sheet.png
+[INFO] Loaded Resource<font>: Resource/fonts/normal.ttf with size 24
+[DEBUGGING] Added patrol point to NPC 'NPC': (1952, 672)
+[DEBUGGING] Added patrol point to NPC 'NPC': (1824, 672)
+[DEBUGGING] Added patrol point to NPC 'NPC': (1824, 544)
+[DEBUGGING] Added patrol point to NPC 'NPC': (1952, 544)
+[INFO] Loaded Resource<image>: Resource/images/NPC/Kao/role/KaoD.png
+[INFO] Loaded Resource<image>: Resource/images/NPC/Kao/role/KaoU.png
+[INFO] Loaded Resource<image>: Resource/images/NPC/Kao/role/KaoL.png
+[INFO] Loaded Resource<image>: Resource/images/NPC/Kao/role/KaoR.png
+[INFO] Loaded Resource<image>: Resource/images/NPC/dyy/role/dyyD.png
+[INFO] Loaded Resource<image>: Resource/images/NPC/dyy/role/dyyU.png
+[INFO] Loaded Resource<image>: Resource/images/NPC/dyy/role/dyyL.png
+[INFO] Loaded Resource<image>: Resource/images/NPC/dyy/role/dyyR.png
+[INFO] Loaded Resource<audio>: Resource/audios/play.ogg
+[INFO] Loaded Resource<image>: Resource/images/play/dollar.png scaled to 56x56
+[INFO] Changed to play scene
+[DEBUGGING] NPC 'NPC' reached point 1
+[DEBUGGING] NPC 'NPC' reached point 2
+[DEBUGGING] NPC 'NPC' reached point 3
+[DEBUGGING] NPC 'NPC' reached point 0
+[DEBUGGING] NPC 'NPC' reached point 1
+[INFO] stopped audio (bgm)
+[INFO] Initial tree count: 232 (59.1837%)
+[INFO] Path length: 154
+[INFO] Final tree count: 216 (45%)
+[INFO] Final tree count after extra: 221 (46.0417%)
+[INFO] Loaded Resource<image>: Resource/images/mainworld/stairs.png scaled to 64x64
+[INFO] Loaded Resource<image>: Resource/images/BattlePlayer/left_idle.png
+[INFO] Loaded Resource<image>: Resource/images/BattlePlayer/right_idle.png
+[INFO] Loaded Resource<image>: Resource/images/BattlePlayer/up_idle.png
+[INFO] Loaded Resource<image>: Resource/images/BattlePlayer/up1.png
+[INFO] Loaded Resource<image>: Resource/images/BattlePlayer/up2.png
+[INFO] Loaded Resource<image>: Resource/images/BattlePlayer/down1.png
+[INFO] Loaded Resource<image>: Resource/images/BattlePlayer/down2.png
+[INFO] Loaded Resource<image>: Resource/images/BattlePlayer/left1.png
+[INFO] Loaded Resource<image>: Resource/images/BattlePlayer/left2.png
+[INFO] Loaded Resource<image>: Resource/images/BattlePlayer/right1.png
+[INFO] Loaded Resource<image>: Resource/images/BattlePlayer/right2.png
+[INFO] Loaded Resource<image>: Resource/images/lose/benjamin-happy.png
+[INFO] Changed to battle scene
+[INFO] Reached goal! Switching to play scene from maze.
+[INFO] stopped audio (bgm)
+[INFO] mapData.size() 1920
+[INFO] MapWidth * MapHeight 1920
+[DEBUGGING] Added patrol point to NPC 'NPC': (1952, 672)
+[DEBUGGING] Added patrol point to NPC 'NPC': (1824, 672)
+[DEBUGGING] Added patrol point to NPC 'NPC': (1824, 544)
+[DEBUGGING] Added patrol point to NPC 'NPC': (1952, 544)
+[INFO] Changed to play scene
+[DEBUGGING] NPC 'NPC' reached point 1
+[DEBUGGING] NPC 'NPC' reached point 2
+[DEBUGGING] NPC 'NPC' reached point 3
+[DEBUGGING] NPC 'NPC' reached point 0
+[DEBUGGING] NPC 'NPC' reached point 1
+[DEBUGGING] NPC 'NPC' reached point 2
+[DEBUGGING] NPC 'NPC' reached point 3
+[DEBUGGING] NPC 'NPC' reached point 0
+[DEBUGGING] NPC 'NPC' reached point 1
+[DEBUGGING] NPC 'NPC' reached point 2
+[DEBUGGING] NPC 'NPC' reached point 3
+[DEBUGGING] NPC 'NPC' reached point 0
+[DEBUGGING] NPC 'NPC' reached point 1
+[DEBUGGING] NPC 'NPC' reached point 2
+[DEBUGGING] NPC 'NPC' reached point 3
+[INFO] stopped audio (bgm)
+[INFO] Initial tree count: 250 (63.7755%)
+[WARN] No path found or path too long (200 steps), regenerating maze...
+[INFO] Initial tree count: 259 (66.0714%)
+[WARN] No path found or path too long (200 steps), regenerating maze...
+[INFO] Initial tree count: 251 (64.0306%)
+[WARN] No path found or path too long (200 steps), regenerating maze...
+[INFO] Initial tree count: 257 (65.5612%)
+[WARN] No path found or path too long (200 steps), regenerating maze...
+[INFO] Initial tree count: 246 (62.7551%)
+[WARN] No path found or path too long (200 steps), regenerating maze...
+[INFO] Initial tree count: 266 (67.8571%)
+[INFO] Path length: 140
+[INFO] Final tree count: 338 (70.4167%)
+[INFO] Final tree count after extra: 338 (70.4167%)
+[INFO] Changed to battle scene
+[INFO] stopped audio (bgm)
+[INFO] mapData.size() 1920
+[INFO] MapWidth * MapHeight 1920
+[DEBUGGING] Added patrol point to NPC 'NPC': (1952, 672)
+[DEBUGGING] Added patrol point to NPC 'NPC': (1824, 672)
+[DEBUGGING] Added patrol point to NPC 'NPC': (1824, 544)
+[DEBUGGING] Added patrol point to NPC 'NPC': (1952, 544)
+[INFO] Changed to play scene
+[DEBUGGING] NPC 'NPC' reached point 1
+[DEBUGGING] NPC 'NPC' reached point 2
+[INFO] stopped audio (bgm)
+[INFO] Initial tree count: 270 (68.8776%)
+[INFO] Path length: 108
+[INFO] Final tree count: 347 (72.2917%)
+[INFO] Final tree count after extra: 348 (72.5%)
+[INFO] Changed to battle scene
+[INFO] stopped audio (bgm)
+[INFO] mapData.size() 1920
+[INFO] MapWidth * MapHeight 1920
+[DEBUGGING] Added patrol point to NPC 'NPC': (1952, 672)
+[DEBUGGING] Added patrol point to NPC 'NPC': (1824, 672)
+[DEBUGGING] Added patrol point to NPC 'NPC': (1824, 544)
+[DEBUGGING] Added patrol point to NPC 'NPC': (1952, 544)
+[INFO] Changed to play scene
+[DEBUGGING] NPC 'NPC' reached point 1
+[INFO] stopped audio (bgm)
+[INFO] Initial tree count: 256 (65.3061%)
+[WARN] No path found or path too long (200 steps), regenerating maze...
+[INFO] Initial tree count: 258 (65.8163%)
+[WARN] No path found or path too long (200 steps), regenerating maze...
+[INFO] Initial tree count: 243 (61.9898%)
+[WARN] No path found or path too long (200 steps), regenerating maze...
+[INFO] Initial tree count: 276 (70.4082%)
+[WARN] No path found or path too long (200 steps), regenerating maze...
+[INFO] Initial tree count: 247 (63.0102%)
+[INFO] Path length: 168
+[INFO] Final tree count: 311 (64.7917%)
+[INFO] Final tree count after extra: 311 (64.7917%)
+[INFO] Changed to battle scene
+[INFO] stopped audio (bgm)
+[INFO] mapData.size() 1920
+[INFO] MapWidth * MapHeight 1920
+[DEBUGGING] Added patrol point to NPC 'NPC': (1952, 672)
+[DEBUGGING] Added patrol point to NPC 'NPC': (1824, 672)
+[DEBUGGING] Added patrol point to NPC 'NPC': (1824, 544)
+[DEBUGGING] Added patrol point to NPC 'NPC': (1952, 544)
+[INFO] Changed to play scene
+[DEBUGGING] NPC 'NPC' reached point 1
+[DEBUGGING] NPC 'NPC' reached point 2
+[DEBUGGING] NPC 'NPC' reached point 3
+[DEBUGGING] NPC 'NPC' reached point 0
+[DEBUGGING] NPC 'NPC' reached point 1
+[DEBUGGING] NPC 'NPC' reached point 2
+[DEBUGGING] NPC 'NPC' reached point 3
+[DEBUGGING] NPC 'NPC' reached point 0
+[DEBUGGING] NPC 'NPC' reached point 1
+[DEBUGGING] NPC 'NPC' reached point 2
+[DEBUGGING] NPC 'NPC' reached point 3
+[DEBUGGING] NPC 'NPC' reached point 0
+[DEBUGGING] NPC 'NPC' reached point 1
+[DEBUGGING] NPC 'NPC' reached point 2
+[INFO] stopped audio (bgm)
+[INFO] Initial tree count: 253 (64.5408%)
+[WARN] No path found or path too long (200 steps), regenerating maze...
+[INFO] Initial tree count: 275 (70.1531%)
+[WARN] No path found or path too long (200 steps), regenerating maze...
+[INFO] Initial tree count: 266 (67.8571%)
+[INFO] Path length: 156
+[INFO] Final tree count: 321 (66.875%)
+[INFO] Final tree count after extra: 322 (67.0833%)
+[INFO] Changed to battle scene
+[INFO] stopped audio (bgm)
+[INFO] mapData.size() 1920
+[INFO] MapWidth * MapHeight 1920
+[DEBUGGING] Added patrol point to NPC 'NPC': (1952, 672)
+[DEBUGGING] Added patrol point to NPC 'NPC': (1824, 672)
+[DEBUGGING] Added patrol point to NPC 'NPC': (1824, 544)
+[DEBUGGING] Added patrol point to NPC 'NPC': (1952, 544)
+[INFO] Changed to play scene
+[DEBUGGING] NPC 'NPC' reached point 1
+[DEBUGGING] NPC 'NPC' reached point 2
+[INFO] stopped audio (bgm)
+[INFO] Initial tree count: 244 (62.2449%)
+[INFO] Path length: 164
+[INFO] Final tree count: 288 (60%)
+[INFO] Final tree count after extra: 289 (60.2083%)
+[INFO] Changed to battle scene
+[INFO] stopped audio (bgm)
+[INFO] mapData.size() 1920
+[INFO] MapWidth * MapHeight 1920
+[DEBUGGING] Added patrol point to NPC 'NPC': (1952, 672)
+[DEBUGGING] Added patrol point to NPC 'NPC': (1824, 672)
+[DEBUGGING] Added patrol point to NPC 'NPC': (1824, 544)
+[DEBUGGING] Added patrol point to NPC 'NPC': (1952, 544)
+[INFO] Changed to play scene
+[DEBUGGING] NPC 'NPC' reached point 1
+[INFO] stopped audio (bgm)
+[INFO] Initial tree count: 264 (67.3469%)
+[WARN] No path found or path too long (200 steps), regenerating maze...
+[INFO] Initial tree count: 258 (65.8163%)
+[WARN] No path found or path too long (200 steps), regenerating maze...
+[INFO] Initial tree count: 269 (68.6224%)
+[WARN] No path found or path too long (200 steps), regenerating maze...
+[INFO] Initial tree count: 242 (61.7347%)
+[WARN] No path found or path too long (200 steps), regenerating maze...
+[INFO] Initial tree count: 266 (67.8571%)
+[WARN] No path found or path too long (200 steps), regenerating maze...
+[INFO] Initial tree count: 255 (65.051%)
+[WARN] No path found or path too long (200 steps), regenerating maze...
+[INFO] Initial tree count: 257 (65.5612%)
+[INFO] Path length: 174
+[INFO] Final tree count: 305 (63.5417%)
+[INFO] Final tree count after extra: 305 (63.5417%)
+[INFO] Changed to battle scene
+[INFO] stopped audio (bgm)
+[INFO] mapData.size() 1920
+[INFO] MapWidth * MapHeight 1920
+[DEBUGGING] Added patrol point to NPC 'NPC': (1952, 672)
+[DEBUGGING] Added patrol point to NPC 'NPC': (1824, 672)
+[DEBUGGING] Added patrol point to NPC 'NPC': (1824, 544)
+[DEBUGGING] Added patrol point to NPC 'NPC': (1952, 544)
+[INFO] Changed to play scene
+[DEBUGGING] NPC 'NPC' reached point 1
+[DEBUGGING] NPC 'NPC' reached point 2
+[DEBUGGING] NPC 'NPC' reached point 3
+[DEBUGGING] NPC 'NPC' reached point 0
+[INFO] stopped audio (bgm)
+[INFO] mapData.size() 480
+[INFO] MapWidth * MapHeight 480
+[INFO] Loaded Resource<image>: Resource/images/mainworld/grasss.png scaled to 64x64
+[INFO] Loaded Resource<image>: Resource/images/smalleat/wall.png scaled to 64x64
+[INFO] Loaded Resource<image>: Resource/images/smalleat/floor.png scaled to 64x64
+[INFO] Loaded Resource<image>: Resource/images/smalleat/TABLE.png scaled to 64x64
+[INFO] Loaded Resource<image>: Resource/images/NPC/Yang/role/YangD.png
+[INFO] Loaded Resource<image>: Resource/images/NPC/Yang/role/YangU.png
+[INFO] Loaded Resource<image>: Resource/images/NPC/Yang/role/YangL.png
+[INFO] Loaded Resource<image>: Resource/images/NPC/Yang/role/YangR.png
+[INFO] Loaded Resource<image>: Resource/images/NPC/axeman/role/axemanD.png
+[INFO] Loaded Resource<image>: Resource/images/NPC/axeman/role/axemanU.png
+[INFO] Loaded Resource<image>: Resource/images/NPC/axeman/role/axemanL.png
+[INFO] Loaded Resource<image>: Resource/images/NPC/axeman/role/axemanR.png
+[DEBUGGING] Added patrol point to Shopper 'axeman': (672, 672)
+[DEBUGGING] Added patrol point to Shopper 'axeman': (800, 672)
+[DEBUGGING] Added patrol point to Shopper 'axeman': (800, 544)
+[DEBUGGING] Added patrol point to Shopper 'axeman': (672, 544)
+[INFO] Loaded Resource<image>: Resource/images/NPC/Lucy/role/lucyD.png
+[INFO] Loaded Resource<image>: Resource/images/NPC/Lucy/role/lucyU.png
+[INFO] Loaded Resource<image>: Resource/images/NPC/Lucy/role/lucyL.png
+[INFO] Loaded Resource<image>: Resource/images/NPC/Lucy/role/lucyR.png
+[INFO] Loaded Resource<audio>: Resource/audios/XCB.ogg
+[INFO] Changed to smalleat scene
+[DEBUGGING] NPC 'axeman' reached point 1
+[DEBUGGING] NPC 'axeman' reached point 2
+[WARN] Shopper 'axeman' dialog ended, canBuy = true
+[WARN] !currentShopper->IsTalking()
+[WARN] Shop buttons displayed
+[INFO] Axe shop buttons created
+[INFO] Loaded Resource<image>: Resource/images/stage-select/full_1.png scaled to 800x100
+[INFO] Loaded Resource<image>: Resource/images/stage-select/full_1.png
+[DEBUGGING] NPC 'axeman' reached point 3
+[WARN] ITEM: 0
+[INFO] Loaded Resource<image>: Resource/images/stage-select/axe.png scaled to 56x56
+[DEBUGGING] NPC 'axeman' reached point 0
+[DEBUGGING] NPC 'axeman' reached point 1
+[DEBUGGING] NPC 'axeman' reached point 2
+[WARN] Shopper 'Lucy醬' dialog ended, canBuy = true
+[WARN] !currentShopper->IsTalking()
+[WARN] Shop buttons displayed
+[INFO] Speed shop buttons created
+[DEBUGGING] NPC 'axeman' reached point 3
+[WARN] ITEM: 0
+[INFO] Loaded Resource<image>: Resource/images/play/potion.png scaled to 56x56
+[DEBUGGING] NPC 'axeman' reached point 0
+[INFO] stopped audio (bgm)
+[INFO] mapData.size() 1920
+[INFO] MapWidth * MapHeight 1920
+[DEBUGGING] Added patrol point to NPC 'NPC': (1952, 672)
+[DEBUGGING] Added patrol point to NPC 'NPC': (1824, 672)
+[DEBUGGING] Added patrol point to NPC 'NPC': (1824, 544)
+[DEBUGGING] Added patrol point to NPC 'NPC': (1952, 544)
+[INFO] Changed to play scene
+[DEBUGGING] NPC 'NPC' reached point 1
+[DEBUGGING] NPC 'NPC' reached point 2
+[DEBUGGING] NPC 'NPC' reached point 3
+[DEBUGGING] NPC 'NPC' reached point 0
+[DEBUGGING] NPC 'NPC' reached point 1
+[DEBUGGING] NPC 'NPC' reached point 2
+[DEBUGGING] NPC 'NPC' reached point 3
+[DEBUGGING] NPC 'NPC' reached point 0
+[DEBUGGING] NPC 'NPC' reached point 1
+[DEBUGGING] NPC 'NPC' reached point 2
+[DEBUGGING] NPC 'NPC' reached point 3
+[DEBUGGING] NPC 'NPC' reached point 0
+[DEBUGGING] NPC 'NPC' reached point 1
+[DEBUGGING] NPC 'NPC' reached point 2
+[DEBUGGING] NPC 'NPC' reached point 3
+[DEBUGGING] NPC 'NPC' reached point 0
+[DEBUGGING] NPC 'NPC' reached point 1
+[DEBUGGING] NPC 'NPC' reached point 2
+[DEBUGGING] NPC 'NPC' reached point 3
+[DEBUGGING] NPC 'NPC' reached point 0
+[DEBUGGING] NPC 'NPC' reached point 1
+[DEBUGGING] NPC 'NPC' reached point 2
+[DEBUGGING] NPC 'NPC' reached point 3
+[DEBUGGING] NPC 'NPC' reached point 0
+[DEBUGGING] NPC 'NPC' reached point 1
+[DEBUGGING] NPC 'NPC' reached point 2
+[DEBUGGING] NPC 'NPC' reached point 3
+[DEBUGGING] NPC 'NPC' reached point 0
+[DEBUGGING] NPC 'NPC' reached point 1
+[DEBUGGING] NPC 'NPC' reached point 2
+[DEBUGGING] NPC 'NPC' reached point 3
+[DEBUGGING] NPC 'NPC' reached point 0
+[DEBUGGING] NPC 'NPC' reached point 1
+[DEBUGGING] NPC 'NPC' reached point 2
+[DEBUGGING] NPC 'NPC' reached point 3
+[DEBUGGING] NPC 'NPC' reached point 0
+[DEBUGGING] NPC 'NPC' reached point 1
+[DEBUGGING] NPC 'NPC' reached point 2
+[DEBUGGING] NPC 'NPC' reached point 3
+[DEBUGGING] NPC 'NPC' reached point 0
+[DEBUGGING] NPC 'NPC' reached point 1
+[DEBUGGING] NPC 'NPC' reached point 2
+[DEBUGGING] NPC 'NPC' reached point 3
+[DEBUGGING] NPC 'NPC' reached point 0
+[DEBUGGING] NPC 'NPC' reached point 1
+[DEBUGGING] NPC 'NPC' reached point 2
+[DEBUGGING] NPC 'NPC' reached point 3
+[DEBUGGING] NPC 'NPC' reached point 0
+[DEBUGGING] NPC 'NPC' reached point 1
+[DEBUGGING] NPC 'NPC' reached point 2
+[DEBUGGING] NPC 'NPC' reached point 3
+[DEBUGGING] NPC 'NPC' reached point 0
+[DEBUGGING] NPC 'NPC' reached point 1
+[DEBUGGING] NPC 'NPC' reached point 2
+[DEBUGGING] NPC 'NPC' reached point 3
+[DEBUGGING] NPC 'NPC' reached point 0
+[DEBUGGING] NPC 'NPC' reached point 1
+[DEBUGGING] NPC 'NPC' reached point 2
+[DEBUGGING] NPC 'NPC' reached point 3
+[DEBUGGING] NPC 'NPC' reached point 0
+[DEBUGGING] NPC 'NPC' reached point 1
+[DEBUGGING] NPC 'NPC' reached point 2
+[DEBUGGING] NPC 'NPC' reached point 3
+[DEBUGGING] NPC 'NPC' reached point 0
+[DEBUGGING] NPC 'NPC' reached point 1
+[DEBUGGING] NPC 'NPC' reached point 2
+[DEBUGGING] NPC 'NPC' reached point 3
+[DEBUGGING] NPC 'NPC' reached point 0
+[DEBUGGING] NPC 'NPC' reached point 1
+[DEBUGGING] NPC 'NPC' reached point 2
+[DEBUGGING] NPC 'NPC' reached point 3
+[DEBUGGING] NPC 'NPC' reached point 0
+[DEBUGGING] NPC 'NPC' reached point 1
+[DEBUGGING] NPC 'NPC' reached point 2
+[DEBUGGING] NPC 'NPC' reached point 3
+[DEBUGGING] NPC 'NPC' reached point 0
+[DEBUGGING] NPC 'NPC' reached point 1
+[DEBUGGING] NPC 'NPC' reached point 2
+[DEBUGGING] NPC 'NPC' reached point 3
+[DEBUGGING] NPC 'NPC' reached point 0
+[DEBUGGING] NPC 'NPC' reached point 1
+[DEBUGGING] NPC 'NPC' reached point 2
+[DEBUGGING] NPC 'NPC' reached point 3
+[DEBUGGING] NPC 'NPC' reached point 0
+[DEBUGGING] NPC 'NPC' reached point 1
+[DEBUGGING] NPC 'NPC' reached point 2
+[DEBUGGING] NPC 'NPC' reached point 3
+[DEBUGGING] NPC 'NPC' reached point 0
+[DEBUGGING] NPC 'NPC' reached point 1
+[DEBUGGING] NPC 'NPC' reached point 2
+[DEBUGGING] NPC 'NPC' reached point 3
+[DEBUGGING] NPC 'NPC' reached point 0
+[DEBUGGING] NPC 'NPC' reached point 1
+[DEBUGGING] NPC 'NPC' reached point 2
+[DEBUGGING] NPC 'NPC' reached point 3
+[DEBUGGING] NPC 'NPC' reached point 0
+[DEBUGGING] NPC 'NPC' reached point 1
+[DEBUGGING] NPC 'NPC' reached point 2
+[DEBUGGING] NPC 'NPC' reached point 3
+[DEBUGGING] NPC 'NPC' reached point 0
+[DEBUGGING] NPC 'NPC' reached point 1
+[DEBUGGING] NPC 'NPC' reached point 2
+[DEBUGGING] NPC 'NPC' reached point 3
+[DEBUGGING] NPC 'NPC' reached point 0
+[DEBUGGING] NPC 'NPC' reached point 1
+[DEBUGGING] NPC 'NPC' reached point 2
+[DEBUGGING] NPC 'NPC' reached point 3
+[DEBUGGING] NPC 'NPC' reached point 0
+[DEBUGGING] NPC 'NPC' reached point 1
+[DEBUGGING] NPC 'NPC' reached point 2
+[INFO] stopped audio (bgm)
+[INFO] mapData.size() 480
+[INFO] MapWidth * MapHeight 480
+[INFO] Loaded Resource<image>: Resource/images/mainworld/water.png scaled to 64x64
+[INFO] Loaded Resource<image>: Resource/images/mainworld/running.png scaled to 64x64
+[INFO] Loaded Resource<image>: Resource/images/mainworld/lotus.png scaled to 64x64
+[INFO] Loaded Resource<image>: Resource/images/stage-select/axe.png scaled to 150x150
+[INFO] Loaded Resource<image>: Resource/images/stage-select/axe.png
+[INFO] Changed to CGLake scene
+[INFO] Loaded Resource<image>: Resource/images/stage-select/axe.png scaled to 96x96
+[INFO] Axe activated, canChop = true
+[INFO] Clicked grid: (2, 4)
+[INFO] Updated tile at (2, 4) to type 1
+[INFO] Clicked grid: (1, 4)
+[INFO] Updated tile at (1, 4) to type 1
+[INFO] Clicked grid: (0, 8)
+[INFO] Updated tile at (0, 8) to type 1
+[INFO] Clicked grid: (0, 9)
+[INFO] Updated tile at (0, 9) to type 1
+[INFO] Clicked grid: (1, 12)
+[INFO] Updated tile at (1, 12) to type 1
+[INFO] Clicked grid: (3, 12)
+[INFO] Updated tile at (3, 12) to type 1
+[INFO] Clicked grid: (4, 14)
+[INFO] Updated tile at (4, 14) to type 1
+[INFO] Clicked grid: (6, 14)
+[INFO] Updated tile at (6, 14) to type 1
+[INFO] Clicked grid: (7, 14)
+[INFO] Updated tile at (7, 14) to type 1
+[INFO] Clicked grid: (8, 14)
+[INFO] Updated tile at (8, 14) to type 1
+[INFO] Clicked grid: (9, 14)
+[INFO] Updated tile at (9, 14) to type 1
+[INFO] Clicked grid: (10, 14)
+[INFO] Updated tile at (10, 14) to type 1
+[INFO] Clicked grid: (14, 14)
+[INFO] Updated tile at (14, 14) to type 1
+[INFO] Clicked grid: (15, 14)
+[INFO] Updated tile at (15, 14) to type 1
+[INFO] Clicked grid: (16, 14)
+[INFO] Updated tile at (16, 14) to type 1
+[INFO] Clicked grid: (24, 13)
+[INFO] Updated tile at (24, 13) to type 1
+[INFO] Clicked grid: (28, 11)
+[INFO] Updated tile at (28, 11) to type 1
+[INFO] Clicked grid: (28, 10)
+[INFO] Updated tile at (28, 10) to type 1
+[INFO] Clicked grid: (28, 9)
+[INFO] Updated tile at (28, 9) to type 1
+[INFO] Clicked grid: (29, 8)
+[INFO] Updated tile at (29, 8) to type 1
+[INFO] Clicked grid: (29, 7)
+[INFO] Updated tile at (29, 7) to type 1
+[INFO] Clicked grid: (29, 6)
+[INFO] Updated tile at (29, 6) to type 1
+[INFO] Clicked grid: (28, 3)
+[INFO] Updated tile at (28, 3) to type 1
+[INFO] Clicked grid: (28, 2)
+[INFO] Updated tile at (28, 2) to type 1
+[INFO] Clicked grid: (27, 1)
+[INFO] Updated tile at (27, 1) to type 1
+[INFO] Axe activated, canChop = true
+[INFO] Clicked grid: (26, 1)
+[INFO] Updated tile at (26, 1) to type 1
+[INFO] Clicked grid: (25, 1)
+[INFO] Updated tile at (25, 1) to type 1
+[INFO] Clicked grid: (24, 1)
+[INFO] Updated tile at (24, 1) to type 1
+[INFO] Clicked grid: (21, 0)
+[INFO] Updated tile at (21, 0) to type 1
+[INFO] Clicked grid: (20, 0)
+[INFO] Updated tile at (20, 0) to type 1
+[INFO] Clicked grid: (18, 0)
+[INFO] Updated tile at (18, 0) to type 1
+[INFO] Clicked grid: (13, 0)
+[INFO] Updated tile at (13, 0) to type 1
+[INFO] Clicked grid: (14, 0)
+[INFO] Updated tile at (14, 0) to type 1
+[INFO] Clicked grid: (12, 0)
+[INFO] Updated tile at (12, 0) to type 1
+[INFO] Clicked grid: (9, 0)
+[INFO] Updated tile at (9, 0) to type 1
+[INFO] Clicked grid: (9, 0)
+[INFO] Updated tile at (9, 0) to type 1
+[INFO] Clicked grid: (8, 0)
+[INFO] Updated tile at (8, 0) to type 1
+[INFO] Reached goal! Switching to play scene from lake.
+[INFO] stopped audio (bgm)
+[INFO] mapData.size() 1920
+[INFO] MapWidth * MapHeight 1920
+[DEBUGGING] Added patrol point to NPC 'NPC': (1952, 672)
+[DEBUGGING] Added patrol point to NPC 'NPC': (1824, 672)
+[DEBUGGING] Added patrol point to NPC 'NPC': (1824, 544)
+[DEBUGGING] Added patrol point to NPC 'NPC': (1952, 544)
+[INFO] Changed to play scene
+[DEBUGGING] NPC 'NPC' reached point 1
+[DEBUGGING] NPC 'NPC' reached point 2
+[DEBUGGING] NPC 'NPC' reached point 3
+[DEBUGGING] NPC 'NPC' reached point 0
+[DEBUGGING] NPC 'NPC' reached point 1
+[DEBUGGING] NPC 'NPC' reached point 2
+[DEBUGGING] NPC 'NPC' reached point 3
+[DEBUGGING] NPC 'NPC' reached point 0
+[DEBUGGING] NPC 'NPC' reached point 1
+[DEBUGGING] NPC 'NPC' reached point 2
+[DEBUGGING] NPC 'NPC' reached point 3
+[DEBUGGING] NPC 'NPC' reached point 0
+[DEBUGGING] NPC 'NPC' reached point 1
+[DEBUGGING] NPC 'NPC' reached point 2
+[DEBUGGING] NPC 'NPC' reached point 3
+[DEBUGGING] NPC 'NPC' reached point 0
+[DEBUGGING] NPC 'NPC' reached point 1
+[DEBUGGING] NPC 'NPC' reached point 2
+[DEBUGGING] NPC 'NPC' reached point 3
+[DEBUGGING] NPC 'NPC' reached point 0
+[DEBUGGING] NPC 'NPC' reached point 1
+[DEBUGGING] NPC 'NPC' reached point 2
+[DEBUGGING] NPC 'NPC' reached point 3
+[DEBUGGING] NPC 'NPC' reached point 0
+[DEBUGGING] NPC 'NPC' reached point 1
+[DEBUGGING] NPC 'NPC' reached point 2
+[DEBUGGING] NPC 'NPC' reached point 3
+[DEBUGGING] NPC 'NPC' reached point 0
+[DEBUGGING] NPC 'NPC' reached point 1
+[DEBUGGING] NPC 'NPC' reached point 2
+[DEBUGGING] NPC 'NPC' reached point 3
+[DEBUGGING] NPC 'NPC' reached point 0
+[DEBUGGING] NPC 'NPC' reached point 1
+[DEBUGGING] NPC 'NPC' reached point 2
+[DEBUGGING] NPC 'NPC' reached point 3
+[DEBUGGING] NPC 'NPC' reached point 0
+[DEBUGGING] NPC 'NPC' reached point 1
+[DEBUGGING] NPC 'NPC' reached point 2
+[DEBUGGING] NPC 'NPC' reached point 3
+[DEBUGGING] NPC 'NPC' reached point 0
+[DEBUGGING] NPC 'NPC' reached point 1
+[DEBUGGING] NPC 'NPC' reached point 2
+[DEBUGGING] NPC 'NPC' reached point 3
+[DEBUGGING] NPC 'NPC' reached point 0
+[DEBUGGING] NPC 'NPC' reached point 1
+[DEBUGGING] NPC 'NPC' reached point 2
+[DEBUGGING] NPC 'NPC' reached point 3
+[DEBUGGING] NPC 'NPC' reached point 0
+[DEBUGGING] NPC 'NPC' reached point 1
+[INFO] stopped audio (bgm)
+[INFO] mapData.size() 480
+[INFO] MapWidth * MapHeight 480
+[DEBUGGING] Added patrol point to Shopper 'axeman': (672, 672)
+[DEBUGGING] Added patrol point to Shopper 'axeman': (800, 672)
+[DEBUGGING] Added patrol point to Shopper 'axeman': (800, 544)
+[DEBUGGING] Added patrol point to Shopper 'axeman': (672, 544)
+[INFO] Changed to smalleat scene
+[DEBUGGING] NPC 'axeman' reached point 1
+[INFO] stopped audio (bgm)
+[INFO] mapData.size() 1920
+[INFO] MapWidth * MapHeight 1920
+[DEBUGGING] Added patrol point to NPC 'NPC': (1952, 672)
+[DEBUGGING] Added patrol point to NPC 'NPC': (1824, 672)
+[DEBUGGING] Added patrol point to NPC 'NPC': (1824, 544)
+[DEBUGGING] Added patrol point to NPC 'NPC': (1952, 544)
+[INFO] Changed to play scene
+[DEBUGGING] NPC 'NPC' reached point 1
+[DEBUGGING] NPC 'NPC' reached point 2
+[DEBUGGING] NPC 'NPC' reached point 3
+[DEBUGGING] NPC 'NPC' reached point 0
+[DEBUGGING] NPC 'NPC' reached point 1
+[DEBUGGING] NPC 'NPC' reached point 2
+[DEBUGGING] NPC 'NPC' reached point 3
+[DEBUGGING] NPC 'NPC' reached point 0
+[DEBUGGING] NPC 'NPC' reached point 1
+[DEBUGGING] NPC 'NPC' reached point 2
+[DEBUGGING] NPC 'NPC' reached point 3
+[DEBUGGING] NPC 'NPC' reached point 0
+[DEBUGGING] NPC 'NPC' reached point 1
+[DEBUGGING] NPC 'NPC' reached point 2
+[DEBUGGING] NPC 'NPC' reached point 3
+[DEBUGGING] NPC 'NPC' reached point 0
+[DEBUGGING] NPC 'NPC' reached point 1
+[DEBUGGING] NPC 'NPC' reached point 2
+[DEBUGGING] NPC 'NPC' reached point 3
+[DEBUGGING] NPC 'NPC' reached point 0
+[DEBUGGING] NPC 'NPC' reached point 1
+[DEBUGGING] NPC 'NPC' reached point 2
+[DEBUGGING] NPC 'NPC' reached point 3
+[DEBUGGING] NPC 'NPC' reached point 0
+[DEBUGGING] NPC 'NPC' reached point 1
+[DEBUGGING] NPC 'NPC' reached point 2
+[DEBUGGING] NPC 'NPC' reached point 3
+[DEBUGGING] NPC 'NPC' reached point 0
+[DEBUGGING] NPC 'NPC' reached point 1
+[DEBUGGING] NPC 'NPC' reached point 2
+[DEBUGGING] NPC 'NPC' reached point 3
+[DEBUGGING] NPC 'NPC' reached point 0
+[DEBUGGING] NPC 'NPC' reached point 1
+[DEBUGGING] NPC 'NPC' reached point 2
+[DEBUGGING] NPC 'NPC' reached point 3
+[DEBUGGING] NPC 'NPC' reached point 0
+[DEBUGGING] NPC 'NPC' reached point 1
+[DEBUGGING] NPC 'NPC' reached point 2
+[DEBUGGING] NPC 'NPC' reached point 3
+[DEBUGGING] NPC 'NPC' reached point 0
+[DEBUGGING] NPC 'NPC' reached point 1
+[DEBUGGING] NPC 'NPC' reached point 2
+[DEBUGGING] NPC 'NPC' reached point 3
+[DEBUGGING] NPC 'NPC' reached point 0
+[DEBUGGING] NPC 'NPC' reached point 1
+[DEBUGGING] NPC 'NPC' reached point 2
+[DEBUGGING] NPC 'NPC' reached point 3
+[DEBUGGING] NPC 'NPC' reached point 0
+[DEBUGGING] NPC 'NPC' reached point 1
+[DEBUGGING] NPC 'NPC' reached point 2
+[DEBUGGING] NPC 'NPC' reached point 3
+[DEBUGGING] NPC 'NPC' reached point 0
+[DEBUGGING] NPC 'NPC' reached point 1
+[DEBUGGING] NPC 'NPC' reached point 2
+[DEBUGGING] NPC 'NPC' reached point 3
+[DEBUGGING] NPC 'NPC' reached point 0
+[DEBUGGING] NPC 'NPC' reached point 1
+[DEBUGGING] NPC 'NPC' reached point 2
+[DEBUGGING] NPC 'NPC' reached point 3
+[DEBUGGING] NPC 'NPC' reached point 0
+[DEBUGGING] NPC 'NPC' reached point 1
+[DEBUGGING] NPC 'NPC' reached point 2
+[DEBUGGING] NPC 'NPC' reached point 3
+[DEBUGGING] NPC 'NPC' reached point 0
+[DEBUGGING] NPC 'NPC' reached point 1
+[DEBUGGING] NPC 'NPC' reached point 2
+[DEBUGGING] NPC 'NPC' reached point 3
+[DEBUGGING] NPC 'NPC' reached point 0
+[DEBUGGING] NPC 'NPC' reached point 1
+[DEBUGGING] NPC 'NPC' reached point 2
+[DEBUGGING] NPC 'NPC' reached point 3
+[DEBUGGING] NPC 'NPC' reached point 0
+[DEBUGGING] NPC 'NPC' reached point 1
+[DEBUGGING] NPC 'NPC' reached point 2
+[DEBUGGING] NPC 'NPC' reached point 3
+[DEBUGGING] NPC 'NPC' reached point 0
+[DEBUGGING] NPC 'NPC' reached point 1
+[DEBUGGING] NPC 'NPC' reached point 2
+[DEBUGGING] NPC 'NPC' reached point 3
+[DEBUGGING] NPC 'NPC' reached point 0
+[DEBUGGING] NPC 'NPC' reached point 1
+[DEBUGGING] NPC 'NPC' reached point 2
+[DEBUGGING] NPC 'NPC' reached point 3
+[DEBUGGING] NPC 'NPC' reached point 0
+[DEBUGGING] NPC 'NPC' reached point 1
+[DEBUGGING] NPC 'NPC' reached point 2
+[DEBUGGING] NPC 'NPC' reached point 3
+[DEBUGGING] NPC 'NPC' reached point 0
+[DEBUGGING] NPC 'NPC' reached point 1
+[DEBUGGING] NPC 'NPC' reached point 2
+[DEBUGGING] NPC 'NPC' reached point 3
+[DEBUGGING] NPC 'NPC' reached point 0
+[DEBUGGING] NPC 'NPC' reached point 1
+[DEBUGGING] NPC 'NPC' reached point 2
+[DEBUGGING] NPC 'NPC' reached point 3
+[DEBUGGING] NPC 'NPC' reached point 0
+[DEBUGGING] NPC 'NPC' reached point 1
+[DEBUGGING] NPC 'NPC' reached point 2
+[DEBUGGING] NPC 'NPC' reached point 3
+[DEBUGGING] NPC 'NPC' reached point 0
+[DEBUGGING] NPC 'NPC' reached point 1
+[DEBUGGING] NPC 'NPC' reached point 2
+[DEBUGGING] NPC 'NPC' reached point 3
+[DEBUGGING] NPC 'NPC' reached point 0
+[DEBUGGING] NPC 'NPC' reached point 1
+[DEBUGGING] NPC 'NPC' reached point 2
+[DEBUGGING] NPC 'NPC' reached point 3
+[DEBUGGING] NPC 'NPC' reached point 0
+[DEBUGGING] NPC 'NPC' reached point 1
+[DEBUGGING] NPC 'NPC' reached point 2
+[DEBUGGING] NPC 'NPC' reached point 3
+[DEBUGGING] NPC 'NPC' reached point 0
+[DEBUGGING] NPC 'NPC' reached point 1
+[DEBUGGING] NPC 'NPC' reached point 2
+[DEBUGGING] NPC 'NPC' reached point 3
+[DEBUGGING] NPC 'NPC' reached point 0
+[DEBUGGING] NPC 'NPC' reached point 1
+[DEBUGGING] NPC 'NPC' reached point 2
+[DEBUGGING] NPC 'NPC' reached point 3
+[DEBUGGING] NPC 'NPC' reached point 0
+[DEBUGGING] NPC 'NPC' reached point 1
+[DEBUGGING] NPC 'NPC' reached point 2
+[DEBUGGING] NPC 'NPC' reached point 3
+[DEBUGGING] NPC 'NPC' reached point 0
+[DEBUGGING] NPC 'NPC' reached point 1
+[DEBUGGING] NPC 'NPC' reached point 2
+[DEBUGGING] NPC 'NPC' reached point 3
+[DEBUGGING] NPC 'NPC' reached point 0
+[DEBUGGING] NPC 'NPC' reached point 1
+[DEBUGGING] NPC 'NPC' reached point 2
+[DEBUGGING] NPC 'NPC' reached point 3
+[INFO] Game Terminating...
+[INFO] stopped audio (bgm)
+[INFO] Game terminated
+[INFO] Game end
+[INFO] Destroyed Resource<image>: play/potion.png?56x56
+[INFO] Destroyed Resource<image>: NPC/Lucy/role/lucyR.png
+[INFO] Destroyed Resource<image>: NPC/Lucy/role/lucyD.png
+[INFO] Destroyed Resource<image>: NPC/axeman/role/axemanL.png
+[INFO] Destroyed Resource<image>: NPC/axeman/role/axemanU.png
+[INFO] Destroyed Resource<image>: stage-select/axe.png?150x150
+[INFO] Destroyed Resource<image>: NPC/axeman/role/axemanD.png
+[INFO] Destroyed Resource<image>: NPC/Yang/role/YangL.png
+[INFO] Destroyed Resource<image>: NPC/Yang/role/YangU.png
+[INFO] Destroyed Resource<image>: smalleat/wall.png?64x64
+[INFO] Destroyed Resource<image>: mainworld/grasss.png?64x64
+[INFO] Destroyed Resource<image>: lose/benjamin-happy.png
+[INFO] Destroyed Resource<image>: BattlePlayer/right2.png
+[INFO] Destroyed Resource<image>: BattlePlayer/left1.png
+[INFO] Destroyed Resource<image>: BattlePlayer/up2.png
+[INFO] Destroyed Resource<image>: BattlePlayer/right_idle.png
+[INFO] Destroyed Resource<image>: mainworld/stairs.png?64x64
+[INFO] Destroyed Resource<image>: NPC/Lucy/role/lucyU.png
+[INFO] Destroyed Resource<image>: NPC/dyy/role/dyyR.png
+[INFO] Destroyed Resource<image>: NPC/dyy/role/dyyU.png
+[INFO] Destroyed Resource<image>: NPC/dyy/role/dyyD.png
+[INFO] Destroyed Resource<image>: smalleat/TABLE.png?64x64
+[INFO] Destroyed Resource<image>: NPC/Kao/role/KaoR.png
+[INFO] Destroyed Resource<image>: NPC/Kao/role/KaoU.png
+[INFO] Destroyed Resource<image>: NPC/Kao/role/KaoD.png
+[INFO] Destroyed Resource<image>: mainworld/2ROAD.png?64x64
+[INFO] Destroyed Resource<image>: NPC/test/role/test_sheet.png
+[INFO] Destroyed Resource<image>: BattlePlayer/left_idle.png
+[INFO] Destroyed Resource<image>: player/right_idle.png
+[INFO] Destroyed Resource<image>: NPC/test/avatar/test_avatar.png
+[INFO] Destroyed Resource<image>: player/down2.png
+[INFO] Destroyed Resource<image>: player/down1.png
+[INFO] Destroyed Resource<image>: BattlePlayer/up1.png
+[INFO] Destroyed Resource<image>: player/right1.png
+[INFO] Destroyed Resource<image>: player/up2.png
+[INFO] Destroyed Resource<image>: stage-select/axe.png
+[INFO] Destroyed Resource<image>: BattlePlayer/down1.png
+[INFO] Destroyed Resource<image>: player/left2.png
+[INFO] Destroyed Resource<image>: player/up_idle.png
+[INFO] Destroyed Resource<image>: play/dollar.png?56x56
+[INFO] Destroyed Resource<image>: player/idle.png
+[INFO] Destroyed Resource<image>: mainworld/informationeletric.png?512x512
+[INFO] Destroyed Resource<image>: mainworld/waterwood.png?512x512
+[INFO] Destroyed Resource<image>: mainworld/lake.png?640x512
+[INFO] Destroyed Resource<image>: mainworld/windcloud.png?512x512
+[INFO] Destroyed Resource<image>: mainworld/UROAD.png?64x64
+[INFO] Destroyed Resource<image>: mainworld/lotus.png?64x64
+[INFO] Destroyed Resource<image>: player/right2.png
+[INFO] Destroyed Resource<image>: mainworld/DROAD.png?64x64
+[INFO] Destroyed Resource<image>: stage-select/full_1.png?800x100
+[INFO] Destroyed Resource<image>: mainworld/1ROAD.png?64x64
+[INFO] Destroyed Resource<image>: stage-select/axe.png?96x96
+[INFO] Destroyed Resource<image>: mainworld/LROAD.png?64x64
+[INFO] Destroyed Resource<image>: mainworld/0ROAD.png?64x64
+[INFO] Destroyed Resource<image>: scene/login.png?1920x1024
+[INFO] Destroyed Resource<image>: stage-select/sword2.png?800x150
+[INFO] Destroyed Resource<image>: mainworld/running.png?64x64
+[INFO] Destroyed Resource<image>: NPC/Lucy/role/lucyL.png
+[INFO] Destroyed Resource<image>: NPC/dyy/role/dyyL.png
+[INFO] Destroyed Resource<image>: mainworld/talda.png?512x512
+[INFO] Destroyed Resource<image>: mainworld/RED.png?64x64
+[INFO] Destroyed Resource<image>: mainworld/GASS.png?64x64
+[INFO] Destroyed Resource<image>: mainworld/PINK.png?64x64
+[INFO] Destroyed Resource<image>: mainworld/3ROAD.png?64x64
+[INFO] Destroyed Resource<image>: mainworld/MUSHROOM.png?64x64
+[INFO] Destroyed Resource<image>: mainworld/BUSH.png?64x64
+[INFO] Destroyed Resource<image>: player/left_idle.png
+[INFO] Destroyed Resource<image>: BattlePlayer/up_idle.png
+[INFO] Destroyed Resource<image>: stage-select/sword.png
+[INFO] Destroyed Resource<image>: stage-select/dirt.png?400x100
+[INFO] Destroyed Resource<image>: stage-select/dirt.png
+[INFO] Destroyed Resource<image>: mainworld/tree.png?64x64
+[INFO] Destroyed Resource<image>: stage-select/axe.png?56x56
+[INFO] Destroyed Resource<image>: NPC/Yang/role/YangD.png
+[INFO] Destroyed Resource<image>: mainworld/grass.png?64x64
+[INFO] Destroyed Resource<image>: mainworld/NEW.png?512x512
+[INFO] Destroyed Resource<image>: stage-select/full_1.png
+[INFO] Destroyed Resource<image>: stage-select/floor.png
+[INFO] Destroyed Resource<image>: NPC/Kao/role/KaoL.png
+[INFO] Destroyed Resource<image>: player/up1.png
+[INFO] Destroyed Resource<image>: mainworld/water.png?64x64
+[INFO] Destroyed Resource<image>: NPC/Yang/role/YangR.png
+[INFO] Destroyed Resource<image>: smalleat/floor.png?64x64
+[INFO] Destroyed Resource<image>: mainworld/smalleat.png?512x512
+[INFO] Destroyed Resource<image>: BattlePlayer/left2.png
+[INFO] Destroyed Resource<image>: BattlePlayer/down2.png
+[INFO] Destroyed Resource<image>: stage-select/sword.png?800x150
+[INFO] Destroyed Resource<image>: player/left1.png
+[INFO] Destroyed Resource<image>: NPC/axeman/role/axemanR.png
+[INFO] Destroyed Resource<image>: stage-select/sword2.png
+[INFO] Destroyed Resource<image>: BattlePlayer/right1.png
+[INFO] Destroyed Resource<image>: mainworld/GAS.png?64x64
+[INFO] Destroyed Resource<image>: icon.png
+[INFO] Destroyed Resource<image>: mainworld/RROAD.png?64x64
+[INFO] Destroyed Resource<image>: scene/start-by.png?1920x1024
+[INFO] Destroyed Resource<font>: title.ttf?56
+[INFO] Destroyed Resource<font>: normal.ttf?24
+[INFO] Destroyed Resource<font>: title.ttf?48
+[INFO] Destroyed Resource<font>: normal.ttf?128
+[INFO] Destroyed<sample_instance>: coconut.ogg
+[INFO] Destroyed Resource<audio>: XCB.ogg
+[INFO] Destroyed Resource<audio>: coconut.ogg
+[INFO] Destroyed Resource<audio>: play.ogg
+[INFO] Destroyed Resource<audio>: start.ogg

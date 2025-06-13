@@ -145,9 +145,10 @@ void BattleScene::Update(float deltaTime) {
     int gridX = static_cast<int>(std::floor(player->Position.x / BlockSize));
     int gridY = static_cast<int>(std::floor(player->Position.y / BlockSize));
     if (gridX == MapWidth - 1 && gridY == MapHeight - 1) { // (29, 15)
-        Engine::LOG(Engine::INFO) << "Reached goal! Switching to win scene.";
+        Engine::LOG(Engine::INFO) << "Reached goal! Switching to play scene from maze.";
         PlayScene::inBattle = false;
-        Engine::GameEngine::GetInstance().ChangeScene("win");
+        LogScene::money += 10;
+        Engine::GameEngine::GetInstance().ChangeScene("play");
         return;
     }
 
@@ -228,15 +229,17 @@ void BattleScene::OnMouseDown(int button, int mx, int my) {
         if (gridX >= 0 && gridX < MapWidth && gridY >= 0 && gridY < MapHeight &&
             !(gridX == MapWidth - 1 && gridY == MapHeight - 1)) {
             Engine::LOG(Engine::INFO) << "Clicked grid: (" << gridX << ", " << gridY << ")";
-            mapState[gridY][gridX] = TILE_ROAD;
-            mapData[gridY * MapWidth + gridX] = static_cast<int>(TILE_ROAD);
+            //mapState[gridY][gridX] = TILE_ROAD;
+            mapData[gridY * MapWidth + gridX] = TILE_GRASS;
             UpdateTileMap(gridX, gridY);
-            canChop = false; // 砍樹後禁用
         }
+    }
+    else if((button & 2) && canChop){
+        canChop = false; // 砍樹後禁用
         if (axeImage) {
-                UIGroup->RemoveObject(axeImage->GetObjectIterator());
-                axeImage = nullptr;
-            }
+            UIGroup->RemoveObject(axeImage->GetObjectIterator());
+            axeImage = nullptr;
+        }
     }
     
     IScene::OnMouseDown(button, mx, my);

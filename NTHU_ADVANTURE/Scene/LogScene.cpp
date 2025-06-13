@@ -20,7 +20,7 @@
 #include <allegro5/allegro_primitives.h>
 #include "LogScene.hpp"
 
-int LogScene::money = 0; 
+int LogScene::money = 0, LogScene::clearedLake = 0; 
 float LogScene::haveSpeedUp = 0;
 bool LogScene::haveAxe = false;
 

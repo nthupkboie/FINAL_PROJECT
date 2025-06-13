@@ -35,6 +35,7 @@ private:
     Engine::Image* speedImage = nullptr;
     Engine::Label* speedLabel;
     NPC* Kao = nullptr;
+    NPC* dyy = nullptr;
 
 protected:
     int lives;
