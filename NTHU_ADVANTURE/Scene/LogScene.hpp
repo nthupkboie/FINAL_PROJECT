@@ -39,6 +39,7 @@ public:
     static bool haveAxe;
     static float haveSpeedUp;
     static int clearedLake;
+    static Engine::Point lastPlayerPos;
 };
 
 

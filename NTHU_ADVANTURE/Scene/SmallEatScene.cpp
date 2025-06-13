@@ -26,7 +26,6 @@
 #include "UI/Component/Label.hpp"
 #include "string"
 
-
 const int SmallEatScene::MapWidth = 30, SmallEatScene::MapHeight = 16;
 const int SmallEatScene::BlockSize = 64;
 
@@ -106,13 +105,13 @@ void SmallEatScene::Initialize() {
                                             "NPC/axeman/role/axemanD.png",
                                             "NPC/axeman/role/axemanL.png",
                                             "NPC/axeman/role/axemanR.png",
-                                            BlockSize * 9, BlockSize * 7
+                                            BlockSize * 11, BlockSize * 7
                                         ));
 
-    Engine::Point axe0(BlockSize * 9 + BlockSize / 2, BlockSize * 7 + BlockSize / 2);
-    Engine::Point axe1(BlockSize * 9 + BlockSize / 2, BlockSize * 11 + BlockSize / 2);
-    Engine::Point axe2(BlockSize * 12 + BlockSize / 2, BlockSize * 11 + BlockSize / 2);
-    Engine::Point axe3(BlockSize * 12 + BlockSize / 2, BlockSize * 7 + BlockSize / 2);
+    Engine::Point axe0(BlockSize * 11 + BlockSize / 2, BlockSize * 7 + BlockSize / 2);
+    Engine::Point axe1(BlockSize * 11 + BlockSize / 2, BlockSize * 12 + BlockSize / 2);
+    Engine::Point axe2(BlockSize * 14 + BlockSize / 2, BlockSize * 12 + BlockSize / 2);
+    Engine::Point axe3(BlockSize * 14 + BlockSize / 2, BlockSize * 7 + BlockSize / 2);
 
     axeman->AddPatrolPoint(axe0);
     axeman->AddPatrolPoint(axe1);
@@ -246,7 +245,7 @@ void SmallEatScene::Update(float deltaTime) {
 
         firstTime = false;
     }
-    
+
     // if (justBuyedAxe) {
     //     LogScene::money -= 50;
     //     justBuyedAxe = false;
@@ -417,11 +416,6 @@ void SmallEatScene::Draw() const {
     if (dialog.IsDialogActive()) {
         dialog.Draw();
     }
-    
-    // 繪製對話框
-    if (dialog.IsDialogActive()) {
-        dialog.Draw();
-    }
 }
 
 void SmallEatScene::OnMouseDown(int button, int mx, int my) {
@@ -505,6 +499,7 @@ void SmallEatScene::ReadMap() {
             case 'L': mapData.push_back(LSEAT); break;
             case 'R': mapData.push_back(RSEAT); break;
             case '=': mapData.push_back(NOTHING); break;
+            case 'G': mapData.push_back(MC); break;
             case '\n':
             case '\r':
             default: break;
@@ -523,7 +518,7 @@ void SmallEatScene::ReadMap() {
     // init init
     for(int y = 0; y < MapHeight; y++){
         for(int x = 0; x < MapWidth; x++){
-                    std::string imagePath = "smalleat/wall.png";
+                    std::string imagePath = "smalleat/floor.png";
                     TileMapGroup->AddNewObject(
                         new Engine::Image(imagePath, 
                                         x * BlockSize, 
@@ -544,6 +539,7 @@ void SmallEatScene::ReadMap() {
                 ///////////////////////
                 case TILE_WALL:
                     imagePath = "smalleat/wall.png";
+                    // imagePath = "cool/mc.png";
                     TileMapGroup->AddNewObject(
                         new Engine::Image(imagePath, 
                                         x * BlockSize, 
@@ -619,6 +615,16 @@ void SmallEatScene::ReadMap() {
                     );
                     break;
                 //////////////////////////////
+                case MC:
+                    imagePath = "cool/mc.png";
+                    TileMapGroup->AddNewObject(
+                        new Engine::Image(imagePath, 
+                                        x * BlockSize, 
+                                        y * BlockSize, 
+                                        BlockSize * 8, 
+                                        BlockSize * 9)
+                    );
+                    break;
                 case NOTHING:
                 default:
                     continue;

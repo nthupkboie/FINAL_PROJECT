@@ -219,11 +219,6 @@ void WaterWoodScene::Draw() const {
     if (dialog.IsDialogActive()) {
         dialog.Draw();
     }
-    
-    // 繪製對話框
-    if (dialog.IsDialogActive()) {
-        dialog.Draw();
-    }
 }
 
 void WaterWoodScene::OnMouseDown(int button, int mx, int my) {
@@ -266,7 +261,7 @@ void WaterWoodScene::OnKeyDown(int keyCode) {
 }
 
 void WaterWoodScene::ReadMap() {
-    std::string filename = std::string("Resource/smalleat") + ".txt";
+    std::string filename = std::string("Resource/waterwood") + ".txt";
 
     // 清空舊的地圖數據
     mapData.clear();
@@ -282,6 +277,7 @@ void WaterWoodScene::ReadMap() {
             case 'L': mapData.push_back(LSEAT); break;
             case 'R': mapData.push_back(RSEAT); break;
             case '=': mapData.push_back(NOTHING); break;
+            case 'G': mapData.push_back(GIN); break;
             case '\n':
             case '\r':
             default: break;
@@ -300,7 +296,7 @@ void WaterWoodScene::ReadMap() {
     // init init
     for(int y = 0; y < MapHeight; y++){
         for(int x = 0; x < MapWidth; x++){
-                    std::string imagePath = "smalleat/wall.png";
+                    std::string imagePath = "smalleat/floor.png";
                     TileMapGroup->AddNewObject(
                         new Engine::Image(imagePath, 
                                         x * BlockSize, 
@@ -393,6 +389,16 @@ void WaterWoodScene::ReadMap() {
                                         y * BlockSize, 
                                         BlockSize, 
                                         BlockSize)
+                    );
+                    break;
+                case GIN:
+                    imagePath = "cool/gin.png";
+                    TileMapGroup->AddNewObject(
+                        new Engine::Image(imagePath, 
+                                        x * BlockSize, 
+                                        y * BlockSize, 
+                                        BlockSize * 8, 
+                                        BlockSize * 9)
                     );
                     break;
                 //////////////////////////////
