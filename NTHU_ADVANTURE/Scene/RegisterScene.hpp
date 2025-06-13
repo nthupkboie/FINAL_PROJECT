@@ -19,7 +19,9 @@ private:
     Engine::Label* label_name;
     Engine::Label* label_pswd;
     Engine::Label* warning1;
+    Engine::Image* arrowImage;
     int ID_entered = 0;
+    //Group* imageGroup;
 
 public:
     explicit RegisterScene() = default;

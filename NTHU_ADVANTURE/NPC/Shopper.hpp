@@ -62,10 +62,11 @@ public:
     bool enterWasDown = false;
     bool canBuy; //講完話了沒
     bool isTalking = false; //是否正在講話 改為非靜態
+    std::shared_ptr<ALLEGRO_BITMAP> npcAvatar;
 private:
     
     std::string npcName;
-    std::shared_ptr<ALLEGRO_BITMAP> npcAvatar;
+    //std::shared_ptr<ALLEGRO_BITMAP> npcAvatar;
     bool showShopButtons = false; // 新增：控制購買按鈕顯示
     Engine::ImageButton* buyButton = nullptr; // 新增：購買按鈕
     Engine::ImageButton* cancelButton = nullptr; // 新增：取消按鈕

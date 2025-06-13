@@ -68,13 +68,31 @@ void NEWScene::Initialize() {
     cameraOffset.y = std::max(0.0f, std::min(cameraOffset.y, static_cast<float>(MapHeight * BlockSize - window_y * BlockSize)));
 
     // NPC
-    NPC* test;
+    //NPC* test;
     // sheet路徑, x, y, 
     // 上, 下, 左, 右, (先行在列)
     // 圖塊寬, 圖塊高
     // auto testAvatar = Engine::Resources::GetInstance().GetBitmap("NPC/test/avatar/test_avatar.png");
     // NPCGroup->AddNewObject(test = new NPC("NPC",testAvatar, "NPC/test/role/test_sheet.png",
     //                                         BlockSize * 5, BlockSize * 5,
+    //                                         2, 3,  // 上 (第0列第2行)
+    //                                         2, 0,  // 下
+    //                                         2, 1,  // 左
+    //                                         2, 2,  // 右
+    //                                         64, 64)); // 圖塊大小
+
+    NPC* bablo;
+    auto babloAvatar = Engine::Resources::GetInstance().GetBitmap("NPC/bablo/avatar/bablo.png");
+    NPCGroup->AddNewObject(bablo = new NPC("李君萎", babloAvatar, 
+                                            "NPC/bablo/role/babloU.png",
+                                            "NPC/bablo/role/babloD.png", 
+                                            "NPC/bablo/role/babloL.png",
+                                            "NPC/bablo/role/babloR.png",
+                                            BlockSize * 8, BlockSize * 8
+                                        ));
+
+    // NPCGroup->AddNewObject(Yang = new NPC("NPC",testAvatar, "NPC/test/role/test_sheet.png",
+    //                                         BlockSize * 8, BlockSize * 8,
     //                                         2, 3,  // 上 (第0列第2行)
     //                                         2, 0,  // 下
     //                                         2, 1,  // 左
@@ -103,10 +121,10 @@ void NEWScene::Initialize() {
     //     "Shawty had them Apple Bottom jeans, jeans"
     // });
 
-    // Yang->SetMessages({
-    //     "我是楊舜仁！",
-    //     "我不會當人",
-    // });
+    bablo->SetMessages({
+        "下次不會再喝酒了...",
+        "王哨橙 摔角"
+    });
 
     // 預載資源
     Engine::Resources::GetInstance().GetBitmap("lose/benjamin-happy.png");

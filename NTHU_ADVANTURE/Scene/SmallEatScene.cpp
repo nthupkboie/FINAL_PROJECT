@@ -89,7 +89,7 @@ void SmallEatScene::Initialize() {
                                             64, 64)); // 圖塊大小
 
     NPC* Yang;
-    auto YangAvatar = Engine::Resources::GetInstance().GetBitmap("NPC/test/avatar/test_avatar.png");
+    auto YangAvatar = Engine::Resources::GetInstance().GetBitmap("NPC/Yang/avatar/Yang.png");
     NPCGroup->AddNewObject(Yang = new NPC("Yang", YangAvatar, 
                                             "NPC/Yang/role/YangU.png",
                                             "NPC/Yang/role/YangD.png", 
@@ -102,7 +102,7 @@ void SmallEatScene::Initialize() {
     auto axemanAvatar = Engine::Resources::GetInstance().GetBitmap("NPC/test/avatar/test_avatar.png");
     ShopperGroup->AddNewObject(axeman = new Shopper("axeman", axemanAvatar, 
                                             "NPC/axeman/role/axemanU.png",
-                                            "NPC/axeman/role/axemanD.png", 
+                                            "NPC/axeman/role/axemanD.png",
                                             "NPC/axeman/role/axemanL.png",
                                             "NPC/axeman/role/axemanR.png",
                                             BlockSize * 11, BlockSize * 7
@@ -118,13 +118,13 @@ void SmallEatScene::Initialize() {
     axeman->AddPatrolPoint(axe2);
     axeman->AddPatrolPoint(axe3);
 
-    auto LucyAvatar = Engine::Resources::GetInstance().GetBitmap("NPC/test/avatar/test_avatar.png");
+    auto LucyAvatar = Engine::Resources::GetInstance().GetBitmap("NPC/Lucy/avatar/lucyAvatar.png");
     ShopperGroup->AddNewObject(Lucy = new Shopper("Lucy醬", LucyAvatar, 
                                             "NPC/Lucy/role/lucyU.png",
                                             "NPC/Lucy/role/lucyD.png", 
                                             "NPC/Lucy/role/lucyL.png",
                                             "NPC/Lucy/role/lucyR.png",
-                                            BlockSize * 25, BlockSize * 5
+                                            BlockSize * 17, BlockSize * 7
                                         ));
 
     // 初始化對話框
@@ -197,7 +197,6 @@ void SmallEatScene::Initialize() {
     if (LogScene::haveAxe) LabelGroup->AddNewObject(axeImage = new Engine::Image("stage-select/axe.png", 20, 105, 56, 56));
     if (LogScene::haveSpeedUp){
         LabelGroup->AddNewObject(speedImage = new Engine::Image("play/potion.png", 20, 175, 56, 56));
-        //haveSpeedUpInt = rou
         LabelGroup->AddNewObject(speedLabel = new Engine::Label(std::to_string((int)LogScene::haveSpeedUp), "title.ttf", 48, 130, 210, 255, 255, 255, 255, 0.5, 0.5));
     }
 }

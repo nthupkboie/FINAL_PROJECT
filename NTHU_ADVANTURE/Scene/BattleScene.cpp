@@ -299,7 +299,7 @@ void BattleScene::ReadMap() {
         switch (c) {
             case '0': mapData.push_back(TILE_GRASS); break;
             case '1': mapData.push_back(TILE_TREE); break;
-
+            //case '2': mapData.push_back(TILE_DSTN); break;
             // case '-': mapData.push_back(TILE_GRASS); break;
             // case 'R': mapData.push_back(TILE_ROAD); break;
             // case 'T': mapData.push_back(TILE_TREE); break;
@@ -361,6 +361,25 @@ void BattleScene::ReadMap() {
                     );
 
                     imagePath = "mainworld/tree.png";
+                    TileMapGroup->AddNewObject(
+                        new Engine::Image(imagePath, 
+                                        x * BlockSize, 
+                                        y * BlockSize, 
+                                        BlockSize, 
+                                        BlockSize)
+                    );
+                    break;
+                case TILE_DSTN:
+                    imagePath = "mainworld/grasss.png";
+                    TileMapGroup->AddNewObject(
+                        new Engine::Image(imagePath, 
+                                        x * BlockSize, 
+                                        y * BlockSize, 
+                                        BlockSize, 
+                                        BlockSize)
+                    );
+
+                    imagePath = "mainworld/running.png";
                     TileMapGroup->AddNewObject(
                         new Engine::Image(imagePath, 
                                         x * BlockSize, 
@@ -450,8 +469,8 @@ void BattleScene::UpdateTileMap(int gridX, int gridY) {
                 new Engine::Image(imagePath, gridX * BlockSize, gridY * BlockSize, BlockSize, BlockSize)
             );
             break;
-        case TILE_STAIRS:
-            imagePath = "mainworld/stairs.png";
+        case TILE_DSTN:
+            imagePath = "mainworld/running.png";
             TileMapGroup->AddNewObject(
                 new Engine::Image(imagePath, gridX * BlockSize, gridY * BlockSize, BlockSize, BlockSize)
             );
@@ -503,8 +522,8 @@ void BattleScene::GenerateMaze() {
     // 設置起點和終點
     mapState[2][2] = TILE_ROAD;
     mapData[2 * MapWidth + 2] = static_cast<int>(TILE_ROAD);
-    mapState[MapHeight - 1][MapWidth - 1] = TILE_STAIRS;
-    mapData[(MapHeight - 1) * MapWidth + MapWidth - 1] = static_cast<int>(TILE_STAIRS);
+    mapState[MapHeight - 1][MapWidth - 1] = TILE_DSTN;
+    mapData[(MapHeight - 1) * MapWidth + MapWidth - 1] = static_cast<int>(TILE_DSTN);
 
     // 非遞迴 DFS
     std::vector<std::vector<bool>> visited(MapHeight, std::vector<bool>(MapWidth, false));
@@ -571,7 +590,7 @@ void BattleScene::GenerateMaze() {
 
     // 僅將最終路徑設為 TILE_ROAD
     for (const auto& [x, y] : path) {
-        if (mapState[y][x] != TILE_STAIRS) {
+        if (mapState[y][x] != TILE_DSTN) {
             mapState[y][x] = TILE_ROAD;
             mapData[y * MapWidth + x] = static_cast<int>(TILE_ROAD);
         }
@@ -621,8 +640,8 @@ void BattleScene::GenerateMaze() {
                         new Engine::Image(imagePath, x * BlockSize, y * BlockSize, BlockSize, BlockSize)
                     );
                     break;
-                case TILE_STAIRS:
-                    imagePath = "mainworld/stairs.png";
+                case TILE_DSTN:
+                    imagePath = "mainworld/running.png";
                     TileMapGroup->AddNewObject(
                         new Engine::Image(imagePath, x * BlockSize, y * BlockSize, BlockSize, BlockSize)
                     );

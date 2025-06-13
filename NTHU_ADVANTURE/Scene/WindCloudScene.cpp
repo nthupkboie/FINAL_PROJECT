@@ -348,7 +348,7 @@ void WindCloudScene::OnKeyDown(int keyCode) {
         dialog.AdvanceDialog();
     }
 
-    if (keyCode == ALLEGRO_KEY_I) {
+    if (keyCode == ALLEGRO_KEY_I && wordleFinished) {
         std::vector<std::string> testMessages = {
             "清大「風雲樓」主要作為國際學生活動中心，",
             "曾是印度學生舉辦活動的主要場地，",
@@ -360,10 +360,13 @@ void WindCloudScene::OnKeyDown(int keyCode) {
         auto testAvatar = Engine::Resources::GetInstance().GetBitmap("NPC/test/avatar/windcloudicon.png");
         dialog.StartDialog("風雲", testAvatar, testMessages);
     }
-    if(keyCode == ALLEGRO_KEY_P){
+    if(keyCode == ALLEGRO_KEY_P && wordleFinished){
         PlayScene::inPlay = true;
         PlayScene::inWindCloud = false;
         Engine::GameEngine::GetInstance().ChangeScene("play");
+    }
+    if (keyCode == ALLEGRO_KEY_ESCAPE && !wordleFinished){
+        wordleFinished = true;
     }
 }
 

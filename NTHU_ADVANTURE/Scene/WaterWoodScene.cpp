@@ -25,6 +25,7 @@
 #include "UI/Component/Image.hpp"
 #include "UI/Component/Label.hpp"
 #include "LogScene.hpp"
+#include <cmath>
 
 const int WaterWoodScene::MapWidth = 30, WaterWoodScene::MapHeight = 16;
 const int WaterWoodScene::BlockSize = 64;
@@ -81,14 +82,14 @@ void WaterWoodScene::Initialize() {
                                             2, 2,  // 右
                                             64, 64)); // 圖塊大小
 
-    NPC* Yang;
-    auto YangAvatar = Engine::Resources::GetInstance().GetBitmap("NPC/test/avatar/test_avatar.png");
-    NPCGroup->AddNewObject(Yang = new NPC("Yang", YangAvatar, 
-                                            "NPC/Yang/role/YangU.png",
-                                            "NPC/Yang/role/YangD.png", 
-                                            "NPC/Yang/role/YangL.png",
-                                            "NPC/Yang/role/YangR.png",
-                                            BlockSize * 8, BlockSize * 8
+    //NPC* nineSky;
+    auto nineSkyAvatar = Engine::Resources::GetInstance().GetBitmap("NPC/nineSky/avatar/auntie.png");
+    NPCGroup->AddNewObject(nineSky = new NPC("九天玄女唯一指定姊妹 廖麗芳", nineSkyAvatar, 
+                                            "NPC/nineSky/role/nineSky1.png",
+                                            "NPC/nineSky/role/nineSky2.png", 
+                                            "NPC/nineSky/role/nineSky3.png",
+                                            "NPC/nineSky/role/nineSkyR.png",
+                                            BlockSize * 27, BlockSize * 7
                                         ));
 
     // NPCGroup->AddNewObject(Yang = new NPC("NPC",testAvatar, "NPC/test/role/test_sheet.png",
@@ -112,9 +113,9 @@ void WaterWoodScene::Initialize() {
         "Shawty had them Apple Bottom jeans, jeans"
     });
 
-    Yang->SetMessages({
+    nineSky->SetMessages({
         "貴人吉像",
-        "要不要來根小籤",
+        "相見便是有緣 來根小籤吧",
         "#lottery"
     });
 
@@ -131,6 +132,10 @@ void WaterWoodScene::Initialize() {
         //haveSpeedUpInt = rou
         LabelGroup->AddNewObject(speedLabel = new Engine::Label(std::to_string((int)LogScene::haveSpeedUp), "title.ttf", 48, 130, 210, 255, 255, 255, 255, 0.5, 0.5));
     }
+
+    bmp1 = Engine::Resources::GetInstance().GetBitmap("NPC/nineSky/role/nineSky1.png");
+    bmp2 = Engine::Resources::GetInstance().GetBitmap("NPC/nineSky/role/nineSky2.png");
+    bmp3 = Engine::Resources::GetInstance().GetBitmap("NPC/nineSky/role/nineSky3.png");
 }
 
 void WaterWoodScene::Terminate() {
@@ -140,16 +145,21 @@ void WaterWoodScene::Terminate() {
 
 void WaterWoodScene::Update(float deltaTime) {
     IScene::Update(deltaTime);
+
+    timer += deltaTime;
+    if (timer >= 2.0f) timer -= 2.0f;
+    if (std::fmod(timer, 2.0f) < 0.5f) nineSky->bmp = bmp1;
+    else if (std::fmod(timer, 2.0f) < 1.0f) nineSky->bmp = bmp2;
+    else if (std::fmod(timer, 2.0f) < 1.5f) nineSky->bmp = bmp1;
+    else nineSky->bmp = bmp3;
     
     if(firstTime){
         std::vector<std::string> testMessages = {
-            "「水木清華」是北京清華大學校園中的一個著名景點，",
-            "位於工字廳的北側，",
-            "也是清華園的代表性建築之一。",
-
-            "這個景點由「水木」與「清華」兩個部分組成，",
-            "分別代表了清華校園的自然環境（水）和人文底蘊（木），",
-            "以及清華大學的優越性（清華）。"
+            "水木是清華大學的學餐",
+            "一走進去就會聞到金展的香(臭)味",
+            "特產是冷掉的四海遊龍煎餃和高麗菜沒熟的弘謙炒飯",
+            "水木理髮廳可以幫你的頭髮變得很清爽 •̀ ωˊ•",
+            "建議去風雲。",
         };
         auto testAvatar = Engine::Resources::GetInstance().GetBitmap("NPC/test/avatar/waterwoodicon.png");
         dialog.StartDialog("水木", testAvatar, testMessages);
@@ -233,13 +243,11 @@ void WaterWoodScene::OnKeyDown(int keyCode) {
 
     if (keyCode == ALLEGRO_KEY_I) {
         std::vector<std::string> testMessages = {
-            "「水木清華」是北京清華大學校園中的一個著名景點，",
-            "位於工字廳的北側，",
-            "也是清華園的代表性建築之一。",
-
-            "這個景點由「水木」與「清華」兩個部分組成，",
-            "分別代表了清華校園的自然環境（水）和人文底蘊（木），",
-            "以及清華大學的優越性（清華）。"
+            "水木是清華大學的學餐",
+            "一走進去就會聞到金展的香(臭)味",
+            "特產是冷掉的四海遊龍煎餃和高麗菜沒熟的弘謙炒飯",
+            "水木理髮廳可以幫你的頭髮變得很清爽 阿嬤最愛 •̀ ωˊ•",
+            "建議去風雲。",
         };
         auto testAvatar = Engine::Resources::GetInstance().GetBitmap("NPC/test/avatar/waterwoodicon.png");
         dialog.StartDialog("水木", testAvatar, testMessages);
