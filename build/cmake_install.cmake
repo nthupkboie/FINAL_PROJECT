@@ -34,7 +34,7 @@ endif()
 
 # Set default install directory permissions.
 if(NOT DEFINED CMAKE_OBJDUMP)
-  set(CMAKE_OBJDUMP "C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/bin/llvm-objdump.exe")
+  set(CMAKE_OBJDUMP "C:/llvm-mingw-20240417-msvcrt-x86_64/bin/llvm-objdump.exe")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT)

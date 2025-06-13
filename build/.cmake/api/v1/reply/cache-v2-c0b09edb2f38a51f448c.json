@@ -51,7 +51,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/bin/llvm-addr2line.exe"
+			"value" : "C:/llvm-mingw-20240417-msvcrt-x86_64/bin/llvm-addr2line.exe"
 		},
 		{
 			"name" : "CMAKE_AR",
@@ -67,7 +67,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/bin/llvm-ar.exe"
+			"value" : "C:/llvm-mingw-20240417-msvcrt-x86_64/bin/llvm-ar.exe"
 		},
 		{
 			"name" : "CMAKE_BUILD_TYPE",
@@ -195,7 +195,7 @@
 				}
 			],
 			"type" : "STRING",
-			"value" : "C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/bin/clang++.exe"
+			"value" : "c:/llvm-mingw-20240417-msvcrt-x86_64/bin/clang++.exe"
 		},
 		{
 			"name" : "CMAKE_CXX_COMPILER_AR",
@@ -211,7 +211,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/bin/llvm-ar.exe"
+			"value" : "C:/llvm-mingw-20240417-msvcrt-x86_64/bin/llvm-ar.exe"
 		},
 		{
 			"name" : "CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS",
@@ -227,7 +227,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/bin/clang-scan-deps.exe"
+			"value" : "C:/llvm-mingw-20240417-msvcrt-x86_64/bin/clang-scan-deps.exe"
 		},
 		{
 			"name" : "CMAKE_CXX_COMPILER_RANLIB",
@@ -243,7 +243,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/bin/llvm-ranlib.exe"
+			"value" : "C:/llvm-mingw-20240417-msvcrt-x86_64/bin/llvm-ranlib.exe"
 		},
 		{
 			"name" : "CMAKE_CXX_FLAGS",
@@ -355,7 +355,7 @@
 				}
 			],
 			"type" : "STRING",
-			"value" : "C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/bin/clang.exe"
+			"value" : "c:/llvm-mingw-20240417-msvcrt-x86_64/bin/clang.exe"
 		},
 		{
 			"name" : "CMAKE_C_COMPILER_AR",
@@ -371,7 +371,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/bin/llvm-ar.exe"
+			"value" : "C:/llvm-mingw-20240417-msvcrt-x86_64/bin/llvm-ar.exe"
 		},
 		{
 			"name" : "CMAKE_C_COMPILER_CLANG_SCAN_DEPS",
@@ -387,7 +387,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/bin/clang-scan-deps.exe"
+			"value" : "C:/llvm-mingw-20240417-msvcrt-x86_64/bin/clang-scan-deps.exe"
 		},
 		{
 			"name" : "CMAKE_C_COMPILER_RANLIB",
@@ -403,7 +403,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/bin/llvm-ranlib.exe"
+			"value" : "C:/llvm-mingw-20240417-msvcrt-x86_64/bin/llvm-ranlib.exe"
 		},
 		{
 			"name" : "CMAKE_C_FLAGS",
@@ -515,7 +515,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/bin/llvm-dlltool.exe"
+			"value" : "C:/llvm-mingw-20240417-msvcrt-x86_64/bin/llvm-dlltool.exe"
 		},
 		{
 			"name" : "CMAKE_EDIT_COMMAND",
@@ -755,7 +755,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/bin/ld.lld.exe"
+			"value" : "C:/llvm-mingw-20240417-msvcrt-x86_64/bin/ld.lld.exe"
 		},
 		{
 			"name" : "CMAKE_MAKE_PROGRAM",
@@ -771,7 +771,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/bin/mingw32-make.exe"
+			"value" : "C:/llvm-mingw-20240417-msvcrt-x86_64/bin/mingw32-make.exe"
 		},
 		{
 			"name" : "CMAKE_MODULE_LINKER_FLAGS",
@@ -867,7 +867,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/bin/llvm-nm.exe"
+			"value" : "C:/llvm-mingw-20240417-msvcrt-x86_64/bin/llvm-nm.exe"
 		},
 		{
 			"name" : "CMAKE_NUMBER_OF_MAKEFILES",
@@ -895,7 +895,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/bin/llvm-objcopy.exe"
+			"value" : "C:/llvm-mingw-20240417-msvcrt-x86_64/bin/llvm-objcopy.exe"
 		},
 		{
 			"name" : "CMAKE_OBJDUMP",
@@ -911,7 +911,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/bin/llvm-objdump.exe"
+			"value" : "C:/llvm-mingw-20240417-msvcrt-x86_64/bin/llvm-objdump.exe"
 		},
 		{
 			"name" : "CMAKE_PLATFORM_INFO_INITIALIZED",
@@ -975,7 +975,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/bin/llvm-ranlib.exe"
+			"value" : "C:/llvm-mingw-20240417-msvcrt-x86_64/bin/llvm-ranlib.exe"
 		},
 		{
 			"name" : "CMAKE_RC_COMPILER",
@@ -991,7 +991,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/bin/windres.exe"
+			"value" : "C:/llvm-mingw-20240417-msvcrt-x86_64/bin/windres.exe"
 		},
 		{
 			"name" : "CMAKE_RC_COMPILER_WORKS",
@@ -1099,7 +1099,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/bin/llvm-readelf.exe"
+			"value" : "C:/llvm-mingw-20240417-msvcrt-x86_64/bin/llvm-readelf.exe"
 		},
 		{
 			"name" : "CMAKE_ROOT",
@@ -1319,7 +1319,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "C:/Users/USER/Downloads/llvm-mingw-20240417-msvcrt-x86_64/bin/llvm-strip.exe"
+			"value" : "C:/llvm-mingw-20240417-msvcrt-x86_64/bin/llvm-strip.exe"
 		},
 		{
 			"name" : "CMAKE_TAPI",
