@@ -48,6 +48,7 @@ Engine::Point PlayScene::GetClientSize() {
 
 Engine::Point PlayScene::cameraOffset = Engine::Point(0, 0);
 void PlayScene::Initialize() {
+    firstTime = true;
     // 初始化遊戲狀態
     lives = 3;
     //money = 0;
@@ -147,16 +148,6 @@ void PlayScene::Update(float deltaTime) {
     cameraOffset.y = player->Position.y - window_y / 2 * BlockSize; // 置中：player.y - 96
     cameraOffset.x = std::max(0.0f, std::min(cameraOffset.x, static_cast<float>(MapWidth * BlockSize - window_x * BlockSize)));
     cameraOffset.y = std::max(0.0f, std::min(cameraOffset.y, static_cast<float>(MapHeight * BlockSize - window_y * BlockSize)));
-
-    // // 更新攝影機
-    // float targetX = player->Position.x - 3 * BlockSize; // 視角中心
-    // float targetY = player->Position.y - 1.5 * BlockSize;
-    // // 邊界限制
-    // targetX = std::max(0.0f, std::min(targetX, static_cast<float>(MapWidth * BlockSize - 6 * BlockSize)));
-    // targetY = std::max(0.0f, std::min(targetY, static_cast<float>(MapHeight * BlockSize - 3 * BlockSize)));
-    // // 平滑插值（與玩家移動同步，0.3秒）
-    // cameraOffset.x += (targetX - cameraOffset.x) * (deltaTime / 0.3f);
-    // cameraOffset.y += (targetY - cameraOffset.y) * (deltaTime / 0.3f);
     
     // 更新所有NPC
     for (auto& obj : NPCGroup->GetObjects()) {
@@ -174,7 +165,6 @@ void PlayScene::Update(float deltaTime) {
     if (lives <= 0) {
         Engine::GameEngine::GetInstance().ChangeScene("lose");
     }
-
 
     //道具
     moneyLabel->Position = Engine::Point(130 + cameraOffset.x, 70 + cameraOffset.y);
@@ -203,19 +193,9 @@ void PlayScene::Draw() const {
 
     DrawMiniMap();
 
-
     if (dialog.IsDialogActive()) {
         dialog.Draw();
     }
-    
-    // 繪製對話框
-    if (dialog.IsDialogActive()) {
-        dialog.Draw();
-    }
-
-    //IScene::Draw();
-
-    
 }
 
 void PlayScene::OnMouseDown(int button, int mx, int my) {
@@ -277,16 +257,25 @@ void PlayScene::OnKeyDown(int keyCode) {
         inSmallEat = true;
         //haveAxe = true;
     }
-    // // 按T鍵測試開啟對話 (可選)
-    // if (keyCode == ALLEGRO_KEY_T) {
-    //     std::vector<std::string> testMessages = {
-    //         "這是按T鍵觸發的對話!",
-    //         "第二條測試訊息。",
-    //         "最後一條測試訊息。"
-    //     };
-    //     auto npcAvatar = Engine::Resources::GetInstance().GetBitmap("NPC/test/icon/test_icon.png");
-    //     dialog.StartDialog("測試NPC", npcAvatar, testMessages);
-    // }
+// fix
+    if(firstTime){
+        std::vector<std::string> testMessages = {
+            "這裡是清大校園，有新齋、小吃、水木、風雲、成功湖、資電、台達", 
+            "請冒險者們去一探究竟清大的秘密吧",
+        };
+        auto testAvatar = Engine::Resources::GetInstance().GetBitmap("NPC/test/avatar/test_avatar.png");
+        dialog.StartDialog("校園", testAvatar, testMessages);
+
+        firstTime = false;
+    }
+    if (keyCode == ALLEGRO_KEY_I) {
+        std::vector<std::string> testMessages = {
+            "這裡是清大校園，有新齋、小吃、水木、風雲、成功湖、資電、台達", 
+            "請冒險者們去一探究竟清大的秘密吧",
+        };
+        auto testAvatar = Engine::Resources::GetInstance().GetBitmap("NPC/test/avatar/test_avatar.png");
+        dialog.StartDialog("校園", testAvatar, testMessages);
+    }
 }
 
 void PlayScene::ReadMap() {

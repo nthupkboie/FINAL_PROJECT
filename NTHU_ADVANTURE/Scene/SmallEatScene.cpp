@@ -50,7 +50,6 @@ void SmallEatScene::Initialize() {
     //money = 0;
     //Shopper::canBuy = false;
     
-    
     if (LogScene::money>=50 && !LogScene::haveAxe) canBuyAxe = true;
     else canBuyAxe = false;
     if (LogScene::money>=20) canBuySpeed = true;
@@ -583,14 +582,6 @@ void SmallEatScene::ReadMap() {
                 default:
                     continue;
             }
-            
-            // TileMapGroup->AddNewObject(
-            //     new Engine::Image(imagePath, 
-            //                       x * BlockSize, 
-            //                       y * BlockSize, 
-            //                       BlockSize, 
-            //                       BlockSize)
-            // );
         }
     }
 }

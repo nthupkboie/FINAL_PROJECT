@@ -113,14 +113,13 @@ public:
     void BuyOnClick(int item);
     void CancelOnClick();
 
-    bool firstTime = true;
-
     bool readyToBuyAxe = false;
     bool readyToBuySpeed = false;
 
     void BuyOnClick2();
     void CancelOnClick2();
 
+    bool firstTime = true;
 };
 
 #endif   // SmallEatScene_HPP

@@ -43,6 +43,7 @@ Engine::Point WindCloudScene::GetClientSize() {
 
 Engine::Point WindCloudScene::cameraOffset = Engine::Point(0, 0);
 void WindCloudScene::Initialize() {
+    firstTime = true;
     // 初始化遊戲狀態
     lives = 3;
     money = 0;
@@ -219,17 +220,22 @@ void WindCloudScene::OnKeyDown(int keyCode) {
     if (keyCode == ALLEGRO_KEY_ENTER && dialog.IsDialogActive()) {
         dialog.AdvanceDialog();
     }
-    // // 按T鍵測試開啟對話 (可選)
-    // if (keyCode == ALLEGRO_KEY_T) {
-    //     std::vector<std::string> testMessages = {
-    //         "這是按T鍵觸發的對話!",
-    //         "第二條測試訊息。",
-    //         "最後一條測試訊息。"
-    //     };
-    //     auto npcAvatar = Engine::Resources::GetInstance().GetBitmap("NPC/test/icon/test_icon.png");
-    //     dialog.StartDialog("測試NPC", npcAvatar, testMessages);
-    // }
+    if(firstTime){
+        std::vector<std::string> testMessages = {
+            "我是風雲"
+        };
+        auto testAvatar = Engine::Resources::GetInstance().GetBitmap("NPC/test/avatar/test_avatar.png");
+        dialog.StartDialog("風雲", testAvatar, testMessages);
 
+        firstTime = false;
+    }
+    if (keyCode == ALLEGRO_KEY_I) {
+        std::vector<std::string> testMessages = {
+            "我是風雲"
+        };
+        auto testAvatar = Engine::Resources::GetInstance().GetBitmap("NPC/test/avatar/test_avatar.png");
+        dialog.StartDialog("風雲", testAvatar, testMessages);
+    }
     if(keyCode == ALLEGRO_KEY_P){
         PlayScene::inPlay = true;
         PlayScene::inSmallEat = false;

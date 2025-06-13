@@ -97,7 +97,7 @@ public:
 
     static bool collision(int x, int y);
 
-    //static int money;
+    bool firstTime = true;
 };
 
 #endif   // PLAYSCENE_HPP
