@@ -25,6 +25,7 @@
 #include <allegro5/allegro_primitives.h>
 #include "UI/Component/Label.hpp"
 #include "UI/Component/Image.hpp"
+#include "LogScene.hpp"
 
 
 bool PlayScene::inPlay = true, PlayScene::inSmallEat = false, PlayScene::inTalda = false, PlayScene::inCGLake = false, PlayScene::inWaterWood = false, PlayScene::inWindCloud = false, PlayScene::inEE = false, PlayScene::inBattle = false;
@@ -68,14 +69,24 @@ void PlayScene::Initialize() {
     
     // 初始化玩家
     Player* player;
-    PlayerGroup->AddNewObject(player = new Player("player/idle.png", 100, 100));
+    //PlayerGroup->AddNewObject(player = new Player("player/idle.png", 100, 100));
+    float startX = (LogScene::lastPlayerPos.x != 0) ? LogScene::lastPlayerPos.x : 100;
+    float startY = (LogScene::lastPlayerPos.y != 0) ? LogScene::lastPlayerPos.y : 100;
+    PlayerGroup->AddNewObject(player = new Player("player/idle.png", --startX, --startY));
+    
+
 
     // 初始化攝影機，確保玩家置中
     cameraOffset.x = player->Position.x - window_x / 2 * BlockSize; // 192
     cameraOffset.y = player->Position.y - window_y / 2 * BlockSize; // 96
-    cameraOffset.x = std::max(0.0f, std::min(cameraOffset.x, static_cast<float>(MapWidth * BlockSize - window_x * BlockSize)));
-    cameraOffset.y = std::max(0.0f, std::min(cameraOffset.y, static_cast<float>(MapHeight * BlockSize - window_y * BlockSize)));
-    
+    // cameraOffset.x = std::max(0.0f, std::min(cameraOffset.x, static_cast<float>(MapWidth * BlockSize - window_x * BlockSize)));
+    // cameraOffset.y = std::max(0.0f, std::min(cameraOffset.y, static_cast<float>(MapHeight * BlockSize - window_y * BlockSize)));
+    cameraOffset.x -= BlockSize;
+    cameraOffset.y -= BlockSize;
+
+
+
+
     // NPC
     NPC* test;
     // sheet路徑, x, y, 
@@ -201,10 +212,16 @@ void PlayScene::Update(float deltaTime) {
     if (!player) return; // 確保玩家存在
 
     // 更新攝影機，直接設置偏移量
-    cameraOffset.x = player->Position.x - window_x / 2 * BlockSize; // 置中：player.x - 192
-    cameraOffset.y = player->Position.y - window_y / 2 * BlockSize; // 置中：player.y - 96
+    // cameraOffset.x = player->Position.x - window_x / 2 * BlockSize; // 置中：player.x - 192
+    // cameraOffset.y = player->Position.y - window_y / 2 * BlockSize; // 置中：player.y - 96
+    // cameraOffset.x = std::max(0.0f, std::min(cameraOffset.x, static_cast<float>(MapWidth * BlockSize - window_x * BlockSize)));
+    // cameraOffset.y = std::max(0.0f, std::min(cameraOffset.y, static_cast<float>(MapHeight * BlockSize - window_y * BlockSize)));
+    cameraOffset.x = player->Position.x + BlockSize / 2 - window_x / 2 * BlockSize;
+    cameraOffset.y = player->Position.y + BlockSize / 2 - window_y / 2 * BlockSize;
     cameraOffset.x = std::max(0.0f, std::min(cameraOffset.x, static_cast<float>(MapWidth * BlockSize - window_x * BlockSize)));
     cameraOffset.y = std::max(0.0f, std::min(cameraOffset.y, static_cast<float>(MapHeight * BlockSize - window_y * BlockSize)));
+
+
 
     // // 更新攝影機
     // float targetX = player->Position.x - 3 * BlockSize; // 視角中心
@@ -334,6 +351,11 @@ void PlayScene::OnKeyDown(int keyCode) {
     IScene::OnKeyDown(keyCode);
     
     
+    Player* player = nullptr;
+    for (auto& obj : PlayerGroup->GetObjects()) {
+        player = dynamic_cast<Player*>(obj);
+        if (player) break;
+    }
     // 按Enter鍵推進對話
     if (keyCode == ALLEGRO_KEY_ENTER && dialog.IsDialogActive()) {
         dialog.AdvanceDialog();
@@ -344,42 +366,62 @@ void PlayScene::OnKeyDown(int keyCode) {
     }
     if (keyCode == ALLEGRO_KEY_L) {
         Engine::GameEngine::GetInstance().ChangeScene("lose");
-    }    
+    }   
+    auto TryChangeScene = [&](const std::string& name, bool& flag) {
+        if (player) LogScene::lastPlayerPos = player->Position;
+        Engine::GameEngine::GetInstance().ChangeScene(name);
+        inPlay = false;
+        flag = true;
+    }; 
     if(keyCode == ALLEGRO_KEY_B){
+
+        if (player)  LogScene::lastPlayerPos = player->Position;
         Engine::GameEngine::GetInstance().ChangeScene("battle");
         inPlay = false;
         inBattle = true;
     }
     if(keyCode == ALLEGRO_KEY_1){
+
+        if (player)  LogScene::lastPlayerPos = player->Position;
         Engine::GameEngine::GetInstance().ChangeScene("smalleat");
         inPlay = false;
         inSmallEat = true;
         //haveAxe = true;
     }
     if(keyCode == ALLEGRO_KEY_2){
+
+        if (player)  LogScene::lastPlayerPos = player->Position;
         Engine::GameEngine::GetInstance().ChangeScene("waterwood");
         inPlay = false;
         inWaterWood = true;
         //haveAxe = true;
     }
     if(keyCode == ALLEGRO_KEY_3){
+
+        if (player)  LogScene::lastPlayerPos = player->Position;
         Engine::GameEngine::GetInstance().ChangeScene("windcloud");
         inPlay = false;
         inWindCloud = true;
         //haveAxe = true;
     }
     if(keyCode == ALLEGRO_KEY_4){
+
+        if (player)  LogScene::lastPlayerPos = player->Position;
         Engine::GameEngine::GetInstance().ChangeScene("EE");
         inPlay = false;
         inEE = true;
     }
     if(keyCode == ALLEGRO_KEY_5){
+
+        if (player)  LogScene::lastPlayerPos = player->Position;
         Engine::GameEngine::GetInstance().ChangeScene("talda");
         inPlay = false;
         inTalda = true;
         //haveAxe = true;
     }
     if(keyCode == ALLEGRO_KEY_6){
+
+        if (player)  LogScene::lastPlayerPos = player->Position;
         Engine::GameEngine::GetInstance().ChangeScene("CGLake");
         inPlay = false;
         inCGLake = true;
@@ -397,13 +439,8 @@ void PlayScene::OnKeyDown(int keyCode) {
             std::cout << "Player not found!" << std::endl;
             return;
         }
-        for (const auto& zone : buildingZones) {
-            if (IsPlayerNearBuilding(player, zone)) {
-                std::cout << "Entering " << zone.buildingName << "!" << std::endl;
-                // 進入建築物的邏輯，例如進入新場景等
-                break;
-            }
-        }
+        if (player)  LogScene::lastPlayerPos = player->Position;
+        
         for (const auto& zone : buildingZones) {
             if (IsPlayerNearBuilding(player, zone)) {
                 std::cout << "Entering " << zone.buildingName << "!" << std::endl;
