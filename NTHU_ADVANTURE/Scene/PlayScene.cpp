@@ -157,7 +157,7 @@ void PlayScene::Initialize() {
         dyy->SetMessages({
             "同學不錯嘛，加你0.2分"
         });
-        LogScene::clearedLake++;
+        LogScene::clearedLake++; //bug!!
     }
     else {
         dyy->SetMessages({

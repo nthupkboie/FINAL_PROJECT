@@ -1,0 +1,57 @@
+[INFO] AIChatScene constructor called
+[INFO] Game Initializing...
+[INFO] Loaded Resource<image>: Resource/images/icon.png
+[INFO] Loaded window icon from: icon.png
+[INFO] There are total 16 supported mouse buttons
+[INFO] Allegro5 initialized
+[INFO] Game begin
+[INFO] Loaded Resource<image>: Resource/images/scene/start-by.png scaled to 1920x1024
+[INFO] Loaded Resource<font>: Resource/fonts/normal.ttf with size 128
+[INFO] Loaded Resource<image>: Resource/images/stage-select/sword.png scaled to 800x150
+[INFO] Loaded Resource<image>: Resource/images/stage-select/sword.png
+[INFO] Loaded Resource<font>: Resource/fonts/title.ttf with size 48
+[INFO] Loaded Resource<image>: Resource/images/stage-select/sword2.png scaled to 800x150
+[INFO] Loaded Resource<image>: Resource/images/stage-select/sword2.png
+[INFO] Loaded Resource<audio>: Resource/audios/start.ogg
+[INFO] Game initialized
+[INFO] Game start event loop
+[INFO] stopped audio (bgm)
+[INFO] Loaded Resource<image>: Resource/images/scene/login.png scaled to 1920x1024
+[INFO] Loaded Resource<font>: Resource/fonts/title.ttf with size 56
+[INFO] Loaded Resource<image>: Resource/images/stage-select/right-arrow.png scaled to 128x128
+[INFO] Loaded Resource<image>: Resource/images/stage-select/dirt.png scaled to 400x100
+[INFO] Loaded Resource<image>: Resource/images/stage-select/dirt.png
+[INFO] Loaded Resource<image>: Resource/images/stage-select/floor.png
+[INFO] Loaded Resource<audio>: Resource/audios/coconut.ogg
+[INFO] Created<sample_instance>: Resource/audios/coconut.ogg
+[INFO] Changed to login scene
+[INFO] stopped audio (sample)
+[INFO] mapData.size() 480
+[INFO] MapWidth * MapHeight 480
+[INFO] Loaded Resource<image>: Resource/images/NEW/newfloor.png scaled to 64x64
+[INFO] Loaded Resource<image>: Resource/images/NEW/newwall.png scaled to 64x64
+[INFO] Loaded Resource<image>: Resource/images/NEW/woodfloor.png scaled to 64x64
+[INFO] Loaded Resource<image>: Resource/images/NEW/NEWmap.png scaled to 1920x1024
+[INFO] Loaded Resource<image>: Resource/images/player/idle.png
+[INFO] Loaded Resource<image>: Resource/images/player/left_idle.png
+[INFO] Loaded Resource<image>: Resource/images/player/right_idle.png
+[INFO] Loaded Resource<image>: Resource/images/player/up_idle.png
+[INFO] Loaded Resource<image>: Resource/images/player/up1.png
+[INFO] Loaded Resource<image>: Resource/images/player/up2.png
+[INFO] Loaded Resource<image>: Resource/images/player/down1.png
+[INFO] Loaded Resource<image>: Resource/images/player/down2.png
+[INFO] Loaded Resource<image>: Resource/images/player/left1.png
+[INFO] Loaded Resource<image>: Resource/images/player/left2.png
+[INFO] Loaded Resource<image>: Resource/images/player/right1.png
+[INFO] Loaded Resource<image>: Resource/images/player/right2.png
+[INFO] Loaded Resource<image>: Resource/images/NPC/bablo/avatar/bablo.png
+[INFO] Loaded Resource<image>: Resource/images/NPC/bablo/role/babloD.png
+[INFO] Loaded Resource<image>: Resource/images/NPC/bablo/role/babloU.png
+[INFO] Loaded Resource<image>: Resource/images/NPC/bablo/role/babloL.png
+[INFO] Loaded Resource<image>: Resource/images/NPC/bablo/role/babloR.png
+[INFO] Loaded Resource<font>: Resource/fonts/normal.ttf with size 24
+[INFO] Loaded Resource<image>: Resource/images/lose/benjamin-happy.png
+[INFO] Loaded Resource<audio>: Resource/audios/Ruby.ogg
+[INFO] Loaded Resource<image>: Resource/images/play/dollar.png scaled to 56x56
+[INFO] Changed to new scene
+[INFO] Loaded Resource<image>: Resource/images/NPC/test/avatar/NEWicon.png

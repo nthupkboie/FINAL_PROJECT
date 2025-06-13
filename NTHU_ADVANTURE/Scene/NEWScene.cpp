@@ -147,17 +147,12 @@ void NEWScene::Update(float deltaTime) {
     
     if(firstTime){
         std::vector<std::string> testMessages = {
-            "清大新齋位於清華大學校園內，",
-            "是學生主要的自習與交流空間。",
-
-            "新齋環境寧靜，提供充足的學習資源與舒適的座位，",
-            "深受同學喜愛。",
-
-            "此外，新齋也常舉辦各類文化與學術活動，",
-            "促進學生多元發展。",
-
-            "整體設計融合現代與傳統風格，",
-            "營造優雅且具有人文氣息的學習氛圍。"
+            "在新齋的交誼廳內，常常能看到一群資工系學生和一群電腦",
+            "或是一群很吵的資工系學生和一堆酒",
+            "是充滿歡樂與回憶的地方!",
+            "在期末前打開任意一間資工系學生的房間，會看到一群卷鬼",
+            "在final project期間逛逛新齋，會看到一群卷到日出的鬼",
+            "是新鮮的肝逐漸失去價值的地方。"
         };
         auto testAvatar = Engine::Resources::GetInstance().GetBitmap("NPC/test/avatar/NEWicon.png");
         dialog.StartDialog("新齋", testAvatar, testMessages);
@@ -246,17 +241,12 @@ void NEWScene::OnKeyDown(int keyCode) {
 
     if (keyCode == ALLEGRO_KEY_I) {
         std::vector<std::string> testMessages = {
-            "清大新齋位於清華大學校園內，",
-            "是學生主要的自習與交流空間。",
-
-            "新齋環境寧靜，提供充足的學習資源與舒適的座位，",
-            "深受同學喜愛。",
-
-            "此外，新齋也常舉辦各類文化與學術活動，",
-            "促進學生多元發展。",
-
-            "整體設計融合現代與傳統風格，",
-            "營造優雅且具有人文氣息的學習氛圍。"
+            "在新齋的交誼廳內，常常能看到一群資工系學生和一群電腦",
+            "或是一群很吵的資工系學生和一堆酒",
+            "是充滿歡樂與回憶的地方!",
+            "在期末前打開任意一間資工系學生的房間，會看到一群卷鬼",
+            "在final project期間逛逛新齋，會看到一群卷到日出的鬼",
+            "是新鮮的肝逐漸失去價值的地方。"
         };
         auto testAvatar = Engine::Resources::GetInstance().GetBitmap("NPC/test/avatar/NEWicon.png");
         dialog.StartDialog("新齋", testAvatar, testMessages);

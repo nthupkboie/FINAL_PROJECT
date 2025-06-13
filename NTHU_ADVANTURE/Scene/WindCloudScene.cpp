@@ -160,12 +160,9 @@ void WindCloudScene::Update(float deltaTime) {
 
     if(firstTime){
         std::vector<std::string> testMessages = {
-            "清大「風雲樓」主要作為國際學生活動中心，",
-            "曾是印度學生舉辦活動的主要場地，",
-            "例如「印度排燈節」慶典。",
-
-            "此外，它也是清華大學校友中心的辦公場所，",
-            "提供各項服務給清華校友。"
+            "風雲樓是清大最大的學餐建築，也有提供活動舉辦場所",
+            "因為食物比較多，比較容易找到好吃的(大概)",
+            "但是請不要隨意嘗試墨尼捲餅的拉茶和四樓的東西。",
         };
         auto testAvatar = Engine::Resources::GetInstance().GetBitmap("NPC/test/avatar/windcloudicon.png");
         dialog.StartDialog("風雲", testAvatar, testMessages);
@@ -350,12 +347,9 @@ void WindCloudScene::OnKeyDown(int keyCode) {
 
     if (keyCode == ALLEGRO_KEY_I && wordleFinished) {
         std::vector<std::string> testMessages = {
-            "清大「風雲樓」主要作為國際學生活動中心，",
-            "曾是印度學生舉辦活動的主要場地，",
-            "例如「印度排燈節」慶典。",
-
-            "此外，它也是清華大學校友中心的辦公場所，",
-            "提供各項服務給清華校友。"
+            "風雲樓是清大最大的學餐建築，也有提供活動舉辦場所",
+            "因為食物比較多，比較容易找到好吃的(大概)",
+            "但是請不要隨意嘗試墨尼捲餅的拉茶和四樓的東西。",
         };
         auto testAvatar = Engine::Resources::GetInstance().GetBitmap("NPC/test/avatar/windcloudicon.png");
         dialog.StartDialog("風雲", testAvatar, testMessages);
