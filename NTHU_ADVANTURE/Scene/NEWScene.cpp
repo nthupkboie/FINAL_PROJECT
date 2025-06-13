@@ -136,6 +136,26 @@ void NEWScene::Terminate() {
 void NEWScene::Update(float deltaTime) {
     IScene::Update(deltaTime);
     
+    if(firstTime){
+        std::vector<std::string> testMessages = {
+            "清大新齋位於清華大學校園內，",
+            "是學生主要的自習與交流空間。",
+
+            "新齋環境寧靜，提供充足的學習資源與舒適的座位，",
+            "深受同學喜愛。",
+
+            "此外，新齋也常舉辦各類文化與學術活動，",
+            "促進學生多元發展。",
+
+            "整體設計融合現代與傳統風格，",
+            "營造優雅且具有人文氣息的學習氛圍。"
+        };
+        auto testAvatar = Engine::Resources::GetInstance().GetBitmap("NPC/test/avatar/NEWicon.png");
+        dialog.StartDialog("新齋", testAvatar, testMessages);
+
+        firstTime = false;
+    }
+    
     // 獲取玩家對象
     Player* player = nullptr;
     for (auto& obj : PlayerGroup->GetObjects()) {
@@ -214,25 +234,7 @@ void NEWScene::OnKeyDown(int keyCode) {
     if (keyCode == ALLEGRO_KEY_ENTER && dialog.IsDialogActive()) {
         dialog.AdvanceDialog();
     }
-    if(firstTime){
-        std::vector<std::string> testMessages = {
-            "清大新齋位於清華大學校園內，",
-            "是學生主要的自習與交流空間。",
 
-            "新齋環境寧靜，提供充足的學習資源與舒適的座位，",
-            "深受同學喜愛。",
-
-            "此外，新齋也常舉辦各類文化與學術活動，",
-            "促進學生多元發展。",
-
-            "整體設計融合現代與傳統風格，",
-            "營造優雅且具有人文氣息的學習氛圍。"
-        };
-        auto testAvatar = Engine::Resources::GetInstance().GetBitmap("NPC/test/avatar/NEWicon.png");
-        dialog.StartDialog("新齋", testAvatar, testMessages);
-
-        firstTime = false;
-    }
     if (keyCode == ALLEGRO_KEY_I) {
         std::vector<std::string> testMessages = {
             "清大新齋位於清華大學校園內，",

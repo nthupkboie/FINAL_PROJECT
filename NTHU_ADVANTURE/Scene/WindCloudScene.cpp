@@ -142,6 +142,20 @@ void WindCloudScene::Terminate() {
 void WindCloudScene::Update(float deltaTime) {
     IScene::Update(deltaTime);
     
+    if(firstTime){
+        std::vector<std::string> testMessages = {
+            "清大「風雲樓」主要作為國際學生活動中心，",
+            "曾是印度學生舉辦活動的主要場地，",
+            "例如「印度排燈節」慶典。",
+
+            "此外，它也是清華大學校友中心的辦公場所，",
+            "提供各項服務給清華校友。"
+        };
+        auto testAvatar = Engine::Resources::GetInstance().GetBitmap("NPC/test/avatar/windcloudicon.png");
+        dialog.StartDialog("風雲", testAvatar, testMessages);
+
+        firstTime = false;
+    }
     // 獲取玩家對象
     Player* player = nullptr;
     for (auto& obj : PlayerGroup->GetObjects()) {
@@ -220,20 +234,7 @@ void WindCloudScene::OnKeyDown(int keyCode) {
     if (keyCode == ALLEGRO_KEY_ENTER && dialog.IsDialogActive()) {
         dialog.AdvanceDialog();
     }
-    if(firstTime){
-        std::vector<std::string> testMessages = {
-            "清大「風雲樓」主要作為國際學生活動中心，",
-            "曾是印度學生舉辦活動的主要場地，",
-            "例如「印度排燈節」慶典。",
 
-            "此外，它也是清華大學校友中心的辦公場所，",
-            "提供各項服務給清華校友。"
-        };
-        auto testAvatar = Engine::Resources::GetInstance().GetBitmap("NPC/test/avatar/windcloudicon.png");
-        dialog.StartDialog("風雲", testAvatar, testMessages);
-
-        firstTime = false;
-    }
     if (keyCode == ALLEGRO_KEY_I) {
         std::vector<std::string> testMessages = {
             "清大「風雲樓」主要作為國際學生活動中心，",
@@ -254,7 +255,7 @@ void WindCloudScene::OnKeyDown(int keyCode) {
 }
 
 void WindCloudScene::ReadMap() {
-    std::string filename = std::string("Resource/windcloud") + ".txt";
+    std::string filename = std::string("Resource/smalleat") + ".txt";
 
     // 清空舊的地圖數據
     mapData.clear();
@@ -264,15 +265,11 @@ void WindCloudScene::ReadMap() {
     std::ifstream fin(filename);
     while (fin >> c) {
         switch (c) {
-            // case '0': mapData.push_back(TILE_GRASS); break;
-            // case 'R': mapData.push_back(TILE_ROAD); break;
-            // case 'T': mapData.push_back(TILE_TREE); break;
-            // case 'S': mapData.push_back(TILE_STAIRS); break;
             case 'W': mapData.push_back(TILE_WALL); break;
             case '^': mapData.push_back(TABLE); break;
             case 'F': mapData.push_back(TILE_FLOOR); break;
-            // case 'N': mapData.push_back(NEW); break;
-            // case 'n': mapData.push_back(TILE_NEW); break;
+            case 'L': mapData.push_back(LSEAT); break;
+            case 'R': mapData.push_back(RSEAT); break;
             case '=': mapData.push_back(NOTHING); break;
             case '\n':
             case '\r':
@@ -292,7 +289,7 @@ void WindCloudScene::ReadMap() {
     // init init
     for(int y = 0; y < MapHeight; y++){
         for(int x = 0; x < MapWidth; x++){
-                    std::string imagePath = "mainworld/grasss.png";
+                    std::string imagePath = "smalleat/wall.png";
                     TileMapGroup->AddNewObject(
                         new Engine::Image(imagePath, 
                                         x * BlockSize, 
@@ -330,24 +327,6 @@ void WindCloudScene::ReadMap() {
                                         BlockSize, 
                                         BlockSize)
                     );
-
-                    // int randVal = rand() % 100; // 0~99 的隨機數
-
-                    // if (randVal < 5) {
-                    //     imagePath = "smalleat/BAG.png";
-                    // }
-                    // else {
-                    //     break;
-                    // }
-
-                    // TileMapGroup->AddNewObject(
-                    //     new Engine::Image(imagePath, 
-                    //                     x * BlockSize, 
-                    //                     y * BlockSize, 
-                    //                     BlockSize, 
-                    //                     BlockSize)
-                    // );
-                    // break;
                 }
                 break;
                 case TABLE:
@@ -369,19 +348,47 @@ void WindCloudScene::ReadMap() {
                                         BlockSize)
                     );
                     break; 
+                case LSEAT:
+                    imagePath = "smalleat/floor.png";
+                    TileMapGroup->AddNewObject(
+                        new Engine::Image(imagePath, 
+                                        x * BlockSize, 
+                                        y * BlockSize, 
+                                        BlockSize, 
+                                        BlockSize)
+                    );
+                    imagePath = "smalleat/LSEAT.png";
+                    TileMapGroup->AddNewObject(
+                        new Engine::Image(imagePath, 
+                                        x * BlockSize, 
+                                        y * BlockSize, 
+                                        BlockSize, 
+                                        BlockSize)
+                    );
+                    break;
+                case RSEAT:
+                    imagePath = "smalleat/floor.png";
+                    TileMapGroup->AddNewObject(
+                        new Engine::Image(imagePath, 
+                                        x * BlockSize, 
+                                        y * BlockSize, 
+                                        BlockSize, 
+                                        BlockSize)
+                    );
+                    imagePath = "smalleat/RSEAT.png";
+                    TileMapGroup->AddNewObject(
+                        new Engine::Image(imagePath, 
+                                        x * BlockSize, 
+                                        y * BlockSize, 
+                                        BlockSize, 
+                                        BlockSize)
+                    );
+                    break;
                 //////////////////////////////
                 case NOTHING:
                 default:
                     continue;
             }
-            
-            // TileMapGroup->AddNewObject(
-            //     new Engine::Image(imagePath, 
-            //                       x * BlockSize, 
-            //                       y * BlockSize, 
-            //                       BlockSize, 
-            //                       BlockSize)
-            // );
         }
     }
 }

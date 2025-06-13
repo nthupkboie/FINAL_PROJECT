@@ -136,6 +136,25 @@ void EEScene::Terminate() {
 void EEScene::Update(float deltaTime) {
     IScene::Update(deltaTime);
     
+    if(firstTime){
+        std::vector<std::string> testMessages = {
+            "清大資電館（現稱劉炯朗館）是清華大學最重要的電機系及資訊科學系教學及研究基地，",
+            "坐落於昆明湖畔。",
+
+            "它是建築界巨擘潘冀的代表作之一。",
+
+            "劉炯朗館整修翻新設計由房元凱掌舵，",
+            "運用矩陣數學原理，",
+            "在入口上方打造如魔術方塊的白色鏤空立方體All in One，",
+            "從不同角度可看到EE（電機）及CS（資訊科學）字樣，",
+            "夜間打上燈光，更添藝術氣氛。"
+        };
+        auto testAvatar = Engine::Resources::GetInstance().GetBitmap("NPC/test/avatar/EEicon.png");
+        dialog.StartDialog("資電館", testAvatar, testMessages);
+
+        firstTime = false;
+    }
+    
     // 獲取玩家對象
     Player* player = nullptr;
     for (auto& obj : PlayerGroup->GetObjects()) {
@@ -213,24 +232,6 @@ void EEScene::OnKeyDown(int keyCode) {
     // 按Enter鍵推進對話
     if (keyCode == ALLEGRO_KEY_ENTER && dialog.IsDialogActive()) {
         dialog.AdvanceDialog();
-    }
-    if(firstTime){
-        std::vector<std::string> testMessages = {
-            "清大資電館（現稱劉炯朗館）是清華大學最重要的電機系及資訊科學系教學及研究基地，",
-            "坐落於昆明湖畔。",
-
-            "它是建築界巨擘潘冀的代表作之一。",
-
-            "劉炯朗館整修翻新設計由房元凱掌舵，",
-            "運用矩陣數學原理，",
-            "在入口上方打造如魔術方塊的白色鏤空立方體All in One，",
-            "從不同角度可看到EE（電機）及CS（資訊科學）字樣，",
-            "夜間打上燈光，更添藝術氣氛。"
-        };
-        auto testAvatar = Engine::Resources::GetInstance().GetBitmap("NPC/test/avatar/EEicon.png");
-        dialog.StartDialog("資電館", testAvatar, testMessages);
-
-        firstTime = false;
     }
     if (keyCode == ALLEGRO_KEY_I) {
         std::vector<std::string> testMessages = {

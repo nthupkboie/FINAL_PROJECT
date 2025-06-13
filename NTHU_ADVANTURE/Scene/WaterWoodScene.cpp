@@ -141,6 +141,22 @@ void WaterWoodScene::Terminate() {
 void WaterWoodScene::Update(float deltaTime) {
     IScene::Update(deltaTime);
     
+    if(firstTime){
+        std::vector<std::string> testMessages = {
+            "「水木清華」是北京清華大學校園中的一個著名景點，",
+            "位於工字廳的北側，",
+            "也是清華園的代表性建築之一。",
+
+            "這個景點由「水木」與「清華」兩個部分組成，",
+            "分別代表了清華校園的自然環境（水）和人文底蘊（木），",
+            "以及清華大學的優越性（清華）。"
+        };
+        auto testAvatar = Engine::Resources::GetInstance().GetBitmap("NPC/test/avatar/waterwoodicon.png");
+        dialog.StartDialog("水木", testAvatar, testMessages);
+
+        firstTime = false;
+    }
+
     // 獲取玩家對象
     Player* player = nullptr;
     for (auto& obj : PlayerGroup->GetObjects()) {
@@ -219,21 +235,7 @@ void WaterWoodScene::OnKeyDown(int keyCode) {
     if (keyCode == ALLEGRO_KEY_ENTER && dialog.IsDialogActive()) {
         dialog.AdvanceDialog();
     }
-    if(firstTime){
-        std::vector<std::string> testMessages = {
-            "「水木清華」是北京清華大學校園中的一個著名景點，",
-            "位於工字廳的北側，",
-            "也是清華園的代表性建築之一。",
 
-            "這個景點由「水木」與「清華」兩個部分組成，",
-            "分別代表了清華校園的自然環境（水）和人文底蘊（木），",
-            "以及清華大學的優越性（清華）。"
-        };
-        auto testAvatar = Engine::Resources::GetInstance().GetBitmap("NPC/test/avatar/waterwoodicon.png");
-        dialog.StartDialog("水木", testAvatar, testMessages);
-
-        firstTime = false;
-    }
     if (keyCode == ALLEGRO_KEY_I) {
         std::vector<std::string> testMessages = {
             "「水木清華」是北京清華大學校園中的一個著名景點，",
@@ -256,7 +258,7 @@ void WaterWoodScene::OnKeyDown(int keyCode) {
 }
 
 void WaterWoodScene::ReadMap() {
-    std::string filename = std::string("Resource/waterwood") + ".txt";
+    std::string filename = std::string("Resource/smalleat") + ".txt";
 
     // 清空舊的地圖數據
     mapData.clear();
@@ -266,15 +268,11 @@ void WaterWoodScene::ReadMap() {
     std::ifstream fin(filename);
     while (fin >> c) {
         switch (c) {
-            // case '0': mapData.push_back(TILE_GRASS); break;
-            // case 'R': mapData.push_back(TILE_ROAD); break;
-            // case 'T': mapData.push_back(TILE_TREE); break;
-            // case 'S': mapData.push_back(TILE_STAIRS); break;
             case 'W': mapData.push_back(TILE_WALL); break;
             case '^': mapData.push_back(TABLE); break;
             case 'F': mapData.push_back(TILE_FLOOR); break;
-            // case 'N': mapData.push_back(NEW); break;
-            // case 'n': mapData.push_back(TILE_NEW); break;
+            case 'L': mapData.push_back(LSEAT); break;
+            case 'R': mapData.push_back(RSEAT); break;
             case '=': mapData.push_back(NOTHING); break;
             case '\n':
             case '\r':
@@ -294,7 +292,7 @@ void WaterWoodScene::ReadMap() {
     // init init
     for(int y = 0; y < MapHeight; y++){
         for(int x = 0; x < MapWidth; x++){
-                    std::string imagePath = "mainworld/grasss.png";
+                    std::string imagePath = "smalleat/wall.png";
                     TileMapGroup->AddNewObject(
                         new Engine::Image(imagePath, 
                                         x * BlockSize, 
@@ -332,24 +330,6 @@ void WaterWoodScene::ReadMap() {
                                         BlockSize, 
                                         BlockSize)
                     );
-
-                    // int randVal = rand() % 100; // 0~99 的隨機數
-
-                    // if (randVal < 5) {
-                    //     imagePath = "smalleat/BAG.png";
-                    // }
-                    // else {
-                    //     break;
-                    // }
-
-                    // TileMapGroup->AddNewObject(
-                    //     new Engine::Image(imagePath, 
-                    //                     x * BlockSize, 
-                    //                     y * BlockSize, 
-                    //                     BlockSize, 
-                    //                     BlockSize)
-                    // );
-                    // break;
                 }
                 break;
                 case TABLE:
@@ -371,19 +351,47 @@ void WaterWoodScene::ReadMap() {
                                         BlockSize)
                     );
                     break; 
+                case LSEAT:
+                    imagePath = "smalleat/floor.png";
+                    TileMapGroup->AddNewObject(
+                        new Engine::Image(imagePath, 
+                                        x * BlockSize, 
+                                        y * BlockSize, 
+                                        BlockSize, 
+                                        BlockSize)
+                    );
+                    imagePath = "smalleat/LSEAT.png";
+                    TileMapGroup->AddNewObject(
+                        new Engine::Image(imagePath, 
+                                        x * BlockSize, 
+                                        y * BlockSize, 
+                                        BlockSize, 
+                                        BlockSize)
+                    );
+                    break;
+                case RSEAT:
+                    imagePath = "smalleat/floor.png";
+                    TileMapGroup->AddNewObject(
+                        new Engine::Image(imagePath, 
+                                        x * BlockSize, 
+                                        y * BlockSize, 
+                                        BlockSize, 
+                                        BlockSize)
+                    );
+                    imagePath = "smalleat/RSEAT.png";
+                    TileMapGroup->AddNewObject(
+                        new Engine::Image(imagePath, 
+                                        x * BlockSize, 
+                                        y * BlockSize, 
+                                        BlockSize, 
+                                        BlockSize)
+                    );
+                    break;
                 //////////////////////////////
                 case NOTHING:
                 default:
                     continue;
             }
-            
-            // TileMapGroup->AddNewObject(
-            //     new Engine::Image(imagePath, 
-            //                       x * BlockSize, 
-            //                       y * BlockSize, 
-            //                       BlockSize, 
-            //                       BlockSize)
-            // );
         }
     }
 }

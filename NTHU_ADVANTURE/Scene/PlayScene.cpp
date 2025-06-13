@@ -164,7 +164,7 @@ void PlayScene::Initialize() {
     AddBuildingZone(21, 19, 2, 1, "成功湖");
     AddBuildingZone(35, 19, 2, 1, "水木");
     AddBuildingZone(47, 19, 2, 1, "小吃部");
-    
+
     // 開始背景音樂
     bgmId = AudioHelper::PlayBGM("play.ogg");
 
@@ -410,6 +410,8 @@ void PlayScene::OnKeyDown(int keyCode) {
 
                 if (zone.buildingName == "新齋") {
                     Engine::GameEngine::GetInstance().ChangeScene("new");
+                    inPlay = false;
+                    inNEW = true;
                 } else if (zone.buildingName == "小吃部") {
                     Engine::GameEngine::GetInstance().ChangeScene("smalleat");
                     inPlay = false;
