@@ -24,7 +24,6 @@ namespace Engine {
 class SmallEatScene final : public Engine::IScene {
 private:
     
-    
     ALLEGRO_SAMPLE_ID bgmId;
     std::shared_ptr<ALLEGRO_SAMPLE_INSTANCE> deathBGMInstance;
 
@@ -64,6 +63,8 @@ public:
         TILE_FLOOR,
         TABLE,
         NOTHING,
+        LSEAT,
+        RSEAT,
     };
 
     enum ItemType {
@@ -111,6 +112,8 @@ public:
 
     void BuyOnClick(int item);
     void CancelOnClick();
+
+    bool firstTime = true;
 
     bool readyToBuyAxe = false;
     bool readyToBuySpeed = false;

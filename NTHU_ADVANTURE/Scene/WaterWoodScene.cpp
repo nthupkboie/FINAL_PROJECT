@@ -112,8 +112,9 @@ void WaterWoodScene::Initialize() {
     });
 
     Yang->SetMessages({
-        "我是楊舜仁！",
-        "我不會當人",
+        "貴人吉像",
+        "要不要來根小籤",
+        "#lottery"
     });
 
     // 預載資源
