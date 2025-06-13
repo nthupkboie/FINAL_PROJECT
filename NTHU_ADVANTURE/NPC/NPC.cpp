@@ -136,6 +136,7 @@ void NPC::Update(float deltaTime, const Player* player) {
                 //Engine::ImageButton *btn;
 
                 isTalking = false;
+                if(triggerEvent) triggerEvent();
             }
         }
     }
@@ -181,4 +182,8 @@ void NPC::AddPatrolPoint(const Engine::Point& point) {
     // DEBUG: 打印添加的巡邏點 (開發時可移除)
     Engine::LOG(Engine::DEBUGGING) << "Added patrol point to NPC '" << npcName 
                                   << "': (" << point.x << ", " << point.y << ")";
+}
+
+void NPC::SetTriggerEvent(std::function<void()> func) {
+    triggerEvent = func;
 }
