@@ -33,6 +33,7 @@ public:
     void AddMessage(const std::string& message);
     void SendMyMessage();
     void BackToStart();
+
 };
 
 #endif // AICHATSCENE_HPP

@@ -21,6 +21,7 @@
 #include "Scene/TaldaScene.hpp"
 #include "Scene/WaterWoodScene.hpp"
 #include "Scene/WindCloudScene.hpp"
+#include "Scene/NewScene.hpp"
 
 #include "Engine/Resources.hpp"
 #include "NPC/NPCDialog.hpp"
@@ -284,6 +285,11 @@ bool Player::canWalk(int x, int y){
     }
     else if (PlayScene::inWaterWood){
         if (!WaterWoodScene::collision(x, y)){
+            return false;
+        }
+    }
+    else if (PlayScene::inNEW){
+        if (!NEWScene::collision(x, y)){
             return false;
         }
     }

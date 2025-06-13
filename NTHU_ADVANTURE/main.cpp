@@ -18,6 +18,7 @@
 #include "Scene/EEScene.hpp"
 #include "Scene/TaldaScene.hpp"
 #include "Scene/CGLakeScene.hpp"
+#include "Scene/NewScene.hpp"
 
 #include "Scene/AIChatScene.hpp"
 
@@ -56,6 +57,7 @@ int main(int argc, char **argv) {
 	game.AddNewScene("talda", new TaldaScene());
 	game.AddNewScene("EE", new EEScene());
 	game.AddNewScene("CGLake", new CGLakeScene());
+	game.AddNewScene("new", new NEWScene());
 	// game.AddNewScene("stage-select", new StageSelectScene());
 	game.AddNewScene("lose", new LoseScene());
 	game.AddNewScene("win", new WinScene());

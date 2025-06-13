@@ -47,6 +47,8 @@ public:
         TILE_FLOOR,
         TABLE,
         NOTHING,
+        LSEAT,
+        RSEAT,
     };
 
     static const std::vector<Engine::Point> directions;
@@ -85,6 +87,8 @@ public:
     static std::vector<WindCloudScene::TileType> mapData;
 
     static bool collision(int x, int y);
+
+    bool firstTime = true;
 };
 
 #endif   // WindCloudScene_HPP
