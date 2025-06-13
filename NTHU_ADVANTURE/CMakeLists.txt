@@ -86,8 +86,8 @@ add_executable(2025_I2P2_TowerDefense
     Scene/TaldaScene.hpp
     Scene/EEScene.cpp
     Scene/EEScene.hpp
-    # Scene/AIChatScene.cpp
-    # Scene/AIChatScene.hpp
+    Scene/AIChatScene.cpp
+    Scene/AIChatScene.hpp
 
     # UI
     UI/Component/Image.cpp
@@ -110,7 +110,10 @@ add_executable(2025_I2P2_TowerDefense
     # NoUse/StageSelectScene.hpp
     # NoUse/LoseScene.cpp
     # NoUse/LoseScene.hpp
-    
+
+    httplib.h
+    json.hpp
+
     main.cpp
 )
 
@@ -118,13 +121,14 @@ IF (WIN32)
     target_include_directories(2025_I2P2_TowerDefense PUBLIC C:/allegro/include)
     target_link_directories(2025_I2P2_TowerDefense PUBLIC C:/allegro/lib)
     target_compile_options(2025_I2P2_TowerDefense PUBLIC ${ALLEGRO5_CFLAGS_OTHER})
-    target_link_libraries(2025_I2P2_TowerDefense liballegro_monolith)
+    target_link_libraries(2025_I2P2_TowerDefense PUBLIC liballegro_monolith)
+    target_link_libraries(2025_I2P2_TowerDefense PRIVATE Ws2_32)  # ✅ 新增這行
 ELSE()
     find_package(PkgConfig)
     pkg_check_modules(ALLEGRO5 REQUIRED allegro-5 allegro_main-5 allegro_font-5 allegro_dialog-5 allegro_primitives-5 allegro_image-5 allegro_ttf-5 allegro_audio-5 allegro_acodec-5)
     target_include_directories(2025_I2P2_TowerDefense PUBLIC lib)
     target_include_directories(2025_I2P2_TowerDefense PUBLIC ${ALLEGRO5_INCLUDE_DIRS})
     target_compile_options(2025_I2P2_TowerDefense PUBLIC ${ALLEGRO5_CFLAGS_OTHER})
-    target_link_libraries(2025_I2P2_TowerDefense ${ALLEGRO5_LIBRARIES})
+    target_link_libraries(2025_I2P2_TowerDefense PUBLIC ${ALLEGRO5_LIBRARIES})
     target_link_directories(2025_I2P2_TowerDefense PUBLIC ${ALLEGRO5_LIBRARY_DIRS})
 ENDIF()

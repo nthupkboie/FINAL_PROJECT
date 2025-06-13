@@ -252,8 +252,7 @@ void Player::Draw() const {
 
 bool Player::canWalk(int x, int y){
     if (x > PlayScene::BlockSize * PlayScene::MapWidth || x < 0 || y < 0 || y > PlayScene::BlockSize * PlayScene::MapHeight) return false;
-    if (PlayScene::inPlay){
-        
+    if (PlayScene::inPlay){   
         if (!PlayScene::collision(x, y)) {
             //printf("NOOOOOOOOO\n");
             return false;
@@ -264,6 +263,6 @@ bool Player::canWalk(int x, int y){
             return false;
         }
     }
-    
+    // collsion
     return true;
 }

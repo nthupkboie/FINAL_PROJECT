@@ -58,7 +58,7 @@ int main(int argc, char **argv) {
 	game.AddNewScene("lose", new LoseScene());
 	game.AddNewScene("win", new WinScene());
 
-	//game.AddNewScene("aichat", new AIChatScene());
+	game.AddNewScene("aichat", new AIChatScene());
 
 	// start from start scene
 	game.Start("start", 60, 1920, 1024);
