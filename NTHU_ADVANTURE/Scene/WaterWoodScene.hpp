@@ -49,6 +49,7 @@ public:
         NOTHING,
         LSEAT,
         RSEAT,
+        GIN
     };
 
     static const std::vector<Engine::Point> directions;

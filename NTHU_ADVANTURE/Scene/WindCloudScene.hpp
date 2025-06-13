@@ -60,6 +60,7 @@ public:
         NOTHING,
         LSEAT,
         RSEAT,
+        FOOD,
     };
 
     static const std::vector<Engine::Point> directions;

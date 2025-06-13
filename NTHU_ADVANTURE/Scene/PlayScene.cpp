@@ -19,6 +19,7 @@
 
 // new add
 #include "PlayScene.hpp"
+#include "CGLakeScene.hpp"
 #include "LogScene.hpp"
 #include "Player/Player.hpp"
 #include "NPC/NPC.hpp"
@@ -543,7 +544,7 @@ void PlayScene::ReadMap() {
     // init init
     for(int y = 0; y < MapHeight; y++){
         for(int x = 0; x < MapWidth; x++){
-                    std::string imagePath = "mainworld/GAS.png";
+                    std::string imagePath = "mainworld/GASS.png";
                     TileMapGroup->AddNewObject(
                         new Engine::Image(imagePath, 
                                         x * BlockSize, 
@@ -732,15 +733,28 @@ void PlayScene::ReadMap() {
                     );
                     break;
                 case LAKE:
-                    imagePath = "mainworld/lake.png";
-                    TileMapGroup->AddNewObject(
-                        new Engine::Image(imagePath, 
-                                        x * BlockSize, 
-                                        y * BlockSize, 
-                                        BlockSize * 10, 
-                                        BlockSize * 8)
-                    );
-                    break;
+                    if(LogScene::clearedLake == 0){
+                        imagePath = "mainworld/CGlake.png";
+                        TileMapGroup->AddNewObject(
+                            new Engine::Image(imagePath, 
+                                            x * BlockSize, 
+                                            y * BlockSize, 
+                                            BlockSize * 10, 
+                                            BlockSize * 8)
+                        );
+                        break;
+                    }
+                    else{
+                        imagePath = "mainworld/COOLlake.png";
+                        TileMapGroup->AddNewObject(
+                            new Engine::Image(imagePath, 
+                                            x * BlockSize, 
+                                            y * BlockSize, 
+                                            BlockSize * 10, 
+                                            BlockSize * 8)
+                        );
+                        break;
+                    }
                 case TALDA:
                     imagePath = "mainworld/talda.png";
                     TileMapGroup->AddNewObject(

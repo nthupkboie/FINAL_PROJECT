@@ -368,7 +368,7 @@ void WindCloudScene::OnKeyDown(int keyCode) {
 }
 
 void WindCloudScene::ReadMap() {
-    std::string filename = std::string("Resource/smalleat") + ".txt";
+    std::string filename = std::string("Resource/windcloud") + ".txt";
 
     // 清空舊的地圖數據
     mapData.clear();
@@ -384,6 +384,7 @@ void WindCloudScene::ReadMap() {
             case 'L': mapData.push_back(LSEAT); break;
             case 'R': mapData.push_back(RSEAT); break;
             case '=': mapData.push_back(NOTHING); break;
+            case 'G': mapData.push_back(FOOD); break;
             case '\n':
             case '\r':
             default: break;
@@ -402,7 +403,7 @@ void WindCloudScene::ReadMap() {
     // init init
     for(int y = 0; y < MapHeight; y++){
         for(int x = 0; x < MapWidth; x++){
-                    std::string imagePath = "smalleat/wall.png";
+                    std::string imagePath = "smalleat/floor.png";
                     TileMapGroup->AddNewObject(
                         new Engine::Image(imagePath, 
                                         x * BlockSize, 
@@ -498,6 +499,16 @@ void WindCloudScene::ReadMap() {
                     );
                     break;
                 //////////////////////////////
+                case FOOD:
+                    imagePath = "cool/food.png";
+                    TileMapGroup->AddNewObject(
+                        new Engine::Image(imagePath, 
+                                        x * BlockSize, 
+                                        y * BlockSize, 
+                                        BlockSize * 8, 
+                                        BlockSize * 10)
+                    );
+                    break;
                 case NOTHING:
                 default:
                     continue;

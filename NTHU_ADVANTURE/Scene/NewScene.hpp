@@ -44,6 +44,8 @@ public:
         TILE_FLOOR,
         TABLE,
         NOTHING,
+        TILE_WOOD,
+        NEWMAP,
     };
 
     static const std::vector<Engine::Point> directions;
