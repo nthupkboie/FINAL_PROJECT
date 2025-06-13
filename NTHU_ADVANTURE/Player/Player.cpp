@@ -267,7 +267,6 @@ bool Player::canWalk(int x, int y){
             return false;
         }
     }
-<<<<<<< main
     else if (PlayScene::inEE){
         if (!EEScene::collision(x, y)){
             return false;
@@ -289,8 +288,5 @@ bool Player::canWalk(int x, int y){
         }
     }
     
-=======
-    // collsion
->>>>>>> main
     return true;
 }
