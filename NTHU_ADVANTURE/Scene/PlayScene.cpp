@@ -734,7 +734,7 @@ void PlayScene::ReadMap() {
                     break;
                 case LAKE:
                     if(LogScene::clearedLake == 0){
-                        imagePath = "mainworld/lake.png";
+                        imagePath = "mainworld/CGlake.png";
                         TileMapGroup->AddNewObject(
                             new Engine::Image(imagePath, 
                                             x * BlockSize, 
@@ -745,7 +745,7 @@ void PlayScene::ReadMap() {
                         break;
                     }
                     else{
-                        imagePath = "mainworld/CGlake.png";
+                        imagePath = "mainworld/COOLlake.png";
                         TileMapGroup->AddNewObject(
                             new Engine::Image(imagePath, 
                                             x * BlockSize, 
