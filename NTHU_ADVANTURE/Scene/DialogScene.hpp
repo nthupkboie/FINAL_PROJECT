@@ -30,6 +30,11 @@ private:
 
     // 攝影機偏移量
     static Engine::Point cameraOffset;
+
+    // 新增成員變量
+    int currentDialogIndex = 0;
+    bool dialogEnded = false;
+    
 public:
     static const std::vector<Engine::Point> directions;
     static const int MapWidth, MapHeight;

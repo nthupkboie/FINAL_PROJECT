@@ -150,7 +150,11 @@ void DialogScene::OnKeyDown(int keyCode) {
             "我們到了",
             "傳說中美食沙漠、要一直走路腳走到酸、每天都要爬坡的超級清華大學",
             "準播要下車了喔",
-            "爸爸有事情要忙先走了 剩下的 " + LogScene::myName + " 你就好好在清大生存下去吧 哈哈哈哈哈哈哈哈哈哈哈",
+            "爸爸有事情要忙先走了 剩下的 " + LogScene::myName + "你就好好在清大生存下去吧 哈哈哈哈哈哈哈哈哈哈哈",
+            "誒你先進去新齋認識些新朋友",
+            "然後你等等好像要去台達館上課嗎?",
+            "不知道啦 你先進去 認識朋友 不然我怕你便孤兒",
+            "爸爸走囉 掰掰掰掰",
         };
         auto testAvatar = Engine::Resources::GetInstance().GetBitmap("cool/dad.png");
         dialog.StartDialog("爸爸", testAvatar, testMessages);
