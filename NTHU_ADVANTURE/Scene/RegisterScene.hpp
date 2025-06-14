@@ -6,6 +6,8 @@
 
 #include "Engine/IScene.hpp"
 #include <allegro5/allegro_audio.h>
+#include "UI/Component/Label.hpp"
+#include "Engine/Resources.hpp"
 
 
 
@@ -22,6 +24,8 @@ private:
     Engine::Image* arrowImage;
     int ID_entered = 0;
     //Group* imageGroup;
+    Engine::Label* labelID;
+    Engine::Label* labelpw;
 
 public:
     explicit RegisterScene() = default;
@@ -34,6 +38,10 @@ public:
     void SaveToFile(void);
     bool checkID(std::string ID);
     void Draw() const override;
+    std::string currentLanguage;
+    void Update(float deltaTime) override;
+    void RefreshLabels();
+
 
 };
 
