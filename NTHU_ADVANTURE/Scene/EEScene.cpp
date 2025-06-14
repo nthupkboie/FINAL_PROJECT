@@ -61,7 +61,7 @@ void EEScene::Initialize() {
     
     // 初始化玩家
     Player* player;
-    PlayerGroup->AddNewObject(player = new Player("player/idle.png", 100, 100));
+    PlayerGroup->AddNewObject(player = new Player("player/idle.png", 800, 800));
 
     // 初始化攝影機，確保玩家置中
     cameraOffset.x = player->Position.x - window_x / 2 * BlockSize; // 192
@@ -92,7 +92,7 @@ void EEScene::Initialize() {
                                             "NPC/Yang/role/YangD.png", 
                                             "NPC/Yang/role/YangL.png",
                                             "NPC/Yang/role/YangR.png",
-                                            BlockSize * 8, BlockSize * 8
+                                            BlockSize * 15, BlockSize * 2
                                         ));
                                         
 
@@ -348,6 +348,7 @@ void EEScene::ReadMap() {
             // case 'N': mapData.push_back(NEW); break;
             // case 'n': mapData.push_back(TILE_NEW); break;
             case '=': mapData.push_back(NOTHING); break;
+            case '&': mapData.push_back(EE); break;
             case '\n':
             case '\r':
             default: break;
@@ -384,7 +385,6 @@ void EEScene::ReadMap() {
             std::string imagePath;
             
             switch(tileType) {
-                ///////////////////////
                 case TILE_WALL:
                     imagePath = "smalleat/wall.png";
                     TileMapGroup->AddNewObject(
@@ -443,7 +443,16 @@ void EEScene::ReadMap() {
                                         BlockSize)
                     );
                     break; 
-                //////////////////////////////
+                case EE:
+                    imagePath = "EE/EEmap.png";
+                    TileMapGroup->AddNewObject(
+                        new Engine::Image(imagePath, 
+                                        x * BlockSize, 
+                                        y * BlockSize, 
+                                        BlockSize * 30, 
+                                        BlockSize * 16)
+                    );
+                    break; 
                 case NOTHING:
                 default:
                     continue;
@@ -458,6 +467,15 @@ void EEScene::ReadMap() {
             // );
         }
     }
+
+    std::string imagePath = "EE/EEmap.png";
+    TileMapGroup->AddNewObject(
+        new Engine::Image(imagePath, 
+                        0 * BlockSize, 
+                        0 * BlockSize, 
+                        BlockSize * 30, 
+                        BlockSize * 16)
+    );
 }
 
 Engine::Point EEScene::getCamera(){
