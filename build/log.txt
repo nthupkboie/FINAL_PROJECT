@@ -1,0 +1,57 @@
+[INFO] AIChatScene constructor called
+[INFO] Game Initializing...
+[INFO] Loaded Resource<image>: Resource/images/icon.png
+[INFO] Loaded window icon from: icon.png
+[INFO] There are total 2 supported mouse buttons
+[INFO] Allegro5 initialized
+[INFO] Game begin
+[INFO] Loaded Resource<image>: Resource/images/scene/start-by.png scaled to 1920x1024
+[INFO] Loaded Resource<font>: Resource/fonts/normal.ttf with size 128
+[INFO] Loaded Resource<image>: Resource/images/stage-select/sword.png scaled to 800x150
+[INFO] Loaded Resource<image>: Resource/images/stage-select/sword.png
+[INFO] Loaded Resource<font>: Resource/fonts/title.ttf with size 48
+[INFO] Loaded Resource<image>: Resource/images/stage-select/sword2.png scaled to 800x150
+[INFO] Loaded Resource<image>: Resource/images/stage-select/sword2.png
+[INFO] Loaded Resource<audio>: Resource/audios/start.ogg
+[INFO] Game initialized
+[INFO] Game start event loop
+[INFO] stopped audio (bgm)
+[INFO] Loaded Resource<image>: Resource/images/scene/register.png scaled to 1920x1024
+[INFO] Loaded Resource<font>: Resource/fonts/normal.ttf with size 56
+[INFO] Loaded Resource<font>: Resource/fonts/title.ttf with size 56
+[INFO] Loaded Resource<image>: Resource/images/stage-select/right-arrow.png scaled to 128x128
+[INFO] Loaded Resource<image>: Resource/images/stage-select/cloud.png scaled to 300x200
+[INFO] Loaded Resource<image>: Resource/images/stage-select/cloud.png
+[INFO] Loaded Resource<audio>: Resource/audios/coconut.ogg
+[INFO] Created<sample_instance>: Resource/audios/coconut.ogg
+[INFO] Changed to register scene
+[INFO] stopped audio (sample)
+[INFO] Changed to start scene
+[INFO] stopped audio (bgm)
+[INFO] Loaded Resource<image>: Resource/images/scene/login.png scaled to 1920x1024
+[INFO] Created<sample_instance>: Resource/audios/coconut.ogg
+[INFO] Changed to login scene
+[INFO] stopped audio (sample)
+[INFO] Changed to start scene
+[INFO] Game Terminating...
+[INFO] stopped audio (bgm)
+[INFO] Game terminated
+[INFO] Game end
+[INFO] Destroyed Resource<image>: scene/login.png?1920x1024
+[INFO] Destroyed Resource<image>: stage-select/sword2.png
+[INFO] Destroyed Resource<image>: stage-select/right-arrow.png?128x128
+[INFO] Destroyed Resource<image>: stage-select/sword.png
+[INFO] Destroyed Resource<image>: stage-select/sword.png?800x150
+[INFO] Destroyed Resource<image>: scene/register.png?1920x1024
+[INFO] Destroyed Resource<image>: icon.png
+[INFO] Destroyed Resource<image>: stage-select/sword2.png?800x150
+[INFO] Destroyed Resource<image>: stage-select/cloud.png
+[INFO] Destroyed Resource<image>: stage-select/cloud.png?300x200
+[INFO] Destroyed Resource<image>: scene/start-by.png?1920x1024
+[INFO] Destroyed Resource<font>: title.ttf?56
+[INFO] Destroyed Resource<font>: normal.ttf?56
+[INFO] Destroyed Resource<font>: title.ttf?48
+[INFO] Destroyed Resource<font>: normal.ttf?128
+[INFO] Destroyed<sample_instance>: coconut.ogg
+[INFO] Destroyed Resource<audio>: coconut.ogg
+[INFO] Destroyed Resource<audio>: start.ogg
