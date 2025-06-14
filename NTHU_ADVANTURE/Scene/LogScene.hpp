@@ -23,11 +23,9 @@ private:
     Engine::Label* warning2;
     Engine::Image* arrowImage;
     int ID_entered = 0;
-    
-
-    
     Engine::Label* labelID;
     Engine::Label* labelpw;
+    Engine::Label* labelback;
 
 public:
     explicit LogScene() = default;

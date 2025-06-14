@@ -26,6 +26,7 @@ private:
     //Group* imageGroup;
     Engine::Label* labelID;
     Engine::Label* labelpw;
+    Engine::Label* labelback;
 
 public:
     explicit RegisterScene() = default;

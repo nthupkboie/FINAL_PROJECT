@@ -56,10 +56,12 @@ void LogScene::Initialize() {
     AddNewObject(arrowImage = new Engine::Image("stage-select/right-arrow.png", halfW / 2 + 50, halfH / 2 + 40, 128, 128));
 
     Engine::ImageButton *btn;
-    btn = new Engine::ImageButton("stage-select/dirt.png", "stage-select/floor.png", halfW - 200, halfH * 3 / 2 + 50, 400, 100);
+    btn = new Engine::ImageButton("stage-select/cloud.png", "stage-select/cloud.png", halfW - 200, halfH * 3 / 2 + 50, 300, 200);
     btn->SetOnClickCallback(std::bind(&LogScene::BackOnClick, this, 1));
     AddNewControlObject(btn);
-    AddNewObject(new Engine::Label("Back", "title.ttf", 48, halfW, halfH * 3 / 2 + 100, 0, 0, 0, 255, 0.5, 0.5));
+    labelback = new Engine::Label("", "title.ttf", 48, halfW - 50, halfH * 3 / 2 + 170, 0, 0, 0, 255, 0.5, 0.5);
+    AddNewObject(labelback);
+    //AddNewObject(new Engine::Label("Back", "title.ttf", 48, halfW, halfH * 3 / 2 + 100, 0, 0, 0, 255, 0.5, 0.5));
    
     currentLanguage = LanguageManager::GetInstance().GetCurrentLanguage();
     RefreshLabels();
@@ -219,6 +221,7 @@ void LogScene::Draw() const {
 void LogScene::RefreshLabels() {
     labelID->SetText(LanguageManager::GetInstance().GetText("ID"));
     labelpw->SetText(LanguageManager::GetInstance().GetText("password"));
+    labelback->SetText(LanguageManager::GetInstance().GetText("back"));
 }
 
 void LogScene::Update(float deltaTime) {
