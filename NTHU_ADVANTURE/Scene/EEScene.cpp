@@ -25,6 +25,7 @@
 #include "UI/Component/Image.hpp"
 #include "UI/Component/Label.hpp"
 #include "LogScene.hpp"
+#include "ScoreboardScene.hpp"
 
 const int EEScene::MapWidth = 30, EEScene::MapHeight = 16;
 const int EEScene::BlockSize = 64;
@@ -109,8 +110,9 @@ void EEScene::Initialize() {
     //if (LogScene::clearedLake){
         yang->SetMessages({
             "同學，既然你會出現在這裡，就代表你已經準備接受我 乂卍煞氣a楊舜仁卍乂 的制裁了!!",
-            "接下來這幾題，全對才能活著走出這裡",
-            "否則你將被永遠困在期末project地獄，每天寫程式到天亮!!!"
+            "接下來這幾題，全對才能活著走出這裡!!",
+            "否則你將被永遠困在期末project地獄，每天寫程式到天亮!!!",
+            "第一題，double佔幾個byte? (A) 2 (B) 4 (c) 8763 (D) 8",
         });
     //}
     // else {
@@ -125,10 +127,14 @@ void EEScene::Initialize() {
     
     // 開始背景音樂
     bgmId = AudioHelper::PlayBGM("Ruby.ogg");
+    //道具
     LabelGroup->AddNewObject(moneyLabel = new Engine::Label(std::to_string(LogScene::money), "title.ttf", 48, 130, 70, 255, 255, 255, 255, 0.5, 0.5));
     LabelGroup->AddNewObject(moneyImage = new Engine::Image("play/dollar.png", 20, 35, 56, 56));
     if (LogScene::haveAxe) LabelGroup->AddNewObject(axeImage = new Engine::Image("stage-select/axe.png", 20, 105, 56, 56));
-
+    if (LogScene::haveSpeedUp){
+        LabelGroup->AddNewObject(speedImage = new Engine::Image("play/potion.png", 20, 175, 56, 56));
+        LabelGroup->AddNewObject(speedLabel = new Engine::Label(std::to_string((int)LogScene::haveSpeedUp), "title.ttf", 48, 130, 210, 255, 255, 255, 255, 0.5, 0.5));
+    }
 }
 
 void EEScene::Terminate() {
@@ -138,7 +144,7 @@ void EEScene::Terminate() {
 
 void EEScene::Update(float deltaTime) {
     IScene::Update(deltaTime);
-    
+    LogScene::timer += deltaTime;
     if(firstTime){
         std::vector<std::string> testMessages = {
             "聽說門口的白色鏤空立方體從不同角度可看到EE及CS",
@@ -249,7 +255,11 @@ void EEScene::Update(float deltaTime) {
         index++;
         //}
     }
-    if (yang->canBuy && index == 4) Engine::GameEngine::GetInstance().ChangeScene("win");
+    //Engine::LOG(Engine::INFO) << LogScene::timer;
+    if (yang->canBuy && index == 4) {
+        ScoreboardScene::AddScore(LogScene::myName, LogScene::timer);
+        Engine::GameEngine::GetInstance().ChangeScene("win");
+    }
     else if (yang->canBuy && index == 5) Engine::GameEngine::GetInstance().ChangeScene("lose");
 }
 
@@ -699,7 +709,3 @@ void EEScene::openingDialog()
     yang->isTalking = true;
 }
 
-// isTalking = true;
-// dialog.StartDialog(npcName, npcAvatar, messages);
-// // 重置Enter鍵狀態，避免立即觸發
-// enterWasDown = true;

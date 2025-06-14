@@ -131,10 +131,14 @@ void NEWScene::Initialize() {
     
     // 開始背景音樂
     bgmId = AudioHelper::PlayBGM("Ruby.ogg");
+    //道具
     LabelGroup->AddNewObject(moneyLabel = new Engine::Label(std::to_string(LogScene::money), "title.ttf", 48, 130, 70, 255, 255, 255, 255, 0.5, 0.5));
     LabelGroup->AddNewObject(moneyImage = new Engine::Image("play/dollar.png", 20, 35, 56, 56));
     if (LogScene::haveAxe) LabelGroup->AddNewObject(axeImage = new Engine::Image("stage-select/axe.png", 20, 105, 56, 56));
-
+    if (LogScene::haveSpeedUp){
+        LabelGroup->AddNewObject(speedImage = new Engine::Image("play/potion.png", 20, 175, 56, 56));
+        LabelGroup->AddNewObject(speedLabel = new Engine::Label(std::to_string((int)LogScene::haveSpeedUp), "title.ttf", 48, 130, 210, 255, 255, 255, 255, 0.5, 0.5));
+    }
 }
 
 void NEWScene::Terminate() {
@@ -144,7 +148,7 @@ void NEWScene::Terminate() {
 
 void NEWScene::Update(float deltaTime) {
     IScene::Update(deltaTime);
-    
+    LogScene::timer += deltaTime;
     if(firstTime){
         std::vector<std::string> testMessages = {
             "在新齋的交誼廳內，常常能看到一群資工系學生和一群電腦",

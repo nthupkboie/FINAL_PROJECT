@@ -101,7 +101,16 @@ void TaldaScene::Initialize() {
     // 顯示「贏得遊戲的方法」文字，手動換行
     LabelGroup->AddNewObject(new Engine::Label("贏得遊戲的方法:", "Retro.ttf", 30, bb_x + 30, bb_y + 420, 255, 255, 255, 255, 0.5, 0.5));
     LabelGroup->AddNewObject(new Engine::Label("在各位小朋友好好努力學習與探索校園後，回答幾個小問題就可以決定你們能否通過遊戲考驗，", "Retro.ttf", 30, bb_x + 30, bb_y + 470, 255, 255, 255, 255, 0.5, 0.5));
-    LabelGroup->AddNewObject(new Engine::Label("但是，這個遊戲是有玄機的，我們的排名方式要依照通關速度還有剩餘金錢喔，請大家務必認真學習。", "Retro.ttf", 30, bb_x + 30, bb_y + 510, 255, 255, 255, 255, 0.5, 0.5));
+    LabelGroup->AddNewObject(new Engine::Label("但是，這個遊戲是有玄機的，我們的排名方式要依照通關速度喔，請大家務必認真學習。", "Retro.ttf", 30, bb_x + 30, bb_y + 510, 255, 255, 255, 255, 0.5, 0.5));
+
+    //道具
+    LabelGroup->AddNewObject(moneyLabel = new Engine::Label(std::to_string(LogScene::money), "title.ttf", 48, 130, 70, 255, 255, 255, 255, 0.5, 0.5));
+    LabelGroup->AddNewObject(moneyImage = new Engine::Image("play/dollar.png", 20, 35, 56, 56));
+    if (LogScene::haveAxe) LabelGroup->AddNewObject(axeImage = new Engine::Image("stage-select/axe.png", 20, 105, 56, 56));
+    if (LogScene::haveSpeedUp){
+        LabelGroup->AddNewObject(speedImage = new Engine::Image("play/potion.png", 20, 175, 56, 56));
+        LabelGroup->AddNewObject(speedLabel = new Engine::Label(std::to_string((int)LogScene::haveSpeedUp), "title.ttf", 48, 130, 210, 255, 255, 255, 255, 0.5, 0.5));
+    }
 }
 
 void TaldaScene::Terminate() {
@@ -111,7 +120,7 @@ void TaldaScene::Terminate() {
 
 void TaldaScene::Update(float deltaTime) {
     IScene::Update(deltaTime);
-
+    LogScene::timer += deltaTime;
     if(firstTime){
         std::vector<std::string> testMessages = {
             "台達館對申請入學的人而言，是對資工系的第一印象",

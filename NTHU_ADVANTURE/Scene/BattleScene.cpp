@@ -121,7 +121,7 @@ void BattleScene::Terminate() {
 
 void BattleScene::Update(float deltaTime) {
     IScene::Update(deltaTime);
-
+    LogScene::timer += deltaTime;
     // 計時器
     timer -= deltaTime;
     if (timer <= 0) {
