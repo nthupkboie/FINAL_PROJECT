@@ -1,22 +1,33 @@
 ## Features
 - [Easy]
-- Beautiful Scene background
-- Awesome chill music
-- Hand-made pixel building appearance
-- Local account system
+- Beautiful pixel-art background for each scene
+- Background chill music for each scene
+- Multiple scenes with distinct designs
+- Perfect story connection & Bravo plot (eg. different apperances of 成功湖)
+- Mutiple NPC design 而且很有梗
+- Mainworld 花花草草裝飾 隨機生成
+- Novel UI design
+- Hand-made building appearances (新齋、小吃部、水木、風雲、成功湖、資電、台達、主世界)
+- Local account system (註冊 / 登入功能)
 - Scoreboard with animation
-- Translate (zh <=> en)
+- Language toggle (zh <=> en) via LanguageManager (Engine)
 - Map editor (we can chop trees)
-- Procedural generated level (maze generater)
-- Camera movement
-- Mini map
-- Get today's fortune
-- 
+- Camera following system (鏡頭會跟隨玩家移動)
+- Mini map for main world navigation
+- Player animation and directional control
+- Player collision detection
+- Scene memory (切回主世界時保留原始位置)
+- Version control with github
+- instruction scene
 - [Hard]
-- NPC & NPC Dialog animates & NPC walking
-- perfect story connection
-- 
+- player 走路一格一格走
+- NPC說話時會面對玩家 對話有名字、頭像、文字以動畫呈現，且內容隨劇情變化(考慮所有情況)
+- Procedural maze generator（進入迷宮時會生成新地圖)
+- Shop system (axe 、 speedup) with button
+- Mini game (maze、wordle、lottery)
+- Changing scenes when getting close to a certain building
+- API (ollama)
 ## Individual Contribution
-- 113062330 林柏崴 (%): Local account system
-- 113062237 徐鈺婷 (%): DRAW
-- 113062309 陳廷恩 (%): Procedural generated level, Map editor, Local account system
+- 113062330 林柏崴 (%): API, all map design, github, scoreboard animation, NPC system, NPC dialog, NPC design, plot before game, story connection
+- 113062237 徐鈺婷 (%): draw all the building apperances, lanuages toggle, wordle, BGM, background pic, scene interation, lottery, instruction scene, story connection, Mini map for main world navigation, Scene memory
+- 113062309 陳廷恩 (%): Procedural generated level, Map editor, Local account system, shop system, player animation, NPC boss, player collision, NPC dialog, story connection, Camera following system
