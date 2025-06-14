@@ -94,7 +94,7 @@ void PlayScene::Initialize() {
     // 上, 下, 左, 右, (先行在列)
     // 圖塊寬, 圖塊高
     auto testAvatar = Engine::Resources::GetInstance().GetBitmap("NPC/test/avatar/test_avatar.png");
-    NPCGroup->AddNewObject(test = new NPC("NPC",testAvatar, "NPC/test/role/test_sheet.png",
+    NPCGroup->AddNewObject(test = new NPC("繞著資電館狂奔的怪人",testAvatar, "NPC/test/role/test_sheet.png",
                                             BlockSize * 30, BlockSize * 10,
                                             2, 3,  // 上 (第0列第2行)
                                             2, 0,  // 下
@@ -102,10 +102,11 @@ void PlayScene::Initialize() {
                                             2, 2,  // 右
                                             64, 64)); // 圖塊大小
 
-    Engine::Point testPoint0(BlockSize * 30 + BlockSize / 2, BlockSize * 10 + BlockSize / 2);
-    Engine::Point testPoint1(BlockSize * 28 + BlockSize / 2, BlockSize * 10 + BlockSize / 2);
-    Engine::Point testPoint2(BlockSize * 28 + BlockSize / 2, BlockSize * 8 + BlockSize / 2);
-    Engine::Point testPoint3(BlockSize * 30 + BlockSize / 2, BlockSize * 8 + BlockSize / 2);
+    Engine::Point testPoint0(BlockSize * 30 + BlockSize / 2, BlockSize * 11 + BlockSize / 2);
+    Engine::Point testPoint1(BlockSize * 30 + BlockSize / 2, BlockSize * 2 + BlockSize / 2);
+    
+    Engine::Point testPoint2(BlockSize * 39 + BlockSize / 2, BlockSize * 2 + BlockSize / 2);
+    Engine::Point testPoint3(BlockSize * 39 + BlockSize / 2, BlockSize * 11 + BlockSize / 2);
 
     test->AddPatrolPoint(testPoint0);
     test->AddPatrolPoint(testPoint1);
@@ -116,10 +117,8 @@ void PlayScene::Initialize() {
 
     // 設置NPC的對話內容
     test->SetMessages({
-        "你好，我是村民A！",
-        "這個村莊最近不太平靜...",
-        "晚上請小心行事。",
-        "祝你好運，冒險者！"
+        "楊舜仁饒過我啊啊啊啊啊啊",
+        "我不想留在project地獄嗚嗚嗚嗚"
     });
 
     auto KaoAvatar = Engine::Resources::GetInstance().GetBitmap("NPC/Kao/avatar/Kao.png");
