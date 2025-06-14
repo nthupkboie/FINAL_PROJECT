@@ -22,10 +22,10 @@
 
 
 int LogScene::money = 0, LogScene::clearedLake = 0; 
-float LogScene::haveSpeedUp = 0;
+float LogScene::haveSpeedUp = 0, LogScene::timer = 0.0f;
 bool LogScene::haveAxe = false;
 Engine::Point LogScene::lastPlayerPos = Engine::Point(0, 0);;
-std::string LogScene::myName = "Pkboie";
+std::string LogScene::myName = "unknown warrior";
 
 
 void LogScene::Initialize() {
@@ -115,13 +115,15 @@ void LogScene::OnKeyDown(int keyCode){
             if (warning2) warning2->Text = "";
         }
         else if (keyCode == ALLEGRO_KEY_ENTER){
-            if (pswd == right_pswd) {Engine::GameEngine::GetInstance().ChangeScene("play");}
+            if (pswd == right_pswd) {
+                myName = name;
+                Engine::GameEngine::GetInstance().ChangeScene("play");
+            }
             else {
                 int w = Engine::GameEngine::GetInstance().GetScreenSize().x;
                 int h = Engine::GameEngine::GetInstance().GetScreenSize().y;
                 int halfW = w / 2;
                 int halfH = h / 2;
-                myName = name;
                 AddNewObject(warning2 = new Engine::Label("Wrong password", "title.ttf", 48, halfW, halfH / 2 + 400, 255, 255, 255, 255, 0.5, 0.5));
 
             }

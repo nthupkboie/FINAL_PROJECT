@@ -113,7 +113,8 @@ void WaterWoodScene::Terminate() {
 
 void WaterWoodScene::Update(float deltaTime) {
     IScene::Update(deltaTime);
-
+    LogScene::timer += deltaTime;
+    //Engine::LOG(Engine::INFO) << LogScene::timer;
     timer += deltaTime;
     if (timer >= 2.0f) timer -= 2.0f;
     if (std::fmod(timer, 2.0f) < 0.5f) nineSky->bmp = bmp1;

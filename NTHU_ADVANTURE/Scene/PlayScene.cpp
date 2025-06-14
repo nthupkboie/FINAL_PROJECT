@@ -202,7 +202,8 @@ void PlayScene::Terminate() {
 
 void PlayScene::Update(float deltaTime) {
     IScene::Update(deltaTime);
-
+    LogScene::timer += deltaTime;
+    //Engine::LOG(Engine::INFO) << LogScene::timer;
     if (LogScene::clearedLake == 2) {
         dyy->SetMessages({
             "你知道倒數的英文嗎? reciprocal!!",

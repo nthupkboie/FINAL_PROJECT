@@ -6,6 +6,7 @@
 #include <allegro5/allegro_primitives.h>
 #include "UI/Component/ImageButton.hpp"
 #include "UI/Component/Label.hpp"
+#include "Scene/WindCloudScene.hpp"
 
 // 從 sprite sheet 載入子圖的輔助函數
 static std::shared_ptr<ALLEGRO_BITMAP> LoadSpriteFromSheet(
@@ -111,7 +112,7 @@ void NPC::Update(float deltaTime, const Player* player) {
     bool enterPressed = enterIsDown && !enterWasDown;
     enterWasDown = enterIsDown;
 
-    if (isAdjacent && al_key_down(&kbState, ALLEGRO_KEY_T)) {
+    if (isAdjacent && al_key_down(&kbState, ALLEGRO_KEY_T) && !WindCloudScene::isPlayingWordle) {
         if (!isTalking && !messages.empty()) {
             FacePlayer(player);
             isTalking = true;

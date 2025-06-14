@@ -69,6 +69,7 @@ void Player::Update(float deltaTime) {
     // 更新動畫計時器
 
     if (NPCDialog::talking && PlayScene::inPlay) return;
+    if (WindCloudScene::isPlayingWordle) return;
 
     animationTimer += deltaTime;
     if (animationTimer >= 0.4f) animationTimer -= 0.4f; // 每 0.4 秒循環
@@ -279,6 +280,7 @@ bool Player::canWalk(int x, int y){
         }
     }
     else if (PlayScene::inWindCloud){
+        
         if (!WindCloudScene::collision(x, y)){
             return false;
         }

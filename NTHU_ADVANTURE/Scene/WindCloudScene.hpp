@@ -10,6 +10,7 @@
 #include "Engine/Point.hpp"
 
 #include "NPC/NPCDialog.hpp"
+#include "NPC/NPC.hpp"
 
 class Turret;
 namespace Engine {
@@ -38,14 +39,14 @@ private:
     Engine::Image* speedImage = nullptr;
     Engine::Label* speedLabel;
 
-    // Wordle 遊戲相關變數
-    bool wordleFinished = false;
-    bool wordleSuccess = false;
-    bool isPlayingWordle = false;
-    int wordleAttempt = 0;
+    
     std::string currentGuess = "";
     std::vector<std::string> wordleGuesses;
-    const std::string wordleAnswer = "BINGO";  // 示例答案
+    bool wordleSuccess = false;
+    bool wordleFinished = false;
+
+    NPC* Yang;
+
 
 protected:
     int lives;
@@ -68,6 +69,8 @@ public:
     static const int BlockSize;
     static const std::vector<int> code;
     Group *TileMapGroup;
+
+    static bool isPlayingWordle;
 
 
     // new add
