@@ -199,6 +199,9 @@ void SmallEatScene::Initialize() {
         LabelGroup->AddNewObject(speedImage = new Engine::Image("play/potion.png", 20, 175, 56, 56));
         LabelGroup->AddNewObject(speedLabel = new Engine::Label(std::to_string((int)LogScene::haveSpeedUp), "title.ttf", 48, 130, 210, 255, 255, 255, 255, 0.5, 0.5));
     }
+
+    //建築
+    AddBuildingZone(2, 2, 2, 2, "主地圖");
 }
 
 void SmallEatScene::Terminate() {
@@ -239,6 +242,14 @@ void SmallEatScene::Update(float deltaTime) {
     }
     
     if (!player) return; // 確保玩家存在
+
+    //建築
+    for (const auto& zone : buildingZones) {
+        if (IsPlayerNearBuilding(player, zone)) {
+            ShowEnterPrompt(zone.buildingName, zone.x, zone.y);
+
+        }
+    }
 
     // 更新攝影機，直接設置偏移量
     cameraOffset.x = player->Position.x - window_x / 2 * BlockSize; // 置中：player.x - 192
@@ -310,6 +321,8 @@ void SmallEatScene::Update(float deltaTime) {
         });
     }
 
+
+
     if (currentShopper && !currentShopper->IsTalking()) Engine::LOG(Engine::WARN) << "!currentShopper->IsTalking()";
     if (!showShopButtons && !dialog.IsDialogActive() && currentShopper && currentShopper->canBuy) {
         Engine::LOG(Engine::WARN) << "Shop buttons displayed";
@@ -366,6 +379,23 @@ void SmallEatScene::Update(float deltaTime) {
             showShopButtons = true;
             Lucy->canBuy = false;
         }
+    }
+
+    
+
+    //建築
+    bool nearAnyBuilding = false;
+    for (const auto& zone : buildingZones) {
+        if (IsPlayerNearBuilding(player, zone)) {
+            ShowEnterPrompt(zone.buildingName,zone.x,zone.y);
+            nearAnyBuilding = true;
+            //break;
+        }
+    }
+    if (!nearAnyBuilding && enterPromptLabel) {
+        LabelGroup->RemoveObject(enterPromptLabel);  
+        enterPromptLabel = nullptr;
+        currentBuildingName = "";
     }
 }
 
@@ -430,6 +460,36 @@ void SmallEatScene::OnKeyDown(int keyCode) {
         PlayScene::inPlay = true;
         PlayScene::inSmallEat = false;
         Engine::GameEngine::GetInstance().ChangeScene("play");
+    }
+
+    // 按下 E 鍵進入建築物
+    if (keyCode == ALLEGRO_KEY_E) {
+
+        Player* player = nullptr;
+        for (auto& obj : PlayerGroup->GetObjects()) {
+            player = dynamic_cast<Player*>(obj);
+            if (player) break;
+        }
+        if (!player) {
+            std::cout << "Player not found!" << std::endl;
+            return;
+        }
+        //if (player)  LogScene::lastPlayerPos = player->Position;
+        
+        for (const auto& zone : buildingZones) {
+            if (IsPlayerNearBuilding(player, zone)) {
+                std::cout << "Entering " << zone.buildingName << "!" << std::endl;
+
+                if (zone.buildingName == "主地圖") {
+                    Engine::GameEngine::GetInstance().ChangeScene("play");
+                    PlayScene::inPlay = true;//記得改
+                    PlayScene::inSmallEat = false;
+                }
+                
+
+                break;  // 找到一個就跳出，不需要檢查更多建築
+            }
+        }
     }
 }
 
@@ -654,6 +714,8 @@ void SmallEatScene::BuyOnClick(int item) {
         } 
     }
 
+    
+
 
     for (auto& obj : ShopperGroup->GetObjects()) {
         if (auto shopper = dynamic_cast<Shopper*>(obj)) {
@@ -662,6 +724,8 @@ void SmallEatScene::BuyOnClick(int item) {
     }
     moneyLabel->Text = std::to_string(LogScene::money);
     if (LogScene::haveSpeedUp) speedLabel->Text = std::to_string((int)LogScene::haveSpeedUp);
+
+    readyToBuyAxe = readyToBuySpeed = false;
 }
 
 void SmallEatScene::CancelOnClick() {
@@ -691,4 +755,67 @@ void SmallEatScene::CancelOnClick() {
             shopper->canBuy = false;
         }
     }
+    readyToBuyAxe = readyToBuySpeed = false;
 }
+
+ 
+bool SmallEatScene::IsPlayerNearBuilding(Player* player, const BuildingZone& zone) {
+    // 將建築物格子坐標轉為像素坐標
+    float zonePixelX = zone.x * BlockSize;
+    float zonePixelY = zone.y * BlockSize;
+    float zonePixelW = zone.width * BlockSize;
+    float zonePixelH = zone.height * BlockSize;
+    
+    // 玩家中心點 (像素坐標)
+    float playerX = player->Position.x + BlockSize/2;
+    float playerY = player->Position.y + BlockSize/2;
+    
+    // 建築物中心點 (像素坐標)
+    float buildingCenterX = zonePixelX + zonePixelW/2;
+    float buildingCenterY = zonePixelY + zonePixelH/2;
+    
+    // 計算距離
+    float dx = playerX - buildingCenterX;
+    float dy = playerY - buildingCenterY;
+    float distance = sqrt(dx*dx + dy*dy);
+    
+    // 檢測距離 (2.5個格子的範圍)
+    return distance < (2.5f * BlockSize);
+}
+
+void SmallEatScene::ShowEnterPrompt(const std::string& buildingName, int zoneX, int zoneY) {
+    // 顯示提示文字（例如 "Press E to enter {buildingName}"）
+
+    if (currentBuildingName == buildingName) return;  
+                
+
+    // 移除舊的提示
+    if (enterPromptLabel) {
+        LabelGroup->RemoveObject(enterPromptLabel);
+        enterPromptLabel = nullptr;
+    }
+
+    currentBuildingName = buildingName; 
+    
+    // 計算提示文字顯示的位置
+    float labelX = zoneX * BlockSize + BlockSize / 2;
+    float labelY = zoneY * BlockSize ;
+
+
+
+    enterPromptLabel = new Engine::Label(
+        "Press E to enter " + buildingName,
+        "Retro.ttf", 30,
+        labelX, labelY,
+        255, 255, 255, 255,
+        0.5, 0.5
+    );
+    LabelGroup->AddNewObject(enterPromptLabel);
+
+}
+
+void SmallEatScene::AddBuildingZone(int x, int y, int width, int height, const std::string& buildingName) {
+    // 設置建築物的範圍區域並儲存
+    buildingZones.push_back(BuildingZone{x, y, width, height, buildingName});
+}
+

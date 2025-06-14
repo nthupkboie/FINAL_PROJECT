@@ -51,6 +51,7 @@ public:
     void RefreshLabels();
 
     static float timer;
+    static bool firsttime;
 };
 
 
