@@ -398,13 +398,7 @@ void WindCloudScene::OnKeyDown(int keyCode) {
         dialog.AdvanceDialog();
     }
 
-    if (keyCode == ALLEGRO_KEY_ESCAPE && !wordleFinished) {
-        wordleFinished = true;
-        isPlayingWordle = false;  // 確保這個標誌也被重置
-    }
-
-    if (keyCode == ALLEGRO_KEY_ESCAPE && !wordleFinished) {
-        wordleFinished = true;
+    if (keyCode == ALLEGRO_KEY_ESCAPE && (wordleFinished || isPlayingWordle)) {
         isPlayingWordle = false;  // 確保這個標誌也被重置
     }
     
@@ -422,10 +416,10 @@ void WindCloudScene::OnKeyDown(int keyCode) {
         PlayScene::inWindCloud = false;
         Engine::GameEngine::GetInstance().ChangeScene("play");
     }
-    if (keyCode == ALLEGRO_KEY_ESCAPE && (wordleFinished || isPlayingWordle)){
-        //wordleFinished = true;
-        isPlayingWordle = false;
-    }
+    // if (keyCode == ALLEGRO_KEY_ESCAPE && (wordleFinished || isPlayingWordle)){
+    //     //wordleFinished = true;
+    //     isPlayingWordle = false;
+    // }
     // 按下 E 鍵進入建築物
     if (keyCode == ALLEGRO_KEY_E) {
 

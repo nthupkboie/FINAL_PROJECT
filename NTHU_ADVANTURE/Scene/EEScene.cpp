@@ -112,7 +112,8 @@ void EEScene::Initialize() {
             "同學，既然你會出現在這裡，就代表你已經準備接受我 乂卍煞氣a楊舜仁卍乂 的制裁了!!",
             "接下來這幾題，全對才能活著走出這裡!!",
             "否則你將被永遠困在期末project地獄，每天寫程式到天亮!!!",
-            "第一題，double佔幾個byte? (A) 2 (B) 4 (c) 8763 (D) 8",
+            "第一題，水木的BGM是什麼?",
+            "(A)Ruby醬 (B)一剪梅 (C)那一天的憂鬱憂鬱起來 (D)早上沒事晚上台中市",
         });
     //}
     // else {
@@ -743,19 +744,24 @@ void EEScene::openingDialog()
     if (index == 0){
         yang->SetMessages({
             "同學不錯嘛，繼續接招!!",
-            "請問號稱清大校花、身家四千萬的千金--成功湖在遊戲中經歷了幾次都更與美化"
+            "第二題，高為元最喜歡什麼運動?"
+            "(A)游泳 (B)寫程式(眼腦運動) (C)籃球 (D)健身"
         });
     }
     else if (index == 1){
         yang->npcAvatar = Engine::Resources::GetInstance().GetBitmap("NPC/Yang/avatar/Yang2.png");
         yang->SetMessages({
             "哼哼，看來戰鬥開始變有趣了www",
+            "第三題，請問風雲樓的學姊最想要吃什麼?",
+            "(A)沐嵐 (B)夜排檔 (C)森森燒肉 (D)金展"
         });
     }
     else if (index == 2){
         yang->npcAvatar = Engine::Resources::GetInstance().GetBitmap("NPC/Yang/avatar/Yang3.png");
         yang->SetMessages({
             "嘛，看來這天還是到了，總算遇到像樣的敵人(歪笑)",
+            "第四題，新齋的李君萎想要跟誰打架?",
+            "(A)王率城 (B)笑東東 (C)糕仔君 (D)乂卍煞氣a楊舜仁卍乂"
         });
     }
     else if (index == 3){
@@ -763,6 +769,9 @@ void EEScene::openingDialog()
         std::string tmp = "可惡...我絕對不會讓你活著踏出這裡!!!看來只好使出那招了!!!自盡吧，" + LogScene::myName;
         yang->SetMessages({
             tmp,
+            "最後一題，made by偉大的前總務長顏教授東勇",
+            "募資千萬甚至親自募來LED燈坐擁四座過濾系統的情侶約會勝地美麗成功湖過濾一次湖水要幾天?",
+            "(A)2 (B)4 (C)8763 (D)7.8",
         });
     }
     else if (index == 4){
