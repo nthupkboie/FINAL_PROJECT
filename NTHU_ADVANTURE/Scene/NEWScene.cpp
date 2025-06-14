@@ -245,6 +245,9 @@ void NEWScene::Initialize() {
         LabelGroup->AddNewObject(speedImage = new Engine::Image("play/potion.png", 20, 175, 56, 56));
         LabelGroup->AddNewObject(speedLabel = new Engine::Label(std::to_string((int)LogScene::haveSpeedUp), "title.ttf", 48, 130, 210, 255, 255, 255, 255, 0.5, 0.5));
     }
+
+    //建築
+    AddBuildingZone(13, 3, 4, 1, "主地圖");
 }
 
 void NEWScene::Terminate() {
@@ -279,6 +282,14 @@ void NEWScene::Update(float deltaTime) {
     
     if (!player) return; // 確保玩家存在
 
+    //建築
+    for (const auto& zone : buildingZones) {
+        if (IsPlayerNearBuilding(player, zone)) {
+            ShowEnterPrompt(zone.buildingName, zone.x, zone.y);
+
+        }
+    }
+
     // 更新攝影機，直接設置偏移量
     cameraOffset.x = player->Position.x - window_x / 2 * BlockSize; // 置中：player.x - 192
     cameraOffset.y = player->Position.y - window_y / 2 * BlockSize; // 置中：player.y - 96
@@ -297,9 +308,19 @@ void NEWScene::Update(float deltaTime) {
         dialog.Update(deltaTime);
     }
 
-    // 檢查遊戲結束條件
-    if (lives <= 0) {
-        Engine::GameEngine::GetInstance().ChangeScene("lose");
+    //建築
+    bool nearAnyBuilding = false;
+    for (const auto& zone : buildingZones) {
+        if (IsPlayerNearBuilding(player, zone)) {
+            ShowEnterPrompt(zone.buildingName,zone.x,zone.y);
+            nearAnyBuilding = true;
+            //break;
+        }
+    }
+    if (!nearAnyBuilding && enterPromptLabel) {
+        LabelGroup->RemoveObject(enterPromptLabel);  
+        enterPromptLabel = nullptr;
+        currentBuildingName = "";
     }
 }
 
@@ -363,6 +384,36 @@ void NEWScene::OnKeyDown(int keyCode) {
         PlayScene::inPlay = true;
         PlayScene::inNEW = false;
         Engine::GameEngine::GetInstance().ChangeScene("play");
+    }
+
+    // 按下 E 鍵進入建築物
+    if (keyCode == ALLEGRO_KEY_E) {
+
+        Player* player = nullptr;
+        for (auto& obj : PlayerGroup->GetObjects()) {
+            player = dynamic_cast<Player*>(obj);
+            if (player) break;
+        }
+        if (!player) {
+            std::cout << "Player not found!" << std::endl;
+            return;
+        }
+        //if (player)  LogScene::lastPlayerPos = player->Position;
+        
+        for (const auto& zone : buildingZones) {
+            if (IsPlayerNearBuilding(player, zone)) {
+                std::cout << "Entering " << zone.buildingName << "!" << std::endl;
+
+                if (zone.buildingName == "主地圖") {
+                    Engine::GameEngine::GetInstance().ChangeScene("play");
+                    PlayScene::inPlay = true;
+                    PlayScene::inNEW = false;
+                }
+                
+
+                break;  // 找到一個就跳出，不需要檢查更多建築
+            }
+        }
     }
 }
 
@@ -530,4 +581,64 @@ bool NEWScene::collision(int x, int y){
         default:
             return false;
     }
+}
+
+bool NEWScene::IsPlayerNearBuilding(Player* player, const BuildingZone& zone) {
+    // 將建築物格子坐標轉為像素坐標
+    float zonePixelX = zone.x * BlockSize;
+    float zonePixelY = zone.y * BlockSize;
+    float zonePixelW = zone.width * BlockSize;
+    float zonePixelH = zone.height * BlockSize;
+    
+    // 玩家中心點 (像素坐標)
+    float playerX = player->Position.x + BlockSize/2;
+    float playerY = player->Position.y + BlockSize/2;
+    
+    // 建築物中心點 (像素坐標)
+    float buildingCenterX = zonePixelX + zonePixelW/2;
+    float buildingCenterY = zonePixelY + zonePixelH/2;
+    
+    // 計算距離
+    float dx = playerX - buildingCenterX;
+    float dy = playerY - buildingCenterY;
+    float distance = sqrt(dx*dx + dy*dy);
+    
+    // 檢測距離 (2.5個格子的範圍)
+    return distance < (2.5f * BlockSize);
+}
+
+void NEWScene::ShowEnterPrompt(const std::string& buildingName, int zoneX, int zoneY) {
+    // 顯示提示文字（例如 "Press E to enter {buildingName}"）
+
+    if (currentBuildingName == buildingName) return;  
+                
+
+    // 移除舊的提示
+    if (enterPromptLabel) {
+        LabelGroup->RemoveObject(enterPromptLabel);
+        enterPromptLabel = nullptr;
+    }
+
+    currentBuildingName = buildingName; 
+    
+    // 計算提示文字顯示的位置
+    float labelX = zoneX * BlockSize + BlockSize / 2;
+    float labelY = zoneY * BlockSize ;
+
+
+
+    enterPromptLabel = new Engine::Label(
+        "Press E to enter " + buildingName,
+        "Retro.ttf", 30,
+        labelX, labelY,
+        255, 255, 255, 255,
+        0.5, 0.5
+    );
+    LabelGroup->AddNewObject(enterPromptLabel);
+
+}
+
+void NEWScene::AddBuildingZone(int x, int y, int width, int height, const std::string& buildingName) {
+    // 設置建築物的範圍區域並儲存
+    buildingZones.push_back(BuildingZone{x, y, width, height, buildingName});
 }
