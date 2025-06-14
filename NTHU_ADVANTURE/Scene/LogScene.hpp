@@ -43,6 +43,7 @@ public:
     static Engine::Point lastPlayerPos;
     static std::string myName;
     static float timer;
+    static bool firsttime;
 };
 
 

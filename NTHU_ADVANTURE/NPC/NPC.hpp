@@ -54,8 +54,9 @@ public:
 
     float waitTime = 0.0f;
     float maxWaitTime = 2.0f; // 最大等待2秒
-private:
     std::vector<std::string> messages; // NPC的對話內容
+private:
+    //std::vector<std::string> messages; // NPC的對話內容
     NPCDialog dialog;                  // 每個NPC有自己的對話框
     bool isTalking = false;            // 是否正在對話
 

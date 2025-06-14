@@ -71,8 +71,8 @@ void PlayScene::Initialize() {
     // 初始化玩家
     Player* player;
     //PlayerGroup->AddNewObject(player = new Player("player/idle.png", 100, 100));
-    float startX = (LogScene::lastPlayerPos.x != 0) ? LogScene::lastPlayerPos.x : 100;
-    float startY = (LogScene::lastPlayerPos.y != 0) ? LogScene::lastPlayerPos.y : 100;
+    float startX = (LogScene::lastPlayerPos.x != 0) ? LogScene::lastPlayerPos.x : 128;
+    float startY = (LogScene::lastPlayerPos.y != 0) ? LogScene::lastPlayerPos.y : 128;
     PlayerGroup->AddNewObject(player = new Player("player/idle.png", --startX, --startY));
     
 
@@ -128,7 +128,7 @@ void PlayScene::Initialize() {
                                             "NPC/Kao/role/KaoD.png", 
                                             "NPC/Kao/role/KaoL.png",
                                             "NPC/Kao/role/KaoR.png",
-                                            BlockSize * 20, BlockSize * 14
+                                            BlockSize * 7, BlockSize * 17
                                         ));
 
     Kao->SetMessages({
@@ -176,6 +176,7 @@ void PlayScene::Initialize() {
     AddBuildingZone(21, 19, 2, 1, "成功湖");
     AddBuildingZone(35, 19, 2, 1, "水木");
     AddBuildingZone(47, 19, 2, 1, "小吃部");
+    AddBuildingZone(57, 16, 1, 2, "樹德樓");
 
     // 開始背景音樂
     bgmId = AudioHelper::PlayBGM("play.ogg");
@@ -188,6 +189,20 @@ void PlayScene::Initialize() {
         LabelGroup->AddNewObject(speedImage = new Engine::Image("play/potion.png", 20, 175, 56, 56));
         LabelGroup->AddNewObject(speedLabel = new Engine::Label(std::to_string((int)LogScene::haveSpeedUp), "title.ttf", 48, 130, 210, 255, 255, 255, 255, 0.5, 0.5));
     }
+
+    // if(LogScene::firsttime){
+    //     std::string tmp = LogScene::myName + "勇者，你是一名資工系的學生，剛考完期末就掉進名為清大的final project地獄";
+    //     std::vector<std::string> testMessages = {
+    //         tmp, 
+    //         "為了重回快樂的暑假，你必須打敗大魔王:乂卍煞氣a楊舜仁卍乂",
+    //         "在此之前，得先準備好，否則被打敗的話，只會被困在這無盡爆肝地獄",
+    //         "現在，開始自由探索這世界吧!"
+    //     };
+    //     auto testAvatar = Engine::Resources::GetInstance().GetBitmap("NPC/test/avatar/test_avatar.png");
+    //     dialog.StartDialog("NTHU ADVENTURE", testAvatar, testMessages);
+
+    //     LogScene::firsttime = false;
+    // }
 }
 
 void PlayScene::AddBuildingZone(int x, int y, int width, int height, const std::string& buildingName) {
@@ -288,6 +303,20 @@ void PlayScene::Update(float deltaTime) {
         enterPromptLabel = nullptr;
         currentBuildingName = "";
     }
+
+    // if(LogScene::firsttime){
+    //     std::string tmp = LogScene::myName + "勇者，你是一名資工系的學生，剛考完期末就掉進名為清大的final project地獄";
+    //     std::vector<std::string> testMessages = {
+    //         tmp, 
+    //         "為了重回快樂的暑假，你必須打敗大魔王:乂卍煞氣a楊舜仁卍乂",
+    //         "在此之前，得先準備好，否則被打敗的話，只會被困在這無盡爆肝地獄",
+    //         "現在，開始自由探索這世界吧!"
+    //     };
+    //     auto testAvatar = Engine::Resources::GetInstance().GetBitmap("NPC/test/avatar/test_avatar.png");
+    //     dialog.StartDialog("NTHU ADVENTURE", testAvatar, testMessages);
+
+    //     LogScene::firsttime = false;
+    // }
 }
 
 void PlayScene::ShowEnterPrompt(const std::string& buildingName, int zoneX, int zoneY) {
@@ -482,6 +511,10 @@ void PlayScene::OnKeyDown(int keyCode) {
                     Engine::GameEngine::GetInstance().ChangeScene("CGLake");
                     inPlay = false;
                     inCGLake = true;
+                } else if (zone.buildingName == "樹德樓") {
+                    Engine::GameEngine::GetInstance().ChangeScene("battle");
+                    inPlay = false;
+                    inBattle = true;
                 }
 
                 break;  // 找到一個就跳出，不需要檢查更多建築
@@ -503,6 +536,18 @@ void PlayScene::OnKeyDown(int keyCode) {
         inPlay = false;
         inNEW = true;
     }
+
+    // if (keyCode == ALLEGRO_KEY_I) {
+    //     std::string tmp = LogScene::myName + "勇者，你是一名資工系的學生，剛考完期末就掉進名為清大的final project地獄";
+    //     std::vector<std::string> testMessages = {
+    //         tmp, 
+    //         "為了重回快樂的暑假，你必須打敗大魔王:乂卍煞氣a楊舜仁卍乂",
+    //         "在此之前，得先準備好，否則被打敗的話，只會被困在這無盡爆肝地獄",
+    //         "現在，開始自由探索這世界吧!"
+    //     };
+    //     auto testAvatar = Engine::Resources::GetInstance().GetBitmap("NPC/test/avatar/test_avatar.png");
+    //     dialog.StartDialog("NTHU ADVENTURE", testAvatar, testMessages);
+    // }
 }
 
 
