@@ -306,6 +306,7 @@ void NEWScene::Update(float deltaTime) {
 void NEWScene::Draw() const {
     IScene::Draw();
 
+    // 繪製遊戲世界（地圖、NPC、玩家等）
     ALLEGRO_TRANSFORM transform;
     al_copy_transform(&transform, al_get_current_transform());
     al_translate_transform(&transform, -cameraOffset.x, -cameraOffset.y);
@@ -316,9 +317,10 @@ void NEWScene::Draw() const {
     NPCGroup->Draw();
     LabelGroup->Draw();
 
+    // 恢復變換矩陣（確保後續繪製不受相機影響）
     al_identity_transform(&transform);
     al_use_transform(&transform);
-
+    
     if (dialog.IsDialogActive()) {
         dialog.Draw();
     }

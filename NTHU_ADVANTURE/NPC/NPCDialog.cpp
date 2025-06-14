@@ -140,10 +140,12 @@ void NPCDialog::Update(float deltaTime) {
 
 void NPCDialog::Draw() const {
     if (!isActive) return;
-    // 保存並重置變換矩陣
+
+    // 保存當前狀態
     ALLEGRO_STATE oldState;
-    al_store_state(&oldState, ALLEGRO_STATE_TRANSFORM | ALLEGRO_STATE_BLENDER);
-    // 重置為單位矩陣（確保不受相機偏移影響）
+    al_store_state(&oldState, ALLEGRO_STATE_TRANSFORM);
+
+    // 重置為單位矩陣（不受相機影響）
     ALLEGRO_TRANSFORM identity;
     al_identity_transform(&identity);
     al_use_transform(&identity);
@@ -245,9 +247,9 @@ void NPCDialog::Draw() const {
             al_draw_text(font, dynamicColor, textX, currentY, ALLEGRO_ALIGN_LEFT, currentLine.c_str());
         }
     }
+
     // 恢復狀態
     al_restore_state(&oldState);
-
 }
 
 bool NPCDialog::IsDialogActive() const {

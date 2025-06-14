@@ -39,8 +39,9 @@ private:
     Engine::Image* speedImage = nullptr;
     Engine::Label* speedLabel;
 
-    
+    int wordleAttempt = 0;
     std::string currentGuess = "";
+    const std::string wordleAnswer = "BINGO";
     std::vector<std::string> wordleGuesses;
     bool wordleSuccess = false;
     bool wordleFinished = false;
