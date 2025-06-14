@@ -123,7 +123,8 @@ void CGLakeScene::Terminate() {
 
 void CGLakeScene::Update(float deltaTime) {
     IScene::Update(deltaTime);
-
+    LogScene::timer += deltaTime;
+    //Engine::LOG(Engine::INFO) << LogScene::timer;
     // 計時器
     // timer -= deltaTime;
     // if (timer <= 0) {
@@ -181,10 +182,7 @@ void CGLakeScene::Update(float deltaTime) {
     //     dialog.Update(deltaTime);
     // }
 
-    // 檢查遊戲結束條件
-    if (lives <= 0) {
-        Engine::GameEngine::GetInstance().ChangeScene("lose");
-    }
+    
 }
 
 void CGLakeScene::Draw() const {

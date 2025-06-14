@@ -22,12 +22,12 @@ private:
     struct ScoreEntry {
         std::string playerName;
         int score;
-        int stage;
+        //int stage;
         time_t timestamp;
         
         bool operator<(const ScoreEntry& other) const {
             // 按分數降序排序
-            return score > other.score;
+            return score < other.score;
         }
     };
     
@@ -47,5 +47,5 @@ public:
     void Terminate() override;
     void Update(float deltaTime) override;
     void OnKeyDown(int keyCode) override;
-    static void AddScore(const std::string&playerName, int score, int stage);
+    static void AddScore(const std::string&playerName, int score);
 };

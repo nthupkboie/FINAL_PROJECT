@@ -23,6 +23,7 @@ private:
     Engine::Label* warning2;
     Engine::Image* arrowImage;
     int ID_entered = 0;
+    
 
 public:
     explicit LogScene() = default;
@@ -41,6 +42,7 @@ public:
     static int clearedLake;
     static Engine::Point lastPlayerPos;
     static std::string myName;
+    static float timer;
 };
 
 

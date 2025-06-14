@@ -35,6 +35,8 @@ private:
     Engine::Label* moneyLabel;
     Engine::Image* moneyImage;
     Engine::Image* axeImage = nullptr;
+    Engine::Image* speedImage = nullptr;
+    Engine::Label* speedLabel;
 
     bool showShopButtons = false; // 新增：控制購買按鈕顯示
     Engine::ImageButton* oneButton = nullptr; // 新增：購買按鈕
@@ -108,4 +110,5 @@ public:
     void threeOnClick();
     void fourOnClick();
     void openingDialog();
+    void AddScore(const std::string& playerName, int score);
 };
