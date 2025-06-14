@@ -63,6 +63,7 @@ public:
         TILE_FLOOR,
         TABLE,
         NOTHING,
+        EE,
     };
 
     static const std::vector<Engine::Point> directions;

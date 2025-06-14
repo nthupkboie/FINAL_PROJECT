@@ -84,7 +84,7 @@ void NEWScene::Initialize() {
                                             "NPC/shan/role/shan_ idle.png", 
                                             "NPC/shan/role/shan_left.png",
                                             "NPC/shan/role/shan_right.png",
-                                            BlockSize * 7, BlockSize * 8
+                                            BlockSize * 7, BlockSize * 7
                                         ));
 
     NPC* xi;
@@ -94,7 +94,7 @@ void NEWScene::Initialize() {
                                             "NPC/xi/role/xi_idle.png", 
                                             "NPC/xi/role/xi_left.png",
                                             "NPC/xi/role/xi_right.png",
-                                            BlockSize * 10, BlockSize * 8
+                                            BlockSize * 10, BlockSize * 7
                                         ));
 
     NPC* ruby;
@@ -104,15 +104,15 @@ void NEWScene::Initialize() {
                                             "NPC/ruby/role/girl_idle.png", 
                                             "NPC/ruby/role/girl_left.png",
                                             "NPC/ruby/role/girl_right.png",
-                                            BlockSize * 13, BlockSize * 8
+                                            BlockSize * 13, BlockSize * 7
                                         ));
     
     ruby->SetMoveSpeed(3.0f);
 
-    Engine::Point ruby0(BlockSize * 13 + BlockSize / 2, BlockSize * 8 + BlockSize / 2);
-    Engine::Point ruby1(BlockSize * 14 + BlockSize / 2, BlockSize * 8 + BlockSize / 2);
-    Engine::Point ruby2(BlockSize * 14 + BlockSize / 2, BlockSize * 10 + BlockSize / 2);
-    Engine::Point ruby3(BlockSize * 13 + BlockSize / 2, BlockSize * 10 + BlockSize / 2);
+    Engine::Point ruby0(BlockSize * 13 + BlockSize / 2, BlockSize * 7 + BlockSize / 2);
+    Engine::Point ruby1(BlockSize * 14 + BlockSize / 2, BlockSize * 7 + BlockSize / 2);
+    Engine::Point ruby2(BlockSize * 14 + BlockSize / 2, BlockSize * 8 + BlockSize / 2);
+    Engine::Point ruby3(BlockSize * 13 + BlockSize / 2, BlockSize * 8 + BlockSize / 2);
 
     ruby->AddPatrolPoint(ruby0);
     ruby->AddPatrolPoint(ruby1);
@@ -126,7 +126,7 @@ void NEWScene::Initialize() {
                                             "NPC/brainlin/role/brain_idle.png", 
                                             "NPC/brainlin/role/brain_left.png",
                                             "NPC/brainlin/role/brain_right.png",
-                                            BlockSize * 17, BlockSize * 8
+                                            BlockSize * 17, BlockSize * 7
                                         ));
 
     NPC* edchen;
@@ -136,7 +136,7 @@ void NEWScene::Initialize() {
                                             "NPC/edchen/role/edchen_idle.png", 
                                             "NPC/edchen/role/edchen_left.png",
                                             "NPC/edchen/role/edchen_right.png",
-                                            BlockSize * 21, BlockSize * 8
+                                            BlockSize * 21, BlockSize * 7
                                         ));
 
     NPC* guen;
@@ -146,7 +146,7 @@ void NEWScene::Initialize() {
                                             "NPC/edchen/role/edchen_idle.png", 
                                             "NPC/edchen/role/edchen_left.png",
                                             "NPC/edchen/role/edchen_right.png",
-                                            BlockSize * 21, BlockSize * 11
+                                            BlockSize * 21, BlockSize * 10
                                         ));
 
     NPC* rayfu;
@@ -156,7 +156,7 @@ void NEWScene::Initialize() {
                                             "NPC/rayfu/role/rayfu_idle.png", 
                                             "NPC/rayfu/role/rayfu_left.png",
                                             "NPC/rayfu/role/rayfu_right.png",
-                                            BlockSize * 18, BlockSize * 11
+                                            BlockSize * 18, BlockSize * 10
                                         ));
 
     NPC* chi;
@@ -166,7 +166,7 @@ void NEWScene::Initialize() {
                                             "NPC/7/role/7_idle.png", 
                                             "NPC/7/role/7_left.png",
                                             "NPC/7/role/7_right.png",
-                                            BlockSize * 15, BlockSize * 11
+                                            BlockSize * 15, BlockSize * 10
                                         ));
 
     NPC* ryanlin;
@@ -176,7 +176,7 @@ void NEWScene::Initialize() {
                                             "NPC/ryanlin/role/ryanlin_idle.png", 
                                             "NPC/ryanlin/role/ryanlin_left.png",
                                             "NPC/ryanlin/role/ryanlin_right.png",
-                                            BlockSize * 12, BlockSize * 11
+                                            BlockSize * 12, BlockSize * 10
                                         ));
 
     // 初始化對話框
