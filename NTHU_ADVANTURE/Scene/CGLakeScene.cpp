@@ -217,7 +217,7 @@ void CGLakeScene::Draw() const {
 }
 
 void CGLakeScene::OnMouseDown(int button, int mx, int my) {
-    if ((button & 1) && canChop) {
+    if ((button & 1) && canChop && mapData[my / BlockSize * MapWidth + mx / BlockSize] == TILE_TREE) {
         //int worldX = mx + cameraOffset.x;
         //int worldY = my + cameraOffset.y;
         int gridX = mx / BlockSize;

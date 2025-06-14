@@ -654,6 +654,8 @@ void SmallEatScene::BuyOnClick(int item) {
         } 
     }
 
+    
+
 
     for (auto& obj : ShopperGroup->GetObjects()) {
         if (auto shopper = dynamic_cast<Shopper*>(obj)) {
@@ -662,6 +664,8 @@ void SmallEatScene::BuyOnClick(int item) {
     }
     moneyLabel->Text = std::to_string(LogScene::money);
     if (LogScene::haveSpeedUp) speedLabel->Text = std::to_string((int)LogScene::haveSpeedUp);
+
+    readyToBuyAxe = readyToBuySpeed = false;
 }
 
 void SmallEatScene::CancelOnClick() {
@@ -691,4 +695,5 @@ void SmallEatScene::CancelOnClick() {
             shopper->canBuy = false;
         }
     }
+    readyToBuyAxe = readyToBuySpeed = false;
 }
