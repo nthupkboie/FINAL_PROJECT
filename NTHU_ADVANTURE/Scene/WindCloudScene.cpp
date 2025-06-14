@@ -146,12 +146,21 @@ void WindCloudScene::Initialize() {
         //haveSpeedUpInt = rou
         LabelGroup->AddNewObject(speedLabel = new Engine::Label(std::to_string((int)LogScene::haveSpeedUp), "title.ttf", 48, 130, 210, 255, 255, 255, 255, 0.5, 0.5));
     }
-
+    
+    // wordleFinished = false;
+    // wordleSuccess = false;
+    // isPlayingWordle = false;
+    // wordleAttempt = 0;
+    // currentGuess = "";
+    // wordleGuesses.clear();
 }
 
 void WindCloudScene::Terminate() {
     AudioHelper::StopBGM(bgmId);
     IScene::Terminate();
+
+    wordleFinished = true;
+    isPlayingWordle = false;
 }
 
 void WindCloudScene::Update(float deltaTime) {
@@ -321,8 +330,6 @@ void WindCloudScene::Draw() const {
                         0, result.c_str());
         }
     }
-
-
 }
 
 void WindCloudScene::OnMouseDown(int button, int mx, int my) {
@@ -343,6 +350,11 @@ void WindCloudScene::OnKeyDown(int keyCode) {
     // 按Enter鍵推進對話
     if (keyCode == ALLEGRO_KEY_ENTER && dialog.IsDialogActive()) {
         dialog.AdvanceDialog();
+    }
+
+    if (keyCode == ALLEGRO_KEY_ESCAPE && !wordleFinished) {
+        wordleFinished = true;
+        isPlayingWordle = false;  // 確保這個標誌也被重置
     }
 
     if (keyCode == ALLEGRO_KEY_I && wordleFinished) {

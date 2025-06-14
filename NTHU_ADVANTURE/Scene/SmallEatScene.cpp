@@ -105,13 +105,13 @@ void SmallEatScene::Initialize() {
                                             "NPC/axeman/role/axemanD.png",
                                             "NPC/axeman/role/axemanL.png",
                                             "NPC/axeman/role/axemanR.png",
-                                            BlockSize * 11, BlockSize * 7
+                                            BlockSize * 11, BlockSize * 8
                                         ));
 
-    Engine::Point axe0(BlockSize * 11 + BlockSize / 2, BlockSize * 7 + BlockSize / 2);
-    Engine::Point axe1(BlockSize * 11 + BlockSize / 2, BlockSize * 12 + BlockSize / 2);
-    Engine::Point axe2(BlockSize * 14 + BlockSize / 2, BlockSize * 12 + BlockSize / 2);
-    Engine::Point axe3(BlockSize * 14 + BlockSize / 2, BlockSize * 7 + BlockSize / 2);
+    Engine::Point axe0(BlockSize * 11 + BlockSize / 2, BlockSize * 8 + BlockSize / 2);
+    Engine::Point axe1(BlockSize * 11 + BlockSize / 2, BlockSize * 13 + BlockSize / 2);
+    Engine::Point axe2(BlockSize * 14 + BlockSize / 2, BlockSize * 13 + BlockSize / 2);
+    Engine::Point axe3(BlockSize * 14 + BlockSize / 2, BlockSize * 8 + BlockSize / 2);
 
     axeman->AddPatrolPoint(axe0);
     axeman->AddPatrolPoint(axe1);

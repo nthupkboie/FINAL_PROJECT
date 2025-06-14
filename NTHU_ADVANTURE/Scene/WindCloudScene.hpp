@@ -38,14 +38,14 @@ private:
     Engine::Image* speedImage = nullptr;
     Engine::Label* speedLabel;
 
-    bool isPlayingWordle = false;
-    std::string currentGuess = "";
-    int wordleAttempt = 0;
-    const std::string wordleAnswer = "BINGO";
-    std::vector<std::string> wordleGuesses;
-    bool wordleSuccess = false;
+    // Wordle 遊戲相關變數
     bool wordleFinished = false;
-
+    bool wordleSuccess = false;
+    bool isPlayingWordle = false;
+    int wordleAttempt = 0;
+    std::string currentGuess = "";
+    std::vector<std::string> wordleGuesses;
+    const std::string wordleAnswer = "BINGO";  // 示例答案
 
 protected:
     int lives;
