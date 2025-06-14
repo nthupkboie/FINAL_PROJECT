@@ -9,8 +9,25 @@
 #include <sstream>
 #include <ctime>
 #include <algorithm>
+#include "Engine/LanguageManager.hpp"
+#include <iostream>
+#include "Engine/Resources.hpp"
+using namespace std;
 
 void ScoreboardScene::Initialize() {
+
+    cout << "ScoreboardScene::Initialize() started";
+
+    labelTitle = nullptr;
+    labelRankHeader = nullptr;
+    LabelNameHeader = nullptr;
+    LabelScoreHeader = nullptr;
+    LabelStageHeader = nullptr;
+    LabelTimeHeader = nullptr;
+    LabelPrevLabel = nullptr;
+    LabelNextLabel = nullptr;
+    LabelBackLabel = nullptr;
+
     int w = Engine::GameEngine::GetInstance().GetScreenSize().x;
     int h = Engine::GameEngine::GetInstance().GetScreenSize().y;
     int halfW = w / 2;
@@ -27,10 +44,12 @@ void ScoreboardScene::Initialize() {
     }
 
     // 標題 - 從上方飛入
-    auto* title = new Engine::Label("Scoreboard", "pirulen.ttf", 80, halfW, -100, 255, 255, 255, 255, 0.5, 0.5);
-    AddNewObject(title);
+    // auto* title = new Engine::Label("Scoreboard", "pirulen.ttf", 80, halfW, -100, 255, 255, 255, 255, 0.5, 0.5);
+    // AddNewObject(title);
+    labelTitle = new Engine::Label("", "title.ttf", 80, halfW, -100, 255, 255, 255, 255, 0.5, 0.5);
+    AddNewObject(labelTitle);
     animatedElements.push_back({
-        title,
+        labelTitle,
         Engine::Point(halfW, -100),
         Engine::Point(halfW, 100),
         0.0f,  // 立即開始
@@ -60,10 +79,12 @@ void ScoreboardScene::Initialize() {
     
     // 列標題 - 從左側飛入
     int headerY = 190;
-    auto* rankHeader = new Engine::Label("Rank", "pirulen.ttf", 30, -100, headerY, 255, 255, 0, 255, 0.0, 0.5);
-    AddNewObject(rankHeader);
+    //auto* rankHeader = new Engine::Label("Rank", "pirulen.ttf", 30, -100, headerY, 255, 255, 0, 255, 0.0, 0.5);
+    // AddNewObject(rankHeader); 
+    labelRankHeader = new Engine::Label("", "title.ttf", 30, -100, headerY, 255, 255, 0, 255, 0.0, 0.5);
+    AddNewObject(labelRankHeader); 
     animatedElements.push_back({
-        rankHeader,
+        labelRankHeader,
         Engine::Point(-100, headerY),
         Engine::Point(rankX, headerY),
         0.2f,  // 延遲0.2秒
@@ -71,10 +92,12 @@ void ScoreboardScene::Initialize() {
         0.0f
     });
     
-    auto* nameHeader = new Engine::Label("Player", "pirulen.ttf", 30, -100, headerY, 255, 255, 0, 255, 0.0, 0.5);
-    AddNewObject(nameHeader);
+    // auto* nameHeader = new Engine::Label("Player", "pirulen.ttf", 30, -100, headerY, 255, 255, 0, 255, 0.0, 0.5);
+    // AddNewObject(nameHeader);
+    LabelNameHeader = new Engine::Label("", "normal.ttf", 30, -100, headerY, 255, 255, 0, 255, 0.0, 0.5);
+    AddNewObject(LabelNameHeader);
     animatedElements.push_back({
-        nameHeader,
+        LabelNameHeader,
         Engine::Point(-100, headerY),
         Engine::Point(nameX, headerY),
         0.3f,  // 延遲0.3秒
@@ -82,10 +105,12 @@ void ScoreboardScene::Initialize() {
         0.0f
     });
     
-    auto* scoreHeader = new Engine::Label("Score", "pirulen.ttf", 30, -100, headerY, 255, 255, 0, 255, 0.0, 0.5);
-    AddNewObject(scoreHeader);
+    // auto* scoreHeader = new Engine::Label("Score", "pirulen.ttf", 30, -100, headerY, 255, 255, 0, 255, 0.0, 0.5);
+    // AddNewObject(scoreHeader);
+    LabelScoreHeader = new Engine::Label("", "title.ttf", 30, -100, headerY, 255, 255, 0, 255, 0.0, 0.5);
+    AddNewObject(LabelScoreHeader);
     animatedElements.push_back({
-        scoreHeader,
+        LabelScoreHeader,
         Engine::Point(-100, headerY),
         Engine::Point(scoreX, headerY),
         0.4f,  // 延遲0.4秒
@@ -104,10 +129,12 @@ void ScoreboardScene::Initialize() {
     //     0.0f
     // });
     
-    auto* timeHeader = new Engine::Label("Time", "pirulen.ttf", 30, -100, headerY, 255, 255, 0, 255, 0.0, 0.5);
-    AddNewObject(timeHeader);
+    // auto* timeHeader = new Engine::Label("Time", "pirulen.ttf", 30, -100, headerY, 255, 255, 0, 255, 0.0, 0.5);
+    // AddNewObject(timeHeader);
+    LabelTimeHeader = new Engine::Label("", "title.ttf", 30, -100, headerY, 255, 255, 0, 255, 0.0, 0.5);
+    AddNewObject(LabelTimeHeader);
     animatedElements.push_back({
-        timeHeader,
+        LabelTimeHeader,
         Engine::Point(-100, headerY),
         Engine::Point(timeX, headerY),
         0.6f,  // 延遲0.6秒
@@ -124,7 +151,7 @@ void ScoreboardScene::Initialize() {
         strftime(timeStr, sizeof(timeStr), "%Y-%m-%d %H:%M", localtime(&entry.timestamp));
         
         // 排名
-        auto* rankLabel = new Engine::Label(std::to_string(i+1) + ".", "pirulen.ttf", 30, 
+        auto *rankLabel = new Engine::Label(std::to_string(i+1) + ".", "pirulen.ttf", 30, 
                      w + 100, yPos, 255, 255, 255, 255, 0.0, 0.5);
         AddNewObject(rankLabel);
         animatedElements.push_back({
@@ -137,7 +164,7 @@ void ScoreboardScene::Initialize() {
         });
         
         // 玩家名稱
-        auto* nameLabel = new Engine::Label(entry.playerName, "pirulen.ttf", 30, 
+        auto *nameLabel = new Engine::Label(entry.playerName, "pirulen.ttf", 30, 
                      w + 100, yPos, 255, 255, 255, 255, 0.0, 0.5);
         AddNewObject(nameLabel);
         animatedElements.push_back({
@@ -150,7 +177,7 @@ void ScoreboardScene::Initialize() {
         });
         
         // 分數
-        auto* scoreLabel = new Engine::Label(std::to_string(entry.score), "pirulen.ttf", 30, 
+        auto *scoreLabel = new Engine::Label(std::to_string(entry.score), "pirulen.ttf", 30, 
                      w + 100, yPos, 255, 255, 255, 255, 0.0, 0.5);
         AddNewObject(scoreLabel);
         animatedElements.push_back({
@@ -176,7 +203,7 @@ void ScoreboardScene::Initialize() {
         // });
         
         // 時間
-        auto* timeLabel = new Engine::Label(timeStr, "pirulen.ttf", 30, 
+        auto *timeLabel = new Engine::Label(timeStr, "pirulen.ttf", 30, 
                      w + 100, yPos, 255, 255, 255, 255, 0.0, 0.5);
         AddNewObject(timeLabel);
         animatedElements.push_back({
@@ -194,7 +221,7 @@ void ScoreboardScene::Initialize() {
         "Page " + std::to_string(currentPage+1) + " of " + 
         std::to_string((scores.size() + entriesPerPage - 1) / entriesPerPage),
         "pirulen.ttf", 30, halfW, h - 35, 255, 255, 255, 0, 0.5, 0.5);
-    AddNewObject(pageInfo);
+    //AddNewObject(pageInfo);
     animatedElements.push_back({
         pageInfo,
         Engine::Point(halfW, h - 35),
@@ -222,10 +249,10 @@ void ScoreboardScene::Initialize() {
             0.0f
         });
         
-        auto* prevLabel = new Engine::Label("PREV PAGE", "pirulen.ttf", 24, -300, h - 85, 0, 0, 0, 255, 0.5, 0.5);
-        AddNewObject(prevLabel);
+        LabelPrevLabel = new Engine::Label("", "pirulen.ttf", 24, -300, h - 85, 0, 0, 0, 255, 0.5, 0.5);
+        AddNewObject(LabelPrevLabel);
         animatedElements.push_back({
-            prevLabel,
+            LabelPrevLabel,
             Engine::Point(-300, h - 85),
             Engine::Point(halfW - 150, h - 85),
             1.0f,
@@ -252,10 +279,10 @@ void ScoreboardScene::Initialize() {
             0.0f
         });
         
-        auto* nextLabel = new Engine::Label("NEXT PAGE", "pirulen.ttf", 24, w + 300, h - 85, 0, 0, 0, 255, 0.5, 0.5);
-        AddNewObject(nextLabel);
+        LabelNextLabel = new Engine::Label("NEXT PAGE", "pirulen.ttf", 24, w + 300, h - 85, 0, 0, 0, 255, 0.5, 0.5);
+        AddNewObject(LabelNextLabel);
         animatedElements.push_back({
-            nextLabel,
+            LabelNextLabel,
             Engine::Point(w + 300, h - 85),
             Engine::Point(halfW + 150, h - 85),
             1.0f,
@@ -280,10 +307,10 @@ void ScoreboardScene::Initialize() {
         0.0f
     });
     
-    auto* backLabel = new Engine::Label("BACK", "pirulen.ttf", 24, halfW + 600, h + 125, 0, 0, 0, 255, 0.5, 0.5);
-    AddNewObject(backLabel);
+    LabelBackLabel = new Engine::Label("BACK", "title.ttf", 24, halfW + 600, h + 125, 0, 0, 0, 255, 0.5, 0.5);
+    AddNewObject(LabelBackLabel);
     animatedElements.push_back({
-        backLabel,
+        LabelBackLabel,
         Engine::Point(halfW + 600, h + 125),
         Engine::Point(halfW + 600, h - 35),
         1.2f,
@@ -304,6 +331,9 @@ void ScoreboardScene::Initialize() {
         0.6f,
         0.0f
     });
+
+    currentLanguage = LanguageManager::GetInstance().GetCurrentLanguage();
+    RefreshLabels();
 
     bgmId = AudioHelper::PlayBGM("scoreboard.ogg");
 }
@@ -338,6 +368,12 @@ void ScoreboardScene::Update(float deltaTime) {
                 button->Position.y = y;
             }
         }
+    }
+
+    std::string newLang = LanguageManager::GetInstance().GetCurrentLanguage();
+    if (newLang != currentLanguage) {
+        currentLanguage = newLang;
+        RefreshLabels();
     }
 }
 
@@ -433,4 +469,30 @@ void ScoreboardScene::AddScore(const std::string& playerName, int score){
                 << /*entry.stage << " " <<*/ entry.timestamp << "\n";
     }
     outFile.close();
+}
+
+// void ScoreboardScene::RefreshLabels() {
+//     labelTitle->SetText(LanguageManager::GetInstance().GetText("scoreboard"));
+//     labelRankHeader->SetText(LanguageManager::GetInstance().GetText("RankHeader"));
+//     LabelNameHeader->SetText(LanguageManager::GetInstance().GetText("NameHeader"));
+//     LabelScoreHeader->SetText(LanguageManager::GetInstance().GetText("ScoreHeader"));
+//     LabelStageHeader->SetText(LanguageManager::GetInstance().GetText("StageHeader"));
+//     LabelTimeHeader->SetText(LanguageManager::GetInstance().GetText("TimeHeader"));
+//     LabelPrevLabel->SetText(LanguageManager::GetInstance().GetText("PrevLabel"));
+//     LabelNextLabel->SetText(LanguageManager::GetInstance().GetText("NextLabel"));
+//     LabelBackLabel->SetText(LanguageManager::GetInstance().GetText("BackLabel"));
+// }
+
+void ScoreboardScene::RefreshLabels() {
+    if (labelTitle) labelTitle->SetText(LanguageManager::GetInstance().GetText("scoreboard"));
+    if (labelRankHeader) labelRankHeader->SetText(LanguageManager::GetInstance().GetText("RankHeader"));
+    if (LabelNameHeader) LabelNameHeader->SetText(LanguageManager::GetInstance().GetText("NameHeader"));
+    if (LabelScoreHeader) LabelScoreHeader->SetText(LanguageManager::GetInstance().GetText("ScoreHeader"));
+    if (LabelStageHeader) LabelStageHeader->SetText(LanguageManager::GetInstance().GetText("StageHeader"));
+    if (LabelTimeHeader) LabelTimeHeader->SetText(LanguageManager::GetInstance().GetText("TimeHeader"));
+    
+    // 只有當這些標籤存在時才設置文字
+    if (LabelPrevLabel) LabelPrevLabel->SetText(LanguageManager::GetInstance().GetText("PrevLabel"));
+    if (LabelNextLabel) LabelNextLabel->SetText(LanguageManager::GetInstance().GetText("NextLabel"));
+    if (LabelBackLabel) LabelBackLabel->SetText(LanguageManager::GetInstance().GetText("BackLabel"));
 }

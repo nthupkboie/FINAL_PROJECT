@@ -61,7 +61,7 @@ void EEScene::Initialize() {
     
     // 初始化玩家
     Player* player;
-    PlayerGroup->AddNewObject(player = new Player("player/idle.png", 100, 100));
+    PlayerGroup->AddNewObject(player = new Player("player/idle.png", 800, 800));
 
     // 初始化攝影機，確保玩家置中
     cameraOffset.x = player->Position.x - window_x / 2 * BlockSize; // 192
@@ -92,7 +92,7 @@ void EEScene::Initialize() {
                                             "NPC/Yang/role/YangD.png", 
                                             "NPC/Yang/role/YangL.png",
                                             "NPC/Yang/role/YangR.png",
-                                            BlockSize * 8, BlockSize * 8
+                                            BlockSize * 15, BlockSize * 2
                                         ));
                                         
 
@@ -135,6 +135,9 @@ void EEScene::Initialize() {
         LabelGroup->AddNewObject(speedImage = new Engine::Image("play/potion.png", 20, 175, 56, 56));
         LabelGroup->AddNewObject(speedLabel = new Engine::Label(std::to_string((int)LogScene::haveSpeedUp), "title.ttf", 48, 130, 210, 255, 255, 255, 255, 0.5, 0.5));
     }
+
+    //建築
+    AddBuildingZone(13, 15, 4, 1, "主地圖");
 }
 
 void EEScene::Terminate() {
@@ -162,6 +165,14 @@ void EEScene::Update(float deltaTime) {
     for (auto& obj : PlayerGroup->GetObjects()) {
         player = dynamic_cast<Player*>(obj);
         if (player) break;
+    }
+
+    //建築
+    for (const auto& zone : buildingZones) {
+        if (IsPlayerNearBuilding(player, zone)) {
+            ShowEnterPrompt(zone.buildingName, zone.x, zone.y);
+
+        }
     }
 
     //更新shopper
@@ -261,6 +272,21 @@ void EEScene::Update(float deltaTime) {
         Engine::GameEngine::GetInstance().ChangeScene("win");
     }
     else if (yang->canBuy && index == 5) Engine::GameEngine::GetInstance().ChangeScene("lose");
+
+    //建築
+    bool nearAnyBuilding = false;
+    for (const auto& zone : buildingZones) {
+        if (IsPlayerNearBuilding(player, zone)) {
+            ShowEnterPrompt(zone.buildingName,zone.x,zone.y);
+            nearAnyBuilding = true;
+            //break;
+        }
+    }
+    if (!nearAnyBuilding && enterPromptLabel) {
+        LabelGroup->RemoveObject(enterPromptLabel);  
+        enterPromptLabel = nullptr;
+        currentBuildingName = "";
+    }
 }
 
 void EEScene::Draw() const {
@@ -325,6 +351,36 @@ void EEScene::OnKeyDown(int keyCode) {
         PlayScene::inEE = false;
         Engine::GameEngine::GetInstance().ChangeScene("play");
     }
+
+    // 按下 E 鍵進入建築物
+    if (keyCode == ALLEGRO_KEY_E) {
+
+        Player* player = nullptr;
+        for (auto& obj : PlayerGroup->GetObjects()) {
+            player = dynamic_cast<Player*>(obj);
+            if (player) break;
+        }
+        if (!player) {
+            std::cout << "Player not found!" << std::endl;
+            return;
+        }
+        //if (player)  LogScene::lastPlayerPos = player->Position;
+        
+        for (const auto& zone : buildingZones) {
+            if (IsPlayerNearBuilding(player, zone)) {
+                std::cout << "Entering " << zone.buildingName << "!" << std::endl;
+
+                if (zone.buildingName == "主地圖") {
+                    Engine::GameEngine::GetInstance().ChangeScene("play");
+                    PlayScene::inPlay = true;//記得改
+                    PlayScene::inEE = false;
+                }
+                
+
+                break;  // 找到一個就跳出，不需要檢查更多建築
+            }
+        }
+    }
 }
 
 void EEScene::ReadMap() {
@@ -348,6 +404,7 @@ void EEScene::ReadMap() {
             // case 'N': mapData.push_back(NEW); break;
             // case 'n': mapData.push_back(TILE_NEW); break;
             case '=': mapData.push_back(NOTHING); break;
+            case '&': mapData.push_back(EE); break;
             case '\n':
             case '\r':
             default: break;
@@ -384,7 +441,6 @@ void EEScene::ReadMap() {
             std::string imagePath;
             
             switch(tileType) {
-                ///////////////////////
                 case TILE_WALL:
                     imagePath = "smalleat/wall.png";
                     TileMapGroup->AddNewObject(
@@ -443,7 +499,16 @@ void EEScene::ReadMap() {
                                         BlockSize)
                     );
                     break; 
-                //////////////////////////////
+                case EE:
+                    imagePath = "EE/EEmap.png";
+                    TileMapGroup->AddNewObject(
+                        new Engine::Image(imagePath, 
+                                        x * BlockSize, 
+                                        y * BlockSize, 
+                                        BlockSize * 30, 
+                                        BlockSize * 16)
+                    );
+                    break; 
                 case NOTHING:
                 default:
                     continue;
@@ -458,6 +523,15 @@ void EEScene::ReadMap() {
             // );
         }
     }
+
+    std::string imagePath = "EE/EEmap.png";
+    TileMapGroup->AddNewObject(
+        new Engine::Image(imagePath, 
+                        0 * BlockSize, 
+                        0 * BlockSize, 
+                        BlockSize * 30, 
+                        BlockSize * 16)
+    );
 }
 
 Engine::Point EEScene::getCamera(){
@@ -707,5 +781,66 @@ void EEScene::openingDialog()
     yang->dialog.StartDialog(yang->GetName(), yang->npcAvatar, yang->messages);
     yang->enterWasDown = true;
     yang->isTalking = true;
+}
+
+
+bool EEScene::IsPlayerNearBuilding(Player* player, const BuildingZone& zone) {
+    // 將建築物格子坐標轉為像素坐標
+    float zonePixelX = zone.x * BlockSize;
+    float zonePixelY = zone.y * BlockSize;
+    float zonePixelW = zone.width * BlockSize;
+    float zonePixelH = zone.height * BlockSize;
+    
+    // 玩家中心點 (像素坐標)
+    float playerX = player->Position.x + BlockSize/2;
+    float playerY = player->Position.y + BlockSize/2;
+    
+    // 建築物中心點 (像素坐標)
+    float buildingCenterX = zonePixelX + zonePixelW/2;
+    float buildingCenterY = zonePixelY + zonePixelH/2;
+    
+    // 計算距離
+    float dx = playerX - buildingCenterX;
+    float dy = playerY - buildingCenterY;
+    float distance = sqrt(dx*dx + dy*dy);
+    
+    // 檢測距離 (2.5個格子的範圍)
+    return distance < (2.5f * BlockSize);
+}
+
+void EEScene::ShowEnterPrompt(const std::string& buildingName, int zoneX, int zoneY) {
+    // 顯示提示文字（例如 "Press E to enter {buildingName}"）
+
+    if (currentBuildingName == buildingName) return;  
+                
+
+    // 移除舊的提示
+    if (enterPromptLabel) {
+        LabelGroup->RemoveObject(enterPromptLabel);
+        enterPromptLabel = nullptr;
+    }
+
+    currentBuildingName = buildingName; 
+    
+    // 計算提示文字顯示的位置
+    float labelX = zoneX * BlockSize + BlockSize / 2;
+    float labelY = zoneY * BlockSize ;
+
+
+
+    enterPromptLabel = new Engine::Label(
+        "Press E to enter " + buildingName,
+        "Retro.ttf", 30,
+        labelX, labelY,
+        255, 255, 255, 255,
+        0.5, 0.5
+    );
+    LabelGroup->AddNewObject(enterPromptLabel);
+
+}
+
+void EEScene::AddBuildingZone(int x, int y, int width, int height, const std::string& buildingName) {
+    // 設置建築物的範圍區域並儲存
+    buildingZones.push_back(BuildingZone{x, y, width, height, buildingName});
 }
 

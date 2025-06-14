@@ -19,6 +19,7 @@
 
 #include <allegro5/allegro_primitives.h>
 #include "LogScene.hpp"
+#include "Engine/LanguageManager.hpp"
 
 
 int LogScene::money = 0, LogScene::clearedLake = 0; 
@@ -42,9 +43,15 @@ void LogScene::Initialize() {
     ID_entered = 0;
 
     AddNewObject(new Engine::Image("scene/login.png", 0, 0, w, h));
-    AddNewObject(new Engine::Label("Enter your ID:", "title.ttf", 56, halfW, halfH / 2, 11, 23, 70, 255, 0.5, 0.5));
+
+
+    //AddNewObject(new Engine::Label("Enter your ID:", "title.ttf", 56, halfW, halfH / 2, 11, 23, 70, 255, 0.5, 0.5));
+    labelID = new Engine::Label("", "normal.ttf", 56, halfW, halfH / 2, 11, 23, 70, 255, 0.5, 0.5);
+    AddNewObject(labelID);
     AddNewObject(label_name = new Engine::Label(name, "title.ttf", 56, halfW, halfH / 2 + 100, 255, 97, 0, 255, 0.5, 0.5));
-    AddNewObject(new Engine::Label("Enter your password:", "title.ttf", 56, halfW, halfH / 2 + 200, 11, 23, 70, 255, 0.5, 0.5));
+    //AddNewObject(new Engine::Label("Enter your password:", "title.ttf", 56, halfW, halfH / 2 + 200, 11, 23, 70, 255, 0.5, 0.5));
+    labelpw = new Engine::Label("", "normal.ttf", 56, halfW, halfH / 2 + 200, 11, 23, 70, 255, 0.5, 0.5);
+    AddNewObject(labelpw); 
     AddNewObject(label_pswd = new Engine::Label(pswd, "title.ttf", 56, halfW, halfH / 2 + 300, 255, 97, 0, 255, 0.5, 0.5));
     AddNewObject(arrowImage = new Engine::Image("stage-select/right-arrow.png", halfW / 2 + 50, halfH / 2 + 40, 128, 128));
 
@@ -54,6 +61,9 @@ void LogScene::Initialize() {
     AddNewControlObject(btn);
     AddNewObject(new Engine::Label("Back", "title.ttf", 48, halfW, halfH * 3 / 2 + 100, 0, 0, 0, 255, 0.5, 0.5));
    
+    currentLanguage = LanguageManager::GetInstance().GetCurrentLanguage();
+    RefreshLabels();
+
     //這個不能刪 否則terminate時會刪掉不存在的東西 注意StageSelectScene刪掉的東西裡面也沒有這個 特別寫在下面了
     bgmInstance = AudioHelper::PlaySample("coconut.ogg", true, AudioHelper::BGMVolume);
 
@@ -203,5 +213,19 @@ void LogScene::Draw() const {
         float drawY = y - boxH / 2;
         al_draw_filled_rectangle(drawX, drawY, drawX + boxW, drawY + boxH, gray);
         label_pswd->Draw();
+    }
+}
+
+void LogScene::RefreshLabels() {
+    labelID->SetText(LanguageManager::GetInstance().GetText("ID"));
+    labelpw->SetText(LanguageManager::GetInstance().GetText("password"));
+}
+
+void LogScene::Update(float deltaTime) {
+    IScene::Update(deltaTime);
+    std::string newLang = LanguageManager::GetInstance().GetCurrentLanguage();
+    if (newLang != currentLanguage) {
+        currentLanguage = newLang;
+        RefreshLabels();
     }
 }
