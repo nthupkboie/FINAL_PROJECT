@@ -126,7 +126,7 @@ void EEScene::Initialize() {
     Engine::Resources::GetInstance().GetBitmap("lose/benjamin-happy.png");
     
     // 開始背景音樂
-    bgmId = AudioHelper::PlayBGM("Ruby.ogg");
+    bgmId = AudioHelper::PlayBGM("battle.ogg");
     //道具
     LabelGroup->AddNewObject(moneyLabel = new Engine::Label(std::to_string(LogScene::money), "title.ttf", 48, 130, 70, 255, 255, 255, 255, 0.5, 0.5));
     LabelGroup->AddNewObject(moneyImage = new Engine::Image("play/dollar.png", 20, 35, 56, 56));
@@ -669,6 +669,7 @@ void EEScene::openingDialog()
     if (index == 0){
         yang->SetMessages({
             "同學不錯嘛，繼續接招!!",
+            "請問號稱清大校花、身家四千萬的千金--成功湖在遊戲中經歷了幾次都更與美化"
         });
     }
     else if (index == 1){

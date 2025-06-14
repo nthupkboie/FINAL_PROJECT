@@ -141,17 +141,13 @@ void WindCloudScene::Initialize() {
         if (!wordleFinished) {
             isPlayingWordle = true;
             dialog.StartDialog("羊順人", Engine::Resources::GetInstance().GetBitmap("NPC/Yang/avatar/bro.png"), {
-                "我來出個單字給你猜，5個字母！"
+                "我來出個簡單的單字考考你，共五個字母、六次機會，死大斗！"
             });
         }
     });
-
-
-    // 預載資源
-    Engine::Resources::GetInstance().GetBitmap("lose/benjamin-happy.png");
     
     // 開始背景音樂
-    bgmId = AudioHelper::PlayBGM("play.ogg");
+    bgmId = AudioHelper::PlayBGM("windcloud.ogg");
     //道具
     LabelGroup->AddNewObject(moneyLabel = new Engine::Label(std::to_string(LogScene::money), "title.ttf", 48, 130, 70, 255, 255, 255, 255, 0.5, 0.5));
     LabelGroup->AddNewObject(moneyImage = new Engine::Image("play/dollar.png", 20, 35, 56, 56));
