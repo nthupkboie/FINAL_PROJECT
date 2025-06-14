@@ -25,6 +25,10 @@ private:
     int ID_entered = 0;
     
 
+    
+    Engine::Label* labelID;
+    Engine::Label* labelpw;
+
 public:
     explicit LogScene() = default;
     void Initialize() override;
@@ -42,6 +46,10 @@ public:
     static int clearedLake;
     static Engine::Point lastPlayerPos;
     static std::string myName;
+    std::string currentLanguage;
+    void Update(float deltaTime) override;
+    void RefreshLabels();
+
     static float timer;
 };
 
