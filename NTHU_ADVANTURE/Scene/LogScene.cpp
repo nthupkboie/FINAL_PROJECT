@@ -24,8 +24,8 @@
 
 int LogScene::money = 0, LogScene::clearedLake = 0; 
 float LogScene::haveSpeedUp = 0, LogScene::timer = 0.0f;
-bool LogScene::haveAxe = false;
-Engine::Point LogScene::lastPlayerPos = Engine::Point(0, 0);;
+bool LogScene::haveAxe = false, LogScene::firsttime = true;
+Engine::Point LogScene::lastPlayerPos = Engine::Point(64*7, 64*15);
 std::string LogScene::myName = "unknown warrior";
 
 

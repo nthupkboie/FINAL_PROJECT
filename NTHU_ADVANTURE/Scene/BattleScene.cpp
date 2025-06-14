@@ -48,8 +48,8 @@ Engine::Point BattleScene::GetClientSize() {
 Engine::Point BattleScene::cameraOffset = Engine::Point(0, 0);
 void BattleScene::Initialize() {
     // 初始化遊戲狀態
-    lives = 3;
-    money = 0;
+    //lives = 3;
+    //money = 0;
     
     // 添加渲染群組
     AddNewObject(TileMapGroup = new Group());      // 地圖圖層
@@ -121,7 +121,7 @@ void BattleScene::Update(float deltaTime) {
     if (gridX == MapWidth - 1 && gridY == MapHeight - 1) { // (29, 15)
         Engine::LOG(Engine::INFO) << "Reached goal! Switching to play scene from maze.";
         PlayScene::inBattle = false;
-        LogScene::money += 10;
+        LogScene::money += 520;
         Engine::GameEngine::GetInstance().ChangeScene("play");
         return;
     }
@@ -153,13 +153,6 @@ void BattleScene::Update(float deltaTime) {
     // if (dialog.IsDialogActive()) {
     //     dialog.Update(deltaTime);
     // }
-
-    // 檢查遊戲結束條件
-    if (lives <= 0) {
-        PlayScene::inBattle = false;
-        Engine::GameEngine::GetInstance().ChangeScene("lose");
-        
-    }
 }
 
 void BattleScene::Draw() const {
@@ -242,7 +235,7 @@ void BattleScene::OnKeyDown(int keyCode) {
     if(keyCode == ALLEGRO_KEY_P){
         PlayScene::inPlay = true;
         PlayScene::inBattle = false;
-        LogScene::money += 10;
+        LogScene::money += 520;
         Engine::GameEngine::GetInstance().ChangeScene("play");
     }
 

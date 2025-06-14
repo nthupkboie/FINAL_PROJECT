@@ -13,8 +13,8 @@ TT$$========$$---------------$$$$$RR$$$$$$$$$$RR$$$$$-----TT
 TT$$$$$RR$$$$$---------------$$$$$RR$$$$$$$$$$RR$$$$$-----TT
 TT$$$$$RR$$$$$--------------------RR----------RR----------TT
 TT-----RR-------------------------RR----------RR----------TT
-TT-----RRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR----------TT
-TT-----RRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR----------TT
+TT-----RRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRTT
+TT-----RRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRTT
 TT-----RR-----------RR------------RR----------RR----------TT
 TT-----RR-----------RR------------RR----------RR----------TT
 TT-----RR-----------RR------------RR----------RR----------TT
