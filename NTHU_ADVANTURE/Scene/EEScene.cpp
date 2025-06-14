@@ -107,7 +107,7 @@ void EEScene::Initialize() {
 
     // 初始化對話框
     dialog.Initialize();
-    //if (LogScene::clearedLake){
+    if (LogScene::clearedLake){
         yang->SetMessages({
             "同學，既然你會出現在這裡，就代表你已經準備接受我 乂卍煞氣a楊舜仁卍乂 的制裁了!!",
             "接下來這幾題，全對才能活著走出這裡!!",
@@ -115,12 +115,12 @@ void EEScene::Initialize() {
             "第一題，水木的BGM是什麼?",
             "(A)Ruby醬 (B)一剪梅 (C)那一天的憂鬱憂鬱起來 (D)早上沒事晚上台中市",
         });
-    //}
-    // else {
-    //     yang->SetMessages({
-    //         "先去練練再來吧",
-    //     });
-    // }
+    }
+    else {
+        yang->SetMessages({
+            "先去練練再來吧",
+        });
+    }
     
 
     // 預載資源
@@ -208,7 +208,7 @@ void EEScene::Update(float deltaTime) {
         dialog.Update(deltaTime);
     }
 
-    if (/*LogScene::clearedLake && */yang->canBuy && index < 4) {
+    if (LogScene::clearedLake && yang->canBuy && index < 4) {
         Engine::LOG(Engine::WARN) << "Shop buttons displayed";
         // 移除舊按鈕
         if (oneButton) {
