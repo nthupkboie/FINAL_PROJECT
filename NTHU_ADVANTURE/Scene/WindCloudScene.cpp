@@ -160,12 +160,21 @@ void WindCloudScene::Initialize() {
         LabelGroup->AddNewObject(speedImage = new Engine::Image("play/potion.png", 20, 175, 56, 56));
         LabelGroup->AddNewObject(speedLabel = new Engine::Label(std::to_string((int)LogScene::haveSpeedUp), "title.ttf", 48, 130, 210, 255, 255, 255, 255, 0.5, 0.5));
     }
-
+    
+    // wordleFinished = false;
+    // wordleSuccess = false;
+    // isPlayingWordle = false;
+    // wordleAttempt = 0;
+    // currentGuess = "";
+    // wordleGuesses.clear();
 }
 
 void WindCloudScene::Terminate() {
     AudioHelper::StopBGM(bgmId);
     IScene::Terminate();
+
+    wordleFinished = true;
+    isPlayingWordle = false;
 }
 
 void WindCloudScene::Update(float deltaTime) {
@@ -346,8 +355,6 @@ void WindCloudScene::Draw() const {
             //isPlayingWordle = false;
         }
     }
-
-
 }
 
 void WindCloudScene::OnMouseDown(int button, int mx, int my) {
@@ -370,6 +377,16 @@ void WindCloudScene::OnKeyDown(int keyCode) {
         dialog.AdvanceDialog();
     }
 
+    if (keyCode == ALLEGRO_KEY_ESCAPE && !wordleFinished) {
+        wordleFinished = true;
+        isPlayingWordle = false;  // 確保這個標誌也被重置
+    }
+
+    if (keyCode == ALLEGRO_KEY_ESCAPE && !wordleFinished) {
+        wordleFinished = true;
+        isPlayingWordle = false;  // 確保這個標誌也被重置
+    }
+    
     if (keyCode == ALLEGRO_KEY_I && !isPlayingWordle) {
         std::vector<std::string> testMessages = {
             "風雲樓是清大最大的學餐建築，也有提供活動舉辦場所",

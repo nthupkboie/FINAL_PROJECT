@@ -74,31 +74,6 @@ void BattleScene::Initialize() {
     cameraOffset.x = std::max(0.0f, std::min(cameraOffset.x, static_cast<float>(MapWidth * BlockSize - window_x * BlockSize)));
     cameraOffset.y = std::max(0.0f, std::min(cameraOffset.y, static_cast<float>(MapHeight * BlockSize - window_y * BlockSize)));
 
-    // // NPC
-    // NPC* test;
-    // // sheet路徑, x, y, 
-    // // 上, 下, 左, 右, (先行在列)
-    // // 圖塊寬, 圖塊高
-    // auto testAvatar = Engine::Resources::GetInstance().GetBitmap("NPC/test/avatar/test_avatar.png");
-    // NPCGroup->AddNewObject(test = new NPC("NPC",testAvatar, "NPC/test/role/test_sheet.png",
-    //                                         BlockSize * 2, BlockSize * 2,
-    //                                         2, 3,  // 上 (第0列第2行)
-    //                                         2, 0,  // 下
-    //                                         2, 1,  // 左
-    //                                         2, 2,  // 右
-    //                                         64, 64)); // 圖塊大小
-
-    // // 初始化對話框
-    // dialog.Initialize();
-    
-    // // 設置NPC的對話內容
-    // test->SetMessages({
-    //     "你好，我是村民A！",
-    //     "這個村莊最近不太平靜...",
-    //     "晚上請小心行事。",
-    //     "祝你好運，冒險者！"
-    // });
-
     // 預載資源
     Engine::Resources::GetInstance().GetBitmap("lose/benjamin-happy.png");
     
@@ -111,7 +86,6 @@ void BattleScene::Initialize() {
         axeButton->SetOnClickCallback(std::bind(&BattleScene::AxeOnClick, this));
         AddNewControlObject(axeButton);
     }
-    
 }
 
 void BattleScene::Terminate() {

@@ -20,8 +20,6 @@ public:
 
     void SetTriggerEvent(std::function<void()> func);
 
-
-
     // 從 sprite sheet 建構
     NPC(const std::string& name, std::shared_ptr<ALLEGRO_BITMAP> avatar, const std::string& sheetPath, float x, float y, 
         int upCol, int upRow, int downCol, int downRow, 

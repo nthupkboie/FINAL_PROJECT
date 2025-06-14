@@ -180,9 +180,9 @@ void NPC::UpdateFacingDirection(const Engine::Point& dir) {
 void NPC::AddPatrolPoint(const Engine::Point& point) {
     patrolPoints.push_back(point);
     
-    // DEBUG: 打印添加的巡邏點 (開發時可移除)
-    Engine::LOG(Engine::DEBUGGING) << "Added patrol point to NPC '" << npcName 
-                                  << "': (" << point.x << ", " << point.y << ")";
+    // // DEBUG: 打印添加的巡邏點 (開發時可移除)
+    // Engine::LOG(Engine::DEBUGGING) << "Added patrol point to NPC '" << npcName 
+    //                               << "': (" << point.x << ", " << point.y << ")";
 }
 
 void NPC::SetTriggerEvent(std::function<void()> func) {
