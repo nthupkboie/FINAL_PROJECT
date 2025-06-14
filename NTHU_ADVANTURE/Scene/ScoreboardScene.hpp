@@ -7,6 +7,8 @@
 #include "Engine/IScene.hpp"
 #include "Engine/Point.hpp"
 #include <allegro5/allegro_audio.h>
+#include "UI/Component/Label.hpp"
+#include "Engine/Resources.hpp"
 
 struct AnimatedElement {
     Engine::IObject* object;
@@ -40,12 +42,27 @@ private:
     void LoadScores();
     void SaveScores();
     void AddSampleScores(); // 測試用
+
+    Engine::Label* labelTitle;
+    Engine::Label* labelRankHeader;
+    Engine::Label* LabelNameHeader;
+    Engine::Label* LabelScoreHeader;
+    Engine::Label* LabelStageHeader;
+    Engine::Label* LabelTimeHeader;
+    Engine::Label* LabelPrevLabel;
+    Engine::Label* LabelNextLabel;
+    Engine::Label* LabelBackLabel;
+    
+
 public:
     ALLEGRO_SAMPLE_ID bgmId;
     ScoreboardScene() = default;
     void Initialize() override;
     void Terminate() override;
-    void Update(float deltaTime) override;
     void OnKeyDown(int keyCode) override;
+    static void AddScore(const std::string&playerName, int score, int stage);
+    std::string currentLanguage;
+    void Update(float deltaTime) override;
+    void RefreshLabels();
     static void AddScore(const std::string&playerName, int score);
 };
