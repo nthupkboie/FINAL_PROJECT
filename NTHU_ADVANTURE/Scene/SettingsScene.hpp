@@ -4,6 +4,7 @@
 
 #include "Engine/IScene.hpp"
 #include <allegro5/allegro_audio.h>
+#include "UI/Component/Label.hpp"
 
 class SettingsScene final : public Engine::IScene {
 private:
@@ -22,7 +23,6 @@ public:
     Engine::Label* labelBGM;
     Engine::Label* labelSFX;
     Engine::Label* labelLanguage;
-
 };
 
 #endif   // SettingsScene_HPP

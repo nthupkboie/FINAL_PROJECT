@@ -19,6 +19,7 @@
 #include "Scene/TaldaScene.hpp"
 #include "Scene/CGLakeScene.hpp"
 #include "Scene/NewScene.hpp"
+#include "Scene/DialogScene.hpp"
 
 #include "Scene/AIChatScene.hpp"
 
@@ -62,6 +63,7 @@ int main(int argc, char **argv) {
 	game.AddNewScene("lose", new LoseScene());
 	game.AddNewScene("win", new WinScene());
 
+	game.AddNewScene("dialog", new DialogScene());
 	game.AddNewScene("aichat", new AIChatScene());
 
 	// start from start scene

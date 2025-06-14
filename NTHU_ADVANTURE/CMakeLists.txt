@@ -92,6 +92,8 @@ add_executable(2025_I2P2_TowerDefense
     Scene/AIChatScene.hpp
     Scene/NEWScene.cpp
     Scene/NEWScene.hpp
+    Scene/DialogScene.cpp
+    Scene/DialogScene.hpp
 
     # UI
     UI/Component/Image.cpp
