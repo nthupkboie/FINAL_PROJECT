@@ -68,20 +68,6 @@ void WaterWoodScene::Initialize() {
     cameraOffset.x = std::max(0.0f, std::min(cameraOffset.x, static_cast<float>(MapWidth * BlockSize - window_x * BlockSize)));
     cameraOffset.y = std::max(0.0f, std::min(cameraOffset.y, static_cast<float>(MapHeight * BlockSize - window_y * BlockSize)));
 
-    // NPC
-    NPC* test;
-    // sheet路徑, x, y, 
-    // 上, 下, 左, 右, (先行在列)
-    // 圖塊寬, 圖塊高
-    auto testAvatar = Engine::Resources::GetInstance().GetBitmap("NPC/test/avatar/test_avatar.png");
-    NPCGroup->AddNewObject(test = new NPC("NPC",testAvatar, "NPC/test/role/test_sheet.png",
-                                            BlockSize * 5, BlockSize * 5,
-                                            2, 3,  // 上 (第0列第2行)
-                                            2, 0,  // 下
-                                            2, 1,  // 左
-                                            2, 2,  // 右
-                                            64, 64)); // 圖塊大小
-
     //NPC* nineSky;
     auto nineSkyAvatar = Engine::Resources::GetInstance().GetBitmap("NPC/nineSky/avatar/auntie.png");
     NPCGroup->AddNewObject(nineSky = new NPC("九天玄女唯一指定姊妹 廖麗芳", nineSkyAvatar, 
@@ -92,26 +78,8 @@ void WaterWoodScene::Initialize() {
                                             BlockSize * 18, BlockSize * 7
                                         ));
 
-    // NPCGroup->AddNewObject(Yang = new NPC("NPC",testAvatar, "NPC/test/role/test_sheet.png",
-    //                                         BlockSize * 8, BlockSize * 8,
-    //                                         2, 3,  // 上 (第0列第2行)
-    //                                         2, 0,  // 下
-    //                                         2, 1,  // 左
-    //                                         2, 2,  // 右
-    //                                         64, 64)); // 圖塊大小
-
-
     // 初始化對話框
     dialog.Initialize();
-    
-    // 設置NPC的對話內容
-    test->SetMessages({
-        "你好，我是村民A！",
-        "這個村莊最近不太平靜...",
-        "晚上請小心行事。",
-        "祝你好運，冒險者！",
-        "Shawty had them Apple Bottom jeans, jeans"
-    });
 
     nineSky->SetMessages({
         "貴人吉像",

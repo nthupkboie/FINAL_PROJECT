@@ -140,6 +140,20 @@ void NPCDialog::Update(float deltaTime) {
 
 void NPCDialog::Draw() const {
     if (!isActive) return;
+    // 保存並重置變換矩陣
+    ALLEGRO_STATE oldState;
+    al_store_state(&oldState, ALLEGRO_STATE_TRANSFORM | ALLEGRO_STATE_BLENDER);
+    // 重置為單位矩陣（確保不受相機偏移影響）
+    ALLEGRO_TRANSFORM identity;
+    al_identity_transform(&identity);
+    al_use_transform(&identity);
+
+
+    // 添加背景遮罩（可選）
+    al_draw_filled_rectangle(0, 0, 
+                           al_get_display_width(al_get_current_display()),
+                           al_get_display_height(al_get_current_display()),
+                           al_map_rgba(0, 0, 0, 100));
 
     // 繪製對話框背景 (增加圓角效果)
     al_draw_filled_rounded_rectangle(boxX, boxY, 
@@ -231,7 +245,11 @@ void NPCDialog::Draw() const {
             al_draw_text(font, dynamicColor, textX, currentY, ALLEGRO_ALIGN_LEFT, currentLine.c_str());
         }
     }
+    // 恢復狀態
+    al_restore_state(&oldState);
+
 }
+
 bool NPCDialog::IsDialogActive() const {
     return isActive;
 }

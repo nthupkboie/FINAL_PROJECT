@@ -67,20 +67,6 @@ void NEWScene::Initialize() {
     cameraOffset.x = std::max(0.0f, std::min(cameraOffset.x, static_cast<float>(MapWidth * BlockSize - window_x * BlockSize)));
     cameraOffset.y = std::max(0.0f, std::min(cameraOffset.y, static_cast<float>(MapHeight * BlockSize - window_y * BlockSize)));
 
-    // NPC
-    //NPC* test;
-    // sheet路徑, x, y, 
-    // 上, 下, 左, 右, (先行在列)
-    // 圖塊寬, 圖塊高
-    // auto testAvatar = Engine::Resources::GetInstance().GetBitmap("NPC/test/avatar/test_avatar.png");
-    // NPCGroup->AddNewObject(test = new NPC("NPC",testAvatar, "NPC/test/role/test_sheet.png",
-    //                                         BlockSize * 5, BlockSize * 5,
-    //                                         2, 3,  // 上 (第0列第2行)
-    //                                         2, 0,  // 下
-    //                                         2, 1,  // 左
-    //                                         2, 2,  // 右
-    //                                         64, 64)); // 圖塊大小
-
     NPC* bablo;
     auto babloAvatar = Engine::Resources::GetInstance().GetBitmap("NPC/bablo/avatar/bablo.png");
     NPCGroup->AddNewObject(bablo = new NPC("李君萎", babloAvatar, 
@@ -88,42 +74,162 @@ void NEWScene::Initialize() {
                                             "NPC/bablo/role/babloD.png", 
                                             "NPC/bablo/role/babloL.png",
                                             "NPC/bablo/role/babloR.png",
-                                            BlockSize * 8, BlockSize * 8
+                                            BlockSize * 4, BlockSize * 10
                                         ));
 
-    // NPCGroup->AddNewObject(Yang = new NPC("NPC",testAvatar, "NPC/test/role/test_sheet.png",
-    //                                         BlockSize * 8, BlockSize * 8,
-    //                                         2, 3,  // 上 (第0列第2行)
-    //                                         2, 0,  // 下
-    //                                         2, 1,  // 左
-    //                                         2, 2,  // 右
-    //                                         64, 64)); // 圖塊大小
+    NPC* shan;
+    auto shanAvatar = Engine::Resources::GetInstance().GetBitmap("NPC/shan/avatar/shan.png");
+    NPCGroup->AddNewObject(shan = new NPC("王率城", shanAvatar, 
+                                            "NPC/shan/role/shan_up.png",
+                                            "NPC/shan/role/shan_ idle.png", 
+                                            "NPC/shan/role/shan_left.png",
+                                            "NPC/shan/role/shan_right.png",
+                                            BlockSize * 7, BlockSize * 8
+                                        ));
 
-    // NPC* Yang;
-    // auto YangAvatar = Engine::Resources::GetInstance().GetBitmap("NPC/test/avatar/test_avatar.png");
-    // NPCGroup->AddNewObject(Yang = new NPC("Yang", YangAvatar, 
-    //                                         "NPC/Yang/role/YangU.png",
-    //                                         "NPC/Yang/role/YangD.png", 
-    //                                         "NPC/Yang/role/YangL.png",
-    //                                         "NPC/Yang/role/YangR.png",
-    //                                         BlockSize * 8, BlockSize * 8
-    //                                     ));
+    NPC* xi;
+    auto xiAvatar = Engine::Resources::GetInstance().GetBitmap("NPC/xi/avatar/xi.png");
+    NPCGroup->AddNewObject(xi = new NPC("笑東東", xiAvatar, 
+                                            "NPC/xi/role/xi_up.png",
+                                            "NPC/xi/role/xi_idle.png", 
+                                            "NPC/xi/role/xi_left.png",
+                                            "NPC/xi/role/xi_right.png",
+                                            BlockSize * 10, BlockSize * 8
+                                        ));
+
+    NPC* ruby;
+    auto rubyAvatar = Engine::Resources::GetInstance().GetBitmap("NPC/ruby/avatar/ruby.png");
+    NPCGroup->AddNewObject(ruby = new NPC("糕仔君", rubyAvatar, 
+                                            "NPC/ruby/role/girl_up.png",
+                                            "NPC/ruby/role/girl_idle.png", 
+                                            "NPC/ruby/role/girl_left.png",
+                                            "NPC/ruby/role/girl_right.png",
+                                            BlockSize * 13, BlockSize * 8
+                                        ));
+    
+    ruby->SetMoveSpeed(3.0f);
+
+    Engine::Point ruby0(BlockSize * 13 + BlockSize / 2, BlockSize * 8 + BlockSize / 2);
+    Engine::Point ruby1(BlockSize * 14 + BlockSize / 2, BlockSize * 8 + BlockSize / 2);
+    Engine::Point ruby2(BlockSize * 14 + BlockSize / 2, BlockSize * 10 + BlockSize / 2);
+    Engine::Point ruby3(BlockSize * 13 + BlockSize / 2, BlockSize * 10 + BlockSize / 2);
+
+    ruby->AddPatrolPoint(ruby0);
+    ruby->AddPatrolPoint(ruby1);
+    ruby->AddPatrolPoint(ruby2);
+    ruby->AddPatrolPoint(ruby3);
+
+    NPC* brainlin;
+    auto brainlinAvatar = Engine::Resources::GetInstance().GetBitmap("NPC/brainlin/avatar/brain.png");
+    NPCGroup->AddNewObject(brainlin = new NPC("淋駁菌",brainlinAvatar, 
+                                            "NPC/brainlin/role/brain_up.png",
+                                            "NPC/brainlin/role/brain_idle.png", 
+                                            "NPC/brainlin/role/brain_left.png",
+                                            "NPC/brainlin/role/brain_right.png",
+                                            BlockSize * 17, BlockSize * 8
+                                        ));
+
+    NPC* edchen;
+    auto edchenAvatar = Engine::Resources::GetInstance().GetBitmap("NPC/edchen/avatar/edchen.png");
+    NPCGroup->AddNewObject(edchen = new NPC("塵停嗯",edchenAvatar, 
+                                            "NPC/edchen/role/edchen_up.png",
+                                            "NPC/edchen/role/edchen_idle.png", 
+                                            "NPC/edchen/role/edchen_left.png",
+                                            "NPC/edchen/role/edchen_right.png",
+                                            BlockSize * 21, BlockSize * 8
+                                        ));
+
+    NPC* guen;
+    auto guenAvatar = Engine::Resources::GetInstance().GetBitmap("NPC/edchen/avatar/edchen.png");
+    NPCGroup->AddNewObject(guen = new NPC("蟹夢俊", edchenAvatar, 
+                                            "NPC/edchen/role/edchen_up.png",
+                                            "NPC/edchen/role/edchen_idle.png", 
+                                            "NPC/edchen/role/edchen_left.png",
+                                            "NPC/edchen/role/edchen_right.png",
+                                            BlockSize * 21, BlockSize * 11
+                                        ));
+
+    NPC* rayfu;
+    auto rayfuAvatar = Engine::Resources::GetInstance().GetBitmap("NPC/rayfu/avatar/rayfu.png");
+    NPCGroup->AddNewObject(rayfu = new NPC("富康芮", rayfuAvatar, 
+                                            "NPC/rayfu/role/rayfu_up.png",
+                                            "NPC/rayfu/role/rayfu_idle.png", 
+                                            "NPC/rayfu/role/rayfu_left.png",
+                                            "NPC/rayfu/role/rayfu_right.png",
+                                            BlockSize * 18, BlockSize * 11
+                                        ));
+
+    NPC* chi;
+    auto chiAvatar = Engine::Resources::GetInstance().GetBitmap("NPC/7/avatar/7.png");
+    NPCGroup->AddNewObject(chi = new NPC("填菌歧", chiAvatar, 
+                                            "NPC/7/role/7_up.png",
+                                            "NPC/7/role/7_idle.png", 
+                                            "NPC/7/role/7_left.png",
+                                            "NPC/7/role/7_right.png",
+                                            BlockSize * 15, BlockSize * 11
+                                        ));
+
+    NPC* ryanlin;
+    auto ryanlinavatar = Engine::Resources::GetInstance().GetBitmap("NPC/ryanlin/avatar/ryanlin.png");
+    NPCGroup->AddNewObject(ryanlin = new NPC("霖陳雨", ryanlinavatar, 
+                                            "NPC/ryanlin/role/ryanlin_up.png",
+                                            "NPC/ryanlin/role/ryanlin_idle.png", 
+                                            "NPC/ryanlin/role/ryanlin_left.png",
+                                            "NPC/ryanlin/role/ryanlin_right.png",
+                                            BlockSize * 12, BlockSize * 11
+                                        ));
 
     // 初始化對話框
     dialog.Initialize();
     
-    // // 設置NPC的對話內容
-    // test->SetMessages({
-    //     "你好，我是村民A！",
-    //     "這個村莊最近不太平靜...",
-    //     "晚上請小心行事。",
-    //     "祝你好運，冒險者！",
-    //     "Shawty had them Apple Bottom jeans, jeans"
-    // });
-
     bablo->SetMessages({
         "下次不會再喝酒了...",
         "王哨橙 摔角"
+    });
+
+    ruby->SetMessages({
+        "我才是真正的ruby!!!",
+        "要不要去操場跑十圈，走了啦!!!!!!!!!!!!!!!!!!!!!!!!!!",
+    });
+
+    xi->SetMessages({
+        "唯一推武陵褲!!!",
+        "我要來搞linux了"
+    });
+
+    shan->SetMessages({
+        "有人能比我更帥????????????????????????????",
+        "我是系核、我很帥、我超猛"
+    });
+
+    brainlin->SetMessages({
+        "我不能盤腿坐:U",
+        "(\"挑眉\" :D "
+    });
+
+    edchen->SetMessages({
+        "我不是蟹夢俊!!!!!!!!",
+        "我沒有拿過A-以下######",
+    });
+
+    guen->SetMessages({
+        "我不是塵停嗯!!!!!!!!",
+        "我要去讀書了 掰!",
+    });
+
+    rayfu->SetMessages({
+        "富康芮超富!!!!!!",
+        "我是副召!!!!!!!!!",
+    });
+
+    chi->SetMessages({
+        "我是中壢人啦",
+        "我要歧視你們 因為我是填菌歧是你們!!!!",
+    });
+
+    ryanlin->SetMessages({
+        "我是音樂大師 幫你們寫譜",
+        "ryanlinnnnnnnnnn!!!!!!!",
     });
 
     // 預載資源
@@ -194,7 +300,7 @@ void NEWScene::Update(float deltaTime) {
 }
 
 void NEWScene::Draw() const {
-    //IScene::Draw();
+    IScene::Draw();
 
     ALLEGRO_TRANSFORM transform;
     al_copy_transform(&transform, al_get_current_transform());
@@ -209,11 +315,6 @@ void NEWScene::Draw() const {
     al_identity_transform(&transform);
     al_use_transform(&transform);
 
-    if (dialog.IsDialogActive()) {
-        dialog.Draw();
-    }
-    
-    // 繪製對話框
     if (dialog.IsDialogActive()) {
         dialog.Draw();
     }
@@ -314,7 +415,6 @@ void NEWScene::ReadMap() {
             std::string imagePath;
             
             switch(tileType) {
-                ///////////////////////
                 case TILE_WALL:
                     imagePath = "NEW/newwall.png";
                     TileMapGroup->AddNewObject(
@@ -373,7 +473,6 @@ void NEWScene::ReadMap() {
                                         BlockSize)
                     );
                     break; 
-                //////////////////////////////
                 case TILE_WOOD:
                     imagePath = "NEW/woodfloor.png";
                     TileMapGroup->AddNewObject(
@@ -398,14 +497,6 @@ void NEWScene::ReadMap() {
                 default:
                     continue;
             }
-            
-            // TileMapGroup->AddNewObject(
-            //     new Engine::Image(imagePath, 
-            //                       x * BlockSize, 
-            //                       y * BlockSize, 
-            //                       BlockSize, 
-            //                       BlockSize)
-            // );
         }
     }
     std::string imagePath = "NEW/NEWmap.png";
