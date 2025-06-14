@@ -73,7 +73,7 @@ void LogScene::Initialize() {
 
 void LogScene::OnKeyDown(int keyCode){
     IScene::OnKeyDown(keyCode);
-    if (keyCode == ALLEGRO_KEY_LCTRL) {Engine::GameEngine::GetInstance().ChangeScene("play");}
+    if (keyCode == ALLEGRO_KEY_LCTRL) {Engine::GameEngine::GetInstance().ChangeScene("dialog");}
     if (!ID_entered){
         if (keyCode >= ALLEGRO_KEY_A && keyCode <= ALLEGRO_KEY_Z) {
             char c = 'A' + (keyCode - ALLEGRO_KEY_A);
@@ -127,7 +127,7 @@ void LogScene::OnKeyDown(int keyCode){
         else if (keyCode == ALLEGRO_KEY_ENTER){
             if (pswd == right_pswd) {
                 myName = name;
-                Engine::GameEngine::GetInstance().ChangeScene("play");
+                Engine::GameEngine::GetInstance().ChangeScene("dialog");
             }
             else {
                 int w = Engine::GameEngine::GetInstance().GetScreenSize().x;

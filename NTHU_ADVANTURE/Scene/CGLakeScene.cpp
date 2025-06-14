@@ -106,7 +106,7 @@ void CGLakeScene::Initialize() {
     Engine::Resources::GetInstance().GetBitmap("lose/benjamin-happy.png");
     
     // 開始背景音樂
-    bgmId = AudioHelper::PlayBGM("play.ogg");
+    bgmId = AudioHelper::PlayBGM("wind.ogg");
 
     if (LogScene::haveAxe){
         Engine::ImageButton* axeButton;

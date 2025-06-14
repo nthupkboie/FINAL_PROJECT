@@ -5,8 +5,8 @@
 
 #include "Engine/IScene.hpp"
 #include <allegro5/allegro_audio.h>
-
-
+#include "UI/Component/Label.hpp"
+#include "UI/Component/Image.hpp"
 
 class LogScene final : public Engine::IScene {
 private:
