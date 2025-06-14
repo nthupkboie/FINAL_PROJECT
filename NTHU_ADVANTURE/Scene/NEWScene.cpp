@@ -184,7 +184,7 @@ void NEWScene::Initialize() {
     
     bablo->SetMessages({
         "下次不會再喝酒了...",
-        "王哨橙 摔角"
+        "王率城 摔角"
     });
 
     ruby->SetMessages({

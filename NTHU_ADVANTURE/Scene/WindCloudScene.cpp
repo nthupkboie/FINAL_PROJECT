@@ -114,7 +114,7 @@ void WindCloudScene::Initialize() {
     sister->SetMessages({
         tmp,
         "這學期還沒一起吃飯耶",
-        "我本來想吃沐蘭，可是覺得要排太久了",
+        "我本來想吃沐嵐，可是覺得要排太久了",
         "夜排檔也不錯，但有點普通",
         "去巨城嗎...搭完公車還要走路好麻煩",
         "東門市場又有點熱",
@@ -398,13 +398,7 @@ void WindCloudScene::OnKeyDown(int keyCode) {
         dialog.AdvanceDialog();
     }
 
-    if (keyCode == ALLEGRO_KEY_ESCAPE && !wordleFinished) {
-        wordleFinished = true;
-        isPlayingWordle = false;  // 確保這個標誌也被重置
-    }
-
-    if (keyCode == ALLEGRO_KEY_ESCAPE && !wordleFinished) {
-        wordleFinished = true;
+    if (keyCode == ALLEGRO_KEY_ESCAPE && (wordleFinished || isPlayingWordle)) {
         isPlayingWordle = false;  // 確保這個標誌也被重置
     }
     
@@ -422,10 +416,10 @@ void WindCloudScene::OnKeyDown(int keyCode) {
         PlayScene::inWindCloud = false;
         Engine::GameEngine::GetInstance().ChangeScene("play");
     }
-    if (keyCode == ALLEGRO_KEY_ESCAPE && (wordleFinished || isPlayingWordle)){
-        //wordleFinished = true;
-        isPlayingWordle = false;
-    }
+    // if (keyCode == ALLEGRO_KEY_ESCAPE && (wordleFinished || isPlayingWordle)){
+    //     //wordleFinished = true;
+    //     isPlayingWordle = false;
+    // }
     // 按下 E 鍵進入建築物
     if (keyCode == ALLEGRO_KEY_E) {
 
