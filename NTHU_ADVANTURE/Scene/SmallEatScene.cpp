@@ -74,23 +74,23 @@ void SmallEatScene::Initialize() {
     cameraOffset.x = std::max(0.0f, std::min(cameraOffset.x, static_cast<float>(MapWidth * BlockSize - window_x * BlockSize)));
     cameraOffset.y = std::max(0.0f, std::min(cameraOffset.y, static_cast<float>(MapHeight * BlockSize - window_y * BlockSize)));
 
-    // NPC
-    NPC* test;
-    // sheet路徑, x, y, 
-    // 上, 下, 左, 右, (先行在列)
-    // 圖塊寬, 圖塊高
-    auto testAvatar = Engine::Resources::GetInstance().GetBitmap("NPC/test/avatar/test_avatar.png");
-    NPCGroup->AddNewObject(test = new NPC("NPC",testAvatar, "NPC/test/role/test_sheet.png",
-                                            BlockSize * 5, BlockSize * 5,
-                                            2, 3,  // 上 (第0列第2行)
-                                            2, 0,  // 下
-                                            2, 1,  // 左
-                                            2, 2,  // 右
-                                            64, 64)); // 圖塊大小
+    // // NPC
+    // NPC* test;
+    // // sheet路徑, x, y, 
+    // // 上, 下, 左, 右, (先行在列)
+    // // 圖塊寬, 圖塊高
+    // auto testAvatar = Engine::Resources::GetInstance().GetBitmap("NPC/test/avatar/test_avatar.png");
+    // NPCGroup->AddNewObject(test = new NPC("NPC",testAvatar, "NPC/test/role/test_sheet.png",
+    //                                         BlockSize * 5, BlockSize * 5,
+    //                                         2, 3,  // 上 (第0列第2行)
+    //                                         2, 0,  // 下
+    //                                         2, 1,  // 左
+    //                                         2, 2,  // 右
+    //                                         64, 64)); // 圖塊大小
 
     NPC* Yang;
-    auto YangAvatar = Engine::Resources::GetInstance().GetBitmap("NPC/Yang/avatar/Yang.png");
-    NPCGroup->AddNewObject(Yang = new NPC("Yang", YangAvatar, 
+    auto YangAvatar = Engine::Resources::GetInstance().GetBitmap("cool/foriegn.png");
+    NPCGroup->AddNewObject(Yang = new NPC("foreign", YangAvatar, 
                                             "NPC/Yang/role/YangU.png",
                                             "NPC/Yang/role/YangD.png", 
                                             "NPC/Yang/role/YangL.png",
@@ -99,7 +99,7 @@ void SmallEatScene::Initialize() {
                                         ));
     
     //Shopper* axeman;
-    auto axemanAvatar = Engine::Resources::GetInstance().GetBitmap("NPC/test/avatar/test_avatar.png");
+    auto axemanAvatar = Engine::Resources::GetInstance().GetBitmap("cool/old.png");
     ShopperGroup->AddNewObject(axeman = new Shopper("axeman", axemanAvatar, 
                                             "NPC/axeman/role/axemanU.png",
                                             "NPC/axeman/role/axemanD.png",
@@ -130,18 +130,10 @@ void SmallEatScene::Initialize() {
     // 初始化對話框
     dialog.Initialize();
     
-    // 設置NPC的對話內容
-    test->SetMessages({
-        "你好，我是村民A！",
-        "這個村莊最近不太平靜...",
-        "晚上請小心行事。",
-        "祝你好運，冒險者！",
-        "Shawty had them Apple Bottom jeans, jeans"
-    });
-
     Yang->SetMessages({
-        "我是楊舜仁！",
-        "我不會當人",
+        "Who are you??????",
+        "I am a foreigner",
+        "and I am handsome ahahhahahahahah",
     });
 
     if (canBuyAxe){
