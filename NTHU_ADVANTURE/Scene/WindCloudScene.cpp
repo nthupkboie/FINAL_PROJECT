@@ -37,6 +37,8 @@ const int WindCloudScene::window_x = 30, WindCloudScene::window_y = 16;
 
 std::vector<WindCloudScene::TileType> WindCloudScene::mapData;
 
+bool WindCloudScene::isPlayingWordle = false;
+
 // Engine::Point WindCloudScene::GetClientSize() {
 //     return Engine::Point(MapWidth * BlockSize, MapHeight * BlockSize);
 // }
@@ -85,9 +87,9 @@ void WindCloudScene::Initialize() {
                                             BlockSize * 5, BlockSize * 5
                                             )); // 圖塊大小
 
-    NPC* Yang;
-    auto YangAvatar = Engine::Resources::GetInstance().GetBitmap("NPC/test/avatar/test_avatar.png");
-    NPCGroup->AddNewObject(Yang = new NPC("Yang", YangAvatar, 
+    //NPC* Yang;
+    auto YangAvatar = Engine::Resources::GetInstance().GetBitmap("NPC/Yang/avatar/bro.png");
+    NPCGroup->AddNewObject(Yang = new NPC("羊順人", YangAvatar,
                                             "NPC/Yang/role/YangU.png",
                                             "NPC/Yang/role/YangD.png", 
                                             "NPC/Yang/role/YangL.png",
@@ -120,16 +122,25 @@ void WindCloudScene::Initialize() {
         "看來只好孤單地去吃金展了...",
     });
 
-    Yang->SetMessages({
-        "初次見面",
-        "我是楊舜仁的弟弟",
-        "羊順人"
-    });
+    if (!wordleFinished){
+        Yang->SetMessages({
+            "初次見面",
+            "我是楊舜仁的弟弟",
+            "羊順人"
+        });
+    }
+    else {
+        std::string tmp = "謝謝" + LogScene::myName + "陪我玩遊戲";
+        Yang->SetMessages({
+            tmp,
+            "我會去說服哥哥不要當掉你"
+        });
+    }
 
     Yang->SetTriggerEvent([this]() {
         if (!wordleFinished) {
             isPlayingWordle = true;
-            dialog.StartDialog("楊舜仁的弟弟", Engine::Resources::GetInstance().GetBitmap("NPC/test/avatar/test_avatar.png"), {
+            dialog.StartDialog("羊順人", Engine::Resources::GetInstance().GetBitmap("NPC/Yang/avatar/bro.png"), {
                 "我來出個單字給你猜，5個字母！"
             });
         }
@@ -147,20 +158,37 @@ void WindCloudScene::Initialize() {
     if (LogScene::haveAxe) LabelGroup->AddNewObject(axeImage = new Engine::Image("stage-select/axe.png", 20, 105, 56, 56));
     if (LogScene::haveSpeedUp){
         LabelGroup->AddNewObject(speedImage = new Engine::Image("play/potion.png", 20, 175, 56, 56));
-        //haveSpeedUpInt = rou
         LabelGroup->AddNewObject(speedLabel = new Engine::Label(std::to_string((int)LogScene::haveSpeedUp), "title.ttf", 48, 130, 210, 255, 255, 255, 255, 0.5, 0.5));
     }
-
+    
+    // wordleFinished = false;
+    // wordleSuccess = false;
+    // isPlayingWordle = false;
+    // wordleAttempt = 0;
+    // currentGuess = "";
+    // wordleGuesses.clear();
 }
 
 void WindCloudScene::Terminate() {
     AudioHelper::StopBGM(bgmId);
     IScene::Terminate();
+
+    wordleFinished = true;
+    isPlayingWordle = false;
 }
 
 void WindCloudScene::Update(float deltaTime) {
     IScene::Update(deltaTime);
-    
+    LogScene::timer += deltaTime;
+    //Engine::LOG(Engine::INFO) << LogScene::timer;
+
+    if (wordleFinished) {
+        std::string tmp = "謝謝" + LogScene::myName + "陪我玩遊戲";
+        Yang->SetMessages({
+            tmp,
+            "我會去說服哥哥不要當掉你!"
+        });
+    }
 
     if(firstTime){
         std::vector<std::string> testMessages = {
@@ -246,7 +274,8 @@ void WindCloudScene::Update(float deltaTime) {
                     if (currentGuess == wordleAnswer) {
                         wordleSuccess = true;
                         wordleFinished = true;
-                        LogScene::money += 100; 
+                        LogScene::money += 100;
+                        moneyLabel->Text = std::to_string(LogScene::money);
                     } else if (wordleAttempt >= 6) {
                         wordleFinished = true; 
                     }
@@ -320,13 +349,12 @@ void WindCloudScene::Draw() const {
 
         if (wordleFinished) {
             std::string result = wordleSuccess ? "你成功了！獲得 100 元！" : "挑戰失敗，答案是 BINGO";
-            al_draw_text(Engine::Resources::GetInstance().GetFont("pirulen.ttf", 32).get(),
-                        al_map_rgb(255, 255, 255), startX, startY + 7 * boxSize,
+            al_draw_text(Engine::Resources::GetInstance().GetFont("title.ttf", 32).get(),
+                        al_map_rgb(0, 0, 0), startX + 64, startY + 7 * boxSize,
                         0, result.c_str());
+            //isPlayingWordle = false;
         }
     }
-
-
 }
 
 void WindCloudScene::OnMouseDown(int button, int mx, int my) {
@@ -349,6 +377,16 @@ void WindCloudScene::OnKeyDown(int keyCode) {
         dialog.AdvanceDialog();
     }
 
+    if (keyCode == ALLEGRO_KEY_ESCAPE && !wordleFinished) {
+        wordleFinished = true;
+        isPlayingWordle = false;  // 確保這個標誌也被重置
+    }
+
+    if (keyCode == ALLEGRO_KEY_ESCAPE && !wordleFinished) {
+        wordleFinished = true;
+        isPlayingWordle = false;  // 確保這個標誌也被重置
+    }
+    
     if (keyCode == ALLEGRO_KEY_I && !isPlayingWordle) {
         std::vector<std::string> testMessages = {
             "風雲樓是清大最大的學餐建築，也有提供活動舉辦場所",
@@ -363,9 +401,11 @@ void WindCloudScene::OnKeyDown(int keyCode) {
         PlayScene::inWindCloud = false;
         Engine::GameEngine::GetInstance().ChangeScene("play");
     }
-    if (keyCode == ALLEGRO_KEY_ESCAPE && isPlayingWordle){
-        wordleFinished = true;
+    if (keyCode == ALLEGRO_KEY_ESCAPE && (wordleFinished || isPlayingWordle)){
+        //wordleFinished = true;
+        isPlayingWordle = false;
     }
+    
 }
 
 void WindCloudScene::ReadMap() {

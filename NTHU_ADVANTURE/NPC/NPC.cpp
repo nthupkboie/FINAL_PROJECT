@@ -6,6 +6,7 @@
 #include <allegro5/allegro_primitives.h>
 #include "UI/Component/ImageButton.hpp"
 #include "UI/Component/Label.hpp"
+#include "Scene/WindCloudScene.hpp"
 
 // 從 sprite sheet 載入子圖的輔助函數
 static std::shared_ptr<ALLEGRO_BITMAP> LoadSpriteFromSheet(
@@ -111,7 +112,7 @@ void NPC::Update(float deltaTime, const Player* player) {
     bool enterPressed = enterIsDown && !enterWasDown;
     enterWasDown = enterIsDown;
 
-    if (isAdjacent && al_key_down(&kbState, ALLEGRO_KEY_T)) {
+    if (isAdjacent && al_key_down(&kbState, ALLEGRO_KEY_T) && !WindCloudScene::isPlayingWordle) {
         if (!isTalking && !messages.empty()) {
             FacePlayer(player);
             isTalking = true;
@@ -179,9 +180,9 @@ void NPC::UpdateFacingDirection(const Engine::Point& dir) {
 void NPC::AddPatrolPoint(const Engine::Point& point) {
     patrolPoints.push_back(point);
     
-    // DEBUG: 打印添加的巡邏點 (開發時可移除)
-    Engine::LOG(Engine::DEBUGGING) << "Added patrol point to NPC '" << npcName 
-                                  << "': (" << point.x << ", " << point.y << ")";
+    // // DEBUG: 打印添加的巡邏點 (開發時可移除)
+    // Engine::LOG(Engine::DEBUGGING) << "Added patrol point to NPC '" << npcName 
+    //                               << "': (" << point.x << ", " << point.y << ")";
 }
 
 void NPC::SetTriggerEvent(std::function<void()> func) {

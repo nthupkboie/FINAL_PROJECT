@@ -105,13 +105,13 @@ void SmallEatScene::Initialize() {
                                             "NPC/axeman/role/axemanD.png",
                                             "NPC/axeman/role/axemanL.png",
                                             "NPC/axeman/role/axemanR.png",
-                                            BlockSize * 11, BlockSize * 7
+                                            BlockSize * 11, BlockSize * 8
                                         ));
 
-    Engine::Point axe0(BlockSize * 11 + BlockSize / 2, BlockSize * 7 + BlockSize / 2);
-    Engine::Point axe1(BlockSize * 11 + BlockSize / 2, BlockSize * 12 + BlockSize / 2);
-    Engine::Point axe2(BlockSize * 14 + BlockSize / 2, BlockSize * 12 + BlockSize / 2);
-    Engine::Point axe3(BlockSize * 14 + BlockSize / 2, BlockSize * 7 + BlockSize / 2);
+    Engine::Point axe0(BlockSize * 11 + BlockSize / 2, BlockSize * 8 + BlockSize / 2);
+    Engine::Point axe1(BlockSize * 11 + BlockSize / 2, BlockSize * 13 + BlockSize / 2);
+    Engine::Point axe2(BlockSize * 14 + BlockSize / 2, BlockSize * 13 + BlockSize / 2);
+    Engine::Point axe3(BlockSize * 14 + BlockSize / 2, BlockSize * 8 + BlockSize / 2);
 
     axeman->AddPatrolPoint(axe0);
     axeman->AddPatrolPoint(axe1);
@@ -208,36 +208,12 @@ void SmallEatScene::Terminate() {
 
 void SmallEatScene::Update(float deltaTime) {
     IScene::Update(deltaTime);
-
+    LogScene::timer += deltaTime;
    if(firstTime){
         std::vector<std::string> testMessages = { 
-            "小吃部建築由本校校友張昌華設計。",
-
-            "事實上，校園內許多建築都出自大師之手，",
-            "包括原子爐、百齡堂（今水漾餐廳）、台北月涵堂等。",
-            "他的作品外觀多呈簡潔的白色，且擁有明亮的大窗景。",
-
-            "小吃部的前身為「大餐廳」，一開始只在正餐時間營業，",
-            "那時主要供應的是自助餐。",
-
-            "核工碩79級校友、本校財規室李敏主任表示，",
-            "他印象中的大餐廳擺設很簡單，",
-            "就是一排排整齊的長桌。",
-
-            "而且當年的自助餐不是自己夾菜，",
-            "而是裝好一碟一碟的，",
-            "想吃什麼就拿一盤到自己的托盤上。",
-
-            "「吃得超飽只要8到10元！」李敏笑說，",
-            "物價跟現在真的差很多呢。",
-
-            "大餐廳的形式維持了近20年，",
-            "直到1983年胡德總務長與學生代表討論後，",
-            "才改成提供多樣化餐點的「小吃部」。",
-
-            "營業時間也更加彈性，",
-            "讓同學即使錯過正餐時間也能吃到小吃，",
-            "當時可是全國大學首創的攤位式餐飲。"
+            "小吃部有新竹美食麥當勞、還不錯的蘇記、很賺的seven",
+            "食物不重要 有插頭的座位才是本體",
+            "玻璃屋也是個很讚的地方，猜猜是誰蓋的? 是顏東勇喔^^"
         };
         auto testAvatar = Engine::Resources::GetInstance().GetBitmap("NPC/test/avatar/smalleaticon.png");
         dialog.StartDialog("小吃部", testAvatar, testMessages);

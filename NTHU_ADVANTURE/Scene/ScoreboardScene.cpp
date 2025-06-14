@@ -62,7 +62,7 @@ void ScoreboardScene::Initialize() {
     int endIdx = std::min(startIdx + entriesPerPage, (int)scores.size());
     
     // 定義左對齊的起始位置和列間距
-    const int leftMargin = 250;
+    const int leftMargin = 250 + 240;
     const int columnSpacing = 30;
     const int rankWidth = 150;
     const int nameWidth = 200;
@@ -74,8 +74,8 @@ void ScoreboardScene::Initialize() {
     int rankX = leftMargin;
     int nameX = rankX + rankWidth + columnSpacing;
     int scoreX = nameX + nameWidth + columnSpacing;
-    int stageX = scoreX + scoreWidth + columnSpacing;
-    int timeX = stageX + stageWidth + columnSpacing;
+    int timeX = scoreX + scoreWidth + columnSpacing;
+    //int timeX = stageX + stageWidth + columnSpacing;
     
     // 列標題 - 從左側飛入
     int headerY = 190;
@@ -120,16 +120,14 @@ void ScoreboardScene::Initialize() {
     
     // auto* stageHeader = new Engine::Label("Stage", "pirulen.ttf", 30, -100, headerY, 255, 255, 0, 255, 0.0, 0.5);
     // AddNewObject(stageHeader);
-    LabelStageHeader = new Engine::Label("", "title.ttf", 30, -100, headerY, 255, 255, 0, 255, 0.0, 0.5);
-    AddNewObject(LabelStageHeader);
-    animatedElements.push_back({
-        LabelStageHeader,
-        Engine::Point(-100, headerY),
-        Engine::Point(stageX, headerY),
-        0.5f,  // 延遲0.5秒
-        0.4f,  // 持續時間
-        0.0f
-    });
+    // animatedElements.push_back({
+    //     stageHeader,
+    //     Engine::Point(-100, headerY),
+    //     Engine::Point(stageX, headerY),
+    //     0.5f,  // 延遲0.5秒
+    //     0.4f,  // 持續時間
+    //     0.0f
+    // });
     
     // auto* timeHeader = new Engine::Label("Time", "pirulen.ttf", 30, -100, headerY, 255, 255, 0, 255, 0.0, 0.5);
     // AddNewObject(timeHeader);
@@ -192,17 +190,17 @@ void ScoreboardScene::Initialize() {
         });
         
         // 關卡
-        auto *stageLabel = new Engine::Label("Stage " + std::to_string(entry.stage), "pirulen.ttf", 30, 
-                     w + 100, yPos, 255, 255, 255, 255, 0.0, 0.5);
-        AddNewObject(stageLabel);
-        animatedElements.push_back({
-            stageLabel,
-            Engine::Point(w + 100, yPos),
-            Engine::Point(stageX, yPos),
-            0.7f + (i - startIdx) * 0.1f,
-            0.4f,
-            0.0f
-        });
+        // auto* stageLabel = new Engine::Label("Stage " + std::to_string(entry.stage), "pirulen.ttf", 30, 
+        //              w + 100, yPos, 255, 255, 255, 255, 0.0, 0.5);
+        // AddNewObject(stageLabel);
+        // animatedElements.push_back({
+        //     stageLabel,
+        //     Engine::Point(w + 100, yPos),
+        //     Engine::Point(stageX, yPos),
+        //     0.7f + (i - startIdx) * 0.1f,
+        //     0.4f,
+        //     0.0f
+        // });
         
         // 時間
         auto *timeLabel = new Engine::Label(timeStr, "pirulen.ttf", 30, 
@@ -381,11 +379,11 @@ void ScoreboardScene::Update(float deltaTime) {
 
 void ScoreboardScene::LoadScores() {
     scores.clear();
-    std::ifstream file("scoreboard.dat");
+    std::ifstream file("C:/FINAL_PROJECT/NTHU_ADVANTURE/scoreboard.dat");
     
     if (file.is_open()) {
         ScoreEntry entry;
-        while (file >> entry.playerName >> entry.score >> entry.stage >> entry.timestamp) {
+        while (file >> entry.playerName >> entry.score /*>> entry.stage*/ >> entry.timestamp) {
             scores.push_back(entry);
         }
         file.close();
@@ -401,11 +399,11 @@ void ScoreboardScene::LoadScores() {
 }
 
 void ScoreboardScene::SaveScores() {
-    std::ofstream file("scoreboard.dat");
+    std::ofstream file("C:/FINAL_PROJECT/NTHU_ADVANTURE/scoreboard.dat");
     
     for (const auto& entry : scores) {
         file << entry.playerName << " " << entry.score << " " 
-             << entry.stage << " " << entry.timestamp << "\n";
+             << /*entry.stage << " " <<*/ entry.timestamp << "\n";
     }
     
     file.close();
@@ -415,11 +413,11 @@ void ScoreboardScene::AddSampleScores() {
     // 添加一些範例分數
     time_t now = time(nullptr);
     scores = {
-        {"Player1", 5000, 3, now - 86400},
-        {"Player2", 4500, 2, now - 172800},
-        {"Player3", 4000, 3, now - 259200},
-        {"Player4", 3500, 1, now - 345600},
-        {"Player5", 3000, 2, now - 432000}
+        {"Player1", 5000, now - 86400},
+        {"Player2", 4500, now - 172800},
+        {"Player3", 4000, now - 259200},
+        {"Player4", 3500, now - 345600},
+        {"Player5", 3000, now - 432000}
     };
     
     // 保存範例分數
@@ -438,15 +436,15 @@ void ScoreboardScene::OnKeyDown(int keyCode) {
     }
 }
 
-void ScoreboardScene::AddScore(const std::string& playerName, int score, int stage){
-    ScoreEntry newEntry{playerName, score, stage, time(nullptr)};
+void ScoreboardScene::AddScore(const std::string& playerName, int score){
+    ScoreEntry newEntry{playerName, score, time(nullptr)};
     
     // 臨時載入分數
     std::vector<ScoreEntry> tempScores;
-    std::ifstream file("scoreboard.dat");
+    std::ifstream file("C:/FINAL_PROJECT/NTHU_ADVANTURE/scoreboard.dat");
     if (file.is_open()) {
         ScoreEntry entry;
-        while (file >> entry.playerName >> entry.score >> entry.stage >> entry.timestamp) {
+        while (file >> entry.playerName >> entry.score /*>> entry.stage*/ >> entry.timestamp) {
             tempScores.push_back(entry);
         }
         file.close();
@@ -464,10 +462,11 @@ void ScoreboardScene::AddScore(const std::string& playerName, int score, int sta
     }
     
     // 保存
-    std::ofstream outFile("scoreboard.dat");
+    //"C:/FINAL_PROJECT/NTHU_ADVANTURE/scoreboard.dat"
+    std::ofstream outFile("C:/FINAL_PROJECT/NTHU_ADVANTURE/scoreboard.dat");
     for (const auto& entry : tempScores) {
         outFile << entry.playerName << " " << entry.score << " " 
-                << entry.stage << " " << entry.timestamp << "\n";
+                << /*entry.stage << " " <<*/ entry.timestamp << "\n";
     }
     outFile.close();
 }

@@ -23,6 +23,7 @@ private:
     Engine::Label* warning2;
     Engine::Image* arrowImage;
     int ID_entered = 0;
+    
 
     
     Engine::Label* labelID;
@@ -49,6 +50,7 @@ public:
     void Update(float deltaTime) override;
     void RefreshLabels();
 
+    static float timer;
 };
 
 
