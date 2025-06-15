@@ -50,7 +50,7 @@ private:
     Shopper* yang = nullptr; // 新增：NPC 引用
 
     int index = -1;
-    char answer[5] = {'A', 'A', 'A', 'A', 'A'};
+    char answer[5] = {'B', 'D', 'C', 'A', 'D'};
     std::shared_ptr<ALLEGRO_BITMAP> bmp1;
 protected:
     int lives;

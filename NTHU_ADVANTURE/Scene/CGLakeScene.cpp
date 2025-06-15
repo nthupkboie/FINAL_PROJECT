@@ -122,7 +122,7 @@ void CGLakeScene::Initialize() {
 
 void CGLakeScene::Terminate() {
     AudioHelper::StopBGM(bgmId);
-    SaveToFile();
+    //SaveToFile();
     IScene::Terminate();
 }
 
