@@ -154,7 +154,8 @@ void DialogScene::OnKeyDown(int keyCode) {
             "誒你先進去新齋認識些新朋友",
             "然後你等等好像要去台達館上課嗎?",
             "不知道啦 你先進去 認識朋友 不然我怕你便孤兒",
-            "爸爸走囉 掰掰掰掰",
+            "你被當掉的話 爸爸可是不會原諒你的!!!!!!!!!!!!!!!!!",
+            "就這樣啦 爸爸要先忙了 先走了 掰掰!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!",
         };
         auto testAvatar = Engine::Resources::GetInstance().GetBitmap("cool/dad.png");
         dialog.StartDialog("爸爸", testAvatar, testMessages);
